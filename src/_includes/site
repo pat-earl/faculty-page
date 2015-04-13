@@ -1,0 +1,8 @@
+{%- set title = "Gautam Iyer's Website" %}
+{%- set short_title = "Gautam Iyer" %}
+{%- set navbar_left = [
+    ( 'research',   'Research' ),
+    ( 'teaching',   'Teaching' ),
+    ( 'misc',	    'Misc.' )
+] %}
+{# vim: set ft=htmldjango: #}
