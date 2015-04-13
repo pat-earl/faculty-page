@@ -5,9 +5,19 @@
 {%- set navbar_left = [
     ( 'research',   'Research' ),
     ( 'teaching',   'Teaching' ),
-    ( 'misc',	    'Misc.' )
+    ( 'students',   'Student Projects' ),
 ] %}
 {%- set navbar_right = [
+    ( 'code',		'Code' ),
+    ( 'blog',		'Blog' ),
     ( 'contact.html',   'Contact' ),
-] %}
+] -%}
+{%- if dev_env == 'production' -%}
+    {%- set host = 'http://www.math.cmu.edu' -%}
+    {%- set prefix = '/~gautam/sj' -%}
+{%- else -%}
+    {%- set url = '' -%}
+    {%- set prefix = '' -%}
+{%- endif -%}
+{%- set url = host + prefix -%}
 {# vim: set ft=htmldjango: #}

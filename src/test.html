@@ -3,9 +3,21 @@
 <@Jinja2> set active = 'misc'
 {% block body %}
 <div class='container'>
+
+<div class='alert alert-info' role='alert'>
+  <p class='lead'>
+    This README can be used as a reference for github-flavored-markdown styling (and possibly behavior).
+  </p>
+</div>
+
 {% markdown %}
 
-** This README can be used as a reference for github-flavored-markdown styling (and possibly behavior). **
+## Environment
+
+This site is being generated for
+{% if dev_env == 'local' %} a local {% else %} the production {% endif %}
+environment.
+(Debug: `dev_env = {{dev_env}}`).
 
 ## Links
 
