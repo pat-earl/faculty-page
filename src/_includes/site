@@ -1,8 +1,13 @@
 {%- set title = "Gautam Iyer's Website" %}
 {%- set short_title = "Gautam Iyer" %}
+{%- set author = "Gautam Iyer" -%}
+{%- set email = "gautam<span style='display: none'>_NO_SPAM_</span>&commat;math.cmu.edu" -%}
 {%- set navbar_left = [
     ( 'research',   'Research' ),
     ( 'teaching',   'Teaching' ),
     ( 'misc',	    'Misc.' )
+] %}
+{%- set navbar_right = [
+    ( 'contact.html',   'Contact' ),
 ] %}
 {# vim: set ft=htmldjango: #}

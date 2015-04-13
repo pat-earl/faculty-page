@@ -1,4 +1,24 @@
-<@Jinja2> extends "/_layouts/base.html"
-<@Jinja2> set active = 'teaching'
+<@Jinja2> extends "/_layouts/jumbotron.html"
+
+{% block jumbotron %}
+  {% markdown %}
+
+  # Gautam Iyer
+
+  Associate Professor,
+  [Department of Mathematical Sciences](http://www.math.cmu.edu),
+  [Carnegie Mellon University](http://www.cmu.edu).
+
+  {% endmarkdown %}
+{% endblock %}
+
+{% block heading1 %}{% markdown %}
+## Research
+
+Quos qui dignissimos non adipisci. Quia necessitatibus fugit hic asperiores
+nisi ut. Et autem est qui ipsa dicta laboriosam. Mollitia dolorem fuga nulla.
+Tempora quia tempora est velit nesciunt voluptatem tempora voluptates.
+Consequatur cumque asperiores quod quidem omnis natus non.
+{% endmarkdown %}{% endblock %}
 
 {# vim: set ft=htmldjango: #}

@@ -9,6 +9,7 @@
       The above 3 meta tags *must* come first in the head; any other head
       content must come *after* these tags
     #}
+    <meta name="author" content="{{ site.author|default("Site author") }}">
     <title>
       {% if title%}{{title|striptags}}{% else %}{{site.title}}{% endif %}
     </title>
@@ -38,14 +39,19 @@
 
     {% block body %}
     <div class='container'>
-      <h1>Body block ({{self}})</h1>
+      <h1>{{title | default("Body block") }}</h1>
 
       {{ lipsum() }}
     </div>
     {% endblock %}
 
     {% block footer %}
-    {% include '_layouts/frag/footer.html' with context %}
+    {#
+      Jinja2 bug: Need to access these variables here, otherwise they don't
+      show up in included files.
+    #}
+    <!-- {{ site.short_title }} -->
+    {% include '_layouts/frag/footer.html' %}
     {% endblock %}
 
     {% block scripts %}
