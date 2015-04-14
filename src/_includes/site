@@ -3,9 +3,9 @@
 {%- set author = "Gautam Iyer" -%}
 {%- set email = "gautam<span style='display: none'>_NO_SPAM_</span>&commat;math.cmu.edu" -%}
 {%- set navbar_left = [
-    ( 'research',   'Research' ),
-    ( 'teaching',   'Teaching' ),
-    ( 'students',   'Student Projects' ),
+    ( 'research',  'Research' ),
+    ( 'teaching',	'Teaching' ),
+    ( 'students',   	'Student Projects' ),
 ] %}
 {%- set navbar_right = [
     ( 'code',		'Code' ),
@@ -16,7 +16,7 @@
     {%- set host = 'http://www.math.cmu.edu' -%}
     {%- set prefix = '/~gautam/sj' -%}
 {%- else -%}
-    {%- set url = '' -%}
+    {%- set host = '' -%}
     {%- set prefix = '' -%}
 {%- endif -%}
 {%- set url = host + prefix -%}

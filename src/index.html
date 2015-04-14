@@ -1,5 +1,4 @@
 <@Jinja2> extends "/_layouts/jumbotron633.html"
-
 {% block jumbotron %}
   <div class='text-primary'>
   {% markdown %}
@@ -14,41 +13,63 @@
   </div>
 {% endblock %}
 
-{% block heading1 %}{% markdown %}
-## [Research](research)
+{% block heading1 %}
+<div class='media'>
+  <h2><a href='research'>Research Interests</a></h2>
+  <div class='media-left'>
+    <img class='media-object' src='research/img/mixing-diag-sol6.jpg'></img>
+  </div>
+  <div class='media-body text-justify'>
+    {% markdown %}
+    My research concerns **"Theoretical Applied Math"** using tools from
+    <em class='text-primary'>partial differential equations</em> and 
+    <em class='text-primary'>probability</em>.
+    More specifically, I've studied on a variety of problems related to
+    anomalous diffusion,
+    coagulation,
+    fluid mechanics,
+    homogenization,
+    Q-tensors
+    and
+    mixing.
 
-Et quo sunt qui omnis aliquam qui aut. Libero earum necessitatibus commodi qui
-nihil in aut facilis. Quas molestiae ipsam aut sed sequi et nihil. Aliquam quis
-explicabo eaque rerum natus velit assumenda atque.
+    <small>
+    **Grant Support:**
+    *NSF CAREER* (2013--2018) and an *Alfred P. Sloan* research fellowship.
+    </small>
+    {% endmarkdown %}
 
-Ad eaque et consequuntur eum voluptatem sunt nihil mollitia. Sit dolorem quidem
-similique quasi perspiciatis temporibus voluptatem qui. Inventore veritatis
-nostrum et beatae. Placeat ut magnam officiis commodi dicta perferendis cum
-maiores.
-{% endmarkdown %}{% endblock %}
+    <p class='text-right'>
+      <a class="btn btn-primary" href="research#publications">Publications</a>
+      <a class="btn btn-primary" href="research">More info</a>
+    </p>
+
+  </div><!-- /media -->
+</div>
+
+{% endblock %}
 
 {% block heading2 %}{% markdown %}
 ## Teaching
 
-* Course 1
+* 21-272: Introduction to PDE's
 
-* Course 2
+* 21-355: Real Analysis 1
 
 * Lecture notes
 
-<a class="btn btn-primary" href="teaching" role="button">More info</a>
+* Previous courses
 {% endmarkdown %}{% endblock %}
 
 {% block heading3 %}{% markdown %}
 ## Misc.
 
-* Student corner
+* Student notes and projects.
 
-* Code
+* Open Source Code
 
-* Blog
+* Random tips "blog"
 
-<a class="btn btn-default" href="teaching" role="button">More info</a>
 
 {% endmarkdown %}{% endblock %}
 

@@ -37,20 +37,20 @@
     {% include '_layouts/frag/nav.html' %}
     {% endblock %}
 
-    {% block body %}
     <div class='container'>
+    {% block body %}
       <h1>{{title | default("Body block") }}</h1>
 
       {{ lipsum() }}
-    </div>
     {% endblock %}
+    </div>
 
     {% block footer %}
     {#
       Jinja2 bug: Need to access these variables here, otherwise they don't
       show up in included files.
     #}
-    <!-- {{ site.short_title }} -->
+    <!-- {{ site.short_title }} / {{page_footer|e}} -->
     {% include '_layouts/frag/footer.html' %}
     {% endblock %}
 

@@ -1,0 +1,46 @@
+<@Jinja2> extends "/_layouts/base.html"
+<@Jinja2> set active = 'contact.html'
+<@Jinja2> set title = 'Contact Information'
+
+{% block body %}
+<h2>{{title}}</h2>
+
+<table class='table'>
+  <tbody>
+    <tr>
+      <th scope='row'>Email</th>
+      <td>
+	<p class='primary'>{{site.email}}</p>
+	<p class='small text-warning'>
+	  <b>Students</b> Please use the email on the course web page instead.
+	</p>
+      </td>
+    </tr>
+    <tr>
+      <th scope='row'>Office</th>
+      <td>
+	<a href='https://www.google.com/maps/place/Wean+Hall,+Carnegie+Mellon+University,+Pittsburgh,+PA+15213'>Wean Hall</a>, #6121.
+      </td>
+    </tr>
+    <tr>
+      <th scope='row'>Office Phone</th>
+      <td>
+	412 268 8419
+      </td>
+    </tr>
+    <tr>
+      <th scope='row'>Mailing address</th>
+      <td>
+	<address class='text-nowrap'>
+	  Gautam Iyer<br />
+	  Dept. of Mathematical Sciences, WEH #6113<br />
+	  Carnegie Mellon University<br />
+	  Pittsburgh, PA, 15213
+	</address>
+      </td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}
+
+{# vim: set ft=htmldjango: #}
