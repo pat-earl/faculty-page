@@ -1,0 +1,40 @@
+<@Jinja2> extends "_layouts/base.html"
+    {% block body %}
+      <div class="jumbotron">
+	{% block jumbotron %}
+	  <h1>Hello, world!</h1>
+	  <p>
+	    This is a template for a simple marketing or informational website.
+	    It includes a large callout called a jumbotron and three supporting
+	    pieces of content. Use it as a starting point to create something
+	    more unique.
+	  </p>
+	  <p>
+	    <a class="btn btn-primary btn-lg" href="#" role="button">
+	      Learn more &raquo;
+	    </a>
+	  </p>
+	{% endblock %}
+      </div>{# jumbotron #}
+
+      <div class="row">
+	<div class="col-md-9">
+	  {% block heading1 %}<h2>Heading 1</h2>{{ lipsum(1) }}{% endblock %}
+	</div>
+	<div class="col-md-3">
+	  <div class='row'>
+	    <div class='col-md-12 col-sm-6'>
+	      {% block heading2 %}
+		<h3>Heading 2</h3>{{ lipsum(1) }}
+	      {% endblock %}
+	    </div>
+	    <div class='col-md-12 col-sm-6'>
+	      {% block heading3 %}
+		<h3>Heading 3</h3>{{ lipsum(1) }}
+	      {% endblock %}
+	    </div>
+	  </div>{# row #}
+	</div>{# col-md-3 #}
+      </div>{# row #}
+    {% endblock body %}
+{# vim: set ft=htmldjango: #}

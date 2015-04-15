@@ -2,8 +2,33 @@
 <@Jinja2> set title = "Test page"
 <@Jinja2> set active = 'misc'
 {% block body %}
-<div class='container'>
+<h2>Column test</h2>
 
+<div class='row'>
+  <div class='col-md-6 bg-success'>
+    col-md-6
+  </div>
+  <div class='col-md-6 bg-info'>
+    col-md-6
+  </div>
+</div>
+<div class='row'>
+  <div class='col-md-9 bg-success'>
+    col-md-9
+  </div>
+  <div class='col-md-3'>
+    <div class='row'>
+      <div class='col-md-12 col-xs-6 bg-info'>
+	col-md-6
+      </div>
+      <div class='col-md-12 col-xs-6 bg-info'>
+	col-md-6
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Markdown test</h2>
 <div class='alert alert-info' role='alert'>
   <p class='lead'>
     This README can be used as a reference for github-flavored-markdown styling (and possibly behavior).
@@ -149,5 +174,4 @@ var test = function this_is(){
 [link]: http://a.b.c
 
 {% endmarkdown %}
-</div>
 {% endblock %}

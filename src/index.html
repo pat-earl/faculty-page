@@ -1,23 +1,33 @@
-<@Jinja2> extends "/_layouts/jumbotron633.html"
+<@Jinja2> extends "/_layouts/jumbotron93.html"
 {% block jumbotron %}
-  <div class='text-primary'>
-  {% markdown %}
 
-  # Gautam Iyer
+  <h1>Gautam Iyer</h1>
 
-  Associate Professor,
-  [Department of Mathematical Sciences](http://www.math.cmu.edu),
-  [Carnegie Mellon University](http://www.cmu.edu).
+  <p class='lead text-primary'>
+    Associate Professor,
+    <a href='http://www.math.cmu.edu'
+      class='text-nowrap hidden-xs'>
+	Department of Mathematical Sciences,
+    </a>
+    <a href='http://www.math.cmu.edu'
+      class='text-nowrap visible-xs-inline'>
+      Dept. of Math. Sci.,
+    </a>
+    <a class='text-nowrap' href='http://www.cmu.edu'>
+      Carnegie Mellon University.
+    </a>
+  </p>
 
-  {% endmarkdown %}
-  </div>
 {% endblock %}
 
 {% block heading1 %}
-<div class='media'>
-  <h2><a href='research'>Research Interests</a></h2>
+<div class='media lead'>
+  <h2>Research Interests</h2>
   <div class='media-left'>
-    <img class='media-object' src='research/img/mixing-diag-sol6.jpg'></img>
+    <img class='media-object img-responsive hidden-xs'
+      src='research/img/mixing-diag-sol6.jpg'></img>
+    <img class='media-object img-responsive visible-xs-block'
+      src='research/img/mixing-diag-sol6-xs.jpg'></img>
   </div>
   <div class='media-body text-justify'>
     {% markdown %}
@@ -39,10 +49,12 @@
     </small>
     {% endmarkdown %}
 
-    <p class='text-right'>
-      <a class="btn btn-primary" href="research#publications">Publications</a>
-      <a class="btn btn-primary" href="research">More info</a>
-    </p>
+    <div class='text-right'>
+      <div class='btn-group'>
+	<a class="btn btn-primary" href="research#publications">Publications</a>
+	<a class="btn btn-primary" href="research">More info</a>
+      </div>
+    </div>
 
   </div><!-- /media -->
 </div>
@@ -50,7 +62,7 @@
 {% endblock %}
 
 {% block heading2 %}{% markdown %}
-## Teaching
+### Teaching
 
 * 21-272: Introduction to PDE's
 
@@ -62,15 +74,13 @@
 {% endmarkdown %}{% endblock %}
 
 {% block heading3 %}{% markdown %}
-## Misc.
+### Misc.
 
 * Student notes and projects.
 
 * Open Source Code
 
 * Random tips "blog"
-
-
 {% endmarkdown %}{% endblock %}
 
 {# vim: set ft=htmldjango: #}
