@@ -4,6 +4,12 @@
 {% block body %}
 <h2>Column test</h2>
 
+{% from '_includes/publist' import publist %}
+{{ publist[0].title }}
+{% for a in publist[0].authors %}
+  {{a}},
+{% endfor %}
+
 <div class='row'>
   <div class='col-md-6 bg-success'>
     col-md-6

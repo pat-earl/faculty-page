@@ -6,3 +6,8 @@ body {
 */
 
 /* div.container p {text-align: justify} */
+.hyphenate {
+  -webkit-hyphens:  auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}

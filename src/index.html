@@ -1,17 +1,19 @@
 <@Jinja2> extends "/_layouts/jumbotron93.html"
+<@Jinja2> from "_includes/publist" import publist
+<@Jinja2> import "_includes/macros" as macros
 {% block jumbotron %}
 
   <h1>Gautam Iyer</h1>
 
   <p class='lead text-primary'>
     Associate Professor,
-    <a href='http://www.math.cmu.edu'
-      class='text-nowrap hidden-xs'>
+    <a href='http://www.math.cmu.edu' class='text-nowrap'>
+      <span class='hidden-xs'>
 	Department of Mathematical Sciences,
-    </a>
-    <a href='http://www.math.cmu.edu'
-      class='text-nowrap visible-xs-inline'>
-      Dept. of Math. Sci.,
+      </span>
+      <span class='visible-xs'>
+	Dept. of Math. Sci.,
+      </span>
     </a>
     <a class='text-nowrap' href='http://www.cmu.edu'>
       Carnegie Mellon University.
@@ -22,14 +24,13 @@
 
 {% block heading1 %}
 <div class='media lead'>
-  <h2>Research Interests</h2>
+  <h2><a href='research'>Research Interests</a></h2>
   <div class='media-left'>
-    <img class='media-object img-responsive hidden-xs'
-      src='research/img/mixing-diag-sol6.jpg'></img>
-    <img class='media-object img-responsive visible-xs-block'
-      src='research/img/mixing-diag-sol6-xs.jpg'></img>
+    <img class='media-object hidden-xs' src='research/img/mixing-diag-sol6.jpg'>
+      <img class='media-object visible-xs-inline'
+	src='research/img/mixing-diag-sol6-xs.jpg'>
   </div>
-  <div class='media-body text-justify'>
+  <div class='media-body text-justify hyphenate'>
     {% markdown %}
     My research concerns **"Theoretical Applied Math"** using tools from
     <em class='text-primary'>partial differential equations</em> and 
@@ -49,15 +50,22 @@
     </small>
     {% endmarkdown %}
 
-    <div class='text-right'>
-      <div class='btn-group'>
-	<a class="btn btn-primary" href="research#publications">Publications</a>
-	<a class="btn btn-primary" href="research">More info</a>
-      </div>
-    </div>
+  </div><!-- /media-body -->
+</div>{# /media #}
 
-  </div><!-- /media -->
+<h2><a href='research#publications'>Recent Publications</a></h2>
+
+<ul>
+  {{ macros.pubs( publist[0:5] ) }}
+</ul>
+<div class='text-right'>
+  <div class='btn-group'>
+    <a class="btn btn-default" href="research#publications">All publications</a>
+    <a class="btn btn-default" href="research/cv.pdf">CV</a>
+    <a class="btn btn-default" href="research">More info</a>
+  </div>
 </div>
+
 
 {% endblock %}
 

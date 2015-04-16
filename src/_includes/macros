@@ -1,0 +1,38 @@
+{% import '/_includes/site' as site %}
+{% macro pubs( list ) %}
+  {% for p in list %}
+    <li>
+      {% if p.link or p.jlink or p.code %}
+	<div class='btn-group text-nowrap' style='float: right'>
+	  {%- if p.link -%}
+	    <a class='btn btn-default btn-xs' href='{{site.url}}/research/{{p.link}}' title='Download unofficial draft'>
+	      <span class='glyphicon glyphicon-download'></span>
+	    </a>
+	  {% endif %}
+	  {% if p.twoup %}
+	    <a class='btn btn-default btn-xs' href='{{site.url}}/research/{{p.twoup}}' title='Download 2up draft for eco-friendly printing'>
+	      <span class='glyphicon glyphicon-tree-deciduous'></span>
+	    </a>
+	  {% endif %}
+	  {% if p.jlink %}
+	    <a class='btn btn-default btn-xs' href='{{p.jlink}}' title='Official journal link'>
+	      <span class='glyphicon glyphicon-book'></span>
+	    </a>
+	  {% endif %}
+	  {% if p.code %}
+	    <a class='btn btn-default btn-xs' href='{{site.url}}/research/{{p.code}}' title='Code and Figures'>
+	      <span class='glyphicon glyphicon-sunglasses'></span>
+	    </a>
+	  {%- endif -%}
+	</div>
+      {% endif %}
+      {% for a in p.authors %}
+	{{a}},
+      {% endfor %}
+      <i>{{p.title ~ (',' if p.journal else '.')}}</i>
+      <span class='text-info'>{{p.journal ~ ( '('~p.year~').' if p.year else '.' ) }}</span>
+    </li>
+  {% endfor %}
+{% endmacro %}
+  
+{# vim: set ft=htmldjango : #}

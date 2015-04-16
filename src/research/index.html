@@ -1,88 +1,261 @@
-<@Jinja2> extends "/_layouts/base.html"
+<@Jinja2> extends "_layouts/base.html"
+<@Jinja2> import "_includes/macros" as macros
+<@Jinja2> from "_includes/publist" import publist
 <@Jinja2> set active = 'research'
 <@Jinja2> set title = 'Research Interests and Publications'
 
 {% block body %}
 <h1>{{title}}</h1>
 
-<div class='col-md-6 lead'>{% markdown %}
-## Selected Research Projects
+<div class='row'>
+  <div class='col-md-6 lead text-justified hyphenate'>
+    {% markdown %}
+      ## Research Description
 
-### Adipisci illum reprehenderit earum magnam vero accusantium hic.
+      ### Adipisci illum reprehenderit earum magnam vero accusantium hic.
 
-Sint itaque error qui laborum qui qui. Animi quos voluptatum non et quis. Quae
-odit minima et odit. Est rerum omnis temporibus a temporibus.
+      Sint itaque error qui laborum qui qui. Animi quos voluptatum non et quis.
+      Quae odit minima et odit. Est rerum omnis temporibus a temporibus.
 
-At eius est eligendi rerum sequi sunt. Est tempore rem repellendus eius ab
-nihil distinctio quia. Fugiat quia quos voluptatibus iusto quia consequatur
-quod. Eius et omnis esse dolorum accusantium et.
+      At eius est eligendi rerum sequi sunt. Est tempore rem repellendus eius
+      ab nihil distinctio quia. Fugiat quia quos voluptatibus iusto quia
+      consequatur quod. Eius et omnis esse dolorum accusantium et.
 
-### Adipisci illum reprehenderit earum magnam vero accusantium hic.
+      ### Adipisci illum reprehenderit earum magnam vero accusantium hic.
 
-Sint itaque error qui laborum qui qui. Animi quos voluptatum non et quis. Quae
-odit minima et odit. Est rerum omnis temporibus a temporibus.
+      Sint itaque error qui laborum qui qui. Animi quos voluptatum non et quis.
+      Quae odit minima et odit. Est rerum omnis temporibus a temporibus.
 
-At eius est eligendi rerum sequi sunt. Est tempore rem repellendus eius ab
-nihil distinctio quia. Fugiat quia quos voluptatibus iusto quia consequatur
-quod. Eius et omnis esse dolorum accusantium et.
+      At eius est eligendi rerum sequi sunt. Est tempore rem repellendus eius
+      ab nihil distinctio quia. Fugiat quia quos voluptatibus iusto quia
+      consequatur quod. Eius et omnis esse dolorum accusantium et.
 
-{% endmarkdown %}</div>
-<div class='col-md-6'>{%markdown%}
+    {% endmarkdown %}
+  </div>{# /col-md-6 lead #}
+  <div class='col-md-6'>
+    {%markdown%}
+      ## Grant Support
 
-## Grant Support
+      My research is partially supported by:
 
-My research is partially supported by:
+      * An [NSF](http://www.nsf.gov) CAREER grant (DMS-1252912, 2013-2018).
 
-* An [NSF](http://www.nsf.gov) CAREER grant (DMS-1252912, 2013-2018).
+      * An [Alfred P. Sloan](http://www.sloan.org/sloan-research-fellowships)
+	research fellowship (2013).
 
-* An [Alfred P. Sloan](http://www.sloan.org/sloan-research-fellowships)
-  research fellowship (2013).
+      * The [Center for Nonlinear Analysis](http://www.math.cmu.edu/cna)
+    {% endmarkdown %}
 
-* The [Center for Nonlinear Analysis](http://www.math.cmu.edu/cna)
+    <h2><a name='publications'></a>Publications</h2>
 
-## <a name='publications'></a>Publications
+    <ul>
+      {{ macros.pubs( publist ) }}
+      {#
+      {{ macros.pub(
+	  authors=['G. Gie', 'C. Henderson', 'G. Iyer', 'L. Kavalie', 'J. P. Whitehead'],
+	  title='Stability of vortex solutions to an extended Navier-Stokes system',
+	  journal='Commun. Math. Sci.',
+	  year=2015,
+	  link='papers/201411-oseen.pdf',
+	  twoup='papers/201411-oseen-2up.pdf'
+	) }}
 
-* G. Gie, C. Henderson, G. Iyer, L. Kavalie, J. P. Whitehead Stability of vortex solutions to an extended Navier-Stokes system, Commun. Math. Sci. [PDF] [PDF (2up)].
+      {{ macros.pub(
+	  authors=['G. Iyer', 'A. Novikov'],
+	  title='Anomalous diffusion  in fast cellular flows at intermediate time scales',
+	  journal='Probab. Theory Related Fields',
+	  jlink='http://link.springer.com/journal/440',
+	  year=2015,
+	  link='papers/201406-adiffuse.pdf',
+	  twoup='papers/201406-adiffuse-2up.pdf'
+	) }}
 
-* G. Iyer, A. Novikov Anomalous diffusion in fast cellular flows at intermediate time scales. Probab. Theory Related Fields (2015). [PDF] [PDF (2up)].
+      {{ macros.pub(
+	  authors=['G. Iyer', 'X. Xu', 'A. D. Zarnescu'],
+	  title='Dynamic Cubic Instability in a 2D Q-tensor Model for Liquid Crystals',
+	  journal='Math. Models Methods Appl. Sci',
+	  jlink='http://www.worldscientific.com/worldscinet/m3as',
+	  year=2015,
+	  link='papers/201405-qtensor-instab.pdf',
+	  twoup='papers/201405-qtensor-instab-2up.ps'
+	) }}
 
-* G. Iyer, X. Xu, A. D. Zarnescu Dynamic Cubic Instability in a 2D Q-tensor Model for Liquid Crystals. Math. Models Methods Appl. Sci (2015). [PDF] [PS (2up)].
+      {{ macros.pub(
+	  authors=['G. Iyer', 'A. Kiselev', 'X. Xu'],
+	  title='Lower bounds on the mix norm of passive scalars advected by incompressible enstrophy-constrained flows',
+	  journal='Nonlinearity',
+	  jlink='http://stacks.iop.org/0951-7715/27/973',
+	  year=2014,
+	  link='papers/201208-mix-bounds.pdf',
+	  twoup='papers/201208-mix-bounds-2up.pdf',
+	  code='201208-mix-bounds'
+	) }}
 
-* G. Iyer, A. Kiselev, X. Xu Lower bounds on the mix norm of passive scalars advected by incompressible enstrophy-constrained flows. Nonlinearity (2014). [PDF] [PDF (2up)] [Code & figures].
+      {{ macros.pub(
+	  authors=['M. Ignatova', 'G. Iyer', 'J. P. Kelliher', 'R. L. Pego', 'A. D. Zarnescu'],
+	  title='Global existence for two extended Navier-Stokes systems',
+	  journal='Commun. Math. Sci.',
+	  jlink='http://intlpress.com/site/pub/pages/journals/items/cms/content/vols/0013/0001/a012/index.html',
+	  year=2015,
+	  link='papers/201308-llp-gexist.pdf',
+	  twoup='papers/201308-llp-gexist-2up.pdf'
+	) }}
 
-* M. Ignatova, G. Iyer, J. P. Kelliher, R. L. Pego, A. D. Zarnescu Global existence for two extended Navier-Stokes systems, Commun. Math. Sci. (2015) [PDF] [PDF (2up)].
+      {{ macros.pub(
+	  authors=['G. Iyer', 'N. Leger', 'R. L. Pego'],
+	  title='Limit theorems for Smoluchowski dynamics associated with critical continuous-state branching processes',
+	  journal='Ann. Appl. Probab.',
+	  year=2015,
+	  jlink='http://projecteuclid.org/euclid.aoap/1424355128',
+	  link='papers/201212-coagulation.pdf',
+	  twoup='papers/201212-coagulation-2up.pdf'
+	) }}
 
-* G. Iyer, N. Leger, R. L. Pego, Limit theorems for Smoluchowski dynamics associated with critical continuous-state branching processes, Ann. Appl. Probab. [PDF] [PDF (2up)].
+      {{ macros.pub(
+	  authors=['G. Iyer', 'R. L. Pego', 'A. D. Zarnescu'],
+	  title='Coercivity and stability results for an extended Navier-Stokes system',
+	  journal='J. Math Physics',
+	  year=2012,
+	  jlink='http://link.aip.org/link/?JMP/53/115605',
+	  link='papers/201202-extdyn.pdf',
+	  twoup='papers/201202-extdyn-2up.ps'
+	) }}
 
-* G. Iyer, R. L. Pego, A. D. Zarnescu, Coercivity and stability results for an extended Navier-Stokes system, J. Math Physics (2012). [PDF] [PS (2up)].
+      {{ macros.pub(
+	  authors=['G. Iyer', 'K. C. Zygalakis'],
+	  title='Numerical studies of homogenization under a fast cellular flow',
+	  journal='SIAM MMS',
+	  year=2012,
+	  jlink='http://dx.doi.org/10.1137/120861308',
+	  link='papers/201201-hnumerics.pdf',
+	  twoup='papers/201201-hnumerics-2up.pdf'
+	) }}
 
-* G. Iyer, K. C. Zygalakis, Numerical studies of homogenization under a fast cellular flow, SIAM MMS (2012). [PDF] [PDF (2up)].
+      {{ macros.pub(
+	  authors=['G. Iyer', 'T. Komorowski', 'A. Novikov', 'L. Ryzhik'],
+	  title='From homogenization to averaging in cellular flows',
+	  journal='Ann. Inst. H. Poincaré Anal. Non Linéaire.',
+	  year=2014,
+	  jlink='http://www.sciencedirect.com/science/article/pii/S0294144913000942',
+	  link='papers/201108-evalue.pdf',
+	  twoup='papers/201108-evalue.ps'
+	) }}
 
-* G. Iyer, T. Komorowski, A. Novikov, L. Ryzhik, From homogenization to averaging in cellular flows. Ann. Inst. H. Poincaré Anal. Non Linéaire. (2014). [PDF] [PS (Booklet)].
+      {{ macros.pub(
+	  authors=['P. Constantin', 'G. Iyer'],
+	  title='A stochastic-Lagrangian approach to the Navier-Stokes equations in domains with boundary',
+	  journal='Ann. Appl. Probab.',
+	  year=2011,
+	  jlink='http://projecteuclid.org/DPubS?service=UI&amp;version=1.0&amp;verb=Display&amp;handle=euclid.aoap/1312818842',
+	  link='papers/201003-bdddomains.pdf',
+	  twoup='papers/201003-bdddomains.ps'
+	) }}
 
-* P. Constantin, G. Iyer, A stochastic-Lagrangian approach to the Navier-Stokes equations in domains with boundary, Ann. Appl. Probab. (2011). [PDF] [PS (2up)].
+      {{ macros.pub(
+	  authors=['G. Iyer', 'A. Novikov', 'L. Ryzhik', 'A. Zlatos'],
+	  title='Exit times for diffusions with incompressible drift',
+	  journal='SIAM J. Math. Anal.',
+	  year=2010,
+	  jlink='http://epubs.siam.org/doi/abs/10.1137/090776895',
+	  link='papers/200911-bad-mixing-2d.pdf',
+	  twoup='papers/200911-bad-mixing-2d.ps'
+	) }}
 
-* G. Iyer, A. Novikov, L. Ryzhik, A. Zlatos, Exit times for diffusions with incompressible drift, SIAM J. Math. Anal. (2010). [PDF] [PS (2up)].
+      {{ macros.pub(
+	  authors=['G. Iyer', 'A. Novikov'],
+	  title='The regularizing effects of resetting in a particle system for the Burgers\' equation',
+	  journal='Ann. Probab.',
+	  year=2011,
+	  jlink='http://projecteuclid.org/DPubS?service=UI&amp;version=1.0&amp;verb=Display&amp;handle=euclid.aop/1312555805',
+	  link='papers/200811-resetting.pdf',
+	  twoup='papers/200811-resetting.ps'
+	) }}
 
-* G. Iyer, A. Novikov, The regularizing effects of resetting in a particle system for the Burgers' equation, Ann. Probab. (2011) [PDF] [PS (2up)].
+      {{ macros.pub(
+	  authors=['P. Constantin', 'G. Iyer', 'J. Wu'],
+	  title='Global regularity for a modified critical dissipative quasi-geostrophic equation',
+	  journal='Indiana Univ. Math. J.',
+	  year=2008,
+	  jlink='http://www.iumj.indiana.edu/oai/2008/57/3629/3629.xml',
+	  link='papers/200803-mqg.pdf',
+	  twoup='papers/200803-mqg.ps'
+	) }}
 
-* P. Constantin, G. Iyer, J. Wu, Global regularity for a modified critical dissipative quasi-geostrophic equation, Indiana Univ. Math. J. (2008). [PDF] [PS (Booklet)].
+      {{ macros.pub(
+	  authors=['G. Iyer', 'J. C. Mattingly'],
+	  title='A stochastic-Lagrangian particle system for the Navier-Stokes equations',
+	  journal='Nonlinearity',
+	  year=2008,
+	  jlink='http://iopscience.iop.org/0951-7715/21/11/004/',
+	  link='papers/200803-particle_method.pdf',
+	  twoup='papers/200803-particle_method.ps'
+	) }}
 
-* G. Iyer, J. C. Mattingly, A stochastic-Lagrangian particle system for the Navier-Stokes equations, Nonlinearity (2008). [PDF] [PS (Booklet)].
+      {{ macros.pub(
+	  authors=['G. Iyer'],
+	  title='A stochastic Lagrangian proof of global existence of the Navier-Stokes equations for flows with small Reynolds number',
+	  journal='Ann. Inst. H. Poincaré Anal. Non Linéaire',
+	  year=2009,
+	  jlink='http://www.sciencedirect.com/science/article/pii/S029414490700090X',
+	  link='papers/200702-gexist.pdf',
+	  twoup='papers/200702-gexist.ps'
+	) }}
 
-* G. Iyer, A stochastic Lagrangian proof of global existence of the Navier-Stokes equations for flows with small Reynolds number, Ann. Inst. H. Poincaré Anal. Non Linéaire (2009). [PDF] [PS (Booklet)].
+      {{ macros.pub(
+	  authors=['P. Constantin', 'G. Iyer'],
+	  title='Stochastic Lagrangian transport and generalized relative entropies',
+	  journal='Commun. Math. Sci.',
+	  year=2006,
+	  jlink='http://projecteuclid.org/DPubS?service=UI&amp;version=1.0&amp;verb=Display&amp;handle=euclid.cms/1175797610',
+	  link='papers/200608-sentropy.pdf',
+	  twoup='papers/200608-sentropy.ps'
+	) }}
 
-* P. Constantin, G. Iyer, Stochastic Lagrangian transport and generalized relative entropies, Commun. Math. Sci. (2006). [PDF] [PS (Booklet)].
+      {{ macros.pub(
+	  authors=['G. Iyer'],
+	  title='A stochastic Lagrangian formulation of the incompressible Navier-Stokes and related transport equation',
+	  journal='Ph.D. Thesis, University of Chicago',
+	  year=2006,
+	  jlink='http://search.proquest.com/docview/304953924',
+	  link='papers/200605-thesis.pdf',
+	  twoup='papers/200605-thesis.ps'
+	) }}
 
-* G. Iyer, A stochastic Lagrangian formulation of the incompressible Navier-Stokes and related transport equations, Ph.D. Thesis, University of Chicago (2006). [PDF] [PS (Booklet)].
+      {{ macros.pub(
+	  authors=['P. Constantin', 'G. Iyer'],
+	  title='A stochastic Lagrangian representation of the $3$-dimensional incompressible Navier-Stokes equations',
+	  journal='Comm. Pure Appl. Math.',
+	  year=2008,
+	  jlink='http://onlinelibrary.wiley.com/doi/10.1002/cpa.20192/abstract;jsessionid=BAF74593C993796122E02A8A12BE5238.d02t01',
+	  link='papers/200511-detsns.pdf',
+	  twoup='papers/200511-detsns.ps'
+	) }}
 
-* P. Constantin, G. Iyer, A stochastic Lagrangian representation of the $3$-dimensional incompressible Navier-Stokes equations, Comm. Pure Appl. Math. (2008). [PDF] [PS (Booklet)].
+      {{ macros.pub(
+	  authors=['G. Iyer'],
+	  title='A Stochastic perturbation of inviscid flows',
+	  journal='Comm. Math. Phys.',
+	  year=2006,
+	  jlink='http://www.springerlink.com/content/b7757155707l1571/?MUD=MP',
+	  link='papers/200505-sperturb.pdf',
+	  twoup='papers/200505-sperturb.ps'
+	) }}
 
-* G. Iyer, A Stochastic perturbation of inviscid flows, Comm. Math. Phys. (2006). [PDF] [PS (Booklet)].
+      {{ macros.pub(
+	  authors=['G. Iyer'],
+	  title='Transport in viscous rotating fluids',
+	  journal='Commun. Math. Sci.',
+	  year=2004,
+	  jlink='http://projecteuclid.org/DPubS?service=UI&amp;version=1.0&amp;verb=Display&amp;handle=euclid.cms/1109885502',
+	  link='papers/2004-vtrans.pdf',
+	  twoup='papers/2004-vtrans.ps'
+	) }}
+	#}
 
-* G. Iyer, Transport in viscous rotating fluids, Commun. Math. Sci. (2004). [PDF] [PS (Booklet)].
+    </ul>
 
-{% endmarkdown %}</div>
+  </div>{#/col-md-6#}
+</div>{#/row#}
 {% endblock %}
 
 {# vim: set ft=htmldjango: #}
