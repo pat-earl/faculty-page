@@ -3,11 +3,15 @@
     <div class='lead'>
       <h1>{{title|default('Set title to the document title')}}</h1>
 
-      {{toc}}
+      <h2>Contents</h2>
+      {{toc}}{# Looks like:<div class='toc'><ul>...</ul></div> #}
+
       {{content}}
-
-
-      Meta: {{random|e}}<br>
     </div>
   {% endblock body %}
+  {% block scripts %}
+    {{ super() }}
+    <script src='{{site.url}}/static/js/mathjax-config.js'></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  {% endblock %}
 {# vim: set ft=htmldjango: #}

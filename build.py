@@ -7,10 +7,32 @@ import optparse
 import os
 import shutil
 import markdown
+import sys
+
+pwd = os.path.dirname(os.path.realpath(__file__))
+if pwd == os.getcwd(): pwd = '.'
+sys.path.append( pwd + '/ext/python-markdown-math' )
+
+from mdx_math import MathExtension
 
 
 class Site( staticjinja.Site ):
     # Override a few methods to customize to my settings.
+
+    def get_context(self, template):
+	"Overridden to allow Site as an argument to the context function"
+        try:
+            context_generator = self._get_context_generator(template.name)
+        except ValueError:
+            return {}
+        else:
+            try:
+                return context_generator( self, template)
+            except TypeError:
+		try:
+		    return context_generator( template)
+		except TypeError:
+		    return context_generator()
 
     # Only copy static files if necessary (according to mtimes)
     def copy_static( self, files):
@@ -22,7 +44,17 @@ class Site( staticjinja.Site ):
 		    ( os.stat(src).st_mtime - os.stat(dst).st_mtime > 1 ):
 		print("Copying %s to %s." % (f, dst))
 		shutil.copyfile(src, dst)
-    #Site.copy_static = copy_static
+
+    def needs_rendering( self, template, filepath=None ):
+	src = os.path.join( self.searchpath, template.name )
+	if filepath is None:
+	    filepath = os.path.join(self.outpath, template.name)
+
+	if self.options.force or not os.path.isfile( filepath ) or \
+		os.stat(src).st_mtime - os.stat(filepath).st_mtime > 1:
+	    return filepath
+	else:
+	    return None
 
     # Only render templates if necessary (according to mtimes)
     def render_template( self, template, context=None, filepath=None):
@@ -33,12 +65,9 @@ class Site( staticjinja.Site ):
 	    rule = self.get_rule(template.name)
 	except ValueError:
 	    self._ensure_dir(template.name)
-	    if filepath is None:
-		filepath = os.path.join(self.outpath, template.name)
-	    src = os.path.join( self.searchpath, template.name )
 
-	    if self.options.force or not os.path.isfile( filepath ) or \
-		    os.stat(src).st_mtime - os.stat(filepath).st_mtime > 1:
+	    filepath = self.needs_rendering( template, filepath )
+	    if filepath:
 		self.logger.info("Rendering %s..." % template.name)
 		template.stream(**context).dump(filepath, self.encoding)
 	else:
@@ -58,24 +87,39 @@ class Site( staticjinja.Site ):
     def is_static( self, f ):
 	return True if self.static_re.match( f ) else False
 
-def markdown_get_context(template):
+def get_out_filename( site, src, out_ext='.html' ):
+    " Add the out_ext"
+    filepath = os.path.join(site.outpath, src)
+    (f, ext) = os.path.splitext( filepath )
+	 
+    return f + out_ext
+
+def markdown_get_context( self, template):
     """ Convert markdown to html and read into context variables """
-    with open(template.filename) as f:
-	md = markdown.Markdown( extensions=[
-	    'markdown.extensions.extra',
-	    'markdown.extensions.meta',
-	    'markdown.extensions.sane_lists',
-	    'markdown.extensions.smarty',
-	    'markdown.extensions.toc'
-	] )
-	html = md.convert( f.read() )
+    dst = get_out_filename( self, template.name )
 
-	context = { 'content': html, 'toc':  md.toc }
-	for key in md.Meta.keys():
-	    val = md.Meta[key]
-	    context[key] = val[0] if len( val ) == 1 else val
-	return context
+    if self.needs_rendering( template, dst ):
+	with open(template.filename) as f:
+	    md = markdown.Markdown( extensions=[
+		'markdown.extensions.extra',
+		'markdown.extensions.codehilite',
+		'markdown.extensions.meta',
+		'markdown.extensions.sane_lists',
+		'markdown.extensions.smarty',
+		'markdown.extensions.toc',
+		'markdown.extensions.wikilinks',
+		MathExtension(enable_dollar_delimiter=True)
+	    ] )
+	    html = md.convert( f.read() )
 
+	    context = { 'content': html, 'toc':  md.toc }
+	    for key in md.Meta.keys():
+		val = md.Meta[key]
+		context[key] = val[0] if len( val ) == 1 else val
+	    return context
+
+    else:
+	return None
 
 # compilation rule
 def markdown_render(self, template, context=None, filepath=None):
@@ -87,19 +131,15 @@ def markdown_render(self, template, context=None, filepath=None):
     layout = os.path.join( '_layouts', layout or "md-default.html")
     post_template = self.get_template(layout)
 
-    self._ensure_dir( template.name )
     if filepath is None:
-	filepath = os.path.join(self.outpath, template.name)
-	(f, ext) = os.path.splitext( filepath )
-	if ext == '.md':
-	    filepath = f + '.html'
+	filepath = get_out_filename( self, template.name )
+    self._ensure_dir( filepath )
     src = os.path.join( self.searchpath, template.name )
 
     if self.options.force or not os.path.isfile( filepath ) or \
 	    os.stat(src).st_mtime - os.stat(filepath).st_mtime > 1:
 	self.logger.info("Rendering %s..." % template.name)
-
-    post_template.stream(**context).dump( filepath, self.encoding)
+	post_template.stream(**context).dump( filepath, self.encoding)
 
 
 if __name__ == "__main__":
@@ -115,18 +155,15 @@ if __name__ == "__main__":
 
     ( options, args ) = parser.parse_args()
 
-    pwd = os.path.dirname(os.path.realpath(__file__))
-    if pwd == os.getcwd(): pwd = '.'
-
     site = staticjinja.make_site(
 	    searchpath=pwd + '/src',
 	    outpath=pwd + ('/out-prod' if options.production else '/out'),
 	    extensions=[MarkdownExtension],
 	    contexts=[
-		('.*.md', markdown_get_context),
+		('.*\.md', markdown_get_context),
 	    ],
 	    rules=[
-		('.*.md', markdown_render),
+		('.*\.md', markdown_render),
 	    ],
 	)
     # Type cast to my class
