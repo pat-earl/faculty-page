@@ -1,0 +1,39 @@
+<@Jinja2> extends "_layouts/base.html"
+<@Jinja2> set active = 'teaching'
+<@Jinja2> set title = 'Teaching'
+
+{% block body %}
+
+<h1>{{title}}</h1>
+
+{% markdown %}
+
+## Lecture notes
+
+* 372 wiki
+
+## Current courses
+
+* a
+
+* b
+
+## Previous courses
+
+* a
+
+* b
+
+## Student Projects
+
+### Masters Thesis
+
+### Lecture notes
+
+* a
+
+* b
+
+{% endmarkdown %}
+{% endblock %}
+{# vim: set ft=htmldjango: #}
