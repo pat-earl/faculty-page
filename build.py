@@ -73,7 +73,7 @@ class Site( staticjinja.Site ):
 	else:
 	    rule(self, template, context, filepath)
 
-    ignored_re = re.compile( '.*\.(?:swp|un~)$', flags=re.I )
+    ignored_re = re.compile( r'.*\.(?:swp|un~)$', flags=re.I )
     def is_ignored( self, f ):
 	return True if self.ignored_re.match( f ) else False
 
@@ -97,29 +97,39 @@ def get_out_filename( site, src, out_ext='.html' ):
 def markdown_get_context( self, template):
     """ Convert markdown to html and read into context variables """
     dst = get_out_filename( self, template.name )
-
-    if self.needs_rendering( template, dst ):
-	with open(template.filename) as f:
-	    md = markdown.Markdown( extensions=[
-		'markdown.extensions.extra',
-		'markdown.extensions.codehilite',
-		'markdown.extensions.meta',
-		'markdown.extensions.sane_lists',
-		'markdown.extensions.smarty',
-		'markdown.extensions.toc',
-		'markdown.extensions.wikilinks',
-		MathExtension(enable_dollar_delimiter=True)
-	    ] )
-	    html = md.convert( f.read() )
-
-	    context = { 'content': html, 'toc':  md.toc }
-	    for key in md.Meta.keys():
-		val = md.Meta[key]
-		context[key] = val[0] if len( val ) == 1 else val
-	    return context
-
-    else:
+    if not self.needs_rendering( template, dst ):
 	return None
+
+    if not hasattr( markdown_get_context, 'md' ):
+	markdown_get_context.md = markdown.Markdown( extensions=[
+	    'markdown.extensions.extra',
+	    'markdown.extensions.codehilite',
+	    'markdown.extensions.meta',
+	    'markdown.extensions.sane_lists',
+	    'markdown.extensions.smarty',
+	    'markdown.extensions.toc',
+	    'markdown.extensions.wikilinks',
+	    MathExtension(enable_dollar_delimiter=True)
+	] )
+	markdown_get_context.mathre = re.compile(
+		'.*<script\\s*type\\s*=\s*[\'"]math/tex(\\s|[\'";])',
+		re.DOTALL )
+
+    with open(template.filename) as f:
+	md = markdown_get_context.md
+	mathre = markdown_get_context.mathre
+	md.reset()
+	html = md.convert( f.read() )
+
+	context = { 'content': html, 'toc':  md.toc }
+	if mathre.match( html ):
+	    print "File %s needs MathJax" % template.filename
+	    context['needs_mathjax'] = 1
+	
+	for key in md.Meta.keys():
+	    val = md.Meta[key]
+	    context[key] = val[0] if len( val ) == 1 else val
+	return context
 
 # compilation rule
 def markdown_render(self, template, context=None, filepath=None):
@@ -171,6 +181,9 @@ if __name__ == "__main__":
 
     site.options = options
     site.args = args
+
+    if options.production:
+      site.ignored_re = re.compile( '^test|' + site.ignored_re.pattern )
 
     # Tweak the Jinja2 environment
     site._env.line_statement_prefix = '<@Jinja2>'

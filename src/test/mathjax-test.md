@@ -30,12 +30,13 @@ $$
   \grad u = \partial_x u \hat x + \partial_y u \hat y = \partial_r u \hat r + \frac{1}{r} \partial_\theta u \hat \theta.
 $$
 Now we compute
-$$
+\begin{multline*}
   \lap u
     = \dv \grad u
     = (\grad \partial_r u) \cdot \hat r + \partial_r u (\dv \hat r) + (\grad \frac{1}{r} \partial_\theta u) \cdot \hat \theta + 0
+  \\
     = \partial_r^2 u + \partial_r u (\dv \hat r) + \frac{1}{r^2} \partial_\theta^2 u.
-$$
+\end{multline*}
 
 To finish the calculation, we only need to compute $\dv \hat r$.
 We do this as follows

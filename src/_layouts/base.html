@@ -63,11 +63,18 @@
       {% include '_layouts/frag/footer.html' %}
     {% endblock %}
 
-    {% block scripts %}
+    {# Hopefully this will inherit the needs_mathjax variable #}
+    {% block scripts scoped %}
       {# jQuery (necessary for Bootstrap's JavaScript plugins) #}
-      {% set min = '.min' if dev_env == 'production' else '' -%}
+      {% if dev_env == 'production' %}
+	{% set min = '.min' %}
+	{% set jquery_cdn = 'https://ajax.googleapis.com/ajax/libs/jquery' %}
+      {% else %}
+	{% set min = '' %}
+	{% set jquery_cdn = site.url ~ '/static/jquery' %}
+      {% endif %}
       <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery{{min}}.js">
+	src="{{jquery_cdn}}/1.11.2/jquery{{min}}.js">
       </script>
       {#
 	Include all compiled plugins (below), or include individual files as
@@ -76,7 +83,12 @@
       <script
 	src="{{site.url}}/static/bootstrap/js/bootstrap{{min}}.js">
       </script>
-    {% endblock %}
+      {% if needs_mathjax %}
+	<script src='{{site.url}}/static/js/mathjax-config.js'></script>
+	<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+	<script src='{{site.url}}/static/js/local.js'></script>
+      {% endif %}
+    {% endblock scripts %}
   </body>
 </html>
 {# vim: set ft=htmldjango: #}
