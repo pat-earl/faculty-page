@@ -11,3 +11,20 @@ body {
   -moz-hyphens: auto;
   hyphens: auto;
 }
+
+.toc ul {
+  list-style: none;
+  padding-left: 2ex
+}
+
+.toc ul li.active {
+  font-weight: bold;
+}
+
+.toc ul li {
+  font-weight: normal;
+}
+
+.affix {
+  top: 0px;
+}
