@@ -1,6 +1,8 @@
 {% extends "_layouts/sidenav.html" %}
 {% block main_column %}
-  {{ content }}
+  <div class='lead'>{# Get a readable font! #}
+    {{ content }}
+  </div>
 {% endblock %}
 {% block nav_column %}
   {{toc}}{# Looks like:<div class='toc'><ul>...</ul></div> #}

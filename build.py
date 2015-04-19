@@ -123,7 +123,6 @@ def markdown_get_context( self, template):
 
 	context = { 'content': html, 'toc':  md.toc }
 	if mathre.match( html ):
-	    print "File %s needs MathJax" % template.filename
 	    context['needs_mathjax'] = 1
 	
 	for key in md.Meta.keys():
@@ -143,7 +142,7 @@ def markdown_render(self, template, context=None, filepath=None):
 
     if filepath is None:
 	filepath = get_out_filename( self, template.name )
-    self._ensure_dir( filepath )
+    self._ensure_dir( template.name )
     src = os.path.join( self.searchpath, template.name )
 
     if self.options.force or not os.path.isfile( filepath ) or \

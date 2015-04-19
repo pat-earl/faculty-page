@@ -5,12 +5,11 @@
 {%- set navbar_left = [
     ( 'research',  'Research' ),
     ( 'teaching',	'Teaching' ),
-    ( 'students',   	'Student Projects' ),
+    ( 'contact.html',   'CV/Contact' ),
 ] %}
 {%- set navbar_right = [
     ( 'code',		'Code' ),
     ( 'blog',		'Blog' ),
-    ( 'contact.html',   'Contact' ),
 ] -%}
 {%- if dev_env == 'production' -%}
     {%- set host = 'http://www.math.cmu.edu' -%}

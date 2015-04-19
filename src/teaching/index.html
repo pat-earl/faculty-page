@@ -1,0 +1,169 @@
+{% extends '_layouts/sidenav.html' %}
+{% set active = 'teaching' %}
+
+{% block main_column %}
+  <div class='lead'>
+    <h2 id="courses">Courses</h2>
+    {% set old_teaching = 'http://www.math.cmu.edu/~gautam/teaching' %}
+    <ul>
+
+      <li>
+	<a role='button' href='#old-courses' data-toggle='collapse'>Long list of previous courses (at CMU).</a>
+	{#
+	<button class="btn btn-default" type="button" data-toggle="collapse" data-target="#old-courses" aria-expanded="false" aria-controls="old-courses">
+	  Show/hide
+	</button> #}
+	<div id='old-courses' class='collapse'>
+	  <ul>
+	    <li>
+	      <a href='{{old_teaching}}/2011-12/269-vector-analysis/'>269: Vector Analysis</a>
+	      <!-- spring -->
+	    </li>
+	    <li>
+	      341: Linear algebra
+	      <ul>
+		<li><a href='{{old_teaching}}/2009-10/341-linear-algebra/'>2009 (Fall)</a></li>
+		<li><a href='{{old_teaching}}/2010-11/341-linear-algebra/'>2010 (Spring)</a></li>
+	      </ul>
+	    </li>
+	    <li>
+	      372: PDE
+	      <ul>
+		<li>
+		  <a href='{{old_teaching}}/2011-12/372-pde/'>2012 (Spring)</a>
+		</li>
+		<li>
+		  <a href='{{old_teaching}}/2012-13/372-pde/'>2013 (Spring)</a>
+		</li>
+		<li>
+		  <a href='{{old_teaching}}/2013-14/372-pde/'>2014 (Spring)</a>
+		</li>
+	      </ul>
+	    </li>
+	    <li>
+	      720: Measure Theory
+	      <ul>
+		<li><a href='{{old_teaching}}/2012-13/720-measure/'>2012 (Fall)</a></li>
+		<li><a href='{{old_teaching}}/2013-14/720-measure/'>2013 (Fall)</a></li>
+		<li><a href='{{old_teaching}}/2014-15/720-measure/'>2014 (Fall)</a></li>
+	      </ul>
+	    </li>
+	    <li>
+	      880: Stochastic Calculus
+	      <ul>
+		<li><a href='{{old_teaching}}/2010-11/880-advanced-scalc1/'>2010 (Fall)</a></li>
+		<li><a href='{{old_teaching}}/2011-12/880-advanced-scalc/'>2011 (Fall)</a></li>
+		<li><a href='{{old_teaching}}/2012-13/880-scalc/'>2012 (Fall)</a></li>
+		<li><a href='{{old_teaching}}/2013-14/880-scalc/'>2013 (Fall)</a></li>
+	      </ul>
+	    </li>
+	    <li>
+	      <a href='{{old_teaching}}/2009-10/881-advanced-scalc2/'
+		>881: Stochastic Calculus II</a>
+	    </li>
+	    <li>
+	      <a href='{{old_research}}/201208-fluids-working-group'>
+		Fluids working group
+	      </a>
+	    </li>
+	  </ul>
+	</div>
+      </li>
+    </ul>
+    <h2 id="lecture-notes">Lecture notes</h2>
+    <ul>
+      <li>
+	<p>
+	  <a href="http://wiki.math.cmu.edu/iki/2014-372/">Undergraduate PDE</a>.
+	  (See also the <a href='{{old_teaching}}/2013-14/372-pde/'>class website</a> for problems and references. I have LaTeX solutions to all problems, which I can share with instructors who are interested.)
+	</p>
+	<p class='small'>
+	  These notes are a "free and open source" wiki.
+	  If you'd like to modify them heavily and use them in your own course, you can <a href='http://wiki.math.cmu.edu/gitweb-pub/?p=2014-372-wiki.git;a=summary'>clone the repository</a> (or ask me to host a cloned copy for you).
+	</p>
+      </li>
+    </ul>
+    <h2 id="student-projects">Student Projects</h2>
+
+    <h3 id="masters-thesis">Masters Thesis</h3>
+
+    <ul>
+      <li>
+	<a href="http://intfxdx.com/">James T. Murphy III</a>'s Masters Thesis:
+	<em>Resolving the one-dimensional autonomous flow-free explosion problem</em>
+	(Published in <a href="http://www.siam.org/students/siuro/vol7/index.php">SIURO</a>
+	<a href="http://www.siam.org/students/siuro/vol7/S01319.pdf">here</a>.)
+      </li>
+    </ul>
+
+    <h3 id="student-lecture-notes">Student Lecture Notes</h3>
+
+    <p>
+      These lecture notes have been
+      <span class='text-primary'>written entirely by students</span>
+      while taking courses taught by me.
+      They are all open-sourced, meaning you are free to edit, modify and redistribute them (under the terms stated in the respective licenses).
+    </p>
+      
+    <p class='small'>
+      All credit (or blame?) for these notes goes to the students who wrote them.
+      (My only contribution is teaching the course and setting up the websites to host them.)
+    </p>
+
+    <ul>
+      <li>
+	Measure Theory:
+	<ul>
+	  <li>
+	    <a href="{{old_teaching}}/2013-14/720-measure/pdfs/eugenes-notes.pdf">
+	      Lecture notes by Eugene Choi (2013/14).
+	    </a>
+	  </li>
+	  <li>
+	    <a href='{{old_teaching}}/2014-15/720-measure/pdfs/adams-notes.pdf'>
+	      Lecture notes by Adam Gutter (2014/15).
+	    </a>
+	  </li>
+	  <li>
+	    <a href="http://wiki.math.cmu.edu/gitweb-pub/?p=201312-measure.git;a=summary">
+	    The LaTeX source for both notes.
+	    </a>
+	  </li>
+	  <li>
+	    <a href='{{old_teaching}}/2014-15/720-measure/'>Class website</a> for problems and references.
+	  </li>
+	</ul>
+      </li>
+      <li>
+	Stochastic Calculus
+	<ul>
+	  <li>
+	    <a href="https://lecturenotes.math.cmu.edu/mediawiki/index.php/Stochastic_Calculus_(Fall_2012)">Lecture notes wiki</a> by Ryan Murray, Jimmy Murphy and others.
+	  </li>
+	  <li>
+	    <a href="{{old_teaching}}/2013-14/880-scalc/">Class website</a> for problems and references.
+	  </li>
+	</ul>
+    </ul>
+
+  </div><!-- /lead -->
+{% endblock %}
+
+{% block nav_column %}
+  <div class='toc'>
+    <ul>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#lecture-notes">Lecture Notes</a></li>
+      <li>
+	<a href="#student-projects">Student Projects</a>
+	<ul>
+	  <li><a href="#masters-thesis">Masters Thesis</a></li>
+	  <li><a href="#student-lecture-notes">Student Lecture Notes</a></li>
+	</ul>
+      </li>
+    </ul>
+  </div>
+{% endblock %}
+
+
+{# vim: set ft=htmldjango: #}
