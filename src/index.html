@@ -1,12 +1,11 @@
 {% extends "/_layouts/jumbotron93.html" %}
 {% from "_includes/publist" import publist %}
 {% import "_includes/macros" as macros %}
-{% block jumbotron %}
-
+{% block jumbotron %}{# {{{ #}
   <h1>Gautam Iyer</h1>
 
   <p class='lead text-primary'>
-    Associate Professor,
+    Assistant Professor,
     <a href='http://www.math.cmu.edu' class='text-nowrap'>
       <span class='hidden-xs'>
 	Department of Mathematical Sciences,
@@ -19,77 +18,70 @@
       Carnegie Mellon University.
     </a>
   </p>
+{% endblock %}{# }}} #}
+{% block heading1 %}{# {{{ #}
+  <div class='media lead'>
+    <h2><a href='research'>Research Interests</a></h2>
+    <div class='media-left'>
+      <img class='media-object hidden-xs' src='research/img/mixing-diag-sol6.jpg'>
+	<img class='media-object visible-xs-inline'
+	  src='research/img/mixing-diag-sol6-xs.jpg'>
+    </div>
+    <div class='media-body text-justify hyphenate'>
+      {% markdown %}
+      My research concerns **"Theoretical Applied Math"** using tools from
+      <em class='text-primary'>partial differential equations</em> and 
+      <em class='text-primary'>probability</em>.
+      More specifically, I've studied on a variety of problems related to
+      anomalous diffusion,
+      coagulation,
+      fluid mechanics,
+      homogenization,
+      Q-tensors
+      and
+      mixing.
 
-{% endblock %}
+      <small>
+      **Grant Support:**
+      *NSF CAREER* (2013--2018) and an *Alfred P. Sloan* research fellowship.
+      </small>
+      {% endmarkdown %}
 
-{% block heading1 %}
-<div class='media lead'>
-  <h2><a href='research'>Research Interests</a></h2>
-  <div class='media-left'>
-    <img class='media-object hidden-xs' src='research/img/mixing-diag-sol6.jpg'>
-      <img class='media-object visible-xs-inline'
-	src='research/img/mixing-diag-sol6-xs.jpg'>
+    </div><!-- /media-body -->
+  </div>{# /media #}
+
+  <h2><a href='research#publications'>Recent Publications</a></h2>
+
+  <ul>
+    {{ macros.pubs( publist[0:5] ) }}
+  </ul>
+  <div class='text-right'>
+    <div class='btn-group'>
+      <a class="btn btn-default" href="research#publications">All publications</a>
+      <a class="btn btn-default" href="research/cv.pdf">CV</a>
+      <a class="btn btn-default" href="research">More info</a>
+    </div>
   </div>
-  <div class='media-body text-justify hyphenate'>
-    {% markdown %}
-    My research concerns **"Theoretical Applied Math"** using tools from
-    <em class='text-primary'>partial differential equations</em> and 
-    <em class='text-primary'>probability</em>.
-    More specifically, I've studied on a variety of problems related to
-    anomalous diffusion,
-    coagulation,
-    fluid mechanics,
-    homogenization,
-    Q-tensors
-    and
-    mixing.
-
-    <small>
-    **Grant Support:**
-    *NSF CAREER* (2013--2018) and an *Alfred P. Sloan* research fellowship.
-    </small>
-    {% endmarkdown %}
-
-  </div><!-- /media-body -->
-</div>{# /media #}
-
-<h2><a href='research#publications'>Recent Publications</a></h2>
-
-<ul>
-  {{ macros.pubs( publist[0:5] ) }}
-</ul>
-<div class='text-right'>
-  <div class='btn-group'>
-    <a class="btn btn-default" href="research#publications">All publications</a>
-    <a class="btn btn-default" href="research/cv.pdf">CV</a>
-    <a class="btn btn-default" href="research">More info</a>
-  </div>
-</div>
-
-
-{% endblock %}
-
-{% block heading2 %}{% markdown %}
-### Teaching
+{% endblock %}{# }}} #}
+{% block heading2 %}{% markdown %}{# {{{ #}
+### [Teaching](teaching)
 
 * 21-272: Introduction to PDE's
 
 * 21-355: Real Analysis 1
 
-* Previous courses
+* [Previous Courses](teaching#previous-courses)
 
-* Lecture notes
+* [Lecture Notes](teaching#lecture-notes)
 
-* Student notes and projects.
+* [Student notes and projects](teaching#student-projects)
 
-{% endmarkdown %}{% endblock %}
-
-{% block heading3 %}{% markdown %}
+{% endmarkdown %}{% endblock %}{# }}} #}
+{% block heading3 %}{% markdown %}{# {{{ #}
 ### Misc.
 
 * Open Source Code
 
 * Random tips "blog"
-{% endmarkdown %}{% endblock %}
-
+{% endmarkdown %}{% endblock %}{# }}} #}
 {# vim: set ft=htmldjango: #}
