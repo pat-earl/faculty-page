@@ -180,4 +180,4 @@
     'twoup'	: 'papers/2004-vtrans.ps'
   }
 ) %}
-{# vim: set ft=htmldjango : #}
+{# vim: set ft=jinja : #}

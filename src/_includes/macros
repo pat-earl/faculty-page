@@ -38,5 +38,4 @@
     </li>
   {% endfor %}
 {% endmacro %}
-  
-{# vim: set ft=htmldjango : #}
+{# vim: set ft=jinja #}

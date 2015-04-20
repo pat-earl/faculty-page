@@ -1,24 +1,23 @@
 {% extends "_layouts/base.html" %}
-  {% block bodyargs %}
-    style='position: relative' data-spy='scroll' data-target='#side-nav'
-  {% endblock %}
-  {% block body %}
-    <div class='row'>
-      <div class='col-md-9'>
-	{% block main_column %}
-	<h1>{{title|default('Set title to the document title')}}</h1>
+{% block bodyargs %}
+  style='position: relative' data-spy='scroll' data-target='#side-nav'
+{% endblock %}
+{% block body %}
+  <div class='row'>
+    <div class='col-md-9'>
+      {% block main_column %}
+      <h1>{{title|default('Set title to the document title')}}</h1>
 
-	{{ lipsum() }}
-	{% endblock %}
-      </div>
-      <div class='col-md-3 hidden-sm hidden-xs' id='side-nav'>
-	<nav data-spy='affix' data-offset-top='60'
-	    data-clampedwidth='#side-nav' class='nav'>
-	  {% block nav_column %}
-	    {# Should look like:<div class='toc'><ul>...</ul></div> #}
-	  {% endblock nav_column %}
-	</nav>
-      </div>
+      {{ lipsum() }}
+      {% endblock %}
     </div>
-  {% endblock body %}
-{# vim: set ft=htmldjango: #}
+    <div class='col-md-3 hidden-sm hidden-xs' id='side-nav'>
+      <nav data-spy='affix' data-offset-top='60'
+	  data-clampedwidth='#side-nav' class='nav'>
+	{% block nav_column %}
+	  {# Should look like:<div class='toc'><ul>...</ul></div> #}
+	{% endblock nav_column %}
+      </nav>
+    </div>
+  </div>
+{% endblock body %}
