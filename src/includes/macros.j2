@@ -1,4 +1,4 @@
-{% import '/_includes/site' as site %}
+{% import 'includes/site.j2' as site %}
 {% macro pubs( list ) %}
   {% for p in list %}
     <li>
@@ -38,4 +38,3 @@
     </li>
   {% endfor %}
 {% endmacro %}
-{# vim: set ft=jinja #}

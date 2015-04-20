@@ -1,4 +1,4 @@
-{% import '_includes/site' as site %}
+{% import 'includes/site.j2' as site %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,7 +43,7 @@
 	show up in included files.
       #}
       <!-- {{ site.short_title }} / {{ active }} -->
-      {% include '_layouts/frag/nav.html' %}
+      {% include 'layouts/frag/nav.j2' %}
     {% endblock %}
 
     <div class='container'>
@@ -60,7 +60,7 @@
 	show up in included files.
       #}
       <!-- {{ site.short_title }} / {{page_footer|e}} -->
-      {% include '_layouts/frag/footer.html' %}
+      {% include 'layouts/frag/footer.j2' %}
     {% endblock %}
 
     {# Hopefully this will inherit the needs_mathjax variable #}

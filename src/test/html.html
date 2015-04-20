@@ -1,10 +1,10 @@
-<@Jinja2> extends "/_layouts/base.html"
-<@Jinja2> set title = "Test page"
-<@Jinja2> set active = 'misc'
+{% extends "layouts/base.j2" %}
+{% set title = "Test page" %}
+{% set active = 'misc' %}
 {% block body %}
 <h2>Column test</h2>
 
-{% from '_includes/publist' import publist %}
+{% from 'includes/publist.j2' import publist %}
 {{ publist[0].title }}
 {% for a in publist[0].authors %}
   {{a}},

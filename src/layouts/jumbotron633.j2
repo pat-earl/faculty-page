@@ -1,4 +1,4 @@
-{% extends "_layouts/base.html" %}
+{% extends "layouts/base.j2" %}
 {% block body %}
   <div class="jumbotron">
     {% block jumbotron %}
@@ -10,21 +10,21 @@
 
   <!-- Example row of columns -->
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
       {% block heading1 %}
 	<h2>Heading 1</h2>
 	{{ lipsum(1) }}
-	<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+	<p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
       {% endblock %}
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       {% block heading2 %}
 	<h2>Heading 2</h2>
 	{{ lipsum(1) }}
 	<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
       {% endblock %}
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       {% block heading3 %}
 	<h2>Heading 3</h2>
 	{{ lipsum(1) }}

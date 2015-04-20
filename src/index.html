@@ -1,6 +1,7 @@
-{% extends "/_layouts/jumbotron93.html" %}
-{% from "_includes/publist" import publist %}
-{% import "_includes/macros" as macros %}
+{% extends "layouts/jumbotron93.j2" %}
+{% from "includes/publist.j2" import publist %}
+{% import "includes/macros.j2" as macros %}
+{% from 'teaching/sections.j2' import secs %}
 {% block jumbotron %}{# {{{ #}
   <h1>Gautam Iyer</h1>
 
@@ -23,8 +24,9 @@
   <div class='media lead'>
     <h2><a href='research'>Research Interests</a></h2>
     <div class='media-left'>
-      <img class='media-object hidden-xs' src='research/img/mixing-diag-sol6.jpg'>
-	<img class='media-object visible-xs-inline'
+      <img class='media-object img-rounded hidden-xs'
+          src='research/img/mixing-diag-sol6.jpg'>
+      <img class='media-object img-rounded visible-xs-inline'
 	  src='research/img/mixing-diag-sol6-xs.jpg'>
     </div>
     <div class='media-body text-justify hyphenate'>
@@ -70,11 +72,11 @@
 
 * 21-355: Real Analysis 1
 
-* [Previous Courses](teaching#previous-courses)
+* [{{secs.previous_courses}}](teaching#previous_courses)
 
-* [Lecture Notes](teaching#lecture-notes)
+* [{{secs.lecture_notes}}](teaching#lecture_notes)
 
-* [Student notes and projects](teaching#student-projects)
+* [{{secs.student_projects}}](teaching#student_projects)
 
 {% endmarkdown %}{% endblock %}{# }}} #}
 {% block heading3 %}{% markdown %}{# {{{ #}

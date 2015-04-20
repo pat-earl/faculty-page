@@ -77,7 +77,7 @@ class Site( staticjinja.Site ):
     def is_ignored( self, f ):
 	return True if self.ignored_re.match( f ) else False
 
-    partial_re = re.compile( '(?:^|.*/)_' ) 
+    partial_re = re.compile( '(?:^|.*/)_|.*\.j2$' ) 
     def is_partial( self, f):
 	return True if self.partial_re.match( f ) else False
 
@@ -137,7 +137,7 @@ def markdown_render(self, template, context=None, filepath=None):
 	layout = context['meta']['layout']
     except:
 	layout = ''
-    layout = os.path.join( '_layouts', layout or "md-default.html")
+    layout = os.path.join( 'layouts', layout or "md-default.j2")
     post_template = self.get_template(layout)
 
     if filepath is None:

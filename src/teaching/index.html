@@ -1,213 +1,104 @@
-{% extends '_layouts/sidenav.html' %}
+{% extends 'layouts/sidenav.j2' %}
+{% from 'teaching/courses.j2' import courses %}
+{% from 'teaching/courses.j2' import old_teaching %}
+{% from 'teaching/sections.j2' import secs %}
 {% set active = 'teaching' %}
 {% block main_column %}
-  {% macro heading(level, t, slug) %}
-    <h{{level}} id='{{slug}}'>{{t}}</h{{level}}>
-  {% endmacro %}
   <div>
-    {{heading( 2, "Courses", 'courses' )}}{# {{{1 #}
-    {{heading( 3, "Current Courses", 'current-courses' )}}
+{% markdown %}
+<h2 id='courses'>{{secs.courses}}</h2>{# {{{1 #}
 
-    <p>I'm not teaching this semester</p>
+<h3 id='current_courses'>{{secs.current_courses}}</h3>
 
-    {{heading( 3, "Previous Courses (at CMU)", 'previous-courses')}}
-    <p>
-      These are websites from all courses I have taught at CMU.
-      The homework, exams and syllabus should be accessible to anyone.
-      Solutions of more recent courses should be accessible to CMU faculty.
-    </p>
-    {% set old_teaching = 'http://www.math.cmu.edu/~gautam/teaching' %}
-    {% set courses = (
-        ( 269, 'Vector Analysis', (
-            ( 2012, 's', old_teaching ~ '/2011-12/269-vector-analysis/' ),
-        )),
-        ( 341, 'Linear algebra', (
-            ( 2009, 'f', old_teaching ~ '/2009-10/341-linear-algebra/' ),
-            ( 2011, 's', old_teaching ~ '/2010-11/341-linear-algebra/' ),
-        )),
-        ( 372, "PDE's and Fourier Analysis", (
-            ( 2012, 's', old_teaching ~ '/2011-12/372-pde/' ),
-            ( 2013, 's', old_teaching ~ '/2012-13/372-pde/' ),
-            ( 2014, 's', old_teaching ~ '/2013-14/372-pde/' ),
-        )),
-        ( 720, "Measure Theory", (
-            ( 2012, 'f', old_teaching ~ '/2012-13/720-measure/' ),
-            ( 2013, 'f', old_teaching ~ '/2013-14/720-measure/' ),
-            ( 2014, 'f', old_teaching ~ '/2014-15/720-measure/' ),
-        )),
-        ( 820, "Stochastic Calculus", (
-            ( 2010, 'f', old_teaching ~ '/2010-11/880-advanced-scalc1/' ),
-            ( 2011, 'f', old_teaching ~ '/2011-12/880-advanced-scalc/' ),
-            ( 2012, 'f', old_teaching ~ '/2012-13/880-scalc/' ),
-            ( 2013, 'f', old_teaching ~ '/2013-14/880-scalc/' ),
-        )),
-        ( 881, "Advanced Stochastic Calculus II", (
-            ( 2010, 's', old_teaching ~ '/2009-10/881-advanced-scalc2/' ),
-        )),
-        ( 0, "Fluids working group", (
-            ( 2012, 'f', old_research ~ '/201208-fluids-working-group' ),
-        )),
-      ) %}
-      <dl class='dl-horizontal'>{# {{{ #}
-        {% for (cn, ct, rest) in courses %}
-          <dt>{{(cn ~ ': ') if cn else ''}}{{ct}}</dt>
-          <dd>
-            <ul class='list-inline'>
-              {% for (cy, cs, cl) in rest %}
-                <li>
-                  <a href='{{cl}}'>
-                    {{ 'Spring' if cs == 's' else
-                        ( 'Fall' if cs == 'f' else cs ) }}
-                    {{cy}}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          </dd>
-        {% endfor %}
-      </dl>{# }}} #}
-      {% if 0 %}{# {{{ #}
-      <ul>
-        {% for (cn, ct, rest) in courses %}
+I'm not teaching this semester
+
+<h3 id='previous_courses'>{{secs.previous_courses}}</h3>
+
+These are websites from all courses I have taught at CMU.
+The homework, exams and syllabus should be accessible to anyone.
+Solutions of more recent courses should be accessible to CMU faculty.
+
+<dl class='dl-horizontal'>{# {{{ #}
+  {% for (cn, ct, rest) in courses %}
+    <dt>{{(cn ~ ': ') if cn else ''}}{{ct}}</dt>
+    <dd>
+      <ul class='list-inline'>
+        {% for (cy, cs, cl) in rest %}
           <li>
-            {% set cs=slug( ((cn~' ') if cn else '') ~ct) %}
-            <a href='#{{cs}}' role='button' data-toggle='collapse'>
-              {{cn}}: {{ct}}
+            <a href='{{cl}}'>
+              {{ 'Spring' if cs == 's' else
+                  ( 'Fall' if cs == 'f' else cs ) }}
+              {{cy}}
             </a>
-            <ul id='{{cs}}' class='collapse'>
-              {% for (cy, cs, cl) in rest %}
-                <li>
-                  <a href='{{cl}}'>
-                    {{ 'Spring' if cs == 's' else
-                        ( 'Fall' if cs == 'f' else cs ) }}:
-                    {{cy}}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
           </li>
         {% endfor %}
       </ul>
-      {% endif %}{# }}} #}
-    {{ heading( 2, "Lecture Notes", 'lecture-notes' )}}{# {{{1 #}
-    <ul>
-      <li>
-	<p>
-	  <a href="http://wiki.math.cmu.edu/iki/2014-372/">Undergraduate PDE</a>.
-	  (See also the <a href='{{old_teaching}}/2013-14/372-pde/'>class website</a> for problems and references. I have LaTeX solutions to all problems, which I can share with instructors who are interested.)
-	</p>
-	<p>
-	  These notes are a "free and open source" wiki.
-	  If you'd like to modify them heavily and use them in your own course, you can <a href='http://wiki.math.cmu.edu/gitweb-pub/?p=2014-372-wiki.git;a=summary'>clone the repository</a> (or ask me to host a cloned copy for you).
-	</p>
-      </li>
-    </ul>
-    {{ heading( 2, "Student Projects", 'student-projects' ) }}{# {{{1 #}
+    </dd>
+  {% endfor %}
+</dl>{# }}} #}
 
-    {{ heading( 3, "Student Lecture Notes", 'student-lecture-notes' ) }}{# {{{2 #}
+<h2 id='lecture_notes'>{{secs.lecture_notes}}</h2>{# {{{1 #}
 
-    <p>
-      These lecture notes have been
-      <span class='text-primary'>written entirely by students</span>
-      while taking courses taught by me.
-      They are all open-sourced, meaning you are free to edit, modify and redistribute them (under the terms stated in the respective licenses).
-    </p>
-      
-    <p>
-      All credit (or blame?) for these notes goes to the students who wrote them.
-      (My only contribution is teaching the course and setting up the websites to host them.)
-    </p>
+*   [Undergraduate PDE](http://wiki.math.cmu.edu/iki/2014-372/)
+    (See also the [class website]({{old_teaching}}/2013-14/372-pde/) for
+    problems and references. I have LaTeX solutions to all problems, which I
+    can share with instructors who are interested.)
 
-    <ul>
-      <li>
-	Measure Theory:
-	<ul>
-	  <li>
-	    <a href="{{old_teaching}}/2013-14/720-measure/pdfs/eugenes-notes.pdf">
-	      Lecture notes by Eugene Choi (2013/14).
-	    </a>
-	  </li>
-	  <li>
-	    <a href='{{old_teaching}}/2014-15/720-measure/pdfs/adams-notes.pdf'>
-	      Lecture notes by Adam Gutter (2014/15).
-	    </a>
-	  </li>
-	  <li>
-	    <a href="http://wiki.math.cmu.edu/gitweb-pub/?p=201312-measure.git;a=summary">
-	    The LaTeX source for both notes.
-	    </a>
-	  </li>
-	  <li>
-	    <a href='{{old_teaching}}/2014-15/720-measure/'>Class website</a> for problems and references.
-	  </li>
-	</ul>
-      </li>
-      <li>
-	Stochastic Calculus
-	<ul>
-	  <li>
-	    <a href="https://lecturenotes.math.cmu.edu/mediawiki/index.php/Stochastic_Calculus_(Fall_2012)">Lecture notes wiki</a> by Ryan Murray, Jimmy Murphy and others.
-	  </li>
-	  <li>
-	    <a href="{{old_teaching}}/2013-14/880-scalc/">Class website</a> for problems and references.
-	  </li>
-	</ul>
-    </ul>
+    These notes are a "free and open source" wiki.
+    If you'd like to modify them heavily and use them in your own course, you can
+    [clone the repository](http://wiki.math.cmu.edu/gitweb-pub/?p=2014-372-wiki.git;a=summary)
+    (or ask me to host a cloned copy for you).
 
-    {{ heading( 3, "Masters Thesis", 'masters-thesis' ) }}{# {{{2 #}
+<h2 id='student_projects'>{{secs.student_projects}}</h2>{# {{{1 #}
 
-    <ul>
-      <li>
-	<a href="http://intfxdx.com/">James T. Murphy III</a>'s Masters Thesis:
-	<em>Resolving the one-dimensional autonomous flow-free explosion problem</em>
-	(Published in <a href="http://www.siam.org/students/siuro/vol7/index.php">SIURO</a>
-	<a href="http://www.siam.org/students/siuro/vol7/S01319.pdf">here</a>.)
-      </li>
-    </ul>
+<h3 id='student_lecture_notes'>{{secs.student_projects}}</h3>{# {{{2 #}
 
-    {# }}}1 #}
+These lecture notes have been <span class='text-primary'>written entirely by
+students</span> while taking courses taught by me. They are all open-sourced,
+meaning you are free to edit, modify and redistribute them (under the terms
+stated in the respective licenses).
+
+All credit (or blame?) for these notes goes to the students who wrote them.
+(My only contribution is teaching the course and setting up the websites to host them.)
+
+* Measure Theory:
+
+    * [Lecture notes by Eugene Choi (2013/14)]({{old_teaching}}/2013-14/720-measure/pdfs/eugenes-notes.pdf")
+
+    * [Lecture notes by Adam Gutter (2014/15)]({{old_teaching}}/2014-15/720-measure/pdfs/adams-notes.pdf')
+
+    * [The LaTeX source for both notes](http://wiki.math.cmu.edu/gitweb-pub/?p=201312-measure.git;a=summary)
+
+    * [Class website]({{old_teaching}}/2014-15/720-measure/)
+
+* Stochastic Calculus:
+
+    * [Lecture notes wiki](https://lecturenotes.math.cmu.edu/mediawiki/index.php/Stochastic_Calculus_(Fall_2012))
+      by Ryan Murray, Jimmy Murphy and others.
+
+    * [Class website]({{old_teaching}}/2013-14/880-scalc/)
+
+<h3 id='masters_thesis'>{{secs.masters_thesis}}</h3>{# {{{2 #}
+
+* [James T. Murphy III](http://intfxdx.com/),
+  *Resolving the one-dimensional autonomous flow-free explosion problem*
+  (Published in [SIURO](http://www.siam.org/students/siuro/vol7/index.php)
+  [here](http://www.siam.org/students/siuro/vol7/S01319.pdf).)
+
+{# }}}1 #}
+{% endmarkdown %}
   </div><!-- /lead -->
 {% endblock %}
 {% block nav_column %}{# {{{ #}
   <div class='toc'>
-    {% set navs= (
-      { 'heading' : ( 'Courses', 'courses' ),
-        'sub_headings' : (
-          { 'heading' : ( 'Current Courses', 'current-courses' ) },
-          { 'heading' : ( 'Previous Courses (at CMU)', 'previous-courses' ) },
-        )
-      },
-      { 'heading' : ( 'Lecture Notes', 'lecture-notes' ) },
-      { 'heading' : ( 'Student Projects', 'student-projects' ),
-        'sub_headings' : (
-          { 'heading' : ( 'Student Lecture Notes', 'student-lecture-notes' )},
-          { 'heading' : ( 'Masters Thesis', 'masters-thesis' ) },
-        )
-      }
-    ) %}
-    <ul>
-      {%- for t in navs recursive -%}
-        <li>
-          <a href='#{{t.heading[1]}}'>{{t.heading[0]}}</a>
-          {%- if t.sub_headings -%}
-            <ul>{{ loop( t.sub_headings ) }}</ul>
-          {%- endif -%}
-        </li>
-      {%- endfor -%}
-    </ul>
-    {{headings}}
-    {# 
-    <ul>
-      <li><a href="#course-websites">Course Websites</a></li>
-      <li><a href="#lecture-notes">Lecture Notes</a></li>
-      <li>
-	<a href="#student-projects">Student Projects</a>
-	<ul>
-	  <li><a href="#student-lecture-notes">Student Lecture Notes</a></li>
-	  <li><a href="#masters-thesis">Masters Thesis</a></li>
-	</ul>
-      </li>
-    </ul>
-    #}
+    {% markdown %}
+    * [{{secs.courses}}](#courses)
+        * [{{secs.current_courses}}](#current_courses)
+        * [{{secs.previous_courses}}](#previous_courses)
+    * [{{secs.lecture_notes}}](#lecture_notes)
+    * [{{secs.student_projects}}](#student_projects)
+        * [{{secs.student_lecture_notes}}](#student_lecture_notes)
+        * [{{secs.masters_thesis}}](#masters_thesis)
+    {% endmarkdown %}
   </div>
 {% endblock %}{# }}} #}

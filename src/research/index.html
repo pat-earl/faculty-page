@@ -1,8 +1,8 @@
-<@Jinja2> extends "_layouts/base.html"
-<@Jinja2> import "_includes/macros" as macros
-<@Jinja2> from "_includes/publist" import publist
-<@Jinja2> set active = 'research'
-<@Jinja2> set title = 'Research Interests and Publications'
+{% extends "layouts/base.j2" %}
+{% import "includes/macros.j2" as macros %}
+{% from "includes/publist.j2" import publist %}
+{% set active = 'research' %}
+{% set title = 'Research Interests and Publications' %}
 
 {% block body %}
 <h1>{{title}}</h1>
