@@ -1,9 +1,17 @@
 {% import 'includes/site.j2' as site %}
+{% macro cite( vargs ) -%}
+  {%- for p in vargs -%}
+  <a href='{{p.jlink}}'>
+    {{- p.sjournal ~ ' ' ~ ( p.year % 1000 ) -}}
+    {%- if not loop.last -%}, {% endif -%}
+  </a>
+  {%- endfor -%}
+{%- endmacro -%}
 {% macro pubs( list ) %}
   {% for p in list %}
     <li>
       {% if p.link or p.code %}
-	<div class='btn-group text-nowrap' style='float: right'>
+	<div class='btn-group text-nowrap tight-float-right'>
 	  {%- if p.link -%}
 	    <a class='btn btn-default btn-xs' href='{{site.url}}/research/{{p.link}}' title='Download preprint'>
 	      <span class='glyphicon glyphicon-download'></span>

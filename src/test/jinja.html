@@ -1,0 +1,11 @@
+{% extends 'layouts/base.j2' %}
+{% block body %}
+<div class='lead'>
+  {% set a = { 'd' : 1, 'b': 2, 'c' : 3 } %}
+
+  {{ a }}
+  {% for key in a %}
+    {{key ~ a[key]}}
+  {% endfor %}
+</div>
+{% endblock %}

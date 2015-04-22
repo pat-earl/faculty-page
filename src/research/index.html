@@ -1,6 +1,6 @@
 {% extends "layouts/base.j2" %}
 {% import "includes/macros.j2" as macros %}
-{% from "includes/publist.j2" import publist %}
+{% import "includes/publist.j2" as p %}
 {% set active = 'research' %}
 {% set title = 'Research Interests and Publications' %}
 
@@ -8,18 +8,23 @@
 <h1>{{title}}</h1>
 
 <div class='row'>
-  <div class='col-md-6 lead text-justified hyphenate'>
+  <div class='col-md-6 text-justified hyphenate'>
     {% markdown %}
       ## Research Description
 
-      ### Adipisci illum reprehenderit earum magnam vero accusantium hic.
+      <img class='img-rounded float-left hidden-xs'
+          src='img/mixing-diag-sol6.jpg'>
+      <img class='img-rounded float-left visible-xs-inline'
+	  src='img/mixing-diag-sol6-xs.jpg'>
+      ### Mixing by Incompressible Flows
 
-      Sint itaque error qui laborum qui qui. Animi quos voluptatum non et quis.
-      Quae odit minima et odit. Est rerum omnis temporibus a temporibus.
+      Can you stir your coffee to keep it hot for longer?
+      How much "work" do you have to do to stir cream into your coffee?
+      Mathematically this reduces to obtaining precise estimates for solutions to certain PDE's
+      
+      *Related papers:*
+      {{ macros.cite( [p.pubs.badmixing, p.pubs.mixbounds] ) }}.
 
-      At eius est eligendi rerum sequi sunt. Est tempore rem repellendus eius
-      ab nihil distinctio quia. Fugiat quia quos voluptatibus iusto quia
-      consequatur quod. Eius et omnis esse dolorum accusantium et.
 
       ### Adipisci illum reprehenderit earum magnam vero accusantium hic.
 
@@ -49,7 +54,7 @@
     <h2><a name='publications'></a>Publications</h2>
 
     <ul>
-      {{ macros.pubs( publist ) }}
+      {{ macros.pubs( p.publist ) }}
     </ul>
 
   </div>{#/col-md-6#}

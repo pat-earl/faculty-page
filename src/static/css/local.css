@@ -12,6 +12,20 @@ body {
   hyphens: auto;
 }
 
+img.float-left {
+  /* padding: 0ex .5ex .5ex 0ex; */
+  padding-right: 10px;
+  padding-top: 10px;
+  float: left;
+  clear: left;
+}
+
+.tight-float-right {
+  float: right;
+  clear: right;
+}
+
+/* Right navigation {{{ */
 nav.nav > div.toc ul {
   list-style: none;
   padding-left: 2ex;
@@ -38,3 +52,4 @@ nav.nav > div.toc ul ul ul ul {
 .affix {
   top: 0px;
 }
+/* }}} */
