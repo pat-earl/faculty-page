@@ -7,8 +7,8 @@
 {% block body %}
 <h1>{{title}}</h1>
 
-<div class='row'>
-  <div class='col-md-6 text-justified hyphenate'>
+<div class='text-justify hyphenate'>
+    {# {{{
     {% markdown %}
       ## Research Description
 
@@ -20,43 +20,60 @@
 
       Can you stir your coffee to keep it hot for longer?
       How much "work" do you have to do to stir cream into your coffee?
-      Mathematically this reduces to obtaining precise estimates for solutions to certain PDE's
+      Mathematically this translates to obtaining precise estimates for solutions to certain PDE's, which is what motivated this part of my research.
       
-      *Related papers:*
       {{ macros.cite( [p.pubs.badmixing, p.pubs.mixbounds] ) }}.
-
-
-      ### Adipisci illum reprehenderit earum magnam vero accusantium hic.
-
-      Sint itaque error qui laborum qui qui. Animi quos voluptatum non et quis.
-      Quae odit minima et odit. Est rerum omnis temporibus a temporibus.
-
-      At eius est eligendi rerum sequi sunt. Est tempore rem repellendus eius
-      ab nihil distinctio quia. Fugiat quia quos voluptatibus iusto quia
-      consequatur quod. Eius et omnis esse dolorum accusantium et.
-
     {% endmarkdown %}
-  </div>{# /col-md-6 lead #}
-  <div class='col-md-6'>
-    {%markdown%}
-      ## Grant Support
+    }}} #}
+  {%markdown%}
+    ## Grant Support
 
-      My research is partially supported by:
+    My research is partially supported by:
 
-      * An [NSF](http://www.nsf.gov) CAREER grant (DMS-1252912, 2013-2018).
+    * An [NSF](http://www.nsf.gov) CAREER grant (DMS-1252912, 2013-2018).
 
-      * An [Alfred P. Sloan](http://www.sloan.org/sloan-research-fellowships)
-	research fellowship (2013).
+    * An [Alfred P. Sloan](http://www.sloan.org/sloan-research-fellowships)
+      research fellowship (2013).
 
-      * The [Center for Nonlinear Analysis](http://www.math.cmu.edu/cna)
-    {% endmarkdown %}
+    * The [Center for Nonlinear Analysis](http://www.math.cmu.edu/cna)
+  {% endmarkdown %}
 
-    <h2><a name='publications'></a>Publications</h2>
+  <h2><a name='publications'></a>Publications</h2>
 
-    <ul>
-      {{ macros.pubs( p.publist ) }}
-    </ul>
+  {% set tags = [
+    ( 'all', 'All Publications' ),
+    ( 'coagulation', 'Coagulation' ),
+    ( 'fluids', 'Fluid Dynamics' ),
+    ( 'homogenization', 'Homogenization' ),
+    ( 'liquid crystals', 'Liquid Crystals' ),
+    ( 'mixing', 'Mixing' ),
+    ( 'pde', 'Partial Differential Equations' ),
+    ( 'probability', 'Probability' ),
+  ] %}
+  <ul class='nav nav-tabs' role='tablist'>
+    {% for t, T in tags %}
+    <li role='presentation' {% if loop.first %}class='active'{% endif %}>
+      <a href="#pubs-{{t|replace( ' ', '-' )}}" role='tab' data-toggle='tab'>
+	{{t | capitalize}}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  <div class='tab-content'>
+    {% for t, T in tags %}
+      <div role='tabpanel' class='tab-pane{% if loop.first %} active{% endif %}'
+	  id="pubs-{{t|replace(' ', '-')}}">
+	<h3>{{T}}</h3>
 
-  </div>{#/col-md-6#}
-</div>{#/row#}
+	<ul>
+	  {% if loop.first %}
+	    {{ macros.pubs( p.publist ) }}
+	  {% else %}
+	    {{ macros.tpubs( p.publist, t )}}
+	  {% endif %}
+	</ul>
+      </div>
+    {% endfor %}
+  </div>
+</div>{#/text-justify hyphenate#}
 {% endblock %}

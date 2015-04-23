@@ -17,6 +17,6 @@
 {%- else -%}
     {%- set host = '' -%}
     {%- set prefix = '' -%}
-    {%- set navbar_right = navbar_right + [ ( 'test', 'Test' ) ] %}
+    {%- set _ = navbar_right.append( ( 'dev/test', 'Test' ) ) %}
 {%- endif -%}
 {%- set url = host + prefix -%}

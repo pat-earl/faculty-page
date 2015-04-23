@@ -1,0 +1,24 @@
+{% extends 'layouts/base.j2' %}
+{% import "includes/macros.j2" as macros %}
+{% import "includes/publist.j2" as p %}
+{% block body %}
+<div class='lead'>
+  <h2>Tagged pubs</h2>
+  {{ macros.tpubs( p.publist, 'A. Novikov' ) }}
+
+  <h2>Random tests</h2>
+  {% for a in p.publist %}
+    {% if 'A. Novikov' in a.authors %}
+      {{a.title}}<br>
+    {% endif %}
+  {% endfor %}
+
+  {% for a in p.publist | groupby( 'authors' ) %}
+    <b>Grouper: {{ a.grouper }}</b><br>
+      {% for b in a.list %}
+	{{b.title}}<br>
+      {% endfor %}
+  {% endfor %}
+
+</div>
+{% endblock %}

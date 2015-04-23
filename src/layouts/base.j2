@@ -15,9 +15,15 @@
     </title>
 
     {% block stylesheets %}
-      {% set min = '.min' if dev_env == 'production' else '' -%}
+      {% if dev_env == 'production' %}
+	{% set min = '.min' %}
+	{% set bootstrap_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap' %}
+      {% else %}
+	{% set min = '' %}
+	{% set bootstrap_cdn = site.url ~ '/dev/static/bootstrap' %}
+      {% endif %}
       <link rel="stylesheet"
-	href="{{site.prefix}}/static/bootstrap/css/bootstrap{{min}}.css">
+	href="{{bootstrap_cdn}}/3.3.4/css/bootstrap{{min}}.css">
       <link rel="stylesheet"
 	href="{{site.prefix}}/static/css/pygments-theme.css">
       <link rel="stylesheet" href="{{site.prefix}}/static/css/local.css">
@@ -69,10 +75,13 @@
       {% if dev_env == 'production' %}
 	{% set min = '.min' %}
 	{% set jquery_cdn = 'https://ajax.googleapis.com/ajax/libs/jquery' %}
+	{% set bootstrap_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap' %}
       {% else %}
 	{% set min = '' %}
-	{% set jquery_cdn = site.url ~ '/static/jquery' %}
+	{% set jquery_cdn = site.url ~ '/dev/static/jquery' %}
+	{% set bootstrap_cdn = site.url ~ '/dev/static/bootstrap' %}
       {% endif %}
+
       <script
 	src="{{jquery_cdn}}/1.11.2/jquery{{min}}.js">
       </script>
@@ -81,13 +90,20 @@
 	needed
       #}
       <script
-	src="{{site.url}}/static/bootstrap/js/bootstrap{{min}}.js">
+	src="{{bootstrap_cdn}}/3.3.4/js/bootstrap{{min}}.js">
       </script>
+
       {% if needs_mathjax %}
 	<script src='{{site.url}}/static/js/mathjax-config.js'></script>
 	<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
-	<script src='{{site.url}}/static/js/local.js'></script>
       {% endif %}
+
+      {% if dev_env != 'production' and live_reload %}
+	<script src='{{site.url}}/dev/static/livejs/live.js'></script>
+      {% endif %}
+
+
+      <script src='{{site.url}}/static/js/local.js'></script>
     {% endblock scripts %}
   </body>
 </html>

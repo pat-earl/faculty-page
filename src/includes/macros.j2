@@ -7,18 +7,29 @@
   </a>
   {%- endfor -%}
 {%- endmacro -%}
+
+{%- macro tpubs( all, tag ) %}
+  {%- set flist = [] -%}
+  {%- for p in all -%}
+    {%- if tag in p.tags -%}
+      {%- set _ = flist.append(p) %}
+    {%- endif -%}
+  {%- endfor -%}
+  {{- pubs( flist ) -}}
+{%- endmacro -%}
+
 {% macro pubs( list ) %}
   {% for p in list %}
     <li>
       {% if p.link or p.code %}
 	<div class='btn-group text-nowrap tight-float-right'>
 	  {%- if p.link -%}
-	    <a class='btn btn-default btn-xs' href='{{site.url}}/research/{{p.link}}' title='Download preprint'>
+	    <a class='btn btn-default btn-xs' href='{{site.url}}/research/papers/{{p.link}}' title='Download preprint'>
 	      <span class='glyphicon glyphicon-download'></span>
 	    </a>
 	  {% endif %}
 	  {% if p.twoup %}
-	    <a class='btn btn-default btn-xs' href='{{site.url}}/research/{{p.twoup}}' title='Download 2up preprint for eco-friendly printing'>
+	    <a class='btn btn-default btn-xs' href='{{site.url}}/research/papers/{{p.twoup}}' title='Download 2up preprint for eco-friendly printing'>
 	      <span class='glyphicon glyphicon-print'></span>
 	    </a>
 	  {% endif %}

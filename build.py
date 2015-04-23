@@ -82,7 +82,7 @@ class Site( staticjinja.Site ):
 	return True if self.partial_re.match( f ) else False
 
     static_re  = re.compile(
-	    'static/(?!.*\.(:?swp|un~)$)|.*\.(:?pdf|jpg|png|svg|eps|ps)$',
+	    '(?:(?:.*/)?static/(?!.*\.(:?swp|un~)$)|.*\.(:?pdf|jpg|png|svg|eps|ps)$)',
 	    flags=re.I )
     def is_static( self, f ):
 	return True if self.static_re.match( f ) else False
@@ -182,7 +182,8 @@ if __name__ == "__main__":
     site.args = args
 
     if options.production:
-      site.ignored_re = re.compile( '^test|' + site.ignored_re.pattern )
+      site.ignored_re = re.compile( 'dev|' + site.ignored_re.pattern )
+      site.static_re = re.compile( '(?!dev)' + site.static_re.pattern )
 
     # Tweak the Jinja2 environment
     site._env.line_statement_prefix = '<@Jinja2>'

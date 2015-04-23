@@ -1,4 +1,5 @@
 title: Markdown test
+active: dev/test
 
 <div class='alert alert-info' role='alert'>
   <p class='lead'>

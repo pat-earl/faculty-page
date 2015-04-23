@@ -1,4 +1,5 @@
 title: MathJax tests
+active: dev/test
 
 ## Some Math Imported from the 372 media-wiki page.
 
