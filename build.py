@@ -134,7 +134,7 @@ def markdown_get_context( self, template):
 def markdown_render(self, template, context=None, filepath=None):
     """Render a template as a post."""
     try:
-	layout = context['meta']['layout']
+	layout = context['layout']
     except:
 	layout = ''
     layout = os.path.join( 'layouts', layout or "md-default.j2")
