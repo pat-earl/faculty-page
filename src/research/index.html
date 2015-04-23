@@ -40,27 +40,47 @@
 
   <h2><a name='publications'></a>Publications</h2>
 
-  {% set tags = [
+  {% set base_tags = [
     ( 'all', 'All Publications' ),
-    ( 'coagulation', 'Coagulation' ),
-    ( 'fluids', 'Fluid Dynamics' ),
-    ( 'homogenization', 'Homogenization' ),
-    ( 'liquid crystals', 'Liquid Crystals' ),
-    ( 'mixing', 'Mixing' ),
     ( 'pde', 'Partial Differential Equations' ),
     ( 'probability', 'Probability' ),
   ] %}
+  {% set more_tags = [
+    ( 'coagulation', 'Coagulation' ),
+    ( 'fluids', 'Fluid Dynamics' ),
+    ( 'harmonic analysis', 'Harmonic Analysis' ),
+    ( 'homogenization', 'Homogenization' ),
+    ( 'liquid crystals', 'Liquid Crystals' ),
+    ( 'mixing', 'Mixing' ),
+  ] %}
   <ul class='nav nav-tabs' role='tablist'>
-    {% for t, T in tags %}
+    {% for t, T in base_tags %}
     <li role='presentation' {% if loop.first %}class='active'{% endif %}>
       <a href="#pubs-{{t|replace( ' ', '-' )}}" role='tab' data-toggle='tab'>
 	{{t | capitalize}}
       </a>
     </li>
     {% endfor %}
+    <li role='presentation' class="dropdown">
+      <a id="dLabel" role="button" data-toggle="dropdown"
+	  aria-haspopup="true" aria-expanded="false">
+	More
+	<span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+	{% for t, T in more_tags %}
+	  <li role='presentation'>
+	    <a href="#pubs-{{t|replace( ' ', '-' )}}" role='tab' data-toggle='tab'>
+	      {{t | capitalize}}
+	    </a>
+	  </li>
+	{% endfor %}
+      </ul>
+    </li>
   </ul>
+
   <div class='tab-content'>
-    {% for t, T in tags %}
+    {% for t, T in base_tags + more_tags %}
       <div role='tabpanel' class='tab-pane{% if loop.first %} active{% endif %}'
 	  id="pubs-{{t|replace(' ', '-')}}">
 	<h3>{{T}}</h3>

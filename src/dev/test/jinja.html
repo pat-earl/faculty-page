@@ -1,24 +1,33 @@
 {% extends 'layouts/base.j2' %}
 {% import "includes/macros.j2" as macros %}
 {% import "includes/publist.j2" as p %}
+
+{% block all %}
+  Hello world
+{% endblock %}
+
 {% block body %}
-<div class='lead'>
-  <h2>Tagged pubs</h2>
-  {{ macros.tpubs( p.publist, 'A. Novikov' ) }}
+  <div class='lead'>
+    <h2>Calling blocks</h2>
+    {% set blockname = 'all' %}
+    Block: {{ self[blockname]() }}
 
-  <h2>Random tests</h2>
-  {% for a in p.publist %}
-    {% if 'A. Novikov' in a.authors %}
-      {{a.title}}<br>
-    {% endif %}
-  {% endfor %}
+    <h2>Tagged pubs</h2>
+    {{ macros.tpubs( p.publist, 'A. Novikov' ) }}
 
-  {% for a in p.publist | groupby( 'authors' ) %}
-    <b>Grouper: {{ a.grouper }}</b><br>
-      {% for b in a.list %}
-	{{b.title}}<br>
-      {% endfor %}
-  {% endfor %}
+    <h2>Random tests</h2>
+    {% for a in p.publist %}
+      {% if 'A. Novikov' in a.authors %}
+	{{a.title}}<br>
+      {% endif %}
+    {% endfor %}
 
-</div>
+    {% for a in p.publist | groupby( 'authors' ) %}
+      <b>Grouper: {{ a.grouper }}</b><br>
+	{% for b in a.list %}
+	  {{b.title}}<br>
+	{% endfor %}
+    {% endfor %}
+
+  </div>{# /lead #}
 {% endblock %}
