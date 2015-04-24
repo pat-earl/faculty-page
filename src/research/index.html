@@ -8,35 +8,69 @@
 <h1>{{title}}</h1>
 
 <div class='text-justify hyphenate'>
-    {# {{{
-    {% markdown %}
-      ## Research Description
+  <div class='row'>
+    <div class='col-md-8'>
+      {# {{{ #}
+      <div class='media lead'>
+	<h2>Research Interests</h2>
+	<div class='media-left'>
+	  <img class='media-object img-rounded hidden-xs'
+	      src='img/mixing-diag-sol6.jpg'>
+	  <img class='media-object img-rounded visible-xs-inline'
+	      src='img/mixing-diag-sol6-xs.jpg'>
+	</div>
+	<div class='media-body text-justify hyphenate'>
+	  {% markdown %}
+	    My research concerns **"Theoretical Applied Math"** using tools from
+	    <em class='text-primary'>partial differential equations</em> and 
+	    <em class='text-primary'>probability</em>.
+	    More specifically, I've studied on a variety of problems related to
+	    anomalous diffusion,
+	    coagulation,
+	    fluid mechanics,
+	    homogenization,
+	    Q-tensors
+	    and
+	    mixing.
+	  {% endmarkdown %}
+	</div><!-- /media-body -->
+      </div>{# /media #}
+      {# }}} #}
+    </div>{# /col-md-9 #}
+    <div class='col-md-4'>
+      {# {{{
+      {% markdown %}
+	## Research Description
 
-      <img class='img-rounded float-left hidden-xs'
-          src='img/mixing-diag-sol6.jpg'>
-      <img class='img-rounded float-left visible-xs-inline'
-	  src='img/mixing-diag-sol6-xs.jpg'>
-      ### Mixing by Incompressible Flows
+	<img class='img-rounded float-left hidden-xs'
+	    src='img/mixing-diag-sol6.jpg'>
+	<img class='img-rounded float-left visible-xs-inline'
+	    src='img/mixing-diag-sol6-xs.jpg'>
+	### Mixing by Incompressible Flows
 
-      Can you stir your coffee to keep it hot for longer?
-      How much "work" do you have to do to stir cream into your coffee?
-      Mathematically this translates to obtaining precise estimates for solutions to certain PDE's, which is what motivated this part of my research.
-      
-      {{ macros.cite( [p.pubs.badmixing, p.pubs.mixbounds] ) }}.
-    {% endmarkdown %}
-    }}} #}
-  {%markdown%}
-    ## Grant Support
+	Can you stir your coffee to keep it hot for longer?
+	How much "work" do you have to do to stir cream into your coffee?
+	Mathematically this translates to obtaining precise estimates for solutions to certain PDE's, which is what motivated this part of my research.
+	
+	{{ macros.cite( [p.pubs.badmixing, p.pubs.mixbounds] ) }}.
+      {% endmarkdown %}
+      }}} #}
+      {%markdown%}{# {{{ #}
+	## Grant Support
 
-    My research is partially supported by:
+	I gratefully acknowledge partial support from:
 
-    * An [NSF](http://www.nsf.gov) CAREER grant (DMS-1252912, 2013-2018).
+	* An [NSF](http://www.nsf.gov) CAREER grant (2013-18).
 
-    * An [Alfred P. Sloan](http://www.sloan.org/sloan-research-fellowships)
-      research fellowship (2013).
+	* An [Alfred P. Sloan](http://www.sloan.org/sloan-research-fellowships)
+	  research fellowship (2013-15).
 
-    * The [Center for Nonlinear Analysis](http://www.math.cmu.edu/cna)
-  {% endmarkdown %}
+	* The [Center for Nonlinear Analysis](http://www.math.cmu.edu/cna)
+
+	<small>All findings my own and do not necessarily reflect the views of respective funding agencies.</small>
+      {% endmarkdown %}{# }}} #}
+    </div>{# /col-md-3 #}
+  </div>{# /row #}
 
   <h2><a name='publications'></a>Publications</h2>
 
