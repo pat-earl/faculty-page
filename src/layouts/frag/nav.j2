@@ -20,8 +20,12 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
 	{% for href, caption in site.navbar_right %}
-	  <li {% if href == active %} class='active' {% endif %}>
-	    <a href="{{site.url}}/{{href|e}}">{{caption}}</a>
+	  <li
+	    {%- if href and href == active %} class='active'
+	    {%- elif not href %} class='disabled'
+	    {%- endif -%}
+	    >
+	    <a href="{{(site.url ~ '/' ~ href) if href else '#'}}">{{caption}}</a>
 	  </li>
 	{% endfor %}
       </ul>

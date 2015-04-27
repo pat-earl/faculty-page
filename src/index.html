@@ -1,7 +1,9 @@
 {% extends "layouts/jumbotron93.j2" %}
-{% from "includes/publist.j2" import publist %}
+{% set active = 'index.html' %}
+{% import "includes/publist.j2" as p %}
 {% import "includes/macros.j2" as macros %}
 {% from 'teaching/sections.j2' import secs %}
+{% from 'teaching/courses.j2' import courses %}
 {% block jumbotron %}{# {{{ #}
   <h1>Gautam Iyer</h1>
 
@@ -22,7 +24,7 @@
 {% endblock %}{# }}} #}
 {% block heading1 %}{# {{{ #}
   <div class='media lead'>
-    <h2><a href='research'>Research Interests</a></h2>
+    <h2>Research Interests</h2>
     <div class='media-left'>
       <img class='media-object img-rounded hidden-xs'
           src='research/img/mixing-diag-sol6.jpg'>
@@ -42,20 +44,100 @@
       Q-tensors
       and
       mixing.
-
-      <small>
-      **Grant Support:**
-      *NSF CAREER* (2013--2018) and an *Alfred P. Sloan* research fellowship.
-      </small>
       {% endmarkdown %}
 
     </div><!-- /media-body -->
   </div>{# /media #}
 
-  <h2><a href='research#publications'>Recent Publications</a></h2>
+  {% markdown %}
+  ### Grant Support
 
-  <ul>{{ macros.pubs( publist[0:5] ) }}</ul>
+  I gratefully acknowledge partial support from:
 
+  * An [NSF](http://www.nsf.gov) CAREER grant (2013-18).
+
+  * An [Alfred P. Sloan](http://www.sloan.org/sloan-research-fellowships)
+    research fellowship (2013-15).
+
+  * The [Center for Nonlinear Analysis](http://www.math.cmu.edu/cna)
+
+  <small>All findings my own and do not necessarily reflect the views of respective funding agencies.</small>
+  {% endmarkdown %}
+
+  <h2>Publications</h2>
+
+  {# <ul>{{ macros.pubs( p.publist[0:5] ) }}</ul> #}
+  {% set base_tags = [
+    ( 'recent', 'Recent Publications' ),
+    ( 'all', 'All Publications' ),
+    ( 'pde', 'Partial Differential Equations' ),
+    ( 'probability', 'Probability' ),
+  ] %}
+  {% set more_tags = [
+    ( 'coagulation', 'Coagulation' ),
+    ( 'fluids', 'Fluid Dynamics' ),
+    ( 'harmonic analysis', 'Harmonic Analysis' ),
+    ( 'homogenization', 'Homogenization' ),
+    ( 'liquid crystals', 'Liquid Crystals' ),
+    ( 'mixing', 'Mixing' ),
+  ] %}
+  <ul class='nav nav-tabs' role='tablist'>
+    {% for t, T in base_tags %}
+    <li role='presentation'
+      {% if loop.first %}class='active'
+      {% elif loop.index > 2 %}class='hidden-xs'
+      {% endif %}>
+      <a href="#pubs-{{t|replace( ' ', '-' )}}" role='tab' data-toggle='tab'>
+	{{t | capitalize}}
+      </a>
+    </li>
+    {% endfor %}
+    <li role='presentation' class="dropdown">
+      <a id="pubs-more" role="button" data-toggle="dropdown"
+	  aria-haspopup="true" aria-expanded="false">
+	More
+	<span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="pubs-more">
+	{% for t, T in base_tags[2:] %}
+	  <li role='presentation' class='visible-xs-block'>
+	    <a href="#pubs-{{t|replace( ' ', '-' )}}" role='tab' data-toggle='tab'>
+	      {{t | capitalize}}
+	    </a>
+	  </li>
+	{% endfor %}
+	<li role='presentation' class='divider visible-xs-block'></li>
+	{% for t, T in more_tags %}
+	  <li role='presentation'>
+	    <a href="#pubs-{{t|replace( ' ', '-' )}}" role='tab' data-toggle='tab'>
+	      {{t | capitalize}}
+	    </a>
+	  </li>
+	{% endfor %}
+      </ul>
+    </li>
+  </ul>
+
+  <div class='tab-content'>
+    {% for t, T in base_tags + more_tags %}
+      <div role='tabpanel' class='tab-pane{% if loop.first %} active{% endif %}'
+	  id="pubs-{{t|replace(' ', '-')}}">
+	<h3>{{T}}</h3>
+
+	<ul>
+	  {% if t == 'recent' %}
+	    {{ macros.pubs( p.publist[0:5] ) }}
+	  {% elif t == 'all' %}
+	    {{ macros.pubs( p.publist ) }}
+	  {% else %}
+	    {{ macros.tpubs( p.publist, t )}}
+	  {% endif %}
+	</ul>
+      </div>
+    {% endfor %}
+  </div>
+
+  {# {{{
   <div class='text-right'>
     <div class='btn-group'>
       <a class="btn btn-default" href="research#publications">All publications</a>
@@ -63,13 +145,12 @@
       <a class="btn btn-default" href="research">More info</a>
     </div>
   </div>
+  }}} #}
 {% endblock %}{# }}} #}
 {% block heading2 %}{% markdown %}{# {{{ #}
 ### [Teaching](teaching)
 
-* 21-272: Introduction to PDE's
-
-* 21-355: Real Analysis 1
+* [720: Measure Theory]({{courses[3][2][2][2]}})
 
 * [{{secs.previous_courses}}](teaching#previous_courses)
 

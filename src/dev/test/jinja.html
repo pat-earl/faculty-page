@@ -8,6 +8,13 @@
 
 {% block body %}
   <div class='lead'>
+    <h2>Membership</h2>
+    {% set a = { 1: 'one', 2 : 'two', '02' : 'Oh two' } %}
+    a.1: {{ a.1 }}
+    a.2: {{ a.2 }}
+    a.02: {{ a['02'] }}
+
+
     <h2>Calling blocks</h2>
     {% set blockname = 'all' %}
     Block: {{ self[blockname]() }}
