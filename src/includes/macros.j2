@@ -40,8 +40,11 @@
 	    </a>
 	  {% endif %}
 	  #}
-	  {% if p.code %}
-	    <a class='btn btn-default btn-xs' href='{{site.url}}/research/{{p.code}}' title='Code and Figures'>
+	  {% if p.code or p.fcode %}
+	    <a class='btn btn-default btn-xs'
+	      href='{{(site.url ~ '/research/' ~ p.code) if p.code
+		else p.fcode }}'
+	      title='Code and Figures'>
 	      <span class='glyphicon glyphicon-sunglasses'></span>
 	    </a>
 	  {%- endif -%}
