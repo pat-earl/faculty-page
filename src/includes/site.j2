@@ -12,11 +12,17 @@
     ( '',		'Blog' ),
 ] -%}
 {%- if dev_env == 'production' -%}
-    {%- set host = 'http://www.math.cmu.edu' -%}
+    {%- set host = 'www.math.cmu.edu' -%}
     {%- set prefix = '/~gautam/sj' -%}
+    {%- set url = 'http://' ~ host ~ prefix -%}
+    {%- set rurl = '//' ~ host ~ prefix -%}
+    {%- set surl = 'https://' ~ host ~ prefix -%}
 {%- else -%}
     {%- set host = '' -%}
     {%- set prefix = '' -%}
+    {%- set url = host ~ prefix -%}
+    {%- set rurl = url -%}
+    {%- set surl = url -%}
+
     {%- set _ = navbar_right.append( ( 'dev/test', 'Test' ) ) %}
 {%- endif -%}
-{%- set url = host + prefix -%}

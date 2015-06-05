@@ -20,7 +20,7 @@
 	{%- set bootstrap_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap' -%}
       {%- else -%}
 	{%- set min = '' -%}
-	{%- set bootstrap_cdn = site.url ~ '/dev/static/bootstrap' -%}
+	{%- set bootstrap_cdn = site.rurl ~ '/dev/static/bootstrap' -%}
       {%- endif %}
       <link rel="stylesheet"
 	href="{{bootstrap_cdn}}/3.3.4/css/bootstrap{{min}}.css">
@@ -78,8 +78,8 @@
 	{%- set bootstrap_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap' -%}
       {%- else -%}
 	{%- set min = '' -%}
-	{%- set jquery_cdn = site.url ~ '/dev/static/jquery' -%}
-	{%- set bootstrap_cdn = site.url ~ '/dev/static/bootstrap' -%}
+	{%- set jquery_cdn = site.rurl ~ '/dev/static/jquery' -%}
+	{%- set bootstrap_cdn = site.rurl ~ '/dev/static/bootstrap' -%}
       {%- endif %}
 
       <script src="{{jquery_cdn}}/1.11.2/jquery{{min}}.js">
@@ -92,15 +92,15 @@
       </script>
 
       {%- if needs_mathjax %}
-	<script src='{{site.url}}/static/js/mathjax-config.js'></script>
+	<script src='{{site.rurl}}/static/js/mathjax-config.js'></script>
 	<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       {%- endif -%}
 
       {%- if dev_env != 'production' and live_reload %}
-	<script src='{{site.url}}/dev/static/livejs/live.js'></script>
+	<script src='{{site.rurl}}/dev/static/livejs/live.js'></script>
       {%- endif %}
 
-      <script src='{{site.url}}/static/js/local.js'></script>
+      <script src='{{site.rurl}}/static/js/local.js'></script>
     {%- endblock scripts %}
   </body>
 </html>
