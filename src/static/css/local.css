@@ -5,6 +5,9 @@ body {
 }
 */
 
+/* For static top nav-bar */
+body > div.jumbotron { margin-top: -20px }
+
 /* div.container p {text-align: justify} */
 .hyphenate {
   -webkit-hyphens:  auto;

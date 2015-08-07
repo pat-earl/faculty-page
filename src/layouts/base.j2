@@ -52,6 +52,7 @@
       {%- include 'layouts/frag/nav.j2' -%}
     {%- endblock %}
 
+    {% block pre_container %}{% endblock -%}
     <div class='container'>
       {% block body -%}
 	<h1>{{title | default("No Title.") }}</h1>
