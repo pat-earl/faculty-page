@@ -8,6 +8,11 @@ body {
 /* For static top nav-bar */
 body > div.jumbotron { margin-top: -20px }
 
+.smallskip { margin-top: .5em }
+.medskip { margin-top: 1em }
+.bigskip { margin-top: 2em }
+.biggskip { margin-top: 3em }
+
 /* div.container p {text-align: justify} */
 .hyphenate {
   -webkit-hyphens:  auto;
