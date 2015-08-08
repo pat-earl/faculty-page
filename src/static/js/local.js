@@ -24,4 +24,5 @@ $(document).ready( function() {
       resizeFn();
       $(window).resize(resizeFn);
   });
-});
+
+}); /* end ready */
