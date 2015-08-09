@@ -1,6 +1,6 @@
 {%- extends "layouts/base.j2" -%}
 {%- block bodyargs -%}
-  style='position: relative' data-spy='scroll' data-target='#side-nav'
+  style='position: relative' data-spy='scroll' data-target='#side-nav-col'
 {%- endblock -%}
 {% block body %}
   <div class='row'>
@@ -9,14 +9,16 @@
 	<h1>{{title|default('Set title to the document title')}}</h1>
 	{{ lipsum() }}
       {% endblock %}
-    </div>
-    <div class='col-md-3' id='side-nav'>
-      <nav data-spy='affix' data-offset-top='60'
-	  data-clampedwidth='#side-nav' class='nav'>
+    </div>{# col-md-9 #}
+    <div class='col-md-3' id='side-nav-col'>
+      <div data-spy='affix' data-offset-top='60'
+	  data-clampedwidth='#side-nav-col'>
 	{% block nav_column %}
-	  {# Should look like:<div class='toc'><ul>...</ul></div> #}
-	{% endblock nav_column %}
-      </nav>
-    </div>
-  </div>
+	  <nav class='nav hidden-xs hidden-sm'>
+	    {{toc}}{# Looks like:<div class='toc'><ul>...</ul></div> #}
+	  </nav>
+	{% endblock %}
+      </div>{# affix #}
+    </div>{# col-md-3 #}
+  </div>{# row #}
 {% endblock body %}

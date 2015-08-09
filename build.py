@@ -136,8 +136,12 @@ def markdown_render(self, template, context=None, filepath=None):
     try:
 	layout = context['layout']
     except:
-	layout = ''
-    layout = os.path.join( 'layouts', layout or "md-default.j2")
+        if( template.name.startswith( "blog" ) ):
+            layout = 'md-blogpost.j2'
+        else:
+            layout = 'md-default.j2'
+        
+    layout = os.path.join( 'layouts', layout )
     post_template = self.get_template(layout)
 
     if filepath is None:

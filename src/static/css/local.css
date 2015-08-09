@@ -34,18 +34,18 @@ img.float-left {
 }
 
 /* Right navigation {{{ */
-nav.nav > div.toc ul {
+#side-nav-col .toc ul {
   list-style: none;
   padding-left: 2ex;
   white-space: nowrap;
   overflow-x: hidden;
 }
 
-nav.nav > div.toc ul ul {
+#side-nav-col .toc ul ul {
   font-size: 90%;
 }
 
-nav.nav > div.toc ul ul ul ul {
+#side-nav-col .toc ul ul ul ul {
   font-size: 100%;
 }
 
@@ -58,17 +58,12 @@ nav.nav > div.toc ul ul ul ul {
 }
 
 /* sm and xs devices */
-@media(max-width:991px){
-  #side-nav > .affix {
+@media only screen and (max-width:991px){
+  #side-nav-col > .affix {
     /* Don't affix right side navigation! The columns are stacked */
     position: static;
     /* width: auto;
     top: 0; */
-  }
-
-  #side-nav > nav.nav > .toc {
-    /* Doesn't make sense to display toc at bottom. Hide it. */
-    display: none
   }
 }
 

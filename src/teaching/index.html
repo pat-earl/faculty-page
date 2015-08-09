@@ -87,15 +87,15 @@ You are free to edit, modify and redistribute these notes (under the terms state
   </div><!-- /lead -->
 {% endblock %}
 {% block nav_column %}{# {{{ #}
-  <div class='toc'>
+  <nav class='nav toc hidden-xs hidden-sm'>
     {% markdown %}
     * [{{secs.courses}}](#courses)
-        * [{{secs.current_courses}}](#current_courses)
-        * [{{secs.previous_courses}}](#previous_courses)
+	* [{{secs.current_courses}}](#current_courses)
+	* [{{secs.previous_courses}}](#previous_courses)
     * [{{secs.lecture_notes}}](#lecture_notes)
     * [{{secs.student_projects}}](#student_projects)
-        * [{{secs.student_lecture_notes}}](#student_lecture_notes)
-        * [{{secs.masters_thesis}}](#masters_thesis)
+	* [{{secs.student_lecture_notes}}](#student_lecture_notes)
+	* [{{secs.masters_thesis}}](#masters_thesis)
     {% endmarkdown %}
-  </div>
+  </nav>
 {% endblock %}{# }}} #}
