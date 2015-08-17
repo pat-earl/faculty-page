@@ -34,18 +34,18 @@ img.float-left {
 }
 
 /* Right navigation {{{ */
-#side-nav-col .toc ul {
+#col-right .toc ul {
   list-style: none;
   padding-left: 2ex;
   white-space: nowrap;
   overflow-x: hidden;
 }
 
-#side-nav-col .toc ul ul {
+#col-right .toc ul ul {
   font-size: 90%;
 }
 
-#side-nav-col .toc ul ul ul ul {
+#col-right .toc ul ul ul ul {
   font-size: 100%;
 }
 
@@ -59,7 +59,7 @@ img.float-left {
 
 /* sm and xs devices */
 @media only screen and (max-width:991px){
-  #side-nav-col > .affix {
+  #col-right > .affix {
     /* Don't affix right side navigation! The columns are stacked */
     position: static;
     /* width: auto;
