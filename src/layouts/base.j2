@@ -9,9 +9,9 @@
       The above 3 meta tags *must* come first in the head; any other head
       content must come *after* these tags
     #}
-    <meta name="author" content="{{ site.author }}">
+    <meta name="author" content="{{ site_author }}">
     <title>
-      {{ ( title or site.title ) | striptags | default( 'No Title' )}}
+      {{ ( title or site_title ) | striptags | default( 'No Title' )}}
     </title>
 
     {%- block stylesheets -%}
@@ -20,13 +20,13 @@
 	{%- set bootstrap_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap' -%}
       {%- else -%}
 	{%- set min = '' -%}
-	{%- set bootstrap_cdn = site.rurl ~ '/dev/static/bootstrap' -%}
+	{%- set bootstrap_cdn = site_rurl ~ '/dev/static/bootstrap' -%}
       {%- endif %}
       <link rel="stylesheet"
 	href="{{bootstrap_cdn}}/3.3.5/css/bootstrap{{min}}.css">
       <link rel="stylesheet"
-	href="{{site.prefix}}/static/css/pygments-theme.css">
-      <link rel="stylesheet" href="{{site.prefix}}/static/css/local.css">
+	href="{{site_prefix}}/static/css/pygments-theme.css">
+      <link rel="stylesheet" href="{{site_prefix}}/static/css/local.css">
     {%- endblock -%}
 
     {#-
@@ -48,7 +48,7 @@
 	Jinja2 bug: Need to access these variables here, otherwise they don't
 	show up in included files.
       -#}
-      <!-- {{ site.short_title }} / {{ active }} -->
+      <!-- {{ active }} -->
       {%- include 'layouts/frag/nav.j2' -%}
     {%- endblock %}
 
@@ -66,7 +66,7 @@
 	Jinja2 bug: Need to access these variables here, otherwise they don't
 	show up in included files.
       -#}
-      <!-- {{ site.short_title }} / {{page_footer|e}} -->
+      <!-- {{page_footer|e}} -->
       {%- include 'layouts/frag/footer.j2' -%}
     {%- endblock -%}
 
@@ -79,8 +79,8 @@
 	{%- set bootstrap_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap' -%}
       {%- else -%}
 	{%- set min = '' -%}
-	{%- set jquery_cdn = site.rurl ~ '/dev/static/jquery' -%}
-	{%- set bootstrap_cdn = site.rurl ~ '/dev/static/bootstrap' -%}
+	{%- set jquery_cdn = site_rurl ~ '/dev/static/jquery' -%}
+	{%- set bootstrap_cdn = site_rurl ~ '/dev/static/bootstrap' -%}
       {%- endif %}
 
       <script src="{{jquery_cdn}}/1.11.3/jquery{{min}}.js">
@@ -93,15 +93,15 @@
       </script>
 
       {%- if needs_mathjax %}
-	<script src='{{site.rurl}}/static/js/mathjax-config.js'></script>
+	<script src='{{site_rurl}}/static/js/mathjax-config.js'></script>
 	<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       {%- endif -%}
 
       {%- if dev_env != 'production' and live_reload %}
-	<script src='{{site.rurl}}/dev/static/livejs/live.js'></script>
+	<script src='{{site_rurl}}/dev/static/livejs/live.js'></script>
       {%- endif %}
 
-      <script src='{{site.rurl}}/static/js/local.js'></script>
+      <script src='{{site_rurl}}/static/js/local.js'></script>
     {%- endblock scripts %}
   </body>
 </html>

@@ -1,7 +1,3 @@
-{%- set title = "Gautam Iyer's Website" %}
-{%- set short_title = "Gautam Iyer" %}
-{%- set author = "Gautam Iyer" -%}
-{%- set email = "gautam<span style='display: none'>_NO_SPAM_</span>&commat;math.cmu.edu" -%}
 {%- set navbar_left = [
     ( 'index.html',	'Research' ),
     ( 'teaching',	'Teaching' ),
@@ -9,20 +5,8 @@
 ] %}
 {%- set navbar_right = [
     ( '',		'Code' ),
-    ( '',		'Blog' ),
 ] -%}
-{%- if dev_env == 'production' -%}
-    {%- set host = 'www.math.cmu.edu' -%}
-    {%- set prefix = '/~gautam/sj' -%}
-    {%- set url = 'http://' ~ host ~ prefix -%}
-    {%- set rurl = '//' ~ host ~ prefix -%}
-    {%- set surl = 'https://' ~ host ~ prefix -%}
-{%- else -%}
-    {%- set host = '' -%}
-    {%- set prefix = '' -%}
-    {%- set url = host ~ prefix -%}
-    {%- set rurl = url -%}
-    {%- set surl = url -%}
-
-    {%- set _ = navbar_right.append( ( 'dev/test', 'Test' ) ) %}
+{%- if dev_env == 'local' -%}
+    {%- set _ = navbar_right.append( ( 'blog', 'Blog' ) ) %}
+    {%- set _ = navbar_right.append( ( 'dev/test', 'Test' )  ) %}
 {%- endif -%}

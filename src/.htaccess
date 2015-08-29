@@ -1,5 +1,3 @@
-{%- import 'includes/site.j2' as site -%}
-
 ## Redirect errors to my own error page
-ErrorDocument	403  {{site.prefix}}/403-forbidden.html
-ErrorDocument	404  {{site.prefix}}/404-not-found.html
+ErrorDocument	403  {{site_prefix}}/403-forbidden.html
+ErrorDocument	404  {{site_prefix}}/404-not-found.html

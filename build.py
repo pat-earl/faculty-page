@@ -8,12 +8,17 @@ import os
 import shutil
 import markdown
 import sys
+import ConfigParser
+
 
 pwd = os.path.dirname(os.path.realpath(__file__))
 if pwd == os.getcwd(): pwd = '.'
 sys.path.append( pwd + '/ext/python-markdown-math' )
+sys.path.append( pwd + '/ext/python-markdown-links' )
 
-from mdx_math import MathExtension
+# Local markdown extensions
+import mdx_math
+import mdx_link
 
 
 class Site( staticjinja.Site ):
@@ -108,8 +113,8 @@ def markdown_get_context( self, template):
 	    'markdown.extensions.sane_lists',
 	    'markdown.extensions.smarty',
 	    'markdown.extensions.toc',
-	    'markdown.extensions.wikilinks',
-	    MathExtension(enable_dollar_delimiter=True)
+	    mdx_math.MathExtension(enable_dollar_delimiter=True),
+            mdx_link.makeExtension( base_url='asdf' )
 	] )
 	markdown_get_context.mathre = re.compile(
 		'.*<script\\s*type\\s*=\s*[\'"]math/tex(\\s|[\'";])',
@@ -138,6 +143,8 @@ def markdown_render(self, template, context=None, filepath=None):
     except:
         if( template.name.startswith( "blog" ) ):
             layout = 'md-blogpost.j2'
+        elif re.match( r'teaching\/[0-9-]+\/[0-9a-z-]+\/index\.md', template.name ):
+            layout = 'md-class.j2'
         else:
             layout = 'md-default.j2'
         
@@ -186,13 +193,22 @@ if __name__ == "__main__":
     site.args = args
 
     if options.production:
-      site.ignored_re = re.compile( 'dev|' + site.ignored_re.pattern )
-      site.static_re = re.compile( '(?!dev)' + site.static_re.pattern )
+        site.ignored_re = re.compile( 'dev|' + site.ignored_re.pattern )
+        site.static_re = re.compile( '(?!dev)' + site.static_re.pattern )
+        dev_env = 'production'
+
+    else:
+        dev_env = 'local'
+
+    # Read configuration
+    cfg = ConfigParser.ConfigParser()
+    cfg.read( 'site.cfg' )
 
     # Tweak the Jinja2 environment
-    site._env.line_statement_prefix = '<@Jinja2>'
-    site._env.globals['dev_env'] = \
-	'production' if options.production else 'local'
+    #site._env.line_statement_prefix = '<@Jinja2>'
+    site._env.globals['dev_env'] = dev_env
+    site._env.globals.update( dict( cfg.items('common') ) )
+    site._env.globals.update( dict( cfg.items(dev_env) ) )
 
     # enable automatic reloading
     site.render(use_reloader=False)

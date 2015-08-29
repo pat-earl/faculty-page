@@ -1,4 +1,3 @@
-{% import 'includes/site.j2' as site %}
 {% macro cite( vargs ) -%}
   {%- for p in vargs -%}
   <a href='{{p.jlink}}'>
@@ -24,12 +23,12 @@
       {% if p.link or p.code %}
 	<div class='btn-group text-nowrap tight-float-right'>
 	  {%- if p.link -%}
-	    <a class='btn btn-default btn-xs' href='{{site.url}}/research/papers/{{p.link}}' title='Download preprint'>
+	    <a class='btn btn-default btn-xs' href='{{site_url}}/research/papers/{{p.link}}' title='Download preprint'>
 	      <span class='glyphicon glyphicon-download'></span>
 	    </a>
 	  {% endif %}
 	  {% if p.twoup %}
-	    <a class='btn btn-default btn-xs' href='{{site.url}}/research/papers/{{p.twoup}}' title='Download 2up preprint for eco-friendly printing'>
+	    <a class='btn btn-default btn-xs' href='{{site_url}}/research/papers/{{p.twoup}}' title='Download 2up preprint for eco-friendly printing'>
 	      <span class='glyphicon glyphicon-print'></span>
 	    </a>
 	  {% endif %}
@@ -42,7 +41,7 @@
 	  #}
 	  {% if p.code or p.fcode %}
 	    <a class='btn btn-default btn-xs'
-	      href='{{(site.url ~ '/research/' ~ p.code) if p.code
+	      href='{{(site_url ~ '/research/' ~ p.code) if p.code
 		else p.fcode }}'
 	      title='Code and Figures'>
 	      <span class='glyphicon glyphicon-sunglasses'></span>

@@ -1,3 +1,4 @@
+{%- import 'includes/site.j2' as site -%}
 {# Static top navbar #}
 <nav class="navbar navbar-default navbar-static-top">
   <div class="container">
@@ -8,13 +9,13 @@
 	<span class="icon-bar"></span>
 	<span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{site.url}}/">{{site.short_title}}</a>
+      <a class="navbar-brand" href="{{site_url}}/">{{site_short_title}}</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 	{% for href, caption in site.navbar_left %}
 	  <li {% if href == active %} class='active' {% endif %}>
-	    <a href="{{site.url}}/{{href|e}}">{{caption}}</a>
+	    <a href="{{site_url}}/{{href|e}}">{{caption}}</a>
 	  </li>
 	{% endfor %}
       </ul>
@@ -25,7 +26,7 @@
 	    {%- elif not href %} class='disabled'
 	    {%- endif -%}
 	    >
-	    <a href="{{(site.url ~ '/' ~ href) if href else '#'}}">{{caption}}</a>
+	    <a href="{{(site_url ~ '/' ~ href) if href else '#'}}">{{caption}}</a>
 	  </li>
 	{% endfor %}
       </ul>
