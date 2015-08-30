@@ -9,6 +9,7 @@ import shutil
 import markdown
 import sys
 import ConfigParser
+from collections import namedtuple
 
 
 pwd = os.path.dirname(os.path.realpath(__file__))
@@ -20,6 +21,31 @@ sys.path.append( pwd + '/ext/python-markdown-links' )
 import mdx_math
 import mdx_link
 
+def convert_markdown( s ):
+    """ Convert a string (or list) into markdown """
+    if type(s) == list:
+        s = '\n'.join(s)
+
+    if not hasattr( convert_markdown, 'md' ):
+	convert_markdown.md = markdown.Markdown( extensions=[
+	    'markdown.extensions.extra',
+	    'markdown.extensions.codehilite',
+	    'markdown.extensions.meta',
+	    'markdown.extensions.sane_lists',
+	    'markdown.extensions.smarty',
+	    'markdown.extensions.toc',
+	    mdx_math.MathExtension(enable_dollar_delimiter=True),
+            mdx_link.makeExtension()
+	] )
+
+    md = convert_markdown.md
+    md.reset()
+    r = namedtuple( 'RenderedMarkdown', ['html', 'toc', 'Meta'])
+    r.html = md.convert( s )
+    r.toc = md.toc
+    r.Meta = md.Meta
+
+    return r
 
 class Site( staticjinja.Site ):
     # Override a few methods to customize to my settings.
@@ -105,29 +131,17 @@ def markdown_get_context( self, template):
     if not self.needs_rendering( template, dst ):
 	return None
 
-    if not hasattr( markdown_get_context, 'md' ):
-	markdown_get_context.md = markdown.Markdown( extensions=[
-	    'markdown.extensions.extra',
-	    'markdown.extensions.codehilite',
-	    'markdown.extensions.meta',
-	    'markdown.extensions.sane_lists',
-	    'markdown.extensions.smarty',
-	    'markdown.extensions.toc',
-	    mdx_math.MathExtension(enable_dollar_delimiter=True),
-            mdx_link.makeExtension( base_url='asdf' )
-	] )
+    if not hasattr( markdown_get_context, 'mathre' ):
 	markdown_get_context.mathre = re.compile(
 		'.*<script\\s*type\\s*=\s*[\'"]math/tex(\\s|[\'";])',
 		re.DOTALL )
 
     with open(template.filename) as f:
-	md = markdown_get_context.md
 	mathre = markdown_get_context.mathre
-	md.reset()
-	html = md.convert( f.read() )
+	md = convert_markdown( f.read() )
 
-	context = { 'content': html, 'toc':  md.toc }
-	if mathre.match( html ):
+	context = { 'content': md.html, 'toc': md.toc }
+	if mathre.match( md.html ):
 	    context['needs_mathjax'] = 1
 	
 	for key in md.Meta.keys():
@@ -202,13 +216,16 @@ if __name__ == "__main__":
 
     # Read configuration
     cfg = ConfigParser.ConfigParser()
-    cfg.read( 'site.cfg' )
+    cfg.read( pwd + '/site.cfg' )
 
     # Tweak the Jinja2 environment
     #site._env.line_statement_prefix = '<@Jinja2>'
     site._env.globals['dev_env'] = dev_env
     site._env.globals.update( dict( cfg.items('common') ) )
     site._env.globals.update( dict( cfg.items(dev_env) ) )
+    
+    site._env.globals['markdown'] = lambda s: convert_markdown(s).html
+    site._env.filters['markdown'] = site._env.globals['markdown']
 
     # enable automatic reloading
     site.render(use_reloader=False)
