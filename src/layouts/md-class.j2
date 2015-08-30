@@ -1,2 +1,20 @@
 {% set active = 'teaching' %}
 {% extends "layouts/md-nav-left.j2" %}
+{% block nav_column %}
+  {{ super() }}
+  <div class='row'>
+    <div class='col-md-12 col-sm-6'>
+      <h4>Homework and Solutions</h4>
+      {% if hw %}
+	<ul>
+	  {% for i in hw %}
+	  <li>{{i}}</li>
+	  {% endfor %}
+	</ul>
+      {% endif %}
+    </div>
+    <div class='col-md-12 col-sm-6'>
+      <h4>Handouts</h4>
+    </div>
+  </div>
+{% endblock %}

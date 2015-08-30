@@ -1,5 +1,6 @@
 {%- extends "layouts/base.j2" -%}
 {% block body %}
+  <h1>{{title|default('Set title to the document title')}}</h1>
   <div class='row'>
     <div class='col-md-3'>
       {% block nav_column %}
@@ -10,7 +11,6 @@
     </div>{# col-md-3 #}
     <div class='col-md-9'>
       {% block main_column %}
-	<h1>{{title|default('Set title to the document title')}}</h1>
 	{{ lipsum() }}
       {% endblock %}
     </div>{# col-md-9 #}
