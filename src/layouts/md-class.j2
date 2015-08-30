@@ -2,19 +2,22 @@
 {% extends "layouts/md-nav-left.j2" %}
 {% block nav_column %}
   {{ super() }}
-  <div class='row'>
-    <div class='col-md-12 col-sm-6'>
-      <h4>Homework and Solutions</h4>
+  {% if hw or handouts %}
+    <div class='row'>
       {% if hw %}
-	<ul>
-	  {% for i in hw %}
-	  <li>{{i}}</li>
-	  {% endfor %}
-	</ul>
+	<div class='col-md-12 col-sm-6'>
+	  <h4 class='hidden-xs hidden-sm'>Homework and Solutions</h4>
+	  <h2 class='hidden-md hidden-lg'>Homework and Solutions</h2>
+	  {{ markdown( hw ) }}
+	</div>
+      {% endif %}
+      {% if handouts %}
+	<div class='col-md-12 col-sm-6'>
+	  <h4 class='hidden-xs hidden-sm'>Handouts</h4>
+	  <h2 class='hidden-md hidden-lg'>Handouts</h2>
+	  {{ markdown( handouts ) }}
+	</div>
       {% endif %}
     </div>
-    <div class='col-md-12 col-sm-6'>
-      <h4>Handouts</h4>
-    </div>
-  </div>
+  {% endif %}
 {% endblock %}
