@@ -1,12 +1,18 @@
 {% set old_teaching = 'http://www.math.cmu.edu/~gautam/teaching' %}
 {% set old_research = 'http://www.math.cmu.edu/~gautam/research' %}
 {% set courses = (
+    ( 268, 'Multidimensional Calculus', (
+	( 2015, 'f', '2015-16/268-multid-calc' ),
+    )),
     ( 269, 'Vector Analysis', (
 	( 2012, 's', old_teaching ~ '/2011-12/269-vector-analysis/' ),
     )),
     ( 341, 'Linear algebra', (
 	( 2009, 'f', old_teaching ~ '/2009-10/341-linear-algebra/' ),
 	( 2011, 's', old_teaching ~ '/2010-11/341-linear-algebra/' ),
+    )),
+    ( 272, "Introduction to PDE's", (
+	( 2015, 'f', '2015-16/272-pde' ),
     )),
     ( 372, "PDE's and Fourier Analysis", (
 	( 2012, 's', old_teaching ~ '/2011-12/372-pde/' ),
@@ -31,4 +37,25 @@
 	( 2012, 'f', old_research ~ '/201208-fluids-working-group' ),
     )),
   ) %}
+{% set cur_index = ( (0, 0), (3, 0) ) %}
+{% macro md_current_courses() %}
+  {% for i, j in cur_index %}
+* [{{courses[i][0]}}: {{courses[i][1]}}](teaching/{{courses[i][2][j][2]}})
 
+  {% endfor %}
+{% endmacro %}
+{% macro md_current_courses_long() %}
+  {% for i, j in cur_index %}
+  {% set (cn, ct) = (courses[i][0], courses[i][1]) %}
+  {% set (cy, cs, cl) = courses[i][2][j] %}
+  {% if cs == 's' %}
+    {% set cs = 'Spring, ' %}
+  {% elif cs == 'f' %}
+    {% set cs = 'Fall, ' %}
+  {% else %}
+    {% set cs = '' %}
+  {% endif %}
+* [{{cn}}: {{ct}} ({{cs ~ cy}})]({{cl}})
+
+  {% endfor %}
+{% endmacro %}

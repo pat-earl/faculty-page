@@ -3,7 +3,7 @@
 {% import "includes/publist.j2" as p %}
 {% import "includes/macros.j2" as macros %}
 {% from 'teaching/sections.j2' import secs %}
-{% from 'teaching/courses.j2' import courses %}
+{% from 'teaching/courses.j2' import md_current_courses %}
 {% block jumbotron %}{# {{{ #}
   <h1 class='text-nowrap'>Gautam Iyer</h1>
 
@@ -161,7 +161,7 @@
 {% block heading2 %}{% markdown %}{# {{{ #}
 ### [Teaching](teaching)
 
-* [720: Measure Theory]({{courses[3][2][2][2]}})
+{{md_current_courses()}}
 
 * [{{secs.previous_courses}}](teaching#previous_courses)
 

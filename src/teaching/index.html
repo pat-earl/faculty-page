@@ -1,6 +1,5 @@
 {% extends 'layouts/nav-right-affix.j2' %}
-{% from 'teaching/courses.j2' import courses %}
-{% from 'teaching/courses.j2' import old_teaching %}
+{% from 'teaching/courses.j2' import courses, old_teaching, md_current_courses_long %}
 {% from 'teaching/sections.j2' import secs %}
 {% set active = 'teaching' %}
 {% block main_column %}
@@ -10,7 +9,7 @@
 
 <h3 id='current_courses'>{{secs.current_courses}}</h3>
 
-I'm not teaching this semester
+{{ md_current_courses_long() }}
 
 <h3 id='previous_courses'>{{secs.previous_courses}}</h3>
 

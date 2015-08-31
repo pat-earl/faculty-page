@@ -4,7 +4,7 @@ lectures: MWF 3:30-4:20
     WEH
     5312
 office_hours: TBA
-ta: Van Son
+ta: Son Van
 ta_website: http://sonv.github.io/teaching/2015-08-25-fall
 ta_email: vansp@cmu.edu
 ta_office: WEH
@@ -12,7 +12,7 @@ ta_office: WEH
 ta_office_hours: TBA
 recitation: Tu 3:30-4:20
     WEH
-    5220
+    5320
 mailing_list: https://lists.andrew.cmu.edu/mailman/listinfo/math-268
     math-268
 dates: Homework due
