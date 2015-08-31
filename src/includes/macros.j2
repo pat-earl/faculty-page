@@ -24,18 +24,18 @@
 	<div class='btn-group text-nowrap tight-float-right'>
 	  {%- if p.link -%}
 	    <a class='btn btn-default btn-xs' href='{{site_url}}/research/papers/{{p.link}}' title='Download preprint'>
-	      <span class='glyphicon glyphicon-download'></span>
+	      {{ glyph( 'download' ) }}
 	    </a>
 	  {% endif %}
 	  {% if p.twoup %}
 	    <a class='btn btn-default btn-xs' href='{{site_url}}/research/papers/{{p.twoup}}' title='Download 2up preprint for eco-friendly printing'>
-	      <span class='glyphicon glyphicon-print'></span>
+	      {{ glyph( 'print' ) }}
 	    </a>
 	  {% endif %}
 	  {#
 	  {% if p.jlink %}
 	    <a class='btn btn-default btn-xs' href='{{p.jlink}}' title='Official journal link'>
-	      <span class='glyphicon glyphicon-book'></span>
+	      {{ glyph( 'book' ) }}
 	    </a>
 	  {% endif %}
 	  #}
@@ -44,7 +44,7 @@
 	      href='{{(site_url ~ '/research/' ~ p.code) if p.code
 		else p.fcode }}'
 	      title='Code and Figures'>
-	      <span class='glyphicon glyphicon-sunglasses'></span>
+	      {{ glyph( 'sunglasses' ) }}
 	    </a>
 	  {%- endif -%}
 	</div>
@@ -59,3 +59,26 @@
     </li>
   {% endfor %}
 {% endmacro %}
+
+{%- macro glyph( g ) -%}
+  <span class='glyphicon glyphicon-{{g}}' aria-hidden='true'></span>
+{%- endmacro -%}
+
+{%- macro email( address ) -%}
+  <span class='text-nowrap' title='Email'>
+    {{ glyph('envelope') }}
+    {{ address | default( "author@email.com" ) }}.
+  </span>
+{%- endmacro -%}
+
+{%- macro room( bldg, room='', is_office=true ) -%}
+  <span class='text-nowrap' {{"title='Office'" if is_office}}>
+    {{glyph('briefcase') if is_office}}
+    {% if bldg == "WEH" -%}
+      <a title='Wean Hall' href='https://www.google.com/maps/place/Wean+Hall,+Carnegie+Mellon+University,+Pittsburgh,+PA+15213'>WEH</a>
+    {%- else -%}
+      {{bldg}}
+    {%- endif -%}
+    {{ ' '~room if room}}.
+  </span>
+{%- endmacro -%}

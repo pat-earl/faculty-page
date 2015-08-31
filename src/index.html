@@ -23,18 +23,12 @@
   </p>
 
   <div class='small bigskip'>
-    <span class='text-nowrap' title='Email'>
-      <span class='glyphicon glyphicon-envelope' aria-hidden='true'></span>
-      {{ site_email | default( "author@email.com" ) }}.
-    </span>
+    {{ macros.email( author_email ) }}
     &emsp;
-    <span class='text-nowrap' title='Office'>
-      <span class='glyphicon glyphicon-briefcase' aria-hidden='true'></span>
-      <a title='Wean Hall' href='https://www.google.com/maps/place/Wean+Hall,+Carnegie+Mellon+University,+Pittsburgh,+PA+15213'>WEH</a> 6121.
-    </span>
+    {{ macros.room( author_office_bldg, author_office_room ) }}
     &emsp;
     <span class='text-nowrap' title='Phone'>
-      <span class='glyphicon glyphicon-phone-alt' aria-hidden='true'></span>
+      {{ macros.glyph( 'phone-alt' ) }}
       412 268 8419.
     </span>
   </div>

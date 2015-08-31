@@ -49,11 +49,11 @@ img.float-left {
   font-size: 100%;
 }
 
-.toc ul li.active {
+#col-right .toc ul li.active {
   font-weight: bold;
 }
 
-.toc ul li {
+#col-right .toc ul li {
   font-weight: normal;
 }
 
@@ -75,3 +75,25 @@ img.float-left {
 }
 
 /* }}} */
+
+/* Left navigation */
+#col-left .toc ul {
+  list-style: none;
+  padding-left: 2ex;
+}
+
+#col-left .toc ul ul {
+  font-size: 90%;
+}
+
+#col-right .toc ul ul ul ul {
+  font-size: 100%;
+}
+
+nav.toc-depth-1 ul ul {
+  display: none;
+}
+
+nav.toc-depth-2 ul ul ul {
+  display: none;
+}

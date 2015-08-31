@@ -37,6 +37,7 @@ def convert_markdown( s ):
 	    mdx_math.MathExtension(enable_dollar_delimiter=True),
             mdx_link.makeExtension()
 	] )
+        convert_markdown.md.set_output_format( 'html5' )
 
     md = convert_markdown.md
     md.reset()
