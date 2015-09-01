@@ -45,6 +45,10 @@ def convert_markdown( s ):
     r.html = md.convert( s )
     r.toc = md.toc
     r.Meta = md.Meta
+    for key in r.Meta.keys():
+        val = r.Meta[key]
+        if len( val ) == 1:
+            r.Meta[key] = val[0]
 
     return r
 
@@ -143,16 +147,26 @@ def markdown_get_context( self, template):
     #f = open(template.filename):
     #    md = convert_markdown( f.read() )
 
-    # Pass through Jinja2 before converting.
-    md = convert_markdown( template.render() )
+    # Read until the first blank line to get the meta-data
+    meta = ""
+    with open(template.filename) as f:
+        while True:
+            l = f.readline()
+            meta += l
+            if not l.strip(): break
+
+    # Should have meta-data segment in meta to use for context.
+    md = convert_markdown( meta )
+    context = md.Meta
+            
+    # Now convert the whole document, using the meta-data as context
+    md = convert_markdown( template.render(**context) )
 
     context = { 'content': md.html, 'toc': md.toc }
     if mathre.match( md.html ):
         context['needs_mathjax'] = 1
+    context.update( md.Meta )
     
-    for key in md.Meta.keys():
-        val = md.Meta[key]
-        context[key] = val[0] if len( val ) == 1 else val
     return context
 
 # compilation rule

@@ -2,8 +2,12 @@ title: Markdown test
 active: dev/test
 
 <div class='alert alert-info lead' role='alert' markdown="1">
-Markdown cheatsheet taken from [gist jonschlinkert/5854601](https://gist.github.com/jonschlinkert/5854601)
+
+This markdown cheat cheat sheet is taken from [gist jonschlinkert/5854601](https://gist.github.com/jonschlinkert/5854601), and is used as a test of markdown rendering on this site.
+
 </div>
+
+# Local extensions
 
 ## Jinja2 Commands
 
@@ -13,6 +17,8 @@ All `Jinja2` commands need to be escaped accordingly.
 * `{{'{{title}}'}}` renders as `{{title}}`
 
 * `{{'{{1 + 1}}'}}` renders as `{{1 + 1}}`
+
+* `{{'{{ markdown("*hello*") }}'}}` renders as `{{ markdown("*hello*") }}`
 
 * Mark a block as raw using
 
@@ -24,6 +30,25 @@ All `Jinja2` commands need to be escaped accordingly.
         {{'{% endraw %}'}}
 
 * Alternately, escape using `{{"{{'{{'}}"}}`.
+
+## Math
+
+LaTeX can be used between `$` signs:
+
+* `$E = mc^2$`  renders to $E = mc^2$.
+
+* Displayed equations can be done with `$$`
+  $$
+    \frac{1}{2 \pi i} \oint \frac{ f(z) }{\zeta - z} \, dz = f(\zeta)
+  $$
+
+* Labeled equations using `\begin{equation}` etc. environments:
+  \begin{equation}\label{eq1}
+    -\lap u = 0 \quad\text{in } \Omega
+  \end{equation}
+  can be referred to using `\eqref{eq1}`: \eqref{eq1}.
+
+
 
 # Typography 
 
@@ -606,6 +631,7 @@ Content for chapter one.
 <br>
 <br>
 <br>
+
 
 
 ## Images
