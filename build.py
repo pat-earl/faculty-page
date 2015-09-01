@@ -128,6 +128,7 @@ def get_out_filename( site, src, out_ext='.html' ):
 
 def markdown_get_context( self, template):
     """ Convert markdown to html and read into context variables """
+
     dst = get_out_filename( self, template.name )
     if not self.needs_rendering( template, dst ):
 	return None
@@ -136,19 +137,23 @@ def markdown_get_context( self, template):
 	markdown_get_context.mathre = re.compile(
 		'.*<script\\s*type\\s*=\s*[\'"]math/tex(\\s|[\'";])',
 		re.DOTALL )
+    mathre = markdown_get_context.mathre
 
-    with open(template.filename) as f:
-	mathre = markdown_get_context.mathre
-	md = convert_markdown( f.read() )
+    # Directly convert to markdown
+    #f = open(template.filename):
+    #    md = convert_markdown( f.read() )
 
-	context = { 'content': md.html, 'toc': md.toc }
-	if mathre.match( md.html ):
-	    context['needs_mathjax'] = 1
-	
-	for key in md.Meta.keys():
-	    val = md.Meta[key]
-	    context[key] = val[0] if len( val ) == 1 else val
-	return context
+    # Pass through Jinja2 before converting.
+    md = convert_markdown( template.render() )
+
+    context = { 'content': md.html, 'toc': md.toc }
+    if mathre.match( md.html ):
+        context['needs_mathjax'] = 1
+    
+    for key in md.Meta.keys():
+        val = md.Meta[key]
+        context[key] = val[0] if len( val ) == 1 else val
+    return context
 
 # compilation rule
 def markdown_render(self, template, context=None, filepath=None):

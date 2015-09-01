@@ -1,234 +1,638 @@
 title: Markdown test
 active: dev/test
 
-<div class='alert alert-info' role='alert'>
-  <p class='lead'>
-    This README can be used as a reference for github-flavored-markdown styling (and possibly behavior).
-  </p>
+<div class='alert alert-info lead' role='alert' markdown="1">
+Markdown cheatsheet taken from [gist jonschlinkert/5854601](https://gist.github.com/jonschlinkert/5854601)
 </div>
 
 ## Jinja2 Commands
 
-`{{ 1 + 1 }}` renders as {{ 1 + 1 }}.
+The file is rendered by `Jinja2` before being passed to a `python-markdown`.
+All `Jinja2` commands need to be escaped accordingly.
 
+* `{{'{{title}}'}}` renders as `{{title}}`
 
-Est quia velit libero delectus et officiis labore. Aut exercitationem cupiditate quo non iure nulla aut. Veritatis recusandae animi veritatis nam. Possimus voluptas qui rem magni. Voluptatem possimus aut nihil.
+* `{{'{{1 + 1}}'}}` renders as `{{1 + 1}}`
 
-Possimus odio impedit quibusdam nisi assumenda inventore ducimus similique. Sit perspiciatis voluptatem ad voluptatem. Quidem ab a et. Deserunt ut laudantium consequatur nam beatae eum. Sit dicta aut ipsam accusamus dicta. Ipsa ut ex ut soluta sit eveniet.
+* Mark a block as raw using
 
-Quia et omnis ipsa a repellat. Aperiam nihil aliquid porro dolores ut commodi aut esse. Et corporis repellat ducimus velit.
+        {{'{% raw %}'}}
+        {% raw -%}
+        Raw block. No Jinja commands will work here.
+        {{ 1 + a }} {% hello %} world
+        {%- endraw %}
+        {{'{% endraw %}'}}
 
-Provident et asperiores reprehenderit libero. Et et praesentium sint molestias veniam. Quo consequatur ipsum illo id quia aperiam delectus. Assumenda quo perspiciatis possimus labore consequuntur aperiam provident. Quia sit quae facere.
+* Alternately, escape using `{{"{{'{{'}}"}}`.
 
-Sint voluptas molestiae tenetur a est. Consequatur sit natus est id nam qui. Ipsa quae explicabo sed dolores quisquam qui. Ducimus in expedita aut assumenda unde praesentium.
+# Typography 
 
-Aut culpa et aut optio. Minus ullam nemo sapiente unde non aliquid. Possimus illum tenetur autem rem accusamus enim iure nihil. Illum eos qui qui.
+## Headings
 
-In ut minima dolorem recusandae magnam. Et tenetur ipsum officia voluptate cumque dolores fugit mollitia. Placeat voluptatem similique voluptas aliquam quas qui et.
+Headings from `h1` through `h6` are constructed with a `#` for each level:
 
-Maiores illum dolore est possimus ut. Quod pariatur eius quia et natus consectetur aut. Tenetur labore et ad facilis. Et qui velit velit voluptas ut sunt. Ducimus incidunt at qui non commodi laboriosam laudantium qui. Quidem ex error facilis ex atque esse quam.
+``` markdown
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
+```
 
-Molestias sed illo dolores cum vel aut et. Iure sequi aut qui. Alias tenetur ut accusamus mollitia voluptatibus fuga. Magnam numquam accusamus quidem quaerat asperiores mollitia dolorem inventore. Quod sapiente aliquid doloribus. Velit aut reprehenderit aut.
+Renders to:
 
-Veniam nostrum quibusdam et et assumenda dolorum eveniet dolorem. Inventore corporis quo aliquid vel. Eos voluptates veritatis repudiandae voluptatum iusto ut.
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
 
-## Links
+HTML:
 
-* [My homepage](http://www.math.cmu.edu/~gautam)
+``` html
+<h3>h3 Heading</h3>
+<h4>h4 Heading</h4>
+<h5>h5 Heading</h5>
+<h6>h6 Heading</h6>
+```
 
-* Another [link] (which is a footnote).
-
-
-Nisi aut ducimus mollitia repellat. Ipsum voluptatibus ea inventore. Labore rerum nihil impedit maiores minima sunt saepe.
-
-Sed magni illum possimus perferendis nam voluptatem. Et reprehenderit eveniet perferendis quas. Laudantium est earum sunt nisi deserunt et. Accusantium sed earum non dolores voluptas.
-
-Adipisci cupiditate ipsa nam rerum doloremque. Ducimus quos sint quo perspiciatis aut ex enim. Odio exercitationem iste rerum aut unde. Veniam magni velit non. Voluptas quo exercitationem quidem.
-
-Cupiditate qui molestiae temporibus. Dolor libero dolorem inventore aut. Consectetur deleniti quam est temporibus. Fugiat consequatur beatae aut eum illum velit.
-
-Qui ut voluptas at qui et molestiae sunt maiores. Ut dicta vero voluptas quo laboriosam error consequatur. In perferendis eius rerum molestiae praesentium.
-
-Voluptatibus dolores eos eligendi rerum veritatis. Voluptatem rem provident nihil aut assumenda occaecati cumque. Reprehenderit et qui aut quam repudiandae quia. Eos fugiat nam asperiores. Et non doloribus unde autem qui qui consequatur eos.
-
-Et et adipisci eaque dolor. Aliquid eum magni animi provident officiis consequatur modi. Et eos illum nemo adipisci et. Asperiores velit placeat quia ut. Ab vitae id cum.
-
-Sed vitae quae illum sed quasi. Facere dignissimos minima eveniet amet eveniet tempora itaque in. Quae quod voluptate quos assumenda et animi voluptatibus. Aut illo aut aut et aliquid eius repellendus quo.
-
-Ex dolorem veniam soluta cum est laudantium autem ipsam. Totam dolorum velit laudantium illum laudantium amet rerum. Ut aut qui vitae nihil aspernatur. Doloribus aut enim beatae facilis at dicta nostrum. Nobis numquam in iure nostrum. Aspernatur blanditiis consequuntur qui consectetur voluptatum.
-
-Similique cum nulla corporis vel aspernatur corporis ipsa. A omnis eligendi quo exercitationem laudantium accusamus. Ipsam itaque rem ab totam.
-
-### Wikilinks
-
-* `[[wikilink]]` renders as [[wikilink]]
-
-* [[This is a link|Some text]]
-  [[a|b]]
-  [[a "hello"]]
-  [[a b]]
-
-
-Incidunt vel natus vitae et adipisci sequi consequatur. Aliquid tempora quibusdam aut. Sapiente ea praesentium quis et ipsum.
-
-Maxime consectetur qui rerum. Nemo perspiciatis nobis ipsum ut officiis. Dignissimos odio nobis aut quia.
-
-Voluptatem placeat ut aliquid. Ut velit ut sint nihil sit consequatur qui. Ea reprehenderit mollitia vel laudantium labore. Est itaque nulla consequatur sit.
-
-Nihil culpa et qui omnis explicabo. Corporis eligendi et et aliquam laboriosam animi. Aliquid consequuntur voluptatibus perspiciatis cupiditate vitae ut.
-
-Exercitationem magnam iste et veritatis excepturi necessitatibus. Quae et cumque non aperiam beatae eveniet. Ab aspernatur dolorem officiis perspiciatis aut cumque accusamus repellendus. Cum et nobis possimus incidunt dolore omnis repudiandae. Veniam ipsa aut laboriosam.
-
-Quidem sunt cupiditate impedit corporis labore quia corrupti ipsa. Molestiae blanditiis reprehenderit repellendus excepturi voluptatem. Quis aliquid excepturi labore. Porro earum dolorum maxime nobis impedit sint necessitatibus explicabo. Quos hic rerum aut earum qui et.
-
-Nemo velit et tempore necessitatibus minima voluptates. Vero magni est sed sit enim. Qui nihil et ad rerum eius animi quia. Non fugiat numquam non deserunt libero omnis.
-
-Sed nemo error id asperiores facere eos iure voluptas. Illo minus eos quis repellat. Quam molestias voluptas recusandae aut odit quas et. Fuga illo consectetur rerum accusantium sunt.
-
-Minus mollitia dolor eaque ea. Voluptate reprehenderit officiis rerum et placeat ut ea. Iusto vitae voluptate modi vel. Enim hic tempore qui. Nesciunt eligendi eveniet sapiente nobis ipsum cumque. Occaecati aut id in.
-
-Explicabo nihil libero deleniti ut et. Ab maxime recusandae earum eaque qui. Dolor officia earum dignissimos quis. Enim quia sequi animi. Mollitia corrupti eligendi et et impedit. In fugit et autem amet.
-
-
-The next list should be an ordered list
-
-1. Ordered list
-
-1. Second item.
-
-<div class="alert alert-warning" role="alert">
-    *Alert:* This is a warning.
+<div class='alert alert-info' role='alert' markdown='1'>
+**Note:**
+The `h1` and `h2` heading is not demonstrated above to avoid breaking the sectioning structure of this document.
 </div>
 
-[[ Important: This is an alert. ]]
+
+<br>
+<br>
+<br>
+
+
+## Horizontal Rules
+
+The HTML `<hr>` element is for creating a "thematic break" between paragraph-level elements. In markdown, you can create a `<hr>` with any of the following:
+
+* `___`: three consecutive underscores
+* `---`: three consecutive dashes
+* `***`: three consecutive asterisks
+
+renders to:
+
+___
 
 ---
 
-# H1
-followed by some text
+***
 
-## H2
-followed by some text
 
-### H3
-followed by some text
+<br>
+<br>
+<br>
 
-#### H4
-followed by some text
 
-##### H5
-followed by some text
+## Body Copy 
 
-###### H6
-followed by some text
+Body copy written as normal, plain text will be wrapped with `<p></p>` tags in the rendered HTML.
 
-Auto-detected link: http://www.france.com
+So this body copy:
 
-Some Ignored_multiple_underscore_italics here_
+``` markdown
+Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.
+```
+renders to this HTML:
 
-A line of normal text with `inline code` and *italics*, **strong font**, and even some \u03bc\u2020\u2131 \u254b\u212f\u2573\u254b. Followed by lots of Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id sem purus, eu commodo tortor. Donec malesuada ultricies dolor a eleifend. In hac habitasse platea dictumst. Vivamus a faucibus ligula. Nullam molestie tristique arcu, eu elementum metus ultricies sed. Aenean luctus congue lectus, vitae semper erat rhoncus non. Nulla facilisi.
+``` html
+<p>Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.</p>
+```
 
-Followed by another line of normal text with `inline code` and *italics*, **strong font**, and even some \u03bc\u2020\u2131 \u254b\u212f\u2573\u254b. Followed by lots of Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id sem purus, eu commodo tortor. Donec malesuada ultricies dolor a eleifend. In hac habitasse platea dictumst. Vivamus a faucibus ligula. Nullam molestie tristique arcu, eu elementum metus ultricies sed. Aenean luctus congue lectus, vitae semper erat rhoncus non. Nulla facilisi.
 
-Thin horizontal rule:
+<br>
+<br>
+<br>
 
---
 
-Thick horizontal rule:
+## Emphasis
 
-------
+### Bold
+For emphasizing a snippet of text with a heavier font-weight.
 
-|Table Header 1|Table Header 2           |
-|--------------|-------------------------|
-|Content       |http://example.org       |
-|Content       |http://localhost:\<port\>|
+The following snippet of text is **rendered as bold text**.
 
-<table class='table'>
-  <thead>
-    <tr>
-      <th scope='column'>Table header 1</th>
-      <th scope='col'>Table header 1</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Content</td>
-      <td>http://example.org</td>
-    </tr>
-    <tr>
-      <td>Content</td>
-      <td>http://localhost:\<port\></td>
-    </tr>
-  </tbody>
-</table>
+``` markdown
+**rendered as bold text**
+```
+renders to:
 
-Text right below table. Follows is a table with an empty cell, and unaligned indenting.
+**rendered as bold text**
 
-|Table Header 1|Table Header 2|
-|--------------|--------------|
-|Content  |  Cntent        |
-|Content       |      |
+and this HTML
 
-Empty line between table and this text
+``` html
+<strong>rendered as bold text</strong>
+```
 
-    def this_is
-      puts "some #{4-space-indent} code"
-    end
+### Italics
+For emphasizing a snippet of text with italics.
 
-<code>
-def this_is
-  puts "some #{code tag} code"
-end
-</code>
+The following snippet of text is _rendered as italicized text_.
 
+``` markdown
+_rendered as italicized text_
+```
+
+renders to:
+
+_rendered as italicized text_
+
+and this HTML:
+
+``` html
+<em>rendered as italicized text</em>
+```
+
+
+### strikethrough
+In GFM you can do strickthroughs. 
+
+``` markdown
+~~Strike through this text.~~
+```
+Which renders to:
+
+~~Strike through this text.~~
+
+
+<br>
+<br>
+<br>
+
+
+## Blockquotes
+For quoting blocks of content from another source within your document.
+
+Add `>` before any text you want to quote. 
+
+``` markdown
+Add `>` before any text you want to quote. 
+```
+
+Renders to:
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+
+and this HTML:
+
+``` html
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+</blockquote>
+```
+
+Blockquotes can also be nested:
+
+``` markdown
+> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue. 
+Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi. 
+>> Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor 
+odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
+>>> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue. 
+Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi. 
+```
+
+Renders to:
+
+> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue. 
+Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi. 
+>> Sed adipiscing elit vitae augue consectetur a gravida nunc vehicula. Donec auctor 
+odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
+>>> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue. 
+Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi. 
+
+
+<br>
+<br>
+<br>
+
+
+## Lists
+
+### Unordered
+A list of items in which the order of the items does not explicitly matter.
+
+You may use any of the following symbols to denote bullets for each list item:
+
+```markdown
+* valid bullet
+- valid bullet
++ valid bullet
+```
+
+For example
+
+``` markdown
++ Lorem ipsum dolor sit amet
++ Consectetur adipiscing elit
++ Integer molestie lorem at massa
++ Facilisis in pretium nisl aliquet
++ Nulla volutpat aliquam velit
+  - Phasellus iaculis neque
+  - Purus sodales ultricies
+  - Vestibulum laoreet porttitor sem
+  - Ac tristique libero volutpat at
++ Faucibus porta lacus fringilla vel
++ Aenean sit amet erat nunc
++ Eget porttitor lorem
+```
+Renders to:
+
++ Lorem ipsum dolor sit amet
++ Consectetur adipiscing elit
++ Integer molestie lorem at massa
++ Facilisis in pretium nisl aliquet
++ Nulla volutpat aliquam velit
+  - Phasellus iaculis neque
+  - Purus sodales ultricies
+  - Vestibulum laoreet porttitor sem
+  - Ac tristique libero volutpat at
++ Faucibus porta lacus fringilla vel
++ Aenean sit amet erat nunc
++ Eget porttitor lorem
+
+And this HTML
+
+``` html
+<ul>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>Facilisis in pretium nisl aliquet</li>
+  <li>Nulla volutpat aliquam velit
+    <ul>
+      <li>Phasellus iaculis neque</li>
+      <li>Purus sodales ultricies</li>
+      <li>Vestibulum laoreet porttitor sem</li>
+      <li>Ac tristique libero volutpat at</li>
+    </ul>
+  </li>
+  <li>Faucibus porta lacus fringilla vel</li>
+  <li>Aenean sit amet erat nunc</li>
+  <li>Eget porttitor lorem</li>
+</ul>
+```
+
+### Ordered
+
+A list of items in which the order of items does explicitly matter.
+
+``` markdown
+1. Lorem ipsum dolor sit amet
+2. Consectetur adipiscing elit
+3. Integer molestie lorem at massa
+4. Facilisis in pretium nisl aliquet
+5. Nulla volutpat aliquam velit
+6. Faucibus porta lacus fringilla vel
+7. Aenean sit amet erat nunc
+8. Eget porttitor lorem
+```
+Renders to:
+
+1. Lorem ipsum dolor sit amet
+2. Consectetur adipiscing elit
+3. Integer molestie lorem at massa
+4. Facilisis in pretium nisl aliquet
+5. Nulla volutpat aliquam velit
+6. Faucibus porta lacus fringilla vel
+7. Aenean sit amet erat nunc
+8. Eget porttitor lorem
+
+And this HTML:
+
+``` html
+<ol>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>Facilisis in pretium nisl aliquet</li>
+  <li>Nulla volutpat aliquam velit</li>
+  <li>Faucibus porta lacus fringilla vel</li>
+  <li>Aenean sit amet erat nunc</li>
+  <li>Eget porttitor lorem</li>
+</ol>
+```
+
+**TIP**: If you just use `1.` for each number, GitHub will automatically number each item. For example:
+
+``` markdown
+1. Lorem ipsum dolor sit amet
+1. Consectetur adipiscing elit
+1. Integer molestie lorem at massa
+1. Facilisis in pretium nisl aliquet
+1. Nulla volutpat aliquam velit
+1. Faucibus porta lacus fringilla vel
+1. Aenean sit amet erat nunc
+1. Eget porttitor lorem
+```
+
+Renders to:
+
+1. Lorem ipsum dolor sit amet
+2. Consectetur adipiscing elit
+3. Integer molestie lorem at massa
+4. Facilisis in pretium nisl aliquet
+5. Nulla volutpat aliquam velit
+6. Faucibus porta lacus fringilla vel
+7. Aenean sit amet erat nunc
+8. Eget porttitor lorem
+
+
+<br>
+<br>
+<br>
+
+
+## Code
+
+### Inline code
+Wrap inline snippets of code with `` ` ``.
+
+For example, `<section></section>` should be wrapped as "inline".
+
+``` html
+For example, `<section></section>` should be wrapped as "inline".
+```
+
+
+### Indented code
+
+Or indent several lines of code by at least four spaces, as in:
+
+``` js
+    // Some comments
+    line 1 of code
+    line 2 of code
+    line 3 of code
+```
+
+    // Some comments
+    line 1 of code
+    line 2 of code
+    line 3 of code
+
+
+### Block code "fences"
+
+Use "fences"  ```` ``` ```` to block in multiple lines of code. 
+
+<pre>``` html
+Sample text here...
+```</pre>
+
+
+```
+Sample text here...
+```
+
+HTML:
+
+``` html
 <pre>
-def this_is
-  puts "some #{pre tag} code"
-end
+  <p>Sample text here...</p>
 </pre>
-
-```
-def this_is
-  puts "some #{fenced} code"
-end
 ```
 
-```ruby
-class Classy
-  def this_is
-    puts "some #{colored} ruby code with ruby syntax highlighting"
-    @someobj.do_it(1, 2)
-  end
-end
+### Syntax highlighting
+
+GFM, or "GitHub Flavored Markdown" also supports syntax highlighting. To activate it, simply add the file extension of the language you want to use directly after the first code "fence", ` ``` js `, and syntax highlighting will automatically be applied in the rendered HTML. For example, to apply syntax highlighting to JavaScript code:
+
+<pre>``` javascript
+grunt.initConfig({
+  assemble: {
+    options: {
+      assets: 'docs/assets',
+      data: 'src/data/*.{json,yml}',
+      helpers: 'src/custom-helpers.js',
+      partials: ['src/partials/**/*.{hbs,md}']
+    },
+    pages: {
+      options: {
+        layout: 'default.hbs'
+      },
+      files: {
+        './': ['src/templates/pages/index.hbs']
+      }
+    }
+  }
+};
+```</pre>
+
+Renders to:
+
+``` javascript
+grunt.initConfig({
+  assemble: {
+    options: {
+      assets: 'docs/assets',
+      data: 'src/data/*.{json,yml}',
+      helpers: 'src/custom-helpers.js',
+      partials: ['src/partials/**/*.{hbs,md}']
+    },
+    pages: {
+      options: {
+        layout: 'default.hbs'
+      },
+      files: {
+        './': ['src/templates/pages/index.hbs']
+      }
+    }
+  }
+};
 ```
 
-```javascript
-var test = function this_is(){
-  console.log("some" + colored + "javascript code with javascript syntax highlighting really long");
-}
+And this complicated HTML:
+
+``` xml
+<div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+  <span class="nx">assemble</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">assets</span><span class="o">:</span> <span class="s1">'docs/assets'</span><span class="p">,</span>
+      <span class="nx">data</span><span class="o">:</span> <span class="s1">'src/data/*.{json,yml}'</span><span class="p">,</span>
+      <span class="nx">helpers</span><span class="o">:</span> <span class="s1">'src/custom-helpers.js'</span><span class="p">,</span>
+      <span class="nx">partials</span><span class="o">:</span> <span class="p">[</span><span class="s1">'src/partials/**/*.{hbs,md}'</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nx">pages</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">layout</span><span class="o">:</span> <span class="s1">'default.hbs'</span>
+      <span class="p">},</span>
+      <span class="nx">files</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">'./'</span><span class="o">:</span> <span class="p">[</span><span class="s1">'src/templates/pages/index.hbs'</span><span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
 ```
 
-```clojure
-(defproject myproject "0.5.0-SNAPSHOT"
-  :description "Some clojure code with syntax highlighting."
-  :dependencies [[org.clojure/clojure "1.5.1"]]
-  :plugins [[lein-tar "3.2.0"]])
+
+<br>
+<br>
+<br>
+
+
+
+## Tables
+Tables are created by adding pipes as dividers between each cell, and by adding a line of dashes (also separated by bars) beneath the header. Note that the pipes do not need to be vertically aligned.
+
+
+``` markdown
+| Option | Description |
+| ------ | ----------- |
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
 ```
 
-```js
-var test = function this_is(){
-  console.log("language declared as 'js' instead");
-}
+Renders to:
+
+| Option | Description |
+| ------ | ----------- |
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
+
+And this HTML:
+
+``` html
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>path to data files to supply the data that will be passed into templates.</td>
+  </tr>
+  <tr>
+    <td>engine</td>
+    <td>engine to be used for processing templates. Handlebars is the default.</td>
+  </tr>
+  <tr>
+    <td>ext</td>
+    <td>extension to be used for dest files.</td>
+  </tr>
+</table>
 ```
 
-```bogus_language
-var test = function this_is(){
-  console.log("language declared as bogus_language");
-}
+### Right aligned text
+
+Adding a colon on the right side of the dashes below any heading will right align text for that column.
+
+``` markdown
+| Option | Description |
+| ------:| -----------:|
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
 ```
 
-> here is blockquote
+| Option | Description |
+| ------:| -----------:|
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
 
-[Relative image link](afu.png)
 
-[link]: http://a.b.c
+<br>
+<br>
+<br>
+
+
+## Links
+
+### Basic link
+
+``` markdown
+[Assemble](http://assemble.io)
+```
+
+Renders to (hover over the link, there is no tooltip):
+
+[Assemble](http://assemble.io)
+
+HTML:
+
+``` html
+<a href="http://assemble.io">Assemble</a>
+```
+
+
+### Add a title
+
+``` markdown
+[Upstage](https://github.com/upstage/ "Visit Upstage!")
+```
+
+Renders to (hover over the link, there should be a tooltip):
+
+[Upstage](https://github.com/upstage/ "Visit Upstage!")
+
+HTML:
+
+``` html
+<a href="https://github.com/upstage/" title="Visit Upstage!">Upstage</a>
+```
+
+### Named Anchors
+
+Named anchors enable you to jump to the specified anchor point on the same page. For example, each of these chapters:
+
+```markdown
+# Table of Contents
+  * [Chapter 1](#chapter-1)
+  * [Chapter 2](#chapter-2)
+  * [Chapter 3](#chapter-3)
+```
+will jump to these sections:
+
+```markdown
+## Chapter 1 <a id="chapter-1"></a>
+Content for chapter one.
+
+## Chapter 2 <a id="chapter-2"></a>
+Content for chapter one.
+
+## Chapter 3 <a id="chapter-3"></a>
+Content for chapter one.
+```
+**NOTE** that specific placement of the anchor tag seems to be arbitrary. They are placed inline here since it seems to be unobtrusive, and it works.
+
+
+<br>
+<br>
+<br>
+
+
+## Images
+Images have a similar syntax to links but include a preceding exclamation point.
+
+``` markdown
+![Minion](http://octodex.github.com/images/minion.png)
+```
+![Minion](http://octodex.github.com/images/minion.png)
+
+or
+``` markdown
+![Alt text](http://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
+```
+![Alt text](http://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
+
+Like links, Images also have a footnote style syntax
+
+``` markdown
+![Alt text][id]
+```
+![Alt text][id]
+
+With a reference later in the document defining the URL location:
+
+[id]: http://octodex.github.com/images/dojocat.jpg  "The Dojocat"
+
+
+    [id]: http://octodex.github.com/images/dojocat.jpg  "The Dojocat"
+

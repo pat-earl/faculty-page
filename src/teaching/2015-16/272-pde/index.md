@@ -73,7 +73,7 @@ It isn't imperative you have taken these courses; but it is imperative that you 
 
 ### Homework
 
-<div markdown='1' class='well well-sm text-warning'>
+<div markdown='1' class='alert alert-warning' role='alert'>
 **Note:**
 As of 2015-08-30, we do not yet have a grader for this class.
 If we are not assigned a grader, I might change the homework model completely.
