@@ -73,12 +73,125 @@
 
 {%- macro room( bldg, room='', is_office=true ) -%}
   <span class='text-nowrap' {{"title='Office'" if is_office}}>
-    {{glyph('briefcase') if is_office}}
-    {% if bldg == "WEH" -%}
-      <a title='Wean Hall' href='https://www.google.com/maps/place/Wean+Hall,+Carnegie+Mellon+University,+Pittsburgh,+PA+15213'>WEH</a>
+    {{-glyph('briefcase') if is_office-}}
+    {%- if bldg == "WEH" -%}
+      {{' '}}<a title='Wean Hall' href='https://www.google.com/maps/place/Wean+Hall,+Carnegie+Mellon+University,+Pittsburgh,+PA+15213'>WEH</a>
     {%- else -%}
       {{bldg}}
     {%- endif -%}
-    {{ ' '~room if room}}.
+    {{- ' '~room if room -}}.
   </span>
+{%- endmacro -%}
+
+{%- macro info_table() -%}
+  {#- Import this using "with context", so all the variables are inherited #}
+  <table class='table' summary='Logistical Information'>
+    <tbody>{# Instructor, lectures {{{ #}
+      <tr>
+	<th scope='row'>Instructor</th>
+	<td>
+	  <a href='{{author_url}}'>{{site_author}}</a>.
+	  &emsp;
+	  {{ room( author_office_bldg, author_office_room ) }}
+	  &emsp;
+	  {{ email(author_email) }}
+	</td>
+      </tr>
+      {%- if lectures -%}
+      <tr>
+	<th scope='row'>Lectures</th>
+	<td>
+	  {% if lectures is string -%}
+	    {{lectures}}
+	  {% else -%}
+	    {{lectures[0]}} in
+	    {{room( lectures[1], lectures[2], is_office=false ) }}
+	  {% endif -%}
+	</td>
+      </tr>
+      {%- endif -%}
+      {%- if office_hours -%}
+      <tr>
+	<th scope='row'>
+	  Office Hours
+	  {%- if ta_office_hours %} (instructor){%- endif -%}
+	</th>
+	<td>
+	  {{office_hours}}
+	</td>
+      </tr>
+      {%- endif -%}
+    </tbody>{# }}} #}
+    {%- if ta -%}{# TA {{{ #}
+      <tbody>
+	<tr>
+	  <th scope='row'>TA</th>
+	  <td>
+	    {%- if ta_website -%}
+	      <a href='{{ta_website}}'>{{ta}}</a>.
+	    {%- else -%}
+	      {{ta}}.
+	    {%- endif -%}
+	    {%- if ta_office -%}
+	      &emsp;
+	      {{ room( ta_office[0], ta_office[1] ) }}
+	    {%- endif -%}
+	    {%- if ta_email -%}
+	      &emsp;
+	      {{ email( ta_email ) }}
+	    {%- endif -%}
+	  </td>
+	</tr>
+	{%- if recitation -%}
+	  <tr>
+	    <th scope='row'>Recitation</th>
+	    <td>
+	      {%- if recitation is string -%}
+		{{recitation}}
+	      {%- else -%}
+		{{recitation[0]}} in
+		{{room( recitation[1], recitation[2], is_office=false ) }}
+	      {%- endif -%}
+	    </td>
+	  </tr>
+	{%- endif -%}
+	{%- if ta_office_hours -%}
+	  <tr>
+	    <th scope='row'>Office Hours (TA)</th>
+	    <td>{{ta_office_hours}}</td>
+	  </tr>
+	{%- endif -%}
+      </tbody>
+    {%- endif -%}{# }}} TA #}
+    {%- if dates -%}{# {{{ #}
+    <tbody>
+      {%- for s in dates -%}
+	{%- if loop.index is odd -%}
+	  <tr>
+	    <th scope='row'>{{s}}</th>
+	{%- else -%}
+	    <td>{{s}}</td>
+	  </tr>
+	{%- endif -%}
+      {%- endfor -%}
+    </tbody>
+    {%- endif -%}{# }}} #}
+    {%- if mailing_list -%}{# Mailing list {{{ #}
+      <tbody>
+	<tr>
+	  <th scope='row'>Mailing list</td>
+	  <td>
+	    <a href='{{mailing_list[0]}}'>{{mailing_list[1]}}</a>
+	    <span class='small'>
+	      (Students and guests
+	      <span class='bg-warning'>
+		<b>please subscribe to this list</b>.
+	      </span>
+	      I will NOT use BlackBoard.)
+	    </span>
+	  </td>
+	</tr>
+      </tbody>
+    {%- endif -%}{# }}} #}
+  </table>
 {%- endmacro -%}

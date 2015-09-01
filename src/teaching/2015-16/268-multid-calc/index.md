@@ -24,6 +24,9 @@ dates: Homework due
     Final
     TBA
 
+{% from 'includes/macros.j2' import info_table with context %}
+{{ info_table() }}
+
 ## Course Description
 
 This course is a serious introduction to multidimensional calculus that makes use of matrices and linear transformations.

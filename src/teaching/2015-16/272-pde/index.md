@@ -13,6 +13,9 @@ dates: Midterm 1
     Final
     TBA
 
+{% from 'includes/macros.j2' import info_table with context %}
+{{ info_table() }}
+
 ## Course Description
 
 A Partial Differential Equation (PDE for short), is a differential equation
