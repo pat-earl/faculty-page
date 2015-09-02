@@ -1,7 +1,6 @@
 {% set active = 'blog' %}
 {% extends "layouts/md-nav-right-affix.j2" %}
-{% block nav_column %}
-  {{ super() }}
+{% block nav_affix_after_toc %}
   {#
   <div class='row'>
     <div class='col-md-12 col-sm-6'>
@@ -12,4 +11,4 @@
     </div>
   </div>
   #}
-{% endblock nav_column %}
+{% endblock nav_affix_after_toc %}

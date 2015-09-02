@@ -1,0 +1,17 @@
+{%- macro md_sidenav() -%}
+  {%- include dirname ~ '/' ~ (sidenav | default( '_sidenav.md', true )) ignore missing -%}
+{%- endmacro -%}
+{% extends "layouts/nav-right.j2" %}
+{% block main_column %}
+  <div {{"class='lead'" if bigfont}}>{# Get a readable font! #}
+    <h1>{{title}}</h1>
+    {{ content }}
+  </div>
+{% endblock %}
+{% block nav_column %}
+  {% block nav_before_toc %}{% endblock %}
+  {{ super() }}
+  {% block nav_after_toc %}
+    {{ md_sidenav() | markdown }}
+  {% endblock %}
+{% endblock %}

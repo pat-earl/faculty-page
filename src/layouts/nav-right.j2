@@ -1,0 +1,18 @@
+{%- extends "layouts/base.j2" -%}
+{% block body %}
+  <div class='row'>
+    <div class='col-md-9' id='col-main'>
+      {% block main_column %}
+	<h1>{{title|default('Set title to the document title')}}</h1>
+	{{ lipsum() }}
+      {% endblock main_column %}
+    </div>{# col-md-9 #}
+    <div class='col-md-3' id='col-right'>
+      {% block nav_column %}
+	<nav class='nav hidden-xs hidden-sm'>
+	  {{toc}}{# Looks like:<div class='toc'><ul>...</ul></div> #}
+	</nav>
+      {% endblock nav_column %}
+    </div>{# col-md-3 #}
+  </div>{# row #}
+{% endblock body %}

@@ -1,8 +1,34 @@
 {% set active = 'teaching' %}
-{% import 'includes/macros.j2' as macros %}
-{% extends "layouts/md-nav-left.j2" %}
-{% block nav_column %}
-  {{ super() }}
+{%- macro md_hw() -%}
+  {%- include dirname ~ '/' ~ (hw | default( '_hw.md', true )) ignore missing -%}
+{%- endmacro -%}
+{%- macro md_handouts() -%}
+  {%- include dirname ~ '/' ~ (handouts | default( '_handouts.md', true )) ignore missing -%}
+{%- endmacro -%}
+{% extends "layouts/md-nav-right.j2" %}
+{% block nav_after_toc %}
+  {% if md_hw() or md_handouts() %}
+    <div class='row'>
+      {% if md_hw() %}
+	<div class='col-md-12 col-sm-6'>
+	  <h4 class='hidden-xs hidden-sm'>Homework and Solutions</h4>
+	  <h2 class='hidden-md hidden-lg'>Homework and Solutions</h2>
+	  {{ md_hw() | markdown }}
+	</div>
+      {% endif %}
+      {% if md_handouts() %}
+	<div class='col-md-12 col-sm-6'>
+	  <h4 class='hidden-xs hidden-sm'>Handouts</h4>
+	  <h2 class='hidden-md hidden-lg'>Handouts</h2>
+	  {{ md_handouts() | markdown }}
+	</div>
+      {% endif %}
+    </div>
+  {% endif %}
+{% endblock %}
+{# Don't use this. Include a file instead. #}
+{# {{{
+{% block nav_after_toc %}
   {% if hw or handouts %}
     <div class='row'>
       {% if hw %}
@@ -22,3 +48,4 @@
     </div>
   {% endif %}
 {% endblock %}
+}}} #}

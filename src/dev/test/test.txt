@@ -1,0 +1,6 @@
+Plain test file with no jinja / macros...
+
+basename: {{basename}}
+dirname: {{dirname}}
+name: {{name}}
+
