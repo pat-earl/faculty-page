@@ -13,8 +13,8 @@ dates: Midterm 1
     Final
     TBA
 
-{% from 'includes/macros.j2' import info_table with context %}
-{{ info_table() }}
+{% from 'includes/macros.j2' import course_info_table with context %}
+{{ course_info_table() }}
 
 ## Course Description
 

@@ -1,4 +1,6 @@
 {%- import 'includes/site.j2' as site -%}
+{%- from 'layouts/frag/nav.j2' import nav_bar -%}
+{%- from 'layouts/frag/footer.j2' import footer with context -%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,14 +45,7 @@
     <![endif]-->
   </head>
   <body {% block bodyargs -%}{%- endblock -%}>
-    {%- block nav -%}
-      {#-
-	Jinja2 bug: Need to access these variables here, otherwise they don't
-	show up in included files.
-      -#}
-      <!-- {{ active }} -->
-      {%- include 'layouts/frag/nav.j2' -%}
-    {%- endblock %}
+    {%- block nav %}{{ nav_bar(active) }}{% endblock %}
 
     {% block pre_container %}{% endblock -%}
     <div class='container'>
@@ -61,14 +56,7 @@
       {%- endblock -%}
     </div>
 
-    {% block footer -%}
-      {#-
-	Jinja2 bug: Need to access these variables here, otherwise they don't
-	show up in included files.
-      -#}
-      <!-- {{page_footer|e}} -->
-      {%- include 'layouts/frag/footer.j2' -%}
-    {%- endblock -%}
+    {% block footer scoped -%}{{ footer() }}{%- endblock -%}
 
     {#- Hopefully this will inherit the needs_mathjax variable -#}
     {%- block scripts scoped -%}
