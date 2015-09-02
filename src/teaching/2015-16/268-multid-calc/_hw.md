@@ -1,3 +1,1 @@
-Hello *world*
-
-wiki_base_url: `{{dirname}}`
+Homework will be posted here when assigned.
