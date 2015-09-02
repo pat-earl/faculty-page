@@ -4,53 +4,9 @@ active: dev/test
 <div class='alert alert-info lead' role='alert' markdown="1">
 
 This markdown cheat cheat sheet is taken from [gist jonschlinkert/5854601](https://gist.github.com/jonschlinkert/5854601), and is used as a test of markdown rendering on this site.
+Site specific extensions are [[README.md|here]].
 
 </div>
-
-# Local extensions
-
-## Jinja2 Commands
-
-The file is rendered by `Jinja2` before being passed to a `python-markdown`.
-All `Jinja2` commands need to be escaped accordingly.
-
-* `{{'{{title}}'}}` renders as `{{title}}`
-
-* `{{'{{1 + 1}}'}}` renders as `{{1 + 1}}`
-
-* `{{'{{ markdown("*hello*") }}'}}` renders as `{{ markdown("*hello*") }}`
-
-* Mark a block as raw using
-
-        {{'{% raw %}'}}
-        {% raw -%}
-        Raw block. No Jinja commands will work here.
-        {{ 1 + a }} {% hello %} world
-        {%- endraw %}
-        {{'{% endraw %}'}}
-
-* Alternately, escape using `{{"{{'{{'}}"}}`.
-
-## Math
-
-LaTeX can be used between `$` signs:
-
-* `$E = mc^2$`  renders to $E = mc^2$.
-
-* Displayed equations can be done with `$$`
-  $$
-    \frac{1}{2 \pi i} \oint \frac{ f(z) }{\zeta - z} \, dz = f(\zeta)
-  $$
-
-* Labeled equations using `\begin{equation}` etc. environments:
-  \begin{equation}\label{eq1}
-    -\lap u = 0 \quad\text{in } \Omega
-  \end{equation}
-  can be referred to using `\eqref{eq1}`: \eqref{eq1}.
-
-
-
-# Typography 
 
 ## Headings
 
@@ -371,6 +327,38 @@ Renders to:
 <br>
 <br>
 
+
+### Definition
+
+The code
+
+    Apple
+    :   Pomaceous fruit of plants of the genus Malus in 
+        the family Rosaceae.
+
+    Orange
+    :   The fruit of an evergreen tree of the genus Citrus.
+
+renders to
+
+Apple
+:   Pomaceous fruit of plants of the genus Malus in 
+    the family Rosaceae.
+
+Orange
+:   The fruit of an evergreen tree of the genus Citrus.
+
+and this html:
+
+``` html
+<dl>
+<dt>Apple</dt>
+<dd>Pomaceous fruit of plants of the genus Malus in 
+the family Rosaceae.</dd>
+<dt>Orange</dt>
+<dd>The fruit of an evergreen tree of the genus Citrus.</dd>
+</dl>
+```
 
 ## Code
 

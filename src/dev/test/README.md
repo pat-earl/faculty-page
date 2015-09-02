@@ -1,0 +1,77 @@
+title: Local Extensions and site specific details
+
+A general markdown cheat sheet can be found [[markdown.md|here]].
+This file only documents site specific quirks and extensions.
+
+## Jinja2 Commands
+
+Markdown files are rendered by `Jinja2` before being passed to a
+`python-markdown`. All `Jinja2` commands need to be escaped accordingly.
+
+* `{{'{{title}}'}}` renders as `{{title}}`
+
+* `{{'{{1 + 1}}'}}` renders as `{{1 + 1}}`
+
+* `{{'{{ markdown("*hello*") }}'}}` renders as `{{ markdown("*hello*") }}`
+
+* Mark a block as raw using
+
+        {{'{% raw %}'}}
+        {% raw -%}
+        Raw block. No Jinja commands will work here.
+        {{ 1 + a }} {% hello %} world
+        {%- endraw %}
+        {{'{% endraw %}'}}
+
+* Alternately, escape using `{{"{{'{{'}}"}}`.
+
+### Macros
+
+Various custom macros are in the `includes/macros.j2` file and can be used in markdown documents.
+
+course_info_table:
+: Makes a table with course information taken from the keys in the meta-data (e.g. [[/teaching/2015-16/268-multid-calc|here]].)
+
+pubs:
+: Generates a publication list (e.g. [[/|here]]).
+
+## Math
+
+LaTeX can be used between `$` signs:
+
+* `$E = mc^2$`  renders to $E = mc^2$.
+
+* Displayed equations can be done with `$$`
+  $$
+    \frac{1}{2 \pi i} \oint \frac{ f(z) }{\zeta - z} \, dz = f(\zeta)
+  $$
+
+* Labeled equations using `\begin{equation}` etc. environments:
+  \begin{equation}\label{eq1}
+    -\lap u = 0 \quad\text{in } \Omega
+  \end{equation}
+  can be referred to using `\eqref{eq1}`: \eqref{eq1}.
+
+## WikiLinks
+
+* ``[[markdown.md]]`` generates a link [[markdown.md]]. (An extension of `.md` is replaced with `.html`)
+* `[[/dev/test|Test]]` generates [[/dev/test|Test]] (links to `/dev/test` and says `Test`).
+* Links beginning with `auth/` will be redirected to `https://site_surl/dirname/auth/...`. (This is to avoid Shibboleth woes.)
+* Links beginning with `/` will be prefixed with `site_prefix`.
+
+## Side panel navigation
+
+* By default markdown files have the layout `md-default.j2` which links to `md-right-nav-affix.j2`. This shows the table of contents on the right on large screens, which highlights the current section and sticks to the top of the window.
+
+* The layout can be changed using
+
+        layout: md-right-nav.j2
+
+    as meta-data.
+
+* The contents of `_sidenav.md` in the same directory is included below the table of contents in some layouts (`md-right-nav.j2`, but not `md-right-nav-affix.j2`).
+
+* For class pages (using `md-class.j2` layout) contents of `_hw.md` and `_handouts.md` are used in the side panel navigation.
+
+* <span class='bg-warning text-info'>TODO: Disable `affix` when the right column is too high, and then include side navigation in `md-right-nav-affix.j2` as well.</span> 
+

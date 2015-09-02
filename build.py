@@ -21,8 +21,12 @@ sys.path.append( pwd + '/ext/python-markdown-links' )
 import mdx_math
 import mdx_link
 
-def build_url( self, text, base, end ):
-    """ Build a url from the label, a base, and an end. """
+def build_url( site, text, template=None ):
+    """
+        Build a url from the label text. First argument is a staticjinja Site
+        to get globals (base, surl, etc.) from. If template is provided, then
+        "auth/" links can be redirected to https as required by Shibboleth.
+    """
 
     sep = text.find('|')
     if( sep >= 0 ):
@@ -32,13 +36,24 @@ def build_url( self, text, base, end ):
         link = re.sub(r'([ ]+_)|(_[ ]+)|([ ]+)', '_', text)
         label = text
 
-    return ( base + link + end, label)
+    g = site._env.globals
+    if link.startswith( 'auth/' ) and template:
+        link = os.path.join( g['site_surl'],
+                os.path.dirname(template.name), link )
+    elif link.startswith( '/' ):
+        link = os.path.join( g['site_prefix'], link )
 
-def convert_markdown( self, s ):
+    (l, e) = os.path.splitext( link )
+    if e == '.md':
+        link = l + '.html'
+
+    return ( link, label)
+
+def convert_markdown( site, s, template=None ):
     """
         Convert a string (or list) into markdown
 
-        self is an object of class Site. The _env.globals dict is used to
+        site is an object of class Site. The _env.globals dict is used to
         build wiki_links using the [[ ... ]] syntax.
     """
     if type(s) == list:
@@ -54,7 +69,9 @@ def convert_markdown( self, s ):
 	    'markdown.extensions.toc',
 	    mdx_math.MathExtension(enable_dollar_delimiter=True),
             mdx_link.makeExtension(
-                build_url=lambda t, b, e: build_url( self, t, b, e )
+                link_chars = r'\w0-9|._ /-',
+                build_url=lambda t, b, e: build_url( site, t,
+                    template=template )
             )
 	] )
         convert_markdown.md.set_output_format( 'html5' )
@@ -194,11 +211,11 @@ def markdown_get_context( self, template):
             if not l.strip(): break
 
     # Should have meta-data segment in meta to use for context.
-    md = convert_markdown( self, meta )
+    md = convert_markdown( self, meta, template=template )
     context = inject_name_vars( self, template, md.Meta )
 
     # Now convert the whole document, using the meta-data as context
-    md = convert_markdown( self, template.render(**context) )
+    md = convert_markdown( self, template.render(**context), template=template )
 
     context = {
         'content': md.html,
