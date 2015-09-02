@@ -21,8 +21,26 @@ sys.path.append( pwd + '/ext/python-markdown-links' )
 import mdx_math
 import mdx_link
 
-def convert_markdown( s ):
-    """ Convert a string (or list) into markdown """
+def build_url( self, text, base, end ):
+    """ Build a url from the label, a base, and an end. """
+
+    sep = text.find('|')
+    if( sep >= 0 ):
+        link = text[:sep]
+        label = text[sep+1:]
+    else:
+        link = re.sub(r'([ ]+_)|(_[ ]+)|([ ]+)', '_', text)
+        label = text
+
+    return ( base + link + end, label)
+
+def convert_markdown( self, s ):
+    """
+        Convert a string (or list) into markdown
+
+        self is an object of class Site. The _env.globals dict is used to
+        build wiki_links using the [[ ... ]] syntax.
+    """
     if type(s) == list:
         s = '\n'.join(s)
 
@@ -35,7 +53,9 @@ def convert_markdown( s ):
 	    'markdown.extensions.smarty',
 	    'markdown.extensions.toc',
 	    mdx_math.MathExtension(enable_dollar_delimiter=True),
-            mdx_link.makeExtension()
+            mdx_link.makeExtension(
+                build_url=lambda t, b, e: build_url( self, t, b, e )
+            )
 	] )
         convert_markdown.md.set_output_format( 'html5' )
 
@@ -56,19 +76,25 @@ class Site( staticjinja.Site ):
     # Override a few methods to customize to my settings.
 
     def get_context(self, template):
-	"Overridden to allow Site as an argument to the context function"
+	"""
+            Overridden:
+                1. Allow Site as an argument to the context function
+                2. Inject dirname, basename, etc into the context.
+        """
         try:
             context_generator = self._get_context_generator(template.name)
         except ValueError:
-            return {}
+            context = None
         else:
             try:
-                return context_generator( self, template)
+                context = context_generator( self, template)
             except TypeError:
 		try:
-		    return context_generator( template)
+		    context = context_generator( template)
 		except TypeError:
-		    return context_generator()
+		    context = context_generator()
+
+        return inject_name_vars( self, template, context )
 
     # Only copy static files if necessary (according to mtimes)
     def copy_static( self, files):
@@ -97,13 +123,7 @@ class Site( staticjinja.Site ):
     # Only render templates if necessary (according to mtimes)
     def render_template( self, template, context=None, filepath=None):
 	if context is None:
-	    context = self.get_context(template) or {}
-
-        context.update( {
-            'name': template.name,
-            'dirname': os.path.dirname( template.name ),
-            'basename': os.path.basename( template.name )
-        })
+	    context = self.get_context(template)
 
 	try:
 	    rule = self.get_rule(template.name)
@@ -138,6 +158,16 @@ def get_out_filename( site, src, out_ext='.html' ):
 	 
     return f + out_ext
 
+def inject_name_vars( self, template, context ):
+    if context == None:
+        context = {}
+    context.update( {
+        'name': template.name,
+        'dirname': os.path.dirname( template.name ),
+        'basename': os.path.basename( template.name )
+    })
+    return context
+
 def markdown_get_context( self, template):
     """ Convert markdown to html and read into context variables """
 
@@ -164,11 +194,11 @@ def markdown_get_context( self, template):
             if not l.strip(): break
 
     # Should have meta-data segment in meta to use for context.
-    md = convert_markdown( meta )
-    context = md.Meta
-            
+    md = convert_markdown( self, meta )
+    context = inject_name_vars( self, template, md.Meta )
+
     # Now convert the whole document, using the meta-data as context
-    md = convert_markdown( template.render(**context) )
+    md = convert_markdown( self, template.render(**context) )
 
     context = {
         'content': md.html,
@@ -255,7 +285,7 @@ if __name__ == "__main__":
     site._env.globals.update( dict( cfg.items('common') ) )
     site._env.globals.update( dict( cfg.items(dev_env) ) )
     
-    site._env.globals['markdown'] = lambda s: convert_markdown(s).html
+    site._env.globals['markdown'] = lambda s: convert_markdown( site, s).html
     site._env.filters['markdown'] = site._env.globals['markdown']
 
     # enable automatic reloading

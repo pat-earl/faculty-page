@@ -45,7 +45,7 @@
     <![endif]-->
   </head>
   <body {% block bodyargs -%}{%- endblock -%}>
-    {%- block nav %}{{ nav_bar(active) }}{% endblock %}
+    {%- block nav %}{{ nav_bar(active|default(dirname, true) ) }}{% endblock %}
 
     {% block pre_container %}{% endblock -%}
     <div class='container'>

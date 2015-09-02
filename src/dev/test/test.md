@@ -1,7 +1,12 @@
 title: Various Miscalaneous Tests in Markdown
+layout: md-nav-right.j2
 
 ## Filename and includes
 
-```
-{{ dirname|e }}/{{basename}} -- {{name}}
+``` yaml
+title       : {{title}}
+dirname     : {{dirname|e}}
+basename    : {{basename|e}}
+name        : {{name|e}}
+1 + 1       : {{1 + 1}}
 ```
