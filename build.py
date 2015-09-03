@@ -9,6 +9,7 @@ import shutil
 import markdown
 import sys
 import ConfigParser
+import fnmatch
 from collections import namedtuple
 
 
@@ -113,14 +114,18 @@ class Site( staticjinja.Site ):
 
         return inject_name_vars( self, template, context )
 
-    # Only copy static files if necessary (according to mtimes)
     def copy_static( self, files):
+        """
+        Copy static files over, only if required by comparing mtimes or ctimes.
+        For sym-links, copy it as a link.
+        """
 	for f in files:
 	    src = os.path.join(self.searchpath, f)
 	    dst = os.path.join(self.outpath, f)
 	    self._ensure_dir(f)
 	    if not ( os.path.isfile(dst) or os.path.islink(dst) ) or \
-		    ( os.stat(src).st_mtime - os.stat(dst).st_mtime > 0 ):
+		    ( os.stat(src).st_mtime - os.stat(dst).st_mtime > 0 ) or \
+		    ( os.stat(src).st_ctime - os.stat(dst).st_ctime > 0 ):
 		self.logger.info("Copying %s to %s." % (f, dst))
 		#shutil.copyfile(src, dst)
                 if os.path.islink(src):
@@ -137,7 +142,7 @@ class Site( staticjinja.Site ):
 	if filepath is None:
 	    filepath = os.path.join(self.outpath, template.name)
 
-	if self.options.force or not os.path.isfile( filepath ) or \
+	if recompile_forced( self, filepath ) or not os.path.isfile( filepath ) or \
 		os.stat(src).st_mtime - os.stat(filepath).st_mtime > 1:
 	    return filepath
 	else:
@@ -190,6 +195,16 @@ def inject_name_vars( self, template, context ):
         'basename': os.path.basename( template.name )
     })
     return context
+
+def recompile_forced( self, filename ):
+    if options.force:
+        return True
+    elif self.args:
+        for i in self.args:
+            if fnmatch.fnmatch( filename, i ):
+                return True
+
+    return False
 
 def markdown_get_context( self, template):
     """ Convert markdown to html and read into context variables """
@@ -254,7 +269,7 @@ def markdown_render(self, template, context=None, filepath=None):
     self._ensure_dir( template.name )
     src = os.path.join( self.searchpath, template.name )
 
-    if self.options.force or not os.path.isfile( filepath ) or \
+    if recompile_forced( self, filepath) or not os.path.isfile( filepath ) or \
 	    os.stat(src).st_mtime - os.stat(filepath).st_mtime > 1:
 	self.logger.info("Rendering %s..." % template.name)
 	post_template.stream(**context).dump( filepath, self.encoding)
@@ -287,8 +302,10 @@ if __name__ == "__main__":
     # Type cast to my class
     site.__class__ = Site
 
+    glob_re = re.compile( r'.*[*?{[]' )
     site.options = options
-    site.args = args
+    site.args = [(a if glob_re.match(a) else '*'+a+'*') for a in args]
+    print site.args
 
     if options.production:
         site.ignored_re = re.compile( 'dev|' + site.ignored_re.pattern )
