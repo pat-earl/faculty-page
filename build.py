@@ -123,8 +123,14 @@ class Site( staticjinja.Site ):
 		    ( os.stat(src).st_mtime - os.stat(dst).st_mtime > 0 ):
 		self.logger.info("Copying %s to %s." % (f, dst))
 		#shutil.copyfile(src, dst)
-		shutil.copy(src, dst)
-		shutil.copymode(src, dst)
+                if os.path.islink(src):
+                    if os.path.islink(dst):
+                        os.unlink(dst)
+                    linkto = os.readlink(src)
+                    os.symlink( linkto, dst )
+                else:
+                    shutil.copy(src, dst)
+                    shutil.copymode(src, dst)
 
     def needs_rendering( self, template, filepath=None ):
 	src = os.path.join( self.searchpath, template.name )
