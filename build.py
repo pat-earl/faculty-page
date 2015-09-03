@@ -14,7 +14,7 @@ from collections import namedtuple
 
 
 pwd = os.path.dirname(os.path.realpath(__file__))
-if pwd == os.getcwd(): pwd = '.'
+#if pwd == os.getcwd(): pwd = '.'
 sys.path.append( pwd + '/ext/python-markdown-math' )
 sys.path.append( pwd + '/ext/python-markdown-links' )
 
@@ -143,7 +143,7 @@ class Site( staticjinja.Site ):
 	    filepath = os.path.join(self.outpath, template.name)
 
 	if recompile_forced( self, filepath ) or not os.path.isfile( filepath ) or \
-		os.stat(src).st_mtime - os.stat(filepath).st_mtime > 1:
+		os.stat(src).st_mtime - os.stat(filepath).st_mtime > 0:
 	    return filepath
 	else:
 	    return None
@@ -256,7 +256,7 @@ def markdown_render(self, template, context=None, filepath=None):
     except:
         if( template.name.startswith( "blog" ) ):
             layout = 'md-blogpost.j2'
-        elif re.match( r'teaching\/[0-9-]+\/[0-9a-z-]+\/index\.md', template.name ):
+        elif re.match( r'teaching\/[0-9-]+\/[0-9a-z-]+\/.*\.md', template.name ):
             layout = 'md-class.j2'
         else:
             layout = 'md-default.j2'
@@ -270,7 +270,7 @@ def markdown_render(self, template, context=None, filepath=None):
     src = os.path.join( self.searchpath, template.name )
 
     if recompile_forced( self, filepath) or not os.path.isfile( filepath ) or \
-	    os.stat(src).st_mtime - os.stat(filepath).st_mtime > 1:
+	    os.stat(src).st_mtime - os.stat(filepath).st_mtime > 0:
 	self.logger.info("Rendering %s..." % template.name)
 	post_template.stream(**context).dump( filepath, self.encoding)
 
@@ -305,7 +305,6 @@ if __name__ == "__main__":
     glob_re = re.compile( r'.*[*?{[]' )
     site.options = options
     site.args = [(a if glob_re.match(a) else '*'+a+'*') for a in args]
-    print site.args
 
     if options.production:
         site.ignored_re = re.compile( 'dev|' + site.ignored_re.pattern )
