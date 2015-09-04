@@ -10,11 +10,17 @@
     <div class='col-md-3' id='col-right'>
       {% block nav_column %}
 	{% block nav_before_toc %}{% endblock %}
-	<nav class='nav hidden-xs hidden-sm'>
-	  <h4>Contents</h4>
-
-	  {{toc}}{# Looks like:<div class='toc'><ul>...</ul></div> #}
-	</nav>
+	{% if toc %}
+	  <nav class='nav hidden-xs hidden-sm'>
+	    <h4>
+	      <a href='#toc' data-toggle='collapse' aria-expanded='false'
+		  aria-controls='#toc'>Navigation</a>
+	    </h4>
+	    <div id='toc' class='collapse in'>
+	      {{toc}}{# Looks like:<div class='toc'><ul>...</ul></div> #}
+	    </div>
+	  </nav>
+	{% endif %}
 	{% block nav_after_toc %}{% endblock %}
       {% endblock nav_column %}
     </div>{# col-md-3 #}

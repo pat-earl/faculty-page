@@ -69,9 +69,7 @@ LaTeX can be used between `$` signs:
 
     as meta-data.
 
-* The contents of `_sidenav.md` in the same directory is included below the table of contents in some layouts (`md-right-nav.j2`, but not `md-right-nav-affix.j2`).
+* The contents of `_sidenav.md` in the same directory is included below the
+  table of contents in some layouts.
 
 * For class pages (using `md-class.j2` layout) contents of `_hw.md` and `_handouts.md` are used in the side panel navigation.
-
-* <span class='bg-warning text-info'>TODO: Disable `affix` when the right column is too high, and then include side navigation in `md-right-nav-affix.j2` as well.</span> 
-
