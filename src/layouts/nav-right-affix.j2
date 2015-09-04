@@ -3,7 +3,8 @@
   style='position: relative' data-spy='scroll' data-target='#col-right'
 {%- endblock -%}
 {% block nav_column %}
-  <div data-spy='affix' data-offset-top='60' data-clampedwidth='#col-right'>
+  <div id='before-affix'></div>{# Empty div, right before the affix. #}
+  <div data-affix-after='#before-affix'>
     {% block nav_affix_before_toc %}{% endblock %}
     {{ super() }}
     {% block nav_affix_after_toc %}{% endblock %}
