@@ -2,7 +2,7 @@ title: Lecture Schedule
 
 Here is a lecture by lecture list of topics covered in class.
 
-## Functions of several variables <small>(Lectures 1 -- ?, 2015-08-31 -- ?)</small>
+## Functions of several variables <small>(Lectures 1 -- ?, 8/31 -- ?)</small>
 
 *Reference: Kaplan, Chapter 2*
 
