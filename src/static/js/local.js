@@ -26,14 +26,15 @@ $(document).ready( function() {
   });
 
 
-  /* Easy affix:
+  /* Easy Bootstrap affix. Simply do:
    *
    *	<div id='before-affix'></div>
    *	<div data-affix-after='#before-affix'>
    *	    Content to affix
    *	</div>
    *
-   * and don't worry about offsets or widths.
+   * and don't worry about offsets or widths. (Affix is also disabled if the
+   * element is too tall.)
    */
   $('[data-affix-after]').each( function() {
       var elem = $(this);
@@ -41,11 +42,7 @@ $(document).ready( function() {
       var parent_panel = elem.parent();
 
       var resizeFn = function() {
-	  elem.data('bs.affix').options.offset
-	      = prev.offset().top + prev.outerHeight(true);
-
-	  elem.affix( 'checkPosition' );
-
+	  /* Set the width to it's natural width in the parent. */
 	  var sideBarNavWidth = parent_panel.width()
 	      - parseInt(elem.css('paddingLeft'))
 	      - parseInt(elem.css('paddingRight'))
@@ -54,6 +51,17 @@ $(document).ready( function() {
 	      - parseInt(elem.css('borderLeftWidth'))
 	      - parseInt(elem.css('borderRightWidth'));
 	  elem.css('width', sideBarNavWidth);
+
+	  /* Set affix offset to bottom of the previous element */
+	  elem.data('bs.affix').options.offset
+	      = prev.offset().top + prev.outerHeight(true);
+
+	  /* Disable affix behaviour if element is too tall. */
+	  elem.css( 'position',
+	      (elem.height() > $(window).height() - 20) ? 'static' : '' );
+
+	  /* Make sure position is consistent */
+	  elem.affix( 'checkPosition' );
       };
 
       elem.affix();
