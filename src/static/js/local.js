@@ -43,6 +43,11 @@ $(document).ready( function() {
       var parent_panel = elem.parent();
       var prev = $( elem.data('affix-after') );
 
+      if( prev.length != 1 ) {
+	/* Create a new element immediately before. */
+	prev = elem.before( '<div></div>' ).prev();
+      }
+
       var resizeFn = function() {
 	  /* Set the width to it's natural width in the parent. */
 	  var sideBarNavWidth = parent_panel.width()
