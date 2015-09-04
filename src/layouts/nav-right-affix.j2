@@ -5,8 +5,8 @@
 {% block nav_column %}
   <div id='before-affix'></div>{# Empty div, right before the affix. #}
   <div data-affix-after='#before-affix'>
-    {% block nav_affix_before_toc %}{% endblock %}
+    {# {% block nav_before_toc %}{% endblock %} #}
     {{ super() }}
-    {% block nav_affix_after_toc %}{% endblock %}
+    {# {% block nav_after_toc %}{{super()}}{% endblock %} #}
   </div>{# affix #}
 {% endblock %}

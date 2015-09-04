@@ -59,7 +59,9 @@ img.float-left {
 
 /* sm and xs devices */
 @media only screen and (max-width:991px){
-  #col-right > .affix {
+  #col-right > .affix,
+  #col-right > .affix-bottom
+  {
     /* Don't affix right side navigation! The columns are stacked */
     position: static;
     /* width: auto;
@@ -72,8 +74,10 @@ img.float-left {
   .affix {
     top: 0px;
   }
+  .affix-bottom {
+    position: absolute;
+  }
 }
-
 /* }}} */
 
 /* Left navigation */

@@ -5,7 +5,7 @@
 {%- macro md_handouts() -%}
   {%- include dirname ~ '/' ~ (handouts | default( '_handouts.md', true )) ignore missing -%}
 {%- endmacro -%}
-{% extends "layouts/md-nav-right.j2" %}
+{% extends "layouts/md-nav-right-affix.j2" %}
 {% block nav_after_toc %}
   {% if md_hw() or md_handouts() %}
     <div class='row small'>

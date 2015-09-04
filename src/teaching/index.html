@@ -86,7 +86,8 @@ You are free to edit, modify and redistribute these notes (under the terms state
   </div><!-- /lead -->
 {% endblock %}
 {% block nav_column %}{# {{{ #}
-  <nav class='nav toc hidden-xs hidden-sm'>
+  <div id='before-affix'></div>{# Empty div, right before the affix. #}
+  <nav class='nav toc hidden-xs hidden-sm' data-affix-after='#before-affix'>
     {% markdown %}
     * [{{secs.courses}}](#courses)
 	* [{{secs.current_courses}}](#current_courses)

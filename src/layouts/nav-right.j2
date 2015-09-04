@@ -9,9 +9,13 @@
     </div>{# col-md-9 #}
     <div class='col-md-3' id='col-right'>
       {% block nav_column %}
+	{% block nav_before_toc %}{% endblock %}
 	<nav class='nav hidden-xs hidden-sm'>
+	  <h4>Contents</h4>
+
 	  {{toc}}{# Looks like:<div class='toc'><ul>...</ul></div> #}
 	</nav>
+	{% block nav_after_toc %}{% endblock %}
       {% endblock nav_column %}
     </div>{# col-md-3 #}
   </div>{# row #}

@@ -1,7 +1,2 @@
-{% extends "layouts/nav-right-affix.j2" %}
-{% block main_column %}
-  <div {{"class='lead'" if bigfont}}>{# Get a readable font! #}
-    <h1>{{title}}</h1>
-    {{ content }}
-  </div>
-{% endblock %}
+{% set md_nav_layout = 'layouts/nav-right-affix.j2' %}
+{% extends "layouts/md-nav-right.j2" %}

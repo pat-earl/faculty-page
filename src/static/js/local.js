@@ -33,13 +33,15 @@ $(document).ready( function() {
    *	    Content to affix
    *	</div>
    *
-   * and don't worry about offsets or widths. (Affix is also disabled if the
-   * element is too tall.)
+   * and don't worry about offsets or widths or being too tall.
+   *
+   * CSS to enable: .affix { top: 0px }, .affix-bottom { position: absolute; }
+   * CSS to disable: .affix, .affix-bottom { position: static; }
    */
   $('[data-affix-after]').each( function() {
       var elem = $(this);
-      var prev = $( elem.data('affix-after') );
       var parent_panel = elem.parent();
+      var prev = $( elem.data('affix-after') );
 
       var resizeFn = function() {
 	  /* Set the width to it's natural width in the parent. */
@@ -52,19 +54,14 @@ $(document).ready( function() {
 	      - parseInt(elem.css('borderRightWidth'));
 	  elem.css('width', sideBarNavWidth);
 
-	  /* Set affix offset to bottom of the previous element */
-	  elem.data('bs.affix').options.offset
-	      = prev.offset().top + prev.outerHeight(true);
-
-	  /* Disable affix behaviour if element is too tall. */
-	  elem.css( 'position',
-	      (elem.height() > $(window).height() - 20) ? 'static' : '' );
-
-	  /* Make sure position is consistent */
-	  elem.affix( 'checkPosition' );
+	  elem.affix({
+	      offset: {
+		  top: prev.offset().top + prev.outerHeight(true),
+		  bottom: $('body>footer').outerHeight(true)
+	      }
+	  });
       };
 
-      elem.affix();
       resizeFn();
       $(window).resize(resizeFn);
   });
