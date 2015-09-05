@@ -1,1 +1,1 @@
-Homework will be posted here when assigned.
+* [[pdfs/hw.pdf|Assignment 1]]

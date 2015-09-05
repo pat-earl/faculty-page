@@ -6,5 +6,6 @@ Here is a lecture by lecture list of topics covered in class.
 
 *Reference: Kaplan, Chapter 2*
 
-* Open sets and domains.
+* Open sets and domains
 * Limits
+* Continuity
