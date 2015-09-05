@@ -70,7 +70,7 @@ def convert_markdown( site, s, template=None ):
 	    'markdown.extensions.toc',
 	    mdx_math.MathExtension(enable_dollar_delimiter=True),
             mdx_link.makeExtension(
-                link_chars = r'\w0-9|._ /-',
+                link_chars = r'\w0-9|._ (),/-',
                 build_url=lambda t, b, e: build_url( site, t,
                     template=template )
             )
@@ -90,29 +90,138 @@ def convert_markdown( site, s, template=None ):
 
     return r
 
+def get_context(site, template):
+    """
+    My custom get_context function (to replace Site.get_context). Rewritten to:
+        1. Allow Site as an argument to the context function
+        2. Inject dirname, basename, etc into the context.
+    """
+    try:
+        context_generator = site._get_context_generator(template.name)
+    except ValueError:
+        context = None
+    else:
+        try:
+            context = context_generator( site, template)
+        except TypeError:
+            try:
+                context = context_generator( template)
+            except TypeError:
+                context = context_generator()
+
+    return inject_name_vars( site, template, context )
+
+def needs_rendering( site, template, filepath=None ):
+    """
+    Decide whether a template needs rendering.
+    """
+    src = os.path.join( site.searchpath, template.name )
+    if filepath is None:
+        filepath = os.path.join(site.outpath, template.name)
+
+    if recompile_forced( site, filepath ) or not os.path.isfile( filepath ) or \
+            os.stat(src).st_mtime - os.stat(filepath).st_mtime > 0:
+        return filepath
+    else:
+        return None
+
+def get_out_filename( site, src, out_ext='.html' ):
+    " Add the out_ext"
+    filepath = os.path.join(site.outpath, src)
+    (f, ext) = os.path.splitext( filepath )
+	 
+    return f + out_ext
+
+def inject_name_vars( self, template, context ):
+    if context == None:
+        context = {}
+    context.update( {
+        'name': template.name,
+        'dirname': os.path.dirname( template.name ),
+        'basename': os.path.basename( template.name )
+    })
+    return context
+
+def recompile_forced( site, filename ):
+    if options.force:
+        return True
+    elif site.args:
+        for i in site.args:
+            if fnmatch.fnmatch( filename, i ):
+                return True
+
+    return False
+
+def markdown_get_context( site, template):
+    """ Convert markdown to html and read into context variables """
+
+    dst = get_out_filename( site, template.name )
+    if not needs_rendering( site, template, dst ):
+	return None
+
+    if not hasattr( markdown_get_context, 'mathre' ):
+	markdown_get_context.mathre = re.compile(
+		'.*<script\\s*type\\s*=\s*[\'"]math/tex(\\s|[\'";])',
+		re.DOTALL )
+    mathre = markdown_get_context.mathre
+
+    # Directly convert to markdown
+    #f = open(template.filename):
+    #    md = convert_markdown( f.read() )
+
+    # Read until the first blank line to get the meta-data
+    meta = ""
+    with open(template.filename) as f:
+        while True:
+            l = f.readline()
+            meta += l
+            if not l.strip(): break
+
+    # Should have meta-data segment in meta to use for context.
+    md = convert_markdown( site, meta, template=template )
+    context = inject_name_vars( site, template, md.Meta )
+
+    # Now convert the whole document, using the meta-data as context
+    md = convert_markdown( site, template.render(**context), template=template )
+
+    context = {
+        'content': md.html,
+        'toc': md.toc,
+    }
+    if mathre.match( md.html ):
+        context['needs_mathjax'] = 1
+    context.update( md.Meta )
+    
+    return context
+
+# compilation rule
+def markdown_render(site, template, context=None, filepath=None):
+    """Render a template as a post."""
+    try:
+	layout = context['layout']
+    except:
+        if( template.name.startswith( "blog" ) ):
+            layout = 'md-blogpost.j2'
+        elif re.match( r'teaching\/[0-9-]+\/[0-9a-z-]+\/.*\.md', template.name ):
+            layout = 'md-class.j2'
+        else:
+            layout = 'md-default.j2'
+        
+    layout = os.path.join( 'layouts', layout )
+    post_template = site.get_template(layout)
+
+    if filepath is None:
+	filepath = get_out_filename( site, template.name )
+    site._ensure_dir( template.name )
+    src = os.path.join( site.searchpath, template.name )
+
+    if recompile_forced( site, filepath) or not os.path.isfile( filepath ) or \
+	    os.stat(src).st_mtime - os.stat(filepath).st_mtime > 0:
+	site.logger.info("Rendering %s..." % template.name)
+	post_template.stream(**context).dump( filepath, site.encoding)
+
 class Site( staticjinja.Site ):
     # Override a few methods to customize to my settings.
-
-    def get_context(self, template):
-	"""
-            Overridden:
-                1. Allow Site as an argument to the context function
-                2. Inject dirname, basename, etc into the context.
-        """
-        try:
-            context_generator = self._get_context_generator(template.name)
-        except ValueError:
-            context = None
-        else:
-            try:
-                context = context_generator( self, template)
-            except TypeError:
-		try:
-		    context = context_generator( template)
-		except TypeError:
-		    context = context_generator()
-
-        return inject_name_vars( self, template, context )
 
     def copy_static( self, files):
         """
@@ -137,28 +246,21 @@ class Site( staticjinja.Site ):
                     shutil.copy(src, dst)
                     shutil.copymode(src, dst)
 
-    def needs_rendering( self, template, filepath=None ):
-	src = os.path.join( self.searchpath, template.name )
-	if filepath is None:
-	    filepath = os.path.join(self.outpath, template.name)
-
-	if recompile_forced( self, filepath ) or not os.path.isfile( filepath ) or \
-		os.stat(src).st_mtime - os.stat(filepath).st_mtime > 0:
-	    return filepath
-	else:
-	    return None
-
-    # Only render templates if necessary (according to mtimes)
     def render_template( self, template, context=None, filepath=None):
+        """
+        Overrides site.render_template. This version calls my custom
+        get_context (note site.get_context), and only renders templates if the
+        need rendering based on mtimes.
+        """
 	if context is None:
-	    context = self.get_context(template)
+	    context = get_context( self, template)
 
 	try:
 	    rule = self.get_rule(template.name)
 	except ValueError:
 	    self._ensure_dir(template.name)
 
-	    filepath = self.needs_rendering( template, filepath )
+	    filepath = needs_rendering( self, template, filepath )
 	    if filepath:
 		self.logger.info("Rendering %s..." % template.name)
 		template.stream(**context).dump(filepath, self.encoding)
@@ -178,101 +280,6 @@ class Site( staticjinja.Site ):
 	    flags=re.I )
     def is_static( self, f ):
 	return True if self.static_re.match( f ) else False
-
-def get_out_filename( site, src, out_ext='.html' ):
-    " Add the out_ext"
-    filepath = os.path.join(site.outpath, src)
-    (f, ext) = os.path.splitext( filepath )
-	 
-    return f + out_ext
-
-def inject_name_vars( self, template, context ):
-    if context == None:
-        context = {}
-    context.update( {
-        'name': template.name,
-        'dirname': os.path.dirname( template.name ),
-        'basename': os.path.basename( template.name )
-    })
-    return context
-
-def recompile_forced( self, filename ):
-    if options.force:
-        return True
-    elif self.args:
-        for i in self.args:
-            if fnmatch.fnmatch( filename, i ):
-                return True
-
-    return False
-
-def markdown_get_context( self, template):
-    """ Convert markdown to html and read into context variables """
-
-    dst = get_out_filename( self, template.name )
-    if not self.needs_rendering( template, dst ):
-	return None
-
-    if not hasattr( markdown_get_context, 'mathre' ):
-	markdown_get_context.mathre = re.compile(
-		'.*<script\\s*type\\s*=\s*[\'"]math/tex(\\s|[\'";])',
-		re.DOTALL )
-    mathre = markdown_get_context.mathre
-
-    # Directly convert to markdown
-    #f = open(template.filename):
-    #    md = convert_markdown( f.read() )
-
-    # Read until the first blank line to get the meta-data
-    meta = ""
-    with open(template.filename) as f:
-        while True:
-            l = f.readline()
-            meta += l
-            if not l.strip(): break
-
-    # Should have meta-data segment in meta to use for context.
-    md = convert_markdown( self, meta, template=template )
-    context = inject_name_vars( self, template, md.Meta )
-
-    # Now convert the whole document, using the meta-data as context
-    md = convert_markdown( self, template.render(**context), template=template )
-
-    context = {
-        'content': md.html,
-        'toc': md.toc,
-    }
-    if mathre.match( md.html ):
-        context['needs_mathjax'] = 1
-    context.update( md.Meta )
-    
-    return context
-
-# compilation rule
-def markdown_render(self, template, context=None, filepath=None):
-    """Render a template as a post."""
-    try:
-	layout = context['layout']
-    except:
-        if( template.name.startswith( "blog" ) ):
-            layout = 'md-blogpost.j2'
-        elif re.match( r'teaching\/[0-9-]+\/[0-9a-z-]+\/.*\.md', template.name ):
-            layout = 'md-class.j2'
-        else:
-            layout = 'md-default.j2'
-        
-    layout = os.path.join( 'layouts', layout )
-    post_template = self.get_template(layout)
-
-    if filepath is None:
-	filepath = get_out_filename( self, template.name )
-    self._ensure_dir( template.name )
-    src = os.path.join( self.searchpath, template.name )
-
-    if recompile_forced( self, filepath) or not os.path.isfile( filepath ) or \
-	    os.stat(src).st_mtime - os.stat(filepath).st_mtime > 0:
-	self.logger.info("Rendering %s..." % template.name)
-	post_template.stream(**context).dump( filepath, self.encoding)
 
 
 if __name__ == "__main__":
