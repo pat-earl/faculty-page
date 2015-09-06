@@ -1,31 +1,8 @@
-title: Math 268: Multidimensional Calculus
-author_email: gi1242+268.edu
-lectures: MWF 3:30-4:20
-    WEH
-    5312
-office_hours: TBA
-ta: Son Van
-ta_website: http://sonv.github.io/teaching/2015-08-25-fall
-ta_email: vansp@cmu.edu
-ta_office: WEH
-    8205
-ta_office_hours: TBA
-recitation: Tu 3:30-4:20
-    WEH
-    5320
-mailing_list: https://lists.andrew.cmu.edu/mailman/listinfo/math-268
-    math-268
-dates: Homework due
-    Wednesdays, at the <b>beginning</b> of class. <span class="text-danger">Late homework will not be accepted</span>
-    Midterm 1
-    Wed, Sep 30 (in class).
-    Midterm 2
-    Wed, Nov 4 (in class).
-    Final
-    TBA
+{%- from dirname ~ '/course_info.j2' import course -%}
+{%- from 'includes/macros.j2' import course_info_table -%}
+title: {{course.title}}
 
-{% from 'includes/macros.j2' import course_info_table with context %}
-{{ course_info_table() }}
+{{ course_info_table(course) }}
 
 ## Course Description
 

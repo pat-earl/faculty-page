@@ -26,26 +26,3 @@
     </div>
   {% endif %}
 {% endblock %}
-{# Don't use this. Include a file instead. #}
-{# {{{
-{% block nav_after_toc %}
-  {% if hw or handouts %}
-    <div class='row'>
-      {% if hw %}
-	<div class='col-md-12 col-sm-6'>
-	  <h4 class='hidden-xs hidden-sm'>Homework and Solutions</h4>
-	  <h2 class='hidden-md hidden-lg'>Homework and Solutions</h2>
-	  {{ markdown( hw ) }}
-	</div>
-      {% endif %}
-      {% if handouts %}
-	<div class='col-md-12 col-sm-6'>
-	  <h4 class='hidden-xs hidden-sm'>Handouts</h4>
-	  <h2 class='hidden-md hidden-lg'>Handouts</h2>
-	  {{ markdown( handouts ) }}
-	</div>
-      {% endif %}
-    </div>
-  {% endif %}
-{% endblock %}
-}}} #}

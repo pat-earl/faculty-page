@@ -2,6 +2,20 @@
 {% block body %}
   <div class='row'>
     <div class='col-md-9' id='col-main'>
+      {% block breadcrumb_block %}
+	{% if breadcrumb %}
+	  <ul class='breadcrumb hidden-xs'>
+	    {% for i in breadcrumb %}
+	      {% if loop.index is odd %}
+		<li><a href='{{i}}'>
+	      {% else %}
+		{{i}}</a></li>
+	      {% endif %}
+	    {% endfor %}
+	    <li class='active'>{{title}}</li>
+	  </ul>
+	{% endif %}
+      {% endblock breadcrumb_block %}
       {% block main_column %}
 	<h1>{{title|default('Set title to the document title')}}</h1>
 	{{ lipsum() }}

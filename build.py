@@ -194,9 +194,8 @@ def markdown_get_context( site, template):
     
     return context
 
-# compilation rule
 def markdown_render(site, template, context=None, filepath=None):
-    """Render a template as a post."""
+    """Render a markdown file."""
     try:
 	layout = context['layout']
     except:

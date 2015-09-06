@@ -83,7 +83,7 @@
   </span>
 {%- endmacro -%}
 
-{%- macro course_info_table() -%}
+{%- macro course_info_table(c) -%}
   {#- Import this using "with context", so all the variables are inherited #}
   <table class='table' summary='Logistical Information'>
     <tbody>{# Instructor, lectures {{{ #}
@@ -94,94 +94,92 @@
 	  &emsp;
 	  {{ room( author_office_bldg, author_office_room ) }}
 	  &emsp;
-	  {{ email(author_email) }}
+	  {{ email(c.email|default(author_email)) }}
 	</td>
       </tr>
-      {%- if lectures -%}
+      {%- if c.lectures -%}
       <tr>
 	<th scope='row'>Lectures</th>
 	<td>
-	  {% if lectures is string -%}
-	    {{lectures}}
+	  {% if c.lectures is string -%}
+	    {{c.lectures}}
 	  {% else -%}
-	    {{lectures[0]}} in
-	    {{room( lectures[1], lectures[2], is_office=false ) }}
+	    {{c.lectures.time}} in
+	    {{room( c.lectures.bldg, c.lectures.room, is_office=false ) }}
 	  {% endif -%}
 	</td>
       </tr>
       {%- endif -%}
-      {%- if office_hours -%}
+      {%- if c.office_hours -%}
       <tr>
 	<th scope='row'>
 	  Office Hours
-	  {%- if ta_office_hours %} (instructor){%- endif -%}
+	  {%- if c.ta and c.ta.office_hours %} (instructor){%- endif -%}
 	</th>
 	<td>
-	  {{office_hours}}
+	  {{c.office_hours}}
 	</td>
       </tr>
       {%- endif -%}
     </tbody>{# }}} #}
-    {%- if ta -%}{# TA {{{ #}
+    {%- if c.ta -%}{# TA {{{ #}
+      {%- set ta = c.ta -%}
       <tbody>
 	<tr>
 	  <th scope='row'>TA</th>
 	  <td>
-	    {%- if ta_website -%}
-	      <a href='{{ta_website}}'>{{ta}}</a>.
+	    {%- if ta.url -%}
+	      <a href='{{ta.url}}'>{{ta.name}}</a>.
 	    {%- else -%}
-	      {{ta}}.
+	      {{ta.name}}.
 	    {%- endif -%}
-	    {%- if ta_office -%}
+	    {%- if ta.office -%}
 	      &emsp;
-	      {{ room( ta_office[0], ta_office[1] ) }}
+	      {{ room( ta.office.bldg, ta.office.room ) }}
 	    {%- endif -%}
-	    {%- if ta_email -%}
+	    {%- if ta.email -%}
 	      &emsp;
-	      {{ email( ta_email ) }}
+	      {{ email( ta.email ) }}
 	    {%- endif -%}
 	  </td>
 	</tr>
-	{%- if recitation -%}
+	{%- if ta.recitation -%}
 	  <tr>
 	    <th scope='row'>Recitation</th>
 	    <td>
-	      {%- if recitation is string -%}
-		{{recitation}}
+	      {%- if ta.recitation is string -%}
+		{{ta.recitation}}
 	      {%- else -%}
-		{{recitation[0]}} in
-		{{room( recitation[1], recitation[2], is_office=false ) }}
+		{{ta.recitation.time}} in
+		{{room( ta.recitation.bldg, ta.recitation.room, is_office=false ) }}
 	      {%- endif -%}
 	    </td>
 	  </tr>
 	{%- endif -%}
-	{%- if ta_office_hours -%}
+	{%- if ta.office_hours -%}
 	  <tr>
 	    <th scope='row'>Office Hours (TA)</th>
-	    <td>{{ta_office_hours}}</td>
+	    <td>{{ta.office_hours}}</td>
 	  </tr>
 	{%- endif -%}
       </tbody>
     {%- endif -%}{# }}} TA #}
-    {%- if dates -%}{# {{{ #}
+    {%- if c.dates -%}{# {{{ #}
     <tbody>
-      {%- for s in dates -%}
-	{%- if loop.index is odd -%}
-	  <tr>
-	    <th scope='row'>{{s}}</th>
-	{%- else -%}
-	    <td>{{s}}</td>
-	  </tr>
-	{%- endif -%}
+      {%- for (event, time) in c.dates -%}
+	<tr>
+	  <th scope='row'>{{event}}</th>
+	  <td>{{time}}</td>
+	</tr>
       {%- endfor -%}
     </tbody>
     {%- endif -%}{# }}} #}
-    {%- if mailing_list -%}{# Mailing list {{{ #}
+    {%- if c.mailing_list -%}{# Mailing list {{{ #}
       <tbody>
 	<tr>
 	  <th scope='row'>Mailing list</td>
 	  <td>
-	    <a href='{{mailing_list[0]}}'>{{mailing_list[1]}}</a>
+	    <a href='{{c.mailing_list.url}}'>{{c.mailing_list.name}}</a>
 	    <span class='small'>
 	      (Students and guests
 	      <span class='bg-warning'>

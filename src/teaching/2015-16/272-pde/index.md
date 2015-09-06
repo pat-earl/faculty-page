@@ -1,20 +1,8 @@
-title: Math 272: Introduction to PDE's
-author_email: gi1242+272@cmu.edu
-lectures: MWF 2:30-3:20
-    PH
-    A18A
-office_hours: TBA
-mailing_list: https://lists.andrew.cmu.edu/mailman/listinfo/math-272
-    math-272
-dates: Midterm 1
-    Fri Oct 2 (in class).
-    Midterm 2
-    Fri Nov 6 (in class).
-    Final
-    TBA
+{%- from dirname ~ '/course_info.j2' import course -%}
+{%- from 'includes/macros.j2' import course_info_table -%}
+title: {{course.title}}
 
-{% from 'includes/macros.j2' import course_info_table with context %}
-{{ course_info_table() }}
+{{ course_info_table(course) }}
 
 ## Course Description
 
