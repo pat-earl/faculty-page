@@ -17,3 +17,9 @@ name        : {{name|e}}
 * `test`: [[test]]
 * `/test`: [[/test]]
 * `test.md`: [[test.md]]
+
+## Glob
+
+{% for f in glob( dirname ~ '/*.md') -%}
+* [[/{{f}}|{{f}}]]
+{% endfor %}
