@@ -6,18 +6,13 @@ import re
 import optparse
 import os
 import shutil
-import sys
 import ConfigParser
 import fnmatch
 import glob
 
+from jinja2 import contextfunction
+
 import mdconverter
-
-
-pwd = os.path.dirname(os.path.realpath(__file__))
-#if pwd == os.getcwd(): pwd = '.'
-sys.path.append( pwd + '/ext/python-markdown-math' )
-sys.path.append( pwd + '/ext/python-markdown-links' )
 
 def get_context(site, template):
     """
@@ -52,6 +47,11 @@ def jinja_sub( s, pat, rep, count=0 ):
         return re.sub( pat, rep, s, count )
     else:
         return [ re.sub( pat, rep, e, count ) for e in s ]
+
+def jinja_test( site, context, arg ):
+    print site.searchpath
+    print context['dirname']
+    return arg
 
 class Site( staticjinja.Site ):
     # New methods
@@ -99,13 +99,12 @@ class Site( staticjinja.Site ):
         return context
 
     # Functions exported to templates
-    def jinja_glob( self, s ):
+    def jinja_glob( self, pat ):
         """
         Return all glob pattern matches in the SOURCE directory
         """
-        prefix = os.path.join( pwd, self.searchpath, '' )
-        matches = glob.glob( prefix + s )
-        return [ m[len(prefix):] for m in matches ]
+        matches = glob.glob( os.path.join( self.searchpath, pat ) )
+        return [ os.path.relpath( m, self.searchpath ) for m in matches ]
 
     # Overridden methods a few methods to customize to my settings.
     def copy_static( self, files):
@@ -180,9 +179,10 @@ if __name__ == "__main__":
 
     ( options, args ) = parser.parse_args()
 
+    pwd = os.path.dirname(os.path.realpath(__file__))
     site = staticjinja.make_site(
-	    searchpath=pwd + '/src',
-	    outpath=pwd + ('/out-prod' if options.production else '/out'),
+	    searchpath=os.path.join( pwd, 'src' ),
+	    outpath=os.path.join( pwd, 'out-prod' if options.production else 'out'),
 	    extensions=[MarkdownExtension],
 	    contexts=[
 		('.*\.md', mdconverter.get_context),
@@ -211,7 +211,7 @@ if __name__ == "__main__":
 
     # Read configuration
     cfg = ConfigParser.ConfigParser()
-    cfg.read( pwd + '/site.cfg' )
+    cfg.read( os.path.join( pwd, 'site.cfg' ) )
 
     # Tweak the Jinja2 environment
     #site._env.line_statement_prefix = '<@Jinja2>'
@@ -222,10 +222,11 @@ if __name__ == "__main__":
     site._env.globals.update({
         'markdown': lambda s: site.md.mdconvert(s).html,
         'glob': lambda s: site.jinja_glob(s),
-        'get_meta': lambda f, s=None: site.md.jinja_get_meta(
-            os.path.join( site.searchpath, f ), s ),
+        'get_meta': lambda f, s=None: site.md.jinja_get_meta( f, s ),
         'search': jinja_search,
         'sub': jinja_sub,
+        'get_link': lambda f: site.md.get_link(f),
+        'test_fn': contextfunction( lambda c, a: jinja_test( site, c, a ))
     })
     site._env.filters.update({
         'markdown': site._env.globals['markdown'],

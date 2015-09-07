@@ -41,6 +41,22 @@ class mdconverter:
         # meta[md_file] holds data from the yaml block in md_file
         self.meta = {}
 
+    def get_link( self, f ):
+        g = self.site._env.globals
+        if f.startswith( 'auth/' ) and self.current_template:
+            link = os.path.join( g['site_surl'],
+                    os.path.dirname(self.current_template.name), link )
+        elif f.startswith( '/' ):
+            link = os.path.join( g['site_prefix'], link )
+        else:
+            link = f
+
+        (l, e) = os.path.splitext( link )
+        if e == '.md':
+            link = l + '.html'
+
+        return link
+
     def build_url( self, text ):
         """
             Build a url from the label text. If template is provided, then
@@ -102,7 +118,8 @@ class mdconverter:
         if not self.meta.has_key( filename ):
             # Read until the first blank line to get the meta-data
             meta = ""
-            with open(filename) as f:
+            
+            with open(os.path.join( self.site.searchpath, filename )) as f:
                 while True:
                     l = f.readline()
                     meta += l
@@ -117,8 +134,7 @@ class mdconverter:
         """
         meta = self.read_yaml_meta( filename )
         if key:
-            return self.meta[filename][key] if self.meta[filename].has_key(key) \
-                else None
+            return meta[key] if meta.has_key(key) else None
         else:
             return meta
 
