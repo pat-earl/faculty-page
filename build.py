@@ -40,6 +40,19 @@ def get_context(site, template):
 
     return site.inject_name_vars( context, template )
 
+# Callable python functions / filters
+def jinja_search( s, pat ):
+    if type(s) == str or type(s) == unicode:
+        return True if re.search( pat, s ) else False
+    elif type(s) == list:
+        return [ e for e in s if re.search( pat, e )]
+
+def jinja_sub( s, pat, rep, count=0 ):
+    if type(s) == str or type(s) == unicode:
+        return re.sub( pat, rep, s, count )
+    else:
+        return [ re.sub( pat, rep, e, count ) for e in s ]
+
 class Site( staticjinja.Site ):
     # New methods
     def needs_rendering( self, template, filepath=None ):
@@ -139,19 +152,19 @@ class Site( staticjinja.Site ):
 	else:
 	    rule(self, template, context, filepath)
 
-    ignored_re = re.compile( r'.*\.(?:swp|un~)$', flags=re.I )
+    ignored_re = re.compile( r'\.(?:swp|un~)$', flags=re.I )
     def is_ignored( self, f ):
-	return True if self.ignored_re.match( f ) else False
+	return True if self.ignored_re.search( f ) else False
 
-    partial_re = re.compile( '(?:^|.*/)_|.*\.j2$' ) 
+    partial_re = re.compile( '(?:^|/)_|\.j2$' ) 
     def is_partial( self, f):
-	return True if self.partial_re.match( f ) else False
+	return True if self.partial_re.search( f ) else False
 
     static_re  = re.compile(
-	    '(?:(?:.*/)?static/(?!.*\.(:?swp|un~)$)|.*\.(:?pdf|jpg|png|svg|eps|ps)$)',
+	    '(?:^|/)static/(?!.*\.(?:swp|un~)$)|\.(:?pdf|jpg|png|svg|eps|ps)$',
 	    flags=re.I )
     def is_static( self, f ):
-	return True if self.static_re.match( f ) else False
+	return True if self.static_re.search( f ) else False
 
 
 if __name__ == "__main__":
@@ -184,9 +197,9 @@ if __name__ == "__main__":
     # Add in the markdown converter
     site.md = mdconverter.mdconverter( site )
 
-    glob_re = re.compile( r'.*[*?{[]' )
+    glob_re = re.compile( r'[*?{[]' )
     site.options = options
-    site.args = [(a if glob_re.match(a) else '*'+a+'*') for a in args]
+    site.args = [(a if glob_re.search(a) else '*'+a+'*') for a in args]
 
     if options.production:
         site.ignored_re = re.compile( 'dev|' + site.ignored_re.pattern )
@@ -209,10 +222,16 @@ if __name__ == "__main__":
     site._env.globals.update({
         'markdown': lambda s: site.md.mdconvert(s).html,
         'glob': lambda s: site.jinja_glob(s),
-        'meta': lambda f, s: site.md.jinja_meta(
-            os.path.join( site.searchpath, f ), s )
+        'get_meta': lambda f, s=None: site.md.jinja_get_meta(
+            os.path.join( site.searchpath, f ), s ),
+        'search': jinja_search,
+        'sub': jinja_sub,
     })
-    site._env.filters['markdown'] = site._env.globals['markdown']
+    site._env.filters.update({
+        'markdown': site._env.globals['markdown'],
+        'search': jinja_search,
+        'sub': jinja_sub,
+    })
 
     # enable automatic reloading
     site.render(use_reloader=False)

@@ -20,6 +20,10 @@ name        : {{name|e}}
 
 ## Glob
 
-{% for f in glob( dirname ~ '/[0-9a-zA-Z]*.md') | sort -%}
-* [[/{{f}}|{{meta( f, 'title' ) }}]]
+{% for f in glob( dirname ~ '/*.md') | sort -%}
+* [[/{{f}}|{{get_meta( f, 'title' ) }}]]
 {% endfor %}
+
+### Filtering tests
+
+* {{ glob( dirname ~ '/*.md' ) | search( '/_' ) }}

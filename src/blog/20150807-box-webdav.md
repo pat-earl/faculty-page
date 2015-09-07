@@ -1,4 +1,11 @@
 title: Using Box.com cloud storage on Linux
+tags: linux
+summary: Recently CMU announced all users will have 1TB of space of cloud
+    storage at Box.com. This motivated me to set it up on my Linux box, and
+    this post describes the setup instructions to mount it as a local folder
+    and copy files back and forth. (Note, no syncing instructions are here,
+    since I'm perfectly happy with my unison set up and haven't tired to set it
+    up yet.)
 
 Recently [CMU] announced all users will have 1TB of space of cloud storage at
 [Box.com]. This motivated me to set it up on my Linux box. I have not tired to

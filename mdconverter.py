@@ -35,7 +35,7 @@ class mdconverter:
         ] )
         self.md.set_output_format( 'html5' )
         self.math_re = re.compile(
-                '.*<script\\s*type\\s*=\s*[\'"]math/tex(\\s|[\'";])',
+                '<script\\s*type\\s*=\s*[\'"]math/tex(\\s|[\'";])',
                 re.DOTALL )
 
         # meta[md_file] holds data from the yaml block in md_file
@@ -111,13 +111,16 @@ class mdconverter:
             self.meta[filename] = self.mdconvert( meta ).Meta
         return self.meta[filename]
 
-    def jinja_meta( self, filename, key):
+    def jinja_get_meta( self, filename, key=None):
         """
         Return value of "key" in the yaml block in the markdown file "fn"
         """
-        self.read_yaml_meta( filename )
-        return self.meta[filename][key] if self.meta[filename].has_key(key) \
+        meta = self.read_yaml_meta( filename )
+        if key:
+            return self.meta[filename][key] if self.meta[filename].has_key(key) \
                 else None
+        else:
+            return meta
 
 # Was markdown_render
 def render(site, template, context=None, filepath=None):
@@ -166,7 +169,7 @@ def get_context( site, template):
         'content': md.html,
         'toc': md.toc,
     })
-    if site.md.math_re.match( md.html ):
+    if site.md.math_re.search( md.html ):
         context['needs_mathjax'] = 1
 
     # In case template.render() caused the yaml block to change, update the
