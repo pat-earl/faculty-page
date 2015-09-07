@@ -85,6 +85,14 @@ class Site( staticjinja.Site ):
         })
         return context
 
+    # Functions exported to templates
+    def jinja_glob( self, s ):
+        """
+        Return all glob pattern matches in the SOURCE directory
+        """
+        prefix = os.path.join( pwd, self.searchpath, '' )
+        matches = glob.glob( prefix + s )
+        return [ m[len(prefix):] for m in matches ]
 
     # Overridden methods a few methods to customize to my settings.
     def copy_static( self, files):
@@ -200,7 +208,9 @@ if __name__ == "__main__":
     
     site._env.globals.update({
         'markdown': lambda s: site.md.mdconvert(s).html,
-        'glob': glob.glob
+        'glob': lambda s: site.jinja_glob(s),
+        'meta': lambda f, s: site.md.jinja_meta(
+            os.path.join( site.searchpath, f ), s )
     })
     site._env.filters['markdown'] = site._env.globals['markdown']
 

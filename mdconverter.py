@@ -29,7 +29,7 @@ class mdconverter:
             'markdown.extensions.toc',
             mdx_math.MathExtension(enable_dollar_delimiter=True),
             mdx_link.makeExtension(
-                link_chars = r'\w0-9|._ (),/-',
+                link_chars = r'\w0-9|:._ (),/-',
                 build_url=lambda t, b, e: self.build_url( t )
             )
         ] )
@@ -37,6 +37,9 @@ class mdconverter:
         self.math_re = re.compile(
                 '.*<script\\s*type\\s*=\s*[\'"]math/tex(\\s|[\'";])',
                 re.DOTALL )
+
+        # meta[md_file] holds data from the yaml block in md_file
+        self.meta = {}
 
     def build_url( self, text ):
         """
@@ -87,23 +90,34 @@ class mdconverter:
 
         return r
 
-    # TODO: Unfinished
-    def read_markdown_meta( site, fn ):
-        if not hasattr( site, 'meta' ):
-            site.meta = {}
+    def read_yaml_meta( self, filename ):
+        """
+        Read markdown metadata from filename.
 
-    # TODO: Unfinished
-    def get_markdown_meta( site, fn, key):
+        Note: This doesn't process the file through Jinja2 first. So the
+        metadata has to be a simple yaml block that is understood by the
+        markdown parser.
+        """
+
+        if not self.meta.has_key( filename ):
+            # Read until the first blank line to get the meta-data
+            meta = ""
+            with open(filename) as f:
+                while True:
+                    l = f.readline()
+                    meta += l
+                    if not l.strip(): break
+
+            self.meta[filename] = self.mdconvert( meta ).Meta
+        return self.meta[filename]
+
+    def jinja_meta( self, filename, key):
         """
         Return value of "key" in the yaml block in the markdown file "fn"
         """
-        if (not hasattr(site, 'meta')) or (not site.meta.has_key(fn)):
-            read_markdown_meta( site, fn )
-
-        try:
-            return site.meta[fn][key]
-        except:
-            return None
+        self.read_yaml_meta( filename )
+        return self.meta[filename][key] if self.meta[filename].has_key(key) \
+                else None
 
 # Was markdown_render
 def render(site, template, context=None, filepath=None):
@@ -143,19 +157,8 @@ def get_context( site, template):
     #f = open(template.filename):
     #    md = site.md.convert( f.read() )
 
-    # Read until the first blank line to get the meta-data
-    meta = ""
-    with open(template.filename) as f:
-        while True:
-            l = f.readline()
-            meta += l
-            if not l.strip(): break
-
-    # Should have meta-data segment in meta to use for context.
-    md = site.md.mdconvert( meta, current_template=template )
-    context = site.inject_name_vars( md.Meta, template )
-
-    # Now convert the whole document, using the meta-data as context
+    context = site.inject_name_vars(
+            site.md.read_yaml_meta( template.filename ), template )
     md = site.md.mdconvert( template.render(**context),
             current_template=template )
 
