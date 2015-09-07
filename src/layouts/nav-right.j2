@@ -5,12 +5,20 @@
       {% block breadcrumb_block %}
 	{% if breadcrumb %}
 	  <ul class='breadcrumb hidden-xs'>
+	    {% if breadcrumb is string %}
+	      {% set breadcrumb = [breadcrumb] %}
+	    {% endif %}
 	    {% for i in breadcrumb %}
-	      {% if loop.index is odd %}
-		<li><a href='{{i}}'>
+	      {% if search( i, '\|' ) %}
+		{# in format "link|text" #}
+		{% set b_link = sub( i, '\|.*', '', 1 ) %}
+		{% set b_text = sub( i, '.*?\|', '', 1 ) %}
 	      {% else %}
-		{{i}}</a></li>
+		{# in format "file.md" #}
+		{% set b_link = get_link( i ) %}
+		{% set b_text = get_meta( i, 'title' ) %}
 	      {% endif %}
+	      <li><a href='{{b_link}}'>{{b_text}}</a></li>
 	    {% endfor %}
 	    <li class='active'>{{title}}</li>
 	  </ul>
