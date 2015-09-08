@@ -1,6 +1,6 @@
 title: Using Git and latexdiff
 tags: git, latex, linux
-summary: If you use [git](http://git-scm.com/) to manage your [LaTeX](http://www.latex-project.org/) documents, then you can easily use [latexdiff](http://www.ctan.org/tex-archive/support/latexdiff) to produce a PDF of the differences. Here are setup instructions.
+summary: If you use [git](http://git-scm.com/) to manage your [LaTeX](http://www.latex-project.org/) documents, then you can easily integrate [latexdiff](http://www.ctan.org/tex-archive/support/latexdiff) to produce a PDF of the differences. Here are setup instructions.
 
 If you use [git](http://git-scm.com/) to manage your [LaTeX](http://www.latex-project.org/) documents, and want to use [latexdiff] to see differences between revisions, then here is a quick way.
 

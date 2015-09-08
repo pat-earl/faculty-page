@@ -1,10 +1,14 @@
+{%- from 'includes/macros.j2' import post_date -%}
 {%- macro md_sidenav() -%}
   {%- include dirname ~ '/' ~ (sidenav | default( '_sidenav.md', true )) ignore missing -%}
 {%- endmacro -%}
 {% extends md_nav_layout | default("layouts/nav-right.j2") %}
 {% block main_column %}
   <div {{"class='lead'" if bigfont}}>{# Get a readable font! #}
-    <h1>{{title}}</h1>
+    <h1>
+      {{title}}
+      {{post_date(basename)}}
+    </h1>
     {{ content }}
   </div>
 {% endblock %}

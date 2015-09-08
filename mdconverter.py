@@ -19,7 +19,7 @@ class mdconverter:
         site is a staticjinja Site object from which URL prefixes etc are extracted.
         """
         self.site = site
-        self.current_template = None
+        self.current_context = None
         self.md = markdown.Markdown( extensions=[
             'markdown.extensions.extra',
             'markdown.extensions.codehilite',
@@ -41,19 +41,27 @@ class mdconverter:
         # meta[md_file] holds data from the yaml block in md_file
         self.meta = {}
 
-    def get_link( self, f ):
+    def get_link( self, context, f ):
+        """
+        Get a link to file f. f can be relative to current directory (taken
+        from context.dirname) or to the root directory (site.searchpath).
+        """
         g = self.site._env.globals
-        if f.startswith( 'auth/' ) and self.current_template:
-            link = os.path.join( g['site_surl'],
-                    os.path.dirname(self.current_template.name), link )
-        elif f.startswith( '/' ):
-            link = os.path.join( g['site_prefix'], link )
-        else:
-            link = f
+        p = os.path
+        site = self.site
 
+        (f, cdir) = site.get_cdir( context, f )
+
+        link = p.relpath( p.join( cdir, f ), site.searchpath )
         (l, e) = os.path.splitext( link )
         if e == '.md':
             link = l + '.html'
+
+        if re.search( '(?:^|/)auth/', link ):
+            # Use https for all links with an auth in the URL.
+            link = p.join( g['site_surl'], link )
+        else:
+            link = p.join( g['site_url'], link )
 
         return link
 
@@ -71,28 +79,18 @@ class mdconverter:
             link = re.sub(r'([ ]+_)|(_[ ]+)|([ ]+)', '_', text)
             label = text
 
-        g = self.site._env.globals
-        if link.startswith( 'auth/' ) and self.current_template:
-            link = os.path.join( g['site_surl'],
-                    os.path.dirname(self.current_template.name), link )
-        elif link.startswith( '/' ):
-            link = os.path.join( g['site_prefix'], link )
+        return ( self.get_link( self.current_context, link ), label)
 
-        (l, e) = os.path.splitext( link )
-        if e == '.md':
-            link = l + '.html'
-
-        return ( link, label)
-
-    def mdconvert( self, s, current_template=None):
+    def mdconvert( self, context, s):
         """
-            Convert a string (or list) into markdown
+            Convert a string (or list) into markdown. (context is used to get
+            dirname etc, and pass to build_url when making links.)
         """
         if type(s) == list:
             s = '\n'.join(s)
 
         self.md.reset()
-        self.current_template = current_template
+        self.current_context = context
         r = namedtuple( 'RenderedMarkdown', ['html', 'toc', 'Meta'])
 
         r.html = self.md.convert( s )
@@ -106,7 +104,7 @@ class mdconverter:
 
         return r
 
-    def read_yaml_meta( self, filename ):
+    def read_yaml_meta( self, context, filename ):
         """
         Read markdown metadata from filename.
 
@@ -115,24 +113,31 @@ class mdconverter:
         markdown parser.
         """
 
-        if not self.meta.has_key( filename ):
+        p = os.path
+        site = self.site
+
+        (filename, cdir) = site.get_cdir( context, filename )
+
+        real_fname = p.realpath( p.join( cdir, filename ) )
+        rel_name = p.relpath( real_fname, site.searchpath )
+        if not self.meta.has_key( rel_name ):
             # Read until the first blank line to get the meta-data
             meta = ""
             
-            with open(os.path.join( self.site.searchpath, filename )) as f:
+            with open(real_fname) as f:
                 while True:
                     l = f.readline()
                     meta += l
                     if not l.strip(): break
 
-            self.meta[filename] = self.mdconvert( meta ).Meta
-        return self.meta[filename]
+            self.meta[rel_name] = self.mdconvert( context, meta ).Meta
+        return self.meta[rel_name]
 
-    def jinja_get_meta( self, filename, key=None):
+    def jinja_get_meta( self, context, filename, key=None):
         """
         Return value of "key" in the yaml block in the markdown file "fn"
         """
-        meta = self.read_yaml_meta( filename )
+        meta = self.read_yaml_meta( context, filename )
         if key:
             return meta[key] if meta.has_key(key) else None
         else:
@@ -176,10 +181,9 @@ def get_context( site, template):
     #f = open(template.filename):
     #    md = site.md.convert( f.read() )
 
-    context = site.inject_name_vars(
-            site.md.read_yaml_meta( template.filename ), template )
-    md = site.md.mdconvert( template.render(**context),
-            current_template=template )
+    context = site.inject_name_vars( {}, template )
+    context.update(  site.md.read_yaml_meta( context, '/' + template.name ) )
+    md = site.md.mdconvert( context, template.render(**context) )
 
     context.update({
         'content': md.html,

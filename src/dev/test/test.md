@@ -7,7 +7,8 @@ layout: md-nav-right.j2
 title       : {{title}}
 dirname     : {{dirname|e}}
 basename    : {{basename|e}}
-name        : {{name|e}}
+name        : {{name}}
+name[:-3]   : {{name[:-3]}}
 1 + 1       : {{1 + 1}}
 ```
 
@@ -20,10 +21,10 @@ name        : {{name|e}}
 
 ## Glob
 
-{% for f in glob( dirname ~ '/*.md') | sort -%}
-* [[/{{f}}|{{get_meta( f, 'title' ) }}]]
+{% for f in glob( '*.md') | sort -%}
+* [[{{f}}|{{get_meta( f, 'title' )|default(f, true) }}]]
 {% endfor %}
 
 ### Filtering tests
 
-* {{ glob( dirname ~ '/*.md' ) | search( '/_' ) }}
+* {{ glob( '*.md' ) | search( '^_' ) }}

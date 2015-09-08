@@ -8,7 +8,7 @@
 	    {% if breadcrumb is string %}
 	      {% set breadcrumb = [breadcrumb] %}
 	    {% endif %}
-	    {% for i in breadcrumb %}
+	    {% for i in breadcrumb | reverse %}
 	      {% if search( i, '\|' ) %}
 		{# in format "link|text" #}
 		{% set b_link = sub( i, '\|.*', '', 1 ) %}
@@ -32,11 +32,11 @@
     <div class='col-md-3' id='col-right'>
       {% block nav_column %}
 	{% block nav_before_toc %}{% endblock %}
-	{% if toc %}
+	{% if not search( toc, '<ul></ul>' ) %}
 	  <nav class='nav hidden-xs hidden-sm'>
-	    <h4>
-	      <a href='#toc' data-toggle='collapse' aria-expanded='false'
-		  aria-controls='#toc'>Navigation</a>
+	    <h4 class='hide-xoverflow'>
+	      <a href='#toc' data-toggle='collapse'
+		  aria-expanded='false' aria-controls='#toc'>{{title}}</a>
 	    </h4>
 	    <div id='toc' class='collapse in'>
 	      {{toc}}{# Looks like:<div class='toc'><ul>...</ul></div> #}

@@ -193,3 +193,9 @@
     {%- endif -%}{# }}} #}
   </table>
 {%- endmacro -%}
+
+{%- macro post_date(f) -%}
+  {%- if search( f, '20(\d\d)(\d\d)(\d\d)' ) -%}
+    <small> (Posted {{ sub( f, '(?:.*/|^)20(\d\d)(\d\d)(\d\d)-.*', '20\\1-\\2-\\3', 1 ) }})</small>
+  {%- endif -%}
+{%- endmacro  -%}

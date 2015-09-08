@@ -33,12 +33,19 @@ img.float-left {
   clear: right;
 }
 
+.hide-xoverflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 /* Right navigation {{{ */
 #col-right .toc ul {
   list-style: none;
   padding-left: 2ex;
   white-space: nowrap;
   overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 
 #col-right .toc ul ul {

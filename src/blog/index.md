@@ -1,3 +1,4 @@
+{%- from 'includes/macros.j2' import post_date -%}
 title: Tips and Tricks "Blog"
 
 This is a collection of various tips and tricks I've found useful in my interaction with the standard geek tools I use often.
@@ -5,9 +6,9 @@ They're mainly posted here as a reference for me, so don't blame me if you don't
 
 ## All posts
 
-{% for f in glob( dirname ~ "/[0-9]*.md" ) -%}
+{% for f in glob( '[0-9]*.md' ) | sort( reverse=True ) -%}
     {%- set meta = get_meta(f) -%}
-    ### [[/{{f}}|{{meta.title}}]]<small> (Posted {{f | sub( '.*/20(\d\d)(\d\d)(\d\d)-.*', '20\\1-\\2-\\3' ) }})</small>
+    ### [[{{f}}|{{meta.title}}]]{{post_date(f)}}
 
 {{ meta.summary | markdown }}
 

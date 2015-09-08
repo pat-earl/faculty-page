@@ -10,7 +10,7 @@ import ConfigParser
 import fnmatch
 import glob
 
-from jinja2 import contextfunction
+from jinja2 import contextfunction, contextfilter
 
 import mdconverter
 
@@ -98,13 +98,31 @@ class Site( staticjinja.Site ):
         })
         return context
 
+    def get_cdir( self, context, filename ):
+        """
+        Get the "current directory" of filename. If filename starts with '/',
+        it is stripped, and cdir is site.searchpath. If not, cdir is
+        site.searchpath / context['dirname']
+        """
+
+        if filename.startswith( '/' ):
+            filename = filename[1:]
+            cdir = self.searchpath
+        else:
+            cdir = os.path.join( site.searchpath, context['dirname'] )
+            
+        return (filename, cdir)
+
     # Functions exported to templates
-    def jinja_glob( self, pat ):
+    def jinja_glob( self, context, pat ):
         """
         Return all glob pattern matches in the SOURCE directory
         """
-        matches = glob.glob( os.path.join( self.searchpath, pat ) )
-        return [ os.path.relpath( m, self.searchpath ) for m in matches ]
+        
+        leading_slash = '/' if pat[0] == '/' else ''
+        (pat, cdir) = self.get_cdir( context, pat )
+        matches = glob.glob( os.path.join( cdir, pat ) )
+        return [ leading_slash + os.path.relpath( m, cdir ) for m in matches ]
 
     # Overridden methods a few methods to customize to my settings.
     def copy_static( self, files):
@@ -220,16 +238,16 @@ if __name__ == "__main__":
     site._env.globals.update( dict( cfg.items(dev_env) ) )
     
     site._env.globals.update({
-        'markdown': lambda s: site.md.mdconvert(s).html,
-        'glob': lambda s: site.jinja_glob(s),
-        'get_meta': lambda f, s=None: site.md.jinja_get_meta( f, s ),
+        'markdown': contextfunction( lambda c, s: site.md.mdconvert(c, s).html ),
+        'glob': contextfunction( lambda c, s: site.jinja_glob(c, s) ),
+        'get_meta': contextfunction( lambda c, f, k=None: \
+                        site.md.jinja_get_meta( c, f, k ) ),
+        'get_link': contextfunction( lambda c, f: site.md.get_link(c, f) ),
         'search': jinja_search,
         'sub': jinja_sub,
-        'get_link': lambda f: site.md.get_link(f),
-        'test_fn': contextfunction( lambda c, a: jinja_test( site, c, a ))
     })
     site._env.filters.update({
-        'markdown': site._env.globals['markdown'],
+        'markdown': contextfilter( lambda c, s: site.md.mdconvert(c, s).html ),
         'search': jinja_search,
         'sub': jinja_sub,
     })

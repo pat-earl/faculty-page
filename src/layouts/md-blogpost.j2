@@ -1,6 +1,18 @@
 {% set active = 'blog' %}
+{% from 'includes/macros.j2' import post_date %}
 {% extends "layouts/md-nav-right-affix.j2" %}
 {% block nav_after_toc %}
+  {{ super() }}
+
+  <h4>Recent posts</h4>
+  {% set files = glob( '/blog/[0-9]*.md' ) | sort( reverse=True ) %}
+  {% for f in files[:5] -%}
+    <ul class='list-unstyled'>
+      <li class='hide-xoverflow'>
+	<a href='{{get_link(f)}}'>{{get_meta( f, 'title')}} {{post_date(f)}}</a>
+      </li>
+    </ul>
+  {% endfor %}
   {#
   <div class='row'>
     <div class='col-md-12 col-sm-6'>
