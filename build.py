@@ -221,7 +221,9 @@ if __name__ == "__main__":
 
     if options.production:
         site.ignored_re = re.compile( 'dev|' + site.ignored_re.pattern )
-        site.static_re = re.compile( '(?!dev)' + site.static_re.pattern )
+        site.static_re = re.compile(
+            r'^(?!dev/)(?!.*\.(?:swp|un~)$)(?:static/|.*\.(:?pdf|jpg|png|svg|eps|ps)$)',
+	    flags=re.I )
         dev_env = 'production'
 
     else:
