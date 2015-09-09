@@ -51,6 +51,10 @@ ol.post-series, ul.post-series
   text-overflow: ellipsis;
 }
 
+#hw-handouts ul {
+  padding-left: 2.5rem;
+}
+
 /* Right navigation {{{ */
 #col-right .toc ul {
   list-style: none;

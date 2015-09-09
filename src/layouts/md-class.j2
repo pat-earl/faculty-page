@@ -8,7 +8,7 @@
 {% extends "layouts/md-nav-right-affix.j2" %}
 {% block nav_after_toc %}
   {% if md_hw() or md_handouts() %}
-    <div class='row small'>
+    <div id='hw-handouts' class='row small'>
       {% if md_hw() %}
 	<div class='col-md-12 col-sm-6'>
 	  <h4 class='hidden-xs hidden-sm'>Homework and Solutions</h4>
