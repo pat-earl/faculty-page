@@ -28,6 +28,7 @@ def get_context(site, template):
         try:
             context = context_generator( site, template)
         except TypeError as e:
+            #print e
             try:
                 context = context_generator( template)
             except TypeError:
@@ -52,6 +53,16 @@ def jinja_test( site, context, arg ):
     print site.searchpath
     print context['dirname']
     return arg
+
+def jinja_glob( site, context, pat ):
+    """
+    Return all glob pattern matches in the SOURCE directory
+    """
+    
+    leading_slash = '/' if pat[0] == '/' else ''
+    (pat, cdir) = site.get_cdir( context, pat )
+    matches = glob.glob( os.path.join( cdir, pat ) )
+    return [ leading_slash + os.path.relpath( m, cdir ) for m in matches ]
 
 class Site( staticjinja.Site ):
     # New methods
@@ -112,17 +123,6 @@ class Site( staticjinja.Site ):
             cdir = os.path.join( site.searchpath, context['dirname'] )
             
         return (filename, cdir)
-
-    # Functions exported to templates
-    def jinja_glob( self, context, pat ):
-        """
-        Return all glob pattern matches in the SOURCE directory
-        """
-        
-        leading_slash = '/' if pat[0] == '/' else ''
-        (pat, cdir) = self.get_cdir( context, pat )
-        matches = glob.glob( os.path.join( cdir, pat ) )
-        return [ leading_slash + os.path.relpath( m, cdir ) for m in matches ]
 
     # Overridden methods a few methods to customize to my settings.
     def copy_static( self, files):
@@ -239,7 +239,7 @@ if __name__ == "__main__":
     
     site._env.globals.update({
         'markdown': contextfunction( lambda c, s: site.md.mdconvert(c, s).html ),
-        'glob': contextfunction( lambda c, s: site.jinja_glob(c, s) ),
+        'glob': contextfunction( lambda c, p: jinja_glob( site, c, p) ),
         'get_meta': contextfunction( lambda c, f, k=None: \
                         site.md.jinja_get_meta( c, f, k ) ),
         'get_link': contextfunction( lambda c, f: site.md.get_link(c, f) ),

@@ -67,8 +67,9 @@ class mdconverter:
 
     def build_url( self, text ):
         """
-            Build a url from the label text. If template is provided, then
-            "auth/" links can be redirected to https as required by Shibboleth.
+        Build a url from text of the form "link|label". If no label is given,
+        try and use the title of the file pointed to by link, or fall back to
+        the given text.
         """
 
         sep = text.find('|')
@@ -77,7 +78,13 @@ class mdconverter:
             label = text[sep+1:]
         else:
             link = re.sub(r'([ ]+_)|(_[ ]+)|([ ]+)', '_', text)
-            label = text
+            try:
+                label = self.jinja_get_meta( self.current_context, link, 'title' ) \
+                        or text
+            except IOError as e:
+                self.site.logger.warn( '%s WARNING: Broken link "%s"'
+                        % (self.current_context['name'], link) )
+                label = text
 
         return ( self.get_link( self.current_context, link ), label)
 

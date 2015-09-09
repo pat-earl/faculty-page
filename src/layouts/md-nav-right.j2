@@ -7,15 +7,16 @@
   <div {{"class='lead'" if bigfont}}>{# Get a readable font! #}
     <h1>
       {{title}}
-      {{post_date(basename)}}
+      {% if post_date(basename) %}
+	<small>(posted {{post_date(basename)}})</small>
+      {% endif %}
     </h1>
+
     {{ content }}
   </div>
 {% endblock %}
 {% block nav_after_toc %}
   {% if md_sidenav() %}
-    <div class='small'>
-      {{ md_sidenav() | markdown }}
-    </div>
+    {{ md_sidenav() | markdown }}
   {% endif %}
 {% endblock %}

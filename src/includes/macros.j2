@@ -196,6 +196,24 @@
 
 {%- macro post_date(f) -%}
   {%- if search( f, '20(\d\d)(\d\d)(\d\d)' ) -%}
-    <small> (Posted {{ sub( f, '(?:.*/|^)20(\d\d)(\d\d)(\d\d)-.*', '20\\1-\\2-\\3', 1 ) }})</small>
+    {{ sub( f, '(?:.*/|^)20(\d\d)(\d\d)(\d\d)-.*', '20\\1-\\2-\\3', 1 ) }}
   {%- endif -%}
 {%- endmacro  -%}
+
+{%- macro post_series( parent, series ) -%}
+  {#- Can't pass relative file names to this. -#}
+  <div>
+    <br />
+    <h4 class='hide-xoverflow'>
+      {{ glyph( 'menu-hamburger' ) }}
+      <a href='{{get_link(parent)}}'>{{get_meta(parent, 'title')}}</a>
+    </h4>
+    <ol class='post-series'>
+    {% for f in series -%}
+      <li>
+	<a href='{{get_link(f)}}'>{{get_meta(f, 'title')}}</a>
+      </li>
+    {% endfor %}
+    </ol>
+  </div>
+{%- endmacro -%}

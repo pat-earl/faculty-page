@@ -65,6 +65,8 @@ $(document).ready( function() {
 		  bottom: $('body>footer').outerHeight(true)
 	      }
 	  });
+
+	  elem.affix( 'checkPosition' )
       };
 
       resizeFn();

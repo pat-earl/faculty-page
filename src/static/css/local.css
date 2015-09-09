@@ -39,15 +39,44 @@ img.float-left {
   text-overflow: ellipsis;
 }
 
+ol.post-series, ul.post-series
+{
+  padding-left: 2ex;
+}
+
+.post-series > li {
+  list-style-position: inside;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 /* Right navigation {{{ */
 #col-right .toc ul {
   list-style: none;
-  padding-left: 2ex;
+  padding-left: 0ex;
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
 }
 
+#col-right .toc ul ul {
+  padding-left: 2ex;
+}
+
+
+/* Hide inactive sub-lists */
+#col-right .toc ul li > ul {
+  display: none;
+}
+
+#col-right .toc ul li.active > ul {
+  display: block;
+}
+
+
+/* Reduce font size for sub-menus. */
+/*
 #col-right .toc ul ul {
   font-size: 90%;
 }
@@ -55,6 +84,7 @@ img.float-left {
 #col-right .toc ul ul ul ul {
   font-size: 100%;
 }
+*/
 
 #col-right .toc ul li.active {
   font-weight: bold;
