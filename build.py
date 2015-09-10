@@ -130,20 +130,31 @@ class Site( staticjinja.Site ):
         Copy static files over, only if required by comparing mtimes or ctimes.
         For sym-links, copy it as a link.
         """
+        p = os.path
 	for f in files:
-	    src = os.path.join(self.searchpath, f)
-	    dst = os.path.join(self.outpath, f)
+	    src = p.join(self.searchpath, f)
+	    dst = p.join(self.outpath, f)
 	    self._ensure_dir(f)
-	    if not ( os.path.isfile(dst) or os.path.islink(dst) ) or \
+	    if not ( p.isfile(dst) or p.islink(dst) ) or \
 		    ( os.stat(src).st_mtime - os.stat(dst).st_mtime > 0 ) or \
 		    ( os.stat(src).st_ctime - os.stat(dst).st_ctime > 0 ):
 		self.logger.info("Copying %s to %s." % (f, dst))
 		#shutil.copyfile(src, dst)
-                if os.path.islink(src):
-                    if os.path.islink(dst):
+                if p.islink(src):
+                    if p.islink(dst):
                         os.unlink(dst)
-                    linkto = os.readlink(src)
-                    os.symlink( linkto, dst )
+                    elif p.isdir(dst):
+                        shutil.rmtree(dst)
+
+                    # Check if link is relative inside the source tree
+                    rsrc = p.relpath( p.realpath( src ), self.searchpath )
+                    if rsrc.startswith( '..' ) or rsrc.startswith( '/' ):
+                        # External. Copy it.
+                        shutil.copy( src, dst )
+                        shutil.copymode( src, dst )
+                    else:
+                        linkto = os.readlink(src)
+                        os.symlink( linkto, dst )
                 else:
                     shutil.copy(src, dst)
                     shutil.copymode(src, dst)

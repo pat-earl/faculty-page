@@ -11,3 +11,5 @@ Here is a lecture by lecture list of topics covered in class.
 * Open sets and domains
 * Limits
 * Continuity
+* Partial Derivatives
+* Derivative (or "Total Differential")
