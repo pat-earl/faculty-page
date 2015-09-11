@@ -190,7 +190,15 @@ def get_context( site, template):
 
     context = site.inject_name_vars( {}, template )
     context.update(  site.md.read_yaml_meta( context, '/' + template.name ) )
-    md = site.md.mdconvert( context, template.render(**context) )
+
+    if context.has_key( 'raw' ) and context['raw']:
+        # Don't render before passing to mdconvert
+        # This still doesn't work perfectly. Better to surround document with
+        # {% raw %} tags.
+        with open(template.filename) as f:
+            md = site.md.mdconvert( context, f.read() )
+    else:
+        md = site.md.mdconvert( context, template.render(**context) )
 
     context.update({
         'content': md.html,
