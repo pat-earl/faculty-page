@@ -1,6 +1,42 @@
 {% set active = 'blog' %}
+{%- macro rinclude(fn) -%}
+  {%- include dirname ~ '/' ~ fn -%}
+{%- endmacro -%}
 {% from 'includes/macros.j2' import post_date, glyph %}
 {% extends "layouts/md-nav-right-affix.j2" %}
+{% block comments_block %}
+  {% if comments != 'disabled' %}
+    <br />
+    <h3>
+      {{ glyph( 'pencil' ) }}
+      Comments
+    </h3>
+
+    {% set cfiles = glob( sub( basename, '\.md$', '' ) ~ '/_comment_*.md' ) | sort %}
+    {% for f in cfiles %}
+      {% set meta = get_meta( f ) %}
+      <ul class='list-unstyled comments'>
+	<li>
+	  <div class='media small'>
+	    <div class='media-left'>
+	      <img class='media-object img-rounded hidden-xs'
+		  src='{{meta.avatar}}' alt='{{meta.name|default('Anonymous')}}'>
+	    </div>
+	    <div class='media-body'>
+	      <h4 class='media-heading'>
+		{{meta.subject}}
+		<br />
+		<small>{{meta.name|default('Anonymous')}} ({{meta.date}})</small>
+	      </h4>
+
+	      {{rinclude(f) | markdown}}
+	    </div>
+	  </div>
+	</li>
+      </ul>
+    {% endfor %}
+  {% endif %}
+{% endblock %}
 {% block nav_after_toc %}
   {{ super() }}
 

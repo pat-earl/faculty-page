@@ -55,6 +55,11 @@ ol.post-series, ul.post-series
   padding-left: 2.5rem;
 }
 
+/* Comments */
+ul.comments > li {
+  margin-top: 2em
+}
+
 /* Right navigation {{{ */
 #col-right .toc ul {
   list-style: none;

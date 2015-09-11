@@ -1,1 +1,1 @@
-* [[pdfs/hw.pdf|Assignment 1]]
+* [[pdfs/hw.pdf|Assignments 1--2]]

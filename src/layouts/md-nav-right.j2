@@ -5,14 +5,21 @@
 {% extends md_nav_layout | default("layouts/nav-right.j2") %}
 {% block main_column %}
   <div {{"class='lead'" if bigfont}}>{# Get a readable font! #}
-    <h1>
-      {{title}}
-      {% if post_date(basename) %}
-	<small>(posted {{post_date(basename)}})</small>
-      {% endif %}
-    </h1>
+    {% block title_block %}
+      <h1>
+	{{title}}
+	{% if post_date(basename) %}
+	  <small>(posted {{post_date(basename)}})</small>
+	{% endif %}
+      </h1>
+    {% endblock %}
 
-    {{ content }}
+    {% block content_block %}
+      {{ content }}
+    {% endblock %}
+
+    {% block comments_block %}
+    {% endblock %}
   </div>
 {% endblock %}
 {% block nav_after_toc %}
