@@ -29,7 +29,7 @@ class mdconverter:
             'markdown.extensions.toc',
             mdx_math.MathExtension(enable_dollar_delimiter=True),
             mdx_link.makeExtension(
-                link_chars = r'\w0-9|:._ (),/-',
+                link_chars = r'][\w0-9|:._ (),/"-',
                 build_url=lambda t, b, e: self.build_url( t )
             )
         ] )

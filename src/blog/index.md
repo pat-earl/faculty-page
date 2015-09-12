@@ -10,7 +10,10 @@ They're mainly posted here as a reference for me, so don't blame me if you don't
   ### [[{{f}}]] <small>(Posted {{post_date(f)}})</small>
 
 {% set meta = get_meta(f) %}
-{% if meta.summary %}{{ meta.summary | markdown }}{% endif %}
+{% if meta.summary -%}
+  {{ meta.summary  if meta.summary is string else '\n'.join( meta.summary )-}}
+  <a class='text-nowrap tight-float-right' href='{{get_link(f)}}'>More &raquo;</a>
+{%- endif %}
 
 {% if meta.tags -%}
   <div class='small' markdown='1'>*Tags:*
