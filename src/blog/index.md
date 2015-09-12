@@ -7,7 +7,7 @@ They're mainly posted here as a reference for me, so don't blame me if you don't
 ## All posts
 
 {% for f in glob( '[0-9]*.md' ) | sort( reverse=True ) -%}
-  ### [[{{f}}]] <small>(Posted {{post_date(f)}})</small>
+  ### [[{{f}}]] <small>(Posted&nbsp;{{post_date(f)}})</small>
 
 {% set meta = get_meta(f) %}
 {% if meta.summary -%}

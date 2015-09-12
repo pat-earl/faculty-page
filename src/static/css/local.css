@@ -14,6 +14,13 @@ body > div.jumbotron { margin-top: -20px }
 .biggskip { margin-top: 3em }
 
 /* div.container p {text-align: justify} */
+.text-justify h1, .text-justify h2, .text-justify h3,
+.text-justify h4, .text-justify h5, .text-justify h6
+{
+  /* Don't justify headings */
+  text-align: left
+}
+
 .hyphenate {
   -webkit-hyphens:  auto;
   -moz-hyphens: auto;
