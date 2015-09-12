@@ -12,7 +12,7 @@
       Comments
     </h3>
 
-    {% set cfiles = glob( sub( basename, '\.md$', '' ) ~ '/_comment_*.md' ) | sort %}
+    {% set cfiles = glob( filesdir ~ '/_comment_*.md' ) | sort %}
     {% for f in cfiles %}
       {% set meta = get_meta( f ) %}
       <ul class='list-unstyled comments'>
