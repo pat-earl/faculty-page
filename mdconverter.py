@@ -76,6 +76,12 @@ class mdconverter:
         if( sep >= 0 ):
             link = text[:sep]
             label = text[sep+1:]
+
+            # Check if the path exists
+            (f, cdir) = self.site.get_cdir( self.current_context, link )
+            if not os.path.exists( os.path.join( cdir, f ) ):
+                self.site.logger.warn( '%s WARNING: Broken link "%s"'
+                        % (self.current_context['name'], link) )
         else:
             link = re.sub(r'([ ]+_)|(_[ ]+)|([ ]+)', '_', text)
             try:
