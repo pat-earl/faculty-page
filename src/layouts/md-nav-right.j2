@@ -9,7 +9,8 @@
       <h1>
 	{{title}}
 	{% if post_date(basename) %}
-	  <small>(posted {{post_date(basename)}})</small>
+	  <br />
+	  <small>{{post_date(basename)}}</small>
 	{% endif %}
       </h1>
     {% endblock %}
