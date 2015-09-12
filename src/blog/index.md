@@ -10,7 +10,7 @@ They're mainly posted here as a reference for me, so don't blame me if you don't
   ### [[{{f}}]] <small>(Posted {{post_date(f)}})</small>
 
 {% set meta = get_meta(f) %}
-{{ meta.summary | markdown }}
+{% if meta.summary %}{{ meta.summary | markdown }}{% endif %}
 
 {% if meta.tags -%}
   <div class='small' markdown='1'>*Tags:*
