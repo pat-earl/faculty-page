@@ -93,7 +93,6 @@ ul.comments > li {
 #col-right .toc ul ul ul ul {
   font-size: 100%;
 }
-*/
 
 #col-right .toc ul li.active {
   font-weight: bold;
@@ -101,6 +100,15 @@ ul.comments > li {
 
 #col-right .toc ul li {
   font-weight: normal;
+}
+*/
+#col-right .toc ul li.active > a {
+  color: #31708F; /* text-info */
+  font-weight: bold;
+}
+
+#col-right .toc ul li > a {
+  color: #777; /* text-muted */
 }
 
 /* sm and xs devices */
