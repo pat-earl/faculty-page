@@ -20,7 +20,8 @@
 	  <div class='media small'>
 	    <div class='media-left'>
 	      <img class='media-object img-rounded hidden-xs'
-		  src='{{meta.avatar}}' alt='{{meta.name|default('Anonymous')}}'>
+		  src='{{meta.avatar|default('http://cdn.libravatar.org/avatar/')}}'
+		  alt='{{meta.name|default('Anonymous')}}'>
 	    </div>
 	    <div class='media-body'>
 	      <h4 class='media-heading'>
@@ -36,7 +37,7 @@
       </ul>
     {% else %}
     <p class='text-info'>
-      Coming soon...
+      Comment form coming soon.
     </p>
     {% endfor %}
   {% endif %}
