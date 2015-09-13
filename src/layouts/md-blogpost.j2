@@ -1,6 +1,6 @@
 {% set active = 'blog' %}
-{%- macro rinclude(fn) -%}
-  {%- include dirname ~ '/' ~ fn -%}
+{%- macro finclude(fn) -%}
+  {%- include fn -%}
 {%- endmacro -%}
 {% from 'includes/macros.j2' import post_date, glyph %}
 {% extends "layouts/md-nav-right-affix.j2" %}
@@ -8,11 +8,10 @@
   {% if comments != 'disabled' %}
     <br />
     <h3>
-      {{ glyph( 'pencil' ) }}
-      Comments
+      {{ glyph( 'comment' ) }}&emsp;Comments
     </h3>
 
-    {% set cfiles = glob( filesdir ~ '/_comment_*.md' ) | sort %}
+    {% set cfiles = glob( '/blog/_comments/_'~filesdir~'_*.md' ) | sort %}
     {% for f in cfiles %}
       {% set meta = get_meta( f ) %}
       <ul class='list-unstyled comments'>
@@ -30,23 +29,50 @@
 		<small>{{meta.name|default('Anonymous')}} ({{meta.date}})</small>
 	      </h4>
 
-	      {{rinclude(f) | markdown}}
+	      {{finclude(f) | markdown}}
 	    </div>
 	  </div>
 	</li>
       </ul>
-    {% else %}
-    <p class='text-info'>
-      Comment form coming soon.
-    </p>
     {% endfor %}
-  {% endif %}
-{% endblock %}
+    {% if dev_env == 'local' %}
+      <h4>
+	{{ glyph('pencil') }}&emsp;Leave a comment
+	<small class='text-warning'>
+	  (Spammers beware: All comments are moderated)
+	</small>
+      </h4>
+      <div class='well row small'>
+	<form role='form' method='post' action='http://www.math.cmu.edu/~gautam/tmp/comment-test/test.php'>
+	  <div class="col-md-6 form-group">
+	    <label class="sr-only" for="name">Name</label>
+	    <input type="text" class="form-control" name="name" placeholder="Name (optional)">
+	  </div>
+	  <div class="col-md-6 form-group">
+	    <label class="sr-only" for="email">Email address</label>
+	    <input type="email" class="form-control" name="email" placeholder="Email (optional, to generate an avatar. Will not be stored or published.)" title="Your email is only used to generate an avatar. It will not be stored, or published. Promise!">
+	  </div>
+	  <div class="col-md-12 form-group">
+	      <label class="sr-only" for="email">Comment</label>
+	      <textarea class="form-control" name="comment" placeholder="Comment. (Write your comment in Markdown)" rows='4'></textarea>
+	      {# <span class='help-block'>
+		Write your comment in 
+		<a href='https://help.github.com/articles/markdown-basics'>Markdown</a>.
+	      </span> #}
+	  </div>
+	  <div class="col-md-12 form-group text-right">
+	      <button type="submit" class="btn btn-default">Submit</button>
+	  </div>
+	</form>
+      </div>
+    {% endif %}{# dev_env == local #}
+  {% endif %}{# comments not disabled #}
+{% endblock comments_block %}
 {% block nav_after_toc %}
   {{ super() }}
 
   <br />
-  <h4>{{glyph( 'bullhorn' )}} Recent posts</h4>
+  <h4>{{glyph( 'bullhorn' )}}&emsp;Recent posts</h4>
   {% set files = glob( '/blog/[0-9]*.md' ) | sort( reverse=True ) %}
   <ol class='list-unstyled'>
     {% for f in files[:5] -%}

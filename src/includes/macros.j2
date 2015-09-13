@@ -205,8 +205,8 @@
   <div>
     <br />
     <h4 class='hide-xoverflow'>
-      {{ glyph( 'menu-hamburger' ) }}
-      <a href='{{get_link(parent)}}'>{{get_meta(parent, 'title')}}</a>
+      {{ glyph( 'menu-hamburger' ) }}&emsp;<a href='{{get_link(parent)}}'>
+	{{- get_meta(parent, 'title')}}</a>
     </h4>
     <ol class='post-series'>
     {% for f in series -%}

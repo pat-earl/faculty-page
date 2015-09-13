@@ -5,8 +5,8 @@
 ] %}
 {%- set navbar_right = [
     ( '',		'Code' ),
+    ( 'blog',		'Blog' ),
 ] -%}
 {%- if dev_env == 'local' -%}
-    {%- set _ = navbar_right.append( ( 'blog', 'Blog' ) ) %}
     {%- set _ = navbar_right.append( ( 'dev/test', 'Test' )  ) %}
 {%- endif -%}
