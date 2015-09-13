@@ -1,5 +1,5 @@
 {%- from 'includes/macros.j2' import post_date -%}
-title: Miscellaneous Tips and Tricks
+title: Random Linux/Latex tricks
 comments: disabled
 
 This is a collection of various tips and tricks I've found useful in my interaction with the standard geek tools I use often.
