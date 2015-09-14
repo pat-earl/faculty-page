@@ -179,6 +179,7 @@ class Site( staticjinja.Site ):
 	    if filepath:
 		self.logger.info("Rendering %s..." % template.name)
 		template.stream(**context).dump(filepath, self.encoding)
+                shutil.copymode( template.filename, filepath )
 	else:
 	    rule(self, template, context, filepath)
 

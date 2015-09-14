@@ -3,6 +3,7 @@ import markdown
 import os
 import sys
 import re
+import shutil
 from collections import namedtuple
 
 pwd = os.path.dirname(os.path.realpath(__file__))
@@ -181,6 +182,7 @@ def render(site, template, context=None, filepath=None):
 
     site._ensure_dir( template.name )
     post_template.stream(**context).dump( filepath, site.encoding)
+    shutil.copymode( template.filename, filepath )
 
 # was markdown_get_context
 def get_context( site, template):
