@@ -35,58 +35,58 @@
 	</li>
       </ul>
     {% endfor %}
-    {% if dev_env == 'local' %}
-      <h4>
-	{{ glyph('pencil') }}&emsp;Leave a comment
-	<small class='text-warning'>
-	  (Spammers beware: All comments are moderated)
-	</small>
-      </h4>
-      <div id='comment-failed' class='alert alert-danger hidden'>
-	Sorry. There was an error submitting your comment. Please try again, or contact me if the problem persists.
-      </div>
-      <div id='comment-form' class='well row small'>
-	<form role='form' method='post'
-	    action='javascript:submit_comment()'>
-	  <input type='hidden' name='page' value='{{basename}}'>
-	  <div class="col-md-6 form-group">
-	    <label class="sr-only" for="name">Name</label>
-	    <input type="text" class="form-control" name="name" placeholder="Name (optional)">
-	  </div>
-	  <div class="col-md-6 form-group">
-	    <label class="sr-only" for="email">Email address</label>
-	    <input type="email" class="form-control" name="email"
-	      placeholder="Email (optional, to generate an avatar. Will not be stored or published.)"
-	      title="Your email is only used to generate an avatar. It will not be stored, or published. Promise!">
-	  </div>
-	  <div class='col-md-12 form-group'>
-	    <label class="sr-only" for="subject">Subject</label>
-	    <input type="text" class="form-control" name="subject"
-	      placeholder="Subject (REQUIRED)" REQUIRED>
-	  </div>
-	  <div class="col-md-12 form-group">
-	    <label class="sr-only" for="email">Comment</label>
-	    <textarea class="form-control" name="comment"
-	      placeholder="Comment. (REQUIRED. Write your comment in Markdown)"
-	      rows='4' REQUIRED></textarea>
-	    {# <span class='help-block'>
-	      Write your comment in 
-	      <a href='https://help.github.com/articles/markdown-basics'>Markdown</a>.
-	    </span> #}
-	  </div>
-	  <div class="col-md-12 form-group text-right">
-	    <button type="submit" class="btn btn-default">Submit</button>
-	  </div>
-	</form>
-      </div>{# comment-form #}
-      <div id='comment-sending' class='alert alert-info hidden'>
-	Sending comment; please wait.
-      </div>
-      <div id='comment-success' class='alert alert-success hidden'>
-	Thanks. Your comment was successfully submitted.
-	It will appear here shortly if it isn't spam.
-      </div>
-    {% endif %}{# dev_env == local #}
+
+    <h4>
+      {{ glyph('pencil') }}&emsp;Leave a comment
+      <small class='text-warning'>
+	(Spammers beware: All comments are moderated)
+      </small>
+    </h4>
+    <div id='comment-failed' class='alert alert-danger hidden'>
+      Sorry. There was an error submitting your comment. Please try again, or contact me if the problem persists.
+    </div>
+    <div id='comment-form' class='well row small'>
+      <form role='form' method='post'
+	  action='javascript:submit_comment()'>
+	<input type='hidden' name='page' value='{{basename}}'>
+	<input type='hidden' name='comment-number' value='{{(cfiles|length)+1}}'>
+	<div class="col-md-6 form-group">
+	  <label class="sr-only" for="name">Name</label>
+	  <input type="text" class="form-control" name="name" placeholder="Name (optional)">
+	</div>
+	<div class="col-md-6 form-group">
+	  <label class="sr-only" for="email">Email address</label>
+	  <input type="email" class="form-control" name="email"
+	    placeholder="Email (optional, to generate an avatar. Will not be stored or published.)"
+	    title="Your email is only used to generate an avatar. It will not be stored, or published. Promise!">
+	</div>
+	<div class='col-md-12 form-group'>
+	  <label class="sr-only" for="subject">Subject</label>
+	  <input type="text" class="form-control" name="subject"
+	    placeholder="Subject (REQUIRED)" REQUIRED>
+	</div>
+	<div class="col-md-12 form-group">
+	  <label class="sr-only" for="email">Comment</label>
+	  <textarea class="form-control" name="comment"
+	    placeholder="Comment. (REQUIRED. Write your comment in Markdown)"
+	    rows='4' REQUIRED></textarea>
+	  {# <span class='help-block'>
+	    Write your comment in 
+	    <a href='https://help.github.com/articles/markdown-basics'>Markdown</a>.
+	  </span> #}
+	</div>
+	<div class="col-md-12 form-group text-right">
+	  <button type="submit" class="btn btn-default">Submit</button>
+	</div>
+      </form>
+    </div>{# comment-form #}
+    <div id='comment-sending' class='alert alert-info hidden'>
+      Sending comment; please wait.
+    </div>
+    <div id='comment-success' class='alert alert-success hidden'>
+      Thanks. Your comment was successfully submitted.
+      It will appear here shortly if it isn't spam.
+    </div>
   {% endif %}{# comments not disabled #}
 {% endblock comments_block %}
 {% block nav_after_toc %}
