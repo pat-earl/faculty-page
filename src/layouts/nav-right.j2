@@ -11,7 +11,7 @@
 	    {% for i in breadcrumb | reverse %}
 	      {% if search( i, '\|' ) %}
 		{# in format "link|text" #}
-		{% set b_link = sub( i, '\|.*', '', 1 ) %}
+		{% set b_link = get_link( sub( i, '\|.*', '', 1 ) ) %}
 		{% set b_text = sub( i, '.*?\|', '', 1 ) %}
 	      {% else %}
 		{# in format "file.md" #}

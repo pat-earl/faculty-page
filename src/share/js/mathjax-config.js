@@ -1,3 +1,4 @@
+{% raw -%}
 window.MathJax = { 
     tex2jax: {
 	inlineMath: [ ['$','$'], ['\\(', '\\)']  ]
@@ -70,4 +71,4 @@ window.MathJax = {
 	}
     }
 }
-
+{%- endraw %}

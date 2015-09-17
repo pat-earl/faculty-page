@@ -1,3 +1,4 @@
+{% raw -%}
 /* For fixed top navbar */
 /*
 body {
@@ -162,3 +163,4 @@ nav.toc-depth-1 ul ul {
 nav.toc-depth-2 ul ul ul {
   display: none;
 }
+{% endraw %}

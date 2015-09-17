@@ -1,31 +1,4 @@
 $(document).ready( function() {
-  /*
-  * Clamped-width. 
-  * Usage:
-  *  <div data-clampedwidth=".myParent">This long content will force clamped
-  *  width</div>
-  *
-  * Author: LV
-  */
-  $('[data-clampedwidth]').each(function () {
-      var elem = $(this);
-      var parentPanel = elem.data('clampedwidth');
-      var resizeFn = function () {
-	  var sideBarNavWidth = $(parentPanel).width()
-	      - parseInt(elem.css('paddingLeft'))
-	      - parseInt(elem.css('paddingRight'))
-	      - parseInt(elem.css('marginLeft'))
-	      - parseInt(elem.css('marginRight'))
-	      - parseInt(elem.css('borderLeftWidth'))
-	      - parseInt(elem.css('borderRightWidth'));
-	  elem.css('width', sideBarNavWidth);
-      };
-
-      resizeFn();
-      $(window).resize(resizeFn);
-  });
-
-
   /* Easy Bootstrap affix. Simply do:
    *
    *	<div id='before-affix'></div>
@@ -74,3 +47,28 @@ $(document).ready( function() {
   });
 
 }); /* end ready */
+
+function submit_comment() {
+  $('#comment-failed,#comment-form,#comment-success').addClass('hidden');
+  $('#comment-sending').removeClass( 'hidden' );
+
+  var failfn = function(data) {
+    $('#comment-form,#comment-sending').addClass('hidden');
+    $('#comment-failed,#comment-form').removeClass( 'hidden' );
+    {% if dev_env == 'local' %}
+    $('#comment-failed').append('<pre>' + data + '</pre>');
+    {% endif %}
+  };
+
+  $.post( "{{get_link('/cgi-bin/comment.py')}}",
+      $('#comment-form > form').serializeArray() )
+    .done( function( data ) {
+	if( data.trim() == "OK" ) {
+	  $('#comment-failed,#comment-form,#comment-sending').addClass('hidden');
+	  $('#comment-success').removeClass( 'hidden' );
+	}
+	else failfn(data);
+      }
+    )
+    .fail( failfn );
+}

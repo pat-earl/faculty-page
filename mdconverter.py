@@ -42,29 +42,37 @@ class mdconverter:
         # meta[md_file] holds data from the yaml block in md_file
         self.meta = {}
 
-    def get_link( self, context, f ):
+    def get_file( self, context, f ):
         """
-        Get a link to file f. f can be relative to current directory (taken
+        Get a path to file f. f can be relative to current directory (taken
         from context.dirname) or to the root directory (site.searchpath).
         """
-        g = self.site._env.globals
-        p = os.path
         site = self.site
 
         (f, cdir) = site.get_cdir( context, f )
 
-        link = p.relpath( p.join( cdir, f ), site.searchpath )
+        return os.path.relpath( os.path.join( cdir, f ), site.searchpath )
+
+    def get_link( self, context, f, rel=False ):
+        """
+        Get a link to file f. f can be relative to current directory (taken
+        from context.dirname) or to the root directory (site.searchpath).
+        """
+
+        g = self.site._env.globals
+
+        link = self.get_file( context, f )
         (l, e) = os.path.splitext( link )
         if e == '.md':
             link = l + '.html'
 
-        if re.search( '(?:^|/)auth/', link ):
+        if rel:
+            return os.path.join( g['site_prefix'] or '/', link )
+        elif re.search( '(?:^|/)auth/', link ):
             # Use https for all links with an auth in the URL.
-            link = p.join( g['site_surl'], link )
+            return os.path.join( g['site_surl'], link )
         else:
-            link = p.join( g['site_url'], link )
-
-        return link
+            return os.path.join( g['site_url'], link )
 
     def build_url( self, text ):
         """

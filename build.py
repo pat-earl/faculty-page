@@ -9,6 +9,7 @@ import shutil
 import ConfigParser
 import fnmatch
 import glob
+from stat import *
 
 from jinja2 import contextfunction, contextfilter
 
@@ -161,6 +162,13 @@ class Site( staticjinja.Site ):
                     shutil.copy(src, dst)
                     shutil.copymode(src, dst)
 
+                if not p.islink(dst):
+                    # Make sure it's readable
+                    m = os.stat(dst).st_mode
+                    if not S_IRUSR & m or not S_IRGRP & m or not S_IROTH & m:
+                        self.logger.warn( 'WARNING: making %s readable' % dst )
+                        os.chmod( dst, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH )
+
     def render_template( self, template, context=None, filepath=None):
         """
         Overrides site.render_template. This version calls my custom
@@ -214,7 +222,8 @@ if __name__ == "__main__":
     pwd = os.path.dirname(os.path.realpath(__file__))
     site = staticjinja.make_site(
 	    searchpath=os.path.join( pwd, 'src' ),
-	    outpath=os.path.join( pwd, 'out-prod' if options.production else 'out'),
+	    outpath=os.path.join( pwd,
+                'out-prod' if options.production else 'out'),
 	    extensions=[MarkdownExtension],
 	    contexts=[
 		('.*\.md', mdconverter.get_context),
@@ -225,6 +234,10 @@ if __name__ == "__main__":
 	)
     # Type cast to my class
     site.__class__ = Site
+
+    # Ensure output directory exists
+    site._ensure_dir( os.path.join( site.outpath, 'index.html' ) )
+
 
     # Add in the markdown converter
     site.md = mdconverter.mdconverter( site )
@@ -258,7 +271,9 @@ if __name__ == "__main__":
         'glob': contextfunction( lambda c, p: jinja_glob( site, c, p) ),
         'get_meta': contextfunction( lambda c, f, k=None: \
                         site.md.jinja_get_meta( c, f, k ) ),
-        'get_link': contextfunction( lambda c, f: site.md.get_link(c, f) ),
+        'get_file': contextfunction( lambda c, f: site.md.get_file(c, f) ),
+        'get_link': contextfunction(
+            lambda c, f, rel=False: site.md.get_link(c, f, rel) ),
         'search': jinja_search,
         'sub': jinja_sub,
     })

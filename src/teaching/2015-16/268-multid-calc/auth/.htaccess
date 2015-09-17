@@ -1,0 +1,36 @@
+# Shibboleth header
+AuthType Shibboleth
+ShibRequireSession On
+ShibApplicationId default
+ShibExportAssertion On
+
+# For any authenticated user. (Need not be a CMU member)
+#Require Shibboleth
+
+# Specific user id
+#require user gi1242@andrew.cmu.edu
+
+# Groups.
+require shib-attr affiliation Faculty@andrew.cmu.edu
+#require shib-attr affiliation Staff@andrew.cmu.edu
+#require shib-attr affiliation Member@andrew.cmu.edu
+
+require user vansp@andrew.cmu.edu
+
+require user xudanb@andrew.cmu.edu
+require user cbeidema@andrew.cmu.edu
+require user twbrown@andrew.cmu.edu
+require user yuwenche@andrew.cmu.edu
+require user sunghyuc@andrew.cmu.edu
+require user bcobb@andrew.cmu.edu
+require user lydiag@andrew.cmu.edu
+require user nlovettg@andrew.cmu.edu
+require user emcclave@andrew.cmu.edu
+require user jspyo@andrew.cmu.edu
+require user cschmid1@andrew.cmu.edu
+require user xsong1@andrew.cmu.edu
+require user mstjohn@andrew.cmu.edu
+require user jvanbure@andrew.cmu.edu
+require user cvaz@andrew.cmu.edu
+require user dtv@andrew.cmu.edu
+require user dianazho@andrew.cmu.edu

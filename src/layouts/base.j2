@@ -22,13 +22,13 @@
 	{%- set bootstrap_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap' -%}
       {%- else -%}
 	{%- set min = '' -%}
-	{%- set bootstrap_cdn = site_rurl ~ '/dev/static/bootstrap' -%}
+	{%- set bootstrap_cdn = get_link('/dev/static/bootstrap', true) -%}
       {%- endif %}
       <link rel="stylesheet"
 	href="{{bootstrap_cdn}}/3.3.5/css/bootstrap{{min}}.css">
       <link rel="stylesheet"
-	href="{{site_prefix}}/static/css/pygments-theme.css">
-      <link rel="stylesheet" href="{{site_prefix}}/static/css/local.css">
+	href="{{site_prefix}}/share/css/pygments-theme.css">
+      <link rel="stylesheet" href="{{site_prefix}}/share/css/local.css">
     {%- endblock -%}
 
     {#-
@@ -67,8 +67,8 @@
 	{%- set bootstrap_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap' -%}
       {%- else -%}
 	{%- set min = '' -%}
-	{%- set jquery_cdn = site_rurl ~ '/dev/static/jquery' -%}
-	{%- set bootstrap_cdn = site_rurl ~ '/dev/static/bootstrap' -%}
+	{%- set jquery_cdn = get_link('/dev/static/jquery', true) -%}
+	{%- set bootstrap_cdn = get_link('/dev/static/bootstrap', true) -%}
       {%- endif %}
 
       <script src="{{jquery_cdn}}/1.11.3/jquery{{min}}.js">
@@ -81,15 +81,15 @@
       </script>
 
       {%- if needs_mathjax %}
-	<script src='{{site_rurl}}/static/js/mathjax-config.js'></script>
+	<script src='{{get_link('/share/js/mathjax-config.js', true)}}'></script>
 	<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       {%- endif -%}
 
       {%- if dev_env != 'production' and live_reload %}
-	<script src='{{site_rurl}}/dev/static/livejs/live.js'></script>
+	<script src='{{get_link('/dev/static/livejs/live.js', true)}}></script>
       {%- endif %}
 
-      <script src='{{site_rurl}}/static/js/local.js'></script>
+      <script src='{{get_link('/share/js/local.js', true)}}'></script>
     {%- endblock scripts %}
   </body>
 </html>
