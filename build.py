@@ -200,10 +200,13 @@ class Site( staticjinja.Site ):
 	return True if self.partial_re.search( f ) else False
 
     static_re  = re.compile(
-	    '(?:^|/)static/(?!.*\.(?:swp|un~)$)|\.(:?pdf|jpg|png|svg|eps|ps|txt|sty)$',
+	    '(?:^|/)static/|\.(:?pdf|jpg|png|svg|eps|ps|txt|sty)$',
 	    flags=re.I )
     def is_static( self, f ):
-	return True if self.static_re.search( f ) else False
+        if not self.is_ignored(f) and self.static_re.search( f ):
+            return True
+        else:
+            return False
 
 
 if __name__ == "__main__":
@@ -247,10 +250,7 @@ if __name__ == "__main__":
     site.args = [(a if glob_re.search(a) else '*'+a+'*') for a in args]
 
     if options.production:
-        site.ignored_re = re.compile( 'dev|' + site.ignored_re.pattern )
-        site.static_re = re.compile(
-            r'^(?!dev/)(?!.*\.(?:swp|un~)$)(?:static/|.*\.(:?pdf|jpg|png|svg|eps|ps|txt|sty)$)',
-	    flags=re.I )
+        site.ignored_re = re.compile( '(?:^|/)dev/|' + site.ignored_re.pattern )
         dev_env = 'production'
 
     else:

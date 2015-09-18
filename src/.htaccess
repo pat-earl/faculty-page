@@ -1,3 +1,4 @@
 ## Redirect errors to my own error page
 ErrorDocument	403  {{site_prefix}}/403-forbidden.html
 ErrorDocument	404  {{site_prefix}}/404-not-found.html
+
