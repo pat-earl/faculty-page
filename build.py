@@ -9,6 +9,8 @@ import shutil
 import ConfigParser
 import fnmatch
 import glob
+import subprocess
+
 from stat import *
 
 from jinja2 import contextfunction, contextfilter
@@ -219,8 +221,11 @@ if __name__ == "__main__":
 	    action='store_true', help='Generate site for production' )
     parser.add_option( '-f', '--force', dest='force',
 	    action='store_true', help='Render even if source is unchanged' )
+    parser.add_option( '-u', '--upload', dest='upload',
+	    action='store_true', help='Upload after rendering (implies -p)' )
 
     ( options, args ) = parser.parse_args()
+    if options.upload: options.production = True
 
     pwd = os.path.dirname(os.path.realpath(__file__))
     site = staticjinja.make_site(
@@ -285,3 +290,8 @@ if __name__ == "__main__":
 
     # enable automatic reloading
     site.render(use_reloader=False)
+
+    # Upload if asked
+    if options.upload:
+        os.chdir( pwd )
+        subprocess.call( cfg.get( 'production', 'upload' ), shell=True )
