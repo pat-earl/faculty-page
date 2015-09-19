@@ -67,6 +67,20 @@ def jinja_glob( site, context, pat ):
     matches = glob.glob( os.path.join( cdir, pat ) )
     return [ leading_slash + os.path.relpath( m, cdir ) for m in matches ]
 
+def remove_extra_static( site ):
+    """
+    Remove static files in outpath that are no longer present in searchpath
+    """
+    p = os.path
+    for (root, dirs, files) in os.walk( site.outpath ):
+        for f in files:
+            name = p.relpath( p.join( root, f ), site.outpath )
+            if site.is_static(name) and \
+                    not p.exists( p.join( site.searchpath, name ) ):
+                fn = p.join( root, f )
+                site.logger.warn( 'Removed extra static file %s' % fn )
+                os.unlink( fn )
+
 class Site( staticjinja.Site ):
     # New methods
     def needs_rendering( self, template, filepath=None ):
@@ -290,6 +304,9 @@ if __name__ == "__main__":
 
     # enable automatic reloading
     site.render(use_reloader=False)
+
+    # Delete extra static files in site
+    remove_extra_static( site )
 
     # Upload if asked
     if options.upload:
