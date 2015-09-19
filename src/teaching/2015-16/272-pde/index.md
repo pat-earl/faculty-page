@@ -1,4 +1,4 @@
-{%- from dirname ~ '/course_info.j2' import course -%}
+{%- from get_file( 'course_info.j2' ) import course -%}
 {%- from 'includes/macros.j2' import course_info_table -%}
 title: {{course.title}}
 
@@ -51,6 +51,7 @@ It isn't imperative you have taken these courses; but it is imperative that you 
 * [372 Lecture Notes Wiki](http://wiki.math.cmu.edu/iki/2014-372)
 * *Introduction to Partial Differential Equations with MATLAB Corrected Edition*
   by Jeffery M. Cooper.
+* *Numerical Analysis of Partial Differential Equations* by Charles A. Hall and Thomas A. Porsching.
 * *An Introduction to Partial Differential Equations 1st Edition*
   by Yehuda Pinchover, Jacob Rubinstein.
 * *Introduction to PDE* by Walter Strauss.
@@ -64,18 +65,9 @@ It isn't imperative you have taken these courses; but it is imperative that you 
 
 ### Homework
 
-<div markdown='1' class='alert alert-warning' role='alert'>
-**Note:**
-As of 2015-08-30, we do not yet have a grader for this class.
-If we are not assigned a grader, I might change the homework model completely.
-</div>
-
-* Homework must be turned in **at the beginning of class** on the due date.
-* <span markdown='1' class='text-danger lead'>Late homework will **NEVER** be accepted. Really!</span>
-* To account for unusual circumstances, the bottom 20% of your homework will not count towards your grade.
-* Working in groups is encouraged, but solutions must be written up on your own.
-* Nearly perfect student solutions may be scanned and hosted here, with your identifying information removed. If you don't want any part of your solutions used, please make a note of it in the margin of your assignment.
-
+* Homework solutions will be presented by students every week.
+* You may work together on the homework, and coordinate amongst yourselves regarding who presents what solution. The presentation itself will not count towards your grade.
+* 50% of your exams will consist of homework questions, so it is in your best interest to understand solutions to all questions.
 
 ### Exams
 
