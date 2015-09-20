@@ -1,4 +1,4 @@
-{%- from dirname ~ '/course_info.j2' import course -%}
+{%- from get_file('course_info.j2') import course -%}
 {%- from 'includes/macros.j2' import course_info_table -%}
 title: {{course.title}}
 

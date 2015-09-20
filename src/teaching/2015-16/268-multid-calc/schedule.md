@@ -1,4 +1,4 @@
-{%- from dirname ~ '/course_info.j2' import course -%}
+{%- from get_file('course_info.j2') import course -%}
 title: Lecture Schedule
 breadcrumb: index.html|{{course.title}}
 
@@ -11,5 +11,7 @@ Here is a lecture by lecture list of topics covered in class.
 * Open sets and domains
 * Limits
 * Continuity
-* Partial Derivatives
+* Directional and Partial Derivatives
 * Derivative (or "Total Differential")
+* Tangent planes
+* Chain rule
