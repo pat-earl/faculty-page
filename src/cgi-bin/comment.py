@@ -19,7 +19,7 @@ subject = form.getvalue( 'subject' ).encode('utf-8', 'replace').strip()
 name = (form.getvalue( 'name' ) or 'Anonymous' )\
         .encode('utf-8', 'replace').strip()
 date = time.strftime( '%F %T %Z' )
-ip = os.environ.get( 'HTTP_ADDR' )
+ip = os.environ.get( 'REMOTE_ADDR' )
 referer = os.environ.get( 'HTTP_REFERER' )
 comment = (form.getvalue( 'comment' ) or "No comment" )\
         .encode('utf-8', 'replace').strip()
