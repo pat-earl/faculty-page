@@ -81,8 +81,10 @@ It isn't imperative you have taken these courses; but it is imperative that you 
 
 ### Grading
 
-* Homework will count as 20% of your grade.
 * <span class='text-danger'>Between 25% and 50% of your exams will consist of homework questions.</span>
 * Your *better* midterm will count as 30% of your grade.
   (Your *worse* midterm will not count at all.)
 * Your final will count as 50% of your grade.
+* Projects will count as 20% of your grade. (If, we do not cover enough
+  material in time to successfully complete projects, then your midterm and
+  final percentages will be scaled up appropriately.)
