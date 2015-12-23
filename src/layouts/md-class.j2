@@ -1,9 +1,9 @@
 {% set active = 'teaching' %}
 {%- macro md_hw() -%}
-  {%- include dirname ~ '/' ~ (hw | default( '_hw.md', true )) ignore missing -%}
+  {%- include get_file(hw | default( '_hw.md', true )) ignore missing -%}
 {%- endmacro -%}
 {%- macro md_handouts() -%}
-  {%- include dirname ~ '/' ~ (handouts | default( '_handouts.md', true )) ignore missing -%}
+  {%- include get_file(handouts | default( '_handouts.md', true )) ignore missing -%}
 {%- endmacro -%}
 {% extends "layouts/md-nav-right-affix.j2" %}
 {% block nav_after_toc %}

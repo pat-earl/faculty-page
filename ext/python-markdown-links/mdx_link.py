@@ -51,7 +51,7 @@ class LinkExtension(Extension):
         self.md = md
     
         # append to end of inline patterns
-        WIKILINK_RE = r'\[\[([%s]+)\]\]' % self.getConfig( 'link_chars' )
+        WIKILINK_RE = r'\[\[([%s]+?)\]\]' % self.getConfig( 'link_chars' )
         wikilinkPattern = Links(WIKILINK_RE, self.getConfigs())
         wikilinkPattern.md = md
         md.inlinePatterns.add('wikilink', wikilinkPattern, "<not_strong")
