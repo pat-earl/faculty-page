@@ -1,3 +1,3 @@
-* [[pdfs/hw-page2.pdf|Homework 3--4]]
-* [[pdfs/hw-prev.pdf|Previous homework]]
+* [[pdfs/hw-page8.pdf|Assignment 15]]
+* [[pdfs/hw-prev.pdf|Previous assignments]]
 * [[auth/index.md|Solutions]]

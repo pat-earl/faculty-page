@@ -15,3 +15,5 @@ Here is a lecture by lecture list of topics covered in class.
 * Derivative (or "Total Differential")
 * Tangent planes
 * Chain rule
+* Higher order derivatives
+* Maxima/Minima
