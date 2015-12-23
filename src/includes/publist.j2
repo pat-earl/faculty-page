@@ -1,4 +1,13 @@
 {% set pubs = {
+  'kompaneets' : {
+    'authors'	: ['J. Ballew', 'G. Iyer', 'R. L. Pego'],
+    'title'	: 'Bose-Einstein condensation in a Hyperbolic model for the Kompaneets Equation',
+    'year'	: 2015,
+    'link'	: '201512-kompaneets.pdf',
+    'twoup'	: '201512-kompaneets-2up.pdf',
+    'tags'	: ['pde'],
+  },
+
   'oseen' : {
     'authors'	: ['G. Gie', 'C. Henderson', 'G. Iyer', 'L. Kavalie', 'J. P. Whitehead'],
     'title'	: 'Stability of vortex solutions to an extended Navier-Stokes system',
@@ -240,6 +249,7 @@
   }
 } %}
 {% set publist = (
+    pubs.kompaneets,
     pubs.oseen,
     pubs.adiffuse,
     pubs.qtensor,
