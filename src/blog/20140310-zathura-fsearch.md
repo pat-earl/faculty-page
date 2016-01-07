@@ -7,34 +7,64 @@ summary: I use [zathura](http://pwmt.org/projects/zathura/) to view PDF files. A
 ## General usage
 
 While doing this with zathura is possible, the documentation *SUCKS*.
-Here's how: To open a PDF in zathura and tell it what your editor is use:
+Here's how: Edit `~/.config/zathura/zathurarc` and add the following lines:
 
-    zathura -s -x 'gvim +%{line} %{input}' paper.pdf
+    set synctex true
+    set synctex-editor-command "gvim +%{line} %{input}"
 
-If the PDF is already open, and you want to highlight line 193 column 1, then use:
+This only works on recent versions (0.3.4 or higher).
+Older versions require this to be given direction on the command line using `-x` (or `-s`).
+
+If you you want to highlight line 193 column 1, then use:
 
     zathura --synctex-forward 193:1:paper.tex paper.pdf
 
+If you control click in the PDF, it will take you to the corresponding location in your `LaTeX` file by running your editor.
+It will, however, open a **new instance** of the editor every time you control click. This is obviously less than ideal, and the scripts below can help out.
+
 ## Use with FVWM and VIM
 
-If you use [vim](http://www.vim.org) as your text editor and [fvwm](http://fvwm.org) as your window manager, heres how you can get rid of all sorts of quirks (e.g. opening the file twice in different windows, not raising / focussing the PDF files, etc.):
+If you use [vim] as your text editor and [fvwm] as your window manager, I wrote two scripts to get rid of all sorts of quirks (e.g. opening the file twice in different windows, not raising / focussing the PDF files, etc.):
 
-1. Save [this script](http://wiki.math.cmu.edu/gitweb-pub/?p=bash-scripts.git;a=blob_plain;f=szathura.sh;hb=HEAD) as `szathura` somewhere in your PATH.
+1. Save [this script](http://wiki.math.cmu.edu/gitweb-pub/?p=bash-scripts.git;a=blob_plain;f=szathura.sh;hb=HEAD) as `szathura` somewhere in your `PATH`.
+   (If you're not using [fvwm] as your window manager, then comment out the [fvwm] specific stuff.)
 
-2. Save [this script](http://wiki.math.cmu.edu/gitweb-pub/?p=bash-scripts.git;a=blob_plain;f=svim.sh;hb=HEAD) as `svim` somewhere in your PATH.
+2. Save [this script](http://wiki.math.cmu.edu/gitweb-pub/?p=bash-scripts.git;a=blob_plain;f=svim.sh;hb=HEAD) as `svim` somewhere in your `PATH`.
+   (Again, if you're not using [fvwm] as your window manager, then comment out the [fvwm] specific stuff.)
 
-3. Put
+3. Edit `~/.config/zathura/zathurarc` and add the lines:
 
-	    nnoremap <F9>	:exec "!szathura %:r.pdf" line('.')  col('.') "% > /dev/null"<cr><cr>
+        set synctex true
+        set synctex-editor-command "svim -G +%{line} %{input}"
 
-    in your `~/.vimrc`.
+4. Be sure you have the option `-synctex=1` when you run `LaTeX`, otherwise **NOTHING WILL WORK**.
+   If you're running `LaTeX` through [vim], add this option to your `&makeprg`.
+   If you're using `latexmk`, then edit `~/.latexmkrc` and add the lines:
 
-4. Edit your file with `svim -G file.tex`.
-   Control click the PDF to go back to the TeX file (a new window will be opened if you're not already editing it).
-   Press `F9` in `vim` to highlight the corresponding location in the PDF file and raise the window (a new window will be opened if you're not already viewing it).
+        $pdflatex = 'pdflatex -interaction=nonstopmode -synctex=1 %O %S';
+        $pdf_mode = 1;
 
-If you're not using fvwm as your window manager, then comment out the fvwm specific stuff in both those scripts.
+5. Edit `~/.vimrc` and add the lines:
+
+        nnoremap <F9>
+            \ :exec "!szathura %:r.pdf" line('.')  col('.') "% > /dev/null"<cr><cr>
+        nnoremap <C-F9>
+            \ :exec "!szathura %:r.pdf" > /dev/null 2>&1 &"<cr><cr>
+
+    (Alternately, add them to `~/.vim/after/ftplugin/tex.vim` with other fancy buffer local mappings.)
+
+Now to use it:
+
+1. Edit your file with `svim -G file.tex`.
+
+2. Control click the PDF to go back to the TeX file.
+   A new window will be opened if you're not already editing it.
+
+3. Press `F9` in `vim` to highlight the corresponding location in the PDF file and raise the window (a new window will be opened if you're not already viewing it).
+
+4. Press `<Ctrl-F9>` in `vim` to open a new window showing the PDF in case you want multiple views.
 
 
 [zathura]: http://pwmt.org/projects/zathura/
-
+[vim]: http://www.vim.org
+[fvwm]: http://fvwm.org
