@@ -1,7 +1,7 @@
 {% extends "layouts/base.j2" %}
 {% block body %}
   <div class='lead'>{# Get a readable font! #}
-    <h1>{{title}}</h1>
+    {% if title %}<h1>{{title}}</h1>{% endif %}
 
     {{ content }}
   </div>

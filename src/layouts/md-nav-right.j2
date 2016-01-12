@@ -4,15 +4,17 @@
 {%- endmacro -%}
 {% extends md_nav_layout | default("layouts/nav-right.j2") %}
 {% block main_column %}
-  <div class='text-justify hyphenate{{' lead' if bigfont}}'>
+  <div class='text-justify hyphenate{{" lead" if bigfont}}'>
     {% block title_block %}
-      <h1>
-	{{title}}
-	{% if post_date(basename) %}
-	  <br />
-	  <small>{{post_date(basename)}}</small>
-	{% endif %}
-      </h1>
+      {% if title %}
+	<h1>
+	  {{title}}
+	  {% if post_date(basename) %}
+	    <br />
+	    <small>{{post_date(basename)}}</small>
+	  {% endif %}
+	</h1>
+      {% endif %}
     {% endblock %}
 
     {% block content_block %}
