@@ -295,11 +295,13 @@ if __name__ == "__main__":
             lambda c, f, rel=False: site.md.get_link(c, f, rel) ),
         'search': jinja_search,
         'sub': jinja_sub,
+        'slugify': mdconverter.slugify,
     })
     site._env.filters.update({
         'markdown': contextfilter( lambda c, s: site.md.mdconvert(c, s).html ),
         'search': jinja_search,
         'sub': jinja_sub,
+        'slugify' : mdconverter.slugify,
     })
 
     # enable automatic reloading

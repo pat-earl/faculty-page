@@ -1,17 +1,14 @@
-{% extends 'layouts/nav-right-affix.j2' %}
-{% from 'teaching/courses.j2' import courses, old_teaching, md_current_courses_long %}
-{% from 'teaching/sections.j2' import secs %}
-{% set active = 'teaching' %}
-{% block main_column %}
-  <div>
-{% markdown %}
-<h2 id='courses'>{{secs.courses}}</h2>{# {{{1 #}
+{%- from 'teaching/courses.j2' import courses, old_teaching, md_current_courses_long -%}
+{%- from 'teaching/sections.j2' import secs -%}
+title: Teaching
 
-<h3 id='current_courses'>{{secs.current_courses}}</h3>
+## {{secs.courses}}
+
+### {{secs.current_courses}}
 
 {{ md_current_courses_long() }}
 
-<h3 id='previous_courses'>{{secs.previous_courses}}</h3>
+### {{secs.previous_courses}}
 
 These are websites from all courses I have taught at CMU.
 The homework, exams and syllabus should be accessible to anyone.
@@ -36,7 +33,7 @@ Solutions of more recent courses should be accessible to CMU faculty.
   {% endfor %}
 </dl>{# }}} #}
 
-<h2 id='lecture_notes'>{{secs.lecture_notes}}</h2>{# {{{1 #}
+## {{secs.lecture_notes}}
 
 *   [Undergraduate PDE](http://wiki.math.cmu.edu/iki/2014-372/)
     (See also the [class website]({{old_teaching}}/2013-14/372-pde/) for
@@ -48,9 +45,9 @@ Solutions of more recent courses should be accessible to CMU faculty.
     [clone the repository](http://wiki.math.cmu.edu/gitweb-pub/?p=2014-372-wiki.git;a=summary)
     (or ask me to host a cloned copy for you).
 
-<h2 id='student_projects'>{{secs.student_projects}}</h2>{# {{{1 #}
+## {{secs.student_projects}}
 
-<h3 id='student_lecture_notes'>{{secs.student_lecture_notes}}</h3>{# {{{2 #}
+### {{secs.student_lecture_notes}}
 
 These lecture notes have been <span class='text-primary'>written entirely by students</span> while taking courses taught by me.
 My only contribution is teaching the course and setting up the websites to host them.
@@ -74,27 +71,9 @@ You are free to edit, modify and redistribute these notes (under the terms state
 
     * [Class website]({{old_teaching}}/2013-14/880-scalc/)
 
-<h3 id='masters_thesis'>{{secs.masters_thesis}}</h3>{# {{{2 #}
+### {{secs.masters_thesis}}
 
 * [James T. Murphy III](http://intfxdx.com/),
   *Resolving the one-dimensional autonomous flow-free explosion problem*
   (Published in [SIURO](http://www.siam.org/students/siuro/vol7/index.php)
   [here](http://www.siam.org/students/siuro/vol7/S01319.pdf).)
-
-{# }}}1 #}
-{% endmarkdown %}
-  </div><!-- /lead -->
-{% endblock %}
-{% block nav_column %}{# {{{ #}
-  <nav class='nav toc hidden-xs hidden-sm' data-affix-after='#create'>
-    {% markdown %}
-    * [{{secs.courses}}](#courses)
-	* [{{secs.current_courses}}](#current_courses)
-	* [{{secs.previous_courses}}](#previous_courses)
-    * [{{secs.lecture_notes}}](#lecture_notes)
-    * [{{secs.student_projects}}](#student_projects)
-	* [{{secs.student_lecture_notes}}](#student_lecture_notes)
-	* [{{secs.masters_thesis}}](#masters_thesis)
-    {% endmarkdown %}
-  </nav>
-{% endblock %}{# }}} #}

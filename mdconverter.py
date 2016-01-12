@@ -1,5 +1,6 @@
 #! /usr/bin/python
 import markdown
+import markdown.extensions.headerid as mdx_headerid
 import os
 import sys
 import re
@@ -228,3 +229,6 @@ def get_context( site, template):
     context.update( md.Meta )
     
     return context
+
+def slugify( s, sep='-' ):
+    return mdx_headerid.slugify( unicode(s), sep )
