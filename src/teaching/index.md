@@ -1,6 +1,6 @@
 {%- from 'teaching/courses.j2' import courses, old_teaching, md_current_courses_long -%}
 {%- from 'teaching/sections.j2' import secs -%}
-title:
+title: Teaching
 
 ## {{secs.courses}}
 
