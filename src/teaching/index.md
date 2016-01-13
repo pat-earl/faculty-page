@@ -14,21 +14,17 @@ These are websites from all courses I have taught at CMU.
 The homework, exams and syllabus should be accessible to anyone.
 Solutions, however, are restricted to CMU faculty.
 
-<ul>
-  {%- for (cn, ct, rest) in courses -%}
-  <li><p>
-    <strong class='text-nowrap'>{{(cn ~ ': ') if cn else ''}}{{ct}}.</strong>
-    {% for (cy, cs, cl) in rest -%}
-      <a class='text-nowrap' href='{{cl}}'>
-        {{ 'Spring' if cs == 's' else
-            ( 'Fall' if cs == 'f' else cs ) }}
-        {{cy-}}
-      </a>
-      {%- if loop.last %}.{% else %}, {% endif %}
-    {%- endfor -%}
-  </p></li>
-  {%- endfor -%}
-</ul>
+{% for (cn, ct, rest) in courses -%}
+* **<span class='text-nowrap'>{{(cn ~ ': ') if cn else ''}}{{ct}}.</span>**
+  {% for (cy, cs, cl) in rest -%}
+    <a class='text-nowrap' href='{{cl}}'>
+      {{ 'Spring' if cs == 's' else
+          ( 'Fall' if cs == 'f' else cs ) }}
+      {{cy-}}
+    </a>
+    {%- if loop.last %}.{% else %}, {% endif %}
+  {% endfor %}
+{% endfor %}
 
 ## {{secs.lecture_notes}}
 
