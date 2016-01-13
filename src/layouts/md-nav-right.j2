@@ -4,7 +4,7 @@
 {%- endmacro -%}
 {% extends md_nav_layout | default("layouts/nav-right.j2") %}
 {% block main_column %}
-  <div class='text-justify hyphenate{{" lead" if bigfont}}'>
+  <div class='justify{{" lead" if bigfont}}'>
     {% block title_block %}
       {% if title %}
 	<h1>

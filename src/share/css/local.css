@@ -14,19 +14,26 @@ body > div.jumbotron { margin-top: -20px }
 .bigskip { margin-top: 2em }
 .biggskip { margin-top: 3em }
 
-/* div.container p {text-align: justify} */
-.text-justify h1, .text-justify h2, .text-justify h3,
-.text-justify h4, .text-justify h5, .text-justify h6
-{
-  /* Don't justify headings */
-  text-align: left
-}
-
-.hyphenate {
+/* Justify: Justify on sm, md, lg. Hyphenate on all. {{{ */
+.justify {
+  /* Hyphenate on all devices */
   -webkit-hyphens:  auto;
   -moz-hyphens: auto;
   hyphens: auto;
 }
+@media only screen and (min-width: 768px) {
+  .justify {
+    text-align: justify;
+  }
+}
+
+/* Don't justify headings */
+.justify h1, .justify h2, .justify h3,
+.justify h4, .justify h5, .justify h6
+{
+  text-align: left
+}
+/* }}} */
 
 img.float-left {
   /* padding: 0ex .5ex .5ex 0ex; */
