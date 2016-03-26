@@ -6,29 +6,31 @@ summary: Consequently, I came up with the following (based on something I first 
 
 {{'\n'.join( summary )}}
 
-    typeset -a ealiases
-    ealiases=()
+``` shell
+typeset -a ealiases
+ealiases=()
 
-    function ealias()
-    {
-        alias $1
-        ealiases+=(${1%%\=*})
-    }
+function ealias()
+{
+    alias $1
+    ealiases+=(${1%%\=*})
+}
 
-    function expand-ealias()
-    {
-        if [[ $LBUFFER =~ "(^|[;|&])\s*(${(j:|:)ealiases})\$" ]]; then
-            zle _expand_alias
-            zle expand-word
-        fi
-        zle magic-space
-    }
+function expand-ealias()
+{
+    if [[ $LBUFFER =~ "\<(${(j:|:)ealiases})\$" ]]; then
+        zle _expand_alias
+        zle expand-word
+    fi
+    zle magic-space
+}
 
-    zle -N expand-ealias
+zle -N expand-ealias
 
-    bindkey -M viins ' '        expand-ealias
-    bindkey -M viins '^ '       magic-space     # control-space to bypass completion
-    bindkey -M isearch " "      magic-space     # normal space during searches
+bindkey -M viins ' '        expand-ealias
+bindkey -M viins '^ '       magic-space     # control-space to bypass completion
+bindkey -M isearch " "      magic-space     # normal space during searches
+```
 
 The last three bindkey commands are assuming you are primarily using VI mode. If you're not, you might need to either remove the `-M viins` above, or replace it with `-M emacs`, etc.
 
@@ -36,7 +38,9 @@ Finally, to define an expandable alias use `ealias`.
 The syntax of `ealias` is the same as that of `alias`
 For example, I use
 
-    ealias gc='git commit'
-    ealias gp='git push'
+``` shell
+ealias gc='git commit'
+ealias gp='git push'
+```
 
 Now typing `gc` in a position where zsh expands a command will appear like you typed `git commit`.
