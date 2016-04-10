@@ -26,12 +26,11 @@ This can be annoying (and disastrous). You can alternately set up your shared
 Dropbox folder to be a git repository, but store the git repository (the
 `.git/` folder) in a separate (non-dropbox) directory.
 
-``` shell
-cd ~/Dropbox/shared/foo
-dropbox exclude add .git
-mkdir -p $HOME/.separate-gitroots/shared.git
-git init --separate-git-dir=$HOME/.separate-gitroots/shared.git
-```
+    $ cd ~/Dropbox/shared/foo
+    $ dropbox exclude add .git
+    $ mkdir -p $HOME/.separate-gitroots/shared.git
+    $ git init --separate-git-dir=$HOME/.separate-gitroots/shared.git
+
 This creates the git repository in `$HOME/foo/.dropbox.git` instead of in
 `./.git/` as is customary. Now `./.git` will be a plain text file (not folder)
 that contains the location of the true git repository.
@@ -82,42 +81,32 @@ To use a centralized remote, first create a git repository on your git server.
 If you don't have a git server and want to create a local one on your machine,
 use
 
-``` shell
-mkdir -p ~/.gitroots
-git init --bare ~/.gitroots/foo.git
-```
+    $ mkdir -p ~/.gitroots
+    $ git init --bare ~/.gitroots/foo.git
 
 Assuming your git remote is `~/.gitroots/foo.git`, add it to your shared
 Dropbox folder by:
 
-```shell
-cd ~/Dropbox/shared/foo
-git remote add origin ~/.gitroots/foo.git
-```
+    $ cd ~/Dropbox/shared/foo
+    $ git remote add origin ~/.gitroots/foo.git
 
 Now setup a local clone:
 
-``` shell
-git clone ~/.gitroots/foo.git ~/foo
-```
+    $ git clone ~/.gitroots/foo.git ~/foo
 
 Of if you already have some work in `~/foo`, you can
 
-``` shell
-git remote add origin ~/.gitroots/foo.git
-```
+    $ git remote add origin ~/.gitroots/foo.git
 
 #### Committing changes
 
 When a collaborator make changes in Dropbox, you commit and push it for them,
 and pull it into your local copy.
 
-```shell
-cd ~/Dropbox/shared/foo
-git commit --author 'Idiot' && git push
-cd ~/foo
-git pull
-```
+    $ cd ~/Dropbox/shared/foo
+    $ git commit --author 'Idiot' && git push
+    $ cd ~/foo
+    $ git pull
 
 If you have only one co-author who will commit in Dropbox, then you can use
 `git config` to set `user.name` and `user.email` in the Dropbox repository,
@@ -125,12 +114,10 @@ and not use `--author` above.
 
 When you make changes:
 
-```shell
-cd ~/foo
-git commit && git push
-cd ~/Dropbox/shared/foo
-git pull
-```
+    $ cd ~/foo
+    $ git commit && git push
+    $ cd ~/Dropbox/shared/foo
+    $ git pull
 
 ### Directly pulling/pushing to the shared folder
 
@@ -140,14 +127,12 @@ up in case of hard disk crashes.
 
 #### Setting up the repositories
 
-```shell
-cd ~/Dropbox/foo
-git remote add origin ~/foo
+    $ cd ~/Dropbox/foo
+    $ git remote add origin ~/foo
 
-cd ~/foo
-git init
-git remote add origin ~/Dropbox/foo
-```
+    $ cd ~/foo
+    $ git init
+    $ git remote add origin ~/Dropbox/foo
 
 #### Committing changes
 
@@ -164,24 +149,24 @@ however you normally do. I usually create a branch using the following:
 
 1. Commit and push your collaborators changes to a new branch
 
-        cd ~/Dropbox/shared/foo
-        git co -b idiot-b1
-        git commit --author Idiot -a
-        git push --all
+        $ cd ~/Dropbox/shared/foo
+        $ git co -b idiot-b1
+        $ git commit --author Idiot -a
+        $ git push --all
 
 2. Merge your co-authors changes in your local copy.
 
-        cd ~/foo
-        git commit -a
-        git fetch origin idiot-b1
-        git merge idiot-b1
-        git push
+        $ cd ~/foo
+        $ git commit -a
+        $ git fetch origin idiot-b1
+        $ git merge idiot-b1
+        $ git push
 
 3. Pull them in the shared Dropbox folder.
 
-        cd ~/Dropbox/shared/foo
-        git co master
-        git pull
+        $ cd ~/Dropbox/shared/foo
+        $ git co master
+        $ git pull
 
 
 [Dropbox]: https://www.dropbox.com/
