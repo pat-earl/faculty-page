@@ -2,7 +2,6 @@ title: LaTeX headers to maximise space.
 tags: latex
 summary: A few tricks to save space when writing documents (e.g. NSF proposals) that have **strict** font, margin and page restrictions.
 
-{% raw %}
 Here are some LaTeX tips to help save space.
 I usually use these tricks when writing NSF proposals as they have **strict** font, margin and page restrictions.
 
@@ -15,6 +14,15 @@ The most reliable way to set margins is using the `geometry` package:
 ```
 
 For NSF proposals you need 1 inch margins; I usually play it safe and use 1.1 inch margins.
+
+## More efficient line-breaking
+
+The `microtype` package allows LaTeX to take advantage of micro-typographic extensions that were introduced by pdfTeX.
+Using it subliminally adjusts inter letter and word spaces making the line breaking algorithm more efficient.
+
+```tex
+\usepackage{microtype}
+```
 
 ## Adjusting the size of titles.
 
@@ -29,7 +37,7 @@ To get the smallest titles try this:
 
 If you need further customization look up the `\titlespacing` and `\titleformat` commands.
 
-# Wrapping text around figures.
+## Wrapping text around figures.
 
 Using the `figure` environment is a major space hog.
 Having the text flow around the figure (like in newspapers) saves a lot of space.
@@ -62,6 +70,7 @@ If 12 point is too big for you, and 11 point is too small (or you just want to p
 Getting a fractional point size font working correctly is a little tricky.
 Adjust the parameters `\normalFontSize` and `\fontSizeIncrement` below.
 
+{% raw %}
 ```tex
 \usepackage{type1cm}
 \newlength\normalFontSize\newlength\fontSizeIncrement
