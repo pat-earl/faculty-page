@@ -1,4 +1,13 @@
 {% set pubs = {
+  'fkinetic' : {
+    'authors'	: ['M. Hairer', 'G. Iyer', 'L. Koralov', 'A. Novikov', 'Z. Pajor-Gyulai'],
+    'title'	: 'A fractional kinetic process describing the intermediate time behaviour of cellular flows',
+    'year'	: 2016,
+    'link'	: '201607-fkinetic.pdf',
+    'twoup'	: '201607-fkinetic-2up.pdf',
+    'tags'	: ['pde', 'probability', 'homogenization'],
+  },
+
   'kompaneets' : {
     'authors'	: ['J. Ballew', 'G. Iyer', 'R. L. Pego'],
     'title'	: 'Bose-Einstein condensation in a Hyperbolic model for the Kompaneets Equation',
@@ -247,8 +256,10 @@
     'twoup'	: '2004-vtrans.ps',
     'tags'	: ['pde', 'fluids']
   }
-} %}
+} -%}
+
 {% set publist = (
+    pubs.fkinetic,
     pubs.kompaneets,
     pubs.oseen,
     pubs.adiffuse,
