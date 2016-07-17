@@ -170,4 +170,9 @@ nav.toc-depth-1 ul ul {
 nav.toc-depth-2 ul ul ul {
   display: none;
 }
+
+/* Same size block quotes */
+ul.comments  div.small blockquote {
+  font-size: inherit;
+}
 {% endraw %}
