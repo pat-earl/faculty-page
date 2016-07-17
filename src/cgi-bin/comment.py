@@ -7,24 +7,23 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 
+def utf_strip( s ):
+    return unicode( s, 'utf-8', 'replace' ).strip()
+
 form = cgi.FieldStorage()
 dev_env = "{{dev_env}}"
 
 print "Content-type: text/plain;\n"
 
-email_address = (form.getvalue('email') or 'unknown@email.id')\
-        .encode('utf-8', 'replace').strip()
-page = form.getvalue( 'page' ).encode('utf-8', 'replace').strip()
-subject = form.getvalue( 'subject' ).encode('utf-8', 'replace').strip()
-name = (form.getvalue( 'name' ) or 'Anonymous' )\
-        .encode('utf-8', 'replace').strip()
+email_address = utf_strip( form.getvalue('email') or 'unknown@email.id')
+page = utf_strip( form.getvalue( 'page' ))
+subject = utf_strip( form.getvalue( 'subject' ) )
+name = utf_strip( form.getvalue( 'name' ) or 'Anonymous' )
 date = time.strftime( '%F %T %Z' )
 ip = os.environ.get( 'REMOTE_ADDR' )
 referer = os.environ.get( 'HTTP_REFERER' )
-comment = (form.getvalue( 'comment' ) or "No comment" )\
-        .encode('utf-8', 'replace').strip()
+comment = utf_strip( form.getvalue( 'comment' ) or "No comment" )
 num = int( form.getvalue( 'comment-number' ) or 1 )
-
 
 # Build the email.
 msg = MIMEMultipart()
@@ -35,7 +34,7 @@ msg.preamble = 'A comment was posted to page %s on %s' % (page, date)
 
 msg.attach( MIMEText( msg.preamble ) )
 
-attach = MIMEText( """\
+attach = MIMEText( u"""\
 page: %s
 subject: %s
 name: %s
@@ -48,7 +47,9 @@ referer: %s
 %s
 """ % ( page, subject, name, email_address, 
         hashlib.md5( email_address.lower() ).hexdigest(),
-        date, ip, referer, comment) )
+        date, ip, referer, comment),
+    _charset='utf-8'
+)
 attach['Content-Disposition'] = 'attachment; filename="_%s_%02d.md"' % \
         ( os.path.splitext(page)[0], num )
 msg.attach( attach )
