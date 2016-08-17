@@ -1,10 +1,13 @@
 #! /usr/bin/python
 
+import os, sys
+pwd = os.path.dirname(os.path.realpath(__file__))
+sys.path.insert( 1, pwd + '/ext/staticjinja' )
+
 import staticjinja
 from jinja2_markdown import MarkdownExtension
 import re
 import optparse
-import os
 import shutil
 import ConfigParser
 import fnmatch
@@ -241,7 +244,6 @@ if __name__ == "__main__":
     ( options, args ) = parser.parse_args()
     if options.upload: options.production = True
 
-    pwd = os.path.dirname(os.path.realpath(__file__))
     site = staticjinja.make_site(
 	    searchpath=os.path.join( pwd, 'src' ),
 	    outpath=os.path.join( pwd,
