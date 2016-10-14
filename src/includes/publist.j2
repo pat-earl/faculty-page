@@ -1,4 +1,13 @@
 {% set pubs = {
+  'dtc' : {
+    'authors'	: ['G. Iyer', 'N. Leger', 'R. L. Pego'],
+    'title'	: 'Coagulation and universal scaling limits for critical Galton-Watson processes',
+    'year'	: 2016,
+    'link'	: '201610-dtc.pdf',
+    'twoup'	: '201610-dtc-2up.pdf',
+    'tags'	: ['probability', 'coagulation'],
+  },
+
   'fkinetic' : {
     'authors'	: ['M. Hairer', 'G. Iyer', 'L. Koralov', 'A. Novikov', 'Z. Pajor-Gyulai'],
     'title'	: 'A fractional kinetic process describing the intermediate time behaviour of cellular flows',
@@ -11,7 +20,9 @@
   'kompaneets' : {
     'authors'	: ['J. Ballew', 'G. Iyer', 'R. L. Pego'],
     'title'	: 'Bose-Einstein condensation in a Hyperbolic model for the Kompaneets Equation',
-    'year'	: 2015,
+    'journal'	: 'SIAM J. Math. Anal.',
+    'sjournal'	: 'SIMA',
+    'year'	: 2016,
     'link'	: '201512-kompaneets.pdf',
     'twoup'	: '201512-kompaneets-2up.pdf',
     'tags'	: ['pde'],
@@ -22,7 +33,8 @@
     'title'	: 'Stability of vortex solutions to an extended Navier-Stokes system',
     'journal'	: 'Commun. Math. Sci.',
     'sjournal'	: 'CMS',
-    'year'	: 2015,
+    'jlink'	: 'http://dx.doi.org/10.4310/CMS.2016.v14.n7.a1',
+    'year'	: 2016,
     'link'	: '201411-oseen.pdf',
     'twoup' 	: '201411-oseen-2up.pdf',
     'tags'	: ['pde', 'fluids'],
@@ -259,6 +271,7 @@
 } -%}
 
 {% set publist = (
+    pubs.dtc,
     pubs.fkinetic,
     pubs.kompaneets,
     pubs.oseen,
