@@ -27,18 +27,16 @@
 	      {{ glyph( 'download' ) }}
 	    </a>
 	  {% endif %}
+	  {% if p.tablet %}
+	    <a class='btn btn-default btn-xs' href='{{site_url}}/research/papers/{{p.tablet}}' title='Download mobile friendly preprint'>
+	      {{ glyph( 'phone' ) }}
+	    </a>
+	  {% endif %}
 	  {% if p.twoup %}
 	    <a class='btn btn-default btn-xs' href='{{site_url}}/research/papers/{{p.twoup}}' title='Download 2up preprint for eco-friendly printing'>
 	      {{ glyph( 'print' ) }}
 	    </a>
 	  {% endif %}
-	  {#
-	  {% if p.jlink %}
-	    <a class='btn btn-default btn-xs' href='{{p.jlink}}' title='Official journal link'>
-	      {{ glyph( 'book' ) }}
-	    </a>
-	  {% endif %}
-	  #}
 	  {% if p.code or p.fcode %}
 	    <a class='btn btn-default btn-xs'
 	      href='{{(site_url ~ '/research/' ~ p.code) if p.code
