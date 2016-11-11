@@ -75,14 +75,28 @@ def remove_extra_static( site ):
     Remove static files in outpath that are no longer present in searchpath
     """
     p = os.path
-    for (root, dirs, files) in os.walk( site.outpath ):
+    for (root, dirs, files) in os.walk( site.outpath, topdown=False ):
         for f in files:
+            remove = False
             name = p.relpath( p.join( root, f ), site.outpath )
-            if site.is_static(name) and \
-                    not p.exists( p.join( site.searchpath, name ) ):
+            if not p.exists( p.join( site.searchpath, name ) ):
+                if site.is_static(name):
+                    # Static file deleted in source
+                    remove = True
+                else:
+                    # See if was generated from .md
+                    if not p.exists( p.join( site.searchpath,
+                            p.splitext(name)[0] + '.md' ) ):
+                        remove = True
+
+            if remove:
                 fn = p.join( root, f )
-                site.logger.warn( 'Removed extra static file %s' % fn )
+                site.logger.warn( 'Removed extra file %s' % fn )
                 os.unlink( fn )
+
+        if len( os.listdir(root) ) == 0:
+            site.logger.warn( 'Removed empty directory %s' % root )
+            os.rmdir( root )
 
 class Site( staticjinja.Site ):
     # New methods
