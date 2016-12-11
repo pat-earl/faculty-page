@@ -22,7 +22,7 @@ class mdconverter:
         """
         self.site = site
         self.current_context = None
-        self.md = markdown.Markdown( extensions=[
+        md_extensions = [
             'markdown.extensions.extra',
             'markdown.extensions.codehilite',
             'markdown.extensions.meta',
@@ -33,9 +33,14 @@ class mdconverter:
             mdx_link.makeExtension(
                 link_chars = r'][\w0-9|:._ (),/"-',
                 build_url=lambda t, b, e: self.build_url( t )
-            )
-        ] )
+            ),
+        ]
+        self.md = markdown.Markdown( extensions=md_extensions )
         self.md.set_output_format( 'html5' )
+
+        self._md_meta = markdown.Markdown( extensions=md_extensions )
+        self._md_meta.set_output_format( 'html5' )
+
         self.math_re = re.compile(
                 '<script\\s*type\\s*=\s*[\'"]math/tex(\\s|[\'";])',
                 re.DOTALL )
@@ -86,21 +91,19 @@ class mdconverter:
         if( sep >= 0 ):
             link = text[:sep]
             label = text[sep+1:]
-
-            # Check if the path exists
-            (f, cdir) = self.site.get_cdir( self.current_context, link )
-            if not os.path.exists( os.path.join( cdir, f ) ):
-                self.site.logger.warn( '%s WARNING: Broken link "%s"'
-                        % (self.current_context['name'], link) )
         else:
             link = re.sub(r'([ ]+_)|(_[ ]+)|([ ]+)', '_', text)
-            try:
-                label = self.jinja_get_meta( self.current_context, link, 'title' ) \
-                        or text
-            except IOError as e:
-                self.site.logger.warn( '%s WARNING: Broken link "%s"'
-                        % (self.current_context['name'], link) )
-                label = text
+            label = text
+
+        # Check if the path exists
+        (f, cdir) = self.site.get_cdir( self.current_context, link )
+        if not os.path.exists( os.path.join( cdir, f ) ):
+            self.site.logger.warn( '%s WARNING: Broken link "%s"'
+                    % (self.current_context['name'], link) )
+        elif sep < 0:
+            # Path exists and no label given.
+            label = self.jinja_get_meta( self.current_context,
+                        link, 'title' ) or text
 
         return ( self.get_link( self.current_context, link ), label)
 
@@ -153,7 +156,15 @@ class mdconverter:
                     meta += l
                     if not l.strip(): break
 
-            self.meta[rel_name] = self.mdconvert( context, meta ).Meta
+            # Convert meta to markdown, and read the metadata from the result
+            self._md_meta.reset()
+            self._md_meta.convert( meta )
+            self.meta[rel_name] = self._md_meta.Meta
+            for key in self.meta[rel_name].keys():
+                val = self.meta[rel_name][key]
+                if len( val ) == 1:
+                    self.meta[rel_name][key] = val[0]
+
         return self.meta[rel_name]
 
     def jinja_get_meta( self, context, filename, key=None):
