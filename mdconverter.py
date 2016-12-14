@@ -22,7 +22,7 @@ class mdconverter:
         """
         self.site = site
         self.current_context = None
-        md_extensions = [
+        self.md = markdown.Markdown( extensions=[
             'markdown.extensions.extra',
             'markdown.extensions.codehilite',
             'markdown.extensions.meta',
@@ -34,11 +34,11 @@ class mdconverter:
                 link_chars = r'][\w0-9|:._ (),/"-',
                 build_url=lambda t, b, e: self.build_url( t )
             ),
-        ]
-        self.md = markdown.Markdown( extensions=md_extensions )
+        ] )
         self.md.set_output_format( 'html5' )
 
-        self._md_meta = markdown.Markdown( extensions=md_extensions )
+        self._md_meta = markdown.Markdown( extensions=[
+            'markdown.extensions.meta'] )
         self._md_meta.set_output_format( 'html5' )
 
         self.math_re = re.compile(
