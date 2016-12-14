@@ -38,7 +38,9 @@ index 349c0c3..65b8321 100644
    series       = {Mathematics and its Applications (Soviet Series)},
 ```
 
-Also, you can [[20140301-git-latexdiff.md|create a compiled PDF]] showing the changes.
+Or as a compiled PDF ([[20140301-git-latexdiff.md|instructions here]]):
+
+<img alt='PDF diff' src='{{filesdir}}/example-diff.png' style='width: 100%; max-width: 1497px'>
 
 ### Easily merge changes made by co-authors
 
