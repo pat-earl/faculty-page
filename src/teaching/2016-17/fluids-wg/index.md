@@ -54,16 +54,16 @@ So far the tentative topics and speakers are as follows.
 
 * **Antoine Remond-Tiedrez (11/15):** Helmholtz decompositions for the Stokes problem (Reference: [Boyer Fabrie](http://link.springer.com/book/10.1007%2F978-1-4614-5975-0))
 
-* **Giovanni Gravina (11/22):** A variational approach for water waves
-  (References:
-    [Arama Leoni](http://cvgmt.sns.it/media/doc/paper/2439/arama-leoni-2012-01-23.pdf),
-    [Alt Caffarelli](https://eudml.org/doc/152360#content)
-  )
-
-* **Noel Walkington (11/29):** Properties of the Equations Modelling Viscoelastic Fluids
+* **Noel Walkington (11/22):** Properties of the Equations Modelling Viscoelastic Fluids
   (References:
     [Perroti, Wang, Walkington](http://www.math.cmu.edu/%7Enoelw/Noelw/Papers/oldroyd.pdf),
     [Walkington](http://www.math.cmu.edu/%7Enoelw/Noelw/Papers/Wa11m2an.pdf)
+  )
+
+* **Giovanni Gravina (11/29):** A variational approach for water waves
+  (References:
+    [Arama Leoni](http://cvgmt.sns.it/media/doc/paper/2439/arama-leoni-2012-01-23.pdf),
+    [Alt Caffarelli](https://eudml.org/doc/152360#content)
   )
 
 * **Laurent Dietrich (12/6):** Role of advection in front propagation.
