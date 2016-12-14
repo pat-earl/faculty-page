@@ -54,10 +54,14 @@ LaTeX can be used between `$` signs:
 
 ## WikiLinks
 
-* ``[[markdown.md]]`` generates a link [[markdown.md]]. (An extension of `.md` is replaced with `.html`)
-* `[[/dev/test|Test]]` generates [[/dev/test|Test]] (links to `/dev/test` and says `Test`).
-* Links beginning with `auth/` will be redirected to `https://site_surl/dirname/auth/...`. (This is to avoid Shibboleth woes.)
+* `[[file]]` generates a link to `file`.
+* To specify the link text use `[[/dev/test|Test]]`, which links to `/dev/test` and says `Test`. This renders like this: [[/dev/test|Test]]
+* For `markdown` files, an extension of `.md` is replaced with `.html`.
+  Also, if the link text is omitted the title of the linked file is used instead.
+  E.g. `[[markdown.md]]` renders like this: [[markdown.md]].
 * Links beginning with `/` will be prefixed with `site_prefix`.
+* Broken links will generate a warning. E.g.: [[broken]]
+* Links beginning with `auth/` will be redirected to `https://site_surl/dirname/auth/...`. (This is to avoid Shibboleth woes.)
 
 ## Side panel navigation
 
@@ -65,7 +69,7 @@ LaTeX can be used between `$` signs:
 
 * The layout can be changed using
 
-        layout: md-right-nav.j2
+        layout:  md-right-nav.j2
 
     as meta-data.
 
