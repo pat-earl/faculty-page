@@ -38,7 +38,7 @@ index 349c0c3..65b8321 100644
    series       = {Mathematics and its Applications (Soviet Series)},
 ```
 
-Or as a compiled PDF ([[20140301-git-latexdiff.md|instructions here]]):
+Or as a compiled PDF using [latexdiff](http://www.ctan.org/tex-archive/support/latexdiff) (setup instructions are [[20140301-git-latexdiff.md|here]]):
 
 <img alt='PDF diff' src='{{filesdir}}/example-diff.png' style='width: 100%; max-width: 1497px'>
 
