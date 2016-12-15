@@ -179,19 +179,30 @@ In this case, you have to pull their changes, [merge them](#merging-changes), an
 
 In the normal workflow of a math paper with a handful of co-authors, you probably won't have to perform too many merges.
 The most common situation is when someone else makes change while you are in the middle of yours.
-In this case a *push* or a *pull* will likely abort with an error message.
+(Typically you'll find out about this either from an email notification, or an error message saying *"Non fast forward updates were rejected"* when you try to `git push`.)
 Most GUIs should have a good way of dealing with merges.
-If you prefer the terminal instead, then do the following:
+If you're using a terminal instead, here are instructions:
 
-1. Commit your changes when you are done editing. (But don't push them yet.)
+1. Commit your changes when you are done editing. (But don't push them yet. If you already tried to push them, and got an error message that's OK.)
 
-2. Run `git pull --rebase`.
-   If this completes without any warning, then any remote changes that were made *did not conflict* with any local changes you made, and you can go on to the next step.
-   If there was an error message, then follow the instructions on screen.
-   Typically, git will ask you to [resolve a conflict](#resolving-conflicts) in certain files.
-   Resolve these conflicts.
-   
-3. Push your changes back via `git push`
+2. Run `git pull` (or better still `git pull --rebase`).
+   One of the following will happen:
+
+    - Your editor is opened with a commit message saying something like:
+
+            Merge branch 'master' of ...
+
+        In this case, just save the file and exit your editor.
+        (In this situation if you had run `git pull --rebase` instead of `git pull`, you would not have the unfriendly `Merge branch ...` shenanigans to deal with.)
+
+    - Git exits with an error message saying something about **conflicts**.
+      This means that some remote change conflicted with some local change you made.
+      [Resolve this conflict](#resolving-conflicts).
+
+    - Git succeeds.
+
+3. Push your changes back via `git push`.
+   <span class='text-warning'>No matter what happened with the previous step, DO NOT forget this step.</span>
 
 #### Resolving conflicts
 
@@ -213,7 +224,10 @@ The problem was summarized by the Rev. H. W. Watson as follows.
 
 The text between `<<<<<<<` and `=======` is what you wrote, and the text between `=======` and `>>>>>>>` is what your co-authors wrote.
 Edit it to your taste, <span class='text-info'>remove the conflict markers</span>.
-Your conflict is now fixed. Type `git status` and follow the instructions. (This will typically involving marking your conflicts as fixed using `git add`, and the concluding the merge/rebase using `git rebase --continue` or `git commit`.)
+Your conflict is now fixed.
+Type `git status` and follow the instructions.
+(This will typically involving marking your conflicts as fixed using `git add`, and the concluding the merge/rebase using `git rebase --continue` or `git commit`.)
+Once you're done, don't forget to *push* your changes back.
 
 Some GUIs might help you with merging, if you don't like the above.
 Alternately, you can also use `git mergetool` to help.
