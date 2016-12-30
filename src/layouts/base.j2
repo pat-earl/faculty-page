@@ -25,7 +25,7 @@
 	{%- set bootstrap_cdn = get_link('/dev/static/bootstrap', true) -%}
       {%- endif %}
       <link rel="stylesheet"
-	href="{{bootstrap_cdn}}/3.3.5/css/bootstrap{{min}}.css">
+	href="{{bootstrap_cdn}}/3.3.7/css/bootstrap{{min}}.css">
       <link rel="stylesheet"
 	href="{{site_prefix}}/share/css/pygments-theme.css">
       <link rel="stylesheet" href="{{site_prefix}}/share/css/local.css">
@@ -71,13 +71,13 @@
 	{%- set bootstrap_cdn = get_link('/dev/static/bootstrap', true) -%}
       {%- endif %}
 
-      <script src="{{jquery_cdn}}/1.11.3/jquery{{min}}.js">
+      <script src="{{jquery_cdn}}/1.12.4/jquery{{min}}.js">
       </script>
       {#-
 	Include all compiled plugins (below), or include individual files as
 	needed
       #}
-      <script src="{{bootstrap_cdn}}/3.3.5/js/bootstrap{{min}}.js">
+      <script src="{{bootstrap_cdn}}/3.3.7/js/bootstrap{{min}}.js">
       </script>
 
       {%- if needs_mathjax %}
