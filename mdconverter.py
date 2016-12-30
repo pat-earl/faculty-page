@@ -183,10 +183,9 @@ def get_name_vars( template ):
     }
 
 # Was markdown_render
-def render(site, template, context=None, filepath=None):
+def render(site, template, **context):
     """Render a markdown file."""
-    if filepath is None:
-        filepath = site.get_out_filename( template.name )
+    filepath = site.get_out_filename( template.name )
     if not site.needs_rendering( template, filepath ):
         return
 
@@ -197,7 +196,8 @@ def render(site, template, context=None, filepath=None):
     except:
         if( template.name.startswith( "blog" ) ):
             layout = 'md-blogpost.j2'
-        elif re.match( r'teaching\/[0-9-]+\/[0-9a-z-]+\/.*\.md', template.name ):
+        elif re.match( r'teaching\/[0-9-]+\/[0-9a-z-]+\/.*\.md',
+                template.name ):
             layout = 'md-class.j2'
         else:
             layout = 'md-default.j2'

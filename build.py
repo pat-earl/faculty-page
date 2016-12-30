@@ -12,28 +12,6 @@ from jinja2 import contextfunction, contextfilter
 
 import mdconverter
 
-def get_context(site, template):
-    """
-    My custom get_context function (to replace Site.get_context). Rewritten to:
-        1. Allow Site as an argument to the context function
-        2. Inject dirname, basename, etc into the context.
-    """
-    try:
-        context_generator = site._get_context_generator(template.name)
-    except ValueError:
-        context = None
-    else:
-        try:
-            context = context_generator( site, template)
-        except TypeError as e:
-            #print e
-            try:
-                context = context_generator( template)
-            except TypeError:
-                context = context_generator()
-
-    return site.inject_name_vars( context, template )
-
 # Callable python functions / filters
 def jinja_search( s, pat ):
     if type(s) == str or type(s) == unicode:
@@ -184,9 +162,8 @@ class Site( staticjinja.Site ):
 
     def render_template( self, template, context=None, filepath=None):
         """
-        Overrides site.render_template. This version calls my custom
-        get_context (not site.get_context), and only renders templates if the
-        need rendering based on mtimes.
+        Overrides site.render_template. This version only renders templates if
+        the need rendering based on mtimes.
         """
 	if context is None:
 	    context = self.get_context(template)
@@ -201,9 +178,7 @@ class Site( staticjinja.Site ):
 		template.stream(**context).dump(filepath, self.encoding)
                 shutil.copymode( template.filename, filepath )
 	else:
-            # TODO: Change to **context, maybe by adding filepath to context
-            #rule(self, template, **context)
-            rule(self, template, context, filepath)
+            rule(self, template, **context)
 
     ignored_re = re.compile( r'\.(?:swp|un~)$', flags=re.I )
     def is_ignored( self, f ):
@@ -239,6 +214,30 @@ if __name__ == "__main__":
     ( options, args ) = parser.parse_args()
     if options.upload: options.production = True
 
+    dev_env = 'production' if options.production else 'local'
+
+    # Read site configuration
+    cfg = ConfigParser.ConfigParser()
+    cfg.read( os.path.join( pwd, 'site.cfg' ) )
+
+    # Jinja2 globals
+    env_globals = {
+        'dev_env': dev_env,
+        'markdown': contextfunction( lambda c, s: \
+                        site.md.mdconvert(c, s).html ),
+        'glob': contextfunction( lambda c, p: jinja_glob( site, c, p) ),
+        'get_meta': contextfunction( lambda c, f, k=None: \
+                        site.md.jinja_get_meta( c, f, k ) ),
+        'get_file': contextfunction( lambda c, f: site.md.get_file(c, f) ),
+        'get_link': contextfunction(
+            lambda c, f, rel=False: site.md.get_link(c, f, rel) ),
+        'search': jinja_search,
+        'sub': jinja_sub,
+        'slugify': mdconverter.slugify,
+    }
+    env_globals.update( dict( cfg.items('common') ) )
+    env_globals.update( dict( cfg.items(dev_env) ) )
+
     site = staticjinja.make_site(
 	    searchpath=os.path.join( pwd, 'src' ),
 	    outpath=os.path.join( pwd,
@@ -252,6 +251,14 @@ if __name__ == "__main__":
 	    rules=[
 		('.*\.md', mdconverter.render),
 	    ],
+            filters={
+                'markdown': contextfilter( lambda c, s: \
+                                site.md.mdconvert(c, s).html ),
+                'search': jinja_search,
+                'sub': jinja_sub,
+                'slugify' : mdconverter.slugify,
+            },
+            env_globals=env_globals,
             mergecontexts=True,
 	)
     # Type cast to my class
@@ -259,7 +266,6 @@ if __name__ == "__main__":
 
     # Ensure output directory exists
     site._ensure_dir( os.path.join( site.outpath, 'index.html' ) )
-
 
     # Add in the markdown converter
     site.md = mdconverter.mdconverter( site )
@@ -270,39 +276,6 @@ if __name__ == "__main__":
 
     if options.production:
         site.ignored_re = re.compile( '(?:^|/)dev/|' + site.ignored_re.pattern )
-        dev_env = 'production'
-
-    else:
-        dev_env = 'local'
-
-    # Read configuration
-    cfg = ConfigParser.ConfigParser()
-    cfg.read( os.path.join( pwd, 'site.cfg' ) )
-
-    # Tweak the Jinja2 environment
-    #site._env.line_statement_prefix = '<@Jinja2>'
-    site._env.globals['dev_env'] = dev_env
-    site._env.globals.update( dict( cfg.items('common') ) )
-    site._env.globals.update( dict( cfg.items(dev_env) ) )
-    
-    site._env.globals.update({
-        'markdown': contextfunction( lambda c, s: site.md.mdconvert(c, s).html ),
-        'glob': contextfunction( lambda c, p: jinja_glob( site, c, p) ),
-        'get_meta': contextfunction( lambda c, f, k=None: \
-                        site.md.jinja_get_meta( c, f, k ) ),
-        'get_file': contextfunction( lambda c, f: site.md.get_file(c, f) ),
-        'get_link': contextfunction(
-            lambda c, f, rel=False: site.md.get_link(c, f, rel) ),
-        'search': jinja_search,
-        'sub': jinja_sub,
-        'slugify': mdconverter.slugify,
-    })
-    site._env.filters.update({
-        'markdown': contextfilter( lambda c, s: site.md.mdconvert(c, s).html ),
-        'search': jinja_search,
-        'sub': jinja_sub,
-        'slugify' : mdconverter.slugify,
-    })
 
     # disable automatic reloading
     site.render(use_reloader=False)
