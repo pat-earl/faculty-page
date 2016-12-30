@@ -8,9 +8,7 @@ import shutil
 from collections import namedtuple
 
 pwd = os.path.dirname(os.path.realpath(__file__))
-#if pwd == os.getcwd(): pwd = '.'
-sys.path.append( pwd + '/ext/python-markdown-math' )
-sys.path.append( pwd + '/ext/python-markdown-links' )
+sys.path.insert( 1, os.path.join( pwd, 'ext' ) )
 
 import mdx_math
 import mdx_link
