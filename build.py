@@ -78,8 +78,9 @@ class Site( staticjinja.Site ):
         if filepath is None:
             filepath = os.path.join(self.outpath, template.name)
 
-        if self.recompile_forced( filepath ) or not os.path.isfile( filepath ) or \
-                os.stat(src).st_mtime - os.stat(filepath).st_mtime > 0:
+        if self.recompile_forced( filepath ) \
+                or not os.path.isfile( filepath ) \
+                or os.stat(src).st_mtime - os.stat(filepath).st_mtime > 0:
             return filepath
         else:
             return None
@@ -210,6 +211,8 @@ if __name__ == "__main__":
 	    action='store_true', help='Render even if source is unchanged' )
     parser.add_option( '-u', '--upload', dest='upload',
 	    action='store_true', help='Upload after rendering (implies -p)' )
+    parser.add_option( '-w', '--watch', dest='watch',
+            action='store_true', help='Continuously watch for changes' )
 
     ( options, args ) = parser.parse_args()
     if options.upload: options.production = True
@@ -278,7 +281,7 @@ if __name__ == "__main__":
         site.ignored_re = re.compile( '(?:^|/)dev/|' + site.ignored_re.pattern )
 
     # disable automatic reloading
-    site.render(use_reloader=False)
+    site.render(use_reloader=options.watch)
 
     # Delete extra static files in site
     remove_extra_static( site )
