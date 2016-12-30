@@ -6,16 +6,8 @@ sys.path.insert( 1, os.path.join( pwd, 'ext' ) )
 
 import staticjinja
 from jinja2_markdown import MarkdownExtension
-import re
-import optparse
-import shutil
-import ConfigParser
-import fnmatch
-import glob
-import subprocess
-
+import re, optparse, shutil, ConfigParser, fnmatch, glob, subprocess
 from stat import *
-
 from jinja2 import contextfunction, contextfilter
 
 import mdconverter
@@ -133,18 +125,6 @@ class Site( staticjinja.Site ):
              
         return f + out_ext
 
-    def inject_name_vars( self, context, template ):
-        if context == None:
-            context = {}
-        p = os.path
-        context.update( {
-            'name': template.name,
-            'dirname': p.dirname( template.name ),
-            'basename': p.basename( template.name ),
-            'filesdir': p.splitext( p.basename( template.name ) )[0],
-        })
-        return context
-
     def get_cdir( self, context, filename ):
         """
         Get the "current directory" of filename. If filename starts with '/',
@@ -186,13 +166,13 @@ class Site( staticjinja.Site ):
                     rsrc = p.relpath( p.realpath( src ), self.searchpath )
                     if rsrc.startswith( '..' ) or rsrc.startswith( '/' ):
                         # External. Copy it.
-                        shutil.copy( src, dst )
+                        shutil.copy2( src, dst )
                         shutil.copymode( src, dst )
                     else:
                         linkto = os.readlink(src)
                         os.symlink( linkto, dst )
                 else:
-                    shutil.copy(src, dst)
+                    shutil.copy2(src, dst)
                     shutil.copymode(src, dst)
 
                 if not p.islink(dst):
@@ -205,12 +185,11 @@ class Site( staticjinja.Site ):
     def render_template( self, template, context=None, filepath=None):
         """
         Overrides site.render_template. This version calls my custom
-        get_context (note site.get_context), and only renders templates if the
+        get_context (not site.get_context), and only renders templates if the
         need rendering based on mtimes.
         """
 	if context is None:
-	    context = get_context( self, template)
-
+	    context = self.get_context(template)
 	try:
 	    rule = self.get_rule(template.name)
 	except ValueError:
@@ -222,7 +201,9 @@ class Site( staticjinja.Site ):
 		template.stream(**context).dump(filepath, self.encoding)
                 shutil.copymode( template.filename, filepath )
 	else:
-	    rule(self, template, context, filepath)
+            # TODO: Change to **context, maybe by adding filepath to context
+            #rule(self, template, **context)
+            rule(self, template, context, filepath)
 
     ignored_re = re.compile( r'\.(?:swp|un~)$', flags=re.I )
     def is_ignored( self, f ):
@@ -262,13 +243,16 @@ if __name__ == "__main__":
 	    searchpath=os.path.join( pwd, 'src' ),
 	    outpath=os.path.join( pwd,
                 'out-prod' if options.production else 'out'),
+            followlinks=False,
 	    extensions=[MarkdownExtension],
 	    contexts=[
-		('.*\.md', mdconverter.get_context),
+		('.*', mdconverter.get_name_vars),
+                ('.*\.md', lambda t: mdconverter.get_context( site, t) ),
 	    ],
 	    rules=[
 		('.*\.md', mdconverter.render),
 	    ],
+            mergecontexts=True,
 	)
     # Type cast to my class
     site.__class__ = Site
@@ -320,7 +304,7 @@ if __name__ == "__main__":
         'slugify' : mdconverter.slugify,
     })
 
-    # enable automatic reloading
+    # disable automatic reloading
     site.render(use_reloader=False)
 
     # Delete extra static files in site

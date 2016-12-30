@@ -1,10 +1,7 @@
 #! /usr/bin/python
 import markdown
 import markdown.extensions.headerid as mdx_headerid
-import os
-import sys
-import re
-import shutil
+import os, sys, re, shutil
 from collections import namedtuple
 
 pwd = os.path.dirname(os.path.realpath(__file__))
@@ -175,6 +172,16 @@ class mdconverter:
         else:
             return meta
 
+# was site.inject_name_vars( context, template )
+def get_name_vars( template ):
+    p = os.path
+    return {
+        'name': template.name,
+        'dirname': p.dirname( template.name ),
+        'basename': p.basename( template.name ),
+        'filesdir': p.splitext( p.basename( template.name ) )[0],
+    }
+
 # Was markdown_render
 def render(site, template, context=None, filepath=None):
     """Render a markdown file."""
@@ -208,13 +215,13 @@ def get_context( site, template):
 
     dst = site.get_out_filename( template.name )
     if not site.needs_rendering( template, dst ):
-        return None
+        return {}
 
     # Directly convert to markdown
     #f = open(template.filename):
     #    md = site.md.convert( f.read() )
 
-    context = site.inject_name_vars( {}, template )
+    context = get_name_vars( template )
     context.update(  site.md.read_yaml_meta( context, '/' + template.name ) )
 
     if context.has_key( 'raw' ) and context['raw']:
