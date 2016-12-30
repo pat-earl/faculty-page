@@ -25,9 +25,9 @@ title: Working Group: Mathematical Fluid Dynamics
   </tr>
 </table>
 
-## Tentative Topics and References
+## Topics and References
 
-So far the tentative topics and speakers are as follows.
+The topics and speakers are as follows.
 
 * **Jack Schaeffer (9/20):** Kinetic Theory
 
@@ -57,25 +57,13 @@ So far the tentative topics and speakers are as follows.
 * **Noel Walkington (11/22):** Properties of the Equations Modelling Viscoelastic Fluids
   (References:
     [Perroti, Wang, Walkington](http://www.math.cmu.edu/%7Enoelw/Noelw/Papers/oldroyd.pdf),
-    [Walkington](http://www.math.cmu.edu/%7Enoelw/Noelw/Papers/Wa11m2an.pdf)
-  )
+    [Walkington](http://www.math.cmu.edu/%7Enoelw/Noelw/Papers/Wa11m2an.pdf))
 
 * **Giovanni Gravina (11/29):** A variational approach for water waves
   (References:
     [Arama Leoni](http://cvgmt.sns.it/media/doc/paper/2439/arama-leoni-2012-01-23.pdf),
-    [Alt Caffarelli](https://eudml.org/doc/152360#content)
-  )
+    [Alt Caffarelli](https://eudml.org/doc/152360#content))
 
-* **Laurent Dietrich (12/6):** Role of advection in front propagation.
-
-### People who don't yet know they have volunteered
-
-* Bill Layton
-
-* Catalyn Trachea
-
-* Ming Chen
-
-* Dehua Wang
-
-* Organizers usually abstain from speaking; however in a pinch we might cover a week or two.
+* **Laurent Dietrich (12/6):** Speed-up of combustion fronts in shear flows.
+  (References:
+    [Hamel, Zlatoš](http://link.springer.com/article/10.1007/s00208-012-0877-y))
