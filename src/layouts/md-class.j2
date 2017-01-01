@@ -1,4 +1,14 @@
+{% from 'includes/macros.j2' import course_info_table %}
 {% set active = 'teaching' %}
+{%- if path_exists( 'course_info.j2' ) -%}
+  {%- from get_file('course_info.j2') import course -%}
+  {%- if not title %}{% set title = course.title %}{% endif -%}
+  {% set page_email = course.email -%}
+  {# Set breadcrumb for level 1 pages -#}
+  {% if not breadcrumb and basename != 'index.md' -%}
+    {% set breadcrumb = 'index.html|' ~ course.title -%}
+  {% endif -%}
+{% endif -%}
 {%- macro md_hw() -%}
   {%- include get_file(hw | default( '_hw.md', true )) ignore missing -%}
 {%- endmacro -%}
@@ -26,3 +36,10 @@
     </div>
   {% endif %}
 {% endblock %}
+{% block content_block -%}
+  {% if infotable == 'show'
+	  or ( basename == 'index.md' and course and not infotable) -%}
+    {{ course_info_table(course) }}
+  {%- endif -%}
+  {{ super() }}
+{%- endblock %}

@@ -1,9 +1,3 @@
-{%- from get_file('course_info.j2') import course -%}
-{%- from 'includes/macros.j2' import course_info_table -%}
-title: {{course.title}}
-
-{{ course_info_table(course) }}
-
 ## Course Description
 
 This course is a serious introduction to multidimensional calculus that makes use of matrices and linear transformations.

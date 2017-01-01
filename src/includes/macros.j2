@@ -62,10 +62,11 @@
   <span class='glyphicon glyphicon-{{g}}' aria-hidden='true'></span>
 {%- endmacro -%}
 
-{%- macro email( address ) -%}
+{%- macro email( address, period=true ) -%}
   <span class='text-nowrap' title='Email'>
     {{ glyph('envelope') }}
-    {{ address | default( "author@email.com" ) }}.
+    {{ address | default( "author@email.com" ) }}
+    {%- if period %}.{% endif -%}
   </span>
 {%- endmacro -%}
 
@@ -84,6 +85,7 @@
 {%- macro course_info_table(c) -%}
   {#- Import this using "with context", so all the variables are inherited #}
   <table class='table' summary='Logistical Information'>
+    <thead><tr><td colspan='2'></td></tr></thead>
     <tbody>{# Instructor, lectures {{{ #}
       <tr>
 	<th scope='row'>Instructor</th>
@@ -101,9 +103,13 @@
 	<td>
 	  {% if c.lectures is string -%}
 	    {{c.lectures}}
-	  {% else -%}
+	  {% elif c.lectures is mapping -%}
 	    {{c.lectures.time}} in
 	    {{room( c.lectures.bldg, c.lectures.room, is_office=false ) }}
+	  {% else -%}
+	    {% for s in c.lectures -%}
+	      {{s}}{{'<br>' if not loop.last else ''}}
+	    {% endfor -%}
 	  {% endif -%}
 	</td>
       </tr>
@@ -141,6 +147,12 @@
 	    {%- endif -%}
 	  </td>
 	</tr>
+	{%- if ta.office_hours -%}
+	  <tr>
+	    <th scope='row'>Office Hours (TA)</th>
+	    <td>{{ta.office_hours}}</td>
+	  </tr>
+	{%- endif -%}
 	{%- if ta.recitation -%}
 	  <tr>
 	    <th scope='row'>Recitation</th>
@@ -149,15 +161,32 @@
 		{{ta.recitation}}
 	      {%- else -%}
 		{{ta.recitation.time}} in
-		{{room( ta.recitation.bldg, ta.recitation.room, is_office=false ) }}
+		{{room( ta.recitation.bldg, ta.recitation.room,
+		    is_office=false ) }}
 	      {%- endif -%}
 	    </td>
 	  </tr>
 	{%- endif -%}
-	{%- if ta.office_hours -%}
+	{%- if c.help -%}
 	  <tr>
-	    <th scope='row'>Office Hours (TA)</th>
-	    <td>{{ta.office_hours}}</td>
+	    <th scope='row'>Help session</th>
+	    <td>
+	      {%- if c.help is string -%}
+		{{c.help}}
+	      {%- else -%}
+		{{c.help.time}}
+		{% if c.help.warning -%}
+		  <span class='text-warning small'>
+		    ({{c.help.warning}})
+		  </span>
+		  <br>
+		{%- endif -%}
+		<span class='small'>
+		  (Help sessions will be conducted by
+		  {{c.help.ta}}&emsp;{{email(c.help.email, false)}}).
+		</span>
+	      {% endif -%}
+	    </td>
 	  </tr>
 	{%- endif -%}
       </tbody>
@@ -172,23 +201,50 @@
       {%- endfor -%}
     </tbody>
     {%- endif -%}{# }}} #}
-    {%- if c.mailing_list -%}{# Mailing list {{{ #}
+    {%- if c.mailing_list or c.blackboard or c.mediasite or c.links -%}{# Mailing list {{{ #}
       <tbody>
-	<tr>
-	  <th scope='row'>Mailing list</td>
-	  <td>
-	    <a href='{{c.mailing_list.url}}'>{{c.mailing_list.name}}</a>
-	    <span class='small'>
-	      (Students and guests
-	      <span class='bg-warning'>
-		<b>please subscribe to this list</b>.
+	{%- if c.mailing_list -%}
+	  <tr>
+	    <th scope='row'>Mailing list</td>
+	    <td>
+	      <a href='{{c.mailing_list.url}}'>{{c.mailing_list.name}}</a>
+	      <span class='small'>
+		(<b class='bg-warning'>Please subscribe to this list.</b>
+		It will be used for all course announcements.)
 	      </span>
-	      I will NOT use BlackBoard.)
-	    </span>
-	  </td>
-	</tr>
+	    </td>
+	  </tr>
+	{%- endif -%}
+	{%- if c.blackboard -%}
+	  <tr>
+	    <th scope='row'>Blackboard</th>
+	    <td>
+	      Grades and a discussion board are available
+	      <a href="{{c.blackboard}}">here</a>.
+	    </td>
+	  </tr>
+	{%- endif -%}
+	{%- if c.mediasite -%}
+	  <tr>
+	    <th scope='row'>Videos</th>
+	    <td>
+	      Videos of lectures and recitations are available
+	      <a href="{{c.mediasite}}">here</a>.
+	      <span class='text-warning small'>
+		(Current students only).
+	      </span>
+	    </td>
+	  </tr>
+	{%- endif -%}
+	{%- for (desc, link) in c.links -%}
+	  <tr>
+	    <th scope='row'>{{desc}}</th>
+	    <td>{{link}}</td>
+	  </tr>
+	{%- endfor -%}
       </tbody>
     {%- endif -%}{# }}} #}
+    <tfoot><tr><td colspan='2'></td></tr></tfoot>
   </table>
 {%- endmacro -%}
 
@@ -201,7 +257,7 @@
 {%- macro post_series( parent, series ) -%}
   {#- Can't pass relative file names to this. -#}
   <div>
-    <br />
+    <br>
     <h4 class='hide-xoverflow'>
       {{ glyph( 'menu-hamburger' ) }}&emsp;<a href='{{get_link(parent)}}'>
 	{{- get_meta(parent, 'title')}}</a>

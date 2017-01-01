@@ -1,9 +1,3 @@
-{%- from get_file( 'course_info.j2' ) import course -%}
-{%- from 'includes/macros.j2' import course_info_table -%}
-title: {{course.title}}
-
-{{ course_info_table(course) }}
-
 ## Course Description
 
 A Partial Differential Equation (PDE for short), is a differential equation

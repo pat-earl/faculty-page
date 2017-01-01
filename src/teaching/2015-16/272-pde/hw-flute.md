@@ -1,6 +1,4 @@
 title: Flute and Birds Optional Problem
-{%- from get_file('course_info.j2') import course %}
-breadcrumb: index.html|{{course.title}}
 
 [[static/mixed.wav|This file]] contains a mix of two audio clips: One of birds
 chirping, and the other of a flute. Your task is to remove the chirping birds,

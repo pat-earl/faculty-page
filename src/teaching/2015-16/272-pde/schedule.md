@@ -1,6 +1,4 @@
-{%- from get_file('course_info.j2') import course -%}
 title: Lecture Schedule
-breadcrumb: index.html|{{course.title}}
 
 Here is a lecture by lecture list of topics covered in class, with references for further reading.
 

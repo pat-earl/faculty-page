@@ -1,5 +1,5 @@
 {%- import 'includes/macros.j2' as macros -%}
-{%- macro footer() -%}
+{%- macro footer( email ) -%}
   <footer>
     <div class='container'>
       <hr>
@@ -17,7 +17,7 @@
 	</div>
       </div>
 
-      {{ macros.email( author_email ) }}
+      {{ macros.email( email | default(author_email) ) }}
       &emsp;
       {{ macros.room( author_office_bldg, author_office_room ) }}
       &emsp;
