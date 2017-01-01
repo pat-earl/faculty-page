@@ -43,6 +43,13 @@ class mdconverter:
         # meta[md_file] holds data from the yaml block in md_file
         self.meta = {}
 
+    def path_exists( self, context, path ):
+        (f, cdir) = self.site.get_cdir( context, path )
+        if os.path.exists( os.path.join( cdir, f ) ):
+            return self.get_file( context, path )
+        else:
+            return None
+
     def get_file( self, context, f ):
         """
         Get a path to file f. f can be relative to current directory (taken

@@ -231,6 +231,8 @@ if __name__ == "__main__":
         'glob': contextfunction( lambda c, p: jinja_glob( site, c, p) ),
         'get_meta': contextfunction( lambda c, f, k=None: \
                         site.md.jinja_get_meta( c, f, k ) ),
+        'path_exists': contextfunction( lambda c, p: \
+                        site.md.path_exists(c, p) ),
         'get_file': contextfunction( lambda c, f: site.md.get_file(c, f) ),
         'get_link': contextfunction(
             lambda c, f, rel=False: site.md.get_link(c, f, rel) ),
