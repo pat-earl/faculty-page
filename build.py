@@ -40,9 +40,10 @@ def jinja_glob( site, context, pat ):
     matches = glob.glob( os.path.join( cdir, pat ) )
     return [ leading_slash + os.path.relpath( m, cdir ) for m in matches ]
 
-def remove_extra_static( site ):
+def cleanup_outpath( site ):
     """
-    Remove static files in outpath that are no longer present in searchpath
+    Remove static files in outpath that are no longer present in searchpath,
+    and fix permissions.
     """
     p = os.path
     for (root, dirs, files) in os.walk( site.outpath, topdown=False ):
@@ -66,6 +67,15 @@ def remove_extra_static( site ):
                 fn = p.join( root, f )
                 site.logger.warn( 'Removed extra file %s' % fn )
                 os.unlink( fn )
+
+        for d in dirs:
+            dname = p.join( root, d)
+            rname = p.relpath( dname, site.outpath )
+            sname = p.join( site.searchpath, rname )
+            smode = os.stat(sname).st_mode
+            if smode != os.stat(dname).st_mode:
+                site.logger.warn( 'Updating permissions of %s' % rname )
+                os.chmod( dname, smode )
 
         if len( os.listdir(root) ) == 0:
             site.logger.warn( 'Removed empty directory %s' % root )
@@ -136,7 +146,7 @@ class Site( staticjinja.Site ):
 	    if not ( p.isfile(dst) or p.islink(dst) ) or \
 		    ( os.stat(src).st_mtime - os.stat(dst).st_mtime > 0 ) or \
 		    ( os.stat(src).st_ctime - os.stat(dst).st_ctime > 0 ):
-		self.logger.info("Copying %s to %s." % (f, dst))
+		self.logger.info("Copying %s." % f)
 		#shutil.copyfile(src, dst)
                 if p.islink(src):
                     if p.islink(dst):
@@ -149,13 +159,11 @@ class Site( staticjinja.Site ):
                     if rsrc.startswith( '..' ) or rsrc.startswith( '/' ):
                         # External. Copy it.
                         shutil.copy2( src, dst )
-                        shutil.copymode( src, dst )
                     else:
                         linkto = os.readlink(src)
                         os.symlink( linkto, dst )
                 else:
                     shutil.copy2(src, dst)
-                    shutil.copymode(src, dst)
 
                 if not p.islink(dst):
                     # Make sure it's readable
@@ -288,8 +296,7 @@ if __name__ == "__main__":
     # disable automatic reloading
     site.render(use_reloader=options.watch)
 
-    # Delete extra static files in site
-    remove_extra_static( site )
+    cleanup_outpath( site )
 
     # Upload if asked
     if options.upload:
