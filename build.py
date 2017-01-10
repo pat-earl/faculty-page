@@ -169,8 +169,8 @@ class Site( staticjinja.Site ):
                     # Make sure it's readable
                     m = os.stat(dst).st_mode
                     if not S_IRUSR & m or not S_IRGRP & m or not S_IROTH & m:
-                        self.logger.warn( 'WARNING: making %s readable' % dst )
-                        os.chmod( dst, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH )
+                        self.logger.warn( 'WARNING: %s unreadable' % f )
+                        #os.chmod( dst, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH )
 
     def render_template( self, template, context=None, filepath=None):
         """
