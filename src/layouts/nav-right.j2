@@ -30,23 +30,23 @@
       {% endblock main_column %}
     </div>{# col-md-9 #}
     <div class='col-md-3' id='col-right'>
-      {% block nav_column %}
-	{% block nav_before_toc %}{% endblock %}
-	{% if not search( toc, '<ul></ul>' ) %}
+      {% block nav_column -%}
+	{% block nav_before_toc %}{% endblock -%}
+	{% if not search( toc, '<ul></ul>' ) -%}
 	  <nav class='nav hidden-xs hidden-sm'>
 	    {#
 	    <h4 class='hide-xoverflow'>
 	      <a href='#toc' data-toggle='collapse'
 		  aria-expanded='false' aria-controls='#toc'>{{title}}</a>
 	    </h4>
-	    #}
-	    <div id='toc' class='collapse in'>
-	      {{toc}}{# Looks like:<div class='toc'><ul>...</ul></div> #}
+	    -#}
+	    <div id='toc'{# class='collapse in'#}>
+	      {{toc}}{# Looks like:<div class='toc'><ul>...</ul></div> -#}
 	    </div>
 	  </nav>
-	{% endif %}
-	{% block nav_after_toc %}{% endblock %}
-      {% endblock nav_column %}
+	{% endif -%}
+	{% block nav_after_toc %}{% endblock -%}
+      {% endblock nav_column -%}
     </div>{# col-md-3 #}
   </div>{# row #}
 {% endblock body %}
