@@ -135,7 +135,7 @@
 	    {%- if ta.url -%}
 	      <a href='{{ta.url}}'>{{ta.name}}</a>.
 	    {%- else -%}
-	      {{ta.name}}.
+	      {{ta.name | default('TBA')}}.
 	    {%- endif -%}
 	    {%- if ta.office -%}
 	      &emsp;
@@ -201,7 +201,7 @@
       {%- endfor -%}
     </tbody>
     {%- endif -%}{# }}} #}
-    {%- if c.mailing_list or c.blackboard or c.mediasite or c.links -%}{# Mailing list {{{ #}
+    {%- if c.mailing_list or c.anonymous_list or c.blackboard or c.mediasite or c.links -%}{# Mailing list {{{ #}
       <tbody>
 	{%- if c.mailing_list -%}
 	  <tr>
@@ -209,9 +209,16 @@
 	    <td>
 	      <a href='{{c.mailing_list.url}}'>{{c.mailing_list.name}}</a>
 	      <span class='small'>
-		(<b class='bg-warning'>Please subscribe to this list.</b>
-		It will be used for all course announcements.)
+		(for course announcements and discussion.
+		<b class='bg-warning'>Please subscribe to this list.</b>)
 	      </span>
+	      {%- if c.anonymous_list -%}
+		<br>
+		<a href='{{c.anonymous_list.url}}'>{{c.anonymous_list.name}}</a>
+		<span class='small'>
+		  (for anonymous discussion. Your emails will be delivered anonymously.)
+		</span>
+	      {%- endif -%}
 	    </td>
 	  </tr>
 	{%- endif -%}
