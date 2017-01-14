@@ -22,28 +22,34 @@ $(document).ready( function() {
       }
 
       var resizeFn = function() {
-	  /* Set the width to it's natural width in the parent. */
-	  var sideBarNavWidth = parent_panel.width()
-	      - parseInt(elem.css('paddingLeft'))
-	      - parseInt(elem.css('paddingRight'))
-	      - parseInt(elem.css('marginLeft'))
-	      - parseInt(elem.css('marginRight'))
-	      - parseInt(elem.css('borderLeftWidth'))
-	      - parseInt(elem.css('borderRightWidth'));
-	  elem.css('width', sideBarNavWidth);
+	/* Set the width to it's natural width in the parent. */
+	var sideBarNavWidth = parent_panel.width()
+	  - parseInt(elem.css('paddingLeft'))
+	  - parseInt(elem.css('paddingRight'))
+	  - parseInt(elem.css('marginLeft'))
+	  - parseInt(elem.css('marginRight'))
+	  - parseInt(elem.css('borderLeftWidth'))
+	  - parseInt(elem.css('borderRightWidth'));
+	elem.css('width', sideBarNavWidth);
 
-	  elem.affix({
-	      offset: {
-		  top: prev.offset().top + prev.outerHeight(true),
-		  bottom: $('body>footer').outerHeight(true)
-	      }
-	  });
+	elem.affix({
+	  offset: {
+	    top: prev.offset().top + prev.outerHeight(true),
+	    bottom: $('body>footer').outerHeight(true)
+	  }
+	});
 
-	  elem.affix( 'checkPosition' )
+	elem.affix( 'checkPosition' );
       };
 
       resizeFn();
       $(window).resize(resizeFn);
+
+      $('[data-spy~="scroll"]').each( function() {
+	$(this).on('activate.bs.scrollspy', function() {
+	  elem.affix( 'checkPosition' );
+	});
+      });
   });
 
 }); /* end ready */
