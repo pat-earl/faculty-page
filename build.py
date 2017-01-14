@@ -6,7 +6,7 @@ sys.path.insert( 1, os.path.join( pwd, 'ext' ) )
 
 import staticjinja
 from jinja2_markdown import MarkdownExtension
-import re, optparse, shutil, ConfigParser, fnmatch, glob, subprocess
+import re, optparse, shutil, ConfigParser, glob, subprocess
 from stat import *
 from jinja2 import contextfunction, contextfilter
 
@@ -98,14 +98,13 @@ class Site( staticjinja.Site ):
         else:
             return None
 
-    def recompile_forced( self, filename ):
-        options = self.options
-
-        if options.force:
+    def recompile_forced( self, filepath ):
+        if self.options.force:
             return True
         elif self.args:
+            relpath = os.path.relpath( filepath, self.outpath )
             for i in self.args:
-                if fnmatch.fnmatch( filename, i ):
+                if i.search( relpath ):
                     return True
 
         return False
@@ -286,9 +285,10 @@ if __name__ == "__main__":
     # Add in the markdown converter
     site.md = mdconverter.mdconverter( site )
 
-    glob_re = re.compile( r'[*?{[]' )
     site.options = options
-    site.args = [(a if glob_re.search(a) else '*'+a+'*') for a in args]
+    site.args = [re.compile(a) for a in args]
+    #glob_re = re.compile( r'[*?{[]' )
+    #site.args = [(a if glob_re.search(a) else '*'+a+'*') for a in args]
 
     if options.production:
         site.ignored_re = re.compile( '(?:^|/)dev/|' + site.ignored_re.pattern )
