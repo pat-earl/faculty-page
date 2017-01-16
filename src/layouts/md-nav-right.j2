@@ -2,31 +2,31 @@
 {%- macro md_sidenav() -%}
   {%- include dirname ~ '/' ~ (sidenav | default( '_sidenav.md', true )) ignore missing -%}
 {%- endmacro -%}
-{% extends md_nav_layout | default("layouts/nav-right.j2") %}
-{% block main_column %}
+{% extends md_nav_layout | default("layouts/nav-right.j2") -%}
+{% block main_column -%}
   <div class='justify{{" lead" if bigfont}}'>
-    {% block title_block %}
-      {% if title %}
+    {% block title_block -%}
+      {% if title -%}
 	<h1>
 	  {{title}}
-	  {% if post_date(basename) %}
+	  {% if post_date(basename) -%}
 	    <br />
 	    <small>{{post_date(basename)}}</small>
-	  {% endif %}
+	  {% endif -%}
 	</h1>
-      {% endif %}
-    {% endblock %}
+      {% endif -%}
+    {% endblock -%}
 
-    {% block content_block %}
+    {% block content_block -%}
       {{ content }}
-    {% endblock %}
+    {% endblock -%}
 
-    {% block comments_block %}
-    {% endblock %}
+    {% block comments_block -%}
+    {% endblock -%}
   </div>
-{% endblock %}
-{% block nav_after_toc %}
-  {% if md_sidenav() %}
+{% endblock -%}
+{% block nav_after_toc -%}
+  {% if md_sidenav() -%}
     {{ md_sidenav() | markdown }}
-  {% endif %}
-{% endblock %}
+  {% endif -%}
+{% endblock -%}

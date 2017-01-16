@@ -2,10 +2,10 @@
 {%- block bodyargs -%}
   style='position: relative' data-spy='scroll' data-target='#col-right'
 {%- endblock -%}
-{% block nav_column %}
+{% block nav_column -%}
   <div data-affix-after='#create'>
-    {# {% block nav_before_toc %}{% endblock %} #}
+    {# {% block nav_before_toc %}{% endblock %} -#}
     {{ super() }}
-    {# {% block nav_after_toc %}{{super()}}{% endblock %} #}
-  </div>{# affix #}
-{% endblock %}
+    {# {% block nav_after_toc %}{{super()}}{% endblock %} -#}
+  </div>{# affix -#}
+{% endblock -%}

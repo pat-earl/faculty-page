@@ -1,40 +1,40 @@
 {%- extends "layouts/base.j2" -%}
-{% block body %}
+{% block body -%}
   <div class='row'>
     <div class='col-md-9' id='col-main'>
-      {% block breadcrumb_block %}
-	{% if breadcrumb %}
+      {% block breadcrumb_block -%}
+	{% if breadcrumb -%}
 	  <ul class='breadcrumb hidden-xs'>
-	    {% if breadcrumb is string %}
-	      {% set breadcrumb = [breadcrumb] %}
-	    {% endif %}
-	    {% for i in breadcrumb | reverse %}
-	      {% if search( i, '\|' ) %}
+	    {% if breadcrumb is string -%}
+	      {% set breadcrumb = [breadcrumb] -%}
+	    {% endif -%}
+	    {% for i in breadcrumb | reverse -%}
+	      {% if search( i, '\|' ) -%}
 		{# in format "link|text" #}
-		{% set b_link = get_link( sub( i, '\|.*', '', 1 ) ) %}
-		{% set b_text = sub( i, '.*?\|', '', 1 ) %}
-	      {% else %}
+		{% set b_link = get_link( sub( i, '\|.*', '', 1 ) ) -%}
+		{% set b_text = sub( i, '.*?\|', '', 1 ) -%}
+	      {% else -%}
 		{# in format "file.md" #}
-		{% set b_link = get_link( i ) %}
-		{% set b_text = get_meta( i, 'title' ) %}
-	      {% endif %}
+		{% set b_link = get_link( i ) -%}
+		{% set b_text = get_meta( i, 'title' ) -%}
+	      {% endif -%}
 	      <li><a href='{{b_link}}'>{{b_text}}</a></li>
-	    {% endfor %}
+	    {% endfor -%}
 	    <li class='active'>{{title}}</li>
 	  </ul>
-	{% endif %}
-      {% endblock breadcrumb_block %}
-      {% block main_column %}
+	{% endif -%}
+      {% endblock breadcrumb_block -%}
+      {% block main_column -%}
 	<h1>{{title|default('Set title to the document title')}}</h1>
 	{{ lipsum() }}
-      {% endblock main_column %}
+      {% endblock main_column -%}
     </div>{# col-md-9 #}
     <div class='col-md-3' id='col-right'>
       {% block nav_column -%}
 	{% block nav_before_toc %}{% endblock -%}
 	{% if not search( toc, '<ul></ul>' ) -%}
 	  <nav class='nav hidden-xs hidden-sm'>
-	    {#
+	    {#-
 	    <h4 class='hide-xoverflow'>
 	      <a href='#toc' data-toggle='collapse'
 		  aria-expanded='false' aria-controls='#toc'>{{title}}</a>
@@ -49,4 +49,4 @@
       {% endblock nav_column -%}
     </div>{# col-md-3 #}
   </div>{# row #}
-{% endblock body %}
+{% endblock body -%}

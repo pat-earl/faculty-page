@@ -1,19 +1,19 @@
-{% set active = 'blog' %}
+{% set active = 'blog' -%}
 {%- macro finclude(fn) -%}
   {%- include fn -%}
 {%- endmacro -%}
-{% from 'includes/macros.j2' import post_date, glyph %}
-{% extends "layouts/md-nav-right-affix.j2" %}
-{% block comments_block %}
-  {% if comments != 'disabled' %}
+{% from 'includes/macros.j2' import post_date, glyph -%}
+{% extends "layouts/md-nav-right-affix.j2" -%}
+{% block comments_block -%}
+  {% if comments != 'disabled' -%}
     <br />
     <h3>
       {{ glyph( 'comment' ) }}&emsp;Comments
     </h3>
 
-    {% set cfiles = glob( '/blog/_comments/_'~filesdir~'_*.md' ) | sort %}
-    {% for f in cfiles %}
-      {% set meta = get_meta( f ) %}
+    {% set cfiles = glob( '/blog/_comments/_'~filesdir~'_*.md' ) | sort -%}
+    {% for f in cfiles -%}
+      {% set meta = get_meta( f ) -%}
       <ul class='list-unstyled comments'>
 	<li>
 	  <div class='media small'>
@@ -35,7 +35,7 @@
 	</li>
       </ul>
       <br />
-    {% endfor %}
+    {% endfor -%}
 
     <h4>
       {{ glyph('pencil') }}&emsp;Leave a comment
@@ -88,23 +88,23 @@
       Thanks. Your comment was successfully submitted.
       It will appear here shortly if it isn't spam.
     </div>
-  {% endif %}{# comments not disabled #}
-{% endblock comments_block %}
-{% block nav_after_toc %}
+  {% endif -%}{# comments not disabled -#}
+{% endblock comments_block -%}
+{% block nav_after_toc -%}
   {{ super() }}
 
   <br />
   <h4>{{glyph( 'bullhorn' )}}&emsp;Recent posts</h4>
-  {% set files = glob( '/blog/[0-9]*.md' ) | sort( reverse=True ) %}
+  {% set files = glob( '/blog/[0-9]*.md' ) | sort( reverse=True ) -%}
   <ol class='list-unstyled'>
     {% for f in files[:5] -%}
       <li class='hide-xoverflow'>
 	<a href='{{get_link(f)}}'>{{get_meta( f, 'title')}}</a>
 	({{post_date(f)}})
       </li>
-    {% endfor %}
+    {% endfor -%}
   </ol>
-  {#
+  {#-
   <div class='row'>
     <div class='col-md-12 col-sm-6'>
       <h4>Tags</h4>
@@ -113,5 +113,5 @@
       <h4>Recent posts</h4>
     </div>
   </div>
-  #}
-{% endblock nav_after_toc %}
+  -#}
+{% endblock nav_after_toc -%}

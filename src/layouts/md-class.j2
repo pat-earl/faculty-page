@@ -1,5 +1,5 @@
-{% from 'includes/macros.j2' import course_info_table %}
-{% set active = 'teaching' %}
+{% from 'includes/macros.j2' import course_info_table -%}
+{% set active = 'teaching' -%}
 {%- if path_exists( 'course_info.j2' ) -%}
   {%- from get_file('course_info.j2') import course -%}
   {%- if not title %}{% set title = course.title %}{% endif -%}
@@ -15,31 +15,31 @@
 {%- macro md_handouts() -%}
   {%- include get_file(handouts | default( '_handouts.md', true )) ignore missing -%}
 {%- endmacro -%}
-{% extends "layouts/md-nav-right-affix.j2" %}
-{% block nav_after_toc %}
-  {% if md_hw() or md_handouts() %}
+{% extends "layouts/md-nav-right-affix.j2" -%}
+{% block nav_after_toc -%}
+  {% if md_hw() or md_handouts() -%}
     <div id='hw-handouts' class='row small'>
-      {% if md_hw() %}
+      {% if md_hw() -%}
 	<div class='col-md-12 col-sm-6'>
 	  <h4 class='hidden-xs hidden-sm'>Homework and Solutions</h4>
 	  <h2 class='hidden-md hidden-lg'>Homework and Solutions</h2>
 	  {{ md_hw() | markdown }}
 	</div>
-      {% endif %}
-      {% if md_handouts() %}
+      {% endif -%}
+      {% if md_handouts() -%}
 	<div class='col-md-12 col-sm-6'>
 	  <h4 class='hidden-xs hidden-sm'>Handouts</h4>
 	  <h2 class='hidden-md hidden-lg'>Handouts</h2>
 	  {{ md_handouts() | markdown }}
 	</div>
-      {% endif %}
+      {% endif -%}
     </div>
-  {% endif %}
-{% endblock %}
+  {% endif -%}
+{% endblock -%}
 {% block content_block -%}
   {% if infotable == 'show'
 	  or ( basename == 'index.md' and course and not infotable) -%}
     {{ course_info_table(course) }}
   {%- endif -%}
   {{ super() }}
-{%- endblock %}
+{%- endblock -%}

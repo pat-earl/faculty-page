@@ -14,14 +14,14 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
 	<ul class="nav navbar-nav">
-	  {% for href, caption in site.navbar_left %}
-	    <li {% if href == active %} class='active' {% endif %}>
+	  {% for href, caption in site.navbar_left -%}
+	    <li {%- if href == active %} class='active' {%- endif %}>
 	      <a href="{{site_url}}/{{href|e}}">{{caption}}</a>
 	    </li>
-	  {% endfor %}
+	  {% endfor -%}
 	</ul>
 	<ul class="nav navbar-nav navbar-right">
-	  {% for href, caption in site.navbar_right %}
+	  {% for href, caption in site.navbar_right -%}
 	    <li
 	      {%- if href and href == active %} class='active'
 	      {%- elif not href %} class='disabled'
@@ -29,7 +29,7 @@
 	      >
 	      <a href="{{(site_url ~ '/' ~ href) if href else '#'}}">{{caption}}</a>
 	    </li>
-	  {% endfor %}
+	  {% endfor -%}
 	</ul>
       </div><!--/.nav-collapse -->
     </div>

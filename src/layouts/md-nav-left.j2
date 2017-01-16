@@ -1,7 +1,7 @@
-{% extends "layouts/nav-left.j2" %}
-{% block main_column %}
+{% extends "layouts/nav-left.j2" -%}
+{% block main_column -%}
   <div {{"class='lead'" if bigfont}}>{# Get a readable font! #}
     {# {% if title %}<h1>{{title}}</h1>{% endif %} #}
     {{ content }}
   </div>
-{% endblock %}
+{% endblock -%}

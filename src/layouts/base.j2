@@ -23,7 +23,7 @@
       {%- else -%}
 	{%- set min = '' -%}
 	{%- set bootstrap_cdn = get_link('/dev/static/bootstrap', true) -%}
-      {%- endif %}
+      {%- endif -%}
       <link rel="stylesheet"
 	href="{{bootstrap_cdn}}/3.3.7/css/bootstrap{{min}}.css">
       <link rel="stylesheet"
@@ -36,7 +36,7 @@
       queries. WARNING: Respond.js doesn't work if you view the page via
       file://
     -#}
-    {%- set min = '.min' if dev_env == 'production' else '' %}
+    {%- set min = '.min' if dev_env == 'production' else '' -%}
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv{{min}}.js">
       </script>
@@ -45,7 +45,7 @@
     <![endif]-->
   </head>
   <body {% block bodyargs -%}{%- endblock -%}>
-    {%- block nav %}{{ nav_bar(active|default(dirname, true) ) }}{% endblock %}
+    {%- block nav %}{{ nav_bar(active|default(dirname, true) ) }}{% endblock -%}
 
     {% block pre_container %}{% endblock -%}
     <div class='container'>
@@ -69,7 +69,7 @@
 	{%- set min = '' -%}
 	{%- set jquery_cdn = get_link('/dev/static/jquery', true) -%}
 	{%- set bootstrap_cdn = get_link('/dev/static/bootstrap', true) -%}
-      {%- endif %}
+      {%- endif -%}
 
       <script src="{{jquery_cdn}}/1.12.4/jquery{{min}}.js">
       </script>
@@ -80,16 +80,16 @@
       <script src="{{bootstrap_cdn}}/3.3.7/js/bootstrap{{min}}.js">
       </script>
 
-      {%- if needs_mathjax %}
+      {%- if needs_mathjax -%}
 	<script src='{{get_link('/share/js/mathjax-config.js', true)}}'></script>
 	<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
       {%- endif -%}
 
-      {%- if dev_env != 'production' and live_reload %}
+      {%- if dev_env != 'production' and live_reload -%}
 	<script src='{{get_link('/dev/static/livejs/live.js', true)}}></script>
-      {%- endif %}
+      {%- endif -%}
 
       <script src='{{get_link('/share/js/local.js', true)}}'></script>
-    {%- endblock scripts %}
+    {%- endblock scripts -%}
   </body>
 </html>
