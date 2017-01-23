@@ -6,6 +6,7 @@
     )),
     ( 269, 'Vector Analysis', (
 	( 2012, 's', old_teaching ~ '/2011-12/269-vector-analysis/' ),
+	( 2017, 's', '2016-17/269-vector-analysis/' ),
     )),
     ( 272, "Introduction to PDE's", (
 	( 2015, 'f', '2015-16/272-pde' ),
@@ -33,33 +34,38 @@
     ( 881, "Advanced Stochastic Calculus II", (
 	( 2010, 's', old_teaching ~ '/2009-10/881-advanced-scalc2/' ),
     )),
+    ( 944, "Stochastic Calculus for Finance 1", (
+	( 2017, 's', '2016-17/944-scalc-finance1/' ),
+    )),
     ( 0, "Fluids working group", (
 	( 2012, 'f', old_research ~ '/201208-fluids-working-group' ),
 	( 2016, 'f', '2016-17/fluids-wg/' ),
     )),
   ) %}
-{# {% set cur_index = ( (0, 0), (3, 0) ) %} #}
-{% set cur_index = () %}
+{# {% set cur_index = () %} #}
+{% set cur_index = ( (1,1), (8,0) ) %}
 {% macro md_current_courses() %}
   {% for i, j in cur_index %}
-* [{{courses[i][0]}}: {{courses[i][1]}}](teaching/{{courses[i][2][j][2]}})
+  {% set c = courses[i] -%}
+  {% set (cn, ct, cl) = (c[0], c[1], 'teaching/' ~ c[2][j][2]) -%}
+* [{{ ( cn~': ' if cn else '' ) ~ ct}}]({{cl}})
 
   {% endfor %}
 {% endmacro %}
 {% macro md_current_courses_long() %}
-  {% for i, j in cur_index %}
-  {% set (cn, ct) = (courses[i][0], courses[i][1]) %}
-  {% set (cy, cs, cl) = courses[i][2][j] %}
-  {% if cs == 's' %}
-    {% set cs = 'Spring, ' %}
-  {% elif cs == 'f' %}
-    {% set cs = 'Fall, ' %}
-  {% else %}
-    {% set cs = '' %}
-  {% endif %}
-* [{{cn}}: {{ct}} ({{cs ~ cy}})]({{cl}})
+  {% for i, j in cur_index -%}
+    {% set (cn, ct) = (courses[i][0], courses[i][1]) -%}
+    {% set (cy, cs, cl) = courses[i][2][j] -%}
+    {% if cs == 's' -%}
+      {% set cs = 'Spring, ' -%}
+    {% elif cs == 'f' -%}
+      {% set cs = 'Fall, ' -%}
+    {% else -%}
+      {% set cs = '' -%}
+    {% endif -%}
+* [{{ (cn~': ' if cn else '') ~ ct}} ({{cs ~ cy}})]({{cl}})
 
-  {% else %}
+  {% else -%}
 I'm not teaching this semester.
   {% endfor %}
 {% endmacro %}

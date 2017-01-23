@@ -42,6 +42,7 @@ The sequel to this course,
 * [Stochastic Calculus for Finance II](http://www.springer.com/us/book/9780387401010) by Steven Shreve.
   *(We will cover roughly the first five chapters.)*
 
+{#
 ### Tentative Schedule
 
 * **Week 1.** <em class='small'>(There is a makeup class Fri 1/20)</em>
@@ -58,7 +59,7 @@ The sequel to this course,
 * **Week 4.**
     - Midterm reivew
     - Midterm
-
+#}
 
 ## Class Policies
 
@@ -81,8 +82,11 @@ The sequel to this course,
 * Solutions will usually be posted 48 hours after the homework deadline.
   Due to holidays or exams solutions to some assignments might post earlier.
   In this case, you will be notified of this in advance, and late homework **will not** be accepted after solutions have been posted.
-* If you are unable to attend class you may have a friend turn in your homework. Alternately, you may scan and email a *high quality* PDF to your TA. *Photos of your homework will not be accepted.* You **may not** turn in homework by putting it in one of our mailboxes or under our doors.
-* You may collaborate on the homework, however, you may only turn in solutions which you fully understand and have written up independently. Violation of this policy will be treated seriously according to procedures in the [MSCF student handbook](https://www.cmu.edu/mscf/files/2016-2017%20MSCF%20Handbook.pdf).
+* You can choose how you want to turn in your homework: Physically to me, in class, or by scanning it and uploading it on blackboard.
+  Please ensure your scans are a *high quality* PDF, as *photos of your homework will not be accepted.*
+  You **may not** turn in homework by putting it in one of our mailboxes or under our doors.
+* You may collaborate on the homework, however, you may only turn in solutions which you fully understand and have written up independently.
+  Violation of this policy will be treated seriously according to procedures in the [MSCF student handbook](https://www.cmu.edu/mscf/files/2016-2017%20MSCF%20Handbook.pdf).
 
 ### Exams
 
