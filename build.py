@@ -65,7 +65,8 @@ def cleanup_outpath( site ):
 
             if remove:
                 fn = p.join( root, f )
-                site.logger.warn( 'Removed extra file %s' % fn )
+                site.logger.warn( 'Removed extra file %s' % 
+                        p.relpath( fn, site.outpath ) )
                 os.unlink( fn )
 
         for d in dirs:
@@ -143,8 +144,9 @@ class Site( staticjinja.Site ):
 	    dst = p.join(self.outpath, f)
 	    self._ensure_dir(f)
 	    if not ( p.isfile(dst) or p.islink(dst) ) or \
-		    ( os.stat(src).st_mtime - os.stat(dst).st_mtime > 0 ) or \
-		    ( os.stat(src).st_ctime - os.stat(dst).st_ctime > 0 ):
+		    ( os.stat(src).st_mtime - os.stat(dst).st_mtime > 1e-4 ) \
+                    or \
+		    ( os.stat(src).st_ctime - os.stat(dst).st_ctime > 1e-4 ):
 		self.logger.info("Copying %s." % f)
 		#shutil.copyfile(src, dst)
                 if p.islink(src):
