@@ -1,0 +1,128 @@
+# Shibboleth header
+AuthType Shibboleth
+ShibRequireSession On
+ShibApplicationId default
+ShibExportAssertion On
+
+# For any authenticated user. (Need not be a CMU member)
+#Require Shibboleth
+
+# Specific user id
+#require user gi1242@andrew.cmu.edu
+
+# Groups.
+require shib-attr affiliation Faculty@andrew.cmu.edu
+#require shib-attr affiliation Staff@andrew.cmu.edu
+#require shib-attr affiliation Member@andrew.cmu.edu
+
+require user yanx1@andrew.cmu.edu
+require user pkolli@andrew.cmu.edu
+require user dgutman@andrew.cmu.edu
+require user yifans@andrew.cmu.edu
+
+require user jalick@andrew.cmu.edu
+require user tbalavij@andrew.cmu.edu
+require user chengc2@andrew.cmu.edu
+require user xic4@andrew.cmu.edu
+require user fanc1@andrew.cmu.edu
+require user yuqic@andrew.cmu.edu
+require user xcong@andrew.cmu.edu
+require user yunpengc@andrew.cmu.edu
+require user bduanmu@andrew.cmu.edu
+require user jingjinf@andrew.cmu.edu
+require user agarrido@andrew.cmu.edu
+require user tianyoug@andrew.cmu.edu
+require user jingyig1@andrew.cmu.edu
+require user phanagal@andrew.cmu.edu
+require user ahayat@andrew.cmu.edu
+require user yongkanh@andrew.cmu.edu
+require user zhijianh@andrew.cmu.edu
+require user hongxuj@andrew.cmu.edu
+require user zihaoj@andrew.cmu.edu
+require user dkasturi@andrew.cmu.edu
+require user fengyinl@andrew.cmu.edu
+require user fli1@andrew.cmu.edu
+require user yananl@andrew.cmu.edu
+require user yingqil@andrew.cmu.edu
+require user zixianl@andrew.cmu.edu
+require user jingyil3@andrew.cmu.edu
+require user xiaopenl@andrew.cmu.edu
+require user yufanl@andrew.cmu.edu
+require user chaitanp@andrew.cmu.edu
+require user swatip@andrew.cmu.edu
+require user jpekelis@andrew.cmu.edu
+require user guillerp@andrew.cmu.edu
+require user shenchaq@andrew.cmu.edu
+require user crong@andrew.cmu.edu
+require user stagawa@andrew.cmu.edu
+require user yijingt@andrew.cmu.edu
+require user zhongcaw@andrew.cmu.edu
+require user jingxinx@andrew.cmu.edu
+require user dingkunx@andrew.cmu.edu
+require user jxiao1@andrew.cmu.edu
+require user chunxiuy@andrew.cmu.edu
+require user boy1@andrew.cmu.edu
+require user ajyeoh@andrew.cmu.edu
+require user yyi2@andrew.cmu.edu
+require user daweiz@andrew.cmu.edu
+require user jiawenz2@andrew.cmu.edu
+require user xigez@andrew.cmu.edu
+require user junyiz@andrew.cmu.edu
+require user juehengz@andrew.cmu.edu
+require user jandros@andrew.cmu.edu
+require user jbacon@andrew.cmu.edu
+require user maxwellb@andrew.cmu.edu
+require user yutingc1@andrew.cmu.edu
+require user ranc1@andrew.cmu.edu
+require user yaoranc@andrew.cmu.edu
+require user gic@andrew.cmu.edu
+require user ldaum@andrew.cmu.edu
+require user fangzhod@andrew.cmu.edu
+require user kangf1@andrew.cmu.edu
+require user cgomon@andrew.cmu.edu
+require user zhexing@andrew.cmu.edu
+require user derekj@andrew.cmu.edu
+require user yanzhej@andrew.cmu.edu
+require user feierl@andrew.cmu.edu
+require user yezil@andrew.cmu.edu
+require user yuanshel@andrew.cmu.edu
+require user wenyil@andrew.cmu.edu
+require user tengl@andrew.cmu.edu
+require user chaol2@andrew.cmu.edu
+require user xinhel@andrew.cmu.edu
+require user haozunl@andrew.cmu.edu
+require user nlu1@andrew.cmu.edu
+require user rouzhenm@andrew.cmu.edu
+require user yipingm@andrew.cmu.edu
+require user nou@andrew.cmu.edu
+require user zimoo@andrew.cmu.edu
+require user jplatts@andrew.cmu.edu
+require user xuetingq@andrew.cmu.edu
+require user jrunarss@andrew.cmu.edu
+require user shaofeis@andrew.cmu.edu
+require user asemakhi@andrew.cmu.edu
+require user zhuoches@andrew.cmu.edu
+require user yiyangs1@andrew.cmu.edu
+require user hshi1@andrew.cmu.edu
+require user qsun@andrew.cmu.edu
+require user yujuew@andrew.cmu.edu
+require user yuxiw@andrew.cmu.edu
+require user haobow1@andrew.cmu.edu
+require user yaow1@andrew.cmu.edu
+require user ziyouw@andrew.cmu.edu
+require user wenyex@andrew.cmu.edu
+require user pxu1@andrew.cmu.edu
+require user siyuanx@andrew.cmu.edu
+require user yuhaox@andrew.cmu.edu
+require user ningy@andrew.cmu.edu
+require user xiaoche2@andrew.cmu.edu
+require user jinzhuz@andrew.cmu.edu
+require user chenz2@andrew.cmu.edu
+require user xingsiz@andrew.cmu.edu
+require user chuanyiz@andrew.cmu.edu
+require user zhenzhez@andrew.cmu.edu
+require user yongz1@andrew.cmu.edu
+require user hzhong1@andrew.cmu.edu
+require user shansha1@andrew.cmu.edu
+require user manz@andrew.cmu.edu
+require user xzhu3@andrew.cmu.edu
