@@ -1,14 +1,14 @@
 #! /usr/bin/python
-import markdown
-import markdown.extensions.headerid as mdx_headerid
-import os, sys, re, shutil
-from collections import namedtuple
-
+import os, sys
 pwd = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert( 1, os.path.join( pwd, 'ext' ) )
 
-import mdx_math
-import mdx_link
+import re, shutil
+from collections import namedtuple
+
+import markdown
+import markdown.extensions.headerid as mdx_headerid
+import mdx_math, mdx_link
 
 class mdconverter:
     def __init__(self, site):
