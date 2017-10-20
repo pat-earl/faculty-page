@@ -1,7 +1,7 @@
-* [[pdfs/hw-page1.pdf|Assignment 1]]
-{#-
+* [[pdfs/hw-page9.pdf|Current assignment]]
 * [[pdfs/hw-prev.pdf|Previous assignments]]
+* [[sol.md|Solutions]]
+{#-
 * [[pdfs/hw.pdf|Homework]]
-* [[auth/index.md|Solutions]]
 -#}
 

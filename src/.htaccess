@@ -1,4 +1,6 @@
 ## Redirect errors to my own error page
+# Shibboleth unauthenticated errors are 401
+ErrorDocument	401  {{site_prefix}}/403-forbidden.html
 ErrorDocument	403  {{site_prefix}}/403-forbidden.html
 ErrorDocument	404  {{site_prefix}}/404-not-found.html
 

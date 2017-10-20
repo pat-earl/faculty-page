@@ -40,6 +40,8 @@ Choose whatever works best for you.
   <small>(This covers limits, continuity and the differential calculus portion of the class.)</small>
 * *Introduction to Analysis* Maxwell Rosenlicht.
   <small>(Bit old, but cheap Dover book and pretty good.)</small>
+* *Understanding Analysis* by Stephen Abbott.
+  <small>(Good treatment of analysis and one variable differential calculus.)</small>
 * *Principles of Mathematical Analysis* by W. Rudin
   <small>(Excellent "classic" and cheap.)</small>
 
