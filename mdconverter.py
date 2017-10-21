@@ -161,7 +161,8 @@ class mdconverter:
             # Convert meta to markdown, and read the metadata from the result
             self._md_meta.reset()
             self._md_meta.convert( meta )
-            self.meta[rel_name] = self._md_meta.Meta
+            self.meta[rel_name] = \
+                self._md_meta.Meta if hasattr( self._md_meta, 'Meta' ) else {}
             for key in self.meta[rel_name].keys():
                 val = self.meta[rel_name][key]
                 if len( val ) == 1:
