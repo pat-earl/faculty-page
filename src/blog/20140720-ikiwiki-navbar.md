@@ -1,22 +1,23 @@
 title: De-Uglyfying ikiWiki and other horror stories.
 tags: linux, ikiwiki
-summary: I use [ikiWiki](http://ikiwiki.info) to host this (and a few other) wiki's. I love it! It is based on [git](http://git-scm.com/), and hosts pages written in [markdown](http://daringfireball.net/projects/markdown/) and [multimarkdown](http://fletcherpenney.net/multimarkdown/). From a development point of view it is great:
-summary:
-summary: 1. Type documents into [vim](http://www.vim.org/).
-summary: 
-summary: 2. Using [multimarkdown] syntax, and render math with [MathJAX](http://www.mathjax.org/) (setup instructions [[20130930-ikiwiki/010-setup.md|here]]).
-summary: 
-summary: 2. Press `<c-k>` and look at a local preview (setup instructions [[20130930-ikiwiki/020-local-preview.md|here]]).
-summary: 
-summary: 3. Type `git commit && git push` and have it uploaded to the server.
-summary: 
-summary: No annoying (and slow) web-based editors / sign-up forms etc. Great, great great!
-summary: 
-summary: Now for the bad news: [This is the default look](http://ikiwiki.info/). (And the setup is a b\*\*tch.)
-summary: 
-summary: It was written in `html 1.0` designed only for `w3m` users on a teletype. If there's even a remote change one of your users might use a (god forbid) GUI or a browser that is less than 100 years old, then you're going to have to work to theme it.
+summary: These are old instructions on how to theme [ikiWiki](https://ikiwiki.info/) and might not be relelvant anymore. I no longer use [ikiWiki](https://ikiwiki.info/) to maintain my website. This site is generated using [staticjinja](http://staticjinja.readthedocs.org/en/latest/) and a [custom build script](https://gitlab.com/gi1242/sjinja-www).
 
-{{'\n'.join( summary )}}
+<div class='alert alert-warning' markdown='1'>**NOTE:** {{summary}}</div>
+
+I use [ikiWiki](http://ikiwiki.info) to host this (and a few other) wiki's. I love it! It is based on [git](http://git-scm.com/), and hosts pages written in [markdown](http://daringfireball.net/projects/markdown/) and [multimarkdown](http://fletcherpenney.net/multimarkdown/). From a development point of view it is great:
+
+1. Type documents into [vim](http://www.vim.org/).
+
+2. Using [multimarkdown] syntax, and render math with [MathJAX](http://www.mathjax.org/) (setup instructions [[20130930-ikiwiki/010-setup.md|here]]).
+
+2. Press `<c-k>` and look at a local preview (setup instructions [[20130930-ikiwiki/020-local-preview.md|here]]).
+
+3. Type `git commit && git push` and have it uploaded to the server.
+
+No annoying (and slow) web-based editors / sign-up forms etc. Great, great great!
+
+Now for the bad news: [This is the default look](http://ikiwiki.info/).
+It was written in `html 1.0` designed only for `w3m` users on a teletype. If there's even a remote change one of your users might use a (god forbid) GUI or a browser that is less than 100 years old, then you're going to have to work to theme it.
 
 ## Theme
 

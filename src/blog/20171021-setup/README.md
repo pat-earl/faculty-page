@@ -1,4 +1,5 @@
 title: Local Extensions and site specific details
+breadcrumb: /{{dirname}}.md
 
 A general markdown cheat sheet can be found [[markdown.md|here]].
 This file only documents site specific quirks and extensions.
