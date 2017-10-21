@@ -1,0 +1,18 @@
+[submodule "ext/src/Python-Markdown"]
+	path = ext/src/Python-Markdown
+	url = https://github.com/waylan/Python-Markdown.git
+[submodule "ext/src/jinja"]
+	path = ext/src/jinja
+	url = https://github.com/pallets/jinja.git
+[submodule "ext/src/easywatch"]
+	path = ext/src/easywatch
+	url = https://github.com/Ceasar/easywatch.git
+[submodule "ext/src/jinja2_markdown"]
+	path = ext/src/jinja2_markdown
+	url = https://github.com/danielchatfield/jinja2_markdown.git
+[submodule "ext/src/python-markdown-math"]
+	path = ext/src/python-markdown-math
+	url = https://github.com/gi1242/python-markdown-math.git
+[submodule "ext/src/staticjinja"]
+	path = ext/src/staticjinja
+	url = https://github.com/gi1242/staticjinja.git
