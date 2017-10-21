@@ -91,7 +91,7 @@ class Site( staticjinja.Site ):
         if filepath is None:
             filepath = os.path.join(self.outpath, template.name)
 
-        if self.recompile_forced( filepath ) \
+        if self.recompile_forced( src ) or self.recompile_forced( filepath ) \
                 or not os.path.isfile( filepath ) \
                 or os.stat(src).st_mtime - os.stat(filepath).st_mtime > 0:
             return filepath
