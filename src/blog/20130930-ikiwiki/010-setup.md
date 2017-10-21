@@ -35,7 +35,7 @@ So far this seems to be the safest and simplest option.
    This will add a link to the MathJAX script from a CDN.
    (If your wiki's baseurl is an `https` URL, then this plugin will use an https CDN; if not, it will use the regular http CDN.)
 
-3. If you you want to include custom macros, or customize settings (e.g. enabling inline math via \$ ... \$), then create a file called `/javascript/mathjax-config.js`.
+3. If you you want to include custom macros, or customize settings (e.g. enabling inline math via `$...$`), then create a file called `/javascript/mathjax-config.js`.
    Put all your config/macros here as follows:
 
         MathJax.Hub.Config({
