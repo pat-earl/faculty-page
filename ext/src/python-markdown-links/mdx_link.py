@@ -1,17 +1,22 @@
 '''
-Links Extension for Python-Markdown
+WikiLinks Extension for Python-Markdown
 ======================================
 
-This MonkeyPatches [[WikiLinks]] to allow [[link|label]] style links.
-
-build_url now returns an ordered pair (link, label).
+Converts [[WikiLinks]] to relative links.
 
 See <https://pythonhosted.org/Markdown/extensions/wikilinks.html> 
-for documentation on the original extension.
+for documentation.
+
+Original code Copyright [Waylan Limberg](http://achinghead.com/).
 
 All changes Copyright The Python Markdown Project
 
 License: [BSD](http://www.opensource.org/licenses/bsd-license.php) 
+
+MonkeyPatched version:
+
+    * allow [[link|label]] style links.
+    * build_url now returns an ordered pair (link, label).
 
 '''
 
