@@ -7,6 +7,7 @@ layout: md-nav-right.j2
 title       : {{title}}
 dirname     : {{dirname|e}}
 basename    : {{basename|e}}
+filesdir    : {{filesdir|e}}
 name        : {{name}}
 name[:-3]   : {{name[:-3]}}
 1 + 1       : {{1 + 1}}
