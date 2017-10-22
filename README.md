@@ -37,7 +37,13 @@ I use a heavily customized build script (available [here](https://gitlab.com/gi1
 
 * Generate the site by running `build.py`. Use `build.py -h` for options. Pass regexps on the command line to force re-rendering of certain files.
 
-* Read [[{{filesdir}}/README.md|this file]] for site specific extensions / macros, and [[/blog/20171021-setup/markdown.md]] for generic Markdown syntax.
+## Editing instructions
+
+* Generic Markdown syntax can be found [[{{filesdir}}/markdown.md|here]].
+
+* Site specific markdown extensions and macros can be found [[{{filesdir}}/README.md|here]].
+
+* The current layout and structure is described [[{{filesdir}}/layout.md|here]]. (You can ignore this if you plan to just write in Markdown, or want to create your own layouts from scratch.)
 
 ## Bugs
 
