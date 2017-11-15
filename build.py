@@ -201,7 +201,7 @@ class Site( staticjinja.Site ):
 	return True if self.partial_re.search( f ) else False
 
     static_re  = re.compile(
-	    '(?:^|/)static/|\.(:?pdf|jpg|png|svg|eps|ps|txt|sty|mp4|webm)$',
+	    '(?:^|/)static/|\.(:?pdf|jpg|png|svg|eps|ps|txt|sty|mp4|webm|bst)$',
 	    flags=re.I )
     def is_static( self, f ):
         if not self.is_ignored(f) and self.static_re.search( f ):
