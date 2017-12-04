@@ -25,7 +25,8 @@ from __future__ import unicode_literals
 from markdown.extensions import Extension
 import markdown.extensions.wikilinks as wl
 from markdown.util import etree
-import re
+import re, os
+
 
 def build_url(text, base, end):
     """ Build a url from the label, a base, and an end. """
@@ -36,7 +37,7 @@ def build_url(text, base, end):
         label = text[sep+1:]
     else:
         link = re.sub(r'([ ]+_)|(_[ ]+)|([ ]+)', '_', text)
-        label = text
+        label = os.path.basename(text)
 
     return ( base + link + end, label)
 
