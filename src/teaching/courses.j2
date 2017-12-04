@@ -36,6 +36,7 @@
     )),
     ( 944, "Stochastic Calculus for Finance 1", (
 	( 2017, 's', '2016-17/944-scalc-finance1/' ),
+	( 2017, 'f', '2017-18/944-scalc-finance1/' ),
     )),
     ( 0, "Fluids working group", (
 	( 2012, 'f', old_research ~ '/201208-fluids-working-group' ),
@@ -43,7 +44,7 @@
     )),
   ) %}
 {# {% set cur_index = () %} #}
-{% set cur_index = ( (1,1), (8,0) ) %}
+{% set cur_index = ( (8,1), ) %}
 {% macro md_current_courses() %}
   {% for i, j in cur_index %}
   {% set c = courses[i] -%}
