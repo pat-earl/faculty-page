@@ -6,7 +6,7 @@ summary: Many bibliography databases supply a [DOI](http://www.doi.org/) (Digita
 
 ## Using my style file.
 
-If you use `abbrv` as your bibliography style, then the simplest way would be for you to download my [[{{filesdir}}/habbrv.bst|style file]].
+If you use `abbrv` or `alpha` as your bibliography style, then the simplest way would be for you to download my version of these style files: [[{{filesdir}}/habbrv.bst]] or [[{{filesdir}}/halpha.bst]].
 Save it in the same directory as your `tex` file and use it by putting
 
 ```tex
@@ -46,21 +46,21 @@ To avoid duplication, the `url` field will only be displayed if the `doi` field 
 
 ## Sanitizing bibliographic entries with bibtool (optional)
 
-If you want to sanitize your bibliography and convert `url` fields with a `doi` into a `doi` field, then you can use [bibtool](http://gerd-neugebauer.de/software/TeX/BibTool/en/) to fix it.
+If you want to sanitize your bibliography and convert `url` fields with a `doi` into a `doi` field, then you can use [[20140304-bibtool.md|bibtool]] to fix it.
 Put the following in your `~/.bibtoolrc`:
 
     rename.field {url=doiurl if url="doi"}
     rename.field {doiurl=delete if doi="10."}
     delete.field = {delete}
+    rename.field {doiurl=doi}
     rewrite.rule = {doi# "https?://.*doi\.org/\(10\.[0-9]+/.+\)"# "\1"}
 
 and filter your entry through `bibtool`.
 
-
 ## Hacking your own style file.
 
 If you use a different bibliography style, you will have to edit the style file.
-I created [[{{filesdir}}/habbrv.bst|my style file]] by taking the [arXiv's style file](https://arxiv.org/hypertex/bibstyles/habbrv.bst) and making the following changes
+I created [[{{filesdir}}/habbrv.bst]] and [[{{filesdir}}/halpha.bst]] and by taking the arXiv's version of these files (available [here](https://arxiv.org/hypertex/bibstyles/habbrv.bst) and [here](https://arxiv.org/hypertex/bibstyles/halpha.bst)) and making the following changes
 
 {% raw -%}
 ```
