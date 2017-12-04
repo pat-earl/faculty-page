@@ -121,7 +121,13 @@
 	  {%- if c.ta and c.ta.office_hours %} (instructor){%- endif -%}
 	</th>
 	<td>
-	  {{c.office_hours}}
+	  {%- if c.office_hours is string %}
+	    {{c.office_hours}}
+	  {%- else %}
+	    {%- for s in c.office_hours %}
+	      {{s}}{{'<br>' if not loop.last else ''}}
+	    {%- endfor %}
+	  {%- endif %}
 	</td>
       </tr>
       {%- endif -%}
@@ -150,7 +156,15 @@
 	{%- if ta.office_hours -%}
 	  <tr>
 	    <th scope='row'>Office Hours (TA)</th>
-	    <td>{{ta.office_hours}}</td>
+	    <td>
+	      {%- if ta.office_hours is string %}
+		{{ta.office_hours}}
+	      {%- else %}
+		{%- for s in ta.office_hours %}
+		  {{s}}{{'<br>' if not loop.last else ''}}
+		{%- endfor %}
+	      {%- endif %}
+	    </td>
 	  </tr>
 	{%- endif -%}
 	{%- if ta.recitation -%}
@@ -201,7 +215,7 @@
       {%- endfor -%}
     </tbody>
     {%- endif -%}{# }}} #}
-    {%- if c.mailing_list or c.anonymous_list or c.blackboard or c.mediasite or c.links -%}{# Mailing list {{{ #}
+    {%- if c.mailing_list or c.anonymous_list or c.blackboard or c.mediasite or c.links or c.canvas -%}{# Mailing list {{{ #}
       <tbody>
 	{%- if c.mailing_list -%}
 	  <tr>
@@ -228,6 +242,18 @@
 	    <td>
 	      Grades and a discussion board are available
 	      <a href="{{c.blackboard}}">here</a>.
+	    </td>
+	  </tr>
+	{%- endif -%}
+	{%- if c.canvas -%}
+	  <tr>
+	    <th scope='row'>Canvas</th>
+	    <td>
+	      Grades etc. are available
+	      <a href="{{c.canvas}}">here</a>.
+	      <span class='text-warning small'>
+		(Current students only).
+	      </span>
 	    </td>
 	  </tr>
 	{%- endif -%}
