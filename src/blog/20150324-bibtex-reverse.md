@@ -15,7 +15,7 @@ This is most commonly used in CV's. If that's what you're using it for, here are
 
 ## Sorting chronologically
 
-Edit [[{{filesdir}}/habbrvyr.bst|habbrvyr.bst]] and replace ever occurrence of `REVERSE` with `ITERATE`. (See [this thread](http://tex.stackexchange.com/questions/4461/is-there-a-bibtex-style-that-sorts-references-in-reverse-chronological-order) on StackExchange.
+Edit [[{{filesdir}}/habbrvyr.bst]] and replace ever occurrence of `REVERSE` with `ITERATE`. (See [this thread](http://tex.stackexchange.com/questions/4461/is-there-a-bibtex-style-that-sorts-references-in-reverse-chronological-order) on StackExchange.
 
 ## Using different styles.
 
