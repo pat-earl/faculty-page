@@ -95,7 +95,7 @@ class mdconverter:
             label = text[sep+1:]
         else:
             link = re.sub(r'([ ]+_)|(_[ ]+)|([ ]+)', '_', text)
-            label = text
+            label = os.path.basename(text)
 
         # Check if the path exists
         (f, cdir) = self.site.get_cdir( self.current_context, link )
@@ -105,7 +105,7 @@ class mdconverter:
         elif sep < 0:
             # Path exists and no label given.
             label = self.jinja_get_meta( self.current_context,
-                        link, 'title' ) or text
+                        link, 'title' ) or label
 
         return ( self.get_link( self.current_context, link ), label)
 
