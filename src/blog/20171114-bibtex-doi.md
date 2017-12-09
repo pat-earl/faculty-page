@@ -7,21 +7,21 @@ summary: Many bibliography databases supply a [DOI](http://www.doi.org/) (Digita
 ## Using my style file.
 
 If you use `abbrv` or `alpha` as your bibliography style, then the simplest way would be for you to download my version of these style files: [[{{filesdir}}/habbrv.bst]] or [[{{filesdir}}/halpha.bst]].
-Save it in the same directory as your `tex` file and use it by putting
+(Alternately if you want abbreviated author names, and alphabetic labels you can use [[{{filesdir}}/halpha-abbrv.bst]].)
+Save the appropriate file in the same directory as your `tex` file and use it by putting the following in your `tex` file:
 
 ```tex
 \bibliographystyle{habbrv}
 \bibliography{refs}
 ```
 
-in your `tex` file.
-Since some DOIs might contain evil special characters, I strongly recommend you also do
+Replace `habbrv` with `halpha` or `halpha-abbrv` as appropriate.
+Since some DOIs might contain evil special characters, I strongly recommend you use the `doi` package by adding the following to your preamble:
 
 ```tex
 \RequirePackage{doi}
 ```
 
-in your preamble.
 That's it.
 Your arXiv and DOI should appear as clickable links in your PDF.
 Also, if you want to add a custom URL to any of your bibliographic entries, just use the `url` field.
