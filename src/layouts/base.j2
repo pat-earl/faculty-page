@@ -25,7 +25,7 @@
 	{%- set bootstrap_cdn = get_link('/dev/static/bootstrap', true) -%}
       {%- endif -%}
       <link rel="stylesheet"
-	href="{{bootstrap_cdn}}/3.3.7/css/bootstrap{{min}}.css">
+	href="{{bootstrap_cdn}}/4.0.0-beta.2/css/bootstrap{{min}}.css">
       <link rel="stylesheet"
 	href="{{site_prefix}}/share/css/pygments-theme.css">
       <link rel="stylesheet" href="{{site_prefix}}/share/css/local.css">
@@ -63,21 +63,23 @@
       {#- jQuery (necessary for Bootstrap's JavaScript plugins) -#}
       {%- if dev_env == 'production' -%}
 	{%- set min = '.min' -%}
-	{%- set jquery_cdn = 'https://ajax.googleapis.com/ajax/libs/jquery' -%}
+	{%- set jquery_cdn = 'https://code.jquery.com' -%}
+	{%- set popper_cdn = 'https://cdnjs.cloudflare.com/ajax/libs/popper.js' -%}
 	{%- set bootstrap_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap' -%}
       {%- else -%}
 	{%- set min = '' -%}
 	{%- set jquery_cdn = get_link('/dev/static/jquery', true) -%}
+	{%- set popper_cdn = get_link('/dev/static/popper', true) -%}
 	{%- set bootstrap_cdn = get_link('/dev/static/bootstrap', true) -%}
       {%- endif -%}
 
-      <script src="{{jquery_cdn}}/1.12.4/jquery{{min}}.js">
-      </script>
+      <script src="{{jquery_cdn}}/jquery-3.2.1.slim{{min}}.js"></script>
+      <script src="{{popper_cdn}}/1.12.3/umd/popper{{min}}.js"></script>
       {#-
 	Include all compiled plugins (below), or include individual files as
 	needed
       #}
-      <script src="{{bootstrap_cdn}}/3.3.7/js/bootstrap{{min}}.js">
+      <script src="{{bootstrap_cdn}}/4.0.0-beta.2/js/bootstrap{{min}}.js">
       </script>
 
       {%- if needs_mathjax -%}
