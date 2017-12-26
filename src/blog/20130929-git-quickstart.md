@@ -78,7 +78,8 @@ Some of the things you can do are:
 
 You don't have to abandon your favorite cloud storage (like Dropbox, Box, Google Drive, etc.) to use `git`.
 If you use cloud storage to synchronize files on your computer, you can simply run `git` inside your "cloud folder".
-Only caveat: If you run `git` inside your cloud folder, be sure you only use that folder to synchronize between your own personal computers -- don't ever share this folder with a co-author otherwise there will be trouble.
+(Look [[20160406-dropbox-git.md|here]] for instructions on making `git` and `dropbox` work well together.)
+Main caveat: If you run `git` inside your cloud folder, be sure you only use that folder to synchronize between your own personal computers -- don't ever share this folder with a co-author otherwise there will be trouble.
 
 ## Core Concepts
 
