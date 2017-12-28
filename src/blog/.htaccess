@@ -1,0 +1,6 @@
+RewriteEngine   on
+RewriteBase {{site_prefix}}/blog/
+
+# Renamed a few files on the old blog
+RewriteRule ^20130929-git-intro\.html$ 20130929-git-quickstart.html
+RewriteRule ^20130930-nsf-margins\.html$ 20130930-tex-margins.html
