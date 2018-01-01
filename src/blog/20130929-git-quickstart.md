@@ -248,9 +248,10 @@ Once you're a more seasoned user of `git` (on the terminal), here are a few tips
 Here's a way to get colorful logs that are a bit easier to read.
 Put the following in `~/.gitconfig`:
 
+    :::ini
     [alias]
-        lg = log --format='%w(72,0,8)%C(auto)%h%d %s'
-        lga = log --date=short --format='%w(72,0,8)%C(auto)%h %C(green)%cd \
+    lg = log --format='%w(72,0,8)%C(auto)%h%d %s'
+    lga = log --date=short --format='%w(72,0,8)%C(auto)%h %C(green)%cd \
             %<(20,trunc)%aN%C(auto)%d%n%w(72,8,8)%s'
 
 Now `git lg` will show you a brief log, and `git lga` will show you a brief log with authors.

@@ -13,12 +13,12 @@ The 3Mbps of traffic barely puts a dent on my CPU usage.
 
 ## macvtap Setup
 
-Open `virt-manager` and set the following:
+Run `virt-manager` and do the following:
 
-    Add Hardware --> Network
-    Host device ethXX : macvtap
-    Device Model: virtio
-    Source Mode: VEPA
+* Select *Add Hardware* / *Network*.
+* Set *Network source* to  *Host device ethXX : macvtap*.
+* Set *Source Mode* to *VEPA*
+* Set *Device Model* to *virtio*.
 
 Here `ethXX` is your host machines outgoing interface.
 
@@ -53,16 +53,11 @@ I worked around this by creating a second `NAT` interface for the guest, and ass
    Edit `/etc/dhcp/dhclient.conf` and add the following at the end:
 
         :::cfg
-        # eth1 is only for communication with VM host, so don't request the
-        # options routers, domain-name-servers, domain-name, domain-search,
-        # dhcp6.name-servers and dhcp6.domain-search.
+        # eth1 is only for communication with VM host, so don't request routers, etc.
         interface "eth1" {
             request subnet-mask, broadcast-address, time-offset, host-name,
-                    dhcp6.fqdn, dhcp6.sntp-servers, netbios-name-servers,
-                    netbios-scope, interface-mtu,
-                    rfc3442-classless-static-routes;
+                    interface-mtu, rfc3442-classless-static-routes;
         }
-
    When your interfaces come up type `ip route show` and confirm that your default route uses `eth0` and not `eth1`.
 
 Now you should have transparent host/guest access on all machines.

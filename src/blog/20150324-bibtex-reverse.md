@@ -8,6 +8,7 @@ If you'd like to list your references sorted in reverse chronological order do t
 
 * Include your bibliography as follows:
 
+        :::tex
         \bibliographystyle{habbrvyr}
         \bibliography{refs}
 
@@ -26,4 +27,5 @@ A similar trick should work for your your favourite style file.
 
 The references show up in a section called "References". To change the section title, use
 
+    :::tex
     \renewcommand{\refname}{Selected Publications} 

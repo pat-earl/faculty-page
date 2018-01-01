@@ -10,16 +10,24 @@ Here are some useful tips I found when installing [WordPress](http://wordpress.o
 
 * In `/etc/apache2/sites-available/wp`, make sure the Alias
 
+        :::apache
         Alias /wp/wp-content /var/lib/wordpress/wp-content
 
     comes before
 
+        :::apache
         Alias /wp /usr/share/wordpress
+
+* In `/etc/wordpress/config-SITENAME.php` add
+
+        :::php
+        define('FORCE_SSL_ADMIN', true);
 
 * If you bork the MySQL database accidentally, and need to fix things [install phpmyadmin](http://wiki.debian.org/LaMp).
 
 * If you trust users and want to increase the file upload size, add this to `/etc/wordpress/htaccess`:
 
+        :::apache
         php_value upload_max_filesize 20M
         php_value post_max_size 40M
 
@@ -28,31 +36,9 @@ Here are some useful tips I found when installing [WordPress](http://wordpress.o
 [Absolute Privacy](http://www.johnkolbert.com/portfolio/wp-plugins/absolute-privacy)
 : Moderated user registrations, and only logged in users can access content.
 
-[Responsive Lightbox]
-: Simple javascript image slideshows.
-  **WARNING:** Stay away from the [handy lightbox] plugin.
-  It [spies on you](http://wordpress.org/support/view/plugin-reviews/wp-handy-lightbox).
-  However, it is nicer than [Responsive Lightbox], so I commented out the "spyware" parts of the code.
-  Get it [here](http://wiki.math.cmu.edu/gitweb-pub/?p=handy-lightbox.git).
-
 [Peter's Login Redirect]
 : Fix brain malfunction with WordPress design.
   Redirect users (esp. subscribers) to the blog after login, and not the admin page!
-
-[Resize images before upload](https://github.com/WPsites/Resize-images-before-upload)
-: Have your browser resize images before uploading.
-  Reduces server load, upload times etc.
-  Why isn't this a feature?
-
-[WordPress HTTPS]
-: I wanted the login form use SSL, and everything else use HTTP.
-  I couldn't make this work, unfortunately.
-  However, I finally made got it to do all admin URL's https, and everything else http.
-  Here's what I did:
-
-  1. In the HTTPS settings page, select *Force SSL Administration* and *Force SSL Exclusively*.
-  
-  2. This should be enough, in theory. But I used [Peter's Login Redirect] to  ensure that users are redirected to the appropriate `http` (and not `https`) after logging in or logging out.
 
 ## Theme
 
@@ -95,11 +81,7 @@ All my theme customizations are [here](http://wiki.math.cmu.edu/gitweb-pub/?p=cu
 
 * Enable the theme's retina support (or you won't be able to edit images).
 
-* Disable the theme's lightbox effects if you're using the a different lightbox plugin.
-
-[handy lightbox]: http://wordpress.org/extend/plugins/wp-handy-lightbox/
-
-[WordPress HTTPS]: http://mvied.com/projects/wordpress-https/
+* Disable the theme's lightbox effects if you're using the different lightbox plugin.
 
 [Peter's Login Redirect]: http://www.theblog.ca/wplogin-redirect
 

@@ -22,6 +22,7 @@ can now mount it as a local folder and copy files back and forth.
 
 3. Edit `/etc/fstab` and add the line
 
+        :::shell
         # BOX WebDAV
         https://dav.box.com/dav /home/gautam/net/box davfs user,rw,noauto 0 0
 
