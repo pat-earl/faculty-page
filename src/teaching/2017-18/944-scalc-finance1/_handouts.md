@@ -10,5 +10,7 @@
 * [[auth/2015-16-midterms.pdf|2015-16 midterms with solutions]]
 * Last years [[pdfs/2016-midterm.pdf|midterm]] and [[auth/2016-midterm-sol.pdf|solutions]].
 * Your [[pdfs/midterm.pdf|midterm]] and [[auth/midterm-sol.pdf|solutions]].
+* Last years [[pdfs/2016-final.pdf|final]] and [[auth/2016-final-sol.pdf|solutions]].
+* Your [[pdfs/final.pdf|final]] and [[auth/final-sol.pdf|solutions]].
 * [Stochastic Calculus Self Study](https://tepper.instructure.com/courses/43672)
 * [[../../2016-17/944-scalc-finance1|Last years website]]

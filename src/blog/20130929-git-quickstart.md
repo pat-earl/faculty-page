@@ -22,21 +22,20 @@ For</span><span style="color:green;">for</span> $x = (q,\xi) \in \CM$, <span sty
 </pre>
 
 Or inspect changes line by line:
-```
-diff --git a/refs.bib b/refs.bib
-index 349c0c3..65b8321 100644
---- a/refs.bib
-+++ b/refs.bib
-@@ -5556,7 +5585,7 @@
-   pages                = {2636--2647}
- }
 
--@Book{           Rozovski90,
-+@Book{           Rozovskii90,
-   author       = {Rozovski{\u\i}, B. L.},
-   title        = {Stochastic evolution systems},
-   series       = {Mathematics and its Applications (Soviet Series)},
-```
+    diff --git a/refs.bib b/refs.bib
+    index 349c0c3..65b8321 100644
+    --- a/refs.bib
+    +++ b/refs.bib
+    @@ -5556,7 +5585,7 @@
+       pages                = {2636--2647}
+     }
+
+    -@Book{           Rozovski90,
+    +@Book{           Rozovskii90,
+       author       = {Rozovski{\u\i}, B. L.},
+       title        = {Stochastic evolution systems},
+       series       = {Mathematics and its Applications (Soviet Series)},
 
 Or as a compiled PDF using [latexdiff](http://www.ctan.org/tex-archive/support/latexdiff) (setup instructions are [[20140301-git-latexdiff.md|here]]):
 
@@ -78,7 +77,8 @@ Some of the things you can do are:
 
 You don't have to abandon your favorite cloud storage (like Dropbox, Box, Google Drive, etc.) to use `git`.
 If you use cloud storage to synchronize files on your computer, you can simply run `git` inside your "cloud folder".
-Only caveat: If you run `git` inside your cloud folder, be sure you only use that folder to synchronize between your own personal computers -- don't ever share this folder with a co-author otherwise there will be trouble.
+(Look [[20160406-dropbox-git.md|here]] for instructions on making `git` and `dropbox` work well together.)
+Main caveat: If you run `git` inside your cloud folder, be sure you only use that folder to synchronize between your own personal computers -- don't ever share this folder with a co-author otherwise there will be trouble.
 
 ## Core Concepts
 
@@ -90,6 +90,7 @@ Only caveat: If you run `git` inside your cloud folder, be sure you only use tha
 
 2. Introduce yourself to git. If your GUI client doesn't let you do this directly, open a terminal and type:
 
+        :::shell
         git config --global user.name 'Your Name'
         git config --global user.email you@math.youruniv.edu
 
@@ -247,12 +248,11 @@ Once you're a more seasoned user of `git` (on the terminal), here are a few tips
 Here's a way to get colorful logs that are a bit easier to read.
 Put the following in `~/.gitconfig`:
 
-```
-[alias]
+    :::ini
+    [alias]
     lg = log --format='%w(72,0,8)%C(auto)%h%d %s'
     lga = log --date=short --format='%w(72,0,8)%C(auto)%h %C(green)%cd \
-        %<(20,trunc)%aN%C(auto)%d%n%w(72,8,8)%s'
-```
+            %<(20,trunc)%aN%C(auto)%d%n%w(72,8,8)%s'
 
 Now `git lg` will show you a brief log, and `git lga` will show you a brief log with authors.
 The outputs look like this:
@@ -306,8 +306,9 @@ The trick to using `git` in this situation is to find the commit the co-author b
 
 4. Install the post-commit hook from `git-ident`:
 
-        $ cd .git/hooks
-        $ ln -s /path/to/git-ident/post-commit
+        :::shell
+        cd .git/hooks
+        ln -s /path/to/git-ident/post-commit
 
 Now edit and commit your changes as you normally would.
 When you commit your changes, you'll notice that the `$Id$` token has been replaced with `$Id: 987547... $`.
@@ -322,11 +323,12 @@ If this is what `HEAD` points to, then he made changes based on your latest vers
 If not, he made changes based on an earlier version (say `ffffff`).
 To merge it use
 
-    $ git checkout -b coauthor-v1 ffffff
-    $ # Save his file over yours
-    $ git commit --author 'Co Author <who@doesnt.use.git>'
-    $ git checkout master
-    $ git merge coauthor-v1
+    :::shell
+    git checkout -b coauthor-v1 ffffff
+    # Save his file over yours
+    git commit --author 'Co Author <who@doesnt.use.git>'
+    git checkout master
+    git merge coauthor-v1
 
 This way you keep the whole history in your git repository, and are guaranteed that your co-author hasn't accidentally used an old version and overwritten your changes.
 

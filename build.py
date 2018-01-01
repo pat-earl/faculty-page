@@ -72,7 +72,11 @@ def cleanup_outpath( site ):
             dname = p.join( root, d)
             rname = p.relpath( dname, site.outpath )
             sname = p.join( site.searchpath, rname )
-            smode = os.stat(sname).st_mode
+            try:
+                smode = os.stat(sname).st_mode
+            except OSError, e:
+                if e.errno == 2: continue # Source deleted
+                else: raise
             if smode != os.stat(dname).st_mode:
                 site.logger.warn( 'Updating permissions of %s' % rname )
                 os.chmod( dname, smode )

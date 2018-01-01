@@ -44,9 +44,9 @@ It's just which interface you prefer using.
 This is a little simpler than the other way around.
 
 1. Install an FTP server on your Android device.
-   There are many available: I use [FTP Server].
+   There are many free ones available.
 
-2. Open [FTP Server] go to *Settings* and set *Network Interface* to *all*.
+2. If your FTP server app allows you to choose the network interface, set it to the USB network adapter.
 
 3. **Change the default port, username, password, and DISABLE anonymous logins.**
 
@@ -56,7 +56,7 @@ This is a little simpler than the other way around.
 
         ftp -P <port> <user>@<IP.address>
 
-5. **Important:** You're going to see multiple IP addresses for the server.
+5. **Important:** You might see multiple IP addresses for the server.
    Be sure to connect to the one corresponding to the USB network.
    You can figure this out by finding out the IP address of `usb0` on your PC.
    FTP is completely insecure.
@@ -74,9 +74,9 @@ I set it up so that:
 
 1. FTP is only accessible through the USB network interface.
 
-3. You have access to all your local files through ftp.
+2. You have access to all your local files through ftp.
 
-2. You to log in with a password that is different from your login password, so your precious desktop password isn't cached on an insecure phone (or accidentally sent in clear text over the internet).
+3. You to log in with a password that is different from your login password, so your precious desktop password isn't cached on an insecure phone (or accidentally sent in clear text over the internet).
 
 If you're not as paranoid, the setup is a little easier.
 Here are instructions for the paranoid that will work on Debian (and should also work on Ubuntu/others).
@@ -87,6 +87,7 @@ Here are instructions for the paranoid that will work on Debian (and should also
 
 2. Make `/etc/pam.d/vsftpd` look like the following:
 
+        :::shell
         # Standard behaviour for ftpd(8).
         auth	required	pam_listfile.so item=user sense=deny file=/etc/ftpusers onerr=succeed
 
@@ -100,6 +101,7 @@ Here are instructions for the paranoid that will work on Debian (and should also
 3. You need to put a username and password-hash in `/etc/vsftpd.passwd`.
    To find the password hash, run:
 
+        :::shell
         root> perl -e '$salt=q($1$).int(rand(1e8)); print "password: ";
             chomp($passwd=<STDIN>); print crypt($passwd,$salt),"\n"'
         password: helloworld
@@ -110,6 +112,7 @@ Here are instructions for the paranoid that will work on Debian (and should also
 
     Now edit `/etc/vsftpd.passwd` and put the following in it:
 
+        :::yaml
         username:$1$88946554$UjFicyn04d43zuF2ojx0L0
 
     where *username* is the name of the **local user on your machine**.
@@ -117,6 +120,7 @@ Here are instructions for the paranoid that will work on Debian (and should also
 
 4. Edit `/etc/vsftpd.conf` and set the following:
 
+        :::cfg
         anonymous_enable=NO
         write_enable=YES
         local_umask=022
@@ -130,6 +134,7 @@ Here are instructions for the paranoid that will work on Debian (and should also
 
     After that (and certainly before the `COMMIT` line) add the lines:
 
+        :::shell
         # Accept ftp only over usb
         -A ufw-before-input -p tcp --dport 21 ! -i usb+ -j REJECT
 
@@ -137,14 +142,14 @@ Here are instructions for the paranoid that will work on Debian (and should also
 
 6. Test it out:
 
+        :::shell
         root> service vsftpd restart
         user> ftp user@localhost
 
     You should be able to log in with the password you typed above (instead of *helloworld*) and **not** your regular password.
 
 7. If everything worked fine so far, then you can try connecting from your Android device.
-   Install [ES File Explorer] (if you haven't done so already) and open the *Network / FTP* menu.
-   Add a new connection, and select *ftp*.
+   Install an FTP client on your Android device and add a new FTP connection.
    Use the IP address of your desktop's USB interface, your local username, and the password you just created.
    After this you should be able to drag and drop files from your PC as needed.
 
@@ -160,9 +165,8 @@ I strongly recommend setting this up. It's easy, and super useful.
 
 1. Set up an [SSH server](https://wiki.debian.org/SSH) on your Desktop. (You probably have this done already.)
 
-2. Install [ES File Explorer] on your Android device.
-
-3. Navigate to *ES File Explorer -> Network -> SFTP* and enter your login information.
+2. Install an SFTP client on your Android device.
+   Create a new connection and enter your login information.
 
 4. For better security, generate an ssh key on your desktop, copy it over to your phone and use it.
    This way your precious UNIX password is not stored in clear text on the android device.
@@ -175,9 +179,5 @@ easy to do: Just go to the Google play store and install any one of many *SSH
 Servers*. Start it and follow the instructions.
 
 [mtp-tools]: http://libmtp.sourceforge.net/
-
-[ES File Explorer]: https://play.google.com/store/apps/details?id=com.estrongs.android.pop
-
-[FTP Server]: https://play.google.com/store/apps/details?id=com.theolivetree.ftpserver
 
 [ufw]: https://wiki.ubuntu.com/UncomplicatedFirewall

@@ -13,12 +13,12 @@ The 3Mbps of traffic barely puts a dent on my CPU usage.
 
 ## macvtap Setup
 
-Open `virt-manager` and set the following:
+Run `virt-manager` and do the following:
 
-    Add Hardware --> Network
-    Host device ethXX : macvtap
-    Device Model: virtio
-    Source Mode: VEPA
+* Select *Add Hardware* / *Network*.
+* Set *Network source* to  *Host device ethXX : macvtap*.
+* Set *Source Mode* to *VEPA*
+* Set *Device Model* to *virtio*.
 
 Here `ethXX` is your host machines outgoing interface.
 
@@ -36,15 +36,29 @@ I worked around this by creating a second `NAT` interface for the guest, and ass
    It will pop up an XML file with basic network configuration.
    Find the `<dhcp>` section, and below the `<range start... />` line add the line
 
-	    <host mac='guestmac' name='guestname' ip='192.168.122.2' />
+        :::xml
+        <host mac='guestmac' name='guestname' ip='192.168.122.2' />
 
 4. Edit `/etc/hosts` on the host, and add the line
 
-	    192.168.122.2   guest.host.name
+        192.168.122.2   guest.host.name
 
 5. Edit `/etc/hosts` on the guest, and add the line
 
-	    192.168.122.1   host.host.name
+        192.168.122.1   host.host.name
+
+6. Make sure that the private network doesn't get used for internet access.
+   (If it does, your VM will be able to access the internet, but will **not** be reachable from the internet.)
+   Let's assume your public (macvtap) interface is called `eth0`, and the private (NAT) interface is called `eth1`.
+   Edit `/etc/dhcp/dhclient.conf` and add the following at the end:
+
+        :::cfg
+        # eth1 is only for communication with VM host, so don't request routers, etc.
+        interface "eth1" {
+            request subnet-mask, broadcast-address, time-offset, host-name,
+                    interface-mtu, rfc3442-classless-static-routes;
+        }
+   When your interfaces come up type `ip route show` and confirm that your default route uses `eth0` and not `eth1`.
 
 Now you should have transparent host/guest access on all machines.
 (Accessing the guest via an IP address still won't work though; you'll have to use host-names.)

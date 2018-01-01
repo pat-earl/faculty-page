@@ -1,7 +1,5 @@
-title: Source Code and Setup Instructions for this site.
-summary: I recently rewrote my website using a static site generator. [This](https://gitlab.com/gi1242/sjinja-www) is the source code for [my website](http://www.math.cmu.edu/~gautam), and here are the features / setup-instructions.
 
-{{summary}}
+I recently rewrote my website using a static site generator. [This](https://gitlab.com/gi1242/sjinja-www) is the source code for [my website](http://www.math.cmu.edu/~gautam), and here are the features / setup-instructions.
 
 ## Description
 
@@ -37,15 +35,4 @@ I use a heavily customized build script (available [here](https://gitlab.com/gi1
 
 * Generate the site by running `build.py`. Use `build.py -h` for options. Pass regexps on the command line to force re-rendering of certain files.
 
-## Editing instructions
-
-* Generic Markdown syntax can be found [[{{filesdir}}/markdown.md|here]].
-
-* Site specific markdown extensions and macros can be found [[{{filesdir}}/README.md|here]].
-
-* The current layout and structure is described [[{{filesdir}}/layout.md|here]]. (You can ignore this if you plan to just write in Markdown, or want to create your own layouts from scratch.)
-
-## Bugs
-
-* 2017-10-21: Continuously watching for changes with `-w` isn't perfect. Any file you change is always re-rendered, but the dependencies and changes to meta-data are ignored. I'm not interested in fixing this. Re-running the build script (without `-w`) renders everything correctly.
-
+* Editing instructions and other details can be found [here](http://www.math.cmu.edu/~gautam/sj/blog/20171021-setup.html).

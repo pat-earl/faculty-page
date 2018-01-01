@@ -35,6 +35,24 @@ LaTeX can be used between `$` signs:
 * Links beginning with `auth/` will be redirected to `https://site_surl/dirname/auth/...`.
   (This is to avoid Shibboleth woes.)
 
+## Syntax highlighting code
+
+The [code highlight](https://pythonhosted.org/Markdown/extensions/code_hilite.html) extension is enabled.
+Code blocks should be automatically highlighted.
+Begin the code block with `:::language` to specify the language.
+For instance
+
+    :::text
+    :::html
+    <p class='lead'>This is <em>html</em></p>
+
+renders as
+
+    :::html
+    <p class='lead'>This is <em>html</em></p>
+
+You can also use the fenced code blocks <code>\```...\```</code> style.
+
 ## Jinja2 commands
 
 All markdown files are rendered by `Jinja2` before being passed to a

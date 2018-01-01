@@ -22,14 +22,15 @@ This can be annoying (and disastrous). A better alternative is to set up your
 shared Dropbox folder to be a git repository, but store the git repository (the
 `.git/` folder) in a separate (non-dropbox) directory.
 
+    :::console
     $ cd ~/Dropbox/shared/foo
     $ dropbox exclude add .git
-    $ mkdir -p $HOME/.separate-gitroots/shared.git
-    $ git init --separate-git-dir=$HOME/.separate-gitroots/shared.git
+    $ mkdir -p $HOME/.separate-gitroots
+    $ git init --separate-git-dir=$HOME/.separate-gitroots/foo.git
 
-This creates the git repository in `$HOME/foo/.dropbox.git` instead of in
-`./.git/` as is customary. Now `./.git` will be a plain text file (not folder)
-that contains the location of the true git repository.
+This creates the git repository in `$HOME/.separate-gitroots/foo.git` instead
+of in `./.git/` as is customary. Now `./.git` will be a plain text file (not
+folder) that contains the location of the `foo.git` directory above.
 
 Obviously `./.git` will be truly useless to anyone else sharing your Dropbox
 folders,  so I recommend excluding it from the list of synchronized files. The
@@ -46,19 +47,16 @@ you're doing.)
 
 ### Setting up the repositories
 
-To set up a local copy do:
+If you have a remote git repository located at `git@yourserver.com:foo`, then
+to set up a local copy, first clone your repository into `~/foo`. Type:
 
+    :::console
     $ git clone git@yourserver.com:foo ~/foo
 
-assuming `git@yourserver.com:foo` is the URL of your project. Alternately, if
-you already have some work in `~/foo`, you can
+or use your favorite GUI client.
+Now add your git remote into Dropbox:
 
-    $ cd ~/foo
-    $ git init
-    $ git remote add origin git@yourserver.com:foo
-
-Next add this remote into Dropbox:
-
+    :::console
     $ cd ~/Dropbox/shared/foo
     $ git remote add origin git@yourserver.com:foo
 
@@ -67,6 +65,7 @@ Next add this remote into Dropbox:
 When a collaborator make changes in Dropbox, you have to commit and push it
 for them, and pull it into your local copy.
 
+    :::console
     $ cd ~/Dropbox/shared/foo
     $ git commit --author 'Coauthor <who@doesnt.use.git>' && git push
     $ cd ~/foo
@@ -80,6 +79,7 @@ above.
 
 When you make changes:
 
+    :::console
     $ cd ~/foo
     $ git commit && git push
     $ cd ~/Dropbox/shared/foo
@@ -89,6 +89,7 @@ When you make changes:
 
 No problem. Git handles it painlessly.
 
+    :::console
     $ cd ~/Dropbox/shared/foo
     $ git commit --author 'Coauthor <who@doesnt.use.git>' && git push
     $ cd ~/foo
@@ -109,6 +110,7 @@ and merge it as follows.
 
 1. Commit and push your collaborators changes to a new branch
 
+        :::console
         $ cd ~/Dropbox/shared/foo
         $ git checkout -b coauthor-b1
         $ git commit --author Coauthor -a
@@ -117,6 +119,7 @@ and merge it as follows.
 2. Merge your co-authors changes in your local copy. (Or rebase it, if you
    know what you are doing.)
 
+        :::console
         $ cd ~/foo
         $ git commit -a
         $ git fetch origin coauthor-b1
@@ -125,6 +128,7 @@ and merge it as follows.
 
 3. Pull them in the shared Dropbox folder.
 
+        :::console
         $ cd ~/Dropbox/shared/foo
         $ git checkout master
         $ git pull
