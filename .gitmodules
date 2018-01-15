@@ -19,3 +19,9 @@
 [submodule "ext/src/markupsafe"]
 	path = ext/src/markupsafe
 	url = https://github.com/pallets/markupsafe.git
+[submodule "ext/src/python-humanfriendly"]
+	path = ext/src/python-humanfriendly
+	url = https://github.com/xolox/python-humanfriendly.git
+[submodule "ext/src/python-coloredlogs"]
+	path = ext/src/python-coloredlogs
+	url = https://github.com/xolox/python-coloredlogs.git
