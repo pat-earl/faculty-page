@@ -36,14 +36,15 @@ Here's how to achieve the above.
 Edit `~/.gitconfig` and add the following:
 
     [alias]
-        wdiff = diff --color-words --ignore-all-space
-        ldiff = difftool -y -t latex
+    wdiff = diff --color-words --ignore-all-space
+    ldiff = difftool -y -t latex
 
     [difftool.latex]
-        cmd = latexdiff "$LOCAL" "$REMOTE"
+    cmd = latexdiff "$LOCAL" "$REMOTE"
 
 Now typing
 
+    :::shell
     git ldiff HEAD~1 > diff.tex
 
 runs [latexdiff] and puts the differences in `diff.tex`.
@@ -60,11 +61,11 @@ If the files are all independent, then you can solve both these problems easily.
 Put the following in `~/.gitconfig`:
 
     [alias]
-        wdiff = diff --color-words --ignore-all-space
-        ldiff = difftool -y -t latex
+    wdiff = diff --color-words --ignore-all-space
+    ldiff = difftool -y -t latex
 
     [difftool.latex]
-        cmd = ldiff "$LOCAL" "$REMOTE" "$MERGED"
+    cmd = ldiff "$LOCAL" "$REMOTE" "$MERGED"
 
 Next create an executable file `ldiff` somewhere in your path with the following:
 

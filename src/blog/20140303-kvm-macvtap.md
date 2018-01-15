@@ -17,10 +17,9 @@ Run `virt-manager` and do the following:
 
 * Select *Add Hardware* / *Network*.
 * Set *Network source* to  *Host device ethXX : macvtap*.
+  (Here `ethXX` is your host machines outgoing interface.)
 * Set *Source Mode* to *VEPA*
 * Set *Device Model* to *virtio*.
-
-Here `ethXX` is your host machines outgoing interface.
 
 ## Communication with the host machine.
 
@@ -52,7 +51,7 @@ I worked around this by creating a second `NAT` interface for the guest, and ass
    Let's assume your public (macvtap) interface is called `eth0`, and the private (NAT) interface is called `eth1`.
    Edit `/etc/dhcp/dhclient.conf` and add the following at the end:
 
-        :::cfg
+        :::shell
         # eth1 is only for communication with VM host, so don't request routers, etc.
         interface "eth1" {
             request subnet-mask, broadcast-address, time-offset, host-name,

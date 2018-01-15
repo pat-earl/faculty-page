@@ -25,8 +25,11 @@ shared Dropbox folder to be a git repository, but store the git repository (the
     :::console
     $ cd ~/Dropbox/shared/foo
     $ dropbox exclude add .git
+    Excluded:
+    .git
     $ mkdir -p $HOME/.separate-gitroots
     $ git init --separate-git-dir=$HOME/.separate-gitroots/foo.git
+    Initialized empty Git repository in /home/gautam/.separate-gitroots/foo.git
 
 This creates the git repository in `$HOME/.separate-gitroots/foo.git` instead
 of in `./.git/` as is customary. Now `./.git` will be a plain text file (not
@@ -47,18 +50,41 @@ you're doing.)
 
 ### Setting up the repositories
 
-If you have a remote git repository located at `git@yourserver.com:foo`, then
-to set up a local copy, first clone your repository into `~/foo`. Type:
-
-    :::console
-    $ git clone git@yourserver.com:foo ~/foo
-
-or use your favorite GUI client.
-Now add your git remote into Dropbox:
+Let's assume you have a git server and created an empty repository on it at `git@yourserver.com:foo`.
+We first add this remote into Dropbox, and put your shared files in it:
 
     :::console
     $ cd ~/Dropbox/shared/foo
     $ git remote add origin git@yourserver.com:foo
+    $ git add paper.tex ... # (or use git add -Av .)
+    $ git commit --author 'Coauthor <who@doesnt.use.git>'
+    [master a484503] Blah blah (commit subject)
+     1 file changed, 10 insertions(++++++)
+    $ git push -u origin master
+    Branch master set up to track remote branch master from origin.
+    Counting objects: 5, done.
+    Delta compression using up to 4 threads.
+    Compressing objects: 100% (5/5), done.
+    Writing objects: 100% (5/5), 6.80 KiB | 0 bytes/s, done.
+    Total 5 (delta 3), reused 0 (delta 0)
+    To yourserver.com/foo
+       9996b2d..f9d5e30  master -> master    
+
+Now set up a local copy by cloning this repository into `~/foo`. Type:
+
+    :::console
+    $ git clone git@yourserver.com:foo ~/foo
+    Cloning into 'foo'...
+    remote: Counting objects: 545, done.
+    remote: Compressing objects: 100% (542/542), done.
+    remote: Total 545 (delta 341), reused 0 (delta 0)
+    Receiving objects: 100% (545/545), 691.49 KiB | 0 bytes/s, done.
+    Resolving deltas: 100% (341/341), done.
+
+or use your favorite GUI client.
+You should now have your work in the remote repository `git@yourserver.com`, one clone in Dropbox (for your coauthors to edit) and one local clone in `~/foo` for you to edit.
+(Of course, if you had local files you were already working on in `~/foo`, you could have done the `git remote add` in `~/foo`, committed, pushed and then pulled in Dropbox instead.)
+
 
 ### Committing changes
 
@@ -67,9 +93,24 @@ for them, and pull it into your local copy.
 
     :::console
     $ cd ~/Dropbox/shared/foo
-    $ git commit --author 'Coauthor <who@doesnt.use.git>' && git push
+    $ git commit -a --author 'Coauthor <who@doesnt.use.git>'
+    [master a484503] Blah blah (commit subject)
+     1 file changed, 10 insertions(++++++)
+    $ git push
+    Counting objects: 5, done.
+    Delta compression using up to 4 threads.
+    Compressing objects: 100% (5/5), done.
+    Writing objects: 100% (5/5), 6.80 KiB | 0 bytes/s, done.
+    Total 5 (delta 3), reused 0 (delta 0)
+    To yourserver.com/foo
+       9996b2d..f9d5e30  master -> master    
     $ cd ~/foo
     $ git pull
+    Updating 9996b2d..f9d5e30
+    Fast-forward
+     paper.tex        |  141 +++---
+     refs.bib         |    5 +-
+     3 files changed, 140 insertions(+), 6 deletions(-)
 
 After the first commit as your co-author, you can just use `--author Coauthor`
 without typing the whole email address every time. Also, if you have only one
@@ -81,17 +122,31 @@ When you make changes:
 
     :::console
     $ cd ~/foo
-    $ git commit && git push
+    $ git commit -a && git push
+    [master a484503] Blah blah (commit subject)
+     1 file changed, 10 insertions(++++++)
+    Counting objects: 5, done.
+    Delta compression using up to 4 threads.
+    Compressing objects: 100% (5/5), done.
+    Writing objects: 100% (5/5), 6.80 KiB | 0 bytes/s, done.
+    Total 5 (delta 3), reused 0 (delta 0)
+    To yourserver.com/foo
+       9996b2d..f9d5e30  master -> master    
     $ cd ~/Dropbox/shared/foo
     $ git pull
+    Updating 9996b2d..f9d5e30
+    Fast-forward
+     paper.tex        |  141 +++---
+     refs.bib         |    5 +-
+     3 files changed, 140 insertions(+), 6 deletions(-)
 
 ### When you and your co-author simultaneously made changes
 
-No problem. Git handles it painlessly.
+No problem. Git handles it painlessly. (I'm omitting the console output of git below for brevity.)
 
     :::console
     $ cd ~/Dropbox/shared/foo
-    $ git commit --author 'Coauthor <who@doesnt.use.git>' && git push
+    $ git commit -a --author Coauthor && git push
     $ cd ~/foo
     $ git commit -a
     $ git pull --rebase
