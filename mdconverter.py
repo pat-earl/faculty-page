@@ -1,4 +1,3 @@
-#! /usr/bin/python
 import os, sys
 pwd = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert( 1, os.path.join( pwd, 'ext' ) )
@@ -125,7 +124,7 @@ class mdconverter:
 
         r.toc = self.md.toc
         r.Meta = self.md.Meta
-        for key in r.Meta.keys():
+        for key in list(r.Meta.keys()):
             val = r.Meta[key]
             if len( val ) == 1:
                 r.Meta[key] = val[0]
@@ -148,7 +147,7 @@ class mdconverter:
 
         real_fname = p.realpath( p.join( cdir, filename ) )
         rel_name = p.relpath( real_fname, site.searchpath )
-        if not self.meta.has_key( rel_name ):
+        if rel_name not in self.meta:
             # Read until the first blank line to get the meta-data
             meta = ""
             
@@ -163,7 +162,7 @@ class mdconverter:
             self._md_meta.convert( meta )
             self.meta[rel_name] = \
                 self._md_meta.Meta if hasattr( self._md_meta, 'Meta' ) else {}
-            for key in self.meta[rel_name].keys():
+            for key in list(self.meta[rel_name].keys()):
                 val = self.meta[rel_name][key]
                 if len( val ) == 1:
                     self.meta[rel_name][key] = val[0]
@@ -176,7 +175,7 @@ class mdconverter:
         """
         meta = self.read_yaml_meta( context, filename )
         if key:
-            return meta[key] if meta.has_key(key) else None
+            return meta[key] if key in meta else None
         else:
             return meta
 
@@ -232,7 +231,7 @@ def get_context( site, template):
     context = get_name_vars( template )
     context.update(  site.md.read_yaml_meta( context, '/' + template.name ) )
 
-    if context.has_key( 'raw' ) and context['raw']:
+    if 'raw' in context and context['raw']:
         # Don't render before passing to mdconvert
         # This still doesn't work perfectly. Better to surround document with
         # {% raw %} tags.
@@ -255,4 +254,4 @@ def get_context( site, template):
     return context
 
 def slugify( s, sep='-' ):
-    return mdx_headerid.slugify( unicode(s), sep )
+    return mdx_headerid.slugify( str(s), sep )

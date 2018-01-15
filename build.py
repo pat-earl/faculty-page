@@ -1,11 +1,11 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 import os, sys
 pwd = os.path.dirname(os.path.realpath(__file__))
 sys.path.insert( 1, os.path.join( pwd, 'ext' ) )
 
 import staticjinja
 from jinja2_markdown import MarkdownExtension
-import re, optparse, shutil, ConfigParser, glob, subprocess
+import re, optparse, shutil, configparser, glob, subprocess
 from stat import *
 from jinja2 import contextfunction, contextfilter
 
@@ -15,20 +15,20 @@ import coloredlogs
 
 # Callable python functions / filters
 def jinja_search( s, pat ):
-    if type(s) == str or type(s) == unicode:
+    if type(s) == str:
         return True if re.search( pat, s ) else False
     elif type(s) == list:
         return [ e for e in s if re.search( pat, e )]
 
 def jinja_sub( s, pat, rep, count=0 ):
-    if type(s) == str or type(s) == unicode:
+    if type(s) == str:
         return re.sub( pat, rep, s, count )
     else:
         return [ re.sub( pat, rep, e, count ) for e in s ]
 
 def jinja_test( site, context, arg ):
-    print site.searchpath
-    print context['dirname']
+    print(site.searchpath)
+    print(context['dirname'])
     return arg
 
 def jinja_glob( site, context, pat ):
@@ -76,7 +76,7 @@ def cleanup_outpath( site ):
             sname = p.join( site.searchpath, rname )
             try:
                 smode = os.stat(sname).st_mode
-            except OSError, e:
+            except OSError as e:
                 if e.errno == 2: continue # Source deleted
                 else: raise
             if smode != os.stat(dname).st_mode:
@@ -144,16 +144,16 @@ class Site( staticjinja.Site ):
         For sym-links, copy it as a link.
         """
         p = os.path
-	for f in files:
-	    src = p.join(self.searchpath, f)
-	    dst = p.join(self.outpath, f)
-	    self._ensure_dir(f)
-	    if not ( p.isfile(dst) or p.islink(dst) ) or \
-		    ( os.stat(src).st_mtime - os.stat(dst).st_mtime > 1e-4 ) \
+        for f in files:
+            src = p.join(self.searchpath, f)
+            dst = p.join(self.outpath, f)
+            self._ensure_dir(f)
+            if not ( p.isfile(dst) or p.islink(dst) ) or \
+                    ( os.stat(src).st_mtime - os.stat(dst).st_mtime > 1e-4 ) \
                     or \
-		    ( os.stat(src).st_ctime - os.stat(dst).st_ctime > 1e-4 ):
-		self.logger.info("Copying %s." % f)
-		#shutil.copyfile(src, dst)
+                    ( os.stat(src).st_ctime - os.stat(dst).st_ctime > 1e-4 ):
+                self.logger.info("Copying %s." % f)
+                #shutil.copyfile(src, dst)
                 if p.islink(src):
                     if p.islink(dst):
                         os.unlink(dst)
@@ -183,32 +183,32 @@ class Site( staticjinja.Site ):
         Overrides site.render_template. This version only renders templates if
         the need rendering based on mtimes.
         """
-	if context is None:
-	    context = self.get_context(template)
-	try:
-	    rule = self.get_rule(template.name)
-	except ValueError:
-	    self._ensure_dir(template.name)
+        if context is None:
+            context = self.get_context(template)
+        try:
+            rule = self.get_rule(template.name)
+        except ValueError:
+            self._ensure_dir(template.name)
 
-	    filepath = self.needs_rendering( template, filepath )
-	    if filepath:
-		self.logger.info("Rendering %s..." % template.name)
-		template.stream(**context).dump(filepath, self.encoding)
+            filepath = self.needs_rendering( template, filepath )
+            if filepath:
+                self.logger.info("Rendering %s..." % template.name)
+                template.stream(**context).dump(filepath, self.encoding)
                 shutil.copymode( template.filename, filepath )
-	else:
+        else:
             rule(self, template, **context)
 
     ignored_re = re.compile( r'\.(?:swp|un~)$', flags=re.I )
     def is_ignored( self, f ):
-	return True if self.ignored_re.search( f ) else False
+        return True if self.ignored_re.search( f ) else False
 
     partial_re = re.compile( '(?:^|/)_|\.j2$' ) 
     def is_partial( self, f):
-	return True if self.partial_re.search( f ) else False
+        return True if self.partial_re.search( f ) else False
 
     static_re  = re.compile(
-	    '(?:^|/)static/|\.(:?pdf|jpg|png|svg|eps|ps|txt|sty|mp4|webm|bst)$',
-	    flags=re.I )
+            '(?:^|/)static/|\.(:?pdf|jpg|png|svg|eps|ps|txt|sty|mp4|webm|bst)$',
+            flags=re.I )
     def is_static( self, f ):
         if not self.is_ignored(f) and self.static_re.search( f ):
             return True
@@ -223,11 +223,11 @@ if __name__ == "__main__":
     # Use -p for production. The global dev_env is set to 'local' or
     # 'production' respectively.
     parser.add_option( '-p', '--production', dest='production',
-	    action='store_true', help='Generate site for production' )
+            action='store_true', help='Generate site for production' )
     parser.add_option( '-f', '--force', dest='force',
-	    action='store_true', help='Render even if source is unchanged' )
+            action='store_true', help='Render even if source is unchanged' )
     parser.add_option( '-u', '--upload', dest='upload',
-	    action='store_true', help='Upload after rendering (implies -p)' )
+            action='store_true', help='Upload after rendering (implies -p)' )
     parser.add_option( '-w', '--watch', dest='watch',
             action='store_true', help='Continuously watch for changes' )
 
@@ -237,7 +237,7 @@ if __name__ == "__main__":
     dev_env = 'production' if options.production else 'local'
 
     # Read site configuration
-    cfg = ConfigParser.ConfigParser()
+    cfg = configparser.ConfigParser()
     cfg.read( os.path.join( pwd, 'site.cfg' ) )
 
     # Jinja2 globals
@@ -261,18 +261,18 @@ if __name__ == "__main__":
     env_globals.update( dict( cfg.items(dev_env) ) )
 
     site = staticjinja.make_site(
-	    searchpath=os.path.join( pwd, 'src' ),
-	    outpath=os.path.join( pwd,
+            searchpath=os.path.join( pwd, 'src' ),
+            outpath=os.path.join( pwd,
                 'out-prod' if options.production else 'out'),
             followlinks=False,
-	    extensions=[MarkdownExtension],
-	    contexts=[
-		('.*', mdconverter.get_name_vars),
+            extensions=[MarkdownExtension],
+            contexts=[
+                ('.*', mdconverter.get_name_vars),
                 ('.*\.md', lambda t: mdconverter.get_context( site, t) ),
-	    ],
-	    rules=[
-		('.*\.md', mdconverter.render),
-	    ],
+            ],
+            rules=[
+                ('.*\.md', mdconverter.render),
+            ],
             filters={
                 'markdown': contextfilter( lambda c, s: \
                                 site.md.mdconvert(c, s).html ),
@@ -282,7 +282,7 @@ if __name__ == "__main__":
             },
             env_globals=env_globals,
             mergecontexts=True,
-	)
+        )
     # Type cast to my class
     site.__class__ = Site
 
