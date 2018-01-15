@@ -11,6 +11,8 @@ from jinja2 import contextfunction, contextfilter
 
 import mdconverter
 
+import coloredlogs
+
 # Callable python functions / filters
 def jinja_search( s, pat ):
     if type(s) == str or type(s) == unicode:
@@ -283,6 +285,9 @@ if __name__ == "__main__":
 	)
     # Type cast to my class
     site.__class__ = Site
+
+    # Get colored logs
+    coloredlogs.install( logger=site.logger, fmt='%(message)s' )
 
     # Ensure output directory exists
     site._ensure_dir( os.path.join( site.outpath, 'index.html' ) )

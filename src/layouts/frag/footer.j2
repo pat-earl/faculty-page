@@ -20,11 +20,13 @@
       {{ macros.email( email | default(author_email) ) }}
       &emsp;
       {{ macros.room( author_office_bldg, author_office_room ) }}
+      {#-
       &emsp;
       <span class='text-nowrap' title='Phone'>
 	{{ macros.glyph( 'phone-alt' ) }}
 	{{ author_office_phone }}.
       </span>
+      #}
     </div>
   </footer>
 {%- endmacro -%}

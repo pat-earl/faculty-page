@@ -11,9 +11,10 @@ To swap control and caps lock for your current session, type:
 
 To make it permanent, put it in your `~/.xinitrc`. Alternately, if you have root access, then edit `/etc/default/keyboard` and add:
 
-``` shell
-XKBOPTIONS="ctrl:swapcaps"
-```
+    :::shell
+    XKBOPTIONS="ctrl:swapcaps"
+
+(On Debian systems, doing this also swaps control and caps lock on virtual consoles.)
 
 ## Swapping command and option on Apple keyboards
 
