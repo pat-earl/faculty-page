@@ -3,6 +3,7 @@
 {% set courses = (
     ( 268, 'Multidimensional Calculus', (
 	( 2015, 'f', '2015-16/268-multid-calc' ),
+	( 2018, 's', '2017-18/268-multid-calc' ),
     )),
     ( 269, 'Vector Analysis', (
 	( 2012, 's', old_teaching ~ '/2011-12/269-vector-analysis/' ),
@@ -44,7 +45,7 @@
     )),
   ) %}
 {# {% set cur_index = () %} #}
-{% set cur_index = ( (8,1), ) %}
+{% set cur_index = ( (0,1), ) %}
 {% macro md_current_courses() %}
   {% for i, j in cur_index %}
   {% set c = courses[i] -%}
