@@ -43,9 +43,12 @@
 	( 2012, 'f', old_research ~ '/201208-fluids-working-group' ),
 	( 2016, 'f', '2016-17/fluids-wg/' ),
     )),
+    ( 0, "SPDE working group", (
+	( 2018, 's', '2017-18/spde-wg/' ),
+    )),
   ) %}
 {# {% set cur_index = () %} #}
-{% set cur_index = ( (0,1), ) %}
+{% set cur_index = ( (0,1), (10,0), ) %}
 {% macro md_current_courses() %}
   {% for i, j in cur_index %}
   {% set c = courses[i] -%}

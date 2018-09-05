@@ -15,36 +15,4 @@ require shib-attr affiliation Faculty@andrew.cmu.edu
 #require shib-attr affiliation Staff@andrew.cmu.edu
 #require shib-attr affiliation Member@andrew.cmu.edu
 
-require user ahagerty@ANDREW.CMU.EDU
-
-require user darshanc@andrew.cmu.edu
-require user rishavd@andrew.cmu.edu
-require user ninae@andrew.cmu.edu
-require user wfan@andrew.cmu.edu
-require user thammond@andrew.cmu.edu
-require user ehaney@andrew.cmu.edu
-require user szh@andrew.cmu.edu
-require user sdkim1@andrew.cmu.edu
-require user eli1@andrew.cmu.edu
-require user wanshenl@andrew.cmu.edu
-require user kaigel@andrew.cmu.edu
-require user ruoyuanl@andrew.cmu.edu
-require user tnayak@andrew.cmu.edu
-require user bney@andrew.cmu.edu
-require user enie@andrew.cmu.edu
-require user borloski@andrew.cmu.edu
-require user nrauen@andrew.cmu.edu
-require user kruan@andrew.cmu.edu
-require user wenzes@andrew.cmu.edu
-require user jungjoos@andrew.cmu.edu
-require user zsussman@andrew.cmu.edu
-require user liliat@andrew.cmu.edu
-require user ntarn@andrew.cmu.edu
-require user nviggian@andrew.cmu.edu
-require user jianminw@andrew.cmu.edu
-require user pkwang@andrew.cmu.edu
-require user yuepengy@andrew.cmu.edu
-require user xiruoz@andrew.cmu.edu
-require user azzheng@andrew.cmu.edu
-require user jbz@andrew.cmu.edu
-require user sunghyuc@andrew.cmu.edu
+require user xudanb@andrew.cmu.edu
