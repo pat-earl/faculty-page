@@ -1,12 +1,38 @@
 {% set pubs = {
+  'fcomb' : {
+    'authors'	: ['S. Cohn', 'G. Iyer', 'J. Nolen', 'R. L. Pego'],
+    'title'	: 'Anomalous diffusion in one and two dimensional combs',
+    'year'	: 2018,
+    'com-journal'	: 'Ann. Appl. Probab.',
+    'com-sjournal'	: 'AAP',
+    'link'	: '201809-fcomb.pdf',
+    'twoup'	: '201809-fcomb-2up.pdf',
+    'tablet'	: '201809-fcomb-tablet.pdf',
+    'tags'	: ['probability', 'pde', 'homogenization'],
+  },
+
+  'winding' : {
+    'authors'	: ['X. Geng', 'G. Iyer'],
+    'title'	: 'Long Time Asymptotics of Heat Kernels and Brownian Winding Numbers on Manifolds with Boundary',
+    'year'	: 2018,
+    'com-journal'	: 'Communications in Partial Differential Equations',
+    'com-sjournal'	: 'Comm. Partial Differential Equations',
+    'link'	: '201804-winding.pdf',
+    'twoup'	: '201804-winding-2up.pdf',
+    'tablet'	: '201804-winding-tablet.pdf',
+    'tags'	: ['probability', 'pde'],
+  },
+
   'dtc' : {
     'authors'	: ['G. Iyer', 'N. Leger', 'R. L. Pego'],
     'title'	: 'Coagulation and universal scaling limits for critical Galton-Watson processes',
-    'year'	: 2016,
+    'year'	: 2018,
+    'journal'	: 'Advances in Applied Probability',
+    'sjournal'	: 'Adv. in Appl. Probab.',
     'link'	: '201610-dtc.pdf',
     'twoup'	: '201610-dtc-2up.pdf',
     'tablet'	: '201610-dtc-tablet.pdf',
-    'tags'	: ['probability', 'coagulation'],
+    'tags'	: ['probability', 'coagulation', 'pde'],
   },
 
   'snuc' : {
@@ -14,7 +40,8 @@
     'title'	: 'A model for vortex nucleation in the Ginzburg-Landau equations',
     'journal'	: 'Journal of Nonlinear Science',
     'sjournal'	: 'J. Nonlinear Sci.',
-    'year'	: 2016,
+    'year'	: 2017,
+    'jlink'	: 'https://doi.org/10.1007/s00332-017-9391-4',
     'link'	: '201610-snuc.pdf',
     'twoup'	: '201610-snuc-2up.pdf',
     'tablet'	: '201610-snuc-tablet.pdf',
@@ -116,7 +143,7 @@
     'jlink'	: 'http://projecteuclid.org/euclid.aoap/1424355128',
     'link'	: '201212-coagulation.pdf',
     'twoup'	: '201212-coagulation-2up.pdf',
-    'tags'	: ['probability', 'coagulation'],
+    'tags'	: ['probability', 'pde', 'coagulation'],
   },
 
   'extdyn' : {
@@ -289,6 +316,8 @@
 } -%}
 
 {% set publist = (
+    pubs.fcomb,
+    pubs.winding,
     pubs.dtc,
     pubs.snuc,
     pubs.fkinetic,
