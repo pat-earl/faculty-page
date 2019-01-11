@@ -16,10 +16,12 @@ Save the appropriate file in the same directory as your `tex` file and use it by
 ```
 
 Replace `habbrv` with `halpha` or `halpha-abbrv` as appropriate.
-Since some DOIs might contain evil special characters, I strongly recommend you use the `doi` package by adding the following to your preamble:
+To make the links clickable, you need to use the `hyperref` package.
+Also, since some DOIs might contain evil special characters, I strongly recommend you use the `doi` package by adding the following to your preamble.
 
 ```tex
 \RequirePackage{doi}
+\usepackage{hyperref}
 ```
 
 That's it.

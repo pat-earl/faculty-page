@@ -52,7 +52,30 @@ All these notes are <span class='text-info'>free and open source</span>. You may
         (These notes are hosted using [ikiWiki](https://ikiwiki.info/).)
       </small>
 
+* **Stochastic Calculus for Finance**
+
+    * [[2017-18/944-scalc-finance1/pdfs/notes.pdf|Brief lecture notes]] (from Fall 2017).
+
+    * [Class website](2017-18/944-scalc-finance1) for problems and references.
+
+    * [LaTeX source](https://gitlab.com/gi1242/cmu-mscf-944).
+
+
 ## {{secs.student_projects}}
+
+### {{secs.phd_thesis}}
+
+* Samuel Cohn,
+  *[[pdfs/201808-sam.pdf|On the Homogenization of Diffusions in Periodic Comb-like Structures]]*,
+  2018.
+
+### {{secs.masters_thesis}}
+
+* [James T. Murphy III](http://intfxdx.com/),
+  *Resolving the one-dimensional autonomous flow-free explosion problem*
+  (published in [SIURO](http://www.siam.org/students/siuro/vol7/index.php)
+  [here](http://www.siam.org/students/siuro/vol7/S01319.pdf)),
+  2014.
 
 ### {{secs.student_lecture_notes}}
 
@@ -78,9 +101,3 @@ You are free to edit, modify and redistribute these notes (under the terms state
 
     * [Class website]({{old_teaching}}/2013-14/880-scalc/) for problems and references.
 
-### {{secs.masters_thesis}}
-
-* [James T. Murphy III](http://intfxdx.com/),
-  *Resolving the one-dimensional autonomous flow-free explosion problem*
-  (Published in [SIURO](http://www.siam.org/students/siuro/vol7/index.php)
-  [here](http://www.siam.org/students/siuro/vol7/S01319.pdf).)

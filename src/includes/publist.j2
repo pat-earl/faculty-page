@@ -1,4 +1,16 @@
 {% set pubs = {
+  'denh' : {
+    'authors'	: ['Y. Feng', 'G. Iyer'],
+    'title'	: 'Dissipation Enhancement by Mixing',
+    'year'	: 2018,
+    'com-journal'	: 'Nonlinearity',
+    'com-sjournal'	: 'Non',
+    'link'	: '201811-denh.pdf',
+    'twoup'	: '201811-denh-2up.pdf',
+    'tablet'	: '201811-denh-tablet.pdf',
+    'tags'	: ['pde', 'fluids'],
+  },
+
   'fcomb' : {
     'authors'	: ['S. Cohn', 'G. Iyer', 'J. Nolen', 'R. L. Pego'],
     'title'	: 'Anomalous diffusion in one and two dimensional combs',
@@ -316,6 +328,7 @@
 } -%}
 
 {% set publist = (
+    pubs.denh,
     pubs.fcomb,
     pubs.winding,
     pubs.dtc,
