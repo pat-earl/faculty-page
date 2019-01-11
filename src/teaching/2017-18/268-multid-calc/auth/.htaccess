@@ -14,5 +14,3 @@ ShibExportAssertion On
 require shib-attr affiliation Faculty@andrew.cmu.edu
 #require shib-attr affiliation Staff@andrew.cmu.edu
 #require shib-attr affiliation Member@andrew.cmu.edu
-
-require user xudanb@andrew.cmu.edu

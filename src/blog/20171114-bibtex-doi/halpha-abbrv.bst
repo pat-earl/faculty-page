@@ -17,6 +17,7 @@ ENTRY
   { address
     author
     booktitle
+    label
     chapter
     edition
     editor
@@ -41,7 +42,7 @@ ENTRY
     year
   }
   {}
-  { label extra.label sort.label }
+  { cite.label extra.label sort.label }
 
 INTEGERS { output.state before.all mid.sentence after.sentence after.block }
 
@@ -93,7 +94,7 @@ FUNCTION {output.check}
 FUNCTION {output.bibitem}
 { newline$
   "\bibitem[" write$
-  label write$
+  cite.label write$
   "]{" write$
   cite$ write$
   "}" write$
@@ -1125,24 +1126,28 @@ FUNCTION {editor.key.organization.label}
 }
 
 FUNCTION {calc.label}
-{ type$ "book" =
-  type$ "inbook" =
-  or
-    'author.editor.key.label
-    { type$ "proceedings" =
-	'editor.key.organization.label
-	{ type$ "manual" =
-	    'author.key.organization.label
-	    'author.key.label
-	  if$
-	}
+{ label empty$
+    { type$ "book" =
+      type$ "inbook" =
+      or
+        'author.editor.key.label
+        { type$ "proceedings" =
+            'editor.key.organization.label
+            { type$ "manual" =
+                'author.key.organization.label
+                'author.key.label
+              if$
+            }
+          if$
+        }
       if$
+      duplicate$
+      year field.or.null purify$ #-1 #2 substring$
+      *
     }
+    { label duplicate$ }
   if$
-  duplicate$
-  year field.or.null purify$ #-1 #2 substring$
-  *
-  'label :=
+  'cite.label :=
   year field.or.null purify$ #-1 #4 substring$
   *
   sortify 'sort.label :=
@@ -1311,10 +1316,10 @@ FUNCTION {reverse.pass}
     { "a" 'extra.label := }
     'skip$
   if$
-  label extra.label * 'label :=
-  label width$ longest.label.width >
-    { label 'longest.label :=
-      label width$ 'longest.label.width :=
+  cite.label extra.label * 'cite.label :=
+  cite.label width$ longest.label.width >
+    { cite.label 'longest.label :=
+      cite.label width$ 'longest.label.width :=
     }
     'skip$
   if$
