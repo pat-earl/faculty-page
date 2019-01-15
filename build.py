@@ -58,7 +58,7 @@ def cleanup_outpath( site ):
 
                 # Allow .git in root of local out, to compare changes in
                 # generated output
-                elif dev_env != 'local' or name != '.git':
+                elif dev_env != 'local' or not name.startswith('.git'):
                     # See if was generated from .md
                     if not p.exists( p.join( site.searchpath,
                             p.splitext(name)[0] + '.md' ) ):
