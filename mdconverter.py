@@ -97,8 +97,8 @@ class mdconverter:
             label = os.path.basename(text)
 
         # Check if the path exists
-        (f, cdir) = self.site.get_cdir( self.current_context, link )
-        if not os.path.exists( os.path.join( cdir, f ) ):
+        f = self.path_exists( self.current_context, link )
+        if f is None:
             self.site.logger.warn( '%s WARNING: Broken link "%s"'
                     % (self.current_context['name'], link) )
         elif sep < 0:
