@@ -1,4 +1,5 @@
 title: Working Group: Mathematical Fluid Dynamics
+subtitle: Fall 2016
 
 ## Logistical Information
 
@@ -18,10 +19,6 @@ title: Working Group: Mathematical Fluid Dynamics
   <tr>
     <th scope='row'>Mailing List</th>
     <td><a href='https://lists.andrew.cmu.edu/mailman/listinfo/fluids-wg'>lists.andrew/mailman/listinfo/fluids-wg</a></td>
-  </tr>
-  <tr>
-    <th scope='row'>Semester</th>
-    <td>Fall, 2016</td>
   </tr>
 </table>
 

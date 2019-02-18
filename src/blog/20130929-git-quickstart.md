@@ -213,6 +213,7 @@ The status message should tell you what files are conflicted, and what you shoul
 
 You can fix these conflicts by opening these files in your editor, and searching for the conflict markers `<<<<<<<`, `=======`, `>>>>>>>`.
 Here's what it will typically look like:
+
 <pre class='codehilite'>
 In 1875, Galton and Watson~\cite{WatsonGalton75} took up an investigation into the phenomenon
 of ``the decay of the families of men who occupied conspicuous positions in past times.''

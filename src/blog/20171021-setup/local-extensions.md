@@ -25,7 +25,7 @@ LaTeX can be used between `$` signs:
 ## WikiLinks
 
 * `[[file]]` generates a link to `file`.
-* To specify the link text use `[[/index.html|Test]]`, which links to `/index.html` and says `Test`.
+* To specify the link text use `[[/index.md|Test]]`, which links to `/index.html` and says `Test`.
   This renders like this: [[/index.html|Test]]
 * For `markdown` files, an extension of `.md` is replaced with `.html`.
   Also, if the link text is omitted the title of the linked file is used instead.

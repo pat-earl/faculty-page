@@ -4,7 +4,7 @@ breadcrumb: /{{dirname}}.md
 <div class='alert alert-info' role='alert' markdown="1">
 
 This markdown cheat cheat sheet is taken from [gist jonschlinkert/5854601](https://gist.github.com/jonschlinkert/5854601), and is used as a test of markdown rendering on this site.
-Site specific extensions are [[README.md|here]].
+Site specific extensions are [[local-extensions.md|here]].
 
 </div>
 

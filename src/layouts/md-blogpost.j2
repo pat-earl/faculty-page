@@ -6,7 +6,7 @@
 {% extends "layouts/md-nav-right-affix.j2" -%}
 {% block comments_block -%}
   {% if comments != 'disabled' -%}
-    <br />
+    <br>
     <h3>
       {{ glyph( 'comment' ) }}&emsp;Comments
     </h3>
@@ -25,7 +25,7 @@
 	    <div class='media-body'>
 	      <h4 class='media-heading'>
 		{{meta.subject}}
-		<br />
+		<br>
 		<small>{{meta.name|default('Anonymous')}} ({{meta.date}})</small>
 	      </h4>
 
@@ -34,7 +34,7 @@
 	  </div>
 	</li>
       </ul>
-      <br />
+      <br>
     {% endfor -%}
 
     <h4>
@@ -93,7 +93,7 @@
 {% block nav_after_toc -%}
   {{ super() }}
 
-  <br />
+  <br>
   <h4>{{glyph( 'bullhorn' )}}&emsp;Recent posts</h4>
   {% set files = glob( '/blog/[0-9]*.md' ) | sort( reverse=True ) -%}
   <ol class='list-unstyled'>

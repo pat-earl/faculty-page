@@ -9,9 +9,9 @@
       {% if title -%}
 	<h1>
 	  {{title}}
-	  {% if post_date(basename) -%}
-	    <br />
-	    <small>{{post_date(basename)}}</small>
+	  {% if subtitle or post_date(basename) -%}
+	    <br>
+	    <small>{{subtitle | default(post_date(basename))}}</small>
 	  {% endif -%}
 	</h1>
       {% endif -%}

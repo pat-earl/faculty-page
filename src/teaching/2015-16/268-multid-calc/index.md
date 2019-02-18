@@ -33,7 +33,7 @@ Students will be expected to write proofs; however, some of the deeper results w
 ### Homework
 
 * Homework must be turned in **at the beginning of class** on the due date.
-* <span markdown='1' class='text-danger lead'>Late homework will **NEVER** be accepted. Really!</span>
+* <span class='text-danger lead'>Late homework will **NEVER** be accepted. Really!</span>
 * To account for unusual circumstances, the bottom 20% of your homework will not count towards your grade.
 * Working in groups is encouraged, but solutions must be written up on your own.
 * Nearly perfect student solutions may be scanned and hosted here, with your identifying information removed. If you don't want any part of your solutions used, please make a note of it in the margin of your assignment.
