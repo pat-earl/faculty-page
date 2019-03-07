@@ -8,4 +8,4 @@ As an alternative to the SOCKS proxy, you could set up an [SSH tunnel](http://ma
 
 `ssh you@campus.machine.edu -L <port>:paywalledjournal.com:<port>`
 
-(With <port> for HTTP access usually being 80.)
+(With `<port>` for HTTP access usually being 80.)

@@ -2,7 +2,10 @@
 {% set active = 'teaching' -%}
 {%- if path_exists( 'course_info.j2' ) -%}
   {%- from get_file('course_info.j2') import course -%}
-  {%- if not title %}{% set title = course.title %}{% endif -%}
+  {%- if not title %}
+    {%- set title = course.title %}
+    {%- if course.semester %}{% set subtitle = course.semester %}{% endif %}
+  {%- endif -%}
   {% set page_email = course.email -%}
   {# Set breadcrumb for level 1 pages -#}
   {% if not breadcrumb and basename != 'index.md' -%}

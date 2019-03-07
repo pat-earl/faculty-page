@@ -1,4 +1,5 @@
 title: Working Group: Stochastic PDEs
+subtitle: Spring 2018
 
 ## Logistical Information
 
@@ -18,10 +19,6 @@ title: Working Group: Stochastic PDEs
   <tr>
     <th scope='row'>Mailing List</th>
     <td><a href='https://lists.andrew.cmu.edu/mailman/listinfo/spde-wg'>lists.andrew/mailman/listinfo/spde-wg</a></td>
-  </tr>
-  <tr>
-    <th scope='row'>Semester</th>
-    <td>Spring, 2018</td>
   </tr>
 </table>
 

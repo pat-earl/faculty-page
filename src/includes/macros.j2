@@ -84,7 +84,7 @@
 
 {%- macro course_info_table(c) -%}
   {#- Import this using "with context", so all the variables are inherited #}
-  <table class='table' summary='Logistical Information'>
+  <table class='table'>
     <thead><tr><td colspan='2'></td></tr></thead>
     <tbody>{# Instructor, lectures {{{ #}
       <tr>
@@ -153,6 +153,26 @@
 	    {%- endif -%}
 	  </td>
 	</tr>
+	{%- if ta.name2 %}
+	<tr>
+	  <th scope='row'>TA</th>
+	  <td>
+	    {%- if ta.url2 -%}
+	      <a href='{{ta.url2}}'>{{ta.name2}}</a>.
+	    {%- else -%}
+	      {{ta.name2 | default('TBA')}}.
+	    {%- endif -%}
+	    {%- if ta.office2 -%}
+	      &emsp;
+	      {{ room( ta.office2.bldg, ta.office2.room ) }}
+	    {%- endif -%}
+	    {%- if ta.email2 -%}
+	      &emsp;
+	      {{ email( ta.email2 ) }}
+	    {%- endif -%}
+	  </td>
+	</tr>
+	{%- endif %}
 	{%- if ta.office_hours -%}
 	  <tr>
 	    <th scope='row'>Office Hours (TA)</th>
@@ -215,11 +235,13 @@
       {%- endfor -%}
     </tbody>
     {%- endif -%}{# }}} #}
-    {%- if c.mailing_list or c.anonymous_list or c.blackboard or c.mediasite or c.links or c.canvas -%}{# Mailing list {{{ #}
+    {#- Mailing list {{{ #}
+    {%- if c.mailing_list or c.anonymous_list or c.blackboard
+	    or c.mediasite or c.links or c.discourse or c.canvas %}
       <tbody>
 	{%- if c.mailing_list -%}
 	  <tr>
-	    <th scope='row'>Mailing list</td>
+	    <th scope='row'>Mailing list</th>
 	    <td>
 	      <a href='{{c.mailing_list.url}}'>{{c.mailing_list.name}}</a>
 	      <span class='small'>
@@ -233,6 +255,14 @@
 		  (for anonymous discussion. Your emails will be delivered anonymously.)
 		</span>
 	      {%- endif -%}
+	    </td>
+	  </tr>
+	{%- endif -%}
+	{%- if c.discourse -%}
+	  <tr>
+	    <th scope='row'>Discourse</th>
+	    <td>
+	      Class discussion board <a href="{{c.discourse}}">here</a>.
 	    </td>
 	  </tr>
 	{%- endif -%}
