@@ -80,7 +80,7 @@ function submit_comment() {
     .fail( failfn );
 }
 
-function get_grades(fname) {
+function get_grades(fname, show_stats=true, show_total=true) {
   function failfn( msg ) {
     $('#status')
       .attr( 'class', 'alert alert-danger' )
@@ -95,10 +95,12 @@ function get_grades(fname) {
   }
 
   $.getJSON( "{{get_link('/cgi-bin/auth/getgrades.py')}}",
-      fname, function(data) {
+    { filename: fname, show_stats: show_stats, show_total: show_total },
+    function(data) {
 	var table = $('#scores');
-	var thead = table.children('thead').children();
-	var tbody = table.children('tbody');
+	var thead = $('<thead><tr><th></th></tr></thead>').appendTo(table)
+	  .children();
+	var tbody = $('<tbody></tbody>').appendTo(table);
 
 	{% if dev_env == 'local' -%}
 	/* Save for debugging */

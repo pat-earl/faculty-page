@@ -17,8 +17,8 @@
 * An [[auth/old-final.pdf|old final]] with [[auth/old-final-sol.pdf|solutions]].
 * 2016-17 [[../../2016-17/944-scalc-finance1/pdfs/final.pdf|final]] and [[auth/2016-final-sol.pdf|solutions]].
 * 2017-18 [[../../2017-18/944-scalc-finance1/pdfs/final.pdf|final]] and [[auth/2017-final-sol.pdf|solutions]].
-{#
 * Your [[pdfs/final.pdf|final]] and [[auth/final-sol.pdf|solutions]].
+{#
 * [Stochastic Calculus Self Study](https://tepper.instructure.com/courses/43672)
 -#}
 * [[../../2017-18/944-scalc-finance1|Last years website]]

@@ -10,20 +10,19 @@ def tofloat(x):
 
 print( "Content-type: application/json;\n" )
 
-docroot = os.environ.get( 'CONTEXT_DOCUMENT_ROOT',
-            os.environ.get('PWD') )
-fname = os.path.join( docroot, '{{path_prefix}}',
-            os.environ.get('QUERY_STRING') )
-
-user = os.environ.get( 'eppn', '' )[:-len('@andrew.cmu.edu')]
-{% if dev_env == 'local' %}
-# No authentication; just impersonate someone for testing
-user = 'afogelso'
-{% endif %}
-
 data = {}
 
 try:
+    arguments = cgi.FieldStorage();
+    #print( 'getgrades.py:', arguments, file=sys.stderr )
+
+    docroot = os.environ.get( 'CONTEXT_DOCUMENT_ROOT',
+                os.environ.get('PWD') )
+    fname = os.path.join( docroot, '{{path_prefix}}',
+                 arguments.getvalue('filename') )
+
+    user = os.environ.get( 'eppn', '' )[:-len('@andrew.cmu.edu')]
+
     with open(fname) as f:
         reader = csv.reader( f )
         header = next( reader )
@@ -45,7 +44,7 @@ try:
 
         for row in reader:
             # Check for users score
-            if user == row[andrewid]:
+            if user == row[andrewid] and len(user):
                 data['cols'].append( ['Your Score']
                         + row[scores_start:] + ['']*(scores_end - len(row)) )
                 data['name'] = row[fname] + ' ' + row[lname]
@@ -57,7 +56,8 @@ try:
                     if sf > 0: scores[i].append(sf)
 
             # Check for total points
-            if row[lname] == '' and row[fname] == '':
+            if arguments.getvalue('show_total', 'true') == 'true' \
+                    and row[lname] == '' and row[fname] == '':
                 # print( 'getgrades.py:', row, file=sys.stderr )
                 rf = map( tofloat, row[scores_start:scores_end] )
                 if all( s != 0 for s in rf ):
@@ -67,20 +67,17 @@ try:
                     # This is the last row we care about
                     break
 
-    data['cols'].append( ['# Submissions']
-            + [len(s) for s in scores] )
-
-    data['cols'].append( ['Max']
-            + [max(s) for s in scores] )
-
-    #data['cols'].append( ['Min']
-    #        + [min(s) for s in scores] )
-
-    data['cols'].append( ['Median']
-            + [round(statistics.median(s), 1) for s in scores] )
-
-    data['cols'].append( ['Mean']
-            + [round(statistics.mean(s), 1) for s in scores] )
+    if arguments.getvalue( 'show_stats', 'true' ) == 'true':
+        data['cols'].append( ['# Submissions']
+                + [len(s) for s in scores] )
+        data['cols'].append( ['Max']
+                + [max(s) for s in scores] )
+        #data['cols'].append( ['Min']
+        #        + [min(s) for s in scores] )
+        data['cols'].append( ['Median']
+                + [round(statistics.median(s), 1) for s in scores] )
+        data['cols'].append( ['Mean']
+                + [round(statistics.mean(s), 1) for s in scores] )
 
     #data['cols'].append( ['Std. Dev']
     #        + [round(statistics.stdev(s), 2) for s in scores] )

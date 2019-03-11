@@ -203,6 +203,9 @@ def render(site, template, **context):
     except:
         if( template.name.startswith( "blog" ) ):
             layout = 'md-blogpost.j2'
+        elif re.match( r'teaching\/[0-9-]+\/[0-9a-z-]+\/auth/grades\.md',
+                template.name ):
+            layout = 'md-grades.j2'
         elif re.match( r'teaching\/[0-9-]+\/[0-9a-z-]+\/.*\.md',
                 template.name ):
             layout = 'md-class.j2'
