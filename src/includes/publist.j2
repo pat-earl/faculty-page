@@ -1,10 +1,23 @@
 {% set pubs = {
+  'mixblowup' : {
+    'authors'	: ['G. Iyer', 'X. Xu', 'A. Zlatoš'],
+    'title'	: 'Convection-Induced Singularity Suppression in the Keller-Segel and Other Non-linear PDEs',
+    'year'	: 2019,
+    'com-journal'	: 'Nonlinearity',
+    'com-sjournal'	: 'Non',
+    'link'	: '201908-mixblowup.pdf',
+    'twoup'	: '201908-mixblowup-2up.pdf',
+    'tablet'	: '201908-mixblowup-tablet.pdf',
+    'tags'	: ['pde', 'fluids', 'mixing', 'homogenization'],
+  },
+
   'denh' : {
     'authors'	: ['Y. Feng', 'G. Iyer'],
     'title'	: 'Dissipation Enhancement by Mixing',
-    'year'	: 2018,
-    'com-journal'	: 'Nonlinearity',
-    'com-sjournal'	: 'Non',
+    'year'	: 2019,
+    'journal'	: 'Nonlinearity',
+    'sjournal'	: 'Non',
+    'jlink'	: 'https://doi.org/10.1088/1361-6544/ab0e56',
     'link'	: '201811-denh.pdf',
     'twoup'	: '201811-denh-2up.pdf',
     'tablet'	: '201811-denh-tablet.pdf',
@@ -207,7 +220,7 @@
   },
 
   'badmixing' : {
-    'authors'	: ['G. Iyer', 'A. Novikov', 'L. Ryzhik', 'A. Zlatos'],
+    'authors'	: ['G. Iyer', 'A. Novikov', 'L. Ryzhik', 'A. Zlatoš'],
     'title'	: 'Exit times for diffusions with incompressible drift',
     'journal'	: 'SIAM J. Math. Anal.',
     'sjournal'	: 'SIMA',
@@ -328,6 +341,7 @@
 } -%}
 
 {% set publist = (
+    pubs.mixblowup,
     pubs.denh,
     pubs.fcomb,
     pubs.winding,
