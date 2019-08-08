@@ -25,7 +25,7 @@
     });
     #}
     $(function() {
-      get_grades('{{dirname}}/grades.csv',
+      get_grades( '{{dirname}}', {{glob('*.csv')|sort}},
 	{{show_stats | default('true')}},
 	{{show_total | default('true')}});
     });

@@ -87,7 +87,7 @@ All `Jinja2` commands need to be escaped accordingly.
     * `layout`: Change the default template layout.
     * `comments`: Set to `disabled` disable comments (see [below](#comments)).
 
-* Metadata from a file can be accessed using the function `get_meta( file_name, field)`.
+* Metadata from a file can be accessed using the function `get_meta( file_name, field)`. Omit `field` to get the whole metadata block.
 
 ## Variables and Globbing
 
@@ -120,7 +120,7 @@ If you want comments disabled use the `comments: disabled` field in the YAML met
 
 * By default markdown files have the layout `md-default.j2` which links to `md-right-nav-affix.j2`.
   This shows the table of contents on the right on large screens, which highlights the current section and sticks to the top of the window.
-  (Look [[layout.md|here]] for more information on the laoyts.)
+  (Look [[layout.md|here]] for more information on the layouts.)
 
 * The layout can be changed using
 

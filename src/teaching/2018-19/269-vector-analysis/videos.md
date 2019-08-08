@@ -26,3 +26,19 @@ In addition to the video, you can download the PDF of what I wrote on the screen
         poster='videos/20190223-inverse-fn2.png'>
       <source src='videos/20190223-inverse-fn2.mp4' type='video/mp4'>
     </video>
+
+4. **Apr 16: Greens theorem**:
+    [[videos/20190416-greens-theorem.pdf|PDF of screen writing]]
+
+    <video controls style='width: 100%'
+        poster='videos/20190416-greens-theorem.png'>
+      <source src='videos/20190416-greens-theorem.mp4' type='video/mp4'>
+    </video>
+
+5. **May 1: Two IOU's in the proof of the Divergence Theorem**:
+    [[videos/20190501-div-thm-iou.pdf|PDF of screen writing]]
+
+    <video controls style='width: 100%'
+        poster='videos/20190501-div-thm-iou.png'>
+      <source src='videos/20190501-div-thm-iou.mp4' type='video/mp4'>
+    </video>
