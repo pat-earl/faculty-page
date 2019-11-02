@@ -8,7 +8,7 @@ The simplest method would be to download my [[20171114-bibtex-doi/halpha-abbrv.b
 Save the file in the same directory as your `tex` file and use it by putting the following in your `tex` file:
 
 ```tex
-\bibliographystyle{habbrv}
+\bibliographystyle{halpha-abbrv}
 \bibliography{refs}
 ```
 
