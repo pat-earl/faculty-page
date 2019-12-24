@@ -1,10 +1,22 @@
 {% set pubs = {
+  'adissip' : {
+    'authors'	: ['T. Drivas', 'T. M. Elgindi', 'G. Iyer', 'I.-J. Jeong'],
+    'title'	: 'Anomalous Dissipation in Passive Scalar Transport',
+    'year'	: 2019,
+    'com-journal'	: 'Commun. Math. Phys.',
+    'com-sjournal'	: 'CIMP',
+    'link'	: 'adissip.pdf',
+    'twoup'	: 'adissip-2up.pdf',
+    'tablet'	: 'adissip-tablet.pdf',
+    'tags'	: ['pde', 'fluids', 'mixing'],
+  },
+
   'mixblowup' : {
     'authors'	: ['G. Iyer', 'X. Xu', 'A. Zlatoš'],
     'title'	: 'Convection-Induced Singularity Suppression in the Keller-Segel and Other Non-linear PDEs',
     'year'	: 2019,
-    'com-journal'	: 'Nonlinearity',
-    'com-sjournal'	: 'Non',
+    'com-journal'	: 'Transactions',
+    'com-sjournal'	: 'TAMS',
     'link'	: '201908-mixblowup.pdf',
     'twoup'	: '201908-mixblowup-2up.pdf',
     'tablet'	: '201908-mixblowup-tablet.pdf',
@@ -318,8 +330,8 @@
   'sperturb' : {
     'authors'	: ['G. Iyer'],
     'title'	: 'A Stochastic perturbation of inviscid flows',
-    'journal'	: 'Comm. Math. Phys.',
-    'sjournal'	: 'CMP',
+    'journal'	: 'Commun. Math. Phys.',
+    'sjournal'	: 'CIMP',
     'year'	: 2006,
     'jlink'	: 'http://www.springerlink.com/content/b7757155707l1571/?MUD=MP',
     'link'	: '200505-sperturb.pdf',
@@ -341,6 +353,7 @@
 } -%}
 
 {% set publist = (
+    pubs.adissip,
     pubs.mixblowup,
     pubs.denh,
     pubs.fcomb,

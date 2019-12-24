@@ -2,7 +2,7 @@ title: Expanding aliases in zsh
 tags: linux
 summary: I wanted to make some of my [zsh](http://zsh.sourceforge.net/) aliases behave like [vim](http://www.vim.org/) abbreviations: Namely, as soon as you press space, the alias is expanded and you see the expanded command before executing it. Since I have a large number of clunky aliases, I didn't want all aliases to be expanded by default.
 summary:
-summary: Consequently, I came up with the following (based on something I first saw [here](http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html).
+summary: Consequently, I came up with the following (based on something I first saw [here](http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html)).
 
 {{'\n'.join( summary )}}
 
