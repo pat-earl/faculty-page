@@ -261,7 +261,7 @@ if __name__ == "__main__":
     env_globals.update( dict( cfg.items('common') ) )
     env_globals.update( dict( cfg.items(dev_env) ) )
 
-    site = staticjinja.make_site(
+    site = staticjinja.Site.make_site(
             searchpath=os.path.join( pwd, 'src' ),
             outpath=os.path.join( pwd,
                 'out-prod' if options.production else 'out'),
