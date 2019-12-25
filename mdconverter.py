@@ -6,7 +6,7 @@ import re, shutil
 from collections import namedtuple
 
 import markdown
-import markdown.extensions.headerid as mdx_headerid
+import markdown.extensions.toc as mdx_toc
 import mdx_math, mdx_link
 
 class mdconverter:
@@ -257,4 +257,4 @@ def get_context( site, template):
     return context
 
 def slugify( s, sep='-' ):
-    return mdx_headerid.slugify( str(s), sep )
+    return mdx_toc.slugify( str(s), sep )

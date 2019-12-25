@@ -4,19 +4,20 @@ WikiLinks Extension for Python-Markdown
 
 Converts [[WikiLinks]] to relative links.
 
-See <https://pythonhosted.org/Markdown/extensions/wikilinks.html> 
+See <https://Python-Markdown.github.io/extensions/wikilinks>
 for documentation.
 
 Original code Copyright [Waylan Limberg](http://achinghead.com/).
 
 All changes Copyright The Python Markdown Project
 
-License: [BSD](http://www.opensource.org/licenses/bsd-license.php) 
+License: [BSD](http://www.opensource.org/licenses/bsd-license.php)
 
 MonkeyPatched version:
 
     * allow [[link|label]] style links.
     * build_url now returns an ordered pair (link, label).
+    * Add link_chars for allowed characters in links
 
 '''
 
@@ -62,11 +63,11 @@ class LinkExtension(Extension):
         wikilinkPattern.md = md
         md.inlinePatterns.add('wikilink', wikilinkPattern, "<not_strong")
 
-class Links(wl.WikiLinks):
-    def handleMatch(self, m):
-        if m.group(2).strip():
+class Links(wl.WikiLinksInlineProcessor):
+    def handleMatch(self, m, data):
+        if m.group(1).strip():
             base_url, end_url, html_class = self._getMeta()
-            (url, label) = self.config['build_url']( m.group(2).strip(),
+            (url, label) = self.config['build_url']( m.group(1).strip(),
                     base_url, end_url)
             a = etree.Element('a')
             a.text = label 
@@ -75,7 +76,7 @@ class Links(wl.WikiLinks):
                 a.set('class', html_class)
         else:
             a = ''
-        return a
+        return a, m.start(0), m.end(0)
 
 def makeExtension(*args, **kwargs) :
     return LinkExtension(*args, **kwargs)
