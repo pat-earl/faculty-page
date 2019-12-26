@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 
 #import cgitb; cgitb.enable()
-import cgi, os, sys, csv, json, statistics
+import cgi, os, sys, csv, json, statistics, traceback
 
 def tofloat(x):
     try: return float(x)
@@ -10,85 +10,107 @@ def tofloat(x):
 
 print( "Content-type: application/json;\n" )
 
-docroot = os.environ.get( 'CONTEXT_DOCUMENT_ROOT',
-            os.environ.get('PWD') )
-fname = os.path.join( docroot, '{{path_prefix}}',
-            os.environ.get('QUERY_STRING') )
-
-user = os.environ.get( 'eppn', '' )[:-len('@andrew.cmu.edu')]
-{% if dev_env == 'local' %}
-# No authentication; just impersonate someone for testing
-user = 'afogelso'
-{% endif %}
-
 data = {}
 
 try:
-    with open(fname) as f:
-        reader = csv.reader( f )
-        header = next( reader )
+    arguments = cgi.FieldStorage();
+    #print( 'getgrades.py:', arguments, file=sys.stderr )
 
-        lname = header.index('Last Name')
-        fname = header.index('Preferred/First Name')
-        mi = header.index('MI')
-        andrewid = header.index('Andrew ID')
+    user = os.environ.get( 'eppn', '' )[:-len('@andrew.cmu.edu')]
+    docroot = os.environ.get( 'CONTEXT_DOCUMENT_ROOT',
+                os.environ.get('PWD') )
+    dirname = os.path.join( docroot, '{{path_prefix}}',
+                 arguments.getvalue('dirname') )
 
-        scores_start = max( lname, fname, mi, andrewid ) + 1
-        scores_end = len( header )
-        scores = [ [] for s in  range(scores_start, scores_end) ]
+    data['rows'] = []
+    data['cols'] = []
 
-        # Put assignment titles in rows
-        data['rows'] = header[ scores_start:scores_end ]
+    yourscores = []
+    scores = []
+    nsubs = []
+    outof = []
 
-        # Put assignment scores, and statistics in columns
-        data['cols'] = []
+    for filename in json.JSONDecoder().decode(
+            arguments.getvalue('filename') ):
+        with open( os.path.join( dirname, filename) ) as f:
+            reader = csv.reader( f )
+            header = next( reader )
 
-        for row in reader:
-            # Check for users score
-            if user == row[andrewid]:
-                data['cols'].append( ['Your Score']
-                        + row[scores_start:] + ['']*(scores_end - len(row)) )
-                data['name'] = row[fname] + ' ' + row[lname]
+            lname = header.index('Last Name')
+            fname = header.index('Preferred/First Name')
+            mi = header.index('MI')
+            andrewid = header.index('Andrew ID')
 
-            # Get non-zero HW scores in scores to compute statistics
-            if row[lname] and row[fname] and row[andrewid]:
-                for i, s in enumerate( row[scores_start:] ):
-                    sf = tofloat(s)
-                    if sf > 0: scores[i].append(sf)
+            scores_start = max( lname, fname, mi, andrewid ) + 1
+            scores_end = len( header )
+            f_scores = [ [] for s in  range(scores_start, scores_end) ]
+            # Counts no of non zero scores
+            f_nsubs = [0] * (scores_end - scores_start)
+            f_outof = [''] * (scores_end - scores_start)
+            f_yourscores = [''] * (scores_end - scores_start)
 
-            # Check for total points
-            if row[lname] == '' and row[fname] == '':
-                # print( 'getgrades.py:', row, file=sys.stderr )
-                rf = map( tofloat, row[scores_start:scores_end] )
-                if all( s != 0 for s in rf ):
-                    data['cols'].append( ['Out of']
-                            + row[scores_start:scores_end] )
+            # Put assignment titles in rows
+            data['rows'] += header[ scores_start:scores_end ]
 
-                    # This is the last row we care about
-                    break
+            # Put assignment scores, and statistics in data.cols
+            for row in reader:
+                # Pad in case of missing fields at end
+                row += [''] * (scores_end - len(row))
 
-    data['cols'].append( ['# Submissions']
-            + [len(s) for s in scores] )
+                # Check for users score
+                if user == row[andrewid] and len(user):
+                    f_yourscores = row[scores_start:]
+                    data['name'] = row[fname] + ' ' + row[lname]
 
-    data['cols'].append( ['Max']
-            + [max(s) for s in scores] )
+                # Get non-zero HW scores in scores to compute statistics
+                if row[lname] and row[fname] and row[andrewid]:
+                    for i, s in enumerate( row[scores_start:] ):
+                        sf = tofloat(s)
+                        if sf > 0:
+                            f_scores[i].append(sf)
+                            f_nsubs[i]+=1
 
-    #data['cols'].append( ['Min']
-    #        + [min(s) for s in scores] )
+                # Check for total points
+                if arguments.getvalue('show_total', 'true') == 'true':
+                    try:
+                        row[:scores_start].index( 'Out of' )
+                        f_outof = row[scores_start:scores_end]
 
-    data['cols'].append( ['Median']
-            + [round(statistics.median(s), 1) for s in scores] )
+                        # This is the last row we care about
+                        break
+                    except:
+                        pass
+        #end with
+        outof += f_outof
+        scores += f_scores
+        nsubs += f_nsubs
+        yourscores += f_yourscores
 
-    data['cols'].append( ['Mean']
-            + [round(statistics.mean(s), 1) for s in scores] )
+    # Combine data from all files 
+    cols = [(yourscores, 'Your Score / Grade'),
+        (outof, 'Out of'),
+    ]
+    if arguments.getvalue( 'show_stats', 'true' ) == 'true':
+        cols += [([n if n else '' for n in nsubs], '# submissions')]
+    for (a, t) in cols:
+        if any(a): data['cols'].append( [t] + a )
 
-    #data['cols'].append( ['Std. Dev']
-    #        + [round(statistics.stdev(s), 2) for s in scores] )
-
+    if arguments.getvalue( 'show_stats', 'true' ) == 'true':
+        stats=[ ('Max', max),
+            ('Median', lambda x: '{:.1f}'.format( statistics.median(x)) ),
+            ('Mean', lambda x: '{:.1f}'.format( statistics.mean(x)) ),
+            #('Std. Dev', lambda x: round( statistics.stdev(s), 2) ),
+        ]
+        for (name, fn) in stats:
+            #print( name, nsubs, file=sys.stderr )
+            data['cols'].append( [name]
+                + [fn(s) if nsubs[i] else ''
+                    for (i, s) in enumerate(scores) ] )
 
     #data['rows'] = [row for row in reader]
     #data['scores'] = scores
 except Exception as e:
-    data['error'] = str(e)
+    data['error'] = traceback.format_exc()
+        #str(e)
 
 print( json.JSONEncoder().encode( data ) )

@@ -69,6 +69,10 @@ All these notes are <span class='text-info'>free and open source</span>. You may
   *[[pdfs/201808-sam.pdf|On the Homogenization of Diffusions in Periodic Comb-like Structures]]*,
   2018.
 
+* Yuanyuan Feng,
+  *[[pdfs/201908-yuanyuan.pdf|Dissipation Enhancement by Mixing]]*,
+  2019.
+
 ### {{secs.masters_thesis}}
 
 * [James T. Murphy III](http://intfxdx.com/),

@@ -207,7 +207,8 @@ class Site( staticjinja.Site ):
         return True if self.partial_re.search( f ) else False
 
     static_re  = re.compile(
-            '(?:^|/)static/|\.(:?pdf|jpg|png|svg|eps|ps|txt|sty|mp4|webm|bst)$',
+            '(?:^|/)static/|\.(:?pdf|jpg|png|svg|eps|ps|txt|sty|'
+                + 'mp4|webm|bst|csv)$',
             flags=re.I )
     def is_static( self, f ):
         if not self.is_ignored(f) and self.static_re.search( f ):
@@ -260,7 +261,7 @@ if __name__ == "__main__":
     env_globals.update( dict( cfg.items('common') ) )
     env_globals.update( dict( cfg.items(dev_env) ) )
 
-    site = staticjinja.make_site(
+    site = staticjinja.Site.make_site(
             searchpath=os.path.join( pwd, 'src' ),
             outpath=os.path.join( pwd,
                 'out-prod' if options.production else 'out'),

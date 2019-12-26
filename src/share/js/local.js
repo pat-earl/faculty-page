@@ -80,25 +80,30 @@ function submit_comment() {
     .fail( failfn );
 }
 
-function get_grades(fname) {
+function get_grades( dirname, fname, show_stats=true, show_total=true) {
   function failfn( msg ) {
     $('#status')
       .attr( 'class', 'alert alert-danger' )
       .text( 'Sorry, an error occurred.' );
     {%- if dev_env == 'local' %}
-      $('#status').append( ' Error: ' + 
-	(typeof(msg) === 'object' && msg.hasOwnProperty('statusText') ?
-	  msg.statusText : msg ));
+      if( typeof(msg) === 'object' && msg.hasOwnProperty('statusText') )
+	$('#status').append( '<br>' )
+	  .append( document.createTextNode( msg.statusText ));
+      else $('<pre></pre>').text(msg).appendTo($('#status'));
       /* For debugging */
       get_grades.errMsg = msg;
     {%- endif -%}
   }
 
   $.getJSON( "{{get_link('/cgi-bin/auth/getgrades.py')}}",
-      fname, function(data) {
+    { dirname: dirname,
+      filename: JSON.stringify(fname),
+      show_stats: show_stats, show_total: show_total },
+    function(data) {
 	var table = $('#scores');
-	var thead = table.children('thead').children();
-	var tbody = table.children('tbody');
+	var thead = $('<thead><tr><th></th></tr></thead>').appendTo(table)
+	  .children();
+	var tbody = $('<tbody></tbody>').appendTo(table);
 
 	{% if dev_env == 'local' -%}
 	/* Save for debugging */
@@ -119,7 +124,8 @@ function get_grades(fname) {
 
 	  // for( let c of data.cols ) throws an error in IE
 	  for ( let i=0; i < data.cols.length; i++ ) {
-	      thead.append( '<th>' + data.cols[i][0] + '</th>' );
+	      thead.append( '<th class="text-right">'
+		+ data.cols[i][0] + '</th>' );
 	      /* console.log( '<td>' + c[0] + '</td>' ); */
 	  };
 
@@ -128,7 +134,8 @@ function get_grades(fname) {
 
 	    tr.append('<th>' + data.rows[i] + '</th>' );
 	    for( let j=0; j < data.cols.length; j++ )
-	      tr.append( '<td>' + data.cols[j][i+1] + '</td>' );
+	      tr.append( '<td class="text-right">'
+		+ data.cols[j][i+1] + '</td>' );
 	  }
 
 	  /* $('#form-output').text(JSON.stringify(data, null, 2)); */

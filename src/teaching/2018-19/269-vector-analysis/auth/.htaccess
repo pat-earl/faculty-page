@@ -21,6 +21,11 @@ require shib-attr affiliation Faculty@andrew.cmu.edu
 #require shib-attr affiliation Staff@andrew.cmu.edu
 #require shib-attr affiliation Member@andrew.cmu.edu
 
+# Graders
+require user jungjoos@andrew.cmu.edu
+require user yuepengy@andrew.cmu.edu
+
+# Students
 require user ibrowne@andrew.cmu.edu
 require user yuncheng@andrew.cmu.edu
 require user minsungc@andrew.cmu.edu

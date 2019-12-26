@@ -2,4 +2,4 @@
 /src/research/papers/
 *.webm
 *.mp4
-grades.csv
+**/auth/*.csv

@@ -11,6 +11,6 @@ Homework and solutions will be posted here.
 {%- if glob('auth/sol*') %}
 * [[sol.md]]
 {%- endif %}
-{%- if glob('auth/grades.csv') %}
+{%- if glob('auth/*.csv') %}
 * [[auth/grades.md|Your Grades]]
 {%- endif %}

@@ -6,7 +6,7 @@ import re, shutil
 from collections import namedtuple
 
 import markdown
-import markdown.extensions.headerid as mdx_headerid
+import markdown.extensions.toc as mdx_toc
 import mdx_math, mdx_link
 
 class mdconverter:
@@ -203,6 +203,9 @@ def render(site, template, **context):
     except:
         if( template.name.startswith( "blog" ) ):
             layout = 'md-blogpost.j2'
+        elif re.match( r'teaching\/[0-9-]+\/[0-9a-z-]+\/auth/grades\.md',
+                template.name ):
+            layout = 'md-grades.j2'
         elif re.match( r'teaching\/[0-9-]+\/[0-9a-z-]+\/.*\.md',
                 template.name ):
             layout = 'md-class.j2'
@@ -254,4 +257,4 @@ def get_context( site, template):
     return context
 
 def slugify( s, sep='-' ):
-    return mdx_headerid.slugify( str(s), sep )
+    return mdx_toc.slugify( str(s), sep )
