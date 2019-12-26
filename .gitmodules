@@ -12,10 +12,10 @@
 	url = https://github.com/danielchatfield/jinja2_markdown.git
 [submodule "ext/src/python-markdown-math"]
 	path = ext/src/python-markdown-math
-	url = https://github.com/gi1242/python-markdown-math.git
+	url = https://github.com/mitya57/python-markdown-math.git
 [submodule "ext/src/staticjinja"]
 	path = ext/src/staticjinja
-	url = https://github.com/gi1242/staticjinja.git
+	url = https://github.com/Ceasar/staticjinja.git
 [submodule "ext/src/markupsafe"]
 	path = ext/src/markupsafe
 	url = https://github.com/pallets/markupsafe.git
