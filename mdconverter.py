@@ -7,7 +7,7 @@ from collections import namedtuple
 
 import markdown
 import markdown.extensions.toc as mdx_toc
-import mdx_math, mdx_link
+import mdx_math, mdx_link, markdown_strikethrough
 
 class mdconverter:
     def __init__(self, site):
@@ -28,6 +28,7 @@ class mdconverter:
                 link_chars = r'][\w0-9|:._ (),/"-',
                 build_url=lambda t, b, e: self.build_url( t )
             ),
+            markdown_strikethrough.StrikethroughExtension(),
         ] )
         self.md.set_output_format( 'html5' )
 

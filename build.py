@@ -133,7 +133,8 @@ class Site( staticjinja.Site ):
             filename = filename[1:]
             cdir = self.searchpath
         else:
-            cdir = os.path.join( site.searchpath, context['dirname'] )
+            cdir = os.path.join( site.searchpath,
+                    context.get( 'dirname', '' ) )
             
         return (filename, cdir)
 
