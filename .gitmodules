@@ -25,3 +25,6 @@
 [submodule "ext/src/python-coloredlogs"]
 	path = ext/src/python-coloredlogs
 	url = https://github.com/xolox/python-coloredlogs.git
+[submodule "ext/src/markdown-strikethrough"]
+	path = ext/src/markdown-strikethrough
+	url = https://github.com/codejamninja/markdown-strikethrough.git
