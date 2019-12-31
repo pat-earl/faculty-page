@@ -1,29 +1,24 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 import cgi
-import os
-import time
-import hashlib
+import os, time, hashlib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 
-def utf_strip( s ):
-    return unicode( s, 'utf-8', 'replace' ).strip()
-
 form = cgi.FieldStorage()
 dev_env = "{{dev_env}}"
 
-print "Content-type: text/plain;\n"
+print( "Content-type: text/plain;\n" )
 
-email_address = utf_strip( form.getvalue('email') or 'unknown@email.id')
-page = utf_strip( form.getvalue( 'page' ))
-subject = utf_strip( form.getvalue( 'subject' ) )
-name = utf_strip( form.getvalue( 'name' ) or 'Anonymous' )
+email_address = form.getvalue('email', 'unknown@email.id').strip()
+page = form.getvalue( 'page', 'error-no-page' ).strip()
+subject = form.getvalue( 'subject', 'Error: No subject' ).strip()
+name = form.getvalue( 'name', 'Anonymous' ).strip()
 date = time.strftime( '%F %T %Z' )
-ip = os.environ.get( 'REMOTE_ADDR' )
-referer = os.environ.get( 'HTTP_REFERER' )
-comment = utf_strip( form.getvalue( 'comment' ) or "No comment" )
-num = int( form.getvalue( 'comment-number' ) or 1 )
+ip = os.environ.get( 'REMOTE_ADDR', 'Unknown' )
+referer = os.environ.get( 'HTTP_REFERER', 'Unknown' )
+comment = form.getvalue( 'comment', 'No comment' ).strip()
+num = int( form.getvalue( 'comment-number', 1 ) )
 
 # Build the email.
 msg = MIMEMultipart()
@@ -34,7 +29,7 @@ msg.preamble = 'A comment was posted to page %s on %s' % (page, date)
 
 msg.attach( MIMEText( msg.preamble ) )
 
-attach = MIMEText( u"""\
+attach = MIMEText( """\
 page: %s
 subject: %s
 name: %s
@@ -46,7 +41,8 @@ referer: %s
 
 %s
 """ % ( page, subject, name, email_address, 
-        hashlib.md5( email_address.lower() ).hexdigest(),
+        hashlib.md5( email_address.lower().encode( errors='replace' ) ) \
+                .hexdigest(),
         date, ip, referer, comment),
     _charset='utf-8'
 )
@@ -55,5 +51,5 @@ attach['Content-Disposition'] = 'attachment; filename="_%s_%02d.md"' % \
 msg.attach( attach )
 
 s = smtplib.SMTP('{{site_smtp}}')
-print s.sendmail( msg['To'], msg['To'], msg.as_string() ) or "OK"
+print( s.sendmail( msg['To'], msg['To'], msg.as_string() ) or "OK" )
 s.close()
