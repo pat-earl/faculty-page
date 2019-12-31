@@ -2,89 +2,87 @@
 {%- macro finclude(fn) -%}
   {%- include fn -%}
 {%- endmacro -%}
-{% from 'includes/macros.j2' import post_date, glyph -%}
+{% from 'includes/macros.j2' import post_date -%}
 {% extends "layouts/md-nav-right-affix.j2" -%}
 {% block comments_block -%}
   {% if comments != 'disabled' -%}
-    <br>
-    <h3>
-      {{ glyph( 'comment' ) }}&emsp;Comments
-    </h3>
-
     {% set cfiles = glob( '/blog/_comments/_'~filesdir~'_*.md' ) | sort -%}
     {% for f in cfiles -%}
       {% set meta = get_meta( f ) -%}
-      <ul class='list-unstyled comments'>
-	<li>
+      {% if loop.first %}
+	<h3 class='my-3'>
+	  🗫 Comments
+	</h3>
+
+	<ul class='list-unstyled comments mb-3'>
+      {% endif %}
+	<li class='mt-2'>
 	  <div class='media small'>
-	    <div class='media-left'>
-	      <img class='media-object img-rounded hidden-xs'
-		  src='{{meta.avatar|default('http://cdn.libravatar.org/avatar/')}}'
-		  alt='{{meta.name|default('Anonymous')}}'>
-	    </div>
+	    <img class='mr-3 rounded d-none d-sm-block'
+		src='{{meta.avatar|default('http://cdn.libravatar.org/avatar/')}}'
+		alt='{{meta.name|default('Anonymous')}}'>
 	    <div class='media-body'>
-	      <h4 class='media-heading'>
+	      <h5 class='mt-0 mb-1'>
 		{{meta.subject}}
-		<br>
-		<small>{{meta.name|default('Anonymous')}} ({{meta.date}})</small>
-	      </h4>
+	      </h5>
+	      <p class='small mb-2'>{{meta.name|default('Anonymous')}} ({{meta.date}})</p>
 
 	      {{finclude(f) | markdown}}
 	    </div>
 	  </div>
 	</li>
-      </ul>
-      <br>
+      {% if loop.last %}
+	</ul>
+      {% endif %}
     {% endfor -%}
 
     <h4>
-      {{ glyph('pencil') }}&emsp;Leave a comment
-      <small class='text-warning'>
+      📮 Leave a comment
+      <small class='text-warning small-1'>
 	(Spammers beware: All comments are moderated)
       </small>
     </h4>
-    <div id='comment-failed' class='alert alert-danger hidden'>
+    <div id='comment-failed' class='alert alert-danger d-none'>
       Sorry. There was an error submitting your comment. Please try again, or contact me if the problem persists.
     </div>
-    <div id='comment-form' class='well row small'>
-      <form role='form' method='post'
-	  action='javascript:submit_comment()'>
-	<input type='hidden' name='page' value='{{basename}}'>
-	<input type='hidden' name='comment-number' value='{{(cfiles|length)+1}}'>
-	<div class="col-md-6 form-group">
+    <form id='comment-form' role='form' method='post'
+	action='javascript:submit_comment()'>
+      <input type='hidden' name='page' value='{{basename}}'>
+      <input type='hidden' name='comment-number' value='{{(cfiles|length)+1}}'>
+      <div class='form-row'>
+	<div class="col-md-6 my-1">
 	  <label class="sr-only" for="name">Name</label>
-	  <input type="text" class="form-control" name="name" placeholder="Name (optional)">
+	  <input type="text" class="form-control" name="name"
+	    placeholder="Name (optional)">
 	</div>
-	<div class="col-md-6 form-group">
+	<div class="col-md-6 my-1">
 	  <label class="sr-only" for="email">Email address</label>
 	  <input type="email" class="form-control" name="email"
 	    placeholder="Email (optional, to generate an avatar; will not be published)"
 	    title="Your email is only used to generate an avatar. It will not be published or used to contact you. Promise!">
 	</div>
-	<div class='col-md-12 form-group'>
-	  <label class="sr-only" for="subject">Subject</label>
-	  <input type="text" class="form-control" name="subject"
-	    placeholder="Subject (REQUIRED)" REQUIRED>
-	</div>
-	<div class="col-md-12 form-group">
-	  <label class="sr-only" for="email">Comment</label>
-	  <textarea class="form-control" name="comment"
-	    placeholder="Comment. (REQUIRED. Write your comment in Markdown)"
-	    rows='4' REQUIRED></textarea>
-	  {# <span class='help-block'>
-	    Write your comment in 
-	    <a href='https://help.github.com/articles/markdown-basics'>Markdown</a>.
-	  </span> #}
-	</div>
-	<div class="col-md-12 form-group text-right">
-	  <button type="submit" class="btn btn-default">Submit</button>
-	</div>
-      </form>
-    </div>{# comment-form #}
-    <div id='comment-sending' class='alert alert-info hidden'>
+      </div>
+      <label class="sr-only" for="subject">Subject</label>
+      <input type="text" class="form-control my-1" name="subject"
+	placeholder="Subject (REQUIRED)" REQUIRED>
+
+      <label class="sr-only" for="email">Comment</label>
+      <textarea class="form-control my-1" name="comment"
+	placeholder="Comment. (REQUIRED. Write your comment in Markdown)"
+	rows='4' REQUIRED></textarea>
+      {# <span class='help-block'>
+	Write your comment in 
+	<a href='https://help.github.com/articles/markdown-basics'>Markdown</a>.
+      </span> #}
+
+      <div class="text-right my-1">
+	<button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+    <div id='comment-sending' class='alert alert-info d-none'>
       Sending comment; please wait.
     </div>
-    <div id='comment-success' class='alert alert-success hidden'>
+    <div id='comment-success' class='alert alert-success d-none'>
       Thanks. Your comment was successfully submitted.
       It will appear here shortly if it isn't spam.
     </div>
@@ -94,9 +92,9 @@
   {{ super() }}
 
   <br>
-  <h4>{{glyph( 'bullhorn' )}}&emsp;Recent posts</h4>
+  <h4>📢 Recent posts</h4>
   {% set files = glob( '/blog/[0-9]*.md' ) | sort( reverse=True ) -%}
-  <ol class='list-unstyled'>
+  <ol class='list-unstyled small'>
     {% for f in files[:5] -%}
       <li class='hide-xoverflow'>
 	<a href='{{get_link(f)}}'>{{get_meta( f, 'title')}}</a>
@@ -104,14 +102,4 @@
       </li>
     {% endfor -%}
   </ol>
-  {#-
-  <div class='row'>
-    <div class='col-md-12 col-sm-6'>
-      <h4>Tags</h4>
-    </div>
-    <div class='col-md-12 col-sm-6'>
-      <h4>Recent posts</h4>
-    </div>
-  </div>
-  -#}
 {% endblock nav_after_toc -%}

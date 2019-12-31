@@ -1,9 +1,9 @@
 {%- extends "layouts/nav-right.j2" -%}
 {%- block bodyargs -%}
-  style='position: relative' data-spy='scroll' data-target='#col-right'
+  data-scroll-toc='1'
 {%- endblock -%}
 {% block nav_column -%}
-  <div data-affix-after='#create'>
+  <div style='position: sticky; top: .5rem; overflow-x: hidden;'>
     {# {% block nav_before_toc %}{% endblock %} -#}
     {{ super() }}
     {# {% block nav_after_toc %}{{super()}}{% endblock %} -#}

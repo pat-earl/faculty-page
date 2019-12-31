@@ -9,14 +9,15 @@ They're mainly posted here as a reference for me, so don't blame me if you don't
 
 {% for f in glob( '[0-9]*.md' ) | sort( reverse=True ) -%}
 {% set meta = get_meta(f) -%}
-  <h3>
-    <a href='{{get_link(f)}}'>{{meta.title}}</a><br />
-    <small>Posted&nbsp;{{post_date(f)}}</small>
-  </h3>
+  <h4 class='mt-4'>
+    <a href='{{get_link(f)}}'>{{meta.title}}</a>
+  </h4>
+
+  <small>Posted&nbsp;{{post_date(f)}}</small>
 
 {% if meta.summary -%}
   {{ meta.summary  if meta.summary is string else '\n'.join( meta.summary )-}}
-  <a class='text-nowrap tight-float-right' href='{{get_link(f)}}'>More &raquo;</a>
+  <a class='text-nowrap float-right' href='{{get_link(f)}}'>More &raquo;</a>
 {%- endif %}
 
 {% if meta.tags -%}

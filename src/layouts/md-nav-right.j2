@@ -6,14 +6,11 @@
 {% block main_column -%}
   <div class='justify{{" lead" if bigfont}}'>
     {% block title_block -%}
-      {% if title -%}
-	<h1>
-	  {{title}}
-	  {% if subtitle or post_date(basename) -%}
-	    <br>
-	    <small>{{subtitle | default(post_date(basename))}}</small>
-	  {% endif -%}
-	</h1>
+      {% if title -%}<h1>{{title}}</h1>{% endif -%}
+      {% if subtitle or post_date(basename) -%}
+	<p class='text-secondary mt-0 mb-3'>
+	  {{subtitle | default(post_date(basename))}}
+	</p>
       {% endif -%}
     {% endblock -%}
 

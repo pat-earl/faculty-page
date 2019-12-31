@@ -1,6 +1,5 @@
 title: Local Extensions and site specific details
 breadcrumb: /{{dirname}}.md
-{%- from 'includes/macros.j2' import glyph %}
 
 A general markdown cheat sheet can be found [[markdown.md|here]].
 This file only documents site specific quirks and extensions.
@@ -138,7 +137,7 @@ Various custom macros are in the `includes/macros.j2` file and can be used in ma
 A few are listed here.
 
 glyph:
-: generates a glyph from [here](https://getbootstrap.com/docs/3.3/components/#glyphicons). E.g. `{{'{{glyph("thumbs-up")}}'}}` renders as {{glyph("thumbs-up")}}.
+: ~~generates a glyph from [here](https://getbootstrap.com/docs/3.3/components/#glyphicons).~~ Disabled. Bootstrap 4 dropped support for glyphicons 🙄, so instead use Unicode emojis directly 😁.
 
 course_info_table:
 : Makes a table with course information taken from the keys in the meta-data (e.g. [[/teaching/2015-16/268-multid-calc|here]].)

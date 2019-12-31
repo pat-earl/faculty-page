@@ -1,19 +1,4 @@
 {% raw -%}
-/* For fixed top navbar */
-/*
-body {
-  padding-top: 50px;
-}
-*/
-
-/* For static top nav-bar */
-body > div.jumbotron { margin-top: -20px }
-
-.smallskip { margin-top: .5em }
-.medskip { margin-top: 1em }
-.bigskip { margin-top: 2em }
-.biggskip { margin-top: 3em }
-
 /* Justify: Justify on sm, md, lg. Hyphenate on all. {{{ */
 .justify {
   /* Hyphenate on all devices */
@@ -35,12 +20,11 @@ body > div.jumbotron { margin-top: -20px }
 }
 /* }}} */
 
-img.float-left {
-  /* padding: 0ex .5ex .5ex 0ex; */
-  padding-right: 10px;
-  padding-top: 10px;
-  float: left;
-  clear: left;
+/* Fix padding of lists in right column */
+div.ul-padding-fix > ul,
+ul.ul-padding-fix,
+#hw-handouts ul {
+  padding-left: 1rem;
 }
 
 .tight-float-right {
@@ -57,6 +41,7 @@ img.float-left {
 ol.post-series, ul.post-series
 {
   padding-left: 2ex;
+  font-size: .8rem;
 }
 
 .post-series > li {
@@ -66,113 +51,81 @@ ol.post-series, ul.post-series
   text-overflow: ellipsis;
 }
 
-#hw-handouts ul {
-  padding-left: 2.5rem;
-}
-
 /* Comments */
-ul.comments > li {
-  margin-top: 2em
-}
-
-/* Right navigation {{{ */
-#col-right .toc ul {
-  list-style: none;
-  padding-left: 0ex;
-  white-space: nowrap;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-}
-
-#col-right .toc ul ul {
-  padding-left: 2ex;
-}
-
-
-/* Hide inactive sub-lists */
-#col-right .toc ul li > ul {
-  display: none;
-}
-
-#col-right .toc ul li.active > ul {
-  display: block;
-}
-
-
-/* Reduce font size for sub-menus. */
-/*
-#col-right .toc ul ul {
-  font-size: 90%;
-}
-
-#col-right .toc ul ul ul ul {
-  font-size: 100%;
-}
-
-#col-right .toc ul li.active {
-  font-weight: bold;
-}
-
-#col-right .toc ul li {
-  font-weight: normal;
-}
-*/
-#col-right .toc ul li.active > a {
-  color: #31708F; /* text-info */
-  font-weight: bold;
-}
-
-#col-right .toc ul li > a {
-  color: #777; /* text-muted */
-}
-
-/* sm and xs devices */
-@media only screen and (max-width:991px){
-  #col-right > .affix,
-  #col-right > .affix-bottom
-  {
-    /* Don't affix right side navigation! The columns are stacked */
-    position: static;
-    /* width: auto;
-    top: 0; */
-  }
-}
-
-/* md and lg devices */
-@media only screen and (min-width : 992px) {
-  .affix {
-    top: 0px;
-  }
-  .affix-bottom {
-    position: absolute;
-  }
-}
-/* }}} */
-
-/* Left navigation */
-#col-left .toc ul {
-  list-style: none;
-  padding-left: 2ex;
-}
-
-#col-left .toc ul ul {
-  font-size: 90%;
-}
-
-#col-right .toc ul ul ul ul {
-  font-size: 100%;
-}
-
-nav.toc-depth-1 ul ul {
-  display: none;
-}
-
-nav.toc-depth-2 ul ul ul {
-  display: none;
-}
-
 /* Same size block quotes */
 ul.comments  div.small blockquote {
   font-size: inherit;
 }
+
+.small-1 {
+  font-size: .8rem;
+}
+
+
+/* Right navigation {{{ */
+#col-right .toc ul.nav {
+  list-style: none;
+  white-space: nowrap;
+  font-size: .8rem;
+}
+
+#col-right .toc > ul.nav {
+  padding-bottom: 1rem;
+}
+
+#col-right .toc ul.nav li.nav-item a.nav-link {
+  padding: 0px;
+}
+
+#col-right .toc ul.nav ul.nav {
+  padding: 0rem 0rem 0rem 1rem;
+}
+
+
+/* Hide inactive sub-lists */
+#col-right .toc > ul.nav li.nav-item > ul.nav {
+  display: none;
+}
+
+#col-right .toc > ul.nav li.nav-item > a.nav-link.active + ul.nav {
+  display: block;
+}
+
+#col-right .toc > ul.nav li.nav-item > a.nav-link.active {
+  color: #31708F; /* text-info */
+  font-weight: bold;
+}
+
+#col-right .toc > ul.nav li.nav-item > a.nav-link {
+  color: #777; /* text-muted */
+}
+
+/* }}} */
+
+/* From Bootstrap 3 */
+pre {
+  padding: 9.5px;
+  margin: 0 0 10px;
+  /* font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word; */
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+blockquote {
+  padding: .5em 1em;
+  margin: 0 0 1em;
+  /* font-size: 17.5px; */
+  border-left: .25em solid #eee;
+}
+blockquote p:last-child,
+blockquote ul:last-child,
+blockquote ol:last-child {
+  margin-bottom: 0;
+}
+
 {% endraw %}

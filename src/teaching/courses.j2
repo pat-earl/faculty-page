@@ -53,11 +53,10 @@
 {% set cur_index = ( (1,2), (8,2), ) %}
 {% macro md_current_courses() %}
   {% for i, j in cur_index %}
-  {% set c = courses[i] -%}
-  {% set (cn, ct, cl) = (c[0], c[1], 'teaching/' ~ c[2][j][2]) -%}
+  {%- set c = courses[i] %}
+  {%- set (cn, ct, cl) = (c[0], c[1], 'teaching/' ~ c[2][j][2]) %}
 * [{{ ( cn~': ' if cn else '' ) ~ ct}}]({{cl}})
-
-  {% endfor %}
+  {%- endfor %}
 {% endmacro %}
 {% macro md_current_courses_long() %}
   {% for i, j in cur_index -%}
@@ -71,8 +70,7 @@
       {% set cs = '' -%}
     {% endif -%}
 * [{{ (cn~': ' if cn else '') ~ ct}} ({{cs ~ cy}})]({{cl}})
-
   {% else -%}
 I'm not teaching this semester.
-  {% endfor %}
+  {%- endfor %}
 {% endmacro %}

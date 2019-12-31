@@ -1,32 +1,24 @@
 {%- import 'includes/macros.j2' as macros -%}
 {%- macro footer( email ) -%}
   <footer>
-    <div class='container'>
+    <div class='container small'>
       <hr>
       <div class='media'>
-	<div class='media-body'>
-	  <p>
-	    <span class='text-nowrap'>&copy; {{ site_author }} 2015&ndash;2017.</span>
-	    This site is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
-	  </p>
+	<div class='media-body pt-0'>
+	  <span class='text-nowrap'>&copy; {{ site_author }} 2015&ndash;2019.</span>
+	  This site is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
+	  <br>
+	  {{ macros.email( email | default(author_email) ) }}
+	  &emsp;
+	  {{ macros.room( author_office_bldg, author_office_room ) }}
 	</div>
-	<div class='media-right'>
-	  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-	    <img alt="Creative Commons License" class='media-object' style="border-width:0" src="{{get_link('/share/licence/cc-by-nc-sa-88x31.png', true)}}">
-	  </a>
-	</div>
+	<a rel="license" class='mr-auto'
+	  href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+	  <img alt="Creative Commons License" class='media-object'
+	    style="border-width:0"
+	    src="{{get_link('/share/licence/cc-by-nc-sa-88x31.png', true)}}">
+	</a>
       </div>
-
-      {{ macros.email( email | default(author_email) ) }}
-      &emsp;
-      {{ macros.room( author_office_bldg, author_office_room ) }}
-      {#-
-      &emsp;
-      <span class='text-nowrap' title='Phone'>
-	{{ macros.glyph( 'phone-alt' ) }}
-	{{ author_office_phone }}.
-      </span>
-      #}
     </div>
   </footer>
 {%- endmacro -%}

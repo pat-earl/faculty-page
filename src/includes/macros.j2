@@ -21,29 +21,27 @@
   {% for p in list %}
     <li>
       {% if p.link or p.code %}
-	<div class='btn-group text-nowrap tight-float-right'>
+	<div class='text-nowrap tight-float-right'>
 	  {%- if p.link -%}
-	    <a class='btn btn-default btn-xs' href='{{site_url}}/research/papers/{{p.link}}' title='Download preprint'>
-	      {{ glyph( 'download' ) }}
-	    </a>
+	    <a
+	      href='{{site_url}}/research/papers/{{p.link}}'
+	      title='Download preprint'>📥</a>
 	  {% endif %}
 	  {% if p.tablet %}
-	    <a class='btn btn-default btn-xs' href='{{site_url}}/research/papers/{{p.tablet}}' title='Download mobile friendly preprint'>
-	      {{ glyph( 'phone' ) }}
-	    </a>
+	    <a
+	      href='{{site_url}}/research/papers/{{p.tablet}}'
+	      title='Download mobile friendly preprint'>📲</a>
 	  {% endif %}
 	  {% if p.twoup %}
-	    <a class='btn btn-default btn-xs' href='{{site_url}}/research/papers/{{p.twoup}}' title='Download 2up preprint for eco-friendly printing'>
-	      {{ glyph( 'print' ) }}
-	    </a>
+	    <a
+	      href='{{site_url}}/research/papers/{{p.twoup}}'
+	      title='Download 2up preprint for eco-friendly printing'>🖨</a>
 	  {% endif %}
 	  {% if p.code or p.fcode %}
-	    <a class='btn btn-default btn-xs'
+	    <a
 	      href='{{(site_url ~ '/research/' ~ p.code) if p.code
 		else p.fcode }}'
-	      title='Code and Figures'>
-	      {{ glyph( 'sunglasses' ) }}
-	    </a>
+	      title='Code and Figures'>🖥</a>
 	  {%- endif -%}
 	</div>
       {% endif %}
@@ -58,13 +56,15 @@
   {% endfor %}
 {% endmacro %}
 
+{# Disabled, since Bootstrap 4 dropped support for Glyphicons.
 {%- macro glyph( g ) -%}
   <span class='glyphicon glyphicon-{{g}}' aria-hidden='true'></span>
 {%- endmacro -%}
+#}
 
 {%- macro email( address, period=true ) -%}
   <span class='text-nowrap' title='Email'>
-    {{ glyph('envelope') }}
+    📧
     {{ address | default( "author@email.com" ) }}
     {%- if period %}.{% endif -%}
   </span>
@@ -72,7 +72,7 @@
 
 {%- macro room( bldg, room='', is_office=true ) -%}
   <span class='text-nowrap' {{"title='Office'" if is_office}}>
-    {{-glyph('briefcase') if is_office-}}
+    {{-'💼' if is_office-}}
     {%- if bldg == "WEH" -%}
       {{' '}}<a title='Wean Hall' href='https://www.google.com/maps/place/Wean+Hall,+Carnegie+Mellon+University,+Pittsburgh,+PA+15213'>WEH</a>
     {%- else -%}
@@ -85,7 +85,7 @@
 {%- macro course_info_table(c) -%}
   {#- Import this using "with context", so all the variables are inherited #}
   <table class='table'>
-    <thead><tr><td colspan='2'></td></tr></thead>
+   {# <thead><tr><td colspan='2'></td></tr></thead> -#}
     <tbody>{# Instructor, lectures {{{ #}
       <tr>
 	<th scope='row'>Instructor</th>
@@ -307,7 +307,7 @@
 	{%- endfor -%}
       </tbody>
     {%- endif -%}{# }}} #}
-    <tfoot><tr><td colspan='2'></td></tr></tfoot>
+   {# <tfoot><tr><td colspan='2'></td></tr></tfoot> -#}
   </table>
 {%- endmacro -%}
 
@@ -322,7 +322,7 @@
   <div>
     <br>
     <h4 class='hide-xoverflow'>
-      {{ glyph( 'menu-hamburger' ) }}&emsp;<a href='{{get_link(parent)}}'>
+      {{ '🍔' }}&emsp;<a href='{{get_link(parent)}}'>
 	{{- get_meta(parent, 'title')}}</a>
     </h4>
     <ol class='post-series'>

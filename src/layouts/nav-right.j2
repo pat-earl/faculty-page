@@ -4,24 +4,28 @@
     <div class='col-md-9' id='col-main'>
       {% block breadcrumb_block -%}
 	{% if breadcrumb -%}
-	  <ul class='breadcrumb hidden-xs'>
-	    {% if breadcrumb is string -%}
-	      {% set breadcrumb = [breadcrumb] -%}
-	    {% endif -%}
-	    {% for i in breadcrumb | reverse -%}
-	      {% if search( i, '\|' ) -%}
-		{# in format "link|text" #}
-		{% set b_link = get_link( sub( i, '\|.*', '', 1 ) ) -%}
-		{% set b_text = sub( i, '.*?\|', '', 1 ) -%}
-	      {% else -%}
-		{# in format "file.md" #}
-		{% set b_link = get_link( i ) -%}
-		{% set b_text = get_meta( i, 'title' ) -%}
+	  <nav class='small d-none d-sm-block' aria-label='breadcrumb'>
+	    <ol class='breadcrumb'>
+	      {% if breadcrumb is string -%}
+		{% set breadcrumb = [breadcrumb] -%}
 	      {% endif -%}
-	      <li><a href='{{b_link}}'>{{b_text}}</a></li>
-	    {% endfor -%}
-	    <li class='active'>{{title}}</li>
-	  </ul>
+	      {% for i in breadcrumb | reverse -%}
+		{% if search( i, '\|' ) -%}
+		  {# in format "link|text" #}
+		  {% set b_link = get_link( sub( i, '\|.*', '', 1 ) ) -%}
+		  {% set b_text = sub( i, '.*?\|', '', 1 ) -%}
+		{% else -%}
+		  {# in format "file.md" #}
+		  {% set b_link = get_link( i ) -%}
+		  {% set b_text = get_meta( i, 'title' ) -%}
+		{% endif -%}
+		<li class='breadcrumb-item'><a href='{{b_link}}'>{{b_text}}</a></li>
+	      {% endfor -%}
+	      <li class='breadcrumb-item active' aria-current='page'>
+		{{title}}
+	      </li>
+	    </ol>
+	  </nav>
 	{% endif -%}
       {% endblock breadcrumb_block -%}
       {% block main_column -%}
@@ -33,7 +37,7 @@
       {% block nav_column -%}
 	{% block nav_before_toc %}{% endblock -%}
 	{% if not search( toc, '<ul></ul>' ) -%}
-	  <nav class='nav hidden-xs hidden-sm'>
+	  <nav class='nav d-none d-md-block'>
 	    {#-
 	    <h4 class='hide-xoverflow'>
 	      <a href='#toc' data-toggle='collapse'

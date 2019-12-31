@@ -24,15 +24,15 @@
     <div id='hw-handouts' class='row small'>
       {% if md_hw() -%}
 	<div class='col-md-12 col-sm-6'>
-	  <h4 class='hidden-xs hidden-sm'>Homework and Solutions</h4>
-	  <h2 class='hidden-md hidden-lg'>Homework and Solutions</h2>
+	  <h4 class='d-none d-md-block'>Homework and Solutions</h4>
+	  <h2 class='d-md-none'>Homework and Solutions</h2>
 	  {{ md_hw() | markdown }}
 	</div>
       {% endif -%}
       {% if md_handouts() -%}
 	<div class='col-md-12 col-sm-6'>
-	  <h4 class='hidden-xs hidden-sm'>Handouts</h4>
-	  <h2 class='hidden-md hidden-lg'>Handouts</h2>
+	  <h4 class='d-none d-md-block'>Handouts</h4>
+	  <h2 class='d-md-none'>Handouts</h2>
 	  {{ md_handouts() | markdown }}
 	</div>
       {% endif -%}

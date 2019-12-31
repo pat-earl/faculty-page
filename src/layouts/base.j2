@@ -18,14 +18,11 @@
 
     {%- block stylesheets -%}
       {%- if dev_env == 'production' -%}
-	{%- set min = '.min' -%}
-	{%- set bootstrap_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap' -%}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
       {%- else -%}
-	{%- set min = '' -%}
-	{%- set bootstrap_cdn = get_link('/dev/static/bootstrap', true) -%}
+	<link rel="stylesheet"
+	  href="{{get_link('/dev/static/bootstrap/4.4.1/css/bootstrap.css', true)}}">
       {%- endif -%}
-      <link rel="stylesheet"
-	href="{{bootstrap_cdn}}/4.0.0-beta.2/css/bootstrap{{min}}.css">
       <link rel="stylesheet"
 	href="{{site_prefix}}/share/css/pygments-theme.css">
       <link rel="stylesheet" href="{{site_prefix}}/share/css/local.css">
@@ -62,26 +59,19 @@
     {%- block scripts scoped -%}
       {#- jQuery (necessary for Bootstrap's JavaScript plugins) -#}
       {%- if dev_env == 'production' -%}
-	{%- set min = '.min' -%}
-	{%- set jquery_cdn = 'https://code.jquery.com' -%}
-	{%- set popper_cdn = 'https://cdnjs.cloudflare.com/ajax/libs/popper.js' -%}
-	{%- set bootstrap_cdn = 'https://maxcdn.bootstrapcdn.com/bootstrap' -%}
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
       {%- else -%}
-	{%- set min = '' -%}
-	{%- set jquery_cdn = get_link('/dev/static/jquery', true) -%}
-	{%- set popper_cdn = get_link('/dev/static/popper', true) -%}
-	{%- set bootstrap_cdn = get_link('/dev/static/bootstrap', true) -%}
+	<script src="{{get_link('/dev/static/jquery/jquery-3.4.1.js', true)}}"></script>
+	<script src="{{get_link('/dev/static/popper/1.16.0/umd/popper.js', true)}}"></script>
+	<script src="{{get_link('/dev/static/bootstrap/4.4.1/js/bootstrap.js', true)}}"></script>
       {%- endif -%}
 
-      <script src="{{jquery_cdn}}/jquery-3.2.1.slim{{min}}.js"></script>
-      <script src="{{popper_cdn}}/1.12.3/umd/popper{{min}}.js"></script>
       {#-
 	Include all compiled plugins (below), or include individual files as
 	needed
       #}
-      <script src="{{bootstrap_cdn}}/4.0.0-beta.2/js/bootstrap{{min}}.js">
-      </script>
-
       {%- if needs_mathjax -%}
 	<script src='{{get_link('/share/js/mathjax-config.js', true)}}'></script>
 	<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>

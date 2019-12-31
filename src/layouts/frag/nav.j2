@@ -1,37 +1,35 @@
 {%- import 'includes/site.j2' as site -%}
 {%- macro nav_bar(active) -%}
   {# Static top navbar #}
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	  <span class="sr-only">Toggle navigation</span>
-	  <span class="icon-bar"></span>
-	  <span class="icon-bar"></span>
-	  <span class="icon-bar"></span>
-	</button>
-	<a class="navbar-brand" href="{{site_url}}">{{site_short_title}}</a>
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class='container'>
+      <a class="navbar-brand" href="{{site_url}}">{{site_short_title}}</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+	data-target="#navbar">
+	<span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse small" id="navbar">
+	{% for nb in (site.navbar_left, site.navbar_right) -%}
+	  <ul class="navbar-nav {{'mr-auto' if loop.first else ''}}">
+	    {% for href, caption in nb -%}
+	      <li class='nav-item
+		  {%- if href == active %} active
+		  {%- elif not href %} disabled
+		  {%- endif %}'>
+		<a class='nav-link
+		      {{- ' pr-0' if loop.last else ''}}
+		      {%- if href == active %} active
+		      {%- elif not href %} disabled
+		      {%- else %} text-secondary
+		      {%- endif %}'
+		    href="{{get_link( href, false) if href else '#'}}">
+		  {{- caption -}}
+		</a>
+	      </li>
+	    {% endfor -%}
+	  </ul>
+	{%- endfor -%}
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
-	<ul class="nav navbar-nav">
-	  {% for href, caption in site.navbar_left -%}
-	    <li {%- if href == active %} class='active' {%- endif %}>
-	      <a href="{{site_url}}/{{href|e}}">{{caption}}</a>
-	    </li>
-	  {% endfor -%}
-	</ul>
-	<ul class="nav navbar-nav navbar-right">
-	  {% for href, caption in site.navbar_right -%}
-	    <li
-	      {%- if href and href == active %} class='active'
-	      {%- elif not href %} class='disabled'
-	      {%- endif -%}
-	      >
-	      <a href="{{(site_url ~ '/' ~ href) if href else '#'}}">{{caption}}</a>
-	    </li>
-	  {% endfor -%}
-	</ul>
-      </div><!--/.nav-collapse -->
     </div>
   </nav>
 {%- endmacro -%}
