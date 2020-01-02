@@ -12,7 +12,8 @@ import mdx_math, mdx_link, markdown_strikethrough
 class mdconverter:
     def __init__(self, site):
         """
-        site is a staticjinja Site object from which URL prefixes etc are extracted.
+        site is a staticjinja Site object from which URL prefixes etc are
+        extracted.
         """
         self.site = site
         self.current_context = None
@@ -100,7 +101,7 @@ class mdconverter:
         # Check if the path exists
         f = self.path_exists( self.current_context, link )
         if f is None:
-            self.site.logger.warn( '%s WARNING: Broken link "%s"'
+            self.site.logger.warning( '%s WARNING: Broken link "%s"'
                     % (self.current_context['name'], link) )
         elif sep < 0:
             # Path exists and no label given.
@@ -111,8 +112,8 @@ class mdconverter:
 
     def mdconvert( self, context, s):
         """
-            Convert a string (or list) into markdown. (context is used to get
-            dirname etc, and pass to build_url when making links.)
+        Convert a string (or list) into markdown. (context is used to get
+        dirname etc, and pass to build_url when making links.)
         """
         if type(s) == list:
             s = '\n'.join(s)

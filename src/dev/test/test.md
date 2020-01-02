@@ -29,3 +29,12 @@ name[:-3]   : {{name[:-3]}}
 ### Filtering tests
 
 * {{ glob( '*.md' ) | search( '^_' ) }}
+
+### Few custom macros in `share/js/mathjax-config.js`:
+
+* `\eps`: $\eps$
+* `\suchthat`: $\suchthat$
+* `\st`: $\st$
+* `\dv`: $\dv$
+* `\curl`: $\curl$
+* `\defeq`: $\defeq$

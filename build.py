@@ -66,7 +66,7 @@ def cleanup_outpath( site ):
 
             if remove:
                 fn = p.join( root, f )
-                site.logger.warn( 'Removed extra file %s' % 
+                site.logger.warning( 'Removed extra file %s' % 
                         p.relpath( fn, site.outpath ) )
                 os.unlink( fn )
 
@@ -80,11 +80,11 @@ def cleanup_outpath( site ):
                 if e.errno == 2: continue # Source deleted
                 else: raise
             if smode != os.stat(dname).st_mode:
-                site.logger.warn( 'Updating permissions of %s' % rname )
+                site.logger.warning( 'Updating permissions of %s' % rname )
                 os.chmod( dname, smode )
 
         if len( os.listdir(root) ) == 0:
-            site.logger.warn( 'Removed empty directory %s' % root )
+            site.logger.warning( 'Removed empty directory %s' % root )
             os.rmdir( root )
 
 class Site( staticjinja.Site ):
@@ -176,7 +176,7 @@ class Site( staticjinja.Site ):
                     # Make sure it's readable
                     m = os.stat(dst).st_mode
                     if not S_IRUSR & m or not S_IRGRP & m or not S_IROTH & m:
-                        self.logger.warn( 'WARNING: %s unreadable' % f )
+                        self.logger.warning( 'WARNING: %s unreadable' % f )
                         #os.chmod( dst, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH )
 
     def render_template( self, template, context=None, filepath=None):
@@ -259,8 +259,12 @@ if __name__ == "__main__":
         'sub': jinja_sub,
         'slugify': mdconverter.slugify,
     }
-    env_globals.update( dict( cfg.items('common') ) )
-    env_globals.update( dict( cfg.items(dev_env) ) )
+    env_globals.update( dict( cfg.items('DEFAULTS') ) )
+    if dev_env in cfg.sections():
+        env_globals.update( dict( cfg.items(dev_env) ) )
+
+    if 'layouts' in cfg.sections():
+        env_globals['layouts'] = dict( cfg.items('layouts') )
 
     site = staticjinja.Site.make_site(
             searchpath=os.path.join( pwd, 'src' ),

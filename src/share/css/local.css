@@ -21,10 +21,16 @@
 /* }}} */
 
 /* Fix padding of lists in right column */
-div.ul-padding-fix > ul,
-ul.ul-padding-fix,
+div.flushed-left-list > ul,
+ul.flushed-left-list,
 #hw-handouts ul {
-  padding-left: 1rem;
+  /* list-style-position: inside; */
+  padding-left: 1em;
+}
+
+div.flushed-left-list > ol,
+ol.flushed-left-list {
+  padding-left: 1.4em;
 }
 
 .tight-float-right {
@@ -103,7 +109,7 @@ ul.comments  div.small blockquote {
 /* }}} */
 
 /* From Bootstrap 3 */
-pre {
+.codehilite > pre {
   padding: 9.5px;
   margin: 0 0 10px;
   /* font-size: 13px;

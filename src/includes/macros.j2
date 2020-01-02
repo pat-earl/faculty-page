@@ -322,10 +322,10 @@
   <div>
     <br>
     <h4 class='hide-xoverflow'>
-      {{ '🍔' }}&emsp;<a href='{{get_link(parent)}}'>
+      {{'☰'}}&emsp;<a href='{{get_link(parent)}}'>
 	{{- get_meta(parent, 'title')}}</a>
     </h4>
-    <ol class='post-series'>
+    <ol class='small flushed-left-list'>
     {% for f in series -%}
       <li>
 	<a href='{{get_link(f)}}'>{{get_meta(f, 'title')}}</a>
