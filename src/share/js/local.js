@@ -18,7 +18,7 @@ function submit_comment() {
     $('#comment-form,#comment-sending').addClass('d-none');
     $('#comment-failed,#comment-form').removeClass( 'd-none' );
     {% if dev_env == 'local' %}
-    $('#comment-failed').append('<pre>' + data + '</pre>');
+      $('#comment-failed').append('<pre>' + data + '</pre>');
     {% endif %}
   }
 
@@ -39,7 +39,11 @@ function submit_comment() {
     .fail( failfn );
 }
 
-function get_grades( dirname, fname, show_stats=true, show_total=true) {
+function get_grades( dirname, fname, show_stats, show_total) {
+  // IE doesn't support default arguments.
+  if( show_stats === undefined ) show_stats = true;
+  if( show_total === undefined ) show_total = true;
+
   function failfn( msg ) {
     $('#status')
       .attr( 'class', 'alert alert-danger' )

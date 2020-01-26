@@ -71,11 +71,11 @@ The sequel to this course,
 ### Homework
 
 * Homework is due **at the beginning of class** on the due date.
-* <b class='text-danger'>Late homework policy:</b> Homework turned in
+* <b>Late homework policy:</b> Homework turned in
   within 48 hours of the deadline will be accepted.
-    - Late homework turned in within the first 24 hours of the deadline will receive a <b class='text-warning'>10% penalty</b>.
+    - Late homework turned in within the first 24 hours of the deadline will receive a <b class='text-danger'>10% penalty</b>.
       In particular, homework turned in even one nanosecond after class starts, will receive this penalty.
-    - Late homework turned in within the next 24 hours will receive a <b class='text-warning'>25% penalty</b>.
+    - Late homework turned in within the next 24 hours will receive a <b class='text-danger'>25% penalty</b>.
     - Homework more than 48 hours late will not be accepted.
     - To account for unusual circumstances, your lowest homework will not count towards your grade.
     - I will only consider making exceptions to the late homework policy for severe and extreme emergencies that require your absence for more than 12 days.

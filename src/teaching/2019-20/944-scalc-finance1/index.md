@@ -41,12 +41,14 @@ The sequel to this course,
 
 * [[pdfs/notes.pdf|Brief lecture notes]].
   (A tablet friendly version is [[pdfs/notes-tablet.pdf|here]], and the full TeX source is [here](https://gitlab.com/gi1242/cmu-mscf-944).)
+  {#-
   <br>
   <span class='small'>
     **Note:** I am currently (Spring 2019) updating these notes.
     While the bulk of the matter and later parts of the notes should be largely unchanged, the first few chapters will be changed as the semester progresses.
     If you want to be notified of changes, you should create an account on [GitLab](http://gitlab.com), and watch the repository [gi1242/cmu-mscf-944](https://gitlab.com/gi1242/cmu-mscf-944).
   </span>
+  #}
 * [Stochastic Calculus for Finance II](http://www.springer.com/us/book/9780387401010) by Steven Shreve.
   *(We will cover roughly the first five chapters.)*
 
@@ -56,19 +58,24 @@ The sequel to this course,
 
 * If you must sleep, <span class='text-danger'>don't snore!</span>
 * Be courteous when you use mobile devices.
+* **Attendance Requirement:** The steering committee has requested attendance be recorded and made a part of your grade.
+  Accordingly, attendance will count as 5% of your overall grade, and will be computed as follows:
+    - To account for interviews and other special circumstances, you may miss up to 4 lectures without penalty.
+    - Missing more than 4 lectures will decrease the attendance portion of your grade proportionally.
+    - I will only consider making exceptions to this policy for unexpected severe emergencies that require your absence for more than 12 days.
 
 ### Homework
 
 * Homework is due **at the beginning of class** on the due date.
 * <b>Late homework policy:</b> Homework turned in
   within 48 hours of the deadline will be accepted.
-    - Late homework turned in within the first 24 hours of the deadline will receive a <b class='text-danger'>10% penalty</b>.
-      In particular, homework turned in even one nanosecond after class starts, will receive this penalty.
-    - Late homework turned in within the next 24 hours will receive a <b class='text-danger'>25% penalty</b>.
+    - Late homework turned in within the first 24 hours of the deadline will receive a *10% penalty*.
+      In particular, homework turned after class starts, will receive this penalty.
+    - Late homework turned in within the next 24 hours will receive a *20% penalty*.
     - Homework more than 48 hours late will not be accepted.
     - To account for unusual circumstances, your lowest homework will not count towards your grade.
     - I will only consider making exceptions to the late homework policy for unexpected severe emergencies that require your absence for more than 12 days.
-      <b class='text-danger'>Following MSCF policy, I will not make exceptions on account of job interviews or career fares.</b>
+      *Following MSCF policy, I will not make exceptions on account of job interviews or career fares.*
 * Solutions will usually be posted 48 hours after the homework deadline.
   Due to holidays or exams solutions to some assignments might post earlier.
   In this case, you will be notified of this in advance, and late homework **will not** be accepted after solutions have been posted.
@@ -98,14 +105,33 @@ The sequel to this course,
 
 ### Grading
 
-* Your performance on the homework, midterm and final will each be converted to a numerical grade 0 and 4.5 "using a curve".
-* Your overall grade will be computed as the higher of the following:
-    1. Final 60%, midterm 30% homework 10%,
-    2. (Final 90%, homework 10%), reduced by one full letter.
-* Explicitly, if $F$, $M$, and $H$ are your numerical grades on the final, midterm, and homework respectively, then your overall grade $G$ will be computed by
-$$
-    G = \max( 0.6 F + 0.3 M + 0.1 H, (0.9 F + 0.1 H) - 1.00 )\,.
-$$
-* Your final letter grade will be computed from your numerical grade using [the standard scale](https://www.cmu.edu/policies/student-and-student-life/grading.html).
+* Attendance will count as 5% of your grade, and homework will count as 10%.
+* The remainder 85% of your grade will be determined by your midterm and final, as the higher of:
+    - Final 60% and midterm 25%.
+    - **or** Final 85%, *reduced by one full letter*.
+* That is, if you miss the midterm, I will count your Final as 85%, and assess a *full letter grade penalty*.
+* Explicitly, your grade will be computed as follows:
+    - Your performance on the homework, midterm and final will each be converted to a numerical grade between 0 and 4.5 "using a curve".
+    - If $F$, $M$, $H$ and $A$ are your numerical grades on the final, midterm, homework and attendance respectively, then your overall grade $G$ will be computed by
+      $$
+          G = .05A + .1H + \max( 0.6 F + 0.25 M, 0.85 (F - 1) ) \,.
+      $$
+    - Your final letter grade will be computed from your numerical grade using [the standard scale](https://www.cmu.edu/policies/student-and-student-life/grading.html).
 
-[MSCF student handbook]: https://www.cmu.edu/mscf/portal/docs/2017-2018%20MSCF%20Handbook.pdf
+### Accommodations for Students with Disabilities
+
+If you have a disability and have an accommodations letter from the Disability Resources office, I encourage you to discuss your accommodations and needs with me as early in the semester as possible. I will work with you to ensure that accommodations are provided as appropriate. If you suspect that you may have a disability and would benefit from accommodations but are not yet registered with the Office of Disability Resources, I encourage you to contact them at <access@andrew.cmu.edu>.
+
+### Student Wellness
+
+As a student, you may experience a range of challenges that can interfere with learning, such as strained relationships, increased anxiety, substance use, feeling down, difficulty concentrating and/or lack of motivation. These mental health concerns or stressful events may diminish your academic performance and/or reduce your ability to participate in daily activities. CMU services are available, and treatment does work. You can learn more about confidential mental health services available on campus [here](http://www.cmu.edu/counseling). Support is always available (24/7) from Counseling and Psychological Services: 412-268-2922.
+
+
+### Faculty Course Evaluations
+
+At the end of the semester, you will be asked to fill out faculty course evaluations.
+Please fill these in promptly, I value your feedback.
+As incentive, if over 75% of you have filled out evaluations on the last day of class, then I will release your grades as soon as they are available.
+If not, I will release your grades at the very end of the grading period.
+
+[MSCF student handbook]: https://canvas.cmu.edu/courses/3194/pages/MSCF%20Handbooks?titleize=0

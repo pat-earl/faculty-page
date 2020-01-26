@@ -4,6 +4,7 @@
     ( 268, 'Multidimensional Calculus', (
 	( 2015, 'f', '2015-16/268-multid-calc' ),
 	( 2018, 's', '2017-18/268-multid-calc' ),
+	( 2020, 's', '2019-20/268-multid-calc' ),
     )),
     ( 269, 'Vector Analysis', (
 	( 2012, 's', old_teaching ~ '/2011-12/269-vector-analysis/' ),
@@ -39,7 +40,8 @@
     ( 944, "Stochastic Calculus for Finance 1", (
 	( 2017, 's', '2016-17/944-scalc-finance1/' ),
 	( 2017, 'f', '2017-18/944-scalc-finance1/' ),
-	( 2019, 'f', '2018-19/944-scalc-finance1/' ),
+	( 2019, 's', '2018-19/944-scalc-finance1/' ),
+	( 2020, 's', '2019-20/944-scalc-finance1/' ),
     )),
     ( 0, "Fluids working group", (
 	( 2012, 'f', old_research ~ '/201208-fluids-working-group' ),
@@ -50,7 +52,7 @@
     )),
   ) %}
 {# {% set cur_index = () %} #}
-{% set cur_index = ( (1,2), (8,2), ) %}
+{% set cur_index = ( (0, 2), (8,3), ) %}
 {% macro md_current_courses() %}
   {% for i, j in cur_index %}
   {%- set c = courses[i] %}

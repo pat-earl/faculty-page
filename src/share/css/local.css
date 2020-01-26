@@ -12,9 +12,10 @@
   }
 }
 
-/* Don't justify headings */
+/* Don't justify headings, table heads */
 .justify h1, .justify h2, .justify h3,
-.justify h4, .justify h5, .justify h6
+.justify h4, .justify h5, .justify h6,
+.justify table.table
 {
   text-align: left
 }

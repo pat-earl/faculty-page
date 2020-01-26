@@ -264,7 +264,9 @@ if __name__ == "__main__":
         env_globals.update( dict( cfg.items(dev_env) ) )
 
     if 'layouts' in cfg.sections():
-        env_globals['layouts'] = dict( cfg.items('layouts') )
+        env_globals['layouts'] = cfg.items('layouts')
+    else:
+        env_globals['layouts'] = [('md-default.j2', '.*' )]
 
     site = staticjinja.Site.make_site(
             searchpath=os.path.join( pwd, 'src' ),

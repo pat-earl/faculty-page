@@ -210,7 +210,7 @@
 	      {%- else -%}
 		{{c.help.time}}
 		{% if c.help.warning -%}
-		  <span class='text-warning small'>
+		  <span class='text-secondary small'>
 		    ({{c.help.warning}})
 		  </span>
 		  <br>
@@ -246,7 +246,7 @@
 	      <a href='{{c.mailing_list.url}}'>{{c.mailing_list.name}}</a>
 	      <span class='small'>
 		(for course announcements and discussion.
-		<b class='bg-warning'>Please subscribe to this list.</b>)
+		<b class='bg-warning'>Please subscribe.</b>)
 	      </span>
 	      {%- if c.anonymous_list -%}
 		<br>
@@ -279,9 +279,8 @@
 	  <tr>
 	    <th scope='row'>Canvas</th>
 	    <td>
-	      Grades etc. are available
-	      <a href="{{c.canvas}}">here</a>.
-	      <span class='text-warning small'>
+	      <a href="{{c.canvas}}">canvas.cmu.edu</a>.
+	      <span class='text-secondary small'>
 		(Current students only).
 	      </span>
 	    </td>
@@ -289,11 +288,10 @@
 	{%- endif -%}
 	{%- if c.mediasite -%}
 	  <tr>
-	    <th scope='row'>Videos</th>
+	    <th scope='row'>MediaSite</th>
 	    <td>
-	      Videos of lectures and recitations are available
-	      <a href="{{c.mediasite}}">here</a>.
-	      <span class='text-warning small'>
+	      <a href="{{c.mediasite}}">Lectures/recitations videos</a>.
+	      <span class='text-secondary small'>
 		(Current students only).
 	      </span>
 	    </td>

@@ -203,16 +203,10 @@ def render(site, template, **context):
     try:
         layout = context['layout']
     except:
-        if( template.name.startswith( "blog" ) ):
-            layout = 'md-blogpost.j2'
-        elif re.match( r'teaching\/[0-9-]+\/[0-9a-z-]+\/auth/grades\.md',
-                template.name ):
-            layout = 'md-grades.j2'
-        elif re.match( r'teaching\/[0-9-]+\/[0-9a-z-]+\/.*\.md',
-                template.name ):
-            layout = 'md-class.j2'
-        else:
-            layout = 'md-default.j2'
+        for (l, r) in site._env.globals['layouts']:
+            if re.match( r, template.name ):
+                layout = l
+                break
 
     layout = os.path.join( 'layouts', layout )
     post_template = site.get_template(layout)

@@ -37,7 +37,7 @@ All these notes are <span class='text-info'>free and open source</span>. You may
     * [Lecture notes wiki](http://wiki.math.cmu.edu/iki/2014-372/)
     * [Class website]({{old_teaching}}/2013-14/372-pde/) for problems and references.
       <small>
-        I have typed solutions to all problems, which I can share with other <em class='text-warning'>instructors</em> who are interested.
+        I have typed solutions to all problems, which I can share with other <em class='text-danger'>instructors</em> who are interested.
       </small>
     * [Source code](http://wiki.math.cmu.edu/gitweb-pub/?p=2014-372-wiki.git;a=summary).
       <small>

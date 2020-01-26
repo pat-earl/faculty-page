@@ -1,4 +1,16 @@
 {% set pubs = {
+  'chmix' : {
+    'authors'	: ['Y. Feng', 'Y. Feng', 'G. Iyer', 'J.-L. Thiffeault'],
+    'title'	: 'Phase separation in the advective Cahn--Hilliard equation',
+    'year'	: 2019,
+    'com-journal'	: 'Journal of Nonlinear Science',
+    'com-sjournal'	: 'J. Nonlinear Sci.',
+    'link'	: 'chmix.pdf',
+    'twoup'	: 'chmix-2up.pdf',
+    'tablet'	: 'chmix-tablet.pdf',
+    'tags'	: ['pde', 'fluids', 'mixing'],
+  },
+
   'adissip' : {
     'authors'	: ['T. Drivas', 'T. M. Elgindi', 'G. Iyer', 'I.-J. Jeong'],
     'title'	: 'Anomalous Dissipation in Passive Scalar Transport',
@@ -353,6 +365,7 @@
 } -%}
 
 {% set publist = (
+    pubs.chmix,
     pubs.adissip,
     pubs.mixblowup,
     pubs.denh,

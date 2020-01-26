@@ -40,6 +40,13 @@
   {% endif -%}
 {% endblock -%}
 {% block content_block -%}
+  {% if course is defined and not course.current -%}
+    <div class='alert alert-danger small'>
+      <b>Note:</b>
+      This is the class website of a course that is not currently running.
+      Some links may be broken.
+    </div>
+  {% endif -%}
   {% if infotable == 'show'
 	  or ( basename == 'index.md' and course and not infotable) -%}
     {{ course_info_table(course) }}

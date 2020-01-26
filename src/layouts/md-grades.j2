@@ -19,11 +19,6 @@
 {% block scripts -%}
   {{ super() }}
   <script>
-    {#-
-    window.addEventListener('DOMContentLoaded', function() {
-      get_grades('{{dirname}}/grades.csv', false, false);
-    });
-    #}
     $(function() {
       get_grades( '{{dirname}}', {{glob('*.csv')|sort}},
 	{{show_stats | default('true')}},
