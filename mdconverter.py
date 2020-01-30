@@ -37,10 +37,6 @@ class mdconverter:
             'markdown.extensions.meta'] )
         self._md_meta.set_output_format( 'html5' )
 
-        self.math_re = re.compile(
-                '<script\\s*type\\s*=\s*[\'"]math/tex(\\s|[\'";])',
-                re.DOTALL )
-
         # meta[md_file] holds data from the yaml block in md_file
         self.meta = {}
 
@@ -124,6 +120,7 @@ class mdconverter:
 
         r.html = self.md.convert( s )
 
+        r.uses_math = self.md.uses_math
         r.toc = self.md.toc
         r.Meta = self.md.Meta
         for key in list(r.Meta.keys()):
@@ -242,9 +239,11 @@ def get_context( site, template):
     context.update({
         'content': md.html,
         'toc': md.toc,
+        'uses_math': md.uses_math,
     })
-    if site.md.math_re.search( md.html ):
-        context['needs_mathjax'] = 1
+    #if( md.uses_math ):
+    #    site.logger.warning( f'  {template.name} uses math' )
+
 
     # In case template.render() caused the yaml block to change, update the
     # metadata again.

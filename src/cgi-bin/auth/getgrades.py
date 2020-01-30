@@ -93,7 +93,7 @@ try:
     if arguments.getvalue( 'show_stats', 'true' ) == 'true':
         cols += [([n if n else '' for n in nsubs], '# submissions')]
     for (a, t) in cols:
-        if any(a): data['cols'].append( [t] + a )
+        if t or any(a): data['cols'].append( [t] + a )
 
     if arguments.getvalue( 'show_stats', 'true' ) == 'true':
         stats=[ ('Max', max),

@@ -1,18 +1,12 @@
 {% raw -%}
 window.MathJax = { 
-    tex2jax: {
-	/*
-	 * Don't enable '$' delimiters. As of 2017-10-21, mdx_math seems to
-	 * detect inline dollars correctly in markdown, and convert them to
-	 * "math/tex" script tags.
-	 */
-	// inlineMath: [ ['$','$'], ['\\(', '\\)']  ]
-	inlineMath: [ ['\\(', '\\)']  ]
-    },
-    TeX: {
-	TagSide: "right",
-	equationNumbers: {autoNumber: "AMS"},
-	Macros: {
+    tex: {
+	inlineMath: [ ['$','$'], ['\\(', '\\)']  ],
+	// inlineMath: [ ['\\(', '\\)']  ],
+	tagSide: "right",
+	// equationNumbers: {autoNumber: "AMS"},
+        tags: 'ams',
+	macros: {
 	    // RR: '{\\bf R}',
 	    // bold: ['{\\bf #1}', 1]
 	    eps:	'\\varepsilon',

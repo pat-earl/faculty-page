@@ -43,7 +43,7 @@
 
     {% block footer scoped -%}{{ footer(page_email) }}{%- endblock -%}
 
-    {#- Hopefully this will inherit the needs_mathjax variable -#}
+    {#- Hopefully this will inherit the uses_math variable -#}
     {%- block scripts scoped -%}
       {#- jQuery (necessary for Bootstrap's JavaScript plugins) -#}
       {%- if dev_env == 'production' -%}
@@ -60,9 +60,10 @@
 	Include all compiled plugins (below), or include individual files as
 	needed
       #}
-      {%- if needs_mathjax -%}
-	<script src='{{get_link('/share/js/mathjax-config.js', true)}}'></script>
-	<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+      {%- if uses_math -%}
+	<script defer src='{{get_link('/share/js/mathjax-config.js', true)}}'></script>
+	<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js"></script>
       {%- endif -%}
 
       {%- if dev_env != 'production' and live_reload -%}
