@@ -26,10 +26,10 @@ It will, however, open a **new instance** of the editor every time you control c
 
 If you use [vim] as your text editor and [fvwm] as your window manager, I wrote two scripts to get rid of all sorts of quirks (e.g. opening the file twice in different windows, not raising / focussing the PDF files, etc.):
 
-1. Save [this script](http://wiki.math.cmu.edu/gitweb-pub/?p=bash-scripts.git;a=blob_plain;f=szathura.sh;hb=HEAD) as `szathura` somewhere in your `PATH`.
+1. Save [this script](https://gitlab.com/gi1242/bash-scripts/-/raw/master/szathura.sh?inline=false) as `szathura` somewhere in your `PATH`.
    (If you're not using [fvwm] as your window manager, then comment out the [fvwm] specific stuff.)
 
-2. Save [this script](http://wiki.math.cmu.edu/gitweb-pub/?p=bash-scripts.git;a=blob_plain;f=svim.sh;hb=HEAD) as `svim` somewhere in your `PATH`.
+2. Save [this script](https://gitlab.com/gi1242/bash-scripts/-/raw/master/svim.sh?inline=false) as `svim` somewhere in your `PATH`.
    (Again, if you're not using [fvwm] as your window manager, then comment out the [fvwm] specific stuff.)
 
 3. Edit `~/.config/zathura/zathurarc` and add the lines:
