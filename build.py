@@ -199,7 +199,7 @@ class Site( staticjinja.Site ):
         else:
             rule(self, template, **context)
 
-    ignored_re = re.compile( r'\.(?:swp|un~)$', flags=re.I )
+    ignored_re = re.compile( r'(?:^|/).git|\.(?:swp|un~)$', flags=re.I )
     def is_ignored( self, f ):
         return True if self.ignored_re.search( f ) else False
 
