@@ -10,11 +10,12 @@
       (and [TeX Source](https://gitlab.com/gi1242/cmu-mscf-944))
     * [[pdfs/notes-tablet.pdf|All chapters (tablet version)]]
 * [[scanned.md]]
-{#
-* [[auth/2015-16-midterms.pdf|2015-16 midterms with solutions]]
 * 2016-17 [[../../2016-17/944-scalc-finance1/pdfs/midterm.pdf|midterm]] and [[auth/2016-midterm-sol.pdf|solutions]].
 * 2017-18 [[../../2017-18/944-scalc-finance1/pdfs/midterm.pdf|midterm]] and [[auth/2017-midterm-sol.pdf|solutions]].
+* 2018-19 [[pdfs/2018-19-midterm.pdf|midterm]] and [[auth/2018-19-midterm-sol.pdf|solutions]].
 * Your [[pdfs/midterm.pdf|midterm]] and [[auth/midterm-sol.pdf|solutions]].
+{#
+* [[auth/2015-16-midterms.pdf|2015-16 midterms with solutions]]
 * An [[auth/old-final.pdf|old final]] with [[auth/old-final-sol.pdf|solutions]].
 * 2016-17 [[../../2016-17/944-scalc-finance1/pdfs/final.pdf|final]] and [[auth/2016-final-sol.pdf|solutions]].
 * 2017-18 [[../../2017-18/944-scalc-finance1/pdfs/final.pdf|final]] and [[auth/2017-final-sol.pdf|solutions]].

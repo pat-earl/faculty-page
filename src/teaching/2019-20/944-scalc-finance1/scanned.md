@@ -9,7 +9,7 @@ If the handwriting is illegible in places, I recommend correlating it with the v
     {% set fn = f | replace( 'pdfs/lec/', '') | replace( '.pdf', '') -%}
     {% set date = fn[0:8] -%}
     {% set type = fn[9:] -%}
-    * [[{{f}}|
+    * [[{{f}}|{{date[0:4]}}-{{date[4:6]}}-{{date[6:8]}}:{{' '}}
         {%- if type[0] == 'r' -%}
             Recitation
         {%- elif type[0] == 'h' -%}
@@ -19,7 +19,7 @@ If the handwriting is illegible in places, I recommend correlating it with the v
         {%- else -%}
             Lecture
         {%- endif -%}
-      {{' ' ~ type[1:]}} ({{date[0:4]}}-{{date[4:6]}}-{{date[6:8]}})]]
+      {{' ' ~ type[1:]}}.]]
 {% else -%}
     * *Notes will be posted as the semester progresses.*
 {% endfor %}

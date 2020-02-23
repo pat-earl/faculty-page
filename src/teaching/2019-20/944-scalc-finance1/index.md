@@ -5,6 +5,10 @@ This is done within the context of the Black-Scholes option pricing model and in
 The second half of the introduces exponential martingales and the Girsanov theorem.
 This is done in the context of risk neutral measures and the fundamental theorems of asset pricing.
 
+### Learning Objectives
+
+* Develop an understanding of and familiarity with the mathematical tools used to price derivative securities.
+
 {% if false -%}
 This is a first course in stochastic calculus for finance.
 It assumes students have taken the courses 

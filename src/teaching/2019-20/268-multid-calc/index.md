@@ -3,6 +3,11 @@
 This course is a serious introduction to multidimensional calculus that makes use of matrices and linear transformations.
 Students will be expected to write proofs; however, some of the deeper results will be presented without proofs.
 
+### Learning Objectives
+
+* Develop familiarity and a conceptual understanding of multi-variable differential and integral calculus.
+* Become comfortable with mathematically rigorous proofs in this setting.
+
 ### Pre-requisites
 
 * One variable calculus, at the level of [21-122](http://coursecatalog.web.cmu.edu/search/?P=21-122), and its pre-requisites.
@@ -24,15 +29,24 @@ Students will be expected to write proofs; however, some of the deeper results w
 
 ### Textbook and References
 
-There are plenty of references on Calculus and can be divided into isomorphism classes based on difficulty. (Translation: I'm not expanding my brief notes.)
+Two references at the level of this course are:
 
 * My brief lecture notes: for [[pdfs/notes.pdf|printing]] or for [[pdfs/notes-tablet.pdf|viewing online]].
-* [Khan Academy](https://www.khanacademy.org/math/multivariable-calculus). (Lots of examples, pictures, intuition; but not at the level of rigor that will be expected in this course.)
-* Hermann, Strang Calculus Volume 3. (At a level a bit lower than this course; but available for free on [OpenStax](https://openstax.org/subjects/math).)
-* Lecture notes by Santiago [[../../2017-18/268-multid-calc/pdfs/canez-calculus.pdf|Canez]] (also available on his [website](http://www.math.northwestern.edu/~scanez/courses/320/notes/lecture-notes-320-3.pdf)). (These are a bit deeper / more through than we will have time for in this course.)
+* *Multivariable Mathematics: Linear Algebra, Multivariable Calculus, and Manifolds* by Shifrin. (Roughly at the level of this course; though we will cover topics in slightly different order.)
+
+There are plenty of other references on the subject, and you may use any of them if they resonate with you better (or you have easier access).
+Here are a few excellent references, which are at a level slightly higher than we will have time for in this course.
+
 * *Advanced Calculus of Several Variables* by C. H. Edwards, Jr (roughly chapters 2 through 5; again at a level slightly higher than we will have time for in this course.)
-* *Multivariable Mathematics: Linear Algebra, Multivariable Calculus, and Manifolds* by Shifrin.
+* Lecture notes by [[../../2017-18/268-multid-calc/pdfs/canez-calculus.pdf|Santiago Canez]] (also available on his [website](http://www.math.northwestern.edu/~scanez/courses/320/notes/lecture-notes-320-3.pdf)). (These are a bit deeper / more through than we will have time for in this course.)
 * The more analytically inclined can also use any of the references used for 269 [any of the references used for 269](../../2018-19/269-vector-analysis/index.html#textbook-and-references)
+
+Finally, here are a few references at a level at the level lower than that of this course.
+
+* [Khan Academy](https://www.khanacademy.org/math/multivariable-calculus). (Lots of examples, pictures, intuition; but not at the level of rigor that will be expected in this course.)
+* *Calculus of one and several variables* by Salas, Hille, Etgen.  (Doesn't prove some of the important results,  but provides good intuition and examples.)
+* *Calculus Volume 3* by Hermann, Strang. (At a level a bit lower than this course; but available for free on [OpenStax](https://openstax.org/subjects/math).)
+* *Multivariable Calculus* by Stewart. (Typically used as a textbook in courses at the level of 259. Lots of examples and good intuition, but not at the level of rigor we use in this course.)
 
 ## Class Policies
 
