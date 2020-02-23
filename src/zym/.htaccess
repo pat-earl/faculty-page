@@ -1,0 +1,20 @@
+Options -Indexes
+
+# Shibboleth header
+AuthType Shibboleth
+ShibRequireSession On
+ShibApplicationId default
+ShibExportAssertion On
+
+# For any authenticated user. (Need not be a CMU member)
+#Require Shibboleth
+
+# Specific user id
+#require user gi1242@andrew.cmu.edu
+
+# Groups.
+#require shib-attr affiliation Faculty@andrew.cmu.edu
+#require shib-attr affiliation Staff@andrew.cmu.edu
+#require shib-attr affiliation Member@andrew.cmu.edu
+
+require shib-user ~ ^.+@andrew\.cmu\.edu$
