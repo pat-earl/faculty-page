@@ -28,3 +28,6 @@
 [submodule "ext/src/markdown-strikethrough"]
 	path = ext/src/markdown-strikethrough
 	url = https://github.com/codejamninja/markdown-strikethrough.git
+[submodule "src/zym/_SSO_HELPER"]
+	path = src/zym/_SSO_HELPER
+	url = https://github.com/cviebrock/discourse-php
