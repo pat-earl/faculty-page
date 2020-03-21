@@ -3,6 +3,12 @@
   {%- include dirname ~ '/' ~ (sidenav | default( '_sidenav.md', true )) ignore missing -%}
 {%- endmacro -%}
 {% extends md_nav_layout | default("layouts/nav-right.j2") -%}
+{% block stylesheets -%}
+  {{ super() -}}
+  {% if stylesheet -%}
+    <link rel="stylesheet" href="{{stylesheet}}">
+  {% endif -%}
+{% endblock -%}
 {% block main_column -%}
   <div class='justify{{" lead" if bigfont}}'>
     {% block title_block -%}
