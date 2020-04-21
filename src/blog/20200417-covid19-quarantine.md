@@ -52,16 +52,16 @@ Then, in a model scenario that will be described in detail below, here is how th
 In this scenario we see that if a 30 day quarantine is started when the hospital occupancy is close to capacity, the number of fatalities is about $38$% lower than if a 30 day quarantine was started when the hospital occupancy is very low.
 While the exact hospital occupancy threshold that minimizes the number of fatalities varies depending on the actual parameters (recovery time, $R_0$, etc.), *the optimal threshold is typically not attained when the number of infections (or the hospital occupancy) is very small.*
 
-Practically, the parameters involved can't be determined precisely enough compute the exact threshold at which a 30 day quarantine should be started so that the minimum in <a href='#fig1'>Figure 1</a> is attained.
+Practically, the parameters involved can't be determined precisely enough to compute the exact threshold at which a 30 day quarantine should be started so that the minimum in <a href='#fig1'>Figure 1</a> is attained.
 One can, however, still schedule the quarantine to reduce the total number of fatalities as follows: Wait until the hospitals are close to capacity (say $85$%).
 Impose a quarantine until hospital capacity frees up (say reaches $75$%).
 If the infection spikes to $85$% again (as it may), then repeat the above procedure.
-Using this strategy we won't apriori know the length of the quarantine -- however, we will always ensure the hospital capacity is not exceeded, and moreover such quarantines still reduce the number of fatalities significantly compared to a quarantine of the same length imposed when there are very few infected people.
+Using this strategy we won't a priori know the length of the quarantine -- however, we will always ensure the hospital capacity is not exceeded, and moreover such quarantines still reduce the number of fatalities significantly compared to a quarantine of the same length imposed when there are very few infected people.
 
 Finally we remark that if a "high risk" population can be successfully identified, then the total number of fatalities can be significantly reduced by selectively quarantining them.
 Indeed, if they are quarantined while the infection is spreading through the low risk population, very few of the high risk population contract the infection, and so very few of them die.
 After the infection has run its course amongst the low risk population, the quarantine on the high risk population is lifted and they are released back into the general population.
-At this point, however, the general population has herd immunity and are very few infected individuals.
+At this point, however, the general population has herd immunity and there are very few infected individuals.
 Thus the chance of individuals from the high risk population getting infected is very low, and there will be very few new infections amongst the high risk population.
 This leads to a greatly reduced mortality rate, and has been suggested by various sources (see for instance [CP20]).
 
@@ -129,7 +129,7 @@ When one keeps track of the number of fatalities (shown above), we see that in t
 One can also vary the hospital occupancy threshold at which a 30 day quarantine is started.
 The results of this are in <a href='#fig1'>Figure 1</a>, which shows clearly that quarantines started when the hospitals are closer to capacity reduce the number of fatalities significantly ($38$% in our scenario).
 
-j heuristic explanation for this is as follows: the more infected people there are, the more new infections we have per day.
+A heuristic explanation for this is as follows: the more infected people there are, the more new infections we have per day.
 Thus imposing a quarantine when there are more infected people (and thus higher hospital occupancy) stops a larger number of new infections.
 However, if one waits too long, the number of infections reaches (or even passes) its peak.
 After this point, imposing a quarantine doesn't help much as the population already has herd immunity.
@@ -218,6 +218,8 @@ Clearly the lower the level at which the quarantine is imposed, the longer the p
 This is of course expected.
 What is interesting, however, is when the total quarantine length is roughly below 40 days, the fatalities after 18 months decreases steeply with the quarantine length.
 After the 40 day mark it decreases much slower.
+The reason for this is that in this scenario quarantines shorter than about 40 days can't completely stop the hospital capacity from being exceeded.
+Thus each additional day of quarantine reduces the amount of time the hospital capacity is exceed, having a larger impact on the final number of fatalities.
 
 {#
 If we impose/lift quarantines below 30% hospital occupancy in the above scenario, we would need to increase our time horizon as the epidemic would not have run its course in 18 months.
@@ -226,10 +228,10 @@ The final number of fatalities, however, decreases very slowly.
 #}
 
 One can, in fact, theoretically compute the minimum value the final number of fatalities attains provided the quarantine doesn't contain the outbreak.
-Indeed, if the outbreak isn't contained by the quarantine, then after the infection has run its course we acquire herd immunity.
+Indeed, if the outbreak isn't contained by the quarantine, then the population eventually acquires herd immunity.
 This happens when the fraction of susceptible people in the surviving population is at most $1 / R_0 \approx 0.42$. 
-The remainder in the surviving population have recovered from the virus, which we assumed had a $1$% mortality rate, if the hospital capacity is never exceeded.
-From this it follows that the fraction of the initial population that died is at least
+The remainder in the surviving population have recovered from the virus.
+Since we a $1$% mortality rate if the hospital capacity is never exceeded, it follows that the fraction of the initial population that died is at least
 $$
     0.01 \left( 1 - \frac{0.99}{R_0 - .01} \right)
     \approx 0.59\%\,.
@@ -280,153 +282,30 @@ While reduction of the number of fatalities by 14% is still significant, it is n
 
 These exact values are of course parameter dependent, and will vary depending on the scenario considered.
 The minimum, however, is typically not attained if the quarantine is imposed during the early stages of the outbreak, unless the quarantine is long enough to reach containment levels.
+To illustrate this point we now compute the fatalities after 18 months when $R_0$ varies between $2$ and $6$ outside quarantine, and between $0.5$ and $1.5$ inside quarantine.
 
-{#
------
-
-
-
-What made a difference?
-Delaying the one month quarantine to day 75, when a little more than $11$% of the population was infected, did in fact change the nature of things.
-The total number of mortalities reduced by $44$% in this case.
-The same happened when we imposed the quarantine intermittently, in 10 periods of 3 days each.
-
-Let's try this again, but this time we increase the quarantine length to 45 days:
-<div class='text-center my-3 border'>
-<img src='{{filesdir}}/45days-infections.png' class='mx-1' >
-<img src='{{filesdir}}/45days-mortalities.png' class='mx-1' >
-<p class='small text-justify mx-5'>
-  Figure 2: Effects of a 45 day long quarantine when (1) imposed initially, (2) delayed to start closer to when the infection peaks, and (3) imposed intermittently, by dividing it into ten, periods each of which are three days long.
-  Left: Percentage infections vs time. Right: fatalities (%) vs time.
-</p>
+<div class='container my-3 border'>
+  <div class='row'>
+    <div class='col-md-6'>
+      <img src='{{filesdir}}/ihc-fatalities-vs-R0.png' class='img-fluid' >
+    </div>
+    <div class='col-md-6'>
+      <img src='{{filesdir}}/ihc-reduction-in-fatalities.png' class='img-fluid' >
+    </div>
+    <div class='col-12'>
+      <p class='small text-justify mx-5 mt-3'>
+        Left: Percentage of fatalities after 18 months if no quarantine is imposed.
+        Right: Reduction in the percentage of fatalities after 18 months if a 30 day quarantine is started at the optimal time.
+        In both these figures the mortality rate above and below the hospital capacity is assumed to be the same.
+      </p>
+    </div>
+  </div>
 </div>
 
-Again, we see the exact same effect.
-The quarantine imposed initially only shifts the curve, and doesn't flatten it.
-It *does not affect the total number of fatalities at the end of 18 months*.
-Delaying the quarantine, or imposing it intermittently (this time broken down into 15, 3 day periods) does indeed reduce the total number of fatalities.
-The exact numbers from our simulations are shown below.
+As before if a 30 day quarantine is started on day 0, the number of fatalities after 18 months is almost identical to that if there was no quarantine at all.
+The reduction shown in the figure on the right is obtained by delaying the quarantine to start at the optimal time.
+This optimal time is found numerically and in the above ranges of $R_0$, it occurs when the hospital occupancy is between 115% and 335% of capacity.
 
-<div class='text-center my-3 border mb-5'>
-  <table class='table border'>
-    <thead>
-      <tr>
-        <th></th>
-        <th scope='col'>30 day quarantine</th>
-        <th scope='col'>45 day quarantine</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope='row'>Imposed initially</th>
-        <td>1.50%</td>
-        <td>1.50%</td>
-      </tr>
-      <tr>
-        <th scope='row'>Delayed</th>
-        <td>0.84%</td>
-        <td>0.80%</td>
-      </tr>
-      <tr>
-        <th scope='row'>Imposed intermittently</th>
-        <td>0.80%</td>
-        <td>0.78%</td>
-      </tr>
-      <tr>
-        <th scope='row'>Control (no quarantine)</th>
-        <td>1.50%</td>
-        <td>1.50%</td>
-      </tr>
-    </tbody>
-  </table>
-  <p class='small'>
-    Table 1: Fatalities (%) after 18 months for 30 and 45 day quarantines when imposed initially, on a delay or intermittently.
-  </p>
-</div>
-
-
-
-
------
-
-
-In order to slow the spread of infectious diseases, 
-
-What's the best outcome of the current 
-Best case scenario: Containment!
-While this sounds promising, the fine print seems to suggest otherwise:
-
-> Our model says that social distancing will likely lead to the end of the first wave of the epidemic by early June. The question of whether there will be a second wave of the epidemic will depend on what we do to avoid reintroducing COVID-19 into the population.  so avoiding reintroduction of COVID-19 through mass screening, contact tracing, and quarantine will be essential to avoid a second wave.
->
-> <p class='small text-right' markdown='1'>*Quoted from <http://www.healthdata.org/covid/faqs>, 2020-04-02.*</p>
-
-Given the global prevalence of COVID19, we won't be able to prevent reintroduction.
-When it gets reintroduced, will will be in exactly the same situation then as we are now, hoping that either seasonal changes or vaccines change something.
-
-Rather than use projections from other sources as a black box, it's easy to compute a few things directly.
-
-It is unlikely that society can withstand such a long quarantine indefinitely.
-Thus the question we study here is the following:
-> *If you can impose at most a certain period (e.g. 1 month) of quarantine, then when should impose it to minimize the total number of fatalities at the end of the epidemic?*
-
-we address 
-
-What if we don't wait until you eradicate the disease, and just return to normal after a month.
-Or maybe after two months?
-Would we have at least "flattened the curve"?
-No, we won't!
-We would only have "shifted the curve" -- that is if we resume normal behaviour a month or two of quarantine, then we would only have delayed the peak of the infection, and not reduced the size of the peak, or the total number of people that will eventually contract the disease.
-(Shifting the curve, however, does buy us enough time to allow hospitals to increase their capacity, and thereby reduce the overall number of fatalities.)
-
-If a month long quarantine doesn't flatten the curve, or stop the outbreak, does it help at all?
-First, if we do nothing, then over 85% of the susceptible population gets infected in just 6 months.
-With a mortality rate of 1%, this means that 0.85% of the susceptible population will die in 6 months!
-This is even without counting the increased mortality rate when the hospital capacity is exceeded.
-
-Can we do something to reduce this number? 
-Let's say society is willing to tolerate one month of quarantine.
-How should we impose it?
-Should we impose it all now (when 0.01% of the population is infected), buy us time to increase hospital capacity, and then return to normal when we can't wither the quarantine anymore?
-Or, should we instead, we delayed our one month quarantine to start closer to when a larger number of people were infected.
-
-At first sight, this sounds like a bad idea.
-Delaying the start of a quarantine to when, say 10%, of the population is infected sounds like it's too late to help.
-*This isn't true!*
-Delaying the quarantine in this manner actually flattens (or more correctly "truncates") the curve.
-In addition to avoiding the hospital capacity being exceeded, it also reduces the total number of people that will be infected at the end of the epidemic.
-This directly results in a lower number of fatalities.
-
-Another alternative, that produces comparable results, is to impose the quarantine intermittently -- for instance instead of one continuous month of quarantine say we broke it up into 10 different 3 day periods.
-This can be used to forcibly flatten the curve as well: every time the hospital capacity gets close to full, impose a short quarantine and stop the growth of the infection temporarily.
-When hospital capacity frees up (or after a pre-specified period), return to normal.
-It turns out that this also reduces the total number of people that will be infected at the end of the epidemic.
-It also ensures the hospital capacity is never exceeded, and hence also reduces the number of fatalities.
-
-The bottom line is:
-
-Numerical simulations in a COVID19 model scenario (described below) show that an optimally scheduled one month long quarantine can reduce the number of fatalities by as much as 44%, when compared to a one month long quarantine that is imposed too early.
-
-Finally, before substantiating the statements we made above, we remark that there is one approach that is far more effective at reducing the total number of fatalities: selectively quarantining the high risk population until the general population develops herd immunity.
-This shifts the profile of the eventually infected population away from the high risk group, and reduces the total number of fatalities by an order of magnitude.
-The mathematical analysis of this is discussed in [CP20], and we limit our attention to quarantines that are imposed on the entire population.
-
-## The impact of varying the quarantine length on the eventual number of fatalities.
-
-We now see how the total number of fatalities changes as we vary the length of the quarantine.
-As before, we study three cases: (1) The entire quarantine is imposed initially, (2) the quarantine is delayed to start closer to when the infection peaks, and (3) the quarantine is divided into many short 3-day long periods of the same total length.
-Again, we see that if the quarantine is shorter than a year, then delaying it produces a dramatic reduction on the total number of fatalities.
-
-<div class='text-center my-3 border'>
-<img src='{{filesdir}}/mortality-vs-length.png' class='mx-1' >
-<p class='small text-justify mx-5'>
-  Figure 3: Each curve shows percentage of fatalities after 18months, vs the quarantine length, when (1) the entire quarantine is imposed initially, (2) the quarantine is delayed to start closer to when the infection peaks, and (3) the quarantine is divided into many short 3-day long periods of the same total length.
-</p>
-</div>
-
-One notable fact that can be see from the above figure is that the largest reduction in the number of fatalities  per additional day of quarantine is obtained when the quarantine is shorter than a month.
-The reason for this is that with the parameters chosen in our simulations quarantines shorter than a month can not ensure that the hospital capacity is not exceeded.
-This leads to a higher mortality when the infection peaks, resulting in larger number of fatalities at the end of our time period (18 months).
-#}
 
 ## Methodology used to perform simulations.
 
@@ -470,9 +349,10 @@ Instead, it is the true solution to the deterministic SIR system of equations sh
 ## Conclusions
 
 1. A short quarantine imposed when very few people are infected, only delays the spread of the infection. Namely, after the quarantine is lifted, the infection will spike to the same levels it would have without any quarantine. Once the infection has run its course, the total number of people who eventually contract the disease, and the total number of fatalities is almost identical to that if there was no quarantine at all. (This point is well known.)
-2. Imposing quarantines when a larger fraction of the population is infected *does in fact help*! It reduces the number of people that eventually contract the disease, and thus reduces the total number of fatalities. It can also be used stop the hospital capacity from being exceeded, and thus further reducing the number of fatalities. In the model scenario considered here, the number of fatalities after 18 months reduces by about $38$%.
+2. Imposing quarantines when a larger fraction of the population is infected *does in fact help*! They reduce (or even eliminate) the time when the hospital capacity is exceeded, having a direct impact on the number of fatalities.
+Moreover, they also reduce the number of people that eventually contract the disease, and so further reduce the total number of fatalities. In the model scenario considered here, the number of fatalities after 18 months reduces by about $38$%.
 
-In summary -- if a decision is made to allow the Coronavirus to spread amongst the general population, then the number of fatalities can be reduced substantially by imposing a quarantine at the right time (typically when the hospital occupancy is high). This number can be reduced even further (by an order of magnitude) if the "high risk" population can be successfully identified, and selectively quarantined.
+In summary -- if all other measures fail, and it looks like Coronavirus will spread amongst the general population, then the number of fatalities can be reduced substantially by imposing a quarantine at the right time (typically when the hospital occupancy is high). This number can be reduced even further (by an order of magnitude) if the "high risk" population can be successfully identified and selectively quarantined.
 
 
 ## References
