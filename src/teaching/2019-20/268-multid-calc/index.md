@@ -5,15 +5,7 @@ stylesheet: local.css
 
 <div class='alert alert-info small' markdown='1'>
 In response to the Caronavirus pandemic, all classes will be conducted remotely after 2020-03-16.
-Lectures and office hours will be conducted via Zoom meetings at the regularly scheduled times using the following meeting IDs:
-
-* All lectures and Gautam's office hours:
-  [852971361](https://cmu.zoom.us/j/852971361).
-* Ruoyuan's recitations and office hours:
-  [3459083003](https://cmu.zoom.us/j/3459083003).
-* Yuepeng's recitations and office hours:
-  [4295886265](https://cmu.zoom.us/j/4295886265).
-
+Lectures and office hours will be conducted via Zoom meetings at the regularly scheduled times.
 All assignments, and exams must be turned in using [Gradescope](https://www.gradescope.com/courses/97183).
 More information can be found <a href='https://zym.math.cmu.edu/t/information-about-virtual-lectures'>here</a>.
 </div>

@@ -70,6 +70,8 @@ ul.comments  div.small blockquote {
 
 
 /* Right navigation {{{ */
+#toc>div.toc ul {display: none}
+#toc>div.toc ul.nav {display: flex}
 #col-right .toc ul.nav {
   list-style: none;
   white-space: nowrap;
