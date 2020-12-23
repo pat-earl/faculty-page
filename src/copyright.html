@@ -1,0 +1,28 @@
+{% extends "layouts/base.j2" %}
+{% set title = 'Copyright Information' %}
+{% block body %}
+<h2>{{ title }}</h2>
+
+<table class='table'>
+    <tbody>
+        <tr>
+            <th scope='row'>sjinja-www creator</th>
+            <td><a href="http://www.math.cmu.edu/~gautam/sj/">Gautam Iyer</a></td>
+        </tr>
+        <tr>
+            <th scop='row'>sjinja-www source code:</th>
+            <td><a href="https://gitlab.com/gi1242/sjinja-www">Gitlab</a></td>
+        </tr>
+        <tr>
+            <th scope='row'>Licensing Info:</th>
+            <td>
+                <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>
+                <br>
+                <img alt="Creative Commons License" class='media-object'
+                    style="border-width:0"
+                    src="{{get_link('/share/licence/cc-by-nc-sa-88x31.png', true)}}">
+            </td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

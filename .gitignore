@@ -3,3 +3,4 @@
 *.webm
 *.mp4
 **/auth/*.csv
+/env

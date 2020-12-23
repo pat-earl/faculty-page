@@ -1,7 +1,7 @@
-#! /usr/bin/python3
+#! /usr/bin/env python
 import os, sys
 pwd = os.path.dirname(os.path.realpath(__file__))
-sys.path.insert( 1, os.path.join( pwd, 'ext' ) )
+#sys.path.insert( 1, os.path.join( pwd, 'ext' ) )
 
 import staticjinja
 from jinja2_markdown import MarkdownExtension

@@ -1,12 +1,37 @@
 {%- set navbar_left = [
-    ( 'index.html',	'Research' ),
-    ( 'teaching',	'Teaching' ),
+    ( 'index.html',	'Home' ),
+    ( 'teaching',	'Courses' ),
     ( 'contact.html',   'CV/Contact' ),
 ] %}
 {%- set navbar_right = [
-    ( '',		'Code' ),
-    ( 'blog',		'Blog' ),
+
 ] -%}
+{%- set colors = {
+    "primary_maroon": "701931",
+    "primary_golden": "B6A268",
+    "spirt": "FEC524",
+    "reed_shade": "C43A31",
+    "reed": "DD5143",
+    "reed_tint": "E17662",
+    "sacony_shade": "00405A",
+    "sacony": "43859A",
+    "sacony_tint": "87CBD8",
+    "roar_shade": "D57800",
+    "roar": "FF9E19",
+    "roar_tint": "FF9E19",
+    "found_shade": "6C6054",
+    "found": "ACA59C",
+    "found_tint": "CEC7BF"
+} %}
+
+{%- set office_hours = {
+
+    "Monday": "2:00 PM - 4:00 PM",
+    "Tuesday": "3:00 PM - 4:00 PM",
+    "Wednesday": "4:00 PM - 5:00 PM",
+    
+} %}
+
 {%- if dev_env == 'local' -%}
     {%- set _ = navbar_right.append( ( 'dev/test', 'Test' )  ) %}
 {%- endif -%}

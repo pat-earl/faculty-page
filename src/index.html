@@ -5,20 +5,17 @@
 {% from 'teaching/sections.j2' import secs %}
 {% from 'teaching/courses.j2' import md_current_courses %}
 {% block jumbotron %}{# {{{ #}
-  <h1 class='text-nowrap'>Gautam Iyer</h1>
+  <h1 class='text-nowrap'>{{site_author}}</h1>
 
-  <p class='text-primary'>
-    Professor,
-    <a href='http://www.math.cmu.edu' class='text-nowrap'>
+  <p class='text-success'>
+    Instructor,
+    <a href='https://www.kutztown.edu/csit' class='text-nowrap text-success'>
       <span class='d-none d-sm-inline'>
-	Department of Mathematical Sciences,
-      </span>
-      <span class='d-sm-none'>
-	Dept. of Math. Sci.,
+	Department of Computer Science & Information Technology,
       </span>
     </a>
-    <a class='text-nowrap' href='http://www.cmu.edu'>
-      Carnegie Mellon University.
+    <a class='text-nowrap text-success' href='https://www.kutztown.edu'>
+      Kutztown University of PA
     </a>
   </p>
 
@@ -29,118 +26,57 @@
     &emsp;
     <span class='text-nowrap' title='Phone'>
       🕻
-      412 268 8419.
+      {{author_office_phone}}
     </span>
   </div>
 {% endblock %}{# }}} #}
 {% block heading1 %}{# {{{ #}
-  <h2>Research Interests</h2>
-  <div class='media mb-4'>
-    <img class='media-object rounded d-none d-sm-block'
-	src='research/img/mixing-diag-sol6.jpg' alt='Mixing image'>
-    <img class='media-object rounded d-sm-none'
-	src='research/img/mixing-diag-sol6-xs.jpg' alt='Mixing image'>
-    <div class='media-body justify pl-4'>
-      {% markdown %}
-      My research concerns **"Theoretical Applied Math"** using tools from
-      <em class='text-primary'>partial differential equations</em> and 
-      <em class='text-primary'>probability</em>.
-      More specifically, I've worked on a variety of problems related to
-      anomalous diffusion,
-      coagulation,
-      fluid mechanics,
-      homogenization,
-      Q-tensors
-      and
-      mixing.
-      {% endmarkdown %}
-
-    </div><!-- /media-body -->
-  </div>{# /media #}
-
+  <h2>Current Courses</h2>
   {% markdown %}
-  ### Awards, and Support Acknowledgement
-
-  * [NSF](http://www.nsf.gov) (various standard grants since 2006, CAREER 2013-18)
-  * [Simons Fellow](https://www.simonsfoundation.org/funding/funding-opportunities/mathematics-physical-sciences/simons-fellow-program/) (2016-17)
-  * [Alfred P. Sloan](http://www.sloan.org/sloan-research-fellowships)
-    research fellowship (2013-15).
-  * The [Center for Nonlinear Analysis](http://www.math.cmu.edu/cna)
-
-  <small>All findings my own and do not necessarily reflect the views of respective funding agencies.</small>
+  <div class='media mb-4' markdown='1'>
+    {{ md_current_courses() -}}
+  </div>{# /media #}
   {% endmarkdown %}
 
   <h2 id='publications'>Publications</h2>
 
   {# <ul>{{ macros.pubs( p.publist[0:5] ) }}</ul> #}
-  {% set base_tags = [
-    ( 'recent', 'Recent Publications' ),
+  {# {% set base_tags = [
+    {( 'recent', 'Recent Publications' ),
     ( 'all', 'All Publications' ),
-    ( 'pde', 'Partial Differential Equations' ),
-    ( 'probability', 'Probability' ),
-  ] %}
-  {% set more_tags = [
-    ( 'coagulation', 'Coagulation' ),
-    ( 'fluids', 'Fluid Dynamics' ),
-    ( 'harmonic analysis', 'Harmonic Analysis' ),
-    ( 'homogenization', 'Homogenization' ),
-    ( 'liquid crystals', 'Liquid Crystals' ),
-    ( 'mixing', 'Mixing' ),
-  ] %}
+  ] %} #}
+  {#
   <ul class='nav nav-tabs'>
     {% for t, T in base_tags %}
       <li class='nav-item
 	  {%- if loop.first %} active
 	  {%- elif loop.index > 2 %} d-none d-sm-inline-block
 	  {%- endif %}'>
-	<a class='nav-link' href="#pubs-{{t|replace( ' ', '-' )}}"
-	    data-toggle='tab'>
-	  {{t | capitalize}}
-	</a>
+        <a class='nav-link' href="#pubs-{{t|replace( ' ', '-' )}}"
+            data-toggle='tab'>
+          {{t | capitalize}}
+        </a>
       </li>
     {% endfor %}
-    <li class="nav-item dropdown">
-      <a class='nav-link dropdown-toggle' data-toggle="dropdown" href='#'
-	  id="pubs-more">
-	More
-	{# <span class="caret"></span> #}
-      </a>
-      <div class="dropdown-menu">
-	{% for t, T in base_tags[2:] %}
-	  <a class='dropdown-item d-sm-none'
-	      href="#pubs-{{t|replace( ' ', '-' )}}" data-toggle='tab'>
-	    {{t | capitalize}}
-	  </a>
-	{% endfor %}
-	<div class='dropdown-divider d-sm-none'></div>
-	{% for t, T in more_tags %}
-	  <a class='dropdown-item'
-	      href="#pubs-{{t|replace( ' ', '-' )}}" data-toggle='tab'>
-	    {{t | capitalize}}
-	  </a>
-	{% endfor %}
-      </div>
-    </li>
   </ul>
 
   <div class='tab-content small'>
-    {% for t, T in base_tags + more_tags %}
+    {% for t, T in base_tags %}
       <div class='tab-pane{% if loop.first %} active{% endif %}'
 	  id="pubs-{{t|replace(' ', '-')}}">
-	<h5 class='mt-2'>{{T}}</h5>
+	      <h5 class='mt-2'>{{T}}</h5>
 
-	<ul>
-	  {% if t == 'recent' %}
-	    {{ macros.pubs( p.publist[0:5] ) }}
-	  {% elif t == 'all' %}
-	    {{ macros.pubs( p.publist ) }}
-	  {% else %}
-	    {{ macros.tpubs( p.publist, t )}}
-	  {% endif %}
-	</ul>
-      </div>
+        <ul>
+          {% if t == 'recent' %}
+            {{ macros.pubs( p.publist[0:5] ) }}
+          {% elif t == 'all' %}
+            {{ macros.pubs( p.publist ) }}
+          {% endif %}
+        </ul>
+        </div>
     {% endfor %}
-  </div>
+  </div> #}
+  {{ macros.pubs(p.publist ) }}
 
   {# {{{
   <div class='text-right'>
@@ -153,19 +89,29 @@
   }}} #}
 {% endblock %}{# }}} #}
 {% block heading2 %}{% markdown %}{# {{{ #}
-  <div class='small flushed-left-list' markdown='1'>
-#### [Teaching](teaching)
-{{md_current_courses()-}}
-* [{{secs.previous_courses}}](teaching#{{secs.previous_courses|slugify}})
-* [{{secs.lecture_notes}}](teaching#{{secs.lecture_notes|slugify}})
-* [{{secs.student_projects}}](teaching#{{secs.student_projects|slugify}})
-  </div>
+## Office Hours 
+
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <th scope="col">Day</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for day, time in site.office_hours.items() %}
+    <tr>
+      <th scope="row">{{ day }}</td>
+      <td>{{ time }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endmarkdown %}{% endblock %}{# }}} #}
 {% block heading3 %}{% markdown %}{# {{{ #}
-  <div class='small flushed-left-list' markdown='1'>
-#### Misc.
+<div class='small flushed-left-list' markdown='1'>
+### Tutoring Info 
 
-* Open Source Code
-* [Linux/LaTeX tips "blog"](blog)
-  </div>
+TBD
+</div>
 {% endmarkdown %}{% endblock %}{# }}} #}

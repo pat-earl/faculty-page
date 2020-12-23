@@ -1,17 +1,17 @@
 {% extends "layouts/base.j2" %}
 {% block pre_container %}
-  <div class="jumbotron">
-    <div class="container" >
+  <div class="container" >
+    <div class="jumbotron" style="background-color:#{{ site.colors.found_tint }}">    
       {% block jumbotron %}<h1>Hello, world!</h1>{{ lipsum(1) }}{% endblock %}
     </div>
   </div>{# jumbotron #}
 {% endblock %}
 {% block body %}
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-8">
       {% block heading1 %}<h2>Heading 1</h2>{{ lipsum(1) }}{% endblock %}
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class='row' style='position: sticky; top: .5rem'>
 	<div class='col-md-12 col-sm-6'>
 	  {% block heading2 %}

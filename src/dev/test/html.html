@@ -4,11 +4,6 @@
 {% block body %}
 <h2>Column test</h2>
 
-{% from 'includes/publist.j2' import pubs %}
-{{ pubs.oseen.title }}
-{% for a in pubs.oseen.authors %}
-  {{a}},
-{% endfor %}
 
 <div class='row'>
   <div class='col-md-6 bg-success'>

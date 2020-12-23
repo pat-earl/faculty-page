@@ -5,12 +5,16 @@
       <hr>
       <div class='media'>
 	<div class='media-body pt-0'>
-	  <span class='text-nowrap'>&copy; {{ site_author }} 2015&ndash;2019.</span>
+	  <span class='text-nowrap'>&copy; {{ site_author }} 2020.</span>
 	  This site is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0 License</a>.
 	  <br>
 	  {{ macros.email( email | default(author_email) ) }}
 	  &emsp;
 	  {{ macros.room( author_office_bldg, author_office_room ) }}
+	  <br>
+	  Uses static jinja generator created by <a href="http://www.math.cmu.edu/~gautam/sj/">Gautam Iyer</a>
+	  <br>
+	  <a href="{{get_link('copyright.html')}}">Copyright Information</a>
 	</div>
 	<a rel="license" class='mr-auto'
 	  href="http://creativecommons.org/licenses/by-nc-sa/4.0/">

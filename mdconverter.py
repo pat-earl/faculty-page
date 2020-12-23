@@ -1,13 +1,15 @@
 import os, sys
 pwd = os.path.dirname(os.path.realpath(__file__))
-sys.path.insert( 1, os.path.join( pwd, 'ext' ) )
+# sys.path.insert( 1, os.path.join( pwd, 'ext' ) )
 
 import re, shutil
 from collections import namedtuple
 
 import markdown
 import markdown.extensions.toc as mdx_toc
-import mdx_math, mdx_link, markdown_strikethrough
+import ext.mdx_link as mdx_link
+import ext.mdx_math as mdx_math
+import markdown_strikethrough
 
 class mdconverter:
     def __init__(self, site):
@@ -64,7 +66,7 @@ class mdconverter:
         from context.dirname) or to the root directory (site.searchpath).
         """
 
-        g = self.site._env.globals
+        g = self.site.env.globals
 
         link = self.get_file( context, f )
         (l, e) = os.path.splitext( link )
@@ -200,7 +202,7 @@ def render(site, template, **context):
     try:
         layout = context['layout']
     except:
-        for (l, r) in site._env.globals['layouts']:
+        for (l, r) in site.env.globals['layouts']:
             if re.match( r, template.name ):
                 layout = l
                 break

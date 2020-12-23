@@ -1,0 +1,7 @@
+jinja2
+staticjinja
+jinja2_markdown
+mdconverter
+coloredlogs
+MarkupSafe
+markdown-strikethrough
