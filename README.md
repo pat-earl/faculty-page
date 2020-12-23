@@ -23,9 +23,8 @@ I've made minor changes to adapt it to my needs. This list will be updated as th
 
 * Moved from the submodule setup to just installing modules in a virtualenv. Injecting into sys.path just wasn't working for me and led to import errors.
 
-
-## This is from Gautam's orginal README
 *** 
+## This stuff is from Gautam's orginal README
 
 ## Description
 
