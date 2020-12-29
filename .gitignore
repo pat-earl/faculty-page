@@ -4,3 +4,5 @@
 *.mp4
 **/auth/*.csv
 /env
+
+__pycache__

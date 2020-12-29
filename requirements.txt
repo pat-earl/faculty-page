@@ -5,3 +5,5 @@ mdconverter
 coloredlogs
 MarkupSafe
 markdown-strikethrough
+pypandoc
+beautifulsoup4

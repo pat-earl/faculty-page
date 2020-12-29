@@ -18,20 +18,18 @@
     "sacony_tint": "87CBD8",
     "roar_shade": "D57800",
     "roar": "FF9E19",
-    "roar_tint": "FF9E19",
+    "roar_tint": "F1C382",
     "found_shade": "6C6054",
     "found": "ACA59C",
     "found_tint": "CEC7BF"
-} %}
-
+} -%}
 {%- set office_hours = {
 
     "Monday": "2:00 PM - 4:00 PM",
     "Tuesday": "3:00 PM - 4:00 PM",
     "Wednesday": "4:00 PM - 5:00 PM",
     
-} %}
-
+} -%}
 {%- if dev_env == 'local' -%}
     {%- set _ = navbar_right.append( ( 'dev/test', 'Test' )  ) %}
 {%- endif -%}

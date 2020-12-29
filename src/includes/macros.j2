@@ -81,8 +81,28 @@
     {%- else -%}
       {{bldg}}
     {%- endif -%}
-    {{- ' '~room if room -}}.
+    {{- ' '~room if room -}}
   </span>
+{%- endmacro -%}
+
+{%- macro office_hours_table(s) -%}
+{# Use 'with context' #}
+  <table class='table table-responsive'>
+    <thead>
+      <tr>
+        <th scope='col'>Day</th>
+        <th scope='col'>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for day, time in s.office_hours.items() %}
+      <tr>
+        <th scope='row'>{{ day }}</th>
+        <td>{{ time }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {%- endmacro -%}
 
 {%- macro course_info_table(c) -%}
@@ -93,7 +113,7 @@
       <tr>
 	<th scope='row'>Instructor</th>
 	<td>
-	  <a href='{{author_url}}'>{{site_author}}</a>.
+	  <a href='{{author_url}}'>{{site_author}}</a>
 	  &emsp;
 	  {{ room( author_office_bldg, author_office_room ) }}
 	  &emsp;
@@ -109,6 +129,9 @@
 	  {% elif c.lectures is mapping -%}
 	    {{c.lectures.time}} in
 	    {{room( c.lectures.bldg, c.lectures.room, is_office=false ) }}
+		{% if 'zoom' in c.lectures -%}
+		& via <a href="{{c.lectures.zoom}}">Zoom</a>
+		{% endif %}
 	  {% else -%}
 	    {% for s in c.lectures -%}
 	      {{s}}{{'<br>' if not loop.last else ''}}
@@ -240,7 +263,8 @@
     {%- endif -%}{# }}} #}
     {#- Mailing list {{{ #}
     {%- if c.mailing_list or c.anonymous_list or c.blackboard
-	    or c.mediasite or c.links or c.discourse or c.canvas %}
+	    or c.mediasite or c.links or c.discourse or c.canvas
+		  or c.D2L %}
       <tbody>
 	{%- if c.mailing_list -%}
 	  <tr>
@@ -300,6 +324,14 @@
 	    </td>
 	  </tr>
 	{%- endif -%}
+	{%- if c.D2L -%}
+	  <tr>
+      <th scope='row'>D2L</th>
+      <td>
+        <a href="{{c.D2L}}">Lecture Recordings/Discussions/Grades</a>.
+      </td>
+    </tr>
+  {%- endif -%}
 	{%- for (desc, link) in c.links -%}
 	  <tr>
 	    <th scope='row'>{{desc}}</th>

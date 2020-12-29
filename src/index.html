@@ -7,20 +7,20 @@
 {% block jumbotron %}{# {{{ #}
   <h1 class='text-nowrap'>{{site_author}}</h1>
 
-  <p class='text-success'>
+  <p style="color: #{{ site.colors.primary_maroon }}">
     Instructor,
-    <a href='https://www.kutztown.edu/csit' class='text-nowrap text-success'>
+    <a href='https://www.kutztown.edu/csit' class='text-nowrap' style="color: #{{ site.colors.primary_maroon }}">
       <span class='d-none d-sm-inline'>
 	Department of Computer Science & Information Technology,
       </span>
     </a>
-    <a class='text-nowrap text-success' href='https://www.kutztown.edu'>
+    <a class='text-nowrap' href='https://www.kutztown.edu' style="color: #{{ site.colors.primary_maroon }}">
       Kutztown University of PA
     </a>
   </p>
 
   <div class='small mb-2'>
-    {{ macros.email( author_email ) }}
+    {{ macros.email( author_email, false ) }}
     &emsp;
     {{ macros.room( author_office_bldg, author_office_room ) }}
     &emsp;
@@ -101,7 +101,7 @@
   <tbody>
     {% for day, time in site.office_hours.items() %}
     <tr>
-      <th scope="row">{{ day }}</td>
+      <th scope="row">{{ day }}</th>
       <td>{{ time }}</td>
     </tr>
     {% endfor %}
