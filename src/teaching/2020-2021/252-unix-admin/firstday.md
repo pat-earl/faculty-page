@@ -35,7 +35,7 @@ title: First Day Handout
 Always refer to my website for the latest office hours.
 
 **Meetings:** 
-: Tuesdays/Thursdays 3:00PM - 4:20PM
+: OM 159 | Tues/Thurs 4:30 PM - 5:50 PM
 
 **Format:** 
 : Hybrid (Sync In-Person/Zoom)
@@ -48,29 +48,24 @@ Always refer to my website for the latest office hours.
 
 ## Description
 
-This course is an introduction to the basic concepts of computer forensics.  It will teach the student how to identify, preserve, recover, analyze and document data on a computer or network allegedly used to commit a crime.  Topics include computer architecture, operating systems, encryption/decryption, preserve and document evidence, and analyzing computers and networks for evidence.  
-
+This course deals with the study of the UNIX operating system, particularly, systems programming and administration.  Under the former, such topics as UNIX commands, filters, shell scripts, system security, user accounts, system backup and rebooting, and associated utilities are studied.  In addition, software procurement, and installation will be illustrated.  Meaningful applications, which illustrate the topics, will be given.
 
 ## Objectives
 
-1. Summarize the importance of security for computer and network systems.
-2. Describe the role of computer forensics in an alleged crime.
-3. States a basic knowledge of computers and networks.
-4. Explain the ethic and social implications of technology.
-5. Describe the major security threats and vulnerabilities to computers and networks, including viruses, worms, and trojans.
-6. Explain basic encryption and decryption techniques.
-7. Explain basic hacker techinques and how to defend against them.
-8. Describe how to preserve and critical evidence in computers and networks.
-9. Demonstrate the ability to perform a basic analysis for computer forensics using various tools.
+1. Define basic terminology used in UNIX and converse in terms commons to UNIX.
+1. Explain the tasks assoiated with UNIX system administration.
+1. Demonstrate the ability to find, download, and install appropriate software, e.g. compilers, specialized servers, editors, and other utilities for the users. 
+1. Understand the use of signals and pipes.
+1. Solve practical problems using various UNIX utilities. 
+1. Demonstrate effecitve oral communication by presenting a UNIX topic.
 
 ## Grading 
 
 Your final course grade will be made up of the following:
 
-* Semi-Weekly Quizzes: 15%
 * Exams: 25%
-* Assignments/Projects: 40%
-* Final Exam: 15%
+* Assignments/Projects: 50%
+* Final Exam: 20%
 * Class Participation: 5%
 
 The standard [University Grading Policy](http://app.kutztown.edu/policyregister/Policy/ACA-048) will be used to calculate your final letter grade. Your *lowest* quiz and homework grade will be dropped. 

@@ -35,7 +35,8 @@ title: First Day Handout
 Always refer to my website for the latest office hours.
 
 **Meetings:** 
-: Tuesdays/Thursdays 3:00PM - 4:20PM
+: OM159 | Tues/Thurs 3:00PM - 4:20PM
+
 
 **Format:** 
 : Hybrid (Sync In-Person/Zoom)

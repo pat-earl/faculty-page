@@ -35,7 +35,7 @@ title: First Day Handout
 Always refer to my website for the latest office hours.
 
 **Meetings:** 
-: Tuesdays/Thursdays 3:00PM - 4:20PM
+: OM 158 | Tues/Thurs 12:00 PM - 1:20 PM
 
 **Format:** 
 : Hybrid (Sync In-Person/Zoom)
@@ -48,28 +48,25 @@ Always refer to my website for the latest office hours.
 
 ## Description
 
-This course is an introduction to the basic concepts of computer forensics.  It will teach the student how to identify, preserve, recover, analyze and document data on a computer or network allegedly used to commit a crime.  Topics include computer architecture, operating systems, encryption/decryption, preserve and document evidence, and analyzing computers and networks for evidence.  
-
+This course is for students who want to go beyond using prepackaged software tools for editing graphical images. Students will create interactive images, videos, and multimedia compositions using a programming language specifically designed for these applications. Projects include program-driven display of basic shapes and imported images, display properties such as texture and shading, display-time image composition, generative art, interaction with user gestures, three-dimensional graphics, animation, video, and additional topics as time allows. The programming environment includes extensive language and library support for these activities, while simplifying the steps in introductory programming. There will be solo and/or team projects.
 
 ## Objectives
 
-1. Summarize the importance of security for computer and network systems.
-2. Describe the role of computer forensics in an alleged crime.
-3. States a basic knowledge of computers and networks.
-4. Explain the ethic and social implications of technology.
-5. Describe the major security threats and vulnerabilities to computers and networks, including viruses, worms, and trojans.
-6. Explain basic encryption and decryption techniques.
-7. Explain basic hacker techinques and how to defend against them.
-8. Describe how to preserve and critical evidence in computers and networks.
-9. Demonstrate the ability to perform a basic analysis for computer forensics using various tools.
+1. Create programs that utilize elemenary data types, control constructs, and functions to solve problems. 
+1. Create programs that generate and position graphical primitives such as pixels, lines, ellipses,
+rectangles, and custom two-dimensional shapes.
+1. Demonstrte the ability to manipulate color, texture, perceived lighting sources, and geometric transformations of graphical objects in student programs.
+1. Demonstrate the ability to utilize language features and libaries in manipulating three-dimensional projections onto two-dimensional surfaces in student programs.
+1. Demonstrate the ability to utilize language features and libaries in creating animated images sequences and in capturing resultant video files in student programs.
+1. Demonstrate the ability to utilize user actions and gestures as input to graphical programs.
+1. Demonstrate the ability to import and export data between external tools and student programs.
 
 ## Grading 
 
 Your final course grade will be made up of the following:
 
-* Semi-Weekly Quizzes: 15%
-* Exams: 25%
-* Assignments/Projects: 40%
+* Exams: 30%
+* Assignments/Projects: 50%
 * Final Exam: 15%
 * Class Participation: 5%
 

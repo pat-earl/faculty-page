@@ -35,7 +35,8 @@ title: First Day Handout
 Always refer to my website for the latest office hours.
 
 **Meetings:** 
-: Tuesdays/Thursdays 3:00PM - 4:20PM
+: Section 10: GR 307 | Mon/Wed/Fri 11:00 AM - 11:50 AM
+: Section 20: GR 307 | Mon/Wed/Fri 12:00 PM - 12:50 PM
 
 **Format:** 
 : Hybrid (Sync In-Person/Zoom)
@@ -48,28 +49,24 @@ Always refer to my website for the latest office hours.
 
 ## Description
 
-This course is an introduction to the basic concepts of computer forensics.  It will teach the student how to identify, preserve, recover, analyze and document data on a computer or network allegedly used to commit a crime.  Topics include computer architecture, operating systems, encryption/decryption, preserve and document evidence, and analyzing computers and networks for evidence.  
-
+This course takes students deeper into the theory of scientific programming, building on a foundation of sound programming methodology and an understanding of the modern programming languages prevalent in scientific communities and of the specialized tools and libraries.  Thorough grounding in computer science principles will enable the student to gain knowledge and skill to best leverage these tools for scientific study and research.  Topics include basic concepts of problem analysis and program design both from a procedural and structural standpoint – algorithm development, algorithm analysis, data structures, data storage, data analysis and data visualization.  Additional topics will include applications to scientific problems.
 
 ## Objectives
 
-1. Summarize the importance of security for computer and network systems.
-2. Describe the role of computer forensics in an alleged crime.
-3. States a basic knowledge of computers and networks.
-4. Explain the ethic and social implications of technology.
-5. Describe the major security threats and vulnerabilities to computers and networks, including viruses, worms, and trojans.
-6. Explain basic encryption and decryption techniques.
-7. Explain basic hacker techinques and how to defend against them.
-8. Describe how to preserve and critical evidence in computers and networks.
-9. Demonstrate the ability to perform a basic analysis for computer forensics using various tools.
+1. Analyze scientific problems
+1. Design and implement high level programs in scientific arena.
+1. Explain scientific data manipulation techniques.
+1. Employ data analysis effectively in the scientific arena.
+1. Employ simulation effectively in the scientific arena.
+1. Explain the process and problems of casual inference.
+1. Choose and employ specialized scientific programming libraries.
 
 ## Grading 
 
 Your final course grade will be made up of the following:
 
-* Semi-Weekly Quizzes: 15%
-* Exams: 25%
-* Assignments/Projects: 40%
+* Exams: 30%
+* Assignments/Projects: 50%
 * Final Exam: 15%
 * Class Participation: 5%
 
