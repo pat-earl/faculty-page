@@ -1,0 +1,19 @@
+table#schedule {
+    width:100%;
+    border-collapse: collapse;
+    vertical-align: middle;
+}
+
+table#schedule tr {
+    border-bottom: 1pt solid black;
+}
+
+table#schedule th {
+    /* text-align: center; */
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+
+table#schedule td:nth-child(1) {
+    text-align: center;
+}

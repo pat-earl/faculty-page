@@ -9,7 +9,7 @@ stylesheet: local.css
 
 * [First Day Handout]({{get_link('firstday.html')}})
 
-## Tenative Schedule
+## Tentative Schedule
 
 <table class="table">
     <thead>
