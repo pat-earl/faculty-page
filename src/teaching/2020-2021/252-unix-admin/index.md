@@ -32,115 +32,125 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>1 (01/19 - 01/22)</td>
             <td>
-                <ul>
-                    <li>Course Intro</li>
-                    <li>What is UNIX/Linux?</li>
-                </ul>
+                Course Intro<br>
+                History of UNIX/Linux<br>
+                Linux Reference
             </td>
             <td>
                 <ul>
-                    <li>Chapter 1 (All)</li>
+                    <li>Chapter 1</li>
+                    <li>Chapter 2 (Pages 33-39)</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td scope='row'>2 (01/25 - 01/29)</td>
             <td>
-                <ul>
-                    <li>Getting Help! (For Linux)</li>
-                    <li>Directories and Files</li>
-                    <ul>
-                        <li>File Paths</li>
-                        <li>File Permissions</li>
-                    </ul>
-                </ul>
+                Basic Commands<br>
+                File and Directory
             </td>
             <td>
                 <ul>
-                    <li>Chapter 2 (Pages 33-41)</li>
-                    <li>Chapter 4 (Pages 84-88, <br>
-                        90-95, <br>
-                        100 "Access Permissions" - 106)</li>
+                    <li>Chapter 3 (Pages 49-68)</li>
+                    <li>Chapter 4</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td scope='row'>3 (02/01 - 02/05)</td>
             <td>
-                <ul>
-                    <li>Directories and Files (cont.)
-                    <ul>
-                        <li>Links (Hard & Symbolic)</li>
-                    </ul>
-                    <li>The Shell</li>
-                    <ul>
-                        <li>Shells</li>
-                        <li>I/O Redirection/li>
-                        <li>Piping</li>
-                    </ul>
-                </ul>
+                Files and Directories
             </td> 
             <td>
                 <ul>
-                    <li>Chapter 4: (Pages 112-122)</li>
-                    <li>Chapter 5 (All)</li>
+                    <li>Chapter 4</li>
                 </ul>
             </td>
         </tr>
         <tr>
-            <td scope='row'>4 (02/08 - 02/12)<br>(<strong>WD:</strong> 02/11)</td>
+            <td scope='row'>4 (02/08 - 02/12)<br><strong>WD:</strong> 02/11</td>
+            <td>
+                Shells<br>
+                BASH<br>
+                NO CLASS THURSDAY - Wellness Day
+            </td>
             <td>
                 <ul>
-                    <li>The Shell (cont.)</li>
-                    <ul>
-                        <li>Utilities</li>
-                        <li>Variables and User Environment</li>
-                    </ul>
-                    <li>File System
+                    <li>Chapter 5</li>
+                    <li>Chapter 8 (Pages: 285 - 294)</li>
                 </ul>
             </td>
-            <td></td>
         </tr>
         <tr>
             <td scope='row'>5 (02/15 - 02/19)</td>
             <td>
+                BASH<br>
+                Shell Scripting<br>
+                <strong>Exam #1 - (TBD)</strong>
+            </td>
+            <td>
                 <ul>
-                    <li>Exam #1 (TBD)</li>
+                    <li>Chapter 8 (Pages: 294-299)</li>
+                    <li>Chapter 10</li>
                 </ul>
             </td>
-            <td></td>
         </tr>
         <tr>
             <td scope='row'>6 (02/22 - 02/26)</td>
-            <td></td>
-            <td></td>
+            <td>
+                Processes<br>
+                Virtual Machines & Containers
+            </td>
+            <td>
+                <ul>
+                    <li>Processes (Pages: 333 - 345)</li>
+                    <li>TODO (More on Processes & VMs/Containers)</li>
+                </ul>
+            </td>
         </tr>
         <tr>
             <td scope='row'>7 (03/01 - 03/05)</td>
-            <td></td>
-            <td></td>
+            <td>
+                Virtual Machines & Containers (if needed)<br>
+                System Administration
+            </td>
+            <td>
+                <ul>
+                    <li>Appendex C</li>
+                    <li>Linux Fundamentals (Pages: 274-302)</li>
+                </ul>
+            </td>
         </tr>
         <tr>
-            <td scope='row'>8 (03/08 - 03/12)<br>(<strong>WD:</strong> 03/10)</td>
-            <td></td>
+            <td scope='row'>8 (03/08 - 03/12)<br><strong>WD:</strong> 03/10</td>
+            <td>
+                System Administration
+            </td>
             <td></td>
         </tr>
         <tr>
             <td scope='row'>9 (03/15 - 03/19)</td>
-            <td></td>
-            <td></td>
+            <td>
+                Text Processing: sed & awk<br>
+                <strong>Exam #2 - (TBD)</strong>
+            </td>
+            <td>
+                <ul>
+                    <li>Chapter 14 - AWK</li>
+                    <li>Chapter 15 - SED</li>
+                </ul>
+            </td>
         </tr>
         <tr>
             <td scope='row'>10 (03/22 - 03/26)</td>
             <td>
-                <ul>
-                    <li>Exam #2 (?)</li>
-                </ul>
+                Text Processing<br>
+                Scripting Language - TBD
             </td>
             <td></td>
         </tr>
         <tr>
-            <td scope='row'>11 (03/29 - 04/02)<br>(<strong>WD:</strong> 04/02)</td>
+            <td scope='row'>11 (03/29 - 04/02)<br><strong>WD:</strong> 04/02</td>
             <td></td>
             <td></td>
         </tr>
@@ -151,24 +161,36 @@ stylesheet: ../../course.css
         </tr>
         <tr>
             <td scope='row'>13 (04/12 - 04/16)</td>
-            <td></td>
+            <td>
+                TBD<br>
+                <strong>Exam #3 ?- (TBD)</strong>
+            </td>
             <td></td>
         </tr>
         <tr>
-            <td scope='row'>14 (04/19 - 04/23)<br>(<strong>WD:</strong> 04/20)</td>
-            <td></td>
+            <td scope='row'>14 (04/19 - 04/23)<br><strong>WD:</strong> 04/20</td>
+            <td>
+                Flexible Topics<br>
+                NO CLASS TUESDAY - Wellness Day
+            </td>
             <td></td>
         </tr>
         <tr>
             <td scope='row'>15 (04/26 - 04/30)</td>
-            <td></td>
+            <td>
+                Flexible Topics
+            </td>
             <td></td>
         </tr>
         <tr>
-            <td scope='row'>16<br>(05/03 - 05/07)</td>
-            <td></td>
+            <td scope='row'>16 (05/03 - 05/07)</td>
+            <td>
+                FINAL EXAMS WEEK
+            </td>
             <td></td>
         </tr>
     </tbody>
 </table>
-<p>WD - Wellness Day</p>
+
+
+**WD** - Wellness Day

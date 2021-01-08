@@ -56,7 +56,8 @@ if __name__ == "__main__":
             OUTPUT_HTML += "\n\t\t</tr>"
     
     OUTPUT_HTML += "\n\t</tbody>\n</table>"
-    OUTPUT_HTML = OUTPUT_HTML.replace('\t', '    ')
+    # Replace tabs with 2 spaces (Markdown funny stuff :-))
+    OUTPUT_HTML = OUTPUT_HTML.replace('\t', '  ')
 
     # pprint(OUTPUT_HTML)
     print(OUTPUT_HTML)
