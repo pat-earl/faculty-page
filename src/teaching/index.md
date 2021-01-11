@@ -8,7 +8,7 @@ title: Courses
 
 ## {{secs.previous_courses}}
 
-Courses from previous semesters at KU
+Courses previously taught at KU (Some may not have links)
 
 {% for (cn, ct, rest) in courses -%}
 * *<span class='text-nowrap'>{{('CSC'~cn ~ ': ') if cn else ''}}{{ct}}.</span>*

@@ -17,3 +17,14 @@ table#schedule th {
 table#schedule td:nth-child(1) {
     text-align: center;
 }
+
+#markdown-table table
+{
+    border: black 1px solid;
+}
+
+#markdown-table table th, #markdown-table table td
+{
+    padding: 5px;
+    border: 1px solid black;
+}

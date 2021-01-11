@@ -3,18 +3,26 @@ stylesheet: ../../course.css
 {% from 'includes/macros.j2' import course_info_table with context -%}
 {% from get_file('course_info.j2') import course %}
 
+<div class='alert alert-primary' markdown='1'>
+Kutztown has announced that the semester will be 100% online for the first two weeks 
+of instruction. Class will be conducted synchronously via Zoom at the normal time
+found on MyKU and listed below. During this time I will be creating the in-class
+rotation schedule and ask that you tell me you're preferred day via the form [here](TBD).
+Attending 100% online is fine, you'll be randomly assigned a day if you choose to attend in 
+person at another time.
+</div>
+
 {{course_info_table(course)}}
 
 ## Course Resources
 
 * [First Day Handout]({{get_link('firstday.html')}})
 * [Linux Fundamentals](https://linux-training.be/linuxfun.pdf) by Paul Cobbaut
-    * This is only meant to supplement the main textbook. Please let me know if
-    the link goes down.
+    * Supplemental textbook
 
 ## Tentative Schedule
 
-*Schedule is subject to change and is only provided for guidance*
+*Schedule is subject to change and is provided for guidance*
 
 <table id="schedule">
     <colgroup>
