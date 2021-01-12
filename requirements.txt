@@ -7,3 +7,4 @@ MarkupSafe
 markdown-strikethrough
 pypandoc
 beautifulsoup4
+docker
