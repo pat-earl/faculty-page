@@ -1,12 +1,10 @@
-{%- if glob('hw/*.md') -%}
-
-{% for hw in glob('hw/*.md') | sort %}
-  {# get the meta data for this homework file! #}
-  {%- set hw_meta = get_meta(hw) -%}
-  {%-  if hw_meta['hidden'] == 'true' -%}
+{% from get_file('assignments.j2') import assignments %}
+{% for hw in assignments %}
+  {%- if hw['show'] == false -%}
   {%- else -%}
-* [{{ hw_meta['title'] }}]({{ get_link(hw) }})
-  {%- endif -%}
+* [{{ hw['name'] }}]({{ get_link('./hw/' ~ hw['file'])}})
+  {%- if hw['duedate'] != "" %}
+    * **Due:** {{ hw['duedate'] }}
+  {%- endif %}
+  {% endif -%}
 {% endfor %}
-
-{% endif %}

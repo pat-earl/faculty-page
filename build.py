@@ -3,6 +3,8 @@ import os, sys
 pwd = os.path.dirname(os.path.realpath(__file__))
 #sys.path.insert( 1, os.path.join( pwd, 'ext' ) )
 
+from pathlib import Path
+
 import staticjinja
 from jinja2_markdown import MarkdownExtension
 import re, optparse, shutil, configparser, glob, subprocess
@@ -10,6 +12,8 @@ from stat import *
 from jinja2 import contextfunction, contextfilter
 
 import mdconverter
+
+import pypandoc
 
 import coloredlogs
 
@@ -208,15 +212,52 @@ class Site( staticjinja.Site ):
         return True if self.partial_re.search( f ) else False
 
     static_re  = re.compile(
-            '(?:^|/)static/|\.(:?pdf|jpg|png|svg|eps|ps|txt|sty|'
-                + 'mp4|webm|bst|csv)$',
+            '(?:^|/)share\/revealjs\/*|(?:^|/)static/|\.(:?pdf|jpg|png|svg|eps|ps|txt|sty|'
+                + 'mp4|webm|bst|csv|pptx|docx|)$',
             flags=re.I )
     def is_static( self, f ):
         if not self.is_ignored(f) and self.static_re.search( f ):
             return True
         else:
             return False
+            
+def slide_convert(site, template, **context):
+    ''' 
+        Used for converting my slides, using pandoc :-)
+    '''
 
+    # Get the output path using the template's name
+    filepath = site.get_out_filename(template.name)
+
+    # Check if directory for output exists
+    if not os.path.isdir(os.path.dirname(filepath)):
+        Path(os.path.dirname(filepath)).mkdir(parents=True, exist_ok=True)
+
+    site.logger.info("Rendering slides {}".format(template.name))
+
+    # Get the site_prefix for $base$ variable in template
+    prefix = site.env.globals['site_prefix']
+
+
+    # Arguments to pass to pandoc
+    extra_args = [
+        '--standalone',
+        '--template=./src/layouts/template-revealjs.html',
+        '--section-divs',
+        '-V', 'base=' + prefix
+    ]
+
+    # Convert the file from markdown to the standalone HTML file
+    output = pypandoc.convert_file(template.filename, 
+                    to='html5',
+                    format='md',
+                    extra_args=extra_args,
+                    outputfile=filepath)
+    # output should be empty because we're using outputfile
+    assert output == ""
+
+    # Copy the permissions from 
+    shutil.copymode(template.filename, filepath)
 
 if __name__ == "__main__":
     # Options.
@@ -279,6 +320,7 @@ if __name__ == "__main__":
                 ('.*\.md', lambda t: mdconverter.get_context( site, t) ),
             ],
             rules=[
+                ('.*\/slides\/.*\.md', slide_convert),
                 ('.*\.md', mdconverter.render),
             ],
             filters={

@@ -1,9 +1,13 @@
+SHELL = /bin/bash
 VENVN_NAME?=env
 VENV_ACTIVATE=. $(VENVN_NAME)/bin/activate
 PYTHON=${VENVN_NAME}/bin/python3
 
 local:
 	${PYTHON} build.py
+
+local-force:
+	${PYTHON} build.py -f
 
 local-server:
 	${PYTHON} -m http.server -d ./out/

@@ -22,3 +22,5 @@ Courses previously taught at KU (Some may not have links)
   {%- endfor %}
 {% endfor %}
 
+## Independent Instruction / Independent Study
+
