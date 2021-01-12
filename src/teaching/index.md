@@ -22,5 +22,7 @@ Courses previously taught at KU (Some may not have links)
   {%- endfor %}
 {% endfor %}
 
-## Independent Instruction / Independent Study
+## Independent Studies
+
+* [Spring 2021 Networking IS](./independent/networking.html)
 

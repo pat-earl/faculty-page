@@ -8,7 +8,6 @@ title: First Day Handout
 **Course:** 
 : <span id='course_code'>{{course.abv_title}}</span> {{course.abv_name}} <span hidden id='semester_code'>{{course.abv_semester}}</span>
 
-
 **Semester:**
 : Spring 2021
 
@@ -65,8 +64,8 @@ This course takes students deeper into the theory of scientific programming, bui
 
 Your final course grade will be made up of the following:
 
-* Exams: 30%
 * Assignments/Projects: 50%
+* Exams: 30%
 * Final Exam: 15%
 * Class Participation: 5%
 

@@ -260,20 +260,20 @@ def slide_convert(site, template, **context):
     shutil.copymode(template.filename, filepath)
 
     # Check if in production, if so create the PDF versions
-    if site.options.production:
+    # if site.options.production:
 
-        client = docker.from_env()
-        client.containers.run(
-            image="astefanutti/decktape",
-            remove=True,
-            tty=True,
-            volumes = {
-                os.getcwd(): {'bind': '/slides', 'mode': 'rw'},
-                os.path.dirname(filepath): {'bind': '/home/user/', 'mode': 'rw'},
-                os.path.join(os.getcwd(), 'src/share/'): {'bind': '/share', 'mode': 'ro'}
-            },
-            command='/home/user/' + os.path.basename(filepath) + ' ' + os.path.basename(filepath) + '.pdf'
-        )
+    #     client = docker.from_env()
+    #     client.containers.run(
+    #         image="astefanutti/decktape",
+    #         remove=True,
+    #         tty=True,
+    #         volumes = {
+    #             os.getcwd(): {'bind': '/slides', 'mode': 'rw'},
+    #             os.path.dirname(filepath): {'bind': '/home/user/', 'mode': 'rw'},
+    #             os.path.join(os.getcwd(), 'src/share/'): {'bind': '/share', 'mode': 'ro'}
+    #         },
+    #         command='/home/user/' + os.path.basename(filepath) + ' ' + os.path.basename(filepath) + '.pdf'
+    #     )
 
 if __name__ == "__main__":
     # Options.

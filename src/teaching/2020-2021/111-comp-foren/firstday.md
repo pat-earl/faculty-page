@@ -69,9 +69,9 @@ This course is an introduction to the basic concepts of computer forensics.  It 
 
 Your final course grade will be made up of the following:
 
-* Semi-Weekly Quizzes: 15%
-* Exams: 25%
 * Assignments/Projects: 40%
+* Exams: 25%
+* Semi-Weekly Quizzes: 15%
 * Final Exam: 15%
 * Class Participation: 5%
 
