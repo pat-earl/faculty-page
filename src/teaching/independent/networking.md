@@ -7,10 +7,7 @@ Website is still a work in progress, information will change without notice.
 ## Meetings
 
 **Weekly Meetings:**
-: Monday 2:00 PM - 3:00 PM.  
-
-
-For meetings, use my [office hours link](https://kutztown.zoom.us/j/96663053507).   
+: Monday 2:00 PM - 3:00 PM via Teams.
 
 
 ## Resources

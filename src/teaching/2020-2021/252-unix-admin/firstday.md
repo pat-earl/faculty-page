@@ -1,4 +1,5 @@
 title: CSC252-020 First Day Handout
+stylesheet: ../../firstday.css
 {%- import 'includes/site.j2' as site -%}
 {% from 'includes/macros.j2' import office_hours_table with context -%}
 {% from get_file('course_info.j2') import course %}
@@ -36,7 +37,7 @@ title: CSC252-020 First Day Handout
 Always refer to my website for the latest office hours.
 
 **Meetings:** 
-: OM 159 - Tues/Thurs 4:30 PM - 5:50 PM
+: OM 159, Tues/Thurs 4:30 PM - 5:50 PM
 
 **Format:** 
 : Hybrid (Sync In-Person/Zoom)
@@ -77,10 +78,13 @@ The standard [University Grading Policy](http://app.kutztown.edu/policyregister/
 *NOTE: Even though the university uses the 4.0 GPA scale in it's policy, 
 grades will be displayed and reported on a typical 100 point scale.*
 
+**Class Participation:**
+: Grade is based off regular class attendance and participation in discussions.
+
 **Exams/Quizzes:**
 
-: Exams and Quizzes times will be announced during class and must be taken during their scheduled time/location. Students who are unable to take the exam or quiz at the scheduled time for university approved reasons, **must do their best to contact the instructor before the start of it**. 
-Missed exams will be handled on a case-by-case basis. For a list of approved reasons review the *Class Absence* section in the [Class Attendance](http://app.kutztown.edu/policyregister/Policy/ACA-016) university policy. 
+: Exams and Quizzes times will be announced during class and must be taken during their scheduled time/location. Students who are unable to take the exam or quiz at the scheduled time for university approved reasons, **must do their best to contact the instructor beforehand**. 
+Missed exams/quizzes will be handled on a case-by-case basis. For a list of approved reasons review the *Class Absence* section from the [Class Attendance](http://app.kutztown.edu/policyregister/Policy/ACA-016) University policy. 
 
 **Homework (Assignments/Projects):**
 : This policy is adopted from this [first day handout](https://csit.kutztown.edu/~schwesin/fall20/csc223/syllabus.html).
@@ -102,8 +106,6 @@ recieve full credit for the assignment and automatically spend one grace day.
 * Once you have spent your grace days, you will start receiving the 10% penalty. 
 * No submission will be accepted more than three (3) days late.
 
-**Class Participation:**
-: This grade is based off regular attendance in the class and contribution to discussions. 
 
 # Course Policies
 
@@ -115,7 +117,7 @@ Students may freely select the mode of instruction in which they participate on 
 Students who wish to attend class in-person some or all meeting days, should inform the instructor 
 of their intent to do so, to prevent the classroom from going over capacity. Students attending
 remotely are required to log in for synchronous instruction via Zoom during the scheduled
-course meeting times. Links to Zoom meeting room can be found on the course's webpage and the 
+course meeting times. Links to the Zoom meeting room can be found on the course's webpage and 
 D2L course.
 
 **Class Recordings:** 
@@ -150,7 +152,7 @@ principles and logical thinking that are much deeper than what can be optained b
 and modifying an existing implementation. Making use of unauthorized sources diminishses the 
 educational value of an assignment. 
 * Although teamwork and collaboration are important real-world skills, it is important to first gain
-the core competencies that enable individuals to server as effective team members. This course is
+the core competencies that enable individuals to serve as effective team members. This course is
 designed to to teach and assess these core competencies. Unauthorized collaboration diminishes the 
 educational experience and the reliability of assessments. 
   
@@ -177,10 +179,12 @@ and ends.
     * You **may not** obtain code or other solution information from an unauthorized external source,
 including web pages, code repositories, blog posts, etc.
 
+
 * **Searching:** 
     * You **may** search for or refer to general information including the use of systems,
-    networks, compilers, program libraries, and documentation.
+    networks, compilers, program libraries, library databases, and documentation.
     * You **may not** search the Web for solutions or for any advice on how to solve an assignment.
+
 
 * **Resuing:**
     * You **may** reuse elements of general knowledge from prior courses. For example, you may use
@@ -191,21 +195,28 @@ including web pages, code repositories, blog posts, etc.
     a meeting with the course instructor to devise a policy on which parts of your solutions you
     may use. Reuse without explicit permission of an instructor, even if it is your own code,
     is forbidden.
-     
+
+
 * **Using other’s code or documents:**
     * You **may not** look at someone else’s code (or other documents). This includes one person looking at the code and describing it to another.
     * You **may not** make use of any information about the assignment posted online except for the authorized sources listed above.
+
 
 * **Assistance:**
     * You **may** get assistance on an assignment from the instructors, graduate assistants, and university tutors.
     * You **may only** get high-level strategic advice from others, including current and former students. Forbidden forms of advice include anything more detailed than a brief verbal description or block diagram, any kind of code or pseudo-code, explicit directions on how to assemble allowed blocks of code, and code-level debugging assistance.
    
+
 : **Assignments and Collaboration:** As a general rule, you may not provide detailed help with an assignment other students. Clarifications about which forms of aid are authorized and which are not are as follows:
 
 * **Sharing:**
     * You **may not** supply a copy of a file or document to an individual student or via a public channel, such as a blog post.
+
+
 * **Providing access:**
     * You **may not** have any of your solution files in unprotected directories or in unprotected code repositories.
+
+
 * **Coaching, Assisting, and Collaborating:**
     * You **may not** provide electronic, verbal, or written descriptions of code or other solution information.
     * You **may** clarify ambiguities or vague points in class handouts or textbooks.
@@ -213,7 +224,8 @@ including web pages, code repositories, blog posts, etc.
     * You **may** discuss and provide general strategic advice about an assignment. Providing anything more detailed than a brief description or block diagram is not allowed. Providing any kind of code or pseudo-code is not allowed.
     * You **may** provide suggestions of potential bugs based on high-level symptoms. Code-based debugging assisstance is forbidden.
 
-: **Enforcement:** Assignments will be closely monitored for plagiarism. All infractions will be reported to the department chair. The penalty for cheating will be determined on a case-by-case basis, **but it will always be worse than having not turned in the assignment.** The instructor reserves the right to ask a student to explain submitted assignments at anytime.
+
+: **Enforcement:** Assignments will be closely monitored for plagiarism. All infractions will be reported to the department chair. The penalty for cheating will be determined on a case-by-case basis, **but it will always be worse than having not turned in the assignment.**
 
 **Classroom Etiquette:**
 : Respect for your classmates, instructor, and the class is expected. Please come to class on time

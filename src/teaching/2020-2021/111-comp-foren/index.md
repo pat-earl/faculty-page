@@ -15,7 +15,7 @@ Any assignments, course context, etc. will be posted on the D2L page linked abov
 
 ## Tentative Schedule
 
-*Schedule is subject to change and is provided for guidance*
+*Schedule is subject to change and only provided for guidance*
 
 <table id="schedule">
     <colgroup>

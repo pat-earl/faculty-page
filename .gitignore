@@ -6,5 +6,6 @@
 /env
 
 /.git_old
+/syllabus-pdfs
 
 __pycache__

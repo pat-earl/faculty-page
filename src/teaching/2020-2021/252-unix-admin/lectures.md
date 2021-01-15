@@ -16,4 +16,4 @@ their slide form or as a "printable" PDF, with each slide on a separate page
 
 ## Marked up Versions
 
-Lecture slides may be annotated during the course. Saved version can be found below.
+Lecture slides may be annotated during the course. Saved versions can be found below.
