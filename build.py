@@ -229,9 +229,16 @@ def slide_convert(site, template, **context):
     # Get the output path using the template's name
     filepath = site.get_out_filename(template.name)
 
+    src = os.path.join( site.searchpath, template.name )
+
     # Check if directory for output exists
     if not os.path.isdir(os.path.dirname(filepath)):
         Path(os.path.dirname(filepath)).mkdir(parents=True, exist_ok=True)
+
+    # Check last modified time
+    if os.path.isfile(filepath):
+        if os.stat(src).st_mtime - os.stat(filepath).st_mtime < 0:
+            return
 
     site.logger.info("Rendering slides {}".format(template.name))
 

@@ -6,11 +6,4 @@ slideNumber: true
 theme: serif
 ---
 
-## Slide Header 1
-
-- Some stuff here dog
-- More stuff
-
-## Slide Header 2
-
-- Another slide.
+## Course Information

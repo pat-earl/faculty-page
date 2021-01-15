@@ -71,7 +71,7 @@ Your final course grade will be made up of the following:
 
 * Assignments/Projects: 40%
 * Exams: 25%
-* Semi-Weekly Quizzes: 15%
+* Quizzes: 15%
 * Final Exam: 15%
 * Class Participation: 5%
 
