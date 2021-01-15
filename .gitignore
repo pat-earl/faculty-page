@@ -5,4 +5,6 @@
 **/auth/*.csv
 /env
 
+/.git_old
+
 __pycache__
