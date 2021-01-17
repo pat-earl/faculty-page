@@ -8,6 +8,7 @@ stylesheet: ../../course.css
 ## Course Resources
 
 * [First Day Handout]({{get_link('firstday.html')}})
+* [Textbook Website](http://learningprocessing.com)
 
 ## Tentative Schedule
 
