@@ -1,9 +1,10 @@
 ---
-title: "CSC120 Introduction"
+title: "Introduction"
+subtitle: "CSC120"
 author: Patrick Earl
 date: 01/19/2021
 slideNumber: true
-revealjs-theme: simple
+revealjstheme: simple
 width: 1600
 height: 1000
 transition: fade
@@ -31,7 +32,7 @@ think about how you could represent these in English and in code.
 
 * Rectangle
 * Triangle
-* Eclispses (Circles)
+* Eclipses (Circles)
 
 ## Points, Lines, Rectangles
 
@@ -41,7 +42,7 @@ think about how you could represent these in English and in code.
 
 ## Rectangles
 
-## Eclispses
+## Eclipses
 
 ## Color - Gray Scale
 

@@ -62,7 +62,7 @@ This course is an introduction to the basic concepts of computer forensics.  It 
 4. Explain the ethic and social implications of technology.
 5. Describe the major security threats and vulnerabilities to computers and networks, including viruses, worms, and trojans.
 6. Explain basic encryption and decryption techniques.
-7. Explain basic hacker techinques and how to defend against them.
+7. Explain basic hacker techniques and how to defend against them.
 8. Describe how to preserve and critical evidence in computers and networks.
 9. Demonstrate the ability to perform a basic analysis for computer forensics using various tools.
 
@@ -86,30 +86,14 @@ grades will be displayed and reported on a typical 100 point scale.*
 : Grade is based off regular class attendance and participation in discussions.
 
 **Exams/Quizzes:**
-
 : Exams and Quizzes times will be announced during class and must be taken during their scheduled time/location. Students who are unable to take the exam or quiz at the scheduled time for university approved reasons, **must do their best to contact the instructor beforehand**. 
 Missed exams/quizzes will be handled on a case-by-case basis. For a list of approved reasons review the *Class Absence* section from the [Class Attendance](http://app.kutztown.edu/policyregister/Policy/ACA-016) University policy. 
 
 **Homework (Assignments/Projects):**
-: This policy is adopted from this [first day handout](https://csit.kutztown.edu/~schwesin/fall20/csc223/syllabus.html).
-
-: All homework submissions must include the following information: your name, the course,
-semester, year, and assignment number/name. Programming assignments must follow the 
-[Documentation Standards](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/DocumentationStandard.pdf) set by the CS&IT Department. Failure to meet these 
-requirements will result in a minimum 10% penalty for that assignment.
-
-: Homework is due at the specified date and time, with a penalty of 10% for each day late.
-Homework can be at most up to three (3) days late. Students have a budget of three (3) grace days
-for the course. Grace days will work as followed:
-
-* Some homework may not be eligible for these grace days and will be marked as such in the homework's
-handout.
-* Grace days will be automatically applied until you run out.
-* If your last submission is one day late and you have at least one day remaining, then you will
-recieve full credit for the assignment and automatically spend one grace day.
-* Once you have spent your grace days, you will start receiving the 10% penalty. 
-* No submission will be accepted more than three (3) days late.
-
+: All homework submissions must include the following information:
+Your Name(s), The Course, Semester, Year, and Assignment/Project Number or Name.
+Homework can be submitted up to three days late, with a 10% penalty applied
+each day.
 
 # Course Policies
 
@@ -152,8 +136,8 @@ and [2](https://www.cs.cmu.edu/afs/cs/academic/class/15213-f19/www/syllabus/syll
 This policy is based on the following beliefs:
 
 * Developing programs from scratch, or with limited starting code, requires using design
-principles and logical thinking that are much deeper than what can be optained by copying
-and modifying an existing implementation. Making use of unauthorized sources diminishses the 
+principles and logical thinking that are much deeper than what can be obtained by copying
+and modifying an existing implementation. Making use of unauthorized sources diminishes the 
 educational value of an assignment. 
 * Although teamwork and collaboration are important real-world skills, it is important to first gain
 the core competencies that enable individuals to serve as effective team members. This course is
@@ -190,7 +174,7 @@ including web pages, code repositories, blog posts, etc.
     * You **may not** search the Web for solutions or for any advice on how to solve an assignment.
 
 
-* **Resuing:**
+* **Reusing:**
     * You **may** reuse elements of general knowledge from prior courses. For example, you may use
     existing code for a linked list or to process command line arguments. For any such use involving
     code, you must provide clear attribution, including the source, and where the included
@@ -226,7 +210,7 @@ including web pages, code repositories, blog posts, etc.
     * You **may** clarify ambiguities or vague points in class handouts or textbooks.
     * You **may** help others use the computer systems, networks, compilers, debuggers, profilers, code libraries and other system facilities.
     * You **may** discuss and provide general strategic advice about an assignment. Providing anything more detailed than a brief description or block diagram is not allowed. Providing any kind of code or pseudo-code is not allowed.
-    * You **may** provide suggestions of potential bugs based on high-level symptoms. Code-based debugging assisstance is forbidden.
+    * You **may** provide suggestions of potential bugs based on high-level symptoms. Code-based debugging assistance is forbidden.
 
 
 : **Enforcement:** Assignments will be closely monitored for plagiarism. All infractions will be reported to the department chair. The penalty for cheating will be determined on a case-by-case basis, **but it will always be worse than having not turned in the assignment.**
@@ -234,9 +218,9 @@ including web pages, code repositories, blog posts, etc.
 **Classroom Etiquette:**
 : Respect for your classmates, instructor, and the class is expected. Please come to class on time
 and prepared to learn. Coming and going during class should be limited to unavoidable situations.
-**Electronic devices should not be seen or heard**, unless being used for class activites, note taking,
+**Electronic devices should not be seen or heard**, unless being used for class activities, note taking,
 etc. Using your cell phone to take pictures of lecture notes, is not a valid purpose. There should be
-no classroom converstations, sleeping (with snoring), or general disruptions during class.
+no classroom conversations, sleeping (with snoring), or general disruptions during class.
 
 **Zoom Etiquette:**
 : Due to the hybrid nature of this course, Zoom participates are expected be professional and 
@@ -245,9 +229,9 @@ behave as if in the classroom. Below are some guidelines to keep in mind while a
 * Use of your webcam is not required and should be off to avoid disrupting participates with 
 poor internet connections.
 * Mute yourself unless you are speaking. Background noise is distracting to meeting participants.
-* Be mindful of your physical and virtual surroundings. When using your mic, mute other applicaitons
+* Be mindful of your physical and virtual surroundings. When using your mic, mute other applications
 on your computer and your phone. While not always possible, make your best effort to attend class
-in a quiet and distraction free enviornment. 
+in a quiet and distraction free environment. 
 * Headphones/earbuds greatly reduce accidental feedback when using your microphone.
 * Parliamentary rules always apply. If you want to participate in the discussion, you should raise
 your (virtual) hand or type your question in chat and wait for the speaker to recognize you. 
@@ -257,12 +241,12 @@ amount of time. (e.g. Moving on to the next topic.)
 **Course Work / Accreditation:**
 : Any coursework submitted to the instructor (included by not limited to assignments, tests, and
 projects) may be photocopied and retained for the purpose of assessment, accreditation and 
-quailty improvment. 
+quality improvement. 
 
 **E-Mail Correspondence:**
 : The best way to contact the instructor is via e-mail (earl@kutztown.edu). You are required to use
 your Kutztown University supplied e-mail for all correspondence, outside email services will be 
-ignored. Your email should be professionally written and use a relevant subject line. Addtionally,
+ignored. Your email should be professionally written and use a relevant subject line. Additionally,
 any emails relating to this course must include the course prefix and number at the beginning of the 
 subject line. For Example: If you're in the course CSC101, your subject line should be similar to
 these examples:
@@ -278,7 +262,7 @@ shorter.
 must first contact the Disability Services Office, (Office of Human Diversity at 
 215 Stratton Administration Building.) Do this as soon as possible so that we may have a dialogue as
 to your needs and the recommended accommodations. Accommodations cannot be given until the 
-instructor has seen your letter. Accommodations cannot be retroactivly applied. 
+instructor has seen your letter. Accommodations cannot be retroactively applied. 
 
 **Gender-Based Crimes:**
 : Educators must report incidents of gender-based crimes, including sexual assault, sexual harassment, 

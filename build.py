@@ -266,21 +266,25 @@ def slide_convert(site, template, **context):
     # Copy the permissions from 
     shutil.copymode(template.filename, filepath)
 
-    # Check if in production, if so create the PDF versions
-    # if site.options.production:
+    # Create PDFs for annotating later
+    # Get directory for output
+    course = template.name.split('/')[2]
+    base = os.path.basename(template.name)
+    print(course)
+    print(base)
+    pdf_out = './pdfs/' + course + '/' + base.split('.')[0] + '.pdf'
 
-    #     client = docker.from_env()
-    #     client.containers.run(
-    #         image="astefanutti/decktape",
-    #         remove=True,
-    #         tty=True,
-    #         volumes = {
-    #             os.getcwd(): {'bind': '/slides', 'mode': 'rw'},
-    #             os.path.dirname(filepath): {'bind': '/home/user/', 'mode': 'rw'},
-    #             os.path.join(os.getcwd(), 'src/share/'): {'bind': '/share', 'mode': 'ro'}
-    #         },
-    #         command='/home/user/' + os.path.basename(filepath) + ' ' + os.path.basename(filepath) + '.pdf'
-    #     )
+    if not os.path.isdir('./pdfs/' + course):
+        Path("./pdfs/" + course).mkdir(parents=True, exist_ok=True)
+
+    output = pypandoc.convert_file(template.filename,
+                    to='beamer',
+                    format='md',
+                    outputfile=pdf_out)
+
+    assert output == ""
+
+
 
 if __name__ == "__main__":
     # Options.

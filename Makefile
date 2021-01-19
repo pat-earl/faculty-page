@@ -14,9 +14,11 @@ local-server:
 
 clean:
 	rm -rf ./out
+	rm -rf ./pdfs
 
 prod-clean:
 	rm -rf ./out-prod
+	rm -rf ./pdfs
 
 prod:
 	${PYTHON} build.py -fp
