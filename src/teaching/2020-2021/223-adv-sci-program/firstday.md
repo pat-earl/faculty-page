@@ -165,7 +165,7 @@ is allowed on exams. Students may not discuss any aspect of any exam question wi
 has not yet taken the exam.
 
 : **Assignments and Information Sources:** As a general rule, you may not obtain any information
-about an assignment from an authorized source. Clarifications as to which sources are authorized
+about an assignment from an unauthorized source. Clarifications as to which sources are authorized
 and which are not are as follows:
 
 * **Copying:**

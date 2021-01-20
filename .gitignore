@@ -1,5 +1,5 @@
 /out*
-/src/research/papers/
+
 *.webm
 *.mp4
 **/auth/*.csv
