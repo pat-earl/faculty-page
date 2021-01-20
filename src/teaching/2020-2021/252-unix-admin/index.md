@@ -3,15 +3,6 @@ stylesheet: ../../course.css
 {% from 'includes/macros.j2' import course_info_table with context -%}
 {% from get_file('course_info.j2') import course %}
 
-<div class='alert alert-primary' markdown='1'>
-Kutztown has announced that the semester will be 100% online for the first two weeks 
-of instruction. Class will be conducted synchronously via Zoom at the normal time
-found on MyKU and listed below. During this time I will be creating the in-class
-rotation schedule and ask that you tell me you're preferred day via the form [here](TBD).
-Attending 100% online is fine, you'll be randomly assigned a day if you choose to attend in 
-person at another time.
-</div>
-
 {{course_info_table(course)}}
 
 ## Course Resources
@@ -19,10 +10,11 @@ person at another time.
 * [First Day Handout]({{get_link('firstday.html')}})
 * [Linux Fundamentals](https://linux-training.be/linuxfun.pdf) by Paul Cobbaut
     * Supplemental textbook
+* [Lectures]({{get_link('lectures.html')}})
 
 ## Tentative Schedule
 
-*Schedule is subject to change and is provided for guidance*
+*Schedule is subject to change and is provided as guidance*
 
 <table id="schedule">
     <colgroup>
@@ -159,18 +151,22 @@ person at another time.
         </tr>
         <tr>
             <td scope='row'>11 (03/29 - 04/02)<br><strong>WD:</strong> 04/02</td>
-            <td></td>
+            <td>
+                <em>Flexible Topics</em>
+            </td>
             <td></td>
         </tr>
         <tr>
             <td scope='row'>12 (04/05 - 04/09)</td>
-            <td></td>
+            <td>
+                <em>Flexible Topics</em>
+            </td>
             <td></td>
         </tr>
         <tr>
             <td scope='row'>13 (04/12 - 04/16)</td>
             <td>
-                TBD<br>
+                <em>Flexible Topics</em><br>
                 <strong>Exam #3 ?- (TBD)</strong>
             </td>
             <td></td>
@@ -178,7 +174,7 @@ person at another time.
         <tr>
             <td scope='row'>14 (04/19 - 04/23)<br><strong>WD:</strong> 04/20</td>
             <td>
-                Flexible Topics<br>
+                <em>Flexible Topics</em><br>
                 NO CLASS TUESDAY - Wellness Day
             </td>
             <td></td>
@@ -186,14 +182,14 @@ person at another time.
         <tr>
             <td scope='row'>15 (04/26 - 04/30)</td>
             <td>
-                Flexible Topics
+                <em>Flexible Topics</em>
             </td>
             <td></td>
         </tr>
         <tr>
             <td scope='row'>16 (05/03 - 05/07)</td>
             <td>
-                FINAL EXAMS WEEK
+                <em>FINAL EXAMS WEEK</em>
             </td>
             <td></td>
         </tr>

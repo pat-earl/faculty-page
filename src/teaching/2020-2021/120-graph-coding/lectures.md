@@ -16,3 +16,9 @@ These are the lecture slides used in the course.
 
 Lecture slides may be annotated during the course. Saved versions will be posted
 below when they become available.
+
+* Week 1
+    * 1-19
+        - [Lecture](./pdfs/intro.pdf) 
+        - [Graphical Planes](./pdfs/graphical-planes.pdf)
+    * 1-21

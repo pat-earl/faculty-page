@@ -9,14 +9,11 @@ stylesheet: ../../course.css
 
 * [First Day Handout]({{get_link('firstday.html')}})
 * [Textbook Website](http://learningprocessing.com)
+* [Lectures]({{get_link('lectures.html')}})
 
 ## Tentative Schedule
 
 *Schedule is subject to change and only provided for guidance*
-
-<div class='alert alert-primary'>
-Schedule is still under construction
-</div>
 
 <table id="schedule">
     <colgroup>
