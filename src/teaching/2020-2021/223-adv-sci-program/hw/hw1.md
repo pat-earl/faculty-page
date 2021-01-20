@@ -7,7 +7,9 @@ title: Homework #1
 **Due:**
 : Friday 01/29, 2021
 
-This assignment is used to demoinstration that you meet the prerequiste programming skills required
+**No grace-days can be used for this assignment**
+
+This assignment is used to demonstrate that you meet the prerequiste programming skills required
 for this course. The skills tested, but not limited to, are: 
 
 * Read data from a file.
