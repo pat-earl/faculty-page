@@ -64,6 +64,10 @@ This course takes students deeper into the theory of scientific programming, bui
 1. Explain the process and problems of casual inference.
 1. Choose and employ specialized scientific programming libraries.
 
+## Course Prerequisites
+
+(C or better in CSC123) OR (C or better in CSC135)
+
 ## Grading 
 
 Your final course grade will be made up of the following:

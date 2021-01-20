@@ -5,7 +5,7 @@ title: Homework #1
 ## Pre-req Review
 
 **Due:**
-: Friday 01/29, 2021
+: Friday 01/29
 
 **No grace-days can be used for this assignment**
 
@@ -79,6 +79,8 @@ Dept    	Average 	Above   		Below   		Performance
 You must turn in a file named main.X where X is the file extension following the convetion of your
 choosen programming language. Meaning that if you chose to use Java for this assignment, your file
 would be named `main.java`. Submit the file via D2L. 
+
+[Click this to get a raw copy of the sales.dat file](./materials/sales.dat)
 
 ## Grading Criteria
 

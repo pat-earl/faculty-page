@@ -14,6 +14,8 @@ hub via ethernet.
 ![Image of Diagram](./csc311-labs-diagram.png)
 
 Addtionally, explore if these programs have these features:  
+
+
 * Allow for creation of addtional traffic, to introduce queuing delays
 * Changing of the link parameters:
     * Bandwidth

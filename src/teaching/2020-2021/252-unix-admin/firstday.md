@@ -48,8 +48,6 @@ Always refer to my website for the latest office hours.
 : *A Practical Guide to Linux: Commands, Editors, and Shell Programming*, 4<sup>th</sup> Edition.
 Mark G. Sobell. **ISBN:** 978-0134774602. (3<sup>rd</sup> edition is fine as well).  
 
-* This book falls under the university's inclusive access program, [more info here](https://kubstore.com/inclusive-access)
-
 
 ## Description
 

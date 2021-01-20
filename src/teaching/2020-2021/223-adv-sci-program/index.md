@@ -14,6 +14,7 @@ stylesheet: ../../course.css
 * [First Day Handout]({{get_link('firstday.html')}})
 * [CS&IT Documentation Standards](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/DocumentationStandard.pdf)
 * [CS&IT Academic Integrity Policy](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/AcademicIntegrityPolicy.pdf)
+* [Class Resources]({{get_link('resources.md')}})
 
 ## Tentative Schedule
 
@@ -36,7 +37,7 @@ stylesheet: ../../course.css
             <td scope='row'>1 (01/19 - 01/22)</td>
             <td>
                 Course Intro<br>
-                Python Setup - Miniconda<br>
+                Python Setup<br>
                 Intro to Python
             </td>
             <td>
