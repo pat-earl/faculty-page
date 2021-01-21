@@ -4,19 +4,18 @@ stylesheet: ../../../course.css
 
 ## Description
 
-You will be randomly assigned one or more Linux command found on modern distributions. 
-With this command, you will create a short presentation/video explaining the basics 
-of the command and provide examples of it's usage. Your video should be 3 to 5 minutes in length. 
-If you choose to do a video, keep it mind that it will be shown during class time. 
+You have been randomly assigned one or more Linux command found on modern distributions. 
+You will create a short presentation explaining the basics 
+of the command(s) and provide examples of it's usage. Your presentation should be 3 to 5 minutes in length. 
 
 ## Submission
 
 Your presentation materials must be submitted in zip format on D2L. If your command
-uses text files, they must be included as well. If you are recording a video,
-make sure it's included in the zip file. You may upload the video to YouTube as well.
+uses text files, they must be included as well. 
 
-The materials are due before the class which you are set to present. You'll be informed
-of your presentation day at least a week in advanced, but it's recommended to start this 
+The materials are due before the class which you are set to present 
+(including your presentation and any files needed for the demos).
+You'll be informed of your presentation day at least a week in advanced, but it's recommended to start this 
 as soon as possible.
 
 ## Command Assignments
@@ -27,26 +26,29 @@ as soon as possible.
 | :--------: | :-----: |
 | **Basic and File Commands** | |
 |       Earl    | chown, chgrp |
-| | chmod, umask |
-| | ln, file |
-| | cat, more, less |
-| | head, tail, wc |
-| | uniq, sort |
-| | cmp, comm | 
-| | diff, cut|
-| | find |
-| | cpio, tar|
-| | bzip2, bunzip2, bzcat | 
-| | tr |
+| Alexander | chmod, umask |
+| Matthew | ln, file |
+| Thomas | cat, more, less |
+| Dimple | head, tail, wc |
+| Cassandra | uniq, sort |
+| Devin | cmp, comm | 
+| Spencer | diff, cut |
+| Christopher | find |
+| Mark | cpio, tar |
+| David | bzip2, bunzip2, bzcat | 
+| Jacob | tr |
+| Martin | Command Redirection |
 | **Process Commands** | |
-| | du, df|
-| | fuser, quota |
-| | history, jobs |
-| | kill, nohup |
-| | Job Control (fg, bg, & Ctrl-Z) |
-| | top, uptime |
-| | free, pstree |
-| | strace | 
-| | dirs, pushd, popd |
+| Helena | du, df |
+| Tiberius | fuser, quota |
+| Jessah | history, jobs |
+| Jovonni | kill, nohup |
+| Andrew Goldstein | Job Control (fg, bg, & Ctrl-Z) |
+| Jack | cron, crontab |
+| Andrew Galarza | top, uptime |
+| Richard | free, pstree |
+| Palak | strace | 
+| Asmaa | dirs, pushd, popd |
+| Abdiel | TBD |
 
 </div>

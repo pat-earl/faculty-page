@@ -268,21 +268,21 @@ def slide_convert(site, template, **context):
 
     # Create PDFs for annotating later
     # Get directory for output
-    course = template.name.split('/')[2]
-    base = os.path.basename(template.name)
-    print(course)
-    print(base)
-    pdf_out = './pdfs/' + course + '/' + base.split('.')[0] + '.pdf'
+    # course = template.name.split('/')[2]
+    # base = os.path.basename(template.name)
+    # print(course)
+    # print(base)
+    # pdf_out = './pdfs/' + course + '/' + base.split('.')[0] + '.pdf'
 
-    if not os.path.isdir('./pdfs/' + course):
-        Path("./pdfs/" + course).mkdir(parents=True, exist_ok=True)
+    # if not os.path.isdir('./pdfs/' + course):
+    #     Path("./pdfs/" + course).mkdir(parents=True, exist_ok=True)
 
-    output = pypandoc.convert_file(template.filename,
-                    to='beamer',
-                    format='md',
-                    outputfile=pdf_out)
+    # output = pypandoc.convert_file(template.filename,
+    #                 to='beamer',
+    #                 format='md',
+    #                 outputfile=pdf_out)
 
-    assert output == ""
+    # assert output == ""
 
 
 
