@@ -28,10 +28,10 @@ transition: fade
 
 * UNIX was created out of a need to share selected data and programs.
 * Also needed to keep other information private.
-* Developed by Bell Labs and widly adopted in 1975.
+* Developed by Bell Labs and widely adopted in 1975.
 * Universities adopted it for use in their CS departments
     - Students became acclimated to it.
-    - Gained adoption in industy because of graduates with the skills
+    - Gained adoption in industry because of graduates with the skills
     - "The four-year effect"
 
 ## Other Major Versions
@@ -90,7 +90,7 @@ transition: fade
 
 ## Linux's Popularity
 
-* *Generic* - Can run on almost any type of hardware, making it portalable
+* *Generic* - Can run on almost any type of hardware, making it portable
 * Use in Embedded Devices
     - Phones
     - Routers
@@ -101,8 +101,8 @@ transition: fade
 * Kernel
     * Provides a programming interface
     * Manages a system's resources
-    * Programs interact with the kernal via *system calls*.
-* Mutli-user Support
+    * Programs interact with the kernel via *system calls*.
+* Multi-user Support
     * Linux can support between 1 to 1,000 users concurrently.
     * *Depending on the hardware*
 
@@ -145,7 +145,7 @@ transition: fade
 * Four Popular Shells:
     - bash (Bourne Again Shell)
     - dash (Debian Almquist Shell *smaller version of bash*)
-    - tc (Enhanced ersion of the c shell, from BSD UNIX)
+    - tc (Enhanced version of the c shell, from BSD UNIX)
     - zsh - (Z Shell, combination of features from other shells)
 
 ## The Shell

@@ -32,8 +32,6 @@ $else$
   <link rel="stylesheet" href="$base$/share/revealjs/plugin/highlight/zenburn.css">
 $endif$
 
-<!-- font-awesome (Needed for chalkboard) -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 
 <!-- If the query includes 'print-pdf', use the PDF print sheet -->
@@ -82,10 +80,8 @@ $body$
 </div>
 
 <script src="$base$/share/revealjs/dist/reveal.js"></script>
-<script src="$base$/share/revealjs/plugin/notes/notes.js"></script>
 <script src="$base$/share/revealjs/plugin/markdown/markdown.js"></script>
 <script src="$base$/share/revealjs/plugin/highlight/highlight.js"></script>
-<script src="$base$/share/revealjs/plugin/chalkboard/plugin.js"></script>
 <script src="$base$/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
 
 <script>
@@ -100,7 +96,7 @@ $body$
 
     hash: true,
 
-    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard, PdfExport ]
+    plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
 
   });
 

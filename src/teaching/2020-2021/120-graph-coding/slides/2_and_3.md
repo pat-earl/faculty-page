@@ -48,7 +48,7 @@ inputs, display outputs, and process data.
 to form a *program statement*
 * Processing is a fancy layer deployed over topic of Java
 
-## Processing Sketchs
+## Processing Sketches
 
 * Processing programs are called *sketches* informally.
 * One or more *sketch* can be stored in a *sketchbook*.
@@ -64,7 +64,7 @@ to form a *program statement*
 
 ## Function Calls
 
-* Functions calls have a name, followed by a set of arguments enclosed in parenthese.
+* Functions calls have a name, followed by a set of arguments enclosed in parentheses.
 * Think of functions as natural language sentences.
     - The function name is *verb* ("draw").
     - The arguments are the options ("point 0,0")
@@ -111,7 +111,7 @@ by displaying the drawn result in a window.
 ## The Run Button
 
 * Press the *RUN* button to start your code.
-    - Processing does the hardwork for you in the background.
+    - Processing does the hard work for you in the background.
 * The steps processing takes:
     1. Translate to Java
     1. Compile into Java Byte Code
