@@ -25,7 +25,7 @@ as soon as possible.
 | Name | Commands |
 | :--------: | :-----: |
 | **Basic and File Commands** | |
-|       Earl    | chown, chgrp |
+| Prof. Earl | chown, chgrp |
 | Alexander | chmod, umask |
 | Matthew | ln, file |
 | Thomas | cat, more, less |
@@ -37,7 +37,8 @@ as soon as possible.
 | Mark | cpio, tar |
 | David | bzip2, bunzip2, bzcat | 
 | Jacob | tr |
-| Martin | Command Redirection |
+| Martin | |
+| Abdiel | ssh |
 | **Process Commands** | |
 | Helena | du, df |
 | Tiberius | fuser, quota |
@@ -49,6 +50,6 @@ as soon as possible.
 | Richard | free, pstree |
 | Palak | strace | 
 | Asmaa | dirs, pushd, popd |
-| Abdiel | TBD |
+
 
 </div>

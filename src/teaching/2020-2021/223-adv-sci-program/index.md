@@ -9,11 +9,12 @@ stylesheet: ../../course.css
 
 (C or better in CSC123) *OR* (C or better in CSC135)
 
-## Course Resources
+## Links
 
 * [First Day Handout]({{get_link('firstday.html')}})
 * [CS&IT Documentation Standards](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/DocumentationStandard.pdf)
 * [CS&IT Academic Integrity Policy](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/AcademicIntegrityPolicy.pdf)
+* [Lectures]({{get_link('lectures.md')}})
 * [Class Resources]({{get_link('resources.md')}})
 
 ## Tentative Schedule

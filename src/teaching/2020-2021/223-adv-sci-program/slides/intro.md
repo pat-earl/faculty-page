@@ -2,7 +2,7 @@
 title: "Introduction"
 subtitle: "CSC223"
 author: Patrick Earl
-date: 01/20/2021
+date: 01/22/2021
 slideNumber: true
 revealjstheme: simple
 width: 1600
@@ -12,7 +12,7 @@ transition: slide
 
 ## Python Introduction
 
-* *TIP:* If viewing this in a web browser, press ***ESC*** to see a preview off all the slides.
+* *TIP: If viewing this in a web browser, press **ESC** to see a preview of all the slides.*
 * Python is an *interpreted* language
 * Statements can be interactively ran and tested
 * 4 Ways to do this:
@@ -30,6 +30,7 @@ transition: slide
     3. Print the results
     4. Loop back to step 1
 * `>>>`
+* `help()` and Python reference
 
 ## IPython Interpreter
 
@@ -56,7 +57,8 @@ Hybrid of the two environments that will be explored and explained later in the 
 
 ## Example program
 
-<pre><code># set the midpoint
+```
+# set the midpoint
 midpoint = 5
 
 # make two empty lists
@@ -71,7 +73,7 @@ for i in range(10):
         
 print("lower:", lower)
 print("upper:", upper)
-</code></pre>
+```
 
 ## Syntax Rundown
 

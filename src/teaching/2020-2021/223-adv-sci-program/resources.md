@@ -5,7 +5,7 @@ Dr. Dylan Schwesinger and [his version can be found by following this link](http
 
 # Python
 
-* [Python Tutorial](https://docs.python.org/release/3.6.0/tutorial/index.html)
+* [Python Tutorial](https://docs.python.org/3/tutorial/index.html)
 * [A Whirlwind Tour of Python](https://jakevdp.github.io/WhirlwindTourOfPython/)
 * [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 
