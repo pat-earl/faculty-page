@@ -34,7 +34,7 @@ Website is still a work in progress, information will change without notice.
     * Export your finished simulation from GNS3 or Packet Tracer.
 * Solution Manual for each lab.
 * End-of-Semester
-    * A comparision of the two programs. This is a non-comprehesive list of ideas:
+    * A comparison of the two programs. This is a non-comprehensive list of ideas:
         * Pros/Cons of each program.
         * Ease of Setup and Use.
         * The problems you faced when trying to adapt to the labs.
@@ -42,41 +42,39 @@ Website is still a work in progress, information will change without notice.
 
 ### Weeks 1-2
 
-* Get up to speed on the software. Document any challenges/issues you may experience while
+Get up to speed on the software. Document any challenges/issues you may experience while
 setting this software up. Now would be a good time to research documentation and other resources
 you can use down the line, document these as well.
 
 ### Weeks 3-4
 
-These weeks are focused on simulating a switch vs a hub. Lab 1 is using a hub and then a switch
-in lab 2. We'd also like to know if the programs provide features to adjust link parameters, to 
-help visualize the 4 end-end delays: Transmission, Propagation, Queuing, Processing(?).
-
-A network diagram, along with IP assignments are provided in the handout linked below. 
-
-Complete the following labs, but note that they aren't full labs yet. Again document any issues
-you may run into. Also document your steps, as you need to provide a solution manual as well.
+Focuses on inner-network communication and connecting devices
+using a switch/hub. 
 
 * [CSC311 Labs 1/2](./networking-is/csc311_lab.html)
-
+* Figure out how to tweak link parameters to show the four
+types of delays (Processing, Transmission, Propagation, and Queuing).
 
 ### Weeks 5-7
 
-CSC411 stuff
+Focus on using routers and how to subnet IP networks. 
 
-Carrying over the second lab from above, introduce a 
-
+* [CSC411 Lab 2](./networking-is/csc411_lab2.html)
+* Network Management Lab (In-Progress)
 
 ### Weeks 8-11
 
-CSC512 stuff
+*Links don't work, working on handouts*
+
+Focus on creating your own routing tables and possibly explore using routing protocols. Second lab is about adding a wireless network to an existing wired one. NAT will be used for wireless device IP addresses. 
 
 * [CSC512 Lab 1](./networking-is/csc512_lab1.html)
 * [CSC512 Lab 2](./networking-is/csc512_lab2.html)
 
 ### Weeks 11-13
 
-CSC541 Stuff - Security Devices
+Focus on adding security devices and a VPN to a network.  
+Mostly research the ability to do this with the two simulators.
 
 ### Weeks 14-16
 

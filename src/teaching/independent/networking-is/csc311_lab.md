@@ -16,7 +16,7 @@ hub via ethernet.
 Addtionally, explore if these programs have these features:  
 
 
-* Allow for creation of addtional traffic, to introduce queuing delays
+* Allow for creation of additional traffic, to introduce queuing delays
 * Changing of the link parameters:
     * Bandwidth
     * Distance between devices
@@ -24,6 +24,6 @@ Addtionally, explore if these programs have these features:
 
 ## Deliverables
 
-* Exports of the labs from PT & GNS3
-* Solution Manual for completing the lab(s). - Collaborative
+* Individual exports of the labs from PT & GNS3.
+* Collaborative Solution Manual for completing the lab(s). 
 
