@@ -50,7 +50,8 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>2 (01/25 - 01/29)</td>
             <td>
-                Python Data Types & Control Flow
+                Python Data Types & Control Flow<br>
+                <em>Friday - Work Day</em> (Move-in Day)
             </td>
             <td>
                 <ul>
