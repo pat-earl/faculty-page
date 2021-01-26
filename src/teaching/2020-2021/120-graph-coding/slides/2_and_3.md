@@ -157,3 +157,20 @@ by displaying the drawn result in a window.
 * *pmouseX* and *pmouseY*
 * *Previous* mouse locations
 * Example 3-4
+
+## Mouse Events
+
+* When a mouse is clicked (or key pressed), that is considered an *event*
+* Two new functions to handle these *events*
+* `mousePressed()` - Handles mouse clicks (Example 3-5)
+* `keyPressed()` - Handles key presses
+
+## Interactive Zoog
+
+* Example 3-6
+
+## End of Lesson 1
+
+* Optional Project (For Practice) (Page 33)
+  1. Design a static screen drawing using RGB colors & primitive shapes
+  2. Make the static screen drawing dynamic by having it interact with the mouse. (This can include shapes following the mouse, changing their size according to the mouse, etc.)

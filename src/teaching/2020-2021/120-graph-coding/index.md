@@ -5,11 +5,11 @@ stylesheet: ../../course.css
 
 {{course_info_table(course)}}
 
-## Course Resources
+## Links
 
 * [First Day Handout]({{get_link('firstday.html')}})
-* [Textbook Website](http://learningprocessing.com)
 * [Lectures]({{get_link('lectures.html')}})
+* [Resources]({{get_link('resources.md')}})
 
 ## Tentative Schedule
 

@@ -10,8 +10,8 @@ of the command(s) and provide examples of it's usage. Your presentation should b
 
 ## Submission
 
-Your presentation materials must be submitted in zip format on D2L. If your command
-uses text files, they must be included as well. 
+Your presentation materials must be submitted in zip format on D2L. If your example
+uses any files, they must be included as well. 
 
 The materials are due before the class which you are set to present 
 (including your presentation and any files needed for the demos).
