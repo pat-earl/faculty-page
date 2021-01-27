@@ -2,6 +2,8 @@ title: Lectures
 
 {% set lectures = (
     {"name": "Introduction", "file": "slides/intro.md"},
+    {"name": "Chapter 2", "file": "slides/chapter2.md"},
+    {"name": "Chapter 3", "file": "slides/chapter3.md"}
 ) %}
 
 ## Course Lectures

@@ -28,7 +28,7 @@ transition: slide
 * Iterates until condition is met
 * Evaluated as boolean statement, until statement is `False`.
 
-# break & continue
+## break & continue
 
 * Serve same purpose as C++
 * `break` out of loop

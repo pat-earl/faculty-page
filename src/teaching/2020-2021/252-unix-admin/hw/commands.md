@@ -37,7 +37,7 @@ as soon as possible.
 | Mark | cpio, tar |
 | David | bzip2, bunzip2, bzcat | 
 | Jacob | tr |
-| Martin | |
+| Martin | touch |
 | Abdiel | ssh |
 | **Process Commands** | |
 | Helena | du, df |
@@ -53,3 +53,12 @@ as soon as possible.
 
 
 </div>
+
+## Grading Criteria
+
+* Submission - 5 Points
+  * Correct Format (.zip)
+* Presentation - 10 Points
+  * Respected time limit - 4 Points
+  * Explained Command(s) - 4 Points
+  * Provided examples of using the command - 2 Points

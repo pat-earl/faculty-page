@@ -121,3 +121,9 @@ transition: slide
   * Difference: `-` - Items in left, not right
   * Symmetric Difference `^` - Items only appearing in one set
   
+
+## Multidimensional Lists
+
+* Python supports 2D, 3D, etc. lists
+* List in a List
+* Type Mixing

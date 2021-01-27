@@ -3,6 +3,7 @@ title: Lectures
 {% set lectures = (
     {"name": "Introduction", "file": "slides/intro.md"},
     {"name": "Chapters 2 & 3", "file": "slides/2_and_3.md"},
+    {"name": "Chapter 4: Variables", "file": "slides/variables.md"}
 ) %}
 
 ## Course Lectures
@@ -22,4 +23,5 @@ below when they become available.
     * 1-19
         - [Lecture](./pdfs/intro.pdf) 
         - [Graphical Planes](./pdfs/graphical-planes.pdf)
-    * 1-21
+
+* Week 2

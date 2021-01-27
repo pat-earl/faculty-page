@@ -9,4 +9,5 @@
 /syllabus-pdfs
 /pdfs
 
-__pycache__
+/__pycache__
+*.pyc
