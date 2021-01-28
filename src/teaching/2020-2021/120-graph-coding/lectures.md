@@ -3,14 +3,15 @@ title: Lectures
 {% set lectures = (
     {"name": "Introduction", "file": "slides/intro.md"},
     {"name": "Chapters 2 & 3", "file": "slides/2_and_3.md"},
-    {"name": "Chapter 4: Variables", "file": "slides/variables.md"}
+    {"name": "Chapter 4: Variables", "file": "slides/variables.md"},
+    {"name": "Chapter 5: Conditionals", "file": "slides/conditionals.md"}
 ) %}
 
 ## Course Lectures
 
 These are the lecture slides used in the course.
 
-{% for lec in lectures %}
+{% for lec in lectures -%}
 * {{ lec['name'] }} - [Slide Form]({{ get_link(lec['file']) }})
 {% endfor -%}
 

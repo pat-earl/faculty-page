@@ -189,7 +189,7 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>14 (04/19 - 04/23)<br><strong>WD:</strong> 04/20</td>
             <td>
-                Video
+                Video<br>
                 NO CLASS TUESDAY - Wellness Day
             </td>
             <td>
