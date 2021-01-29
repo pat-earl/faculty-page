@@ -9,7 +9,7 @@ title: Homework #1
 
 **No grace-days can be used for this assignment**
 
-This assignment is used to demonstrate that you meet the prerequiste programming skills required
+This assignment is used to demonstrate that you meet the prerequisite programming skills required
 for this course. The skills tested, but not limited to, are: 
 
 * Read data from a file.
@@ -76,8 +76,8 @@ Dept    	Average 	Above   		Below   		Performance
 
 ## Submission
 
-You must turn in a file named main.X where X is the file extension following the convetion of your
-choosen programming language. Meaning that if you chose to use Java for this assignment, your file
+You must turn in a file named main.X where X is the file extension following the convection of your
+chosen programming language. Meaning that if you chose to use Java for this assignment, your file
 would be named `main.java`. Submit the file via D2L. 
 
 [Click this to get a raw copy of the sales.dat file](./materials/sales.dat)
