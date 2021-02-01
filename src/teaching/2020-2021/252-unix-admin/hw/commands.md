@@ -56,9 +56,9 @@ as soon as possible.
 
 ## Grading Criteria
 
-* Submission - 5 Points
-  * Correct Format (.zip)
-* Presentation - 10 Points
-  * Respected time limit - 4 Points
-  * Explained Command(s) - 4 Points
-  * Provided examples of using the command - 2 Points
+* Submission - **5 Points**
+    - Correct Format (.zip)
+* Presentation - **10 Points**
+    - Respected time limit 
+    - Explained Command(s) 
+    - Provided examples of using the command 

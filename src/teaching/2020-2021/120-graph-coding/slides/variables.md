@@ -45,9 +45,20 @@ transition: fade
 
 * Once a variable is created, it can be assigned a value.
   * Known as *initializing*
-  
-`int count;`
-`count = 50;` 
+* `int count;`  
+* `count = 50;` 
+* One-Line:
+  * `int count = 50;`
+
+## Creating Variables
+
+* Variables need a *type* and a *name*.
+* Rules for naming:
+  - One Word (no spaces)
+  - Must start with a letter
+  - Can include numbers, just not at the start
+  - No punctuation, except the underscore `_`
+
 
 ## Naming Variables
 
@@ -58,15 +69,66 @@ transition: fade
   * This willBecome second nature withSome experience. 
   * This known as *camelCase* if you're curious
 
-
 ## Using Variables
+
+* *mouseX* and *mouseY* are variables!
+  * Built-in into Processing
+* **Example 4-2**
+
+## Questions
+
+* Things to think about before writing a sketch
+  * *What data I need to remember for the sketch?*
+  * *How do I use that data to draw shapes on the screen?*
+  * *How do I alter that data to make my sketch interactive and animated?*
 
 ## Many Variables
 
+* Using variables for every possible thing?
+* **Example 4-4**
+* *mouseX* / *mouseY*
+  - What are they?
+
 ## System Variables
+
+* Commonly used *built-in* variables
+* **width**
+* **height**
+* **frameCount** 
+* **framerate**
+* **displayWidth**
+* **displayHeight**
+
+## System Variables (more)
+
+* **key**
+* **keyCode**
+* **keyPressed**
+* **mousePressed**
+* **mouseButton**
+* *Avoid overwriting these variables.*
+  * You can replace them and will no longer work as expected.
+* **Example 4-5**
 
 ## Random
 
+* *Incremental Development*
+* `random();`
+* **Example 4-6**
+* Random returns float, fill expects integers?
+  * ***casting***
+* **Example 4-7**
+
 ## Variable Zoog
 
+* **Example 4-8**
+
 ## Translation
+
+* **Example 3-7**
+* So far, all shapes have been drawn relative to the origin point
+  - *(0, 0)* - Top Left of the Display
+* `translate();`
+  - You can change the offset of drawing *or*
+  - The relative point*
+* *Chapter 14*, more on that next week
