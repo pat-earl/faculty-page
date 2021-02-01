@@ -33,6 +33,7 @@ as soon as possible.
 | Cassandra | uniq, sort |
 | Devin | cmp, comm | 
 | Spencer | diff, cut |
+| Nicholas | grep, fgrep |
 | Christopher | find |
 | Mark | cpio, tar |
 | David | bzip2, bunzip2, bzcat | 
