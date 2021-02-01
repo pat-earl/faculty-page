@@ -19,8 +19,7 @@ transition: fade
 * *harry* - RIP
   * Sun OS 
 * Others
-  * VMWare ESXi Hypervisors
-  * FILL-IN
+  * VMWare ESXi Hypervisors (Type I)
 
 ## ssh
 
