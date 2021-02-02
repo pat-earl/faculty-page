@@ -1,5 +1,5 @@
 ---
-title: "Python Input/Output"
+title: "Python Functions"
 subtitle: "CSC223"
 author: Patrick Earl
 date: 02/01/2021
@@ -35,5 +35,10 @@ transition: slide
 ## Anonymous Functions
 
 - `lamba`
-**FINISH ME**
-
+- Useful for one-off functions
+- Sorting a dictionary
+```
+data = [{'first':'Guido', 'last':'Van Rossum', 'YOB':1956},
+        {'first':'Grace', 'last':'Hopper',     'YOB':1906},
+        {'first':'Alan',  'last':'Turing',     'YOB':1912}]
+```

@@ -97,3 +97,95 @@ else {
 * `constrain();`
     - Set a limit on value's maximum and minimum. 
 * **Example 5-2**
+
+## Logical Operators
+
+* Sometimes, one logical test isn't enough
+  * Events happen based on more than one condition.
+* *If the mouse is on the right side of the screen **AND** the mouse is on the bottom of the screen, draw a rectangle in the bottom right corner.*
+* Could use a *nested if statement*
+  * The rectangle is drawn if both *if* statements result in a *true*
+
+## Logical Operators
+
+* The same can be achieved with a simpler *LOGICAL AND*
+  * `&&` in Processing
+* Others:
+  * `||` - *LOGICAL OR*
+  * `!` - *LOGICAL NOT*
+
+## LOGICAL AND
+
+| Operand | Result | 
+| --- | --- |
+| TRUE && TRUE | TRUE | 
+| TRUE && FALSE | FALSE | 
+| FALSE && TRUE | FALSE |
+| FALSE && FALSE | FALSE |
+
+The *logical AND* is only *true* if both operands are **TRUE**
+
+## LOGICAL OR
+| Operand | Result |
+| -- | -- |
+| TRUE \|\| TRUE | TRUE |
+| TRUE \|\| FALSE | TRUE |
+| FALSE \|\| TRUE | TRUE |
+| FALSE \|\| FALSE | FALSE |
+
+The *logical OR* is only *false* if both operands are **FALSE**
+
+## LOGICAL NOT
+
+| Operand | Result |
+| -- | -- |
+| !TRUE | FALSE |
+| !FALSE| TRUE |
+
+The *logical NOT* is known as a unary operator. It flips the result, therefore making
+*NOT TRUE* equivalent to *FALSE*.
+
+## Convert the example from earlier
+
+* These *boolean* expressions are sometimes called *compound* expressions
+* Remove the *nested if* and make it a *compound* expression
+
+## Example 5-5
+
+* Let's exam the logic of this program using pseudocode (plain English in this case)
+* Setup:
+  * Make the window 200 x 200 pixels.
+
+## Example 5-5
+
+* Draw:
+  1. Draw a white background.
+  2. Draw horizontal and vertical lines to divide the window in four quadrants.
+  3. If the mouse is in the top left corner, draw a black rectangle there.
+  4. If the mouse is in the top right corner, draw a black rectangle there.
+  5. Do the same of the bottom corners...
+
+## Boolean Variables
+
+* `boolean` type variables can only hold two values: *true* or *false*.
+* These variables can be used as a switch, *on* or *off*
+* Use this to make a button
+* **Example 5-4**
+* **Example 5-5**
+
+## Keeping things
+
+* In the last *Zoog* example, the body flew off the screen to not return.
+* We can use conditionals to keep items on screen
+* **Example 5-6**
+* **Example 5-7**
+* **Example 5-8**
+
+## Physics
+
+* With variables and conditionals, we can simulate gravity.
+* Quick Refresher: 
+  * Gravity is the force of attraction between all masses.
+  * When a pen is dropped, earth causes the pen to accelerate towards the earth (Which is much larger than the pen)
+* *Acceleration* is caused by gravity (and many other forces which we'll ignore for simplicity)
+* `speed = speed + acceleration`
