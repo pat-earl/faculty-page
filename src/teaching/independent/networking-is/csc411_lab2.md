@@ -2,10 +2,23 @@ title: CSC411 Lab #2
 
 ## Lab Objectives
 
-* Design and Implement addressing scheme (subnets/CIDR)
+* Design and implement addressing scheme (subnets/CIDR)
 * How routing tables effect traffic
 
 ## Description
+
+You're a network administrator for *Earl's Electronics*, which saw a huge growth in customers over 
+the previous year. The owner has decided that one store is no longer enough and wants to expand
+with two new stores. The current network design doesn't support the addition of new stores and will
+have to be discarded. 
+
+You're tasked with creating a new addressing scheme for the network. When planning the new network 
+addressing scheme you'll also need to plan for growth. The list below will provide more information
+for each store. Each store should be on it's own subnet. 
+
+* **Original Store**
+  * Currently has 20 IPs split among the business offices and cash registers.
+  * The store is being remodelled to handle 10 more administrative office 
 
 Recreate the network shown in the diagram below. There will be three networks, each with at least two hosts, a Layer-2 switch, and an edge router. All edge routers should be connected to each other.
 

@@ -96,3 +96,37 @@ transition: fade
 
 `ls -l`
 ![](./images/file_permissions.png)  
+
+## File Types
+
+* "-" - Regular Files
+* "d" - Directory Files
+* "b" - Block File
+* "c" - Character Device
+* "p" - Pipe File
+* "l" - Link
+* "s" - Socket File
+
+## File Permissions
+
+* read, write, execute
+  * s for [setuid/setgit](https://en.wikipedia.org/wiki/Setuid), t for [sticky bit](https://www.thegeekstuff.com/2013/02/sticky-bit/)
+* Owner/User
+* Group
+* Size
+* Modification Time
+* Name
+
+## Permissions
+
+* Running Processes
+  * *Real* User ID vs *Effective*
+  * *Real* Group ID vs *Effective*
+* `~earl/public/csc252/setuid.c`
+
+## File Commands
+
+* `cd`
+* `rmdir`
+* `mkdir`
+

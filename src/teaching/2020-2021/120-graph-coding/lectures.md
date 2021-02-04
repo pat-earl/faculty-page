@@ -4,7 +4,8 @@ title: Lectures
     {"name": "Introduction", "file": "slides/intro.md"},
     {"name": "Chapters 2 & 3", "file": "slides/2_and_3.md"},
     {"name": "Chapter 4: Variables", "file": "slides/variables.md"},
-    {"name": "Chapter 5: Conditionals", "file": "slides/conditionals.md"}
+    {"name": "Chapter 5: Conditionals", "file": "slides/conditionals.md"},
+    {"name": "Chapter 14: Translation & 3D", "file": "slides/translation.md"},
 ) %}
 
 ## Course Lectures
