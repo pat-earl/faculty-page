@@ -2,7 +2,7 @@
 title: "Python Input/Output"
 subtitle: "CSC223"
 author: Patrick Earl
-date: 02/01/2021
+date: 02/05/2021
 slideNumber: true
 revealjstheme: simple
 width: 1600
@@ -17,7 +17,16 @@ transition: slide
   - *Keyword* arguments
 - `.format()`
 
-## File Input
+## File Input/Output
 
+- `open`
+- `write`
+- `read`
 
-## File Output
+## File Reading
+
+- `for` loops with file object
+
+## Context Manager
+
+- `with`

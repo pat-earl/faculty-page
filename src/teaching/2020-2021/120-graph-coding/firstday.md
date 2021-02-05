@@ -67,7 +67,7 @@ rectangles, and custom two-dimensional shapes.
 
 Your final course grade will be made up of the following:
 
-* Exams: 30%
+* Exams/Quizzes: 30%
 * Assignments/Projects: 50%
 * Final Exam: 15%
 * Class Participation: 5%

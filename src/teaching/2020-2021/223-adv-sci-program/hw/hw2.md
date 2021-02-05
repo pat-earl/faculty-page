@@ -7,7 +7,11 @@ title: Homework #2
 **Due**
 : Friday Feb 12, 2021
 
-Assignment focuses on writing basic python scripts.
+Assignment Purpose:
+
+* Writing Basic Python Script
+* Python File Input/Output
+* Using Python Data Structures
 
 ## Description
 
@@ -15,23 +19,18 @@ A department store needs a program to calculate the sales statistics for it's va
 each year. This store has a standard sales amount (in thousands of dollars) for each month based
 on data from previous years. 
 
-The monthly sales amount are stored in a file `sales.dat`. Each line in the file contains twelve 
+The monthly sales amount are stored in a file `sales.dat`. The first line of the file contains
+the standard sales amount for each month. Each line that follows contains the twelve 
 sales amounts for that department. 
-
-```
-Jan	    Feb	    Mar	    Apr	    May	    Jun	    Jul	    Aug	    Sept	Oct	    Nov	    Dec
-23.0	33.1	21.0	23.5	54.0	34.3	35.0	45.0	56.3	45.6	34.0	55.0
-```
-*The standards for each month*
 
 Write a program to calculate statistics for each department in the store. Your program should do the 
 following:
 
 1. Prompt the user for the input file.
-1. Read the file data into a list of lists - 2D List.
-1. Compute the average monthly sales for each department.
-1. Compare each monthly sales amount with the standard.
-1. Write the statistics for the department, including the department number, average sales amount,
+2. Read the file data into a list of lists - 2D List.
+3. Compute the average monthly sales for each department.
+4. Compare each monthly sales amount with the standard.
+5. Write the statistics for the department, including the department number, average sales amount,
 number of months above and below the standard, and performance to a file. The program should output
 "unsatisfied" as the performance of the department if more than five months are below standard
 and "satisfied" otherwise.  
@@ -72,7 +71,18 @@ The use of any of the following Python features will result in a grade of zero f
 * generators
 * higher-order functions
 
+## Example sales.dat File
 
+```
+23.0 33.1 21.0 23.5 54.0 34.3 35.0 45.0 56.3 45.6 34.0 55.0
+23 33.5 21 23 25 56 54 43 34.2 35.4 34 69.5
+24 35.2 24 26 43 56.7 54 32 43 34 34 57.9
+24 42 43 35 52 56 67 54 56 45.3 32 32
+20 32 45 72 45.4 63.2 45 56 52 65 53 65
+34 35 37.5 32 23 45 31 43 52 43 76 65
+35 56 63.4 45.2 45.6 56 67.3 45 56.3 67 78 76
+34.2 45 62 19 45 39 38 37 82 74 45 58.4
+```
 
 ## Submission
 
@@ -80,3 +90,4 @@ Turn in a file named `main.py`, in the correct D2L assignment folder.
 
 ## Grading Criteria
 
+Assignment is out of 100 Points
