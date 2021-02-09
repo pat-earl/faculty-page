@@ -46,3 +46,39 @@ transition: fade
 ## Translate
 
 * **Example 14-3**
+* `translate(x, y, z)`
+* Resets at beginning of *draw()*
+
+## P3D
+
+* Third size argument
+  * *renderer* (drawing mode)
+* `pixelDensity`
+
+## Vertex Shapes
+
+* Creation of custom shapes
+* Polygon - closed shape made up of points
+  * vertices
+  * vertex
+* `beginShape()`, `vertex(x, y)`, `endShape()`
+
+## Simple Rotation
+
+* `rotate(angle)` 
+  * rotateX,Y,Z
+  * Relative to origin location
+* **Examples 14-5,-7,-8**
+
+## Scale
+
+* `scale()`
+* Relative to origin, increase object's dimensions
+
+## The Matrix (push & pop)
+
+* Ability to create different "layers" 
+* Static Background, Animated Movement
+* `pushMatrix()`, `popMatrix()`
+  * Uses a stack - *First In, Last Out*
+
