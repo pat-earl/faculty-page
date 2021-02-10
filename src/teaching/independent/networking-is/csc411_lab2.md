@@ -7,31 +7,34 @@ title: CSC411 Lab #2
 
 ## Description
 
-Your company has grown beyond the current capacity of your network's addressing
-scheme. The task to is create a subnet
+You're a network administrator for a business that is opening up two new
+offices. You'll need to create an addressing scheme for the current
+office building as well the new ones. The current number of hosts are as followed:
+1) 50 hosts, 2) 300 hosts, 3) 75 hosts. 
+You'll also need to consider the potential growth that the networks will
+need to handle and provide your justification on your projection. 
 
-Recreate the network shown in the diagram below. There will be three networks, each with at least two hosts, a Layer-2 switch, and an edge router. All edge routers should be connected to each other.
+Decide what IP address block you'll be using for the three networks. You also 
+need to provide addresses for the routers connecting the network together. Create
+the addressing scheme with either subnetting or CIDR. You need to provide
+the subnet mask, network address, broadcast address, and host IP range for
+each office network and the routers. 
 
-Three class-full IP blocks have been provided. Figure out the 
-network, broadcast, and host addresses for each network. 
-*Use the first available IP address on the interface connecting the router to the switch.*
+You'll be implementing this addressing scheme with network simulation software.
+Your simulation needs to include the following for each network:
 
-The fourth class A network is used for addressing the connected routers. The IP addresses to be used for the interfaces connecting the routers has been provided. 
+* Edge Router
+* Switch
+* At least two hosts
 
-A routing table will be provided upon figuring out the IP addresses for the three networks.
+Once you have created your addressing scheme, you'll need a routing table
+to allow for communication between your networks. Provide your addressing
+scheme to the instructor, who will provide you with a routing table.
 
-* Network A:
-    - **193.45.50.0 Class C Network**
-    - 3 Hosts (A, B, C)
-* Network B:
-    - **173.40.0.0 Class B Network**
-    - 3 Hosts (D, E, F)
-* Network C: 
-    - **78.0.0.0 Class A Network**
-    - 3 Hosts (G, H, I)
-* Network D (Router Connections)
-    - **10.0.0.0 Class A Network**
-    - Use IP addresses provided on the router interfaces
+The first host IP should be used for the router interface connected
+to the switch.
+
+The diagram below gives a general idea of what your simulation should look like.
 
 ![](./csc411-lab2-diagram.png)
 
