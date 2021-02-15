@@ -73,6 +73,7 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>4 (02/08 - 02/12)<br><strong>WD:</strong> 02/11</td>
             <td>
+                Python Functions and File I/O<br>
                 Python Errors and Modules
             </td>
             <td>
@@ -85,6 +86,7 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>5 (02/15 - 02/19)</td>
             <td>
+                Python Errors and Modules<br>
                 Python Iterators and List Comprehensions
             </td>
             <td>
@@ -96,7 +98,7 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>6 (02/22 - 02/26)</td>
             <td>
-                <strong>Exam #1</strong> - TBD
+                <strong>Exam #1</strong>
             </td>
             <td>
             </td>
