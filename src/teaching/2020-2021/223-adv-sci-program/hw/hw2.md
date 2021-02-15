@@ -92,13 +92,22 @@ Turn in a file named `main.py`, in the correct D2L assignment folder.
 
 Assignment is worth 100 Points
 
-* 5 Points - *File Name*
+* 5 Points - Correct *File Name*
 * 15 Points - *get_data* function
     * 3 - Correct Function Name
     * 2 - Correct Parameters
-    * 5 - Successfully extracts information from file
-    * 5 - Returned data structures are correct
-* x Points - *process_data* function
+    * 10 - Correct implementation based on specs
+* 20 Points - *process_data* function
     * 3 - Correct Function Name
     * 2 - Correct Parameters
-    * 
+    * 15 - Correct implementation based on specs
+* 20 Points - *write_to_file* function
+    * 3 - Correct Function Name
+    * 2 - Correct Parameters
+    * 15 - Correct implementation based on specs
+* 20 Points - *main* function
+    * 3 - Correct Function Name
+    * 2 - Correct Parameters
+    * 15 - Correct implementation based on specs
+* 10 Points - Correct function documentation
+* 10 Points - Thoughtful and clear code documentation

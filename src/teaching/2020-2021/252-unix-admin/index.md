@@ -70,8 +70,7 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>4 (02/08 - 02/12)<br><strong>WD:</strong> 02/11</td>
             <td>
-                Shells<br>
-                BASH<br>
+                Files and Directories<br>
                 NO CLASS THURSDAY - Wellness Day
             </td>
             <td>
@@ -84,9 +83,9 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>5 (02/15 - 02/19)</td>
             <td>
+                Files and Directories<br>
                 BASH<br>
-                Shell Scripting<br>
-                <strong>Exam #1 - (TBD)</strong>
+                Shell Scripting
             </td>
             <td>
                 <ul>
@@ -99,7 +98,7 @@ stylesheet: ../../course.css
             <td scope='row'>6 (02/22 - 02/26)</td>
             <td>
                 Processes<br>
-                Virtual Machines & Containers
+                <strong>Exam #1</strong> - Thursday
             </td>
             <td>
                 <ul>
@@ -111,7 +110,8 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>7 (03/01 - 03/05)</td>
             <td>
-                Virtual Machines & Containers (if needed)<br>
+                Processes<br>
+                Virtual Machines & Containers<br>
                 System Administration
             </td>
             <td>

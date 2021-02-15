@@ -5,8 +5,8 @@ title: Lectures
     {"name": "Python Types", "file": "slides/types.md"},
     {"name": "Python Control Flow", "file": "slides/control.md"},
     {"name": "Python Functions", "file": "slides/functions.md"},
-    {"name:" "Python Errors & Exceptions", "file": "slides/errors.md"},
-    {"name:" "Python Modules", "file": "slides/modules.md"},
+    {"name": "Python Errors & Exceptions", "file": "slides/errors.md"},
+    {"name": "Python Modules", "file": "slides/modules.md"},
 ) %}
 
 ## Course Lectures
