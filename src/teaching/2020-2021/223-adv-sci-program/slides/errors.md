@@ -19,7 +19,7 @@ transition: slide
 ## Runtime Errors
 
 * Python will provide an *Exception* type
-* `try` & `catch`
+* `try` & `except`
 * *FileNotFoundError*
 
 ## Raising Exceptions
