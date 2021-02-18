@@ -2,9 +2,9 @@ title: Lectures
 
 {% set lectures = (
     {"name": "Introduction", "file": "slides/intro.md"},
-    {"name": "Chapter 2", "file": "slides/chapter2.md"},
-    {"name": "Chapter 3", "file": "slides/chapter3.md"},
-    {"name": "Chapter 4", "file": "slides/chapter4.md"}
+    {"name": "Getting Help", "file": "slides/chapter2.md"},
+    {"name": "The Utilities", "file": "slides/chapter3.md"},
+    {"name": "Files & Directories (PowerPoint)", "file": "slides/files.pptx"},
 ) %}
 
 ## Course Lectures

@@ -71,23 +71,22 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>4 (02/08 - 02/12)<br><strong>WD:</strong> 02/11</td>
             <td>
-                Loops<br>
+                Transformations & 3D<br>
                 Assign Project #1<br>
                 NO CLASS THURSDAY - Wellness Day
             </td>
             <td>
-                <ul>
-                    <li>Chapter 6</li>
-                </ul>
             </td>
         </tr>
         <tr>
             <td scope='row'>5 (02/15 - 02/19)</td>
             <td>
+                Loops<br>
                 Functions
             </td>
             <td>
                 <ul>
+                    <li>Chapter 6</li>
                     <li>Chapter 7</li>
                 </ul>
             </td>

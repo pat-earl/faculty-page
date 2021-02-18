@@ -10,6 +10,8 @@ stylesheet: ../../course.css
 * [First Day Handout]({{get_link('firstday.html')}})
 * [Linux Fundamentals](https://linux-training.be/linuxfun.pdf) by Paul Cobbaut
     * Supplemental textbook
+* [CS&IT Documentation Standard](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/DocumentationStandard.pdf)
+* [CS&IT Academic Integrity Policy](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/AcademicIntegrityPolicy.pdf)
 * [Lectures]({{get_link('lectures.html')}})
 
 ## Tentative Schedule
@@ -103,7 +105,6 @@ stylesheet: ../../course.css
             <td>
                 <ul>
                     <li>Processes (Pages: 333 - 345)</li>
-                    <li>TODO (More on Processes & VMs/Containers)</li>
                 </ul>
             </td>
         </tr>
