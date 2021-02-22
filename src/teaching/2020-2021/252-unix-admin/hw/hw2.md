@@ -23,6 +23,8 @@ For questions 3 & 4, please put your responses to the last part of those questio
 3. Remove the file *newFile.soft* if it exists. Create a soft link to students2.dat and name the link file *newFile.soft*. Display a long listing of the new link file and compare it's attributes with that of students2.dat. How would you confirm that student2.dat and *newFile.soft* are different files? 
 4. Display the inode/filename pairs for *ALL* the files in ~earl/public/csc135, sorted by inode number.
 
+## Submission
+
 These commands should be placed within a bash script. Remember to use the sha-bang line and make your bash script executable. 
 
 The directory for this assignment should be named *hw2_FirstLast* (i.e. hw2_PatrickEarl)
@@ -32,7 +34,3 @@ Use *~earl/bin/submit.bash* to submit your assignment.
 ## Grading 
 
 TBD
-
-## Credits:
-
-Assignment was originally created by and is used with permission from Dr. Lisa Frye.

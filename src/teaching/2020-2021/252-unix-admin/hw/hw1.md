@@ -35,7 +35,3 @@ with just the script. Run this command, `~earl/bin/submit.bash csc252`, to submi
 
 This assignment is worth 15 points. Be sure to include the documentation header. 
 Other documentation is not required. 
-
-## Credits:
-
-Assignment was originally created by and is used with permission from Dr. Lisa Frye.
