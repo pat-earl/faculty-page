@@ -98,7 +98,8 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>6 (02/22 - 02/26)</td>
             <td>
-                <strong>Exam #1</strong>
+                Python Iterators and List Comprehensions<br>
+                Friday - <strong>Exam #1</strong>   
             </td>
             <td>
             </td>
