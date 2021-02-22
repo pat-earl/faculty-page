@@ -37,8 +37,18 @@ transition: slide
 - `lamba`
 - Useful for one-off functions
 - Sorting a dictionary
+- `add = lambda x, y: x + y`
+
+### Lambda
+
+* `sorted([2, 4, 3, 5, 1, 6])`
+  
 ```
 data = [{'first':'Guido', 'last':'Van Rossum', 'YOB':1956},
         {'first':'Grace', 'last':'Hopper',     'YOB':1906},
         {'first':'Alan',  'last':'Turing',     'YOB':1912}]
+
+sorted(data, key=lambda item: item['first'])
 ```
+
+

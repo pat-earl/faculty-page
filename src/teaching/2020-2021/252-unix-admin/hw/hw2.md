@@ -3,7 +3,7 @@ title: Homework #2
 ## File Commands
 
 **Due:**
-: Friday, Feb 27, 2021
+: Saturday, Feb 27, 2021
 
 Using the file commands discussed & presented in class, write a command that 
 fulfills the requirements below.

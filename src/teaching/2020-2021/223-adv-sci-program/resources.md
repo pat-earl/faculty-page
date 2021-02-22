@@ -16,4 +16,5 @@ Dr. Dylan Schwesinger and [his version can be found by following this link](http
 
 # Python Basics
 
-* [String Formatting](https://pyformat.info)
+* [Python String Formatting](https://pyformat.info) (Use *new style* for Python 3)
+* [Python Reference](https://github.com/justmarkham/python-reference)

@@ -34,8 +34,8 @@ title: First Day Handout
 Always refer to my website for the latest office hours.
 
 **Meetings:** 
-: Section 10: GR 307, Mon/Wed/Fri 11:00 AM - 11:50 AM
-: Section 20: GR 307, Mon/Wed/Fri 12:00 PM - 12:50 PM
+: Section 10: OM 159, Mon/Wed/Fri 11:00 AM - 11:50 AM
+: Section 20: OM 159, Mon/Wed/Fri 12:00 PM - 12:50 PM
 
 **Format:** 
 : Hybrid (Sync In-Person/Zoom)
