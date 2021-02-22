@@ -22,7 +22,7 @@ These are the data processing steps:
 2. Retrieve the subset of content that have "TV Show" in the type field.
 3. From this subset, keep the following fields: "show_id", "title", "director", "country", 
 "date_added", "duration".
-4. Sort the shows based in descending order based on the number of seasons (*Duration* field).
+4. Sort the shows in descending order based on the number of seasons (*Duration* field).
 5. Write the data to a JSON file using the Python *JSON* library.
 
 The output must have the following format for each show:
@@ -63,15 +63,15 @@ Assignment is worth 100 points
 * 10 Points - proper Python module conventions
 * 15 Points - Thoughtful and Purposeful Code Documentation
 * 20 Points - correct use of Python libraries 
-   * 10 points - *json* library
-   * 10 points - *csv* library
+    * 10 points - *json* library
+    * 10 points - *csv* library
 * 55 Points - correct output
-   * 10 points - Output is in JSON format
-   * 10 points - Correct field names
-   * 10 points - Correct field values
-   * 10 points - Sorted by "duration" field
-   * 10 points - All "TV Shows" fields
-   * 5 points - Output is formatted as shown in the example output
+    * 10 points - Output is in JSON format
+    * 10 points - Correct field names
+    * 10 points - Correct field values
+    * 10 points - Sorted by "duration" field
+    * 10 points - All "TV Shows" fields
+    * 5 points - Output is formatted as shown in the example output
 
 ## Example Output
 
