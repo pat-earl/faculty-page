@@ -98,8 +98,7 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>6 (02/22 - 02/26)</td>
             <td>
-                Python Iterators and List Comprehensions<br>
-                Friday - <strong>Exam #1</strong>   
+                Python Iterators and List Comprehensions
             </td>
             <td>
             </td>
@@ -107,7 +106,8 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>7 (03/01 - 03/05)</td>
             <td>
-                NumPy
+                NumPy<br>
+                Monday - <strong>Exam #1</strong>   
             </td>
             <td>
                 <ul>
@@ -130,6 +130,7 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>9 (03/15 - 03/19)</td>
             <td>
+                Pandas<br>
                 Data Visualization and Matplotlib
             </td>
             <td>
