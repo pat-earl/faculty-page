@@ -249,8 +249,10 @@ def slide_convert(site, template, **context):
     # Arguments to pass to pandoc
     extra_args = [
         '--standalone',
+        '-t', 'revealjs',
         '--template=./src/layouts/template-revealjs.html',
-        '--section-divs',
+        # '--section-divs',
+        '--slide-level', '2',
         '-V', 'base=' + prefix
     ]
 
@@ -268,14 +270,16 @@ def slide_convert(site, template, **context):
 
     # Create PDFs for annotating later
     # Get directory for output
-    # course = template.name.split('/')[2]
-    # base = os.path.basename(template.name)
-    # print(course)
-    # print(base)
-    # pdf_out = './pdfs/' + course + '/' + base.split('.')[0] + '.pdf'
+    course = template.name.split('/')[2]
+    base = os.path.basename(template.name)
+    print(course)
+    print(base)
+    slides_path = './slides/' + course + '/' + base.split('.')[0] + '.html'
 
-    # if not os.path.isdir('./pdfs/' + course):
-    #     Path("./pdfs/" + course).mkdir(parents=True, exist_ok=True)
+    if not os.path.isdir('./slides/' + course):
+        Path("./slides/" + course).mkdir(parents=True, exist_ok=True)
+
+    shutil.copy(filepath, slides_path)
 
     # output = pypandoc.convert_file(template.filename,
     #                 to='beamer',

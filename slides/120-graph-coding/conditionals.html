@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Chapter 5 - Conditionals</title>
+
+<meta name="description" content="Chapter 5 - Conditionals">    
+
+  <meta name="author" content="Patrick Earl" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+ -->
+
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+
+
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
+
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+<h1>Chapter 5 - Conditionals</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>01/25/2021</h4>
+</p>
+</section>  
+
+
+<section id="boolean-expressions" class="slide level2">
+<h2>Boolean Expressions</h2>
+<ul>
+<li>Computers work with questions of <em>true</em> or <em>false</em>.
+<ul>
+<li><em>boolean</em> tests</li>
+</ul></li>
+<li><em>Boolean Expressions</em> will evaluate to either true or false</li>
+<li>Some Examples:
+<ul>
+<li><em>15 is greater than 20</em> → <strong>false</strong></li>
+<li><em>5 equals 5</em> → <strong>true</strong></li>
+<li><em>32 is less than or equal to 33</em> → <strong>true</strong></li>
+</ul></li>
+</ul>
+</section>
+<section id="boolean-expressions-1" class="slide level2">
+<h2>Boolean Expressions</h2>
+<ul>
+<li><code>x &gt; 20</code> - <em>Depends on x</em></li>
+<li><code>y == 5</code> - <em>Depends on y</em></li>
+<li><code>z &lt;= 33</code> - <em>Depends on z</em></li>
+</ul>
+</section>
+<section id="relational-operators" class="slide level2">
+<h2>Relational Operators</h2>
+<ul>
+<li><code>&gt;</code> - <em>greater than</em></li>
+<li><code>&lt;</code> - <em>less than</em></li>
+<li><code>&gt;=</code> - <em>greater than or equal to</em></li>
+<li><code>&lt;=</code> - <em>less than or equal to</em></li>
+<li><code>==</code> - <em>equal to</em></li>
+<li><code>!=</code> - <em>not equal to</em></li>
+</ul>
+</section>
+<section id="conditionals" class="slide level2">
+<h2>Conditionals</h2>
+<ul>
+<li>Using <em>boolean expressions</em></li>
+<li>If the answer is <em>yes</em>, then execute these instructions.
+<ul>
+<li>Other if <em>no</em>, ignore the instructions.</li>
+</ul></li>
+<li><em>If the mouse is on the left side of the screen, draw a rectangle on the left side of the screen</em></li>
+<li>Using the <code>if</code> keyword</li>
+</ul>
+</section>
+<section id="translated-to-code" class="slide level2">
+<h2>Translated to code</h2>
+<pre><code>if (mouseX &lt; width/2) {
+    fill(255);
+    rect(0, 0, width/2, height);
+}</code></pre>
+<ul>
+<li>This can be expected with other keywords, like <code>else</code>
+<ul>
+<li>“otherwise do this”</li>
+</ul></li>
+</ul>
+</section>
+<section id="if-else" class="slide level2">
+<h2>if, else</h2>
+<pre><code>if (boolean expression) {
+    // execute this code if the expression is true
+}
+else {
+    // otherwise, execute this if expression is false
+}</code></pre>
+</section>
+<section id="if-else-if-else" class="slide level2">
+<h2>if, else if, else</h2>
+<ul>
+<li>Once last new keyword, <code>else if</code></li>
+<li>Conditional statements are executed in order</li>
+<li>Once one evaluates to <code>true</code>, the rest are ignored</li>
+</ul>
+</section>
+<section id="if-else-if-else-1" class="slide level2">
+<h2>if, else if, else</h2>
+<pre><code>if (boolean expression #1) {
+    // code to execute if expression #1 is true
+}
+else if (boolean expression #2) {
+    // code to execute if expression #2 is true
+}
+else if (boolean expression #3) {
+    // code to execute if expression #3 is true
+}
+else {
+    // code to execute if none of the above
+    // expressions are true
+}</code></pre>
+<ul>
+<li>Exercise 5-1</li>
+</ul>
+</section>
+<section id="use-in-sketches" class="slide level2">
+<h2>Use in Sketches</h2>
+<ul>
+<li><strong>Example 5-1</strong></li>
+<li><code>constrain();</code>
+<ul>
+<li>Set a limit on value’s maximum and minimum.</li>
+</ul></li>
+<li><strong>Example 5-2</strong></li>
+</ul>
+</section>
+<section id="logical-operators" class="slide level2">
+<h2>Logical Operators</h2>
+<ul>
+<li>Sometimes, one logical test isn’t enough
+<ul>
+<li>Events happen based on more than one condition.</li>
+</ul></li>
+<li><em>If the mouse is on the right side of the screen <strong>AND</strong> the mouse is on the bottom of the screen, draw a rectangle in the bottom right corner.</em></li>
+<li>Could use a <em>nested if statement</em>
+<ul>
+<li>The rectangle is drawn if both <em>if</em> statements result in a <em>true</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="logical-operators-1" class="slide level2">
+<h2>Logical Operators</h2>
+<ul>
+<li>The same can be achieved with a simpler <em>LOGICAL AND</em>
+<ul>
+<li><code>&amp;&amp;</code> in Processing</li>
+</ul></li>
+<li>Others:
+<ul>
+<li><code>||</code> - <em>LOGICAL OR</em></li>
+<li><code>!</code> - <em>LOGICAL NOT</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="logical-and" class="slide level2">
+<h2>LOGICAL AND</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Operand</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TRUE &amp;&amp; TRUE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td>TRUE &amp;&amp; FALSE</td>
+<td>FALSE</td>
+</tr>
+<tr class="odd">
+<td>FALSE &amp;&amp; TRUE</td>
+<td>FALSE</td>
+</tr>
+<tr class="even">
+<td>FALSE &amp;&amp; FALSE</td>
+<td>FALSE</td>
+</tr>
+</tbody>
+</table>
+<p>The <em>logical AND</em> is only <em>true</em> if both operands are <strong>TRUE</strong></p>
+</section>
+<section id="logical-or" class="slide level2">
+<h2>LOGICAL OR</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Operand</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TRUE || TRUE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td>TRUE || FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td>FALSE || TRUE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td>FALSE || FALSE</td>
+<td>FALSE</td>
+</tr>
+</tbody>
+</table>
+<p>The <em>logical OR</em> is only <em>false</em> if both operands are <strong>FALSE</strong></p>
+</section>
+<section id="logical-not" class="slide level2">
+<h2>LOGICAL NOT</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Operand</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>!TRUE</td>
+<td>FALSE</td>
+</tr>
+<tr class="even">
+<td>!FALSE</td>
+<td>TRUE</td>
+</tr>
+</tbody>
+</table>
+<p>The <em>logical NOT</em> is known as a unary operator. It flips the result, therefore making <em>NOT TRUE</em> equivalent to <em>FALSE</em>.</p>
+</section>
+<section id="convert-the-example-from-earlier" class="slide level2">
+<h2>Convert the example from earlier</h2>
+<ul>
+<li>These <em>boolean</em> expressions are sometimes called <em>compound</em> expressions</li>
+<li>Remove the <em>nested if</em> and make it a <em>compound</em> expression</li>
+</ul>
+</section>
+<section id="example-5-5" class="slide level2">
+<h2>Example 5-5</h2>
+<ul>
+<li>Let’s exam the logic of this program using pseudocode (plain English in this case)</li>
+<li>Setup:
+<ul>
+<li>Make the window 200 x 200 pixels.</li>
+</ul></li>
+</ul>
+</section>
+<section id="example-5-5-1" class="slide level2">
+<h2>Example 5-5</h2>
+<ul>
+<li>Draw:
+<ol type="1">
+<li>Draw a white background.</li>
+<li>Draw horizontal and vertical lines to divide the window in four quadrants.</li>
+<li>If the mouse is in the top left corner, draw a black rectangle there.</li>
+<li>If the mouse is in the top right corner, draw a black rectangle there.</li>
+<li>Do the same of the bottom corners…</li>
+</ol></li>
+</ul>
+</section>
+<section id="boolean-variables" class="slide level2">
+<h2>Boolean Variables</h2>
+<ul>
+<li><code>boolean</code> type variables can only hold two values: <em>true</em> or <em>false</em>.</li>
+<li>These variables can be used as a switch, <em>on</em> or <em>off</em></li>
+<li>Use this to make a button</li>
+<li><strong>Example 5-4</strong></li>
+<li><strong>Example 5-5</strong></li>
+</ul>
+</section>
+<section id="keeping-things" class="slide level2">
+<h2>Keeping things</h2>
+<ul>
+<li>In the last <em>Zoog</em> example, the body flew off the screen to not return.</li>
+<li>We can use conditionals to keep items on screen</li>
+<li><strong>Example 5-6</strong></li>
+<li><strong>Example 5-7</strong></li>
+<li><strong>Example 5-8</strong></li>
+</ul>
+</section>
+<section id="physics" class="slide level2">
+<h2>Physics</h2>
+<ul>
+<li>With variables and conditionals, we can simulate gravity.</li>
+<li>Quick Refresher:
+<ul>
+<li>Gravity is the force of attraction between all masses.</li>
+<li>When a pen is dropped, earth causes the pen to accelerate towards the earth (Which is much larger than the pen)</li>
+</ul></li>
+<li><em>Acceleration</em> is caused by gravity (and many other forces which we’ll ignore for simplicity)</li>
+<li><code>speed = speed + acceleration</code></li>
+</ul>
+</section>
+</div>
+
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+
+  });
+
+</script>
+
+</body>
+</html>

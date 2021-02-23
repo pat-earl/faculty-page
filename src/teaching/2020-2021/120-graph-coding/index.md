@@ -94,6 +94,7 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>6 (02/22 - 02/26)</td>
             <td>
+                Functions<br>
                 Objects
             </td>
             <td>
@@ -106,7 +107,7 @@ stylesheet: ../../course.css
             <td scope='row'>7 (03/01 - 03/05)</td>
             <td>
                 Arrays<br>
-                <strong>Quiz</strong> - Chpts. 5 - 8
+                Tuesday <strong>Quiz</strong> - Chpts. 5 - 8
             </td>
             <td>
                 <ul>

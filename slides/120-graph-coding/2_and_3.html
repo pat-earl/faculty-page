@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Chapters 2 &amp; 3</title>
+
+<meta name="description" content="Chapters 2 &amp; 3">    
+
+  <meta name="author" content="Patrick Earl" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+ -->
+
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+
+
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
+
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+<h1>Chapters 2 &amp; 3</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>01/21/2021</h4>
+</p>
+</section>  
+
+
+<section id="quick-review" class="slide level2">
+<h2>Quick Review</h2>
+<ul>
+<li>Computer Coordinate System</li>
+<li>Pixels</li>
+<li>Color - Grayscale</li>
+<li>Color - RGB</li>
+</ul>
+</section>
+<section id="processing" class="slide level2">
+<h2>Processing</h2>
+<ul>
+<li>What is it?</li>
+<li>Where can you get it?</li>
+<li>A Programming IDE</li>
+</ul>
+</section>
+<section id="useful-keyboard-shortcuts" class="slide level2">
+<h2>Useful Keyboard Shortcuts</h2>
+<ul>
+<li>CTRL = CONTROL</li>
+<li>CTRL+C - <em>COPY</em>, CTRL+V - <em>PASTE</em></li>
+<li>CTRL+Z - <em>UNDO</em></li>
+<li>CTRL+S - <em>SAVE</em></li>
+<li>CTRL+R - <em>RUN</em> the sketch</li>
+<li>CTRL+X - <em>DELETE</em></li>
+<li>MAC: Use the <em>COMMAND ⌘</em> key instead</li>
+</ul>
+</section>
+<section id="java" class="slide level2">
+<h2>Java</h2>
+<ul>
+<li>Two major categories for computers:
+<ul>
+<li><em>Hardware</em> - The Physical, Tangible pieces that support the computing effort</li>
+<li><em>Software</em> - A set of instructions that hardware executes one after another</li>
+</ul></li>
+<li><em>Software</em> is typically written as a program and interacts with computer hardware to accept inputs, display outputs, and process data.</li>
+</ul>
+</section>
+<section id="java-1" class="slide level2">
+<h2>Java</h2>
+<ul>
+<li>A <em>programming language</em> specifies the words and symbols that we can use to write a program</li>
+<li>These languages employ a set of rules that dictate how words and symbols can be put together to form a <em>program statement</em></li>
+<li>Processing is a fancy layer deployed over topic of Java</li>
+</ul>
+</section>
+<section id="processing-sketches" class="slide level2">
+<h2>Processing Sketches</h2>
+<ul>
+<li>Processing programs are called <em>sketches</em> informally.</li>
+<li>One or more <em>sketch</em> can be stored in a <em>sketchbook</em>.</li>
+<li>Creating your first sketch.</li>
+</ul>
+</section>
+<section id="coding-in-processing" class="slide level2">
+<h2>Coding in Processing</h2>
+<ul>
+<li>Programs are made up of <em>program statements</em> or <em>statement</em> for short.</li>
+<li>There are three basic kinds:
+<ol type="1">
+<li><strong>Function Calls</strong></li>
+<li>Assignment Operations</li>
+<li>Control Structures</li>
+</ol></li>
+</ul>
+</section>
+<section id="function-calls" class="slide level2">
+<h2>Function Calls</h2>
+<ul>
+<li>Functions calls have a name, followed by a set of arguments enclosed in parentheses.</li>
+<li>Think of functions as natural language sentences.
+<ul>
+<li>The function name is <em>verb</em> (“draw”).</li>
+<li>The arguments are the options (“point 0,0”)</li>
+</ul></li>
+<li>Functions must always end with a semicolon.</li>
+</ul>
+</section>
+<section id="function-calls-1" class="slide level2">
+<h2>Function Calls</h2>
+<ul>
+<li>Processing will execute a sequence of function calls one by one and finish by displaying the drawn result in a window.</li>
+<li>Use <code>size();</code> to control the dimensions of the window you want to create.
+<ul>
+<li>Takes two arguments (width, height)</li>
+</ul></li>
+<li><code>fullScreen();</code> will make the display take up your entire screen.</li>
+</ul>
+</section>
+<section id="setup-function" class="slide level2">
+<h2>setup function?</h2>
+</section>
+<section id="other-things-to-know" class="slide level2">
+<h2>Other things to know</h2>
+<ul>
+<li>Why are some words highlighted?</li>
+<li>Displaying useful information (<code>println();</code>)</li>
+<li>Line Numbers</li>
+<li>Comments (Single-Line &amp; Multi-Line)
+<ul>
+<li>CS&amp;IT Documentation Standard</li>
+</ul></li>
+</ul>
+</section>
+<section id="errors" class="slide level2">
+<h2>Errors</h2>
+<ul>
+<li>Most of the time, you’ll run into problems when writing your code
+<ul>
+<li><strong>This is fine and part of the process!</strong></li>
+</ul></li>
+<li>Error Example</li>
+</ul>
+</section>
+<section id="the-processing-reference" class="slide level2">
+<h2>The Processing Reference</h2>
+<ul>
+<li>How do I know <code>rect();</code> takes four arguments?</li>
+<li><a href="https://processing.org/reference/">Processing Reference</a>
+<ul>
+<li>Name</li>
+<li>Examples</li>
+<li>Description</li>
+<li>Syntax</li>
+<li>Parameters</li>
+<li>Returns</li>
+<li>Related</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-run-button" class="slide level2">
+<h2>The Run Button</h2>
+<ul>
+<li>Press the <em>RUN</em> button to start your code.
+<ul>
+<li>Processing does the hard work for you in the background.</li>
+</ul></li>
+<li>The steps processing takes:
+<ol type="1">
+<li>Translate to Java</li>
+<li>Compile into Java Byte Code</li>
+<li>Execution</li>
+</ol></li>
+</ul>
+</section>
+<section id="return-of-zoog" class="slide level2">
+<h2>Return of Zoog</h2>
+<ul>
+<li>Let’s step through the Zoog Example (2-1).</li>
+</ul>
+</section>
+<section id="going-with-the-flow." class="slide level2">
+<h2>Going with the flow.</h2>
+<ul>
+<li>Graphical Programs are usually interactive, over some <em>period of time</em>.</li>
+<li>Moving beyond static designs
+<ol type="1">
+<li>Set starting conditions for the program one time. <strong><em>SETUP</em></strong></li>
+<li>Do something over and over and over, until the program quits. <strong><em>DRAW</em></strong></li>
+</ol></li>
+</ul>
+</section>
+<section id="setup-and-draw" class="slide level2">
+<h2>setup() and draw()</h2>
+<ul>
+<li>Blocks of code</li>
+</ul>
+</section>
+<section id="setup-and-draw-1" class="slide level2">
+<h2>setup() and draw()</h2>
+<ul>
+<li><code>void setup()</code></li>
+<li><code>void draw()</code></li>
+<li>What does void mean? What are the empty parenthesis for?
+<ul>
+<li>That’ll come.</li>
+</ul></li>
+</ul>
+</section>
+<section id="setup-and-draw-2" class="slide level2">
+<h2>setup() and draw()</h2>
+</section>
+<section id="rewrite-zoog-in-this-format" class="slide level2">
+<h2>Rewrite Zoog in this format</h2>
+<ul>
+<li>Example 3-1</li>
+</ul>
+</section>
+<section id="mouse-variations" class="slide level2">
+<h2>Mouse Variations</h2>
+<ul>
+<li><p><em>mouseX</em> and <em>mouseY</em></p></li>
+<li><p>Example 3-2</p></li>
+<li><p>What if we move background to <em>setup</em>?</p></li>
+</ul>
+</section>
+<section id="mouse-variations-1" class="slide level2">
+<h2>Mouse Variations</h2>
+<ul>
+<li><em>pmouseX</em> and <em>pmouseY</em></li>
+<li><em>Previous</em> mouse locations</li>
+<li>Example 3-4</li>
+</ul>
+</section>
+<section id="mouse-events" class="slide level2">
+<h2>Mouse Events</h2>
+<ul>
+<li>When a mouse is clicked (or key pressed), that is considered an <em>event</em></li>
+<li>Two new functions to handle these <em>events</em></li>
+<li><code>mousePressed()</code> - Handles mouse clicks (Example 3-5)</li>
+<li><code>keyPressed()</code> - Handles key presses</li>
+</ul>
+</section>
+<section id="interactive-zoog" class="slide level2">
+<h2>Interactive Zoog</h2>
+<ul>
+<li>Example 3-6</li>
+</ul>
+</section>
+<section id="end-of-lesson-1" class="slide level2">
+<h2>End of Lesson 1</h2>
+<ul>
+<li>Optional Project (For Practice) (Page 33)
+<ol type="1">
+<li>Design a static screen drawing using RGB colors &amp; primitive shapes</li>
+<li>Make the static screen drawing dynamic by having it interact with the mouse. (This can include shapes following the mouse, changing their size according to the mouse, etc.)</li>
+</ol></li>
+</ul>
+</section>
+</div>
+
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+
+  });
+
+</script>
+
+</body>
+</html>

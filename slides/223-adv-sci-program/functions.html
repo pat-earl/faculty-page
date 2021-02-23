@@ -3,13 +3,11 @@
 <head>
 <meta charset="utf-8">
 
-<title>$title$</title>
+<title>Python Functions</title>
 
-<meta name="description" content="$title$">    
+<meta name="description" content="Python Functions">    
 
-$for(author)$
-  <meta name="author" content="$author$" />
-$endfor$
+  <meta name="author" content="Patrick Earl" />
 
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,34 +16,20 @@ $endfor$
 
 <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
 <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-$if(revealjstheme)$
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/$revealjstheme$.css" id="theme">
-$else$
   <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
-$endif$ -->
+ -->
 
 <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
 <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-$if(revealjstheme)$
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/$revealjstheme$.css" id="theme">
-$else$
   <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
-$endif$
 
 
 <!-- For syntax highlighting -->
-<!-- $if(highlight-style)$
-  <link rel="stylesheet" href="$base$/share/revealjs/plugin/highlight/$highlight-style$.css">
-$else$
-  <link rel="stylesheet" href="$base$/share/revealjs/plugin/highlight/zenburn.css">
-$endif$ -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
 
 <!-- For syntax highlighting -->
-$if(highlight-style)$
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/$highlight-style$.css">
-$else$
   <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
-$endif$
 
 
 <!-- If the query includes 'print-pdf', use the PDF print sheet -->
@@ -58,15 +42,9 @@ $endif$
 <!--[if lt IE 9]>
 <script src="lib/js/html5shiv.js"></script>
 <![endif]-->
-$for(header-includes)$
-  $header-includes$
-$endfor$
 </head>
 
 <body>
-$for(include-before)$
-  $include-before$
-$endfor$
 
 <div class="reveal">
 
@@ -74,23 +52,68 @@ $endfor$
 <div class="slides">
 
 <section>
-<h1>$title$</h1>
-$for(author)$<h3>$author$</h3>$endfor$
+<h1>Python Functions</h1>
+<h3>Patrick Earl</h3>
 <p>
-<h4>$date$</h4>
+<h4>02/01/2021</h4>
 </p>
 </section>  
 
-$if(toc)$
-<section>
-  <h2>Outline</h2>
-  <nav id="$idprefix$TOC">
-    $toc$
-  </nav>
-</section>
-$endif$
 
-$body$
+<section id="using-functions" class="slide level2">
+<h2>Using Functions</h2>
+<ul>
+<li>Groups of code with a name</li>
+<li><code>print('abc')</code>
+<ul>
+<li>The function <em>print</em> with <em>‘abc’</em> as the function’s argument</li>
+</ul></li>
+<li>Keyword Arguments
+<ul>
+<li>Arguments specified by name</li>
+<li><code>sep</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="creating-functions" class="slide level2">
+<h2>Creating Functions</h2>
+<ul>
+<li><code>def</code> keyword</li>
+<li>No <em>type</em></li>
+<li>Can return multiple items as a tuple</li>
+</ul>
+</section>
+<section id="function-arguments" class="slide level2">
+<h2>Function Arguments</h2>
+<ul>
+<li>Default Values
+<ul>
+<li>Optional argument with default value</li>
+</ul></li>
+<li>Flexible Arguments
+<ul>
+<li><code>*args</code> &amp; <code>**kwargs</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="anonymous-functions" class="slide level2">
+<h2>Anonymous Functions</h2>
+<ul>
+<li><code>lamba</code></li>
+<li>Useful for one-off functions</li>
+<li>Sorting a dictionary</li>
+<li><code>add = lambda x, y: x + y</code></li>
+</ul>
+<h3 id="lambda">Lambda</h3>
+<ul>
+<li><code>sorted([2, 4, 3, 5, 1, 6])</code></li>
+</ul>
+<pre><code>data = [{&#39;first&#39;:&#39;Guido&#39;, &#39;last&#39;:&#39;Van Rossum&#39;, &#39;YOB&#39;:1956},
+        {&#39;first&#39;:&#39;Grace&#39;, &#39;last&#39;:&#39;Hopper&#39;,     &#39;YOB&#39;:1906},
+        {&#39;first&#39;:&#39;Alan&#39;,  &#39;last&#39;:&#39;Turing&#39;,     &#39;YOB&#39;:1912}]
+
+sorted(data, key=lambda item: item[&#39;first&#39;])</code></pre>
+</section>
 </div>
 
 <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>

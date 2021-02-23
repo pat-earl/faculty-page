@@ -3,13 +3,11 @@
 <head>
 <meta charset="utf-8">
 
-<title>$title$</title>
+<title>Errors &amp; Exceptions</title>
 
-<meta name="description" content="$title$">    
+<meta name="description" content="Errors &amp; Exceptions">    
 
-$for(author)$
-  <meta name="author" content="$author$" />
-$endfor$
+  <meta name="author" content="Patrick Earl" />
 
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,34 +16,20 @@ $endfor$
 
 <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
 <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-$if(revealjstheme)$
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/$revealjstheme$.css" id="theme">
-$else$
   <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
-$endif$ -->
+ -->
 
 <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
 <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-$if(revealjstheme)$
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/$revealjstheme$.css" id="theme">
-$else$
   <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
-$endif$
 
 
 <!-- For syntax highlighting -->
-<!-- $if(highlight-style)$
-  <link rel="stylesheet" href="$base$/share/revealjs/plugin/highlight/$highlight-style$.css">
-$else$
-  <link rel="stylesheet" href="$base$/share/revealjs/plugin/highlight/zenburn.css">
-$endif$ -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
 
 <!-- For syntax highlighting -->
-$if(highlight-style)$
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/$highlight-style$.css">
-$else$
   <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
-$endif$
 
 
 <!-- If the query includes 'print-pdf', use the PDF print sheet -->
@@ -58,15 +42,9 @@ $endif$
 <!--[if lt IE 9]>
 <script src="lib/js/html5shiv.js"></script>
 <![endif]-->
-$for(header-includes)$
-  $header-includes$
-$endfor$
 </head>
 
 <body>
-$for(include-before)$
-  $include-before$
-$endfor$
 
 <div class="reveal">
 
@@ -74,23 +52,55 @@ $endfor$
 <div class="slides">
 
 <section>
-<h1>$title$</h1>
-$for(author)$<h3>$author$</h3>$endfor$
+<h1>Errors &amp; Exceptions</h1>
+<h3>Patrick Earl</h3>
 <p>
-<h4>$date$</h4>
+<h4>02/15/2021</h4>
 </p>
 </section>  
 
-$if(toc)$
-<section>
-  <h2>Outline</h2>
-  <nav id="$idprefix$TOC">
-    $toc$
-  </nav>
-</section>
-$endif$
 
-$body$
+<section id="error-types" class="slide level2">
+<h2>Error Types</h2>
+<ul>
+<li><strong>Syntax Errors</strong> - Invalid Python Code</li>
+<li><strong>Runtime Errors</strong> - Syntactically valid code that fails for some reason</li>
+<li><strong>Semantic Errors</strong> - Errors in logic</li>
+</ul>
+</section>
+<section id="runtime-errors" class="slide level2">
+<h2>Runtime Errors</h2>
+<ul>
+<li>Python will provide an <em>Exception</em> type</li>
+<li><code>try</code> &amp; <code>except</code></li>
+<li><em>FileNotFoundError</em></li>
+</ul>
+</section>
+<section id="raising-exceptions" class="slide level2">
+<h2>Raising Exceptions</h2>
+<ul>
+<li><code>raise</code></li>
+<li>Fibonacci Sequence (Non-Negative Numbers)</li>
+</ul>
+</section>
+<section id="exception-message" class="slide level2">
+<h2>Exception Message</h2>
+<ul>
+<li>Capture the Exception message</li>
+<li><code>except Error as message:</code></li>
+</ul>
+</section>
+<section id="tryexcept" class="slide level2">
+<h2>try…except</h2>
+<pre><code>try:
+    print(&quot;try something here&quot;)
+except:
+    print(&quot;this happens only if it fails&quot;)
+else:
+    print(&quot;this happens only if it succeeds&quot;)
+finally:
+    print(&quot;this happens no matter what&quot;)</code></pre>
+</section>
 </div>
 
 <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>

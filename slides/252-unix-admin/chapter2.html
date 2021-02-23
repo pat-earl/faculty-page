@@ -3,13 +3,11 @@
 <head>
 <meta charset="utf-8">
 
-<title>$title$</title>
+<title>Getting Help</title>
 
-<meta name="description" content="$title$">    
+<meta name="description" content="Getting Help">    
 
-$for(author)$
-  <meta name="author" content="$author$" />
-$endfor$
+  <meta name="author" content="Patrick Earl" />
 
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,34 +16,20 @@ $endfor$
 
 <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
 <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-$if(revealjstheme)$
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/$revealjstheme$.css" id="theme">
-$else$
   <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
-$endif$ -->
+ -->
 
 <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
 <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-$if(revealjstheme)$
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/$revealjstheme$.css" id="theme">
-$else$
   <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
-$endif$
 
 
 <!-- For syntax highlighting -->
-<!-- $if(highlight-style)$
-  <link rel="stylesheet" href="$base$/share/revealjs/plugin/highlight/$highlight-style$.css">
-$else$
-  <link rel="stylesheet" href="$base$/share/revealjs/plugin/highlight/zenburn.css">
-$endif$ -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
 
 <!-- For syntax highlighting -->
-$if(highlight-style)$
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/$highlight-style$.css">
-$else$
   <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
-$endif$
 
 
 <!-- If the query includes 'print-pdf', use the PDF print sheet -->
@@ -58,15 +42,9 @@ $endif$
 <!--[if lt IE 9]>
 <script src="lib/js/html5shiv.js"></script>
 <![endif]-->
-$for(header-includes)$
-  $header-includes$
-$endfor$
 </head>
 
 <body>
-$for(include-before)$
-  $include-before$
-$endfor$
 
 <div class="reveal">
 
@@ -74,23 +52,69 @@ $endfor$
 <div class="slides">
 
 <section>
-<h1>$title$</h1>
-$for(author)$<h3>$author$</h3>$endfor$
+<h1>Getting Help</h1>
+<h3>Patrick Earl</h3>
 <p>
-<h4>$date$</h4>
+<h4>01/26/2021</h4>
 </p>
 </section>  
 
-$if(toc)$
-<section>
-  <h2>Outline</h2>
-  <nav id="$idprefix$TOC">
-    $toc$
-  </nav>
-</section>
-$endif$
 
-$body$
+<section id="ku-linux-systems" class="slide level2">
+<h2>KU Linux Systems</h2>
+<ul>
+<li><em>csitrd</em> - The main Linux server
+<ul>
+<li>a.k.a: login.kutztown.edu, acad.kutztown.edu, csit.kutztown.edu</li>
+</ul></li>
+<li><em>mcgonagall</em> - Processing computer
+<ul>
+<li>NVIDIA Tesla K40c GPU</li>
+</ul></li>
+<li><em>harry</em> - RIP
+<ul>
+<li>Sun OS</li>
+</ul></li>
+<li>Others
+<ul>
+<li>VMWare ESXi Hypervisors (Type I)</li>
+</ul></li>
+</ul>
+</section>
+<section id="ssh" class="slide level2">
+<h2>ssh</h2>
+<p>A network protocol that allows a remote client to connect to a server as if directly connected to it.</p>
+</section>
+<section id="documentation" class="slide level2">
+<h2>Documentation</h2>
+<ul>
+<li><code>man</code> command - The System Manual
+<ul>
+<li>Split into 10 seconds</li>
+<li>User Commands (1), System Calls (2), Subroutines (3)….</li>
+</ul></li>
+<li><code>apropos</code> - Keyword search
+<ul>
+<li>Searches for the keyword in short description of man pages</li>
+</ul></li>
+<li><code>info</code> or <code>pinfo</code> - Information about GNU utilities</li>
+</ul>
+</section>
+<section id="documentation-continued" class="slide level2">
+<h2>Documentation (continued)</h2>
+<ul>
+<li><code>--help</code> option</li>
+<li><em>bash</em> <code>help</code> command</li>
+<li>Internet Help
+<ul>
+<li><a href="www.gnu.org/manual">GNU Manuals</a></li>
+<li><code>man [command]</code> in search engines
+<ul>
+<li><code>!manpage</code> duckduckgo</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
 </div>
 
 <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
