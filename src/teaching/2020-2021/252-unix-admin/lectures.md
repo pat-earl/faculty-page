@@ -5,6 +5,8 @@ title: Lectures
     {"name": "Getting Help", "file": "slides/chapter2.md"},
     {"name": "The Utilities", "file": "slides/chapter3.md"},
     {"name": "Files & Directories (PowerPoint)", "file": "slides/files.pptx"},
+    {"name": "Command Presentations", "file": "slides/commands.md"},
+    {"name": "The Shell", "file": "slides/shell.md"}
 ) %}
 
 ## Course Lectures

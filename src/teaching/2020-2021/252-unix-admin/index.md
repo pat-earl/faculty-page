@@ -77,7 +77,6 @@ stylesheet: ../../course.css
             </td>
             <td>
                 <ul>
-                    <li>Chapter 5</li>
                     <li>Chapter 8 (Pages: 285 - 294)</li>
                 </ul>
             </td>
@@ -86,11 +85,12 @@ stylesheet: ../../course.css
             <td scope='row'>5 (02/15 - 02/19)</td>
             <td>
                 Files and Directories<br>
-                BASH<br>
-                Shell Scripting
+                The Shell<br>
+                Bourne Again Shell
             </td>
             <td>
                 <ul>
+                    <li>Chapter 5</li>
                     <li>Chapter 8 (Pages: 294-299)</li>
                     <li>Chapter 10</li>
                 </ul>
@@ -99,8 +99,17 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>6 (02/22 - 02/26)</td>
             <td>
-                Processes<br>
-                <strong>Exam #1</strong> - Thursday
+                BASH<br>
+                Shell Scripting
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td scope='row'>7 (03/01 - 03/05)</td>
+            <td>
+                <strong>Exam #1</strong> - Tuesday<br>
+                Processes
             </td>
             <td>
                 <ul>
@@ -109,29 +118,23 @@ stylesheet: ../../course.css
             </td>
         </tr>
         <tr>
-            <td scope='row'>7 (03/01 - 03/05)</td>
+            <td scope='row'>8 (03/08 - 03/12)<br><strong>WD:</strong> 03/10</td>
             <td>
                 Processes<br>
-                Virtual Machines & Containers<br>
+                Virtual Machines<br>
                 System Administration
             </td>
             <td>
                 <ul>
-                    <li>Appendex C</li>
+                    <li>Appendix C</li>
                     <li>Linux Fundamentals (Pages: 274-302)</li>
                 </ul>
             </td>
         </tr>
         <tr>
-            <td scope='row'>8 (03/08 - 03/12)<br><strong>WD:</strong> 03/10</td>
-            <td>
-                System Administration
-            </td>
-            <td></td>
-        </tr>
-        <tr>
             <td scope='row'>9 (03/15 - 03/19)</td>
             <td>
+                System Administration<br>
                 Text Processing: sed & awk<br>
                 <strong>Exam #2 - (TBD)</strong>
             </td>
@@ -146,43 +149,47 @@ stylesheet: ../../course.css
             <td scope='row'>10 (03/22 - 03/26)</td>
             <td>
                 Text Processing<br>
-                Scripting Language - TBD
             </td>
             <td></td>
         </tr>
         <tr>
             <td scope='row'>11 (03/29 - 04/02)<br><strong>WD:</strong> 04/02</td>
             <td>
-                <em>Flexible Topics</em>
+                Scripting Language - Python
             </td>
-            <td></td>
+            <td>
+                <ul>
+                    <li>Chapter 12</li>
+                </ul>
+            </td>
         </tr>
         <tr>
             <td scope='row'>12 (04/05 - 04/09)</td>
             <td>
-                <em>Flexible Topics</em>
+                Python
             </td>
             <td></td>
         </tr>
         <tr>
             <td scope='row'>13 (04/12 - 04/16)</td>
             <td>
-                <em>Flexible Topics</em><br>
-                <strong>Exam #3 ?- (TBD)</strong>
+                Makefiles<br>
+                <strong>Possible Exam #3 - (TBD)</strong>
             </td>
             <td></td>
         </tr>
         <tr>
             <td scope='row'>14 (04/19 - 04/23)<br><strong>WD:</strong> 04/20</td>
             <td>
-                <em>Flexible Topics</em><br>
-                NO CLASS TUESDAY - Wellness Day
+                NO CLASS TUESDAY - Wellness Day<br>
+                Containers<br>
             </td>
             <td></td>
         </tr>
         <tr>
             <td scope='row'>15 (04/26 - 04/30)</td>
             <td>
+                Version Control - <em>git</em><br>
                 <em>Flexible Topics</em>
             </td>
             <td></td>
@@ -190,7 +197,7 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>16 (05/03 - 05/07)</td>
             <td>
-                <em>FINAL EXAMS WEEK</em>
+                <em>FINAL EXAMS WEEK - See Day & Time Above</em>
             </td>
             <td></td>
         </tr>
