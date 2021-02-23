@@ -6,7 +6,8 @@ title: Lectures
     {"name": "Chapter 4: Variables", "file": "slides/variables.md"},
     {"name": "Chapter 5: Conditionals", "file": "slides/conditionals.md"},
     {"name": "Chapter 14: Translation & 3D", "file": "slides/translation.md"},
-    {"name": "Chapter 5: Loops", "file": "slides/loops.md"},
+    {"name": "Chapter 6: Loops", "file": "slides/loops.md"},
+    {"name": "Chapter 7: Functions", "file": "slides/functions.md"},
 ) %}
 
 ## Course Lectures
@@ -28,4 +29,3 @@ below when they become available.
         - [Graphical Planes](./pdfs/graphical-planes.pdf)
 * Week 2
     - [Variables Lecture](./pdfs/variables-full.pdf)
-* Week 3
