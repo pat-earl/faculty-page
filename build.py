@@ -264,6 +264,7 @@ def slide_convert(site, template, **context):
 
     # This doesn't work inside WSL
     # Try using docker: https://hub.docker.com/r/marpteam/marp-cli/
+    # marp executable is too big for github :-(
     func_call = ('./bin/marp', '-o', './slides/' + course + '/' + base + '.pdf', src)
     subprocess.run(args=func_call)
 
