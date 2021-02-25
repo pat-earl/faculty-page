@@ -248,10 +248,26 @@ def slide_convert(site, template, **context):
     func_call = ('./bin/marp', '-o', filepath, src)
     subprocess.run(args=func_call)
 
-    func_call = ('./bin/marp', '--pdf', '-o', )
-
     # Copy the permissions from 
     shutil.copymode(template.filename, filepath)
+
+
+    ## Generate the PDF version
+    course = template.name.split('/')[2]
+    base = os.path.basename(template.name).split('.')[0]
+    # print(course)
+    # print(base)
+
+    if not os.path.isdir('./slides/' + course):
+        Path('./slides/' + course).mkdir(parents=True)
+
+
+    # This doesn't work inside WSL
+    # Try using docker: https://hub.docker.com/r/marpteam/marp-cli/
+    func_call = ('./bin/marp', '-o', './slides/' + course + '/' + base + '.pdf', src)
+    subprocess.run(args=func_call)
+
+    
 
 
 
