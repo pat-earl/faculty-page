@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 import os, sys
+import subprocess
 pwd = os.path.dirname(os.path.realpath(__file__))
 #sys.path.insert( 1, os.path.join( pwd, 'ext' ) )
 
@@ -223,7 +224,7 @@ class Site( staticjinja.Site ):
             
 def slide_convert(site, template, **context):
     ''' 
-        Used for converting my slides, using pandoc :-)
+        Used for converting my slides, using marp :-)
     '''
 
     # Get the output path using the template's name
@@ -240,53 +241,17 @@ def slide_convert(site, template, **context):
         if os.stat(src).st_mtime - os.stat(filepath).st_mtime < 0:
             return
 
+    # Print slide render
     site.logger.info("Rendering slides {}".format(template.name))
 
-    # Get the site_prefix for $base$ variable in template
-    prefix = site.env.globals['site_prefix']
+    # Create the web markdown
+    func_call = ('./bin/marp', '-o', filepath, src)
+    subprocess.run(args=func_call)
 
-
-    # Arguments to pass to pandoc
-    extra_args = [
-        '--standalone',
-        '-t', 'revealjs',
-        '--template=./src/layouts/template-revealjs.html',
-        # '--section-divs',
-        '--slide-level', '2',
-        '-V', 'base=' + prefix
-    ]
-
-    # Convert the file from markdown to the standalone HTML file
-    output = pypandoc.convert_file(template.filename, 
-                    to='html5',
-                    format='md',
-                    extra_args=extra_args,
-                    outputfile=filepath)
-    # output should be empty because we're using outputfile
-    assert output == ""
+    func_call = ('./bin/marp', '--pdf', '-o', )
 
     # Copy the permissions from 
     shutil.copymode(template.filename, filepath)
-
-    # Create PDFs for annotating later
-    # Get directory for output
-    course = template.name.split('/')[2]
-    base = os.path.basename(template.name)
-    print(course)
-    print(base)
-    slides_path = './slides/' + course + '/' + base.split('.')[0] + '.html'
-
-    if not os.path.isdir('./slides/' + course):
-        Path("./slides/" + course).mkdir(parents=True, exist_ok=True)
-
-    shutil.copy(filepath, slides_path)
-
-    # output = pypandoc.convert_file(template.filename,
-    #                 to='beamer',
-    #                 format='md',
-    #                 outputfile=pdf_out)
-
-    # assert output == ""
 
 
 

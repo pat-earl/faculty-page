@@ -5,8 +5,8 @@ author: Patrick Earl
 date: 02/23/2021
 slideNumber: true
 revealjstheme: simple
-width: 1600
-height: 1000
+width: 1920
+height: 1080
 transition: fade
 ---
 
