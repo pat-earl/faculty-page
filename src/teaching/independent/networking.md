@@ -60,7 +60,7 @@ types of delays (Processing, Transmission, Propagation, and Queuing).
 Focus on using routers and how to subnet IP networks. 
 
 * [CSC411 Lab 2](./networking-is/csc411_lab2.html)
-* Network Management Lab (In-Progress)
+* [CSC411 SNMP Lab](./networking-is/csc411_snmp_lab.md)
 
 ### Weeks 8-11
 
