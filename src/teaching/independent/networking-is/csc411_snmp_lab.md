@@ -14,9 +14,9 @@ This is going to require some research on your part. Packet Tracer provides a MI
 Use the previous lab (CSC411 Lab #2). Using the devices in Network A, do the following:
 
 1. Assign the following MIB variables to a switch 
-   1. sysContact
-   2. sysLocation
-   3. sysName
+    1. sysContact
+    2. sysLocation
+    3. sysName
 2. Do an "SNMP Walk" of the mgmt.system subtree
 3. Do an "SNMP Get" of the sysName and sysLocation variables
 
