@@ -11,22 +11,19 @@ transition: slide
 ---
 
 ## Iterators
-
 * Repeating something over and over in an automated fashion
 * Python *iterator* syntax
 * *range* - Produces an iterator
 
 ## List Iteration
-
 * `for x in y:`
   * `for [each] value in [the] list
 * Iterable interface
   * `iter`
 * `next`
-* Allows for iterperating things as a list
+* Allows for interpreting things as a list
 
 ## range()
-
 * Actually creates a *range* object
   * List is never created
 ```
@@ -37,7 +34,6 @@ for i in range(N):
 ```
 
 ## itertools count
-
 * count() will create an infinite range
 ```
 from itertools import count
@@ -49,7 +45,6 @@ for i in count():
 ```
 
 ## Useful Iterators
-
 * enumeration
 * zip
 * *map*

@@ -6,7 +6,8 @@ title: Lectures
     {"name": "The Utilities", "file": "slides/chapter3.md"},
     {"name": "Files & Directories (PowerPoint)", "file": "slides/files.pptx"},
     {"name": "Command Presentations", "file": "slides/commands.md"},
-    {"name": "The Shell", "file": "slides/shell.md"}
+    {"name": "The Shell", "file": "slides/shell.md"},
+    {"name": "BASH", "file": "slides/bash.md"}
 ) %}
 
 ## Course Lectures

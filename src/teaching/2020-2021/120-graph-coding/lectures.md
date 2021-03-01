@@ -8,6 +8,7 @@ title: Lectures
     {"name": "Chapter 14: Translation & 3D", "file": "slides/translation.md"},
     {"name": "Chapter 6: Loops", "file": "slides/loops.md"},
     {"name": "Chapter 7: Functions", "file": "slides/functions.md"},
+    {"name": "Chapter 8: Objects", "file": "slides/objects.md"},
 ) %}
 
 ## Course Lectures

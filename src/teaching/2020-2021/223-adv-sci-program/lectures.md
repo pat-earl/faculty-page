@@ -7,6 +7,7 @@ title: Lectures
     {"name": "Python Functions", "file": "slides/functions.md"},
     {"name": "Python Errors & Exceptions", "file": "slides/errors.md"},
     {"name": "Python Modules", "file": "slides/modules.md"},
+    {"name": "Python Iterators", "file": "slides/iterators.md"},
 ) %}
 
 ## Course Lectures

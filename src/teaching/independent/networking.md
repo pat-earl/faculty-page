@@ -57,24 +57,25 @@ types of delays (Processing, Transmission, Propagation, and Queuing).
 
 ### Weeks 5-7
 
-Focus on using routers and how to subnet IP networks. 
+Focus on using routers and how to subnet IP networks. The SNMP lab can also
+be for the "break something" lab. 
 
 * [CSC411 Lab 2](./networking-is/csc411_lab2.html)
-* [CSC411 SNMP Lab](./networking-is/csc411_snmp_lab.md)
+* [CSC411 SNMP Lab](./networking-is/csc411_snmp_lab.html)
 
 ### Weeks 8-11
 
-*Links don't work, working on handouts*
+*WIP*
+Focus on creating your own routing tables and possibly explore using routing protocols. Second lab is about adding a wireless network to the network from CSC411 Lab 2. The wireless network should use private IPs and NAT to communicate with the network. The wireless network only needs to be added to *one* network from that lab.
 
-Focus on creating your own routing tables and possibly explore using routing protocols. Second lab is about adding a wireless network to an existing wired one. NAT will be used for wireless device IP addresses. 
-
-* [CSC512 Lab 1](./networking-is/csc512_lab1.html)
-* [CSC512 Lab 2](./networking-is/csc512_lab2.html)
+* [CSC512 Lab 1](./networking-is/csc512_lab1.html) *WIP*
+* [CSC512 Lab 2](./networking-is/csc512_lab2.html) *WIP*
 
 ### Weeks 11-13
 
-Focus on adding security devices and a VPN to a network.  
-Mostly research the ability to do this with the two simulators.
+Research the ability to add security appliances (firewall, NAT, etc.) and 
+a VPN connection. This might require using the "cloud" setup to hook into
+the network on your physical machine.
 
 ### Weeks 14-16
 

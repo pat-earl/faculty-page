@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 
-<title>Iterators - Chapter 10</title>
+<title>Objects</title>
 
-<meta name="description" content="Iterators - Chapter 10">    
+<meta name="description" content="Objects">    
 
   <meta name="author" content="Patrick Earl" />
 
@@ -52,100 +52,66 @@
 <div class="slides">
 
 <section>
-<h1>Iterators - Chapter 10</h1>
+<h1>Objects</h1>
 <h3>Patrick Earl</h3>
 <p>
-<h4>02/22/2021</h4>
+<h4>02/25/2021</h4>
 </p>
 </section>  
 
 
-<section id="iterators" class="slide level2">
-<h2>Iterators</h2>
+<section id="quick-recap" class="slide level2">
+<h2>Quick Recap</h2>
 <ul>
-<li>Repeating something over and over in an automated fashion</li>
-<li>Python <em>iterator</em> syntax</li>
-<li><em>range</em> - Produces an iterator</li>
+<li>Functions</li>
+<li><em>Exercise 7-7</em></li>
 </ul>
 </section>
-<section id="list-iteration" class="slide level2">
-<h2>List Iteration</h2>
+<section id="object-oriented-programming-oop" class="slide level2">
+<h2>Object Oriented Programming (OOP)</h2>
 <ul>
-<li><code>for x in y:</code>
+<li><em>Objects</em> in Programming</li>
+<li>“Human Data”
 <ul>
-<li>`for [each] value in [the] list</li>
+<li>Height</li>
+<li>Weight</li>
+<li>Gender</li>
+<li>Eye color</li>
+<li>Hair color</li>
 </ul></li>
-<li>Iterable interface
-<ul>
-<li><code>iter</code></li>
-</ul></li>
-<li><code>next</code></li>
-<li>Allows for interpreting things as a list</li>
 </ul>
 </section>
-<section id="range" class="slide level2">
-<h2>range()</h2>
-<ul>
-<li>Actually creates a <em>range</em> object
-<ul>
-<li>List is never created</li>
-</ul>
-<pre><code>N = 10 ** 12
-for i in range(N):
-  if &gt;= 10: break
-  print(i, end=&#39;, &#39;)</code></pre></li>
-</ul>
-</section>
-<section id="itertools-count" class="slide level2">
-<h2>itertools count</h2>
-<ul>
-<li>count() will create an infinite range</li>
-</ul>
-<pre><code>from itertools import count
+<section class="slide level2">
 
-for i in count():
-    if &gt;= 10:
-        break
-    print(i, end=&#39;, &#39;)</code></pre>
-</section>
-<section id="useful-iterators" class="slide level2">
-<h2>Useful Iterators</h2>
 <ul>
-<li>enumeration</li>
-<li>zip</li>
-<li><em>map</em></li>
-<li><em>filter</em></li>
-<li><em>Represents a higher-order function</em></li>
-</ul>
-</section>
-<section id="enum-and-zip" class="slide level2">
-<h2>Enum and Zip</h2>
+<li>“Human functions”
 <ul>
-<li><code>for i, val in enumerate(L):</code></li>
-<li><code>zip</code>
-<ul>
-<li>“Zips” iterators together</li>
+<li>Sleep</li>
+<li>Wake up</li>
+<li>Eat</li>
+<li>Ride some form of transportation.</li>
 </ul></li>
+<li><em>Car Data and Functions?</em></li>
 </ul>
 </section>
-<section id="map-and-filter" class="slide level2">
-<h2>map and filter</h2>
+<section id="objects" class="slide level2">
+<h2>Objects</h2>
 <ul>
-<li><code>map()</code> takes a function and applies it to the values in an iterator</li>
-<li>Type casting iterator values</li>
-<li><code>filter()</code> works similar
+<li>Allow for grouping items into an <em>object</em></li>
+<li><em>Example 8-1</em></li>
+</ul>
+</section>
+<section id="argument-passing" class="slide level2">
+<h2>Argument Passing</h2>
 <ul>
-<li>Only values that eval to <em>True</em> are returned</li>
+<li>Primitive types (int, float, etc.) are passed by <em>value</em>
+<ul>
+<li>A copy of their value is created in memory</li>
 </ul></li>
-</ul>
-</section>
-<section id="iterators-as-function-args" class="slide level2">
-<h2>Iterators as Function Args</h2>
+<li>Objects are passed by <em>reference</em>
 <ul>
-<li><code>*</code> Prefix operator can be used on any iterator</li>
-<li><code>print(*range(10))</code></li>
-<li><code>print(*map(lambda x: x ** 2, range(10)))</code></li>
-<li>“unzip” - <code>zip(*iterator)</code></li>
+<li>The address of where the information is stored in memory</li>
+</ul></li>
 </ul>
 </section>
 </div>

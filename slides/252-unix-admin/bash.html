@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 
-<title>Iterators - Chapter 10</title>
+<title>Chapter 8: BASH</title>
 
-<meta name="description" content="Iterators - Chapter 10">    
+<meta name="description" content="Chapter 8: BASH">    
 
   <meta name="author" content="Patrick Earl" />
 
@@ -52,101 +52,113 @@
 <div class="slides">
 
 <section>
-<h1>Iterators - Chapter 10</h1>
+<h1>Chapter 8: BASH</h1>
 <h3>Patrick Earl</h3>
 <p>
-<h4>02/22/2021</h4>
+<h4>02/25/2021</h4>
 </p>
 </section>  
 
 
-<section id="iterators" class="slide level2">
-<h2>Iterators</h2>
+<section id="bash" class="slide level2">
+<h2>BASH</h2>
 <ul>
-<li>Repeating something over and over in an automated fashion</li>
-<li>Python <em>iterator</em> syntax</li>
-<li><em>range</em> - Produces an iterator</li>
-</ul>
-</section>
-<section id="list-iteration" class="slide level2">
-<h2>List Iteration</h2>
+<li>Bourne Again Shell - <em>bash</em>
 <ul>
-<li><code>for x in y:</code>
-<ul>
-<li>`for [each] value in [the] list</li>
+<li>sh - Bourne Shell, written by Steve Bourne at AT&amp;T’s Bell Lab</li>
+<li>Many systems sym-link sh to bash (or dash)</li>
 </ul></li>
-<li>Iterable interface
+<li>POSIX Standard
 <ul>
-<li><code>iter</code></li>
+<li><em>Portable Operating System Interface</em></li>
+<li><a href="http://www.opengroup.org/austin/papers/posix_faq.html">POSIX FAQ</a></li>
 </ul></li>
-<li><code>next</code></li>
-<li>Allows for interpreting things as a list</li>
+<li><code>chsh</code> - Change your login shell</li>
 </ul>
 </section>
-<section id="range" class="slide level2">
-<h2>range()</h2>
+<section id="shell-files" class="slide level2">
+<h2>Shell Files</h2>
 <ul>
-<li>Actually creates a <em>range</em> object
+<li>Startup Files
 <ul>
-<li>List is never created</li>
-</ul>
-<pre><code>N = 10 ** 12
-for i in range(N):
-  if &gt;= 10: break
-  print(i, end=&#39;, &#39;)</code></pre></li>
+<li>Files a shell runs to initialize itself</li>
+<li>Files depend on it being an interactive or non-interactive</li>
+</ul></li>
+<li>Login Shells
+<ul>
+<li>First shell that displays a prompt to login into a system</li>
+</ul></li>
 </ul>
 </section>
-<section id="itertools-count" class="slide level2">
-<h2>itertools count</h2>
-<ul>
-<li>count() will create an infinite range</li>
-</ul>
-<pre><code>from itertools import count
+<section class="slide level2">
 
-for i in count():
-    if &gt;= 10:
-        break
-    print(i, end=&#39;, &#39;)</code></pre>
-</section>
-<section id="useful-iterators" class="slide level2">
-<h2>Useful Iterators</h2>
 <ul>
-<li>enumeration</li>
-<li>zip</li>
-<li><em>map</em></li>
-<li><em>filter</em></li>
-<li><em>Represents a higher-order function</em></li>
-</ul>
-</section>
-<section id="enum-and-zip" class="slide level2">
-<h2>Enum and Zip</h2>
+<li><em>Interactive Shells</em>
 <ul>
-<li><code>for i, val in enumerate(L):</code></li>
-<li><code>zip</code>
+<li>/etc/profile</li>
+<li>.bash_profile, .bash_login, .profile</li>
+<li>.bash_logout</li>
+</ul></li>
+<li><em>Non-interactive</em>
 <ul>
-<li>“Zips” iterators together</li>
+<li>.bashrc</li>
+<li>/etc/bashrc</li>
 </ul></li>
 </ul>
 </section>
-<section id="map-and-filter" class="slide level2">
-<h2>map and filter</h2>
+<section id="source" class="slide level2">
+<h2>source</h2>
 <ul>
-<li><code>map()</code> takes a function and applies it to the values in an iterator</li>
-<li>Type casting iterator values</li>
-<li><code>filter()</code> works similar
+<li><code>.</code>(dot) or <code>source</code></li>
+<li>If changes are made to your startup files, these commands can allow for “reloading”
 <ul>
-<li>Only values that eval to <em>True</em> are returned</li>
+<li>Typically to see the changes you’d have to logout and in again.</li>
 </ul></li>
 </ul>
 </section>
-<section id="iterators-as-function-args" class="slide level2">
-<h2>Iterators as Function Args</h2>
+<section id="standard-error-redirection" class="slide level2">
+<h2>Standard Error Redirection</h2>
 <ul>
-<li><code>*</code> Prefix operator can be used on any iterator</li>
-<li><code>print(*range(10))</code></li>
-<li><code>print(*map(lambda x: x ** 2, range(10)))</code></li>
-<li>“unzip” - <code>zip(*iterator)</code></li>
+<li>0 - stdin, 1 - stdout, 2 - stderr</li>
+<li><code>&lt;, &gt;</code>
+<ul>
+<li><code>&lt;</code> - shorthand for <code>0&lt;</code></li>
+<li><code>&gt;</code> - shorthand for <code>1&gt;</code></li>
+<li><code>2&gt;</code> - redirect stderr</li>
+<li><code>&amp;&gt;</code> - Redirect stdout &amp; stderr</li>
+</ul></li>
+<li>Can have more than one redirection.</li>
 </ul>
+</section>
+<section class="slide level2">
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&gt;!<em>filename</em></td>
+<td>Redirects to stdout and overwrites even if <em>noclobber</em> is set</td>
+</tr>
+<tr class="even">
+<td>&gt;&gt;<em>filename</em></td>
+<td>Redirects and appends stdout to filename. Creates if doesn’t exist</td>
+</tr>
+<tr class="odd">
+<td>&amp;&gt;<em>filename</em></td>
+<td>Redirects stdout and stderr to filename</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 8-2 from Practical Guide to Linux Textbook</em></p>
 </section>
 </div>
 

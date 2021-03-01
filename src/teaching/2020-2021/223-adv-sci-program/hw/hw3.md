@@ -2,8 +2,8 @@ title: Homework #3
 
 ## Data Formats
 
-**Due**
-:Sunday Feb 28, 2021
+**Due:**
+: Sunday Feb 28, 2021
 
 The purpose of this assignment is to extract a small subset of information from one file format 
 and write it out as another.
@@ -42,11 +42,14 @@ The values for each key should be replaced with the respective data. Each show s
 JSON object in the output file.
 Your JSON file should be formatted properly, meaning that
 all the data is on separate lines as seen in the example output below.
-***NOTE:*** Depending on your version of Python3, you may not see the same
-order for the key:value pairs as shown above, this is okay.
 
 You may hard-code the filename in your program. Meaning, the program is only intended to work
-with the supplied dataset.
+with the supplied dataset. Your json file can be named anything, but must have a `.json` file extension.
+
+*NOTES:*
+: The order of the keys in *each* dictionary isn't important. The order of the objects in the overall output needs to be as specified.
+: You *should only use* the csv and json python libraries. 
+: The format of the "date_added" date doesn't matter. 
 
 ## Submission
 
