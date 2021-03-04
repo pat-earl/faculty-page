@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 
-<title>Objects</title>
+<title>NumPy</title>
 
-<meta name="description" content="Objects">    
+<meta name="description" content="NumPy">    
 
   <meta name="author" content="Patrick Earl" />
 
@@ -52,95 +52,74 @@
 <div class="slides">
 
 <section>
-<h1>Objects</h1>
+<h1>NumPy</h1>
 <h3>Patrick Earl</h3>
 <p>
-<h4>02/25/2021</h4>
+<h4>03/03/2021</h4>
 </p>
 </section>  
 
 
-<section id="quick-recap" class="slide level2">
-<h2>Quick Recap</h2>
+<section id="using-numpy" class="slide level2">
+<h2>Using NumPy</h2>
 <ul>
-<li>Functions</li>
-<li><em>Exercise 7-7</em></li>
+<li><code>import numpy</code></li>
+<li><code>import numpy as np</code></li>
 </ul>
 </section>
-<section id="object-oriented-programming-oop" class="slide level2">
-<h2>Object Oriented Programming (OOP)</h2>
+<section id="python-integer" class="slide level2">
+<h2>Python Integer</h2>
+<pre><code>struct _longobject {
+    long ob_refcnt;
+    PyTypeObject *ob_type;
+    size_t ob_size;
+    long ob_digit[1];
+};</code></pre>
 <ul>
-<li><em>Objects</em> in Programming</li>
-<li>“Human Data”
+<li>Flexibility comes at a cost.</li>
+<li>Since lists can contain any object, there is more overhead</li>
+</ul>
+</section>
+<section id="fixed-type-arrays" class="slide level2">
+<h2>Fixed-Type Arrays</h2>
 <ul>
-<li>Height</li>
-<li>Weight</li>
-<li>Gender</li>
-<li>Eye color</li>
-<li>Hair color</li>
+<li>Python provides the built-in <code>array</code> module</li>
+<li>Provides effective storage of array-based data, but not the <em>operations</em></li>
+<li>`import array; L = list(range(0)); A = array.array(‘i’, L)</li>
+</ul>
+</section>
+<section id="numpy-arrays" class="slide level2">
+<h2>NumPy Arrays</h2>
+<ul>
+<li><code>np.array</code> can be used to create arrays from Python lists</li>
+<li>NumPy arrays must be of the same type.
+<ul>
+<li><code>dtype</code> argument</li>
 </ul></li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="creating-arrays" class="slide level2">
+<h2>Creating arrays</h2>
 <ul>
-<li>“Human functions”
+<li><code>np.zeros</code></li>
+<li><code>np.ones</code></li>
+<li><code>np.fill</code></li>
+<li><code>np.arange</code></li>
+<li><code>np.linspace</code></li>
+</ul>
+</section>
+<section id="numpy-data-types" class="slide level2">
+<h2>NumPy Data Types</h2>
 <ul>
-<li>Sleep</li>
-<li>Wake up</li>
-<li>Eat</li>
-<li>Ride some form of transportation.</li>
+<li>Contains data types similar to C
+<ul>
+<li><em>NumPy is written in C</em></li>
 </ul></li>
-<li><em>Car Data and Functions?</em></li>
-</ul>
-</section>
-<section id="objects" class="slide level2">
-<h2>Objects</h2>
-<ul>
-<li>Allow for grouping items into an <em>object</em></li>
-<li><em>Example 8-1</em></li>
-</ul>
-</section>
-<section id="the-cookie-cutter" class="slide level2">
-<h2>The Cookie Cutter</h2>
-<ul>
-<li><code>class</code> in Processing
-<ul>
-<li>The Class Name</li>
-<li>Data</li>
-<li>A constructor</li>
-<li>Functionality (methods)</li>
-</ul></li>
-</ul>
-</section>
-<section id="code-placement" class="slide level2">
-<h2>Code Placement</h2>
-<ul>
-<li>As with functions, classes are typically defined after <code>setup</code> &amp; <code>draw</code>.</li>
-<li>These can be defined anywhere technically, but it’s important to stay organized in programming too.</li>
-<li>Processing <em>Tabs</em></li>
-</ul>
-</section>
-<section id="constructor-arguments" class="slide level2">
-<h2>Constructor Arguments</h2>
-<ul>
-<li>Allow for customization of objects at their creation</li>
-<li>Initialization of all the object’s properties (data)</li>
-<li>Variable naming</li>
-</ul>
-</section>
-<section id="data-types" class="slide level2">
-<h2>Data Types</h2>
-<ul>
-<li>Objects are <em>data types</em> too.
-<ul>
-<li>Not <em>primitive</em></li>
-</ul></li>
-<li>Since objects are data types, they can be passed to functions
-<ul>
-<li>Objects are <em>passed by reference</em> however.</li>
-<li>Primitives are <em>passed by value</em>.</li>
-</ul></li>
+<li><em>int_</em></li>
+<li><em>int32</em> - 32 Bits</li>
+<li><em>int64</em> - 64 Bits</li>
+<li><em>uint16</em> - Unsigned 16 bit int</li>
+<li><em>float_</em> - short hand for <em>float64</em></li>
 </ul>
 </section>
 </div>

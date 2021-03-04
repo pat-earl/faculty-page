@@ -1,13 +1,18 @@
 ---
-title: "Chapter 8: BASH"
+title: "BASH & Shell Scripting"
 subtitle: "CSC252"
 author: Patrick Earl
-date: 02/25/2021
+date: 03/03/2021
 slideNumber: true
 revealjstheme: simple
 width: 1600
 height: 1000
 transition: fade
+---
+
+## Pronunciation guide to UNIX
+* [See Here](https://ss64.com/bash/syntax-pronounce.html)
+
 ---
 
 ## BASH
@@ -61,3 +66,63 @@ transition: fade
 | >>*filename* | Redirects and appends stdout to filename. Creates if doesn't exist |
 | &>*filename* | Redirects stdout and stderr to filename |
 *Table 8-2 from Practical Guide to Linux Textbook*
+
+---
+
+## Shell Scripting
+* `#!` - specifies a shell
+* `#` - Comments
+* Command separation
+    * `;` AND *NEWLINE*
+* `&&` and `||` - Boolean Control
+* `\` - Continue a command
+
+---
+
+## Parameters and Variables
+* *Shell Parameters* - A value you or the shell script can access
+* *Variables* - shell parameter that consists of:
+    * Letters
+    * Digits
+    * Underscores
+  
+--- 
+
+* *User-Created*
+* *Shell Variables* & *Env Vars*
+* Syntax: `VARIABLE=value`
+    * `num=1`
+    * **Cannot** have whitespace
+
+---
+
+* echo copies it's arguments to stdout
+* `$` - Substitute the variable's value
+    * $ can be quoted, with single quotes or backtick
+* Double Quotes don't prevent substitution, but do turn off special meanings for other characters.
+    * Used for variables with spaces in them
+
+---
+
+* "{}" BRACES
+    * Braces insulate variable name from adjacent chars
+    * `PREF=counter; WAY=$PREFclockwise; FAKE=$PREFfeit`
+* `unset` - Set the value of a variable to *null*
+* `readonly`
+* `declare`
+    * `declare -r`
+    * `declare -x`
+
+---
+
+## User Prompts
+* `read` - Read from stdin (or FD) and split into words
+    * `read [options] [NAMES ...]`
+    * `read -p <prompt> [NAMES ...]`
+* If no *NAME*, gets stored in variable *REPLY*
+
+## Control Flow
+* `if..then` - *test* command
+* `test "thing" = "thing2"`
+* `test $# -eq 0`
+* `[]` - Alias for *test*

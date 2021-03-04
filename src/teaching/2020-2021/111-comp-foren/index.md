@@ -104,19 +104,20 @@ Any assignments, course context, etc. will be posted on the D2L page linked abov
         <tr>
             <td scope='row'>7 (03/01 - 03/05)</td>
             <td>
-                Computer Forensics (continued)<br>
-                Searching and Seizing Computer-Related Evidence
+                Computer Forensics (continued)
             </td>
             <td>
                 <ul>
-                    <li>Chapter 11</li>
+                    <li>Chapter 10</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td scope='row'>8 (03/08 - 03/12)<br><strong>WD:</strong> 03/10</td>
             <td>
-                Search and Seizure (Continued)
+                Encryption<br>
+                Caesar Cipher<br>
+                Searching and Seizing Computer-Related Evidence
             </td>
             <td>
                 <ul>

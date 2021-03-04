@@ -40,9 +40,32 @@ transition: fade
 
 --- 
 
-## Argument Passing
-* Primitive types (int, float, etc.) are passed by *value*
-    * A copy of their value is created in memory
-* Objects are passed by *reference*
-    * The address of where the information is stored in memory
-  
+## The Cookie Cutter
+* `class` in Processing
+    * The Class Name
+    * Data
+    * A constructor
+    * Functionality (methods)
+
+--- 
+
+## Code Placement
+* As with functions, classes are typically defined after `setup` & `draw`.
+* These can be defined anywhere technically, but it's important to stay organized in programming too. 
+* Processing *Tabs*
+
+---
+
+## Constructor Arguments
+* Allow for customization of objects at their creation
+* Initialization of all the object's properties (data)
+* Variable naming
+
+---
+
+## Data Types
+* Objects are *data types* too.
+    * Not *primitive* 
+* Since objects are data types, they can be passed to functions
+    * Objects are *passed by reference* however.
+    * Primitives are *passed by value*.
