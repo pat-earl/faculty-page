@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 
-<title>Chapter 8: BASH</title>
+<title>BASH &amp; Shell Scripting</title>
 
-<meta name="description" content="Chapter 8: BASH">    
+<meta name="description" content="BASH &amp; Shell Scripting">    
 
   <meta name="author" content="Patrick Earl" />
 
@@ -52,14 +52,20 @@
 <div class="slides">
 
 <section>
-<h1>Chapter 8: BASH</h1>
+<h1>BASH &amp; Shell Scripting</h1>
 <h3>Patrick Earl</h3>
 <p>
-<h4>02/25/2021</h4>
+<h4>03/03/2021</h4>
 </p>
 </section>  
 
 
+<section id="pronunciation-guide-to-unix" class="slide level2">
+<h2>Pronunciation guide to UNIX</h2>
+<ul>
+<li><a href="https://ss64.com/bash/syntax-pronounce.html">See Here</a></li>
+</ul>
+</section>
 <section id="bash" class="slide level2">
 <h2>BASH</h2>
 <ul>
@@ -159,6 +165,94 @@
 </tbody>
 </table>
 <p><em>Table 8-2 from Practical Guide to Linux Textbook</em></p>
+</section>
+<section id="shell-scripting" class="slide level2">
+<h2>Shell Scripting</h2>
+<ul>
+<li><code>#!</code> - specifies a shell</li>
+<li><code>#</code> - Comments</li>
+<li>Command separation
+<ul>
+<li><code>;</code> AND <em>NEWLINE</em></li>
+</ul></li>
+<li><code>&amp;&amp;</code> and <code>||</code> - Boolean Control</li>
+<li><code>\</code> - Continue a command</li>
+</ul>
+</section>
+<section id="parameters-and-variables" class="slide level2">
+<h2>Parameters and Variables</h2>
+<ul>
+<li><em>Shell Parameters</em> - A value you or the shell script can access</li>
+<li><em>Variables</em> - shell parameter that consists of:
+<ul>
+<li>Letters</li>
+<li>Digits</li>
+<li>Underscores</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><em>User-Created</em></li>
+<li><em>Shell Variables</em> &amp; <em>Env Vars</em></li>
+<li>Syntax: <code>VARIABLE=value</code>
+<ul>
+<li><code>num=1</code></li>
+<li><strong>Cannot</strong> have whitespace</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>echo copies it’s arguments to stdout</li>
+<li><code>$</code> - Substitute the variable’s value
+<ul>
+<li>$ can be quoted, with single quotes or backtick</li>
+</ul></li>
+<li>Double Quotes don’t prevent substitution, but do turn off special meanings for other characters.
+<ul>
+<li>Used for variables with spaces in them</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>“{}” BRACES
+<ul>
+<li>Braces insulate variable name from adjacent chars</li>
+<li><code>PREF=counter; WAY=$PREFclockwise; FAKE=$PREFfeit</code></li>
+</ul></li>
+<li><code>unset</code> - Set the value of a variable to <em>null</em></li>
+<li><code>readonly</code></li>
+<li><code>declare</code>
+<ul>
+<li><code>declare -r</code></li>
+<li><code>declare -x</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="user-prompts" class="slide level2">
+<h2>User Prompts</h2>
+<ul>
+<li><code>read</code> - Read from stdin (or FD) and split into words
+<ul>
+<li><code>read [options] [NAMES ...]</code></li>
+<li><code>read -p &lt;prompt&gt; [NAMES ...]</code></li>
+</ul></li>
+<li>If no <em>NAME</em>, gets stored in variable <em>REPLY</em></li>
+</ul>
+</section>
+<section id="control-flow" class="slide level2">
+<h2>Control Flow</h2>
+<ul>
+<li><code>if..then</code> - <em>test</em> command</li>
+<li><code>test "thing" = "thing2"</code></li>
+<li><code>test $# -eq 0</code></li>
+<li><code>[]</code> - Alias for <em>test</em></li>
+</ul>
 </section>
 </div>
 

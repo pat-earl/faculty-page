@@ -105,18 +105,18 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>7 (03/01 - 03/05)</td>
             <td>
-                Objects<br>
-                Arrays
+                Objects
             </td>
             <td>
                 <ul>
-                    <li>Chapter 9</li>
+                    <li>Chapter 8</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td scope='row'>8 (03/08 - 03/12)<br><strong>WD:</strong> 03/10</td>
             <td>
+                Tuesday - Quiz (Chpts. 5 - 8)<br>
                 Arrays<br>
                 Tuesday <strong>Quiz</strong> - Chpts. 5 - 8<br>
                 Assign Project #2
