@@ -94,8 +94,7 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>6 (02/22 - 02/26)</td>
             <td>
-                Functions<br>
-                Objects
+                Functions
             </td>
             <td>
                 <ul>
@@ -106,8 +105,8 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>7 (03/01 - 03/05)</td>
             <td>
-                Arrays<br>
-                Tuesday <strong>Quiz</strong> - Chpts. 5 - 8
+                Objects<br>
+                Arrays
             </td>
             <td>
                 <ul>
@@ -119,6 +118,7 @@ stylesheet: ../../course.css
             <td scope='row'>8 (03/08 - 03/12)<br><strong>WD:</strong> 03/10</td>
             <td>
                 Arrays<br>
+                Tuesday <strong>Quiz</strong> - Chpts. 5 - 8<br>
                 Assign Project #2
             </td>
             <td>
