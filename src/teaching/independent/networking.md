@@ -68,8 +68,7 @@ be for the "break something" lab.
 *WIP*
 Focus on creating your own routing tables and possibly explore using routing protocols. Second lab is about adding a wireless network to the network from CSC411 Lab 2. The wireless network should use private IPs and NAT to communicate with the network. The wireless network only needs to be added to *one* network from that lab.
 
-* [CSC512 Lab 1](./networking-is/csc512_lab1.html) *WIP*
-* [CSC512 Lab 2](./networking-is/csc512_lab2.html) *WIP*
+* [CSC512 Lab 2](./networking-is/csc512_lab2.html)
 
 ### Weeks 11-13
 

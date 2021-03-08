@@ -142,27 +142,89 @@ struct _longobject {
 ---
 
 ## Universal Functions
-
+* Default Python Implementation is *slow* 
+  * Looping over arrays for operations on each element
+* `%timeit`
+* *Vectorized Operations* - UFuncs
+  * Functions performed on the entire array
+  
 ---
+
+* Array Arithmetic
+  * Pythons *native* arithmetic operators can be used
+  * `add`
+  * `subtract`
+  * `negative`
+  * `multiply`
+  * `divide`
+  * `floor_divide`
+  * `power`
+  * `mod`
 
 ## Aggregations
-* 1D
+
+* *Numpy Built-ins*
+* Sum
+* Min & Max
+* Any - Any elements are True
+* All - All elements are True
+* Std - Standard Deviation
+* Mean - Mean of elements
+* argmin, argmax - Find index of min & max values
 
 ---
-* 2D
 
+* Multi-Dimensional Aggregation
+  * *axis* - Dimension of the array that will be collapsed.
+  * Aggregations can be performed along a row, column, or the whole array
+* Example:
+```M = np.array([[1,2,3], [4,5,6]])
+M.sum(axis=0)
+M.sum(axis=1)
+```
 ---
 
 ## Broadcasting
+
+* Rules for applying ufuncs on arrays of different sizes
+* The Rules:
+   1. If two arrays differ in their number of dimensions, the shape of the one with fewer dimensions is padded with ones on its leading (left) side
+   2. If the shape of the two arrays does not match in any dimension, the array with shape equal to 1 in that dimension is stretched to match the other shape
+   3. If in any dimension the sizes disagree and neither is equal to 1, an error is raised
 
 ---
 
 ## Boolean Arrays
 
+* Comparison
+  * `less or <`
+  * `less_equal or <=`
+  * `greater or >`
+  * `greater_equal or >=`
+  * `equal or ==`
+  * `not_equal or !=`
+
 ---
+
+## Working with Boolean Arrays
+
+* `count_nonzero`
+* `np.sum`
+
+---
+
+## Boolean Masks
+* Masking operations
+* `x[x < 5]`
+* Return a 1D array filled with the values that meet the condition. 
 
 ## Fancy Indexing
 
----
+* Allows for passing of an array of indices, in place of single scalars
+* `idx = [3, 7, 4]`
+* `x[idx]`
 
-## NumPy Sorting
+## Sorting
+* `np.sort` - Returns a new array with the values sorted
+  * Use `x.sort()` to sort in-place
+* `np.argsort` - Return the indices of the sorted elements.
