@@ -8,6 +8,8 @@ stylesheet: ../../course.css
 ## Links
 
 * [First Day Handout]({{get_link('firstday.html')}})
+* [CS&IT Documentation Standard](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/DocumentationStandard.pdf)
+* [CS&IT Academic Integrity Policy](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/AcademicIntegrityPolicy.pdf)
 * [Lectures]({{get_link('lectures.html')}})
 * [Resources]({{get_link('resources.md')}})
 
