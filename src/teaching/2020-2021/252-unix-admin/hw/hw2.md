@@ -35,4 +35,6 @@ Use *~earl/bin/submit.bash* to submit your assignment.
 
 ## Grading 
 
-TBD
+* Assignment is worth 15 Points
+  * 10 Points - Correct Commands (& Arguments)
+  * 5 Points - Correct Answer to 3&4

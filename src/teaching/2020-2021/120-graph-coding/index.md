@@ -116,24 +116,20 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>8 (03/08 - 03/12)<br><strong>WD:</strong> 03/10</td>
             <td>
-                Tuesday - Quiz (Chpts. 5 - 8)<br>
-                Arrays<br>
-                Tuesday <strong>Quiz</strong> - Chpts. 5 - 8<br>
-                Assign Project #2
+                Assign Project #2<br>
+                Thursday - Quiz(Chpts. 5 - 8 )
             </td>
             <td>
-                <ul>
-                    <li>Chapter 9</li>
-                </ul>
             </td>
         </tr>
         <tr>
             <td scope='row'>9 (03/15 - 03/19)</td>
             <td>
-                Text
+                Arrays
             </td>
             <td>
                 <ul>
+                    <li>Chapter 9</li>
                     <li>Chapter 17</li>
                 </ul>
             </td>
@@ -141,9 +137,12 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>10 (03/22 - 03/26)</td>
             <td>
-                <em>Review Week</em>
+                Text
             </td>
             <td>
+            <ul>
+                <li>Chapter 17</li>
+            </ul>
             </td>
         </tr>
         <tr>
