@@ -115,14 +115,40 @@ transition: fade
 
 ---
 
+## Quotes
+
+* `'` - Single Quotes
+    * Preserves the literal value of each character
+    * [GNU BASH Manual 3.1.2.2](https://www.gnu.org/software/bash/manual/html_node/Single-Quotes.html)
+* `"` - Double Quotes
+    * Preserves the literal value of each character except: *$, \`, \\, and !*
+    * [GNU BASH Manual 3.1.2.3](https://www.gnu.org/software/bash/manual/html_node/Double-Quotes.html)
+
+
 ## User Prompts
 * `read` - Read from stdin (or FD) and split into words
     * `read [options] [NAMES ...]`
     * `read -p <prompt> [NAMES ...]`
 * If no *NAME*, gets stored in variable *REPLY*
 
+---
+
 ## Control Flow
 * `if..then` - *test* command
 * `test "thing" = "thing2"`
 * `test $# -eq 0`
 * `[]` - Alias for *test*
+    * `[[]]` - Bash Extension
+
+---
+
+## Arguments
+* `$1, $2, $3`
+* `$#` - Number of Args  
+* `shift` - Shift *n* arguments
+
+---
+
+## Usage Message
+* If non-correct or non-arguments are passed show a *usage* message
+* `Usage: ./command [arguments]`

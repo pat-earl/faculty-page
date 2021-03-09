@@ -234,6 +234,21 @@
 </ul></li>
 </ul>
 </section>
+<section id="quotes" class="slide level2">
+<h2>Quotes</h2>
+<ul>
+<li><code>'</code> - Single Quotes
+<ul>
+<li>Preserves the literal value of each character</li>
+<li><a href="https://www.gnu.org/software/bash/manual/html_node/Single-Quotes.html">GNU BASH Manual 3.1.2.2</a></li>
+</ul></li>
+<li><code>"</code> - Double Quotes
+<ul>
+<li>Preserves the literal value of each character except: <em>$, `, \, and !</em></li>
+<li><a href="https://www.gnu.org/software/bash/manual/html_node/Double-Quotes.html">GNU BASH Manual 3.1.2.3</a></li>
+</ul></li>
+</ul>
+</section>
 <section id="user-prompts" class="slide level2">
 <h2>User Prompts</h2>
 <ul>
@@ -251,7 +266,26 @@
 <li><code>if..then</code> - <em>test</em> command</li>
 <li><code>test "thing" = "thing2"</code></li>
 <li><code>test $# -eq 0</code></li>
-<li><code>[]</code> - Alias for <em>test</em></li>
+<li><code>[]</code> - Alias for <em>test</em>
+<ul>
+<li><code>[[]]</code> - Bash Extension</li>
+</ul></li>
+</ul>
+</section>
+<section id="arguments" class="slide level2">
+<h2>Arguments</h2>
+<ul>
+<li><code>$1, $2, $3</code></li>
+<li><code>$#</code> - Number of Args<br />
+</li>
+<li><code>shift</code> - Shift <em>n</em> arguments</li>
+</ul>
+</section>
+<section id="usage-message" class="slide level2">
+<h2>Usage Message</h2>
+<ul>
+<li>If non-correct or non-arguments are passed show a <em>usage</em> message</li>
+<li><code>Usage: ./command [arguments]</code></li>
 </ul>
 </section>
 </div>

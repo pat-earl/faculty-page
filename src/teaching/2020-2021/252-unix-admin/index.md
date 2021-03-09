@@ -13,6 +13,7 @@ stylesheet: ../../course.css
 * [CS&IT Documentation Standard](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/DocumentationStandard.pdf)
 * [CS&IT Academic Integrity Policy](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/AcademicIntegrityPolicy.pdf)
 * [Lectures]({{get_link('lectures.html')}})
+* [GNU BASH Manual](https://www.gnu.org/software/bash/manual/bash.html)
 
 ## Tentative Schedule
 
