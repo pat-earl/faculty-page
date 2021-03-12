@@ -260,6 +260,16 @@
 <li>If no <em>NAME</em>, gets stored in variable <em>REPLY</em></li>
 </ul>
 </section>
+<section id="shell-arithmetic" class="slide level2">
+<h2>Shell Arithmetic</h2>
+<ul>
+<li><code>declare -i</code>
+<ul>
+<li>Declare a variables as an integer</li>
+</ul></li>
+<li><code>((var+1))</code></li>
+</ul>
+</section>
 <section id="control-flow" class="slide level2">
 <h2>Control Flow</h2>
 <ul>
@@ -286,6 +296,63 @@
 <ul>
 <li>If non-correct or non-arguments are passed show a <em>usage</em> message</li>
 <li><code>Usage: ./command [arguments]</code></li>
+</ul>
+</section>
+<section id="array-variables" class="slide level2">
+<h2>Array Variables</h2>
+<ul>
+<li>bash supports <em>1D arrays</em> and uses zero-based indexing
+<ul>
+<li>Meaning the first element is at index 0</li>
+</ul></li>
+<li><code>name=(element1 element2 element3)</code></li>
+<li><code>NAMES=(john fry bender)</code></li>
+<li><code>${NAMES[2]}</code>
+<ul>
+<li>Braces are not optional for arrays</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><code>[*] [@]</code> operators
+<ul>
+<li>Expand array into a variable</li>
+</ul></li>
+<li><code>A=("${NAMES}[*]")</code></li>
+<li><code>B=("${NAMES}[@]")</code></li>
+<li><code>${ #NAMES[@]}</code></li>
+</ul>
+</section>
+<section id="looping" class="slide level2">
+<h2>Looping</h2>
+<ul>
+<li><code>while test-commands; do commands; done</code></li>
+<li><code>for name [ [in words ..] ] ; ] do commands; done</code>
+<ul>
+<li>Expands the <em>words</em> and execute commands once for each member</li>
+</ul></li>
+<li><code>break</code></li>
+<li><code>continue</code></li>
+</ul>
+</section>
+<section id="case-statements" class="slide level2">
+<h2>case statements</h2>
+<p><code>case test-string in     pattern-1)         commands-1     ;;     pattern-2)         commands-2     ;;     pattern-3)         commands-3     ;; esac</code></p>
+</section>
+<section id="functions" class="slide level2">
+<h2>Functions</h2>
+<ul>
+<li><code>fname () { commands; }</code></li>
+<li><code>function fname() { commands; }</code></li>
+</ul>
+</section>
+<section id="command-substitution" class="slide level2">
+<h2>Command Substitution</h2>
+<ul>
+<li><code>$(command)</code></li>
+<li>Performs the command in a subshell and replaces it with the stdout of the command</li>
 </ul>
 </section>
 </div>

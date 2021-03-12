@@ -18,7 +18,3 @@ These are the lecture slides used in the course.
 * {{ lec['name'] }} - [Slide Form]({{ get_link(lec['file']) }})
 {% endfor -%}
 
-## Marked up Versions
-
-Lecture slides may be annotated during the course. Saved versions will be posted
-below when they become available.

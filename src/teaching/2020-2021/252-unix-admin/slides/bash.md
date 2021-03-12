@@ -133,6 +133,13 @@ transition: fade
 
 ---
 
+## Shell Arithmetic
+* `declare -i` 
+    * Declare a variables as an integer
+* `((var+1))`
+
+---
+
 ## Control Flow
 * `if..then` - *test* command
 * `test "thing" = "thing2"`
@@ -152,3 +159,59 @@ transition: fade
 ## Usage Message
 * If non-correct or non-arguments are passed show a *usage* message
 * `Usage: ./command [arguments]`
+
+
+## Array Variables
+* bash supports *1D arrays* and uses zero-based indexing
+    * Meaning the first element is at index 0
+* `name=(element1 element2 element3)`
+* `NAMES=(john fry bender)`
+* `${NAMES[2]}`
+    * Braces are not optional for arrays
+
+---
+
+* `[*] [@]` operators
+    * Expand array into a variable
+* `A=("${NAMES}[*]")`
+* `B=("${NAMES}[@]")`
+* `${ #NAMES[@]}`
+
+
+---
+
+## Looping
+* `while test-commands; do commands; done`
+* `for name [ [in words ..] ] ; ] do commands; done`
+    * Expands the *words* and execute commands once for each member
+* `break`
+* `continue`
+  
+
+---
+
+## case statements
+```case test-string in
+    pattern-1)
+        commands-1
+    ;;
+    pattern-2)
+        commands-2
+    ;;
+    pattern-3)
+        commands-3
+    ;;
+esac
+```
+
+---
+
+## Functions
+* `fname () { commands; }`
+* `function fname() { commands; }`
+
+---
+
+## Command Substitution
+* `$(command)`
+* Performs the command in a subshell and replaces it with the stdout of the command
