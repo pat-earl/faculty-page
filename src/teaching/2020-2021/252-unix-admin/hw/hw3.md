@@ -41,7 +41,18 @@ replacing First & Last with your first and last name.
 Submissions with any other directory name *will be ignored*. Similarly make sure to make your bash
 script executable by *all*. 
 
-Name your bash script appropriately.
+Name your bash script appropriately. Scripts that don't follow the requirements above will result in zero for the assignment.
 
 ## Grading
-TBA
+
+Grade out of 50 Points
+
+* 5 Points - Appropriate File Name
+* 5 Points - Correct Sha-Bang Line
+* 30 Points - Functionality
+    * 5 Points - Correct defaults
+    * 5 Points - Usage Statement
+    * 10 Points - Accepts none up to three arguments
+    * 10 Points - Correct use of *case* statements
+* 10 Points - Thoughtful comments in script.
+* (**EC** 5 Points *all or nothing*) - Handles *-h* option argument
