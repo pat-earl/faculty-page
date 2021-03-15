@@ -30,7 +30,6 @@ transition: slide
 
 ## Series
 * One-Dimensional array of *indexed* data.
-  * Sim
 * Can be created from a list or np.array
   * `data = pd.Series([0.25, 0.5, 0.75, 1.0])`
 * `data.values`
@@ -117,6 +116,14 @@ Out[20]: one  two
 
 ---
 
+* Adding Columns
+  * `df[new_column] = [new, values]`
+* Removing Columns
+  * `df.pop()`
+  * `del df['column']`
+
+---
+
 ## The Index Object
 * *Index* object can be considered an *immutable* array or *ordered set* (Can contain dups though)
 * `ind = pd.Index([2, 3, 5, 7, 11])`
@@ -127,10 +134,35 @@ Out[20]: one  two
 ---
 
 ## Data Indexing
+* Series as a Dictionary
+  * Data Selection and Modification via the Key
+* Array-Style Interface (*slices, masking, and fancy indexing*)
 
 ---
 
+* Indexers
+  * `data = pd.Series(['a', 'b', 'c'], index=[1, 3, 5])`
+  * `data.loc[1]` - Indexing and Slicing always reference these explicit index
+  * `data.iloc[1]` - Referencing the implicit indexing
+  
+---
+
 ## DataFrame Summary
+
+| Operation | Syntax | Result Type |
+| -- | -- | -- |
+| Select a column | df[col] | Series |
+| Select row by label | df.loc[label] | Series |
+| Select row by integer location | df.iloc[loc] | Series |
+| Slice Rows | df[5:10] | DataFrame |
+| Select rows by boolean vector | df[bool_vec] | DataFrame |
+
+---
+
+## UFuncs
+* Indices are preserved with ufuncs
+* Indices are aligned when performing binary ufuncs
+* Alignment is preserved when performing operations between *DataFrame* and *Series* objects
 
 ---
 

@@ -84,10 +84,7 @@
 <section id="series" class="slide level2">
 <h2>Series</h2>
 <ul>
-<li>One-Dimensional array of <em>indexed</em> data.
-<ul>
-<li>Sim</li>
-</ul></li>
+<li>One-Dimensional array of <em>indexed</em> data.</li>
 <li>Can be created from a list or np.array
 <ul>
 <li><code>data = pd.Series([0.25, 0.5, 0.75, 1.0])</code></li>
@@ -136,6 +133,153 @@ Out[8]: Int64Index([100, 200, 400], dtype=&#39;int64&#39;)</code></pre>
 Out[9]: array([4, 5, 6], dtype=int64)
 In [10]: s2.values
 Out[10]: array([1, 3, 5], dtype=int64)</code></pre>
+</section>
+<section id="pandas-dataframes" class="slide level2">
+<h2>Pandas DataFrames</h2>
+<ul>
+<li>DataFrames is an analog of two-dimensional arrays with flexible row indices and flexible column names
+<ul>
+<li>Or a sequence of aligned <em>Series</em> objects, sharing a similar index</li>
+</ul></li>
+<li>Each column in a <em>DataFrame</em> is a <em>Series</em></li>
+<li><em>DataFrames</em> can be constructed from:
+<ul>
+<li>Single Series</li>
+<li>List of Dicts</li>
+<li>Dict of Series</li>
+<li>2-D NumPy Array</li>
+</ul></li>
+</ul>
+</section>
+<section id="pandas-dataframe-examples" class="slide level2">
+<h2>Pandas DataFrame Examples</h2>
+<pre><code>In [11]: df = pd.DataFrame([[1,2,3], [4, 5, 6]])
+In [12]: df
+Out[12]: 0  1  2 
+      0  1  2  3
+      1  4  5  6
+In [13]: df.index
+Out[13]: RangeIndex(start=0, stop=2, step=1)
+In [15]: df.columns
+Out[15]: RangeIndex(start=0, stop=3, step=1)</code></pre>
+</section>
+<section class="slide level2">
+
+<pre><code>In [20]: pd.DataFrame(np.ones((4,2)),
+        columns=[&#39;one&#39;, &#39;two&#39;],
+        index=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]) 
+Out[20]: one  two
+      a  1.0  1.0
+      b  1.0  1.0
+      c  1.0  1.0
+      d  1.0  1.0</code></pre>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Adding Columns
+<ul>
+<li><code>df[new_column] = [new, values]</code></li>
+</ul></li>
+<li>Removing Columns
+<ul>
+<li><code>df.pop()</code></li>
+<li><code>del df['column']</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="the-index-object" class="slide level2">
+<h2>The Index Object</h2>
+<ul>
+<li><em>Index</em> object can be considered an <em>immutable</em> array or <em>ordered set</em> (Can contain dups though)</li>
+<li><code>ind = pd.Index([2, 3, 5, 7, 11])</code></li>
+<li>As an array:
+<ul>
+<li><code>ind[1]</code></li>
+<li><code>ind[::2]</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="data-indexing" class="slide level2">
+<h2>Data Indexing</h2>
+<ul>
+<li>Series as a Dictionary
+<ul>
+<li>Data Selection and Modification via the Key</li>
+</ul></li>
+<li>Array-Style Interface (<em>slices, masking, and fancy indexing</em>)</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Indexers
+<ul>
+<li><code>data = pd.Series(['a', 'b', 'c'], index=[1, 3, 5])</code></li>
+<li><code>data.loc[1]</code> - Indexing and Slicing always reference these explicit index</li>
+<li><code>data.iloc[1]</code> - Referencing the implicit indexing</li>
+</ul></li>
+</ul>
+</section>
+<section id="dataframe-summary" class="slide level2">
+<h2>DataFrame Summary</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Operation</th>
+<th>Syntax</th>
+<th>Result Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Select a column</td>
+<td>df[col]</td>
+<td>Series</td>
+</tr>
+<tr class="even">
+<td>Select row by label</td>
+<td>df.loc[label]</td>
+<td>Series</td>
+</tr>
+<tr class="odd">
+<td>Select row by integer location</td>
+<td>df.iloc[loc]</td>
+<td>Series</td>
+</tr>
+<tr class="even">
+<td>Slice Rows</td>
+<td>df[5:10]</td>
+<td>DataFrame</td>
+</tr>
+<tr class="odd">
+<td>Select rows by boolean vector</td>
+<td>df[bool_vec]</td>
+<td>DataFrame</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ufuncs" class="slide level2">
+<h2>UFuncs</h2>
+<ul>
+<li>Indices are preserved with ufuncs</li>
+<li>Indices are aligned when performing binary ufuncs</li>
+<li>Alignment is preserved when performing operations between <em>DataFrame</em> and <em>Series</em> objects</li>
+</ul>
+</section>
+<section id="missing-data" class="slide level2">
+<h2>Missing Data</h2>
+<ul>
+<li><code>None</code> and <code>NaN</code> - Null (missing) values</li>
+<li>Functions for missing data:
+<ul>
+<li><code>isnull()</code></li>
+<li><code>notnull()</code></li>
+<li><code>dropna()</code> - Filter out missing values</li>
+<li><code>fillna()</code> - Fill NaNs with specified value</li>
+</ul></li>
+</ul>
 </section>
 </div>
 

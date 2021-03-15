@@ -22,3 +22,6 @@ Dr. Dylan Schwesinger and [his version can be found by following this link](http
 # Python Scientific Libraries
 
 * [NumPy Web Documentation](https://numpy.org/doc/stable/)
+* [10 Minutes to Pandas](https://pandas.pydata.org/docs/user_guide/10min.html)
+* [Pandas API Reference](https://pandas.pydata.org/docs/reference/index.html#api)
+* [Pandas Indexing And Selecting](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html)

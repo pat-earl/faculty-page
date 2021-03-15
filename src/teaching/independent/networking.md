@@ -1,14 +1,9 @@
 title: Spring 2021 Networking IS
 
-<div class='alert alert-primary'>
-Website is still a work in progress, information will change without notice.
-</div>
-
 ## Meetings
 
 **Weekly Meetings:**
-: Monday 2:00 PM - 3:00 PM via Teams.
-
+: Monday 2:00 PM - 3:00 PM on Teams.
 
 ## Resources
 
@@ -68,6 +63,7 @@ be for the "break something" lab.
 *WIP*
 Focus on creating your own routing tables and possibly explore using routing protocols. Second lab is about adding a wireless network to the network from CSC411 Lab 2. The wireless network should use private IPs and NAT to communicate with the network. The wireless network only needs to be added to *one* network from that lab.
 
+* [CSC512 Lab 1](./networking-is/csc512_lab1.html)
 * [CSC512 Lab 2](./networking-is/csc512_lab2.html)
 
 ### Weeks 11-13
@@ -80,3 +76,9 @@ the network on your physical machine.
 
 * Flexible weeks
 
+
+## Things to look into
+
+* GNS3 doesn't allow for SNMP with the built-in switch
+* Adding VMs to a GNS3 Network
+* Working with custom VM/docker hosts in GNS3
