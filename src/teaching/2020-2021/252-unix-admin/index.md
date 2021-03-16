@@ -110,6 +110,23 @@ stylesheet: ../../course.css
             <td scope='row'>7 (03/01 - 03/05)</td>
             <td>
                 <strong>Exam #1</strong> - Tuesday<br>
+                Shell Scripting
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td scope='row'>8 (03/08 - 03/12)<br><strong>WD:</strong> 03/10</td>
+            <td>
+                Shell Scripting
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td scope='row'>9 (03/15 - 03/19)</td>
+            <td>
+                Shell Scripting<br>
                 Processes
             </td>
             <td>
@@ -119,10 +136,9 @@ stylesheet: ../../course.css
             </td>
         </tr>
         <tr>
-            <td scope='row'>8 (03/08 - 03/12)<br><strong>WD:</strong> 03/10</td>
+            <td scope='row'>10 (03/22 - 03/26)</td>
             <td>
                 Processes<br>
-                Virtual Machines<br>
                 System Administration
             </td>
             <td>
@@ -133,11 +149,10 @@ stylesheet: ../../course.css
             </td>
         </tr>
         <tr>
-            <td scope='row'>9 (03/15 - 03/19)</td>
+            <td scope='row'>11 (03/29 - 04/02)<br><strong>WD:</strong> 04/02</td>
             <td>
-                System Administration<br>
-                Text Processing: sed & awk<br>
-                <strong>Exam #2 - (TBD)</strong>
+                System Admin.<br>
+                Text Processing (Awk & SED)
             </td>
             <td>
                 <ul>
@@ -147,35 +162,17 @@ stylesheet: ../../course.css
             </td>
         </tr>
         <tr>
-            <td scope='row'>10 (03/22 - 03/26)</td>
-            <td>
-                Text Processing<br>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td scope='row'>11 (03/29 - 04/02)<br><strong>WD:</strong> 04/02</td>
-            <td>
-                Scripting Language - Python
-            </td>
-            <td>
-                <ul>
-                    <li>Chapter 12</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
             <td scope='row'>12 (04/05 - 04/09)</td>
             <td>
-                Python
+                <strong>Exam #2</strong> - Shells, Processes, & Sys. Administration<br>
+                Text Processing
             </td>
             <td></td>
         </tr>
         <tr>
             <td scope='row'>13 (04/12 - 04/16)</td>
             <td>
-                Makefiles<br>
-                <strong>Possible Exam #3 - (TBD)</strong>
+               Scripting Language
             </td>
             <td></td>
         </tr>
@@ -183,15 +180,14 @@ stylesheet: ../../course.css
             <td scope='row'>14 (04/19 - 04/23)<br><strong>WD:</strong> 04/20</td>
             <td>
                 NO CLASS TUESDAY - Wellness Day<br>
-                Containers<br>
+                Scripting Language
             </td>
             <td></td>
         </tr>
         <tr>
             <td scope='row'>15 (04/26 - 04/30)</td>
             <td>
-                Version Control - <em>git</em><br>
-                <em>Flexible Topics</em>
+                makefiles
             </td>
             <td></td>
         </tr>
