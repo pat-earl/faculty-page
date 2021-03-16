@@ -88,6 +88,9 @@ int[] stuff = {1, 5, 7, 9, 11};
 * Two arrays: X positions and Y positions
 * Setup:
     * Init the arrays to 0
+
+--- 
+
 * Draw:
     * Each loop of draw, update the array with the current mouse's location
     * Store up to 50 positions which would be indices 0 to 49 
@@ -97,22 +100,33 @@ int[] stuff = {1, 5, 7, 9, 11};
 ---
 
 * Draw:
-    * Shift all the elements down on spot before updating the current position. 
+    * Shift all the elements down one spot before updating the current position. 
     * Draw circles based on the array
 * *Example 9-8*
 
 ---
 
 ## Arrays of Objects
+* Using the car object
+    * Since objects are a *data type* we can make arrays of them too
+* **Example 9-9**
 
 ---
 
 ## Interactive Objects
+* Arrays make it easy to have interactive objects
+* Building upon the rollover example from Chapter 5
+* **Example 9-10**
 
 ---
 
 ## Processing Array Functions
+* Arrays can actually be changed after creation
+    * If we needed to make an array bigger, we could copy the contents of the old one to a new one of larger size
+* *Processing* provides this ability for us!
+* [*Processing Array Functions*](https://processing.org/reference/)
 
 ---
 
 ## 1001 Zoogs
+* **Example 9-12**

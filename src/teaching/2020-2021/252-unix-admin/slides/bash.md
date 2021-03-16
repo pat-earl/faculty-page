@@ -165,7 +165,7 @@ transition: fade
 * bash supports *1D arrays* and uses zero-based indexing
     * Meaning the first element is at index 0
 * `name=(element1 element2 element3)`
-* `NAMES=(john fry bender)`
+* `NAMES=(leela fry bender)`
 * `${NAMES[2]}`
     * Braces are not optional for arrays
 
@@ -191,7 +191,8 @@ transition: fade
 ---
 
 ## case statements
-```case test-string in
+```
+case test-string in
     pattern-1)
         commands-1
     ;;
@@ -214,4 +215,12 @@ esac
 
 ## Command Substitution
 * `$(command)`
+* `` `command` ``
 * Performs the command in a subshell and replaces it with the stdout of the command
+
+---
+
+## Parameter Expansion
+* [BASH Manual Section](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+* `${NAME#pattern}` - Suffix Removal
+* `${NAME%pattern}` - Prefix Removal

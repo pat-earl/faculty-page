@@ -116,22 +116,20 @@ Any assignments, course context, etc. will be posted on the D2L page linked abov
             <td scope='row'>8 (03/08 - 03/12)<br><strong>WD:</strong> 03/10</td>
             <td>
                 Encryption<br>
-                Caesar Cipher<br>
-                Searching and Seizing Computer-Related Evidence
+                Caesar Cipher
             </td>
             <td>
-                <ul>
-                    <li>Chapter 11</li>
-                </ul>
             </td>
         </tr>
         <tr>
             <td scope='row'>9 (03/15 - 03/19)</td>
             <td>
+                Searching and Seizing Computer-Related Evidence<br>
                 Processing of Evidence and Report
             </td>
             <td>
                 <ul>
+                    <li>Chapter 11</li>
                     <li>Chapter 12</li>
                 </ul>
             </td>
@@ -139,7 +137,7 @@ Any assignments, course context, etc. will be posted on the D2L page linked abov
         <tr>
             <td scope='row'>10 (03/22 - 03/26)</td>
             <td>
-                <strong>Quiz</strong> - Chpts 10 & 11<br>
+                Tuesday <em>Quiz</em> (Chpts 10 & 11)<br>
                 Traditional Computer Crime
             </td>
             <td>
