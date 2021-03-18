@@ -10,19 +10,6 @@ height: 1000
 transition: fade
 ---
 
-## Overview
-* Program Space
-* What is a process?
-* UNIX Boot
-* Parents and Children
-* Basic Process Commands
-* Process Table
-* Daemon Process
-* Process States
-* Managing Processes
-
----
-
 ## Program Space
 * Memory Space separation to protect system internals
 * User(Land)
@@ -104,6 +91,21 @@ transition: fade
 
 ---
 
+## ps command
+* Useful `ps` options
+  * *Different Options*
+    * UNIX
+    * BSD
+    * GNU
+  * No Arguments
+  * `ps -A` or `ps -e` - Every Active Process
+  * `ps -f` - Full format
+  * `ps -x` - Commands ran by the user running *ps* (Usually you)
+  * `ps -fu <username>` - Commands owned by another user (name or ID)
+  * `ps -fG` - Commands ran by a group
+
+---
+
 ## Daemon Process
 * Typically a process running in the background *indirectly* interacting with a user.
 * `daemon` in section 7 of man page
@@ -114,20 +116,57 @@ transition: fade
 
 ---
 
-## Process States
-
+## Process Termination
+* Two Ways:
+  * Normal - Process Runs and Exits as planned
+  * Abnormal - Termination via an external control
+* `wait()`
+  * Allows a parent process to *wait* until child process(es) finish
+  * Parent is a *suspended* state
+  
 ---
 
-## Process Termination
+* Zombie Process
+  * Child process that terminates, but is waiting for parent process to read it's exit status
+  * Sits in Process Table
+* Orphan Process
+  * Parent Process Terminates before child(ren)
+  * New PPID becomes *init*
+  
+---
+
+## Process States
+![](./images/process_states.jpg)
 
 ---
 
 ## Process Internals
-
+* Scheduler
+  * Algorithms to decide which process gets time on the *processor* and for how long
+  * Preemptive MultiTasking - The amount of time a process runs is predetermined
+* Memory Manager
+  * *Virtual Memory*
+* Magic Number
+  * Special combo of bits near beginning of file
+  * Can be used to identify it's type
+  * `file`
+  
 ---
 
 ## Process Areas
+* User
+  * Code Area   - The program's instructions
+  * Data Area   - Data associated with program
+  * Stack Area  - Program Stack (Function Calls)
+  * User Area   - Misc. Stuff (Opened Files, Current Directory, etc.)
+* Kernel
+  * Process Table
+  * Page Table
+    * *Virtual Memory Table*
+  * File Tables
 
 ---
 
 ## Scheduling Jobs
+* crontab
+* at

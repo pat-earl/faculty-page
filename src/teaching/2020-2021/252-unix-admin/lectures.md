@@ -7,7 +7,8 @@ title: Lectures
     {"name": "Files & Directories (PowerPoint)", "file": "slides/files.pptx"},
     {"name": "Command Presentations", "file": "slides/commands.md"},
     {"name": "The Shell", "file": "slides/shell.md"},
-    {"name": "bash & Shell Scripting", "file": "slides/bash.md"}
+    {"name": "bash & Shell Scripting", "file": "slides/bash.md"},
+    {"name": "Processes", "file": "slides/processes.md"}
 ) %}
 
 ## Course Lectures
