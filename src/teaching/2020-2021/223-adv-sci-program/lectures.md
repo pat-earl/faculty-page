@@ -32,4 +32,10 @@ below when they become available.
     - Section 20:
         + [Annotated Slides](./pdfs/intro_20.pdf)
         + [Zoom Recording for using Anaconda Python](https://kutztown.zoom.us/rec/share/VF1f6OFnv1sebvZsi49D80U_NpA8slcWQTrUZdsYQfYAHTSBVIMfGUquKw8PBBLo.9vi5lqQe4CaC2VLo)
-* Future Stuff
+* Week 9
+    * Homework #3 Example with Pandas
+        * *For the notebooks, right click and do a "Save As". Import them into your own notebook environment.* 
+        * Use the *HTML* view to see the code and output in your browser
+        * Section 10: [Notebook](./pdfs/hw3_pandas_10.ipynb) [HTML](./pdfs/hw3_pandas_10.html)
+        * Section 20: [Notebook](./pdfs/hw3_pandas_20.ipynb) [HTML](./pdfs/hw3_pandas_20.html)
+

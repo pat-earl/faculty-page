@@ -14,6 +14,7 @@ Dr. Dylan Schwesinger and [his version can be found by following this link](http
 * [Python 3 Documentation](https://docs.python.org/3/)
 * [Anaconda](https://www.anaconda.com/products/individual)
 * [GitHub Markdown Cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+* [Markdown Tutorial](https://www.markdowntutorial.com/)
 
 # Python Basics
 
