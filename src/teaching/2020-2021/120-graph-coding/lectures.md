@@ -10,6 +10,7 @@ title: Lectures
     {"name": "Chapter 7: Functions", "file": "slides/functions.md"},
     {"name": "Chapter 8: Objects", "file": "slides/objects.md"},
     {"name": "Chapter 9: Arrays", "file": "slides/arrays.md"},
+    {"name": "Chapter 17: Text", "file": "slides/strings.md"},
 ) %}
 
 ## Course Lectures
