@@ -71,7 +71,7 @@ import matplotlib.pyplot as plt
 
 plt.style.use(&#39;classic&#39;)</code></pre>
 <ul>
-<li>Matplotlib was written as Python Alternative to <em>MATPLOTLIB</em>
+<li>Matplotlib was written as Python Alternative to <em>MATLAB</em>
 <ul>
 <li>A <em>MATLAB</em> style interface: pyplot</li>
 <li>An object oriented interface: (Figures, Axes)</li>
@@ -102,7 +102,7 @@ import matplotlib.pyplot as plt</code></pre>
 </section>
 <section id="script-example" class="slide level2">
 <h2>Script Example</h2>
-<pre><code>import matplotlib.pyplt as plt
+<pre><code>import matplotlib.pyplot as plt
 import numpy as np
 
 x = np.linspace(0, 10, 100)
@@ -115,7 +115,7 @@ plt.show()</code></pre>
 <h2>IPython Shell</h2>
 <pre><code>%matplotlib
 
-import matplotlib.pyplt as plt
+import matplotlib.pyplot as plt
 import numpy as np
 
 x = np.linspace(0, 10, 100)
@@ -127,7 +127,7 @@ plt.plot(x, np.cos(x))</code></pre>
 <pre><code>%matplotlib inline
 
 import numpy as np
-import matplotlib.pyplt as plt
+import matplotlib.pyplot as plt
 
 x = np.linspace(0, 10, 100)
 
@@ -239,8 +239,12 @@ plt.legend()</code></pre>
 <li>But some to be aware of:
 <ul>
 <li><code>plt.xlabel()</code> → <code>ax.set_xlabel()</code></li>
-<li><code>plt.ylabel()</code> → `ax.set_ylabel</li>
+<li><code>plt.ylabel()</code> → <code>ax.set_ylabel()</code></li>
+<li><code>plt.xlim()</code> → <code>ax.set_xlim()</code></li>
+<li><code>plt.ylim()</code> → <code>ax.set_ylim()</code></li>
+<li><code>plt.title()</code> → <code>ax.set_title()</code></li>
 </ul></li>
+<li><code>ax.set</code> can be used to set multiple properties at once</li>
 </ul>
 </section>
 <section id="scatter-plots" class="slide level2">

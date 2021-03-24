@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 plt.style.use('classic')
 ```
 
-* Matplotlib was written as Python Alternative to *MATPLOTLIB*
+* Matplotlib was written as Python Alternative to *MATLAB*
   * A *MATLAB* style interface: pyplot
   * An object oriented interface: (Figures, Axes)
 
@@ -56,7 +56,7 @@ import matplotlib.pyplot as plt
 ## Script Example
 
 ```
-import matplotlib.pyplt as plt
+import matplotlib.pyplot as plt
 import numpy as np
 
 x = np.linspace(0, 10, 100)
@@ -73,7 +73,7 @@ plt.show()
 ```
 %matplotlib
 
-import matplotlib.pyplt as plt
+import matplotlib.pyplot as plt
 import numpy as np
 
 x = np.linspace(0, 10, 100)
@@ -89,7 +89,7 @@ plt.plot(x, np.cos(x))
 %matplotlib inline
 
 import numpy as np
-import matplotlib.pyplt as plt
+import matplotlib.pyplot as plt
 
 x = np.linspace(0, 10, 100)
 
@@ -216,7 +216,11 @@ plt.legend()
 * Most *plt* functions translate to *ax* methods
 * But some to be aware of:
   * `plt.xlabel()` &#8594; `ax.set_xlabel()`
-  * `plt.ylabel()` &#8594; `ax.set_ylabel
+  * `plt.ylabel()` &#8594; `ax.set_ylabel()`
+  * `plt.xlim()` &#8594; `ax.set_xlim()`
+  * `plt.ylim()` &#8594; `ax.set_ylim()`
+  * `plt.title()` &#8594; `ax.set_title()`
+* `ax.set` can be used to set multiple properties at once
 
 ---
 
