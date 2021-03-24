@@ -10,6 +10,7 @@ title: Lectures
     {"name": "Python Iterators", "file": "slides/iterators.md"},
     {"name": "NumPy", "file": "slides/numpy.md"},
     {"name": "Pandas - Data Types", "file": "slides/pandas_types.md"},
+    {"name": "Matplotlib", "file": "slides/matplotlib.md"},
 ) %}
 
 ## Course Lectures

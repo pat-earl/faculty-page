@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Matplotlib</title>
+
+<meta name="description" content="Matplotlib">    
+
+  <meta name="author" content="Patrick Earl" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+ -->
+
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+
+
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
+
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+<h1>Matplotlib</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>03/24/2021</h4>
+</p>
+</section>  
+
+
+<section id="matplotlib" class="slide level2">
+<h2>Matplotlib</h2>
+<ul>
+<li>Visualization library built on Numpy Arrays</li>
+<li>Import Convention</li>
+</ul>
+<pre><code>import matplotlib as mpl
+import matplotlib.pyplot as plt
+
+plt.style.use(&#39;classic&#39;)</code></pre>
+<ul>
+<li>Matplotlib was written as Python Alternative to <em>MATPLOTLIB</em>
+<ul>
+<li>A <em>MATLAB</em> style interface: pyplot</li>
+<li>An object oriented interface: (Figures, Axes)</li>
+</ul></li>
+</ul>
+</section>
+<section id="displaying-plots" class="slide level2">
+<h2>Displaying Plots</h2>
+<ul>
+<li>In a Script: <code>plt.show()</code></li>
+<li>IPython Shell:</li>
+</ul>
+<pre><code>%matplotlib # Magic Command
+import matplotlib.pyplot as plt
+
+# Use plt.draw() for updates, show isn&#39;t required</code></pre>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><em>IPython Notebook</em></li>
+</ul>
+<pre><code>%matplotlib notebook # Interactive Plots
+%matplotlib inline # Static Images
+
+import numpy as np
+import matplotlib.pyplot as plt</code></pre>
+</section>
+<section id="script-example" class="slide level2">
+<h2>Script Example</h2>
+<pre><code>import matplotlib.pyplt as plt
+import numpy as np
+
+x = np.linspace(0, 10, 100)
+plt.plot(x, np.sin(x))
+plt.plot(x, np.cos(x))
+
+plt.show()</code></pre>
+</section>
+<section id="ipython-shell" class="slide level2">
+<h2>IPython Shell</h2>
+<pre><code>%matplotlib
+
+import matplotlib.pyplt as plt
+import numpy as np
+
+x = np.linspace(0, 10, 100)
+plt.plot(x, np.sin(x))
+plt.plot(x, np.cos(x))</code></pre>
+</section>
+<section id="ipython-notebook" class="slide level2">
+<h2>IPython Notebook</h2>
+<pre><code>%matplotlib inline
+
+import numpy as np
+import matplotlib.pyplt as plt
+
+x = np.linspace(0, 10, 100)
+
+fig = plt.figure()
+plt.plot(x, np.sin(x))
+plt.plot(x, np.cos(x))
+
+# Figures can be saved by using fig.savefig(&lt;filename&gt;)
+fig.savefig(&#39;figure.png&#39;)</code></pre>
+</section>
+<section id="matlab-style" class="slide level2">
+<h2>MATLAB-Style</h2>
+<pre><code>plt.figure() # Create a new figure
+
+# Create the first of two panels and set current axis
+plt.subplot(2, 1, 1) # (rows, columns, panel #)
+plt.plot(x, np.sin(x))
+
+# Create a second panel and set the axis
+plt.subplot(2, 2, 2)
+plt.plot(x, np.cos(x))</code></pre>
+</section>
+<section id="object-oriented-interface" class="slide level2">
+<h2>Object-Oriented Interface</h2>
+<pre><code># Create a grid of plots
+# ax will be an array of two Axes objects
+fig, ax = plt.subplots(2)
+
+# Call plot() method on appropriate object
+ax[0].plot(x, np.sin(x))
+ax[1].plot(x, np.cos(x))</code></pre>
+</section>
+<section id="plot-customization-basics" class="slide level2">
+<h2>Plot Customization Basics</h2>
+<ul>
+<li>Plot Style</li>
+<li>Line Colors</li>
+<li>Line Styles</li>
+<li>Axes Limits</li>
+<li>Labels</li>
+</ul>
+</section>
+<section id="line-color" class="slide level2">
+<h2>Line Color</h2>
+<ul>
+<li>Use the <code>color</code> parameter in a <em>plot()</em></li>
+</ul>
+<pre><code>plt.plot(x, y, color=&#39;blue&#39;) # By Name
+plt.plot(x, y, color=&#39;g&#39;) # Color Code
+plt.plot(x, y, color=&#39;0.45&#39;) # Gray Scale
+plt.plot(x, y, color=&#39;#00FF00&#39;) # HEX
+plt.plot(x, y, color=(1.0, 0.0, 0.0)) # RGB Scale 0 -&gt; 1.0
+plt.plot(x, y, color=&#39;chartreuse&#39;) # HTML Color Names</code></pre>
+</section>
+<section id="line-style" class="slide level2">
+<h2>Line Style</h2>
+<ul>
+<li>Use the <code>linestyle</code> parameter to adjust the line style</li>
+</ul>
+<pre><code>plt.plot(x, y, linestyle=&#39;solid&#39;) 
+plt.plot(x, y, linestyle=&#39;dashed&#39;) 
+plt.plot(x, y, linestyle=&#39;dashdot&#39;) 
+plt.plot(x, y, linestyle=&#39;dotted&#39;) 
+
+# OR
+
+plt.plot(x, y, linestyle=&#39;-&#39;) 
+plt.plot(x, y, linestyle=&#39;--&#39;) 
+plt.plot(x, y, linestyle=&#39;-.&#39;) 
+plt.plot(x, y, linestyle=&#39;:&#39;)</code></pre>
+</section>
+<section id="axis-limits" class="slide level2">
+<h2>Axis Limits</h2>
+<ul>
+<li>Limits can be set as follows:</li>
+</ul>
+<pre><code># each axis individually
+plt.xlim(xmin, xmax)
+plt.ylim(ymin, ymax)
+
+# At Once
+plt.axis([xmin, ymax, ymin, ymax])
+
+# Automatically compute the limits
+plt.axis(&#39;tight&#39;)
+
+# Make axis units equal
+plt.axis(&#39;equal&#39;)</code></pre>
+</section>
+<section id="labels" class="slide level2">
+<h2>Labels</h2>
+<ul>
+<li>Adding labels to a figure</li>
+</ul>
+<pre><code># Title
+plt.title(&quot;Plot Table&quot;)
+
+# Axes
+plt.xlabel(&quot;x&quot;)
+plt.ylabel(&quot;y&quot;)
+
+# Legend
+plt.legend()</code></pre>
+</section>
+<section id="matplotlib-gotchas" class="slide level2">
+<h2>Matplotlib Gotchas</h2>
+<ul>
+<li>Most <em>plt</em> functions translate to <em>ax</em> methods</li>
+<li>But some to be aware of:
+<ul>
+<li><code>plt.xlabel()</code> → <code>ax.set_xlabel()</code></li>
+<li><code>plt.ylabel()</code> → `ax.set_ylabel</li>
+</ul></li>
+</ul>
+</section>
+<section id="scatter-plots" class="slide level2">
+<h2>Scatter Plots</h2>
+<ul>
+<li><code>plot</code> can take a character to use as a <em>marker</em></li>
+</ul>
+<pre><code># Example
+x = np.linspace(0, 10, 30)
+y = np.sin(x)
+
+plt.plot(x, y, &#39;o&#39;, color=&#39;black&#39;)</code></pre>
+</section>
+<section id="more-plot-arguments" class="slide level2">
+<h2>More plot arguments</h2>
+<ul>
+<li><code>plot</code> can take many arguments</li>
+</ul>
+<pre><code>plt.plot(x, y, &#39;-p&#39;, color=&#39;gray&#39;,
+         markersize=15, linewidth=4,
+         markerfacecolor=&#39;white&#39;,
+         markeredgecolor=&#39;gray&#39;,
+         markeredgewidth=2)
+plt.ylim(-1.2, 1.2)</code></pre>
+</section>
+<section id="scatter" class="slide level2">
+<h2>Scatter</h2>
+<ul>
+<li>Scatter plots can also be made with <code>scatter</code> method</li>
+</ul>
+<pre><code>rng = np.random.RandomState(0)
+x = rng.randn(100)
+y = rng.randn(100)
+colors = rng.rand(100)
+sizes = 1000 * rng.rand(100)
+
+plt.scatter(x, y, c=colors, s=sizes, alpha=0.3,
+           cmap=&#39;viridis&#39;)
+plt.colorbar()</code></pre>
+</section>
+</div>
+
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+
+  });
+
+</script>
+
+</body>
+</html>

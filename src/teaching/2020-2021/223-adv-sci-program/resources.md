@@ -27,3 +27,5 @@ Dr. Dylan Schwesinger and [his version can be found by following this link](http
 * [10 Minutes to Pandas](https://pandas.pydata.org/docs/user_guide/10min.html)
 * [Pandas API Reference](https://pandas.pydata.org/docs/reference/index.html#api)
 * [Pandas Indexing And Selecting](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html)
+* [matplotlib tutorials](https://matplotlib.org/stable/tutorials/index.html)
+* [matplotlib Documentation](https://matplotlib.org/stable/contents.html)
