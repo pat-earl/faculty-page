@@ -263,3 +263,22 @@ plt.scatter(x, y, c=colors, s=sizes, alpha=0.3,
            cmap='viridis')
 plt.colorbar()
 ```
+
+---
+
+## Histograms
+* Can be created using the `hist()` method
+  
+```
+data = np.random.randn(1000)
+plt.hist(data)
+```
+
+* Some notable arguments:
+  * `bins` - Specify the number of bins to create
+  * `normed` - Normalized distribution?
+
+
+## Bar Charts
+* `bar()` method for vertical charts
+* `barh()` for horizontals
