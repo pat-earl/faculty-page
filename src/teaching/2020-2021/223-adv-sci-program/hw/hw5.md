@@ -1,6 +1,6 @@
 title: Homework #5
 
-## Pandas DataFrames
+## Matplotlib
 
 **Due:**
 : Monday, April 5
@@ -9,27 +9,28 @@ Purpose of this assignment is to create basic plots using Matplotlib
 
 ## Description
 
-Create a jupyter notebook named `main.ipynb` that reads in the file `diamonds.csv` into a Pandas
-DataFrame. Information about the file can be found here:
+Complete the jupyter notebook titled `main.ipynb`. There are comments explaining
+the requirements. *Do not modify cells that are marked as such, doing so will result in a zero.* 
 
-<https://vincentarelbundock.github.io/Rdatasets/doc/ggplot2/diamonds.html>
+The dataset is of movies listed on IMDB. The documentation for each column is linked below.
 
-[Click here to download the file](https://vincentarelbundock.github.io/Rdatasets/csv/ggplot2/diamonds.csv)
+[Download the notebook here]()
+[Documentation for the Dataset](https://vincentarelbundock.github.io/Rdatasets/doc/ggplot2movies/movies.html)
 
 There are two figures that need to be created:
 
 Figure 1:
 
-* normalized histogram with 35 bins using the Fair cut diamond prices
-* a line plot of the normal distribution using the mean and standard deviation of the Fair cut diamond prices
+* normalized histogram with 10 bins of the movie ratings
+* a line plot of the normal distribution using the mean and standard deviation of the movie ratings.
 * appropriate labels on both the x and y axes
 * appropriate title
 * appropriate legend
 
 Figure 2:
 
-* horizontal bar chart of the mean prices of the diamond cuts
-* ten evenly spaced tick marks on the x axis from 0 to the maximum mean price
+* horizontal bar chart of the top 10 most voted movies. 
+* ten evenly spaced tick marks on the x axis from lowest top 10 votes to most.
 * appropriate labels on the x and y axes
 * appropriate title
 

@@ -40,3 +40,50 @@ for (int = 0; i < ???; i++) {
     * Use the text function to display: `text(<text to show>, x, y);`
 
 ---
+
+## Other Text Operations
+* The *String* object is a Java Programming Language feature
+* `toUpperCase()`
+* `toLowerCase()`
+* `equals`
+* `+` Operator - Concatenation
+
+---
+
+## Fonts
+* Not every computer has the same selection of fonts
+* `loadFont()` - *vlw* formatted font
+* *Create Font* Tool
+  * Allows for exporting a font on your computer to be packaged with the sketch
+
+---
+
+## Exercise 17-5
+* Take the bouncing ball and display it's coordinates as text next to the ball
+* Modify the ball object
+
+---
+
+## Text Animation
+* Alignment - `textAlign() RIGHT, LEFT, CENTER`
+* Width - `textWidth()` - Returns the width of any character or text string
+* A scroll headline. `textWidth` allows us to know the position of the last text of character
+* **Example 17-3**
+
+---
+
+## Rotating Text
+* Rotate Text around it's center by translating to an origin point and using `textAlign(CENTER)` before showing the text
+* **Example 17-5**
+* **Exercise 17-8**
+
+---
+
+## Character by Character
+* Sometimes we need to split a string into smaller chunks
+  * Different Sizes
+  * Colors
+* **char_by_char**
+* **Example 17-6**
+
+---

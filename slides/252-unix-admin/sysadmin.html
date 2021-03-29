@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>System Administration</title>
+
+<meta name="description" content="System Administration">    
+
+  <meta name="author" content="Patrick Earl" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+ -->
+
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+
+
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
+
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+<h1>System Administration</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>03/25/2021</h4>
+</p>
+</section>  
+
+
+<section id="system-administration" class="slide level2">
+<h2>System Administration</h2>
+<ul>
+<li>There is a balance to follow
+<ul>
+<li>Authority and Responsibility
+<ul>
+<li>Maintain Systems for an Organization</li>
+<li>Policies</li>
+<li>Train Users</li>
+</ul></li>
+<li>Service and Cooperation
+<ul>
+<li>Consider User Needs</li>
+<li>Constrains</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="responding-to-incidents" class="slide level2">
+<h2>Responding to Incidents</h2>
+<ul>
+<li>What is the response?</li>
+<li>What do you do?</li>
+</ul>
+</section>
+<section id="planned-procedures" class="slide level2">
+<h2>Planned Procedures</h2>
+<ul>
+<li>Regularly changing of passwords (Root, Admin)</li>
+<li>Regular Backups</li>
+<li>Logging out</li>
+<li>Testing changes before implementation</li>
+<li>Sticking to Policies</li>
+</ul>
+</section>
+<section id="basic-strategy" class="slide level2">
+<h2>Basic Strategy</h2>
+<ol type="1">
+<li>Plan</li>
+<li>Make it reversible</li>
+<li>Test, test, and test again</li>
+<li>Know how things work</li>
+<li>Document</li>
+</ol>
+</section>
+<section id="sys-admin-tasks" class="slide level2">
+<h2>Sys Admin Tasks</h2>
+<ul>
+<li>Account Maintenance</li>
+<li>Backups</li>
+<li>Restoring Files</li>
+<li>Answering User Questions</li>
+<li>Monitor and Tune System</li>
+<li>Maintain printers and print queues</li>
+<li>System Security</li>
+<li>Installing/Updating Software</li>
+<li>System Patches</li>
+</ul>
+</section>
+<section id="tasks-continued" class="slide level2">
+<h2>Tasks (Continued)</h2>
+<ul>
+<li>Monitor Disk Space</li>
+<li>Correct network problems</li>
+<li>Troubleshoot system and user problems</li>
+<li>Install new equipment</li>
+<li>Adding new systems to a network</li>
+<li>Writing scripts to automate</li>
+<li>Maintain documentation</li>
+<li>Other duties as necessary/assigned.</li>
+</ul>
+</section>
+<section id="system-configuration" class="slide level2">
+<h2>System Configuration</h2>
+<ul>
+<li>Configuration Files
+<ul>
+<li>Every application and system has numerous configuration options</li>
+<li>Kernel</li>
+<li>Applications</li>
+</ul></li>
+</ul>
+</section>
+<section id="system-maintenance" class="slide level2">
+<h2>System Maintenance</h2>
+<ul>
+<li>System Maintenance Tasks?</li>
+<li>System Support</li>
+</ul>
+</section>
+<section id="administration-domains" class="slide level2">
+<h2>Administration Domains</h2>
+<ul>
+<li>Managing multiple computers/servers/etc?</li>
+<li>Directory Services
+<ul>
+<li>Microsoft Active Directory (AD)</li>
+<li>Lightweight Directory Access Protocol (LDAP)</li>
+</ul></li>
+<li>Manger users on your domain - Who access to what, their roles</li>
+<li>Manage Systems on domain - Configuration Changes, etc.</li>
+</ul>
+</section>
+</div>
+
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+
+  });
+
+</script>
+
+</body>
+</html>
