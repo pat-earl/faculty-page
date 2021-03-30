@@ -1,254 +1,254 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
 
-<title>Chapter 4: The Filesystem</title>
+  <title>Chapter 4: The Filesystem</title>
 
-<meta name="description" content="Chapter 4: The Filesystem">    
+  <meta name="description" content="Chapter 4: The Filesystem">    
 
-  <meta name="author" content="Patrick Earl" />
+      <meta name="author" content="Patrick Earl" />
+  
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+   -->
 
-<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
- -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  
 
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  <!-- For syntax highlighting -->
+  <!--     <link rel="stylesheet" href="/share/revealjs/plugin/highlight/zenburn.css">
+   -->
 
+  <!-- For syntax highlighting -->
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  
 
-<!-- For syntax highlighting -->
-<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
- -->
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <!-- <script>
+    document.write( '<link rel="stylesheet" href="css/print/' +
+      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+      '.css" type="text/css" media="print">' );
+  </script> -->
 
-<!-- For syntax highlighting -->
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+    </head>
 
+  <body>
+  
+  <div class="reveal">
 
-<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-<!-- <script>
-  document.write( '<link rel="stylesheet" href="css/print/' +
-    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
-    '.css" type="text/css" media="print">' );
-</script> -->
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
 
-<!--[if lt IE 9]>
-<script src="lib/js/html5shiv.js"></script>
-<![endif]-->
-</head>
+  <section>
+  <h1>Chapter 4: The Filesystem</h1>
+  <h3>Patrick Earl</h3>
+  <p>
+  <h4>02/02/2021</h4>
+  </p>
+  </section>  
 
-<body>
+  
+  <section id="the-filesystem" class="slide level2">
+  <h2>The Filesystem</h2>
+  <ul>
+  <li>A set of data structures that:
+  <ul>
+  <li>store user and system data</li>
+  <li>store that data as files on, usually, a disk</li>
+  </ul></li>
+  <li>Summary:
+  <ul>
+  <li>Organization &amp; Terminology of the Linux Filesystem</li>
+  <li>Moving through the filesystem</li>
+  <li>Ordinary and Directory files</li>
+  <li>Absolute and Relative Paths</li>
+  <li>Important Files and Paths</li>
+  <li>File Access Permissions</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="hierarchical-system" class="slide level2">
+  <h2>Hierarchical System</h2>
+  <p><img data-src="./images/unix_tree.png" /></p>
+  </section>
+  <section id="terminology" class="slide level2">
+  <h2>Terminology</h2>
+  <ul>
+  <li><em>Directory Tree</em></li>
+  <li><em>Directory Files</em></li>
+  <li><em>Ordinary Files</em></li>
+  <li><strong><em>Root</em></strong>
+  <ul>
+  <li>Directories are connected by a path</li>
+  <li><em>Parent</em></li>
+  <li><em>Child</em></li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="filenames" class="slide level2">
+  <h2>Filenames</h2>
+  <ul>
+  <li>Should use these characters:
+  <ul>
+  <li>Uppercase Letters (A-Z)</li>
+  <li>Lowercase Letters (a-z)</li>
+  <li>Numbers (0-9)</li>
+  <li>Underscore (_)</li>
+  <li>Period (.)</li>
+  <li>Comma (,)</li>
+  </ul></li>
+  <li>Two files of the same name can’t exist in the same directory</li>
+  <li>Files can have the same name in <em>different</em> directories</li>
+  </ul>
+  </section>
+  <section id="filenames-cont." class="slide level2">
+  <h2>Filenames (cont.)</h2>
+  <ul>
+  <li>Filename Extensions</li>
+  <li>Hidden Filenames - <em>begin with a dot (.)</em></li>
+  </ul>
+  </section>
+  <section id="the-working-directory" class="slide level2">
+  <h2>The Working Directory</h2>
+  <ul>
+  <li>The directory your session is associated with</li>
+  <li><code>pwd</code></li>
+  <li><em>working</em> or <em>current</em> directory</li>
+  </ul>
+  </section>
+  <section id="home-directory" class="slide level2">
+  <h2>Home Directory</h2>
+  <ul>
+  <li>When logging in, this is your <em>working</em> directory</li>
+  <li>Startup Files are usually located here
+  <ul>
+  <li>Used to set configuration options for your shell and other programs</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="pathnames" class="slide level2">
+  <h2>Pathnames</h2>
+  <ul>
+  <li>Files have a <em>pathname</em></li>
+  <li><em>Absolute Pathnames</em>
+  <ul>
+  <li><code>/</code> (root)</li>
+  <li><code>~</code> (Tilde)</li>
+  </ul></li>
+  <li><em>Relative Pathnames</em></li>
+  </ul>
+  </section>
+  <section id="pathnames-1" class="slide level2">
+  <h2>Pathnames</h2>
+  <ul>
+  <li><code>.</code>
+  <ul>
+  <li>Similar to referring to the <em>working</em> directory</li>
+  </ul></li>
+  <li><code>..</code>
+  <ul>
+  <li>Refers to the <em>parent</em> directory of the <em>working</em> directory</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="standard-directories-and-files" class="slide level2">
+  <h2>Standard Directories and Files</h2>
+  <ul>
+  <li>FHS</li>
+  <li><code>/bin</code></li>
+  <li><code>/boot</code></li>
+  <li><code>/dev/</code></li>
+  <li><code>/etc/</code></li>
+  <li><code>/home</code>/</li>
+  <li><code>/lib/</code></li>
+  <li><code>/proc/</code></li>
+  </ul>
+  </section>
+  <section id="access-permissions" class="slide level2">
+  <h2>Access Permissions</h2>
+  <p><code>ls -l</code> <img data-src="./images/file_permissions.png" /></p>
+  </section>
+  <section id="file-types" class="slide level2">
+  <h2>File Types</h2>
+  <ul>
+  <li>“-” - Regular Files</li>
+  <li>“d” - Directory Files</li>
+  <li>“b” - Block File</li>
+  <li>“c” - Character Device</li>
+  <li>“p” - Pipe File</li>
+  <li>“l” - Link</li>
+  <li>“s” - Socket File</li>
+  </ul>
+  </section>
+  <section id="file-permissions" class="slide level2">
+  <h2>File Permissions</h2>
+  <ul>
+  <li>read, write, execute
+  <ul>
+  <li>s for <a href="https://en.wikipedia.org/wiki/Setuid">setuid/setgit</a>, t for <a href="https://www.thegeekstuff.com/2013/02/sticky-bit/">sticky bit</a></li>
+  </ul></li>
+  <li>Owner/User</li>
+  <li>Group</li>
+  <li>Size</li>
+  <li>Modification Time</li>
+  <li>Name</li>
+  </ul>
+  </section>
+  <section id="permissions" class="slide level2">
+  <h2>Permissions</h2>
+  <ul>
+  <li>Running Processes
+  <ul>
+  <li><em>Real</em> User ID vs <em>Effective</em></li>
+  <li><em>Real</em> Group ID vs <em>Effective</em></li>
+  </ul></li>
+  <li><code>~earl/public/csc252/setuid.c</code></li>
+  </ul>
+  </section>
+  <section id="file-commands" class="slide level2">
+  <h2>File Commands</h2>
+  <ul>
+  <li><code>cd</code></li>
+  <li><code>rmdir</code></li>
+  <li><code>mkdir</code></li>
+  </ul>
+  </section>
+  </div>
 
-<div class="reveal">
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
 
-<!-- Any section element inside of this container is displayed as a slide -->
-<div class="slides">
+  <script>
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: false,
 
-<section>
-<h1>Chapter 4: The Filesystem</h1>
-<h3>Patrick Earl</h3>
-<p>
-<h4>02/02/2021</h4>
-</p>
-</section>  
+      hash: true,
 
+      plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
 
-<section id="the-filesystem" class="slide level2">
-<h2>The Filesystem</h2>
-<ul>
-<li>A set of data structures that:
-<ul>
-<li>store user and system data</li>
-<li>store that data as files on, usually, a disk</li>
-</ul></li>
-<li>Summary:
-<ul>
-<li>Organization &amp; Terminology of the Linux Filesystem</li>
-<li>Moving through the filesystem</li>
-<li>Ordinary and Directory files</li>
-<li>Absolute and Relative Paths</li>
-<li>Important Files and Paths</li>
-<li>File Access Permissions</li>
-</ul></li>
-</ul>
-</section>
-<section id="hierarchical-system" class="slide level2">
-<h2>Hierarchical System</h2>
-<p><img data-src="./images/unix_tree.png" /></p>
-</section>
-<section id="terminology" class="slide level2">
-<h2>Terminology</h2>
-<ul>
-<li><em>Directory Tree</em></li>
-<li><em>Directory Files</em></li>
-<li><em>Ordinary Files</em></li>
-<li><strong><em>Root</em></strong>
-<ul>
-<li>Directories are connected by a path</li>
-<li><em>Parent</em></li>
-<li><em>Child</em></li>
-</ul></li>
-</ul>
-</section>
-<section id="filenames" class="slide level2">
-<h2>Filenames</h2>
-<ul>
-<li>Should use these characters:
-<ul>
-<li>Uppercase Letters (A-Z)</li>
-<li>Lowercase Letters (a-z)</li>
-<li>Numbers (0-9)</li>
-<li>Underscore (_)</li>
-<li>Period (.)</li>
-<li>Comma (,)</li>
-</ul></li>
-<li>Two files of the same name can’t exist in the same directory</li>
-<li>Files can have the same name in <em>different</em> directories</li>
-</ul>
-</section>
-<section id="filenames-cont." class="slide level2">
-<h2>Filenames (cont.)</h2>
-<ul>
-<li>Filename Extensions</li>
-<li>Hidden Filenames - <em>begin with a dot (.)</em></li>
-</ul>
-</section>
-<section id="the-working-directory" class="slide level2">
-<h2>The Working Directory</h2>
-<ul>
-<li>The directory your session is associated with</li>
-<li><code>pwd</code></li>
-<li><em>working</em> or <em>current</em> directory</li>
-</ul>
-</section>
-<section id="home-directory" class="slide level2">
-<h2>Home Directory</h2>
-<ul>
-<li>When logging in, this is your <em>working</em> directory</li>
-<li>Startup Files are usually located here
-<ul>
-<li>Used to set configuration options for your shell and other programs</li>
-</ul></li>
-</ul>
-</section>
-<section id="pathnames" class="slide level2">
-<h2>Pathnames</h2>
-<ul>
-<li>Files have a <em>pathname</em></li>
-<li><em>Absolute Pathnames</em>
-<ul>
-<li><code>/</code> (root)</li>
-<li><code>~</code> (Tilde)</li>
-</ul></li>
-<li><em>Relative Pathnames</em></li>
-</ul>
-</section>
-<section id="pathnames-1" class="slide level2">
-<h2>Pathnames</h2>
-<ul>
-<li><code>.</code>
-<ul>
-<li>Similar to referring to the <em>working</em> directory</li>
-</ul></li>
-<li><code>..</code>
-<ul>
-<li>Refers to the <em>parent</em> directory of the <em>working</em> directory</li>
-</ul></li>
-</ul>
-</section>
-<section id="standard-directories-and-files" class="slide level2">
-<h2>Standard Directories and Files</h2>
-<ul>
-<li>FHS</li>
-<li><code>/bin</code></li>
-<li><code>/boot</code></li>
-<li><code>/dev/</code></li>
-<li><code>/etc/</code></li>
-<li><code>/home</code>/</li>
-<li><code>/lib/</code></li>
-<li><code>/proc/</code></li>
-</ul>
-</section>
-<section id="access-permissions" class="slide level2">
-<h2>Access Permissions</h2>
-<p><code>ls -l</code> <img data-src="./images/file_permissions.png" /></p>
-</section>
-<section id="file-types" class="slide level2">
-<h2>File Types</h2>
-<ul>
-<li>“-” - Regular Files</li>
-<li>“d” - Directory Files</li>
-<li>“b” - Block File</li>
-<li>“c” - Character Device</li>
-<li>“p” - Pipe File</li>
-<li>“l” - Link</li>
-<li>“s” - Socket File</li>
-</ul>
-</section>
-<section id="file-permissions" class="slide level2">
-<h2>File Permissions</h2>
-<ul>
-<li>read, write, execute
-<ul>
-<li>s for <a href="https://en.wikipedia.org/wiki/Setuid">setuid/setgit</a>, t for <a href="https://www.thegeekstuff.com/2013/02/sticky-bit/">sticky bit</a></li>
-</ul></li>
-<li>Owner/User</li>
-<li>Group</li>
-<li>Size</li>
-<li>Modification Time</li>
-<li>Name</li>
-</ul>
-</section>
-<section id="permissions" class="slide level2">
-<h2>Permissions</h2>
-<ul>
-<li>Running Processes
-<ul>
-<li><em>Real</em> User ID vs <em>Effective</em></li>
-<li><em>Real</em> Group ID vs <em>Effective</em></li>
-</ul></li>
-<li><code>~earl/public/csc252/setuid.c</code></li>
-</ul>
-</section>
-<section id="file-commands" class="slide level2">
-<h2>File Commands</h2>
-<ul>
-<li><code>cd</code></li>
-<li><code>rmdir</code></li>
-<li><code>mkdir</code></li>
-</ul>
-</section>
-</div>
+    });
 
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+  </script>
 
-<script>
-// More info about initialization & config:
-// - https://revealjs.com/initialization/
-// - https://revealjs.com/config/
-  Reveal.initialize({
-    controls: true,
-    progress: true,
-    history: true,
-    center: false,
-
-    hash: true,
-
-    plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
-
-  });
-
-</script>
-
-</body>
+  </body>
 </html>

@@ -1,371 +1,371 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
 
-<title>Introduction</title>
+  <title>Introduction</title>
 
-<meta name="description" content="Introduction">    
+  <meta name="description" content="Introduction">    
 
-  <meta name="author" content="Patrick Earl" />
+      <meta name="author" content="Patrick Earl" />
+  
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+   -->
 
-<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
- -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  
 
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  <!-- For syntax highlighting -->
+  <!--     <link rel="stylesheet" href="/share/revealjs/plugin/highlight/zenburn.css">
+   -->
 
+  <!-- For syntax highlighting -->
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  
 
-<!-- For syntax highlighting -->
-<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
- -->
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <!-- <script>
+    document.write( '<link rel="stylesheet" href="css/print/' +
+      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+      '.css" type="text/css" media="print">' );
+  </script> -->
 
-<!-- For syntax highlighting -->
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+    </head>
 
+  <body>
+  
+  <div class="reveal">
 
-<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-<!-- <script>
-  document.write( '<link rel="stylesheet" href="css/print/' +
-    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
-    '.css" type="text/css" media="print">' );
-</script> -->
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
 
-<!--[if lt IE 9]>
-<script src="lib/js/html5shiv.js"></script>
-<![endif]-->
-</head>
+  <section>
+  <h1>Introduction</h1>
+  <h3>Patrick Earl</h3>
+  <p>
+  <h4>01/22/2021</h4>
+  </p>
+  </section>  
 
-<body>
+  
+  <section id="python-introduction" class="slide level2">
+  <h2>Python Introduction</h2>
+  <ul>
+  <li><em>TIP: If viewing this in a web browser, press <strong>ESC</strong> to see a preview of all the slides.</em></li>
+  <li>Python is an <em>interpreted</em> language</li>
+  <li>Statements can be interactively ran and tested</li>
+  <li>4 Ways to do this:
+  <ol type="1">
+  <li>The Python Interpreter</li>
+  <li>IPython Interpreter</li>
+  <li>Self-Contained Scripts</li>
+  <li>Jupyter Notebook</li>
+  </ol></li>
+  </ul>
+  </section>
+  <section id="the-interpreter" class="slide level2">
+  <h2>The Interpreter</h2>
+  <ul>
+  <li>Access by typing <code>python</code> in a command prompt. In this form you can type statements and execute code</li>
+  <li>This places you in the Python <strong><em>REPL</em></strong>
+  <ol type="1">
+  <li>Read the input</li>
+  <li>Evaluate it</li>
+  <li>Print the results</li>
+  <li>Loop back to step 1</li>
+  </ol></li>
+  <li><code>&gt;&gt;&gt;</code></li>
+  <li><code>help()</code> and Python reference</li>
+  </ul>
+  </section>
+  <section id="ipython-interpreter" class="slide level2">
+  <h2>IPython Interpreter</h2>
+  <ul>
+  <li>A more advanced and feature packed version of the python interpreter.</li>
+  <li>IPython will use numbered commands in place of the <code>&gt;&gt;&gt;</code></li>
+  <li>Input and Output are numbered.</li>
+  </ul>
+  </section>
+  <section id="self-contained-scripts" class="slide level2">
+  <h2>Self-Contained Scripts</h2>
+  <ul>
+  <li>Statements can be saved to a file, much like other programming languages (C++, Java)</li>
+  <li>Python scripts are saved in <em>.py</em> files</li>
+  <li>To run a script, assuming you are in the same directory as the file:
+  <ul>
+  <li><code>python [file name].py</code></li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="the-jupyter-notebook" class="slide level2">
+  <h2>The Jupyter Notebook</h2>
+  <p>Hybrid of the two environments that will be explored and explained later in the course.</p>
+  </section>
+  <section id="the-python-syntax" class="slide level2">
+  <h2>The Python Syntax</h2>
+  <ul>
+  <li><em>Syntax</em> - The structure of the language (incase you forgot).</li>
+  </ul>
+  </section>
+  <section id="example-program" class="slide level2">
+  <h2>Example program</h2>
+  <pre><code># set the midpoint
+  midpoint = 5
 
-<div class="reveal">
+  # make two empty lists
+  lower = []; upper = []
 
-<!-- Any section element inside of this container is displayed as a slide -->
-<div class="slides">
+  # split the numbers into lower and upper
+  for i in range(10):
+      if (i &lt; midpoint):
+          lower.append(i)
+      else:
+          upper.append(i)
+          
+  print(&quot;lower:&quot;, lower)
+  print(&quot;upper:&quot;, upper)</code></pre>
+  </section>
+  <section id="syntax-rundown" class="slide level2">
+  <h2>Syntax Rundown</h2>
+  <ul>
+  <li>Comments are marked by “#”</li>
+  <li>End-Of-Line Terminates a Statement</li>
+  <li>Semicolons can be used optionally used to terminate</li>
+  </ul>
+  </section>
+  <section id="syntax-rundown-continued" class="slide level2">
+  <h2>Syntax Rundown (Continued)</h2>
+  <ul>
+  <li>Indenting: Whitespace matters
+  <ul>
+  <li>Code blocks are controlled by indents</li>
+  <li>4 spaces is the preferred amount</li>
+  </ul></li>
+  <li>Whitespace <em>within</em> a line doesn’t matter</li>
+  <li>Parentheses are for grouping or calling</li>
+  </ul>
+  </section>
+  <section id="variables" class="slide level2">
+  <h2>Variables</h2>
+  <ul>
+  <li>Similar to others</li>
+  <li>Use the assignment operator</li>
+  <li><code>x = 4</code> assigns a value of 4 to the variable <em>x</em></li>
+  </ul>
+  </section>
+  <section id="note-on-variables" class="slide level2">
+  <h2>Note on Variables</h2>
+  <ul>
+  <li>Python is <em>dynamically-typed</em>
+  <ul>
+  <li>Opposed to a static-typed language like C++</li>
+  </ul></li>
+  <li>Variables are <em>pointers</em> to space in memory</li>
+  <li>You can do this:
+  <ul>
+  <li><code>x = 1</code></li>
+  <li><code>x = 'hello'</code></li>
+  <li><code>x = [1, 2, 3]</code></li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="more-notes" class="slide level2">
+  <h2>More Notes</h2>
+  <ul>
+  <li>Python simple types (int, float) are <em>immutable</em></li>
+  <li>Lists on the other hand are <em>mutable</em></li>
+  <li>Example:
+  <ul>
+  <li><code>x = 10</code> <em>x</em> points to a memory location containing the value 10</li>
+  <li><code>x = 11</code> <em>x</em> points to a new memory location with the value 11.</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="everything-is-an-object" class="slide level2">
+  <h2>Everything is an Object</h2>
+  <ul>
+  <li><code>type()</code> function</li>
+  <li>Objects will have a type</li>
+  </ul>
+  </section>
+  <section id="what-is-an-object" class="slide level2">
+  <h2>What is an Object?</h2>
+  <ul>
+  <li>In terms of programming languages an <em>object</em> is:
+  <ul>
+  <li>an entity that contains data along with metadata and/or functionality.</li>
+  </ul></li>
+  <li>Python Objects will:
+  <ul>
+  <li>have metadata (better known as <em>attributes</em>)</li>
+  <li>have associated functionality (<em>methods</em>)</li>
+  </ul></li>
+  <li>dot syntax</li>
+  </ul>
+  </section>
+  <section id="arithmetic-operators" class="slide level2">
+  <h2>Arithmetic Operators</h2>
+  <table>
+  <thead>
+  <tr class="header">
+  <th>Operator</th>
+  <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td>a + b</td>
+  <td>Addition</td>
+  </tr>
+  <tr class="even">
+  <td>a - b</td>
+  <td>Subtraction</td>
+  </tr>
+  <tr class="odd">
+  <td>a * b</td>
+  <td>Multiplication</td>
+  </tr>
+  <tr class="even">
+  <td>a / b</td>
+  <td>Division</td>
+  </tr>
+  <tr class="odd">
+  <td>a // b</td>
+  <td>Floor Division</td>
+  </tr>
+  <tr class="even">
+  <td>a % b</td>
+  <td>Modulus</td>
+  </tr>
+  <tr class="odd">
+  <td>a ** b</td>
+  <td>Exponentiation</td>
+  </tr>
+  <tr class="even">
+  <td>-a</td>
+  <td>Negation</td>
+  </tr>
+  <tr class="odd">
+  <td>+a</td>
+  <td>Unary Plus</td>
+  </tr>
+  </tbody>
+  </table>
+  </section>
+  <section id="bitwise-operations" class="slide level2">
+  <h2>Bitwise Operations</h2>
+  <table>
+  <thead>
+  <tr class="header">
+  <th>Operator</th>
+  <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td>a &amp; b</td>
+  <td>Bitwise AND</td>
+  </tr>
+  <tr class="even">
+  <td>a</td>
+  <td>b</td>
+  </tr>
+  <tr class="odd">
+  <td>a ^ b</td>
+  <td>Bitwise XOR</td>
+  </tr>
+  <tr class="even">
+  <td>a &lt;&lt; b</td>
+  <td>Bit shift Left</td>
+  </tr>
+  <tr class="odd">
+  <td>a &gt;&gt; b</td>
+  <td>Bit shift Right</td>
+  </tr>
+  <tr class="even">
+  <td>~a</td>
+  <td>Bitwise NOT</td>
+  </tr>
+  </tbody>
+  </table>
+  </section>
+  <section id="others" class="slide level2">
+  <h2>Others</h2>
+  <table>
+  <thead>
+  <tr class="header">
+  <th>Operator</th>
+  <th>Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td>=</td>
+  <td>Assignment</td>
+  </tr>
+  <tr class="even">
+  <td>a == b</td>
+  <td>Equal To</td>
+  </tr>
+  <tr class="odd">
+  <td>a &lt; b</td>
+  <td>Less Than</td>
+  </tr>
+  <tr class="even">
+  <td>a &lt;=</td>
+  <td>Less Than or Equal To</td>
+  </tr>
+  <tr class="odd">
+  <td>and, or, not</td>
+  <td></td>
+  </tr>
+  </tbody>
+  </table>
+  </section>
+  <section id="membership-operators" class="slide level2">
+  <h2>Membership Operators</h2>
+  <ul>
+  <li>Check for membership within compound objects</li>
+  <li><code>3 in [3, 4, 6]</code></li>
+  <li><code>4 not in [2, 4, 6]</code></li>
+  </ul>
+  </section>
+  </div>
 
-<section>
-<h1>Introduction</h1>
-<h3>Patrick Earl</h3>
-<p>
-<h4>01/22/2021</h4>
-</p>
-</section>  
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
 
+  <script>
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: false,
 
-<section id="python-introduction" class="slide level2">
-<h2>Python Introduction</h2>
-<ul>
-<li><em>TIP: If viewing this in a web browser, press <strong>ESC</strong> to see a preview of all the slides.</em></li>
-<li>Python is an <em>interpreted</em> language</li>
-<li>Statements can be interactively ran and tested</li>
-<li>4 Ways to do this:
-<ol type="1">
-<li>The Python Interpreter</li>
-<li>IPython Interpreter</li>
-<li>Self-Contained Scripts</li>
-<li>Jupyter Notebook</li>
-</ol></li>
-</ul>
-</section>
-<section id="the-interpreter" class="slide level2">
-<h2>The Interpreter</h2>
-<ul>
-<li>Access by typing <code>python</code> in a command prompt. In this form you can type statements and execute code</li>
-<li>This places you in the Python <strong><em>REPL</em></strong>
-<ol type="1">
-<li>Read the input</li>
-<li>Evaluate it</li>
-<li>Print the results</li>
-<li>Loop back to step 1</li>
-</ol></li>
-<li><code>&gt;&gt;&gt;</code></li>
-<li><code>help()</code> and Python reference</li>
-</ul>
-</section>
-<section id="ipython-interpreter" class="slide level2">
-<h2>IPython Interpreter</h2>
-<ul>
-<li>A more advanced and feature packed version of the python interpreter.</li>
-<li>IPython will use numbered commands in place of the <code>&gt;&gt;&gt;</code></li>
-<li>Input and Output are numbered.</li>
-</ul>
-</section>
-<section id="self-contained-scripts" class="slide level2">
-<h2>Self-Contained Scripts</h2>
-<ul>
-<li>Statements can be saved to a file, much like other programming languages (C++, Java)</li>
-<li>Python scripts are saved in <em>.py</em> files</li>
-<li>To run a script, assuming you are in the same directory as the file:
-<ul>
-<li><code>python [file name].py</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="the-jupyter-notebook" class="slide level2">
-<h2>The Jupyter Notebook</h2>
-<p>Hybrid of the two environments that will be explored and explained later in the course.</p>
-</section>
-<section id="the-python-syntax" class="slide level2">
-<h2>The Python Syntax</h2>
-<ul>
-<li><em>Syntax</em> - The structure of the language (incase you forgot).</li>
-</ul>
-</section>
-<section id="example-program" class="slide level2">
-<h2>Example program</h2>
-<pre><code># set the midpoint
-midpoint = 5
+      hash: true,
 
-# make two empty lists
-lower = []; upper = []
+      plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
 
-# split the numbers into lower and upper
-for i in range(10):
-    if (i &lt; midpoint):
-        lower.append(i)
-    else:
-        upper.append(i)
-        
-print(&quot;lower:&quot;, lower)
-print(&quot;upper:&quot;, upper)</code></pre>
-</section>
-<section id="syntax-rundown" class="slide level2">
-<h2>Syntax Rundown</h2>
-<ul>
-<li>Comments are marked by “#”</li>
-<li>End-Of-Line Terminates a Statement</li>
-<li>Semicolons can be used optionally used to terminate</li>
-</ul>
-</section>
-<section id="syntax-rundown-continued" class="slide level2">
-<h2>Syntax Rundown (Continued)</h2>
-<ul>
-<li>Indenting: Whitespace matters
-<ul>
-<li>Code blocks are controlled by indents</li>
-<li>4 spaces is the preferred amount</li>
-</ul></li>
-<li>Whitespace <em>within</em> a line doesn’t matter</li>
-<li>Parentheses are for grouping or calling</li>
-</ul>
-</section>
-<section id="variables" class="slide level2">
-<h2>Variables</h2>
-<ul>
-<li>Similar to others</li>
-<li>Use the assignment operator</li>
-<li><code>x = 4</code> assigns a value of 4 to the variable <em>x</em></li>
-</ul>
-</section>
-<section id="note-on-variables" class="slide level2">
-<h2>Note on Variables</h2>
-<ul>
-<li>Python is <em>dynamically-typed</em>
-<ul>
-<li>Opposed to a static-typed language like C++</li>
-</ul></li>
-<li>Variables are <em>pointers</em> to space in memory</li>
-<li>You can do this:
-<ul>
-<li><code>x = 1</code></li>
-<li><code>x = 'hello'</code></li>
-<li><code>x = [1, 2, 3]</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="more-notes" class="slide level2">
-<h2>More Notes</h2>
-<ul>
-<li>Python simple types (int, float) are <em>immutable</em></li>
-<li>Lists on the other hand are <em>mutable</em></li>
-<li>Example:
-<ul>
-<li><code>x = 10</code> <em>x</em> points to a memory location containing the value 10</li>
-<li><code>x = 11</code> <em>x</em> points to a new memory location with the value 11.</li>
-</ul></li>
-</ul>
-</section>
-<section id="everything-is-an-object" class="slide level2">
-<h2>Everything is an Object</h2>
-<ul>
-<li><code>type()</code> function</li>
-<li>Objects will have a type</li>
-</ul>
-</section>
-<section id="what-is-an-object" class="slide level2">
-<h2>What is an Object?</h2>
-<ul>
-<li>In terms of programming languages an <em>object</em> is:
-<ul>
-<li>an entity that contains data along with metadata and/or functionality.</li>
-</ul></li>
-<li>Python Objects will:
-<ul>
-<li>have metadata (better known as <em>attributes</em>)</li>
-<li>have associated functionality (<em>methods</em>)</li>
-</ul></li>
-<li>dot syntax</li>
-</ul>
-</section>
-<section id="arithmetic-operators" class="slide level2">
-<h2>Arithmetic Operators</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Operator</th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>a + b</td>
-<td>Addition</td>
-</tr>
-<tr class="even">
-<td>a - b</td>
-<td>Subtraction</td>
-</tr>
-<tr class="odd">
-<td>a * b</td>
-<td>Multiplication</td>
-</tr>
-<tr class="even">
-<td>a / b</td>
-<td>Division</td>
-</tr>
-<tr class="odd">
-<td>a // b</td>
-<td>Floor Division</td>
-</tr>
-<tr class="even">
-<td>a % b</td>
-<td>Modulus</td>
-</tr>
-<tr class="odd">
-<td>a ** b</td>
-<td>Exponentiation</td>
-</tr>
-<tr class="even">
-<td>-a</td>
-<td>Negation</td>
-</tr>
-<tr class="odd">
-<td>+a</td>
-<td>Unary Plus</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="bitwise-operations" class="slide level2">
-<h2>Bitwise Operations</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Operator</th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>a &amp; b</td>
-<td>Bitwise AND</td>
-</tr>
-<tr class="even">
-<td>a</td>
-<td>b</td>
-</tr>
-<tr class="odd">
-<td>a ^ b</td>
-<td>Bitwise XOR</td>
-</tr>
-<tr class="even">
-<td>a &lt;&lt; b</td>
-<td>Bit shift Left</td>
-</tr>
-<tr class="odd">
-<td>a &gt;&gt; b</td>
-<td>Bit shift Right</td>
-</tr>
-<tr class="even">
-<td>~a</td>
-<td>Bitwise NOT</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="others" class="slide level2">
-<h2>Others</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Operator</th>
-<th>Name</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>=</td>
-<td>Assignment</td>
-</tr>
-<tr class="even">
-<td>a == b</td>
-<td>Equal To</td>
-</tr>
-<tr class="odd">
-<td>a &lt; b</td>
-<td>Less Than</td>
-</tr>
-<tr class="even">
-<td>a &lt;=</td>
-<td>Less Than or Equal To</td>
-</tr>
-<tr class="odd">
-<td>and, or, not</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="membership-operators" class="slide level2">
-<h2>Membership Operators</h2>
-<ul>
-<li>Check for membership within compound objects</li>
-<li><code>3 in [3, 4, 6]</code></li>
-<li><code>4 not in [2, 4, 6]</code></li>
-</ul>
-</section>
-</div>
+    });
 
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+  </script>
 
-<script>
-// More info about initialization & config:
-// - https://revealjs.com/initialization/
-// - https://revealjs.com/config/
-  Reveal.initialize({
-    controls: true,
-    progress: true,
-    history: true,
-    center: false,
-
-    hash: true,
-
-    plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
-
-  });
-
-</script>
-
-</body>
+  </body>
 </html>

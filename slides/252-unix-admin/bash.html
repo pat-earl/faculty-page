@@ -1,403 +1,403 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
 
-<title>BASH &amp; Shell Scripting</title>
+  <title>BASH &amp; Shell Scripting</title>
 
-<meta name="description" content="BASH &amp; Shell Scripting">    
+  <meta name="description" content="BASH &amp; Shell Scripting">    
 
-  <meta name="author" content="Patrick Earl" />
+      <meta name="author" content="Patrick Earl" />
+  
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+   -->
 
-<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
- -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  
 
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  <!-- For syntax highlighting -->
+  <!--     <link rel="stylesheet" href="/share/revealjs/plugin/highlight/zenburn.css">
+   -->
 
+  <!-- For syntax highlighting -->
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  
 
-<!-- For syntax highlighting -->
-<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
- -->
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <!-- <script>
+    document.write( '<link rel="stylesheet" href="css/print/' +
+      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+      '.css" type="text/css" media="print">' );
+  </script> -->
 
-<!-- For syntax highlighting -->
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+    </head>
 
+  <body>
+  
+  <div class="reveal">
 
-<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-<!-- <script>
-  document.write( '<link rel="stylesheet" href="css/print/' +
-    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
-    '.css" type="text/css" media="print">' );
-</script> -->
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
 
-<!--[if lt IE 9]>
-<script src="lib/js/html5shiv.js"></script>
-<![endif]-->
-</head>
+  <section>
+  <h1>BASH &amp; Shell Scripting</h1>
+  <h3>Patrick Earl</h3>
+  <p>
+  <h4>03/03/2021</h4>
+  </p>
+  </section>  
 
-<body>
+  
+  <section id="pronunciation-guide-to-unix" class="slide level2">
+  <h2>Pronunciation guide to UNIX</h2>
+  <ul>
+  <li><a href="https://ss64.com/bash/syntax-pronounce.html">See Here</a></li>
+  </ul>
+  </section>
+  <section id="bash" class="slide level2">
+  <h2>BASH</h2>
+  <ul>
+  <li>Bourne Again Shell - <em>bash</em>
+  <ul>
+  <li>sh - Bourne Shell, written by Steve Bourne at AT&amp;T’s Bell Lab</li>
+  <li>Many systems sym-link sh to bash (or dash)</li>
+  </ul></li>
+  <li>POSIX Standard
+  <ul>
+  <li><em>Portable Operating System Interface</em></li>
+  <li><a href="http://www.opengroup.org/austin/papers/posix_faq.html">POSIX FAQ</a></li>
+  </ul></li>
+  <li><code>chsh</code> - Change your login shell</li>
+  </ul>
+  </section>
+  <section id="shell-files" class="slide level2">
+  <h2>Shell Files</h2>
+  <ul>
+  <li>Startup Files
+  <ul>
+  <li>Files a shell runs to initialize itself</li>
+  <li>Files depend on it being an interactive or non-interactive</li>
+  </ul></li>
+  <li>Login Shells
+  <ul>
+  <li>First shell that displays a prompt to login into a system</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
-<div class="reveal">
+  <ul>
+  <li><em>Interactive Shells</em>
+  <ul>
+  <li>/etc/profile</li>
+  <li>.bash_profile, .bash_login, .profile</li>
+  <li>.bash_logout</li>
+  </ul></li>
+  <li><em>Non-interactive</em>
+  <ul>
+  <li>.bashrc</li>
+  <li>/etc/bashrc</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="source" class="slide level2">
+  <h2>source</h2>
+  <ul>
+  <li><code>.</code>(dot) or <code>source</code></li>
+  <li>If changes are made to your startup files, these commands can allow for “reloading”
+  <ul>
+  <li>Typically to see the changes you’d have to logout and in again.</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="standard-error-redirection" class="slide level2">
+  <h2>Standard Error Redirection</h2>
+  <ul>
+  <li>0 - stdin, 1 - stdout, 2 - stderr</li>
+  <li><code>&lt;, &gt;</code>
+  <ul>
+  <li><code>&lt;</code> - shorthand for <code>0&lt;</code></li>
+  <li><code>&gt;</code> - shorthand for <code>1&gt;</code></li>
+  <li><code>2&gt;</code> - redirect stderr</li>
+  <li><code>&amp;&gt;</code> - Redirect stdout &amp; stderr</li>
+  </ul></li>
+  <li>Can have more than one redirection.</li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
-<!-- Any section element inside of this container is displayed as a slide -->
-<div class="slides">
+  <table>
+  <colgroup>
+  <col style="width: 50%" />
+  <col style="width: 50%" />
+  </colgroup>
+  <thead>
+  <tr class="header">
+  <th>Operator</th>
+  <th>Meaning</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td>&gt;!<em>filename</em></td>
+  <td>Redirects to stdout and overwrites even if <em>noclobber</em> is set</td>
+  </tr>
+  <tr class="even">
+  <td>&gt;&gt;<em>filename</em></td>
+  <td>Redirects and appends stdout to filename. Creates if doesn’t exist</td>
+  </tr>
+  <tr class="odd">
+  <td>&amp;&gt;<em>filename</em></td>
+  <td>Redirects stdout and stderr to filename</td>
+  </tr>
+  </tbody>
+  </table>
+  <p><em>Table 8-2 from Practical Guide to Linux Textbook</em></p>
+  </section>
+  <section id="shell-scripting" class="slide level2">
+  <h2>Shell Scripting</h2>
+  <ul>
+  <li><code>#!</code> - specifies a shell</li>
+  <li><code>#</code> - Comments</li>
+  <li>Command separation
+  <ul>
+  <li><code>;</code> AND <em>NEWLINE</em></li>
+  </ul></li>
+  <li><code>&amp;&amp;</code> and <code>||</code> - Boolean Control</li>
+  <li><code>\</code> - Continue a command</li>
+  </ul>
+  </section>
+  <section id="parameters-and-variables" class="slide level2">
+  <h2>Parameters and Variables</h2>
+  <ul>
+  <li><em>Shell Parameters</em> - A value you or the shell script can access</li>
+  <li><em>Variables</em> - shell parameter that consists of:
+  <ul>
+  <li>Letters</li>
+  <li>Digits</li>
+  <li>Underscores</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
-<section>
-<h1>BASH &amp; Shell Scripting</h1>
-<h3>Patrick Earl</h3>
-<p>
-<h4>03/03/2021</h4>
-</p>
-</section>  
+  <ul>
+  <li><em>User-Created</em></li>
+  <li><em>Shell Variables</em> &amp; <em>Env Vars</em></li>
+  <li>Syntax: <code>VARIABLE=value</code>
+  <ul>
+  <li><code>num=1</code></li>
+  <li><strong>Cannot</strong> have whitespace</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
+  <ul>
+  <li>echo copies it’s arguments to stdout</li>
+  <li><code>$</code> - Substitute the variable’s value
+  <ul>
+  <li>$ can be quoted, with single quotes or backtick</li>
+  </ul></li>
+  <li>Double Quotes don’t prevent substitution, but do turn off special meanings for other characters.
+  <ul>
+  <li>Used for variables with spaces in them</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
-<section id="pronunciation-guide-to-unix" class="slide level2">
-<h2>Pronunciation guide to UNIX</h2>
-<ul>
-<li><a href="https://ss64.com/bash/syntax-pronounce.html">See Here</a></li>
-</ul>
-</section>
-<section id="bash" class="slide level2">
-<h2>BASH</h2>
-<ul>
-<li>Bourne Again Shell - <em>bash</em>
-<ul>
-<li>sh - Bourne Shell, written by Steve Bourne at AT&amp;T’s Bell Lab</li>
-<li>Many systems sym-link sh to bash (or dash)</li>
-</ul></li>
-<li>POSIX Standard
-<ul>
-<li><em>Portable Operating System Interface</em></li>
-<li><a href="http://www.opengroup.org/austin/papers/posix_faq.html">POSIX FAQ</a></li>
-</ul></li>
-<li><code>chsh</code> - Change your login shell</li>
-</ul>
-</section>
-<section id="shell-files" class="slide level2">
-<h2>Shell Files</h2>
-<ul>
-<li>Startup Files
-<ul>
-<li>Files a shell runs to initialize itself</li>
-<li>Files depend on it being an interactive or non-interactive</li>
-</ul></li>
-<li>Login Shells
-<ul>
-<li>First shell that displays a prompt to login into a system</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
+  <ul>
+  <li>“{}” BRACES
+  <ul>
+  <li>Braces insulate variable name from adjacent chars</li>
+  <li><code>PREF=counter; WAY=$PREFclockwise; FAKE=$PREFfeit</code></li>
+  </ul></li>
+  <li><code>unset</code> - Set the value of a variable to <em>null</em></li>
+  <li><code>readonly</code></li>
+  <li><code>declare</code>
+  <ul>
+  <li><code>declare -r</code></li>
+  <li><code>declare -x</code></li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="quotes" class="slide level2">
+  <h2>Quotes</h2>
+  <ul>
+  <li><code>'</code> - Single Quotes
+  <ul>
+  <li>Preserves the literal value of each character</li>
+  <li><a href="https://www.gnu.org/software/bash/manual/html_node/Single-Quotes.html">GNU BASH Manual 3.1.2.2</a></li>
+  </ul></li>
+  <li><code>"</code> - Double Quotes
+  <ul>
+  <li>Preserves the literal value of each character except: <em>$, `, \, and !</em></li>
+  <li><a href="https://www.gnu.org/software/bash/manual/html_node/Double-Quotes.html">GNU BASH Manual 3.1.2.3</a></li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="user-prompts" class="slide level2">
+  <h2>User Prompts</h2>
+  <ul>
+  <li><code>read</code> - Read from stdin (or FD) and split into words
+  <ul>
+  <li><code>read [options] [NAMES ...]</code></li>
+  <li><code>read -p &lt;prompt&gt; [NAMES ...]</code></li>
+  </ul></li>
+  <li>If no <em>NAME</em>, gets stored in variable <em>REPLY</em></li>
+  </ul>
+  </section>
+  <section id="shell-arithmetic" class="slide level2">
+  <h2>Shell Arithmetic</h2>
+  <ul>
+  <li><code>declare -i</code>
+  <ul>
+  <li>Declare a variables as an integer</li>
+  </ul></li>
+  <li><code>((var+1))</code></li>
+  </ul>
+  </section>
+  <section id="control-flow" class="slide level2">
+  <h2>Control Flow</h2>
+  <ul>
+  <li><code>if..then</code> - <em>test</em> command</li>
+  <li><code>test "thing" = "thing2"</code></li>
+  <li><code>test $# -eq 0</code></li>
+  <li><code>[]</code> - Alias for <em>test</em>
+  <ul>
+  <li><code>[[]]</code> - Bash Extension</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="arguments" class="slide level2">
+  <h2>Arguments</h2>
+  <ul>
+  <li><code>$1, $2, $3</code></li>
+  <li><code>$#</code> - Number of Args<br />
+  </li>
+  <li><code>shift</code> - Shift <em>n</em> arguments</li>
+  </ul>
+  </section>
+  <section id="usage-message" class="slide level2">
+  <h2>Usage Message</h2>
+  <ul>
+  <li>If non-correct or non-arguments are passed show a <em>usage</em> message</li>
+  <li><code>Usage: ./command [arguments]</code></li>
+  </ul>
+  </section>
+  <section id="array-variables" class="slide level2">
+  <h2>Array Variables</h2>
+  <ul>
+  <li>bash supports <em>1D arrays</em> and uses zero-based indexing
+  <ul>
+  <li>Meaning the first element is at index 0</li>
+  </ul></li>
+  <li><code>name=(element1 element2 element3)</code></li>
+  <li><code>NAMES=(leela fry bender)</code></li>
+  <li><code>${NAMES[2]}</code>
+  <ul>
+  <li>Braces are not optional for arrays</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
-<ul>
-<li><em>Interactive Shells</em>
-<ul>
-<li>/etc/profile</li>
-<li>.bash_profile, .bash_login, .profile</li>
-<li>.bash_logout</li>
-</ul></li>
-<li><em>Non-interactive</em>
-<ul>
-<li>.bashrc</li>
-<li>/etc/bashrc</li>
-</ul></li>
-</ul>
-</section>
-<section id="source" class="slide level2">
-<h2>source</h2>
-<ul>
-<li><code>.</code>(dot) or <code>source</code></li>
-<li>If changes are made to your startup files, these commands can allow for “reloading”
-<ul>
-<li>Typically to see the changes you’d have to logout and in again.</li>
-</ul></li>
-</ul>
-</section>
-<section id="standard-error-redirection" class="slide level2">
-<h2>Standard Error Redirection</h2>
-<ul>
-<li>0 - stdin, 1 - stdout, 2 - stderr</li>
-<li><code>&lt;, &gt;</code>
-<ul>
-<li><code>&lt;</code> - shorthand for <code>0&lt;</code></li>
-<li><code>&gt;</code> - shorthand for <code>1&gt;</code></li>
-<li><code>2&gt;</code> - redirect stderr</li>
-<li><code>&amp;&gt;</code> - Redirect stdout &amp; stderr</li>
-</ul></li>
-<li>Can have more than one redirection.</li>
-</ul>
-</section>
-<section class="slide level2">
+  <ul>
+  <li><code>[*] [@]</code> operators
+  <ul>
+  <li>Expand array into a variable</li>
+  </ul></li>
+  <li><code>A=("${NAMES}[*]")</code></li>
+  <li><code>B=("${NAMES}[@]")</code></li>
+  <li><code>${ #NAMES[@]}</code></li>
+  </ul>
+  </section>
+  <section id="looping" class="slide level2">
+  <h2>Looping</h2>
+  <ul>
+  <li><code>while test-commands; do commands; done</code></li>
+  <li><code>for name [ [in words ..] ] ; ] do commands; done</code>
+  <ul>
+  <li>Expands the <em>words</em> and execute commands once for each member</li>
+  </ul></li>
+  <li><code>break</code></li>
+  <li><code>continue</code></li>
+  </ul>
+  </section>
+  <section id="case-statements" class="slide level2">
+  <h2>case statements</h2>
+  <pre><code>case test-string in
+      pattern-1)
+          commands-1
+      ;;
+      pattern-2)
+          commands-2
+      ;;
+      pattern-3)
+          commands-3
+      ;;
+  esac</code></pre>
+  </section>
+  <section id="functions" class="slide level2">
+  <h2>Functions</h2>
+  <ul>
+  <li><code>fname () { commands; }</code></li>
+  <li><code>function fname() { commands; }</code></li>
+  </ul>
+  </section>
+  <section id="command-substitution" class="slide level2">
+  <h2>Command Substitution</h2>
+  <ul>
+  <li><code>$(command)</code></li>
+  <li><code>`command`</code></li>
+  <li>Performs the command in a subshell and replaces it with the stdout of the command</li>
+  </ul>
+  </section>
+  <section id="parameter-expansion" class="slide level2">
+  <h2>Parameter Expansion</h2>
+  <ul>
+  <li><a href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html">BASH Manual Section</a></li>
+  <li><code>${NAME#pattern}</code> - Suffix Removal</li>
+  <li><code>${NAME%pattern}</code> - Prefix Removal</li>
+  </ul>
+  </section>
+  </div>
 
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Operator</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>&gt;!<em>filename</em></td>
-<td>Redirects to stdout and overwrites even if <em>noclobber</em> is set</td>
-</tr>
-<tr class="even">
-<td>&gt;&gt;<em>filename</em></td>
-<td>Redirects and appends stdout to filename. Creates if doesn’t exist</td>
-</tr>
-<tr class="odd">
-<td>&amp;&gt;<em>filename</em></td>
-<td>Redirects stdout and stderr to filename</td>
-</tr>
-</tbody>
-</table>
-<p><em>Table 8-2 from Practical Guide to Linux Textbook</em></p>
-</section>
-<section id="shell-scripting" class="slide level2">
-<h2>Shell Scripting</h2>
-<ul>
-<li><code>#!</code> - specifies a shell</li>
-<li><code>#</code> - Comments</li>
-<li>Command separation
-<ul>
-<li><code>;</code> AND <em>NEWLINE</em></li>
-</ul></li>
-<li><code>&amp;&amp;</code> and <code>||</code> - Boolean Control</li>
-<li><code>\</code> - Continue a command</li>
-</ul>
-</section>
-<section id="parameters-and-variables" class="slide level2">
-<h2>Parameters and Variables</h2>
-<ul>
-<li><em>Shell Parameters</em> - A value you or the shell script can access</li>
-<li><em>Variables</em> - shell parameter that consists of:
-<ul>
-<li>Letters</li>
-<li>Digits</li>
-<li>Underscores</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
 
-<ul>
-<li><em>User-Created</em></li>
-<li><em>Shell Variables</em> &amp; <em>Env Vars</em></li>
-<li>Syntax: <code>VARIABLE=value</code>
-<ul>
-<li><code>num=1</code></li>
-<li><strong>Cannot</strong> have whitespace</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
+  <script>
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: false,
 
-<ul>
-<li>echo copies it’s arguments to stdout</li>
-<li><code>$</code> - Substitute the variable’s value
-<ul>
-<li>$ can be quoted, with single quotes or backtick</li>
-</ul></li>
-<li>Double Quotes don’t prevent substitution, but do turn off special meanings for other characters.
-<ul>
-<li>Used for variables with spaces in them</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
+      hash: true,
 
-<ul>
-<li>“{}” BRACES
-<ul>
-<li>Braces insulate variable name from adjacent chars</li>
-<li><code>PREF=counter; WAY=$PREFclockwise; FAKE=$PREFfeit</code></li>
-</ul></li>
-<li><code>unset</code> - Set the value of a variable to <em>null</em></li>
-<li><code>readonly</code></li>
-<li><code>declare</code>
-<ul>
-<li><code>declare -r</code></li>
-<li><code>declare -x</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="quotes" class="slide level2">
-<h2>Quotes</h2>
-<ul>
-<li><code>'</code> - Single Quotes
-<ul>
-<li>Preserves the literal value of each character</li>
-<li><a href="https://www.gnu.org/software/bash/manual/html_node/Single-Quotes.html">GNU BASH Manual 3.1.2.2</a></li>
-</ul></li>
-<li><code>"</code> - Double Quotes
-<ul>
-<li>Preserves the literal value of each character except: <em>$, `, \, and !</em></li>
-<li><a href="https://www.gnu.org/software/bash/manual/html_node/Double-Quotes.html">GNU BASH Manual 3.1.2.3</a></li>
-</ul></li>
-</ul>
-</section>
-<section id="user-prompts" class="slide level2">
-<h2>User Prompts</h2>
-<ul>
-<li><code>read</code> - Read from stdin (or FD) and split into words
-<ul>
-<li><code>read [options] [NAMES ...]</code></li>
-<li><code>read -p &lt;prompt&gt; [NAMES ...]</code></li>
-</ul></li>
-<li>If no <em>NAME</em>, gets stored in variable <em>REPLY</em></li>
-</ul>
-</section>
-<section id="shell-arithmetic" class="slide level2">
-<h2>Shell Arithmetic</h2>
-<ul>
-<li><code>declare -i</code>
-<ul>
-<li>Declare a variables as an integer</li>
-</ul></li>
-<li><code>((var+1))</code></li>
-</ul>
-</section>
-<section id="control-flow" class="slide level2">
-<h2>Control Flow</h2>
-<ul>
-<li><code>if..then</code> - <em>test</em> command</li>
-<li><code>test "thing" = "thing2"</code></li>
-<li><code>test $# -eq 0</code></li>
-<li><code>[]</code> - Alias for <em>test</em>
-<ul>
-<li><code>[[]]</code> - Bash Extension</li>
-</ul></li>
-</ul>
-</section>
-<section id="arguments" class="slide level2">
-<h2>Arguments</h2>
-<ul>
-<li><code>$1, $2, $3</code></li>
-<li><code>$#</code> - Number of Args<br />
-</li>
-<li><code>shift</code> - Shift <em>n</em> arguments</li>
-</ul>
-</section>
-<section id="usage-message" class="slide level2">
-<h2>Usage Message</h2>
-<ul>
-<li>If non-correct or non-arguments are passed show a <em>usage</em> message</li>
-<li><code>Usage: ./command [arguments]</code></li>
-</ul>
-</section>
-<section id="array-variables" class="slide level2">
-<h2>Array Variables</h2>
-<ul>
-<li>bash supports <em>1D arrays</em> and uses zero-based indexing
-<ul>
-<li>Meaning the first element is at index 0</li>
-</ul></li>
-<li><code>name=(element1 element2 element3)</code></li>
-<li><code>NAMES=(leela fry bender)</code></li>
-<li><code>${NAMES[2]}</code>
-<ul>
-<li>Braces are not optional for arrays</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
+      plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
 
-<ul>
-<li><code>[*] [@]</code> operators
-<ul>
-<li>Expand array into a variable</li>
-</ul></li>
-<li><code>A=("${NAMES}[*]")</code></li>
-<li><code>B=("${NAMES}[@]")</code></li>
-<li><code>${ #NAMES[@]}</code></li>
-</ul>
-</section>
-<section id="looping" class="slide level2">
-<h2>Looping</h2>
-<ul>
-<li><code>while test-commands; do commands; done</code></li>
-<li><code>for name [ [in words ..] ] ; ] do commands; done</code>
-<ul>
-<li>Expands the <em>words</em> and execute commands once for each member</li>
-</ul></li>
-<li><code>break</code></li>
-<li><code>continue</code></li>
-</ul>
-</section>
-<section id="case-statements" class="slide level2">
-<h2>case statements</h2>
-<pre><code>case test-string in
-    pattern-1)
-        commands-1
-    ;;
-    pattern-2)
-        commands-2
-    ;;
-    pattern-3)
-        commands-3
-    ;;
-esac</code></pre>
-</section>
-<section id="functions" class="slide level2">
-<h2>Functions</h2>
-<ul>
-<li><code>fname () { commands; }</code></li>
-<li><code>function fname() { commands; }</code></li>
-</ul>
-</section>
-<section id="command-substitution" class="slide level2">
-<h2>Command Substitution</h2>
-<ul>
-<li><code>$(command)</code></li>
-<li><code>`command`</code></li>
-<li>Performs the command in a subshell and replaces it with the stdout of the command</li>
-</ul>
-</section>
-<section id="parameter-expansion" class="slide level2">
-<h2>Parameter Expansion</h2>
-<ul>
-<li><a href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html">BASH Manual Section</a></li>
-<li><code>${NAME#pattern}</code> - Suffix Removal</li>
-<li><code>${NAME%pattern}</code> - Prefix Removal</li>
-</ul>
-</section>
-</div>
+    });
 
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+  </script>
 
-<script>
-// More info about initialization & config:
-// - https://revealjs.com/initialization/
-// - https://revealjs.com/config/
-  Reveal.initialize({
-    controls: true,
-    progress: true,
-    history: true,
-    center: false,
-
-    hash: true,
-
-    plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
-
-  });
-
-</script>
-
-</body>
+  </body>
 </html>

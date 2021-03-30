@@ -1,190 +1,190 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
 
-<title>Strings</title>
+  <title>Strings</title>
 
-<meta name="description" content="Strings">    
+  <meta name="description" content="Strings">    
 
-  <meta name="author" content="Patrick Earl" />
+      <meta name="author" content="Patrick Earl" />
+  
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+   -->
 
-<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
- -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  
 
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  <!-- For syntax highlighting -->
+  <!--     <link rel="stylesheet" href="/share/revealjs/plugin/highlight/zenburn.css">
+   -->
 
+  <!-- For syntax highlighting -->
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  
 
-<!-- For syntax highlighting -->
-<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
- -->
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <!-- <script>
+    document.write( '<link rel="stylesheet" href="css/print/' +
+      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+      '.css" type="text/css" media="print">' );
+  </script> -->
 
-<!-- For syntax highlighting -->
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+    </head>
 
+  <body>
+  
+  <div class="reveal">
 
-<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-<!-- <script>
-  document.write( '<link rel="stylesheet" href="css/print/' +
-    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
-    '.css" type="text/css" media="print">' );
-</script> -->
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
 
-<!--[if lt IE 9]>
-<script src="lib/js/html5shiv.js"></script>
-<![endif]-->
-</head>
+  <section>
+  <h1>Strings</h1>
+  <h3>Patrick Earl</h3>
+  <p>
+  <h4>03/23/2021</h4>
+  </p>
+  </section>  
 
-<body>
+  
+  <section id="strings" class="slide level2">
+  <h2>Strings</h2>
+  <ul>
+  <li>A grouping of characters.</li>
+  <li>An array of characters, which <em>could</em> be written like this:
+  <ul>
+  <li><code>char[] text = {'H', 'e', 'l', 'l', 'o'};</code></li>
+  </ul></li>
+  <li>This is annoying, use a <code>String</code> object instead!
+  <ul>
+  <li><code>String text = "Hello"</code></li>
+  </ul></li>
+  <li><em>NOTE the use of double quotes (")</em></li>
+  <li>Strings are objects with methods and data</li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
-<div class="reveal">
+  <ul>
+  <li><code>charAt()</code></li>
+  <li><code>length()</code></li>
+  </ul>
+  <pre><code>for (int = 0; i &lt; ???; i++) {
+      char c = ???
+      println(c);
+  }</code></pre>
+  </section>
+  <section id="display-text" class="slide level2">
+  <h2>Display Text</h2>
+  <ul>
+  <li>Text can be <em>rendered</em> on screen</li>
+  <li>Steps to display text on screen:
+  <ul>
+  <li>Create a <em>PFont</em> variable: <code>PFont f;</code></li>
+  <li>Specify a font: <code>f = createFont("Georgia", 16);</code></li>
+  <li>(Optionally) Change the font size: <code>textFont(f, size);</code></li>
+  <li>Specify a color: <code>fill(color);</code></li>
+  <li>Use the text function to display: <code>text(&lt;text to show&gt;, x, y);</code></li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="other-text-operations" class="slide level2">
+  <h2>Other Text Operations</h2>
+  <ul>
+  <li>The <em>String</em> object is a Java Programming Language feature</li>
+  <li><code>toUpperCase()</code></li>
+  <li><code>toLowerCase()</code></li>
+  <li><code>equals</code></li>
+  <li><code>+</code> Operator - Concatenation</li>
+  </ul>
+  </section>
+  <section id="fonts" class="slide level2">
+  <h2>Fonts</h2>
+  <ul>
+  <li>Not every computer has the same selection of fonts</li>
+  <li><code>loadFont()</code> - <em>vlw</em> formatted font</li>
+  <li><em>Create Font</em> Tool
+  <ul>
+  <li>Allows for exporting a font on your computer to be packaged with the sketch</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="exercise-17-5" class="slide level2">
+  <h2>Exercise 17-5</h2>
+  <ul>
+  <li>Take the bouncing ball and display it’s coordinates as text next to the ball</li>
+  <li>Modify the ball object</li>
+  </ul>
+  </section>
+  <section id="text-animation" class="slide level2">
+  <h2>Text Animation</h2>
+  <ul>
+  <li>Alignment - <code>textAlign() RIGHT, LEFT, CENTER</code></li>
+  <li>Width - <code>textWidth()</code> - Returns the width of any character or text string</li>
+  <li>A scroll headline. <code>textWidth</code> allows us to know the position of the last text of character</li>
+  <li><strong>Example 17-3</strong></li>
+  </ul>
+  </section>
+  <section id="rotating-text" class="slide level2">
+  <h2>Rotating Text</h2>
+  <ul>
+  <li>Rotate Text around it’s center by translating to an origin point and using <code>textAlign(CENTER)</code> before showing the text</li>
+  <li><strong>Example 17-5</strong></li>
+  <li><strong>Exercise 17-8</strong></li>
+  </ul>
+  </section>
+  <section id="character-by-character" class="slide level2">
+  <h2>Character by Character</h2>
+  <ul>
+  <li>Sometimes we need to split a string into smaller chunks
+  <ul>
+  <li>Different Sizes</li>
+  <li>Colors</li>
+  </ul></li>
+  <li><strong>char_by_char</strong></li>
+  <li><strong>Example 17-6</strong></li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
-<!-- Any section element inside of this container is displayed as a slide -->
-<div class="slides">
+  </section>
+  </div>
 
-<section>
-<h1>Strings</h1>
-<h3>Patrick Earl</h3>
-<p>
-<h4>03/23/2021</h4>
-</p>
-</section>  
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
 
+  <script>
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: false,
 
-<section id="strings" class="slide level2">
-<h2>Strings</h2>
-<ul>
-<li>A grouping of characters.</li>
-<li>An array of characters, which <em>could</em> be written like this:
-<ul>
-<li><code>char[] text = {'H', 'e', 'l', 'l', 'o'};</code></li>
-</ul></li>
-<li>This is annoying, use a <code>String</code> object instead!
-<ul>
-<li><code>String text = "Hello"</code></li>
-</ul></li>
-<li><em>NOTE the use of double quotes (")</em></li>
-<li>Strings are objects with methods and data</li>
-</ul>
-</section>
-<section class="slide level2">
+      hash: true,
 
-<ul>
-<li><code>charAt()</code></li>
-<li><code>length()</code></li>
-</ul>
-<pre><code>for (int = 0; i &lt; ???; i++) {
-    char c = ???
-    println(c);
-}</code></pre>
-</section>
-<section id="display-text" class="slide level2">
-<h2>Display Text</h2>
-<ul>
-<li>Text can be <em>rendered</em> on screen</li>
-<li>Steps to display text on screen:
-<ul>
-<li>Create a <em>PFont</em> variable: <code>PFont f;</code></li>
-<li>Specify a font: <code>f = createFont("Georgia", 16);</code></li>
-<li>(Optionally) Change the font size: <code>textFont(f, size);</code></li>
-<li>Specify a color: <code>fill(color);</code></li>
-<li>Use the text function to display: <code>text(&lt;text to show&gt;, x, y);</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="other-text-operations" class="slide level2">
-<h2>Other Text Operations</h2>
-<ul>
-<li>The <em>String</em> object is a Java Programming Language feature</li>
-<li><code>toUpperCase()</code></li>
-<li><code>toLowerCase()</code></li>
-<li><code>equals</code></li>
-<li><code>+</code> Operator - Concatenation</li>
-</ul>
-</section>
-<section id="fonts" class="slide level2">
-<h2>Fonts</h2>
-<ul>
-<li>Not every computer has the same selection of fonts</li>
-<li><code>loadFont()</code> - <em>vlw</em> formatted font</li>
-<li><em>Create Font</em> Tool
-<ul>
-<li>Allows for exporting a font on your computer to be packaged with the sketch</li>
-</ul></li>
-</ul>
-</section>
-<section id="exercise-17-5" class="slide level2">
-<h2>Exercise 17-5</h2>
-<ul>
-<li>Take the bouncing ball and display it’s coordinates as text next to the ball</li>
-<li>Modify the ball object</li>
-</ul>
-</section>
-<section id="text-animation" class="slide level2">
-<h2>Text Animation</h2>
-<ul>
-<li>Alignment - <code>textAlign() RIGHT, LEFT, CENTER</code></li>
-<li>Width - <code>textWidth()</code> - Returns the width of any character or text string</li>
-<li>A scroll headline. <code>textWidth</code> allows us to know the position of the last text of character</li>
-<li><strong>Example 17-3</strong></li>
-</ul>
-</section>
-<section id="rotating-text" class="slide level2">
-<h2>Rotating Text</h2>
-<ul>
-<li>Rotate Text around it’s center by translating to an origin point and using <code>textAlign(CENTER)</code> before showing the text</li>
-<li><strong>Example 17-5</strong></li>
-<li><strong>Exercise 17-8</strong></li>
-</ul>
-</section>
-<section id="character-by-character" class="slide level2">
-<h2>Character by Character</h2>
-<ul>
-<li>Sometimes we need to split a string into smaller chunks
-<ul>
-<li>Different Sizes</li>
-<li>Colors</li>
-</ul></li>
-<li><strong>char_by_char</strong></li>
-<li><strong>Example 17-6</strong></li>
-</ul>
-</section>
-<section class="slide level2">
+      plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
 
-</section>
-</div>
+    });
 
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+  </script>
 
-<script>
-// More info about initialization & config:
-// - https://revealjs.com/initialization/
-// - https://revealjs.com/config/
-  Reveal.initialize({
-    controls: true,
-    progress: true,
-    history: true,
-    center: false,
-
-    hash: true,
-
-    plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
-
-  });
-
-</script>
-
-</body>
+  </body>
 </html>

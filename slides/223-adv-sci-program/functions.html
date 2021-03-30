@@ -1,143 +1,143 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
 
-<title>Python Functions</title>
+  <title>Python Functions</title>
 
-<meta name="description" content="Python Functions">    
+  <meta name="description" content="Python Functions">    
 
-  <meta name="author" content="Patrick Earl" />
+      <meta name="author" content="Patrick Earl" />
+  
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+   -->
 
-<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
- -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  
 
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  <!-- For syntax highlighting -->
+  <!--     <link rel="stylesheet" href="/share/revealjs/plugin/highlight/zenburn.css">
+   -->
 
+  <!-- For syntax highlighting -->
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  
 
-<!-- For syntax highlighting -->
-<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
- -->
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <!-- <script>
+    document.write( '<link rel="stylesheet" href="css/print/' +
+      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+      '.css" type="text/css" media="print">' );
+  </script> -->
 
-<!-- For syntax highlighting -->
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+    </head>
 
+  <body>
+  
+  <div class="reveal">
 
-<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-<!-- <script>
-  document.write( '<link rel="stylesheet" href="css/print/' +
-    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
-    '.css" type="text/css" media="print">' );
-</script> -->
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
 
-<!--[if lt IE 9]>
-<script src="lib/js/html5shiv.js"></script>
-<![endif]-->
-</head>
+  <section>
+  <h1>Python Functions</h1>
+  <h3>Patrick Earl</h3>
+  <p>
+  <h4>02/01/2021</h4>
+  </p>
+  </section>  
 
-<body>
+  
+  <section id="using-functions" class="slide level2">
+  <h2>Using Functions</h2>
+  <ul>
+  <li>Groups of code with a name</li>
+  <li><code>print('abc')</code>
+  <ul>
+  <li>The function <em>print</em> with <em>‘abc’</em> as the function’s argument</li>
+  </ul></li>
+  <li>Keyword Arguments
+  <ul>
+  <li>Arguments specified by name</li>
+  <li><code>sep</code></li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="creating-functions" class="slide level2">
+  <h2>Creating Functions</h2>
+  <ul>
+  <li><code>def</code> keyword</li>
+  <li>No <em>type</em></li>
+  <li>Can return multiple items as a tuple</li>
+  </ul>
+  </section>
+  <section id="function-arguments" class="slide level2">
+  <h2>Function Arguments</h2>
+  <ul>
+  <li>Default Values
+  <ul>
+  <li>Optional argument with default value</li>
+  </ul></li>
+  <li>Flexible Arguments
+  <ul>
+  <li><code>*args</code> &amp; <code>**kwargs</code></li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="anonymous-functions" class="slide level2">
+  <h2>Anonymous Functions</h2>
+  <ul>
+  <li><code>lamba</code></li>
+  <li>Useful for one-off functions</li>
+  <li>Sorting a dictionary</li>
+  <li><code>add = lambda x, y: x + y</code></li>
+  </ul>
+  <h3 id="lambda">Lambda</h3>
+  <ul>
+  <li><code>sorted([2, 4, 3, 5, 1, 6])</code></li>
+  </ul>
+  <pre><code>data = [{&#39;first&#39;:&#39;Guido&#39;, &#39;last&#39;:&#39;Van Rossum&#39;, &#39;YOB&#39;:1956},
+          {&#39;first&#39;:&#39;Grace&#39;, &#39;last&#39;:&#39;Hopper&#39;,     &#39;YOB&#39;:1906},
+          {&#39;first&#39;:&#39;Alan&#39;,  &#39;last&#39;:&#39;Turing&#39;,     &#39;YOB&#39;:1912}]
 
-<div class="reveal">
+  sorted(data, key=lambda item: item[&#39;first&#39;])</code></pre>
+  </section>
+  </div>
 
-<!-- Any section element inside of this container is displayed as a slide -->
-<div class="slides">
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
 
-<section>
-<h1>Python Functions</h1>
-<h3>Patrick Earl</h3>
-<p>
-<h4>02/01/2021</h4>
-</p>
-</section>  
+  <script>
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: false,
 
+      hash: true,
 
-<section id="using-functions" class="slide level2">
-<h2>Using Functions</h2>
-<ul>
-<li>Groups of code with a name</li>
-<li><code>print('abc')</code>
-<ul>
-<li>The function <em>print</em> with <em>‘abc’</em> as the function’s argument</li>
-</ul></li>
-<li>Keyword Arguments
-<ul>
-<li>Arguments specified by name</li>
-<li><code>sep</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="creating-functions" class="slide level2">
-<h2>Creating Functions</h2>
-<ul>
-<li><code>def</code> keyword</li>
-<li>No <em>type</em></li>
-<li>Can return multiple items as a tuple</li>
-</ul>
-</section>
-<section id="function-arguments" class="slide level2">
-<h2>Function Arguments</h2>
-<ul>
-<li>Default Values
-<ul>
-<li>Optional argument with default value</li>
-</ul></li>
-<li>Flexible Arguments
-<ul>
-<li><code>*args</code> &amp; <code>**kwargs</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="anonymous-functions" class="slide level2">
-<h2>Anonymous Functions</h2>
-<ul>
-<li><code>lamba</code></li>
-<li>Useful for one-off functions</li>
-<li>Sorting a dictionary</li>
-<li><code>add = lambda x, y: x + y</code></li>
-</ul>
-<h3 id="lambda">Lambda</h3>
-<ul>
-<li><code>sorted([2, 4, 3, 5, 1, 6])</code></li>
-</ul>
-<pre><code>data = [{&#39;first&#39;:&#39;Guido&#39;, &#39;last&#39;:&#39;Van Rossum&#39;, &#39;YOB&#39;:1956},
-        {&#39;first&#39;:&#39;Grace&#39;, &#39;last&#39;:&#39;Hopper&#39;,     &#39;YOB&#39;:1906},
-        {&#39;first&#39;:&#39;Alan&#39;,  &#39;last&#39;:&#39;Turing&#39;,     &#39;YOB&#39;:1912}]
+      plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
 
-sorted(data, key=lambda item: item[&#39;first&#39;])</code></pre>
-</section>
-</div>
+    });
 
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+  </script>
 
-<script>
-// More info about initialization & config:
-// - https://revealjs.com/initialization/
-// - https://revealjs.com/config/
-  Reveal.initialize({
-    controls: true,
-    progress: true,
-    history: true,
-    center: false,
-
-    hash: true,
-
-    plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
-
-  });
-
-</script>
-
-</body>
+  </body>
 </html>

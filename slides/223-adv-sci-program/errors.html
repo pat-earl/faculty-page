@@ -1,130 +1,130 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
 
-<title>Errors &amp; Exceptions</title>
+  <title>Errors &amp; Exceptions</title>
 
-<meta name="description" content="Errors &amp; Exceptions">    
+  <meta name="description" content="Errors &amp; Exceptions">    
 
-  <meta name="author" content="Patrick Earl" />
+      <meta name="author" content="Patrick Earl" />
+  
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+   -->
 
-<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
- -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  
 
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  <!-- For syntax highlighting -->
+  <!--     <link rel="stylesheet" href="/share/revealjs/plugin/highlight/zenburn.css">
+   -->
 
+  <!-- For syntax highlighting -->
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  
 
-<!-- For syntax highlighting -->
-<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
- -->
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <!-- <script>
+    document.write( '<link rel="stylesheet" href="css/print/' +
+      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+      '.css" type="text/css" media="print">' );
+  </script> -->
 
-<!-- For syntax highlighting -->
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+    </head>
 
+  <body>
+  
+  <div class="reveal">
 
-<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-<!-- <script>
-  document.write( '<link rel="stylesheet" href="css/print/' +
-    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
-    '.css" type="text/css" media="print">' );
-</script> -->
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
 
-<!--[if lt IE 9]>
-<script src="lib/js/html5shiv.js"></script>
-<![endif]-->
-</head>
+  <section>
+  <h1>Errors &amp; Exceptions</h1>
+  <h3>Patrick Earl</h3>
+  <p>
+  <h4>02/15/2021</h4>
+  </p>
+  </section>  
 
-<body>
+  
+  <section id="error-types" class="slide level2">
+  <h2>Error Types</h2>
+  <ul>
+  <li><strong>Syntax Errors</strong> - Invalid Python Code</li>
+  <li><strong>Runtime Errors</strong> - Syntactically valid code that fails for some reason</li>
+  <li><strong>Semantic Errors</strong> - Errors in logic</li>
+  </ul>
+  </section>
+  <section id="runtime-errors" class="slide level2">
+  <h2>Runtime Errors</h2>
+  <ul>
+  <li>Python will provide an <em>Exception</em> type</li>
+  <li><code>try</code> &amp; <code>except</code></li>
+  <li><em>FileNotFoundError</em></li>
+  </ul>
+  </section>
+  <section id="raising-exceptions" class="slide level2">
+  <h2>Raising Exceptions</h2>
+  <ul>
+  <li><code>raise</code></li>
+  <li>Fibonacci Sequence (Non-Negative Numbers)</li>
+  </ul>
+  </section>
+  <section id="exception-message" class="slide level2">
+  <h2>Exception Message</h2>
+  <ul>
+  <li>Capture the Exception message</li>
+  <li><code>except Error as message:</code></li>
+  </ul>
+  </section>
+  <section id="tryexcept" class="slide level2">
+  <h2>try…except</h2>
+  <pre><code>try:
+      print(&quot;try something here&quot;)
+  except:
+      print(&quot;this happens only if it fails&quot;)
+  else:
+      print(&quot;this happens only if it succeeds&quot;)
+  finally:
+      print(&quot;this happens no matter what&quot;)</code></pre>
+  </section>
+  </div>
 
-<div class="reveal">
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
 
-<!-- Any section element inside of this container is displayed as a slide -->
-<div class="slides">
+  <script>
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: false,
 
-<section>
-<h1>Errors &amp; Exceptions</h1>
-<h3>Patrick Earl</h3>
-<p>
-<h4>02/15/2021</h4>
-</p>
-</section>  
+      hash: true,
 
+      plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
 
-<section id="error-types" class="slide level2">
-<h2>Error Types</h2>
-<ul>
-<li><strong>Syntax Errors</strong> - Invalid Python Code</li>
-<li><strong>Runtime Errors</strong> - Syntactically valid code that fails for some reason</li>
-<li><strong>Semantic Errors</strong> - Errors in logic</li>
-</ul>
-</section>
-<section id="runtime-errors" class="slide level2">
-<h2>Runtime Errors</h2>
-<ul>
-<li>Python will provide an <em>Exception</em> type</li>
-<li><code>try</code> &amp; <code>except</code></li>
-<li><em>FileNotFoundError</em></li>
-</ul>
-</section>
-<section id="raising-exceptions" class="slide level2">
-<h2>Raising Exceptions</h2>
-<ul>
-<li><code>raise</code></li>
-<li>Fibonacci Sequence (Non-Negative Numbers)</li>
-</ul>
-</section>
-<section id="exception-message" class="slide level2">
-<h2>Exception Message</h2>
-<ul>
-<li>Capture the Exception message</li>
-<li><code>except Error as message:</code></li>
-</ul>
-</section>
-<section id="tryexcept" class="slide level2">
-<h2>try…except</h2>
-<pre><code>try:
-    print(&quot;try something here&quot;)
-except:
-    print(&quot;this happens only if it fails&quot;)
-else:
-    print(&quot;this happens only if it succeeds&quot;)
-finally:
-    print(&quot;this happens no matter what&quot;)</code></pre>
-</section>
-</div>
+    });
 
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+  </script>
 
-<script>
-// More info about initialization & config:
-// - https://revealjs.com/initialization/
-// - https://revealjs.com/config/
-  Reveal.initialize({
-    controls: true,
-    progress: true,
-    history: true,
-    center: false,
-
-    hash: true,
-
-    plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
-
-  });
-
-</script>
-
-</body>
+  </body>
 </html>

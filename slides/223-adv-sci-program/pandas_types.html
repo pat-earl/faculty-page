@@ -1,310 +1,310 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
 
-<title>Pandas - Data Types</title>
+  <title>Pandas - Data Types</title>
 
-<meta name="description" content="Pandas - Data Types">    
+  <meta name="description" content="Pandas - Data Types">    
 
-  <meta name="author" content="Patrick Earl" />
+      <meta name="author" content="Patrick Earl" />
+  
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+   -->
 
-<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
- -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  
 
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  <!-- For syntax highlighting -->
+  <!--     <link rel="stylesheet" href="/share/revealjs/plugin/highlight/zenburn.css">
+   -->
 
+  <!-- For syntax highlighting -->
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  
 
-<!-- For syntax highlighting -->
-<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
- -->
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <!-- <script>
+    document.write( '<link rel="stylesheet" href="css/print/' +
+      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+      '.css" type="text/css" media="print">' );
+  </script> -->
 
-<!-- For syntax highlighting -->
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+    </head>
 
+  <body>
+  
+  <div class="reveal">
 
-<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-<!-- <script>
-  document.write( '<link rel="stylesheet" href="css/print/' +
-    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
-    '.css" type="text/css" media="print">' );
-</script> -->
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
 
-<!--[if lt IE 9]>
-<script src="lib/js/html5shiv.js"></script>
-<![endif]-->
-</head>
+  <section>
+  <h1>Pandas - Data Types</h1>
+  <h3>Patrick Earl</h3>
+  <p>
+  <h4>03/12/2021</h4>
+  </p>
+  </section>  
 
-<body>
+  
+  <section id="pandas" class="slide level2">
+  <h2>Pandas</h2>
+  <ul>
+  <li>Package built on top of NumPy</li>
+  <li>Provides implementation of DataFrames
+  <ul>
+  <li>Multidimensional arrays with row &amp; column labels</li>
+  </ul></li>
+  <li><code>import pandas</code></li>
+  <li>Same convention as NumPy</li>
+  <li><code>import pandas as pd</code></li>
+  </ul>
+  </section>
+  <section id="pandas-objects" class="slide level2">
+  <h2>Pandas Objects</h2>
+  <ul>
+  <li>Series</li>
+  <li>DataFrame</li>
+  <li>Index</li>
+  </ul>
+  </section>
+  <section id="series" class="slide level2">
+  <h2>Series</h2>
+  <ul>
+  <li>One-Dimensional array of <em>indexed</em> data.</li>
+  <li>Can be created from a list or np.array
+  <ul>
+  <li><code>data = pd.Series([0.25, 0.5, 0.75, 1.0])</code></li>
+  </ul></li>
+  <li><code>data.values</code></li>
+  <li><code>data.index</code></li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
-<div class="reveal">
+  <ul>
+  <li>Data can be accessed by the associated index</li>
+  <li><code>data[1]</code></li>
+  <li><code>data[1:3]</code></li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
-<!-- Any section element inside of this container is displayed as a slide -->
-<div class="slides">
+  <ul>
+  <li>NumPy arrays have a <em>implicitly</em> defined integer index</li>
+  <li>Panda Series provide <em>explicitly</em> defined indexes associated with values
+  <ul>
+  <li>Default index is <em>zero-based</em> numeric</li>
+  </ul></li>
+  </ul>
+  <pre><code>data = pd.Series([0.25, 0.5, 0.75, 1.0],
+      index=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;])
 
-<section>
-<h1>Pandas - Data Types</h1>
-<h3>Patrick Earl</h3>
-<p>
-<h4>03/12/2021</h4>
-</p>
-</section>  
+  print(data[&#39;a&#39;])</code></pre>
+  </section>
+  <section id="series-attributes" class="slide level2">
+  <h2>Series Attributes</h2>
+  <ul>
+  <li>index: an index object</li>
+  </ul>
+  <pre><code>In [5]: s1 = pd.Series([4, 5, 6 )
+  In [6]: s1.index
+  Out[6]: RangeIndex(start=0, stop=3, step=1)
+  In [7]: s2 = pd.Series({100: 1, 200:3, 400:5}
+  In [8]: s2.index
+  Out[8]: Int64Index([100, 200, 400], dtype=&#39;int64&#39;)</code></pre>
+  <ul>
+  <li>values: The NumPy Array</li>
+  </ul>
+  <pre><code>In [9]: s1.values
+  Out[9]: array([4, 5, 6], dtype=int64)
+  In [10]: s2.values
+  Out[10]: array([1, 3, 5], dtype=int64)</code></pre>
+  </section>
+  <section id="pandas-dataframes" class="slide level2">
+  <h2>Pandas DataFrames</h2>
+  <ul>
+  <li>DataFrames is an analog of two-dimensional arrays with flexible row indices and flexible column names
+  <ul>
+  <li>Or a sequence of aligned <em>Series</em> objects, sharing a similar index</li>
+  </ul></li>
+  <li>Each column in a <em>DataFrame</em> is a <em>Series</em></li>
+  <li><em>DataFrames</em> can be constructed from:
+  <ul>
+  <li>Single Series</li>
+  <li>List of Dicts</li>
+  <li>Dict of Series</li>
+  <li>2-D NumPy Array</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="pandas-dataframe-examples" class="slide level2">
+  <h2>Pandas DataFrame Examples</h2>
+  <pre><code>In [11]: df = pd.DataFrame([[1,2,3], [4, 5, 6]])
+  In [12]: df
+  Out[12]: 0  1  2 
+        0  1  2  3
+        1  4  5  6
+  In [13]: df.index
+  Out[13]: RangeIndex(start=0, stop=2, step=1)
+  In [15]: df.columns
+  Out[15]: RangeIndex(start=0, stop=3, step=1)</code></pre>
+  </section>
+  <section class="slide level2">
 
+  <pre><code>In [20]: pd.DataFrame(np.ones((4,2)),
+          columns=[&#39;one&#39;, &#39;two&#39;],
+          index=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]) 
+  Out[20]: one  two
+        a  1.0  1.0
+        b  1.0  1.0
+        c  1.0  1.0
+        d  1.0  1.0</code></pre>
+  </section>
+  <section class="slide level2">
 
-<section id="pandas" class="slide level2">
-<h2>Pandas</h2>
-<ul>
-<li>Package built on top of NumPy</li>
-<li>Provides implementation of DataFrames
-<ul>
-<li>Multidimensional arrays with row &amp; column labels</li>
-</ul></li>
-<li><code>import pandas</code></li>
-<li>Same convention as NumPy</li>
-<li><code>import pandas as pd</code></li>
-</ul>
-</section>
-<section id="pandas-objects" class="slide level2">
-<h2>Pandas Objects</h2>
-<ul>
-<li>Series</li>
-<li>DataFrame</li>
-<li>Index</li>
-</ul>
-</section>
-<section id="series" class="slide level2">
-<h2>Series</h2>
-<ul>
-<li>One-Dimensional array of <em>indexed</em> data.</li>
-<li>Can be created from a list or np.array
-<ul>
-<li><code>data = pd.Series([0.25, 0.5, 0.75, 1.0])</code></li>
-</ul></li>
-<li><code>data.values</code></li>
-<li><code>data.index</code></li>
-</ul>
-</section>
-<section class="slide level2">
+  <ul>
+  <li>Adding Columns
+  <ul>
+  <li><code>df[new_column] = [new, values]</code></li>
+  </ul></li>
+  <li>Removing Columns
+  <ul>
+  <li><code>df.pop()</code></li>
+  <li><code>del df['column']</code></li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="the-index-object" class="slide level2">
+  <h2>The Index Object</h2>
+  <ul>
+  <li><em>Index</em> object can be considered an <em>immutable</em> array or <em>ordered set</em> (Can contain dups though)</li>
+  <li><code>ind = pd.Index([2, 3, 5, 7, 11])</code></li>
+  <li>As an array:
+  <ul>
+  <li><code>ind[1]</code></li>
+  <li><code>ind[::2]</code></li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="data-indexing" class="slide level2">
+  <h2>Data Indexing</h2>
+  <ul>
+  <li>Series as a Dictionary
+  <ul>
+  <li>Data Selection and Modification via the Key</li>
+  </ul></li>
+  <li>Array-Style Interface (<em>slices, masking, and fancy indexing</em>)</li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
-<ul>
-<li>Data can be accessed by the associated index</li>
-<li><code>data[1]</code></li>
-<li><code>data[1:3]</code></li>
-</ul>
-</section>
-<section class="slide level2">
+  <ul>
+  <li>Indexers
+  <ul>
+  <li><code>data = pd.Series(['a', 'b', 'c'], index=[1, 3, 5])</code></li>
+  <li><code>data.loc[1]</code> - Indexing and Slicing always reference these explicit index</li>
+  <li><code>data.iloc[1]</code> - Referencing the implicit indexing</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="dataframe-summary" class="slide level2">
+  <h2>DataFrame Summary</h2>
+  <table>
+  <thead>
+  <tr class="header">
+  <th>Operation</th>
+  <th>Syntax</th>
+  <th>Result Type</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td>Select a column</td>
+  <td>df[col]</td>
+  <td>Series</td>
+  </tr>
+  <tr class="even">
+  <td>Select row by label</td>
+  <td>df.loc[label]</td>
+  <td>Series</td>
+  </tr>
+  <tr class="odd">
+  <td>Select row by integer location</td>
+  <td>df.iloc[loc]</td>
+  <td>Series</td>
+  </tr>
+  <tr class="even">
+  <td>Slice Rows</td>
+  <td>df[5:10]</td>
+  <td>DataFrame</td>
+  </tr>
+  <tr class="odd">
+  <td>Select rows by boolean vector</td>
+  <td>df[bool_vec]</td>
+  <td>DataFrame</td>
+  </tr>
+  </tbody>
+  </table>
+  </section>
+  <section id="ufuncs" class="slide level2">
+  <h2>UFuncs</h2>
+  <ul>
+  <li>Indices are preserved with ufuncs</li>
+  <li>Indices are aligned when performing binary ufuncs</li>
+  <li>Alignment is preserved when performing operations between <em>DataFrame</em> and <em>Series</em> objects</li>
+  </ul>
+  </section>
+  <section id="missing-data" class="slide level2">
+  <h2>Missing Data</h2>
+  <ul>
+  <li><code>None</code> and <code>NaN</code> - Null (missing) values</li>
+  <li>Functions for missing data:
+  <ul>
+  <li><code>isnull()</code></li>
+  <li><code>notnull()</code></li>
+  <li><code>dropna()</code> - Filter out missing values</li>
+  <li><code>fillna()</code> - Fill NaNs with specified value</li>
+  </ul></li>
+  </ul>
+  </section>
+  </div>
 
-<ul>
-<li>NumPy arrays have a <em>implicitly</em> defined integer index</li>
-<li>Panda Series provide <em>explicitly</em> defined indexes associated with values
-<ul>
-<li>Default index is <em>zero-based</em> numeric</li>
-</ul></li>
-</ul>
-<pre><code>data = pd.Series([0.25, 0.5, 0.75, 1.0],
-    index=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;])
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
 
-print(data[&#39;a&#39;])</code></pre>
-</section>
-<section id="series-attributes" class="slide level2">
-<h2>Series Attributes</h2>
-<ul>
-<li>index: an index object</li>
-</ul>
-<pre><code>In [5]: s1 = pd.Series([4, 5, 6 )
-In [6]: s1.index
-Out[6]: RangeIndex(start=0, stop=3, step=1)
-In [7]: s2 = pd.Series({100: 1, 200:3, 400:5}
-In [8]: s2.index
-Out[8]: Int64Index([100, 200, 400], dtype=&#39;int64&#39;)</code></pre>
-<ul>
-<li>values: The NumPy Array</li>
-</ul>
-<pre><code>In [9]: s1.values
-Out[9]: array([4, 5, 6], dtype=int64)
-In [10]: s2.values
-Out[10]: array([1, 3, 5], dtype=int64)</code></pre>
-</section>
-<section id="pandas-dataframes" class="slide level2">
-<h2>Pandas DataFrames</h2>
-<ul>
-<li>DataFrames is an analog of two-dimensional arrays with flexible row indices and flexible column names
-<ul>
-<li>Or a sequence of aligned <em>Series</em> objects, sharing a similar index</li>
-</ul></li>
-<li>Each column in a <em>DataFrame</em> is a <em>Series</em></li>
-<li><em>DataFrames</em> can be constructed from:
-<ul>
-<li>Single Series</li>
-<li>List of Dicts</li>
-<li>Dict of Series</li>
-<li>2-D NumPy Array</li>
-</ul></li>
-</ul>
-</section>
-<section id="pandas-dataframe-examples" class="slide level2">
-<h2>Pandas DataFrame Examples</h2>
-<pre><code>In [11]: df = pd.DataFrame([[1,2,3], [4, 5, 6]])
-In [12]: df
-Out[12]: 0  1  2 
-      0  1  2  3
-      1  4  5  6
-In [13]: df.index
-Out[13]: RangeIndex(start=0, stop=2, step=1)
-In [15]: df.columns
-Out[15]: RangeIndex(start=0, stop=3, step=1)</code></pre>
-</section>
-<section class="slide level2">
+  <script>
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: false,
 
-<pre><code>In [20]: pd.DataFrame(np.ones((4,2)),
-        columns=[&#39;one&#39;, &#39;two&#39;],
-        index=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]) 
-Out[20]: one  two
-      a  1.0  1.0
-      b  1.0  1.0
-      c  1.0  1.0
-      d  1.0  1.0</code></pre>
-</section>
-<section class="slide level2">
+      hash: true,
 
-<ul>
-<li>Adding Columns
-<ul>
-<li><code>df[new_column] = [new, values]</code></li>
-</ul></li>
-<li>Removing Columns
-<ul>
-<li><code>df.pop()</code></li>
-<li><code>del df['column']</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="the-index-object" class="slide level2">
-<h2>The Index Object</h2>
-<ul>
-<li><em>Index</em> object can be considered an <em>immutable</em> array or <em>ordered set</em> (Can contain dups though)</li>
-<li><code>ind = pd.Index([2, 3, 5, 7, 11])</code></li>
-<li>As an array:
-<ul>
-<li><code>ind[1]</code></li>
-<li><code>ind[::2]</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="data-indexing" class="slide level2">
-<h2>Data Indexing</h2>
-<ul>
-<li>Series as a Dictionary
-<ul>
-<li>Data Selection and Modification via the Key</li>
-</ul></li>
-<li>Array-Style Interface (<em>slices, masking, and fancy indexing</em>)</li>
-</ul>
-</section>
-<section class="slide level2">
+      plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
 
-<ul>
-<li>Indexers
-<ul>
-<li><code>data = pd.Series(['a', 'b', 'c'], index=[1, 3, 5])</code></li>
-<li><code>data.loc[1]</code> - Indexing and Slicing always reference these explicit index</li>
-<li><code>data.iloc[1]</code> - Referencing the implicit indexing</li>
-</ul></li>
-</ul>
-</section>
-<section id="dataframe-summary" class="slide level2">
-<h2>DataFrame Summary</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Operation</th>
-<th>Syntax</th>
-<th>Result Type</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Select a column</td>
-<td>df[col]</td>
-<td>Series</td>
-</tr>
-<tr class="even">
-<td>Select row by label</td>
-<td>df.loc[label]</td>
-<td>Series</td>
-</tr>
-<tr class="odd">
-<td>Select row by integer location</td>
-<td>df.iloc[loc]</td>
-<td>Series</td>
-</tr>
-<tr class="even">
-<td>Slice Rows</td>
-<td>df[5:10]</td>
-<td>DataFrame</td>
-</tr>
-<tr class="odd">
-<td>Select rows by boolean vector</td>
-<td>df[bool_vec]</td>
-<td>DataFrame</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="ufuncs" class="slide level2">
-<h2>UFuncs</h2>
-<ul>
-<li>Indices are preserved with ufuncs</li>
-<li>Indices are aligned when performing binary ufuncs</li>
-<li>Alignment is preserved when performing operations between <em>DataFrame</em> and <em>Series</em> objects</li>
-</ul>
-</section>
-<section id="missing-data" class="slide level2">
-<h2>Missing Data</h2>
-<ul>
-<li><code>None</code> and <code>NaN</code> - Null (missing) values</li>
-<li>Functions for missing data:
-<ul>
-<li><code>isnull()</code></li>
-<li><code>notnull()</code></li>
-<li><code>dropna()</code> - Filter out missing values</li>
-<li><code>fillna()</code> - Fill NaNs with specified value</li>
-</ul></li>
-</ul>
-</section>
-</div>
+    });
 
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+  </script>
 
-<script>
-// More info about initialization & config:
-// - https://revealjs.com/initialization/
-// - https://revealjs.com/config/
-  Reveal.initialize({
-    controls: true,
-    progress: true,
-    history: true,
-    center: false,
-
-    hash: true,
-
-    plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
-
-  });
-
-</script>
-
-</body>
+  </body>
 </html>

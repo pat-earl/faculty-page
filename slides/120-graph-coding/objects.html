@@ -1,172 +1,172 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
 
-<title>Objects</title>
+  <title>Objects</title>
 
-<meta name="description" content="Objects">    
+  <meta name="description" content="Objects">    
 
-  <meta name="author" content="Patrick Earl" />
+      <meta name="author" content="Patrick Earl" />
+  
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+   -->
 
-<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
- -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  
 
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  <!-- For syntax highlighting -->
+  <!--     <link rel="stylesheet" href="/share/revealjs/plugin/highlight/zenburn.css">
+   -->
 
+  <!-- For syntax highlighting -->
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  
 
-<!-- For syntax highlighting -->
-<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
- -->
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <!-- <script>
+    document.write( '<link rel="stylesheet" href="css/print/' +
+      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+      '.css" type="text/css" media="print">' );
+  </script> -->
 
-<!-- For syntax highlighting -->
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+    </head>
 
+  <body>
+  
+  <div class="reveal">
 
-<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-<!-- <script>
-  document.write( '<link rel="stylesheet" href="css/print/' +
-    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
-    '.css" type="text/css" media="print">' );
-</script> -->
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
 
-<!--[if lt IE 9]>
-<script src="lib/js/html5shiv.js"></script>
-<![endif]-->
-</head>
+  <section>
+  <h1>Objects</h1>
+  <h3>Patrick Earl</h3>
+  <p>
+  <h4>02/25/2021</h4>
+  </p>
+  </section>  
 
-<body>
+  
+  <section id="quick-recap" class="slide level2">
+  <h2>Quick Recap</h2>
+  <ul>
+  <li>Functions</li>
+  <li><em>Exercise 7-7</em></li>
+  </ul>
+  </section>
+  <section id="object-oriented-programming-oop" class="slide level2">
+  <h2>Object Oriented Programming (OOP)</h2>
+  <ul>
+  <li><em>Objects</em> in Programming</li>
+  <li>“Human Data”
+  <ul>
+  <li>Height</li>
+  <li>Weight</li>
+  <li>Gender</li>
+  <li>Eye color</li>
+  <li>Hair color</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
-<div class="reveal">
+  <ul>
+  <li>“Human functions”
+  <ul>
+  <li>Sleep</li>
+  <li>Wake up</li>
+  <li>Eat</li>
+  <li>Ride some form of transportation.</li>
+  </ul></li>
+  <li><em>Car Data and Functions?</em></li>
+  </ul>
+  </section>
+  <section id="objects" class="slide level2">
+  <h2>Objects</h2>
+  <ul>
+  <li>Allow for grouping items into an <em>object</em></li>
+  <li><em>Example 8-1</em></li>
+  </ul>
+  </section>
+  <section id="the-cookie-cutter" class="slide level2">
+  <h2>The Cookie Cutter</h2>
+  <ul>
+  <li><code>class</code> in Processing
+  <ul>
+  <li>The Class Name</li>
+  <li>Data</li>
+  <li>A constructor</li>
+  <li>Functionality (methods)</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="code-placement" class="slide level2">
+  <h2>Code Placement</h2>
+  <ul>
+  <li>As with functions, classes are typically defined after <code>setup</code> &amp; <code>draw</code>.</li>
+  <li>These can be defined anywhere technically, but it’s important to stay organized in programming too.</li>
+  <li>Processing <em>Tabs</em></li>
+  </ul>
+  </section>
+  <section id="constructor-arguments" class="slide level2">
+  <h2>Constructor Arguments</h2>
+  <ul>
+  <li>Allow for customization of objects at their creation</li>
+  <li>Initialization of all the object’s properties (data)</li>
+  <li>Variable naming</li>
+  </ul>
+  </section>
+  <section id="data-types" class="slide level2">
+  <h2>Data Types</h2>
+  <ul>
+  <li>Objects are <em>data types</em> too.
+  <ul>
+  <li>Not <em>primitive</em></li>
+  </ul></li>
+  <li>Since objects are data types, they can be passed to functions
+  <ul>
+  <li>Objects are <em>passed by reference</em> however.</li>
+  <li>Primitives are <em>passed by value</em>.</li>
+  </ul></li>
+  </ul>
+  </section>
+  </div>
 
-<!-- Any section element inside of this container is displayed as a slide -->
-<div class="slides">
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
 
-<section>
-<h1>Objects</h1>
-<h3>Patrick Earl</h3>
-<p>
-<h4>02/25/2021</h4>
-</p>
-</section>  
+  <script>
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: false,
 
+      hash: true,
 
-<section id="quick-recap" class="slide level2">
-<h2>Quick Recap</h2>
-<ul>
-<li>Functions</li>
-<li><em>Exercise 7-7</em></li>
-</ul>
-</section>
-<section id="object-oriented-programming-oop" class="slide level2">
-<h2>Object Oriented Programming (OOP)</h2>
-<ul>
-<li><em>Objects</em> in Programming</li>
-<li>“Human Data”
-<ul>
-<li>Height</li>
-<li>Weight</li>
-<li>Gender</li>
-<li>Eye color</li>
-<li>Hair color</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
+      plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
 
-<ul>
-<li>“Human functions”
-<ul>
-<li>Sleep</li>
-<li>Wake up</li>
-<li>Eat</li>
-<li>Ride some form of transportation.</li>
-</ul></li>
-<li><em>Car Data and Functions?</em></li>
-</ul>
-</section>
-<section id="objects" class="slide level2">
-<h2>Objects</h2>
-<ul>
-<li>Allow for grouping items into an <em>object</em></li>
-<li><em>Example 8-1</em></li>
-</ul>
-</section>
-<section id="the-cookie-cutter" class="slide level2">
-<h2>The Cookie Cutter</h2>
-<ul>
-<li><code>class</code> in Processing
-<ul>
-<li>The Class Name</li>
-<li>Data</li>
-<li>A constructor</li>
-<li>Functionality (methods)</li>
-</ul></li>
-</ul>
-</section>
-<section id="code-placement" class="slide level2">
-<h2>Code Placement</h2>
-<ul>
-<li>As with functions, classes are typically defined after <code>setup</code> &amp; <code>draw</code>.</li>
-<li>These can be defined anywhere technically, but it’s important to stay organized in programming too.</li>
-<li>Processing <em>Tabs</em></li>
-</ul>
-</section>
-<section id="constructor-arguments" class="slide level2">
-<h2>Constructor Arguments</h2>
-<ul>
-<li>Allow for customization of objects at their creation</li>
-<li>Initialization of all the object’s properties (data)</li>
-<li>Variable naming</li>
-</ul>
-</section>
-<section id="data-types" class="slide level2">
-<h2>Data Types</h2>
-<ul>
-<li>Objects are <em>data types</em> too.
-<ul>
-<li>Not <em>primitive</em></li>
-</ul></li>
-<li>Since objects are data types, they can be passed to functions
-<ul>
-<li>Objects are <em>passed by reference</em> however.</li>
-<li>Primitives are <em>passed by value</em>.</li>
-</ul></li>
-</ul>
-</section>
-</div>
+    });
 
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+  </script>
 
-<script>
-// More info about initialization & config:
-// - https://revealjs.com/initialization/
-// - https://revealjs.com/config/
-  Reveal.initialize({
-    controls: true,
-    progress: true,
-    history: true,
-    center: false,
-
-    hash: true,
-
-    plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
-
-  });
-
-</script>
-
-</body>
+  </body>
 </html>

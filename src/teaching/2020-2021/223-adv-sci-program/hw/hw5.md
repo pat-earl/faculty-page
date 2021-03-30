@@ -9,13 +9,17 @@ Purpose of this assignment is to create basic plots using Matplotlib
 
 ## Description
 
-Complete the jupyter notebook titled `main.ipynb`. There are comments explaining
-the requirements. *Do not modify cells that are marked as such, doing so will result in a zero.* 
+Complete the jupyter notebook linked below. Complete your work in the areas labeled as "STUDENT TODO."
+
+*Do not modify cells marked as such, doing so will result in a zero.* 
 
 The dataset is of movies listed on IMDB. The documentation for each column is linked below.
 
-[Download the notebook here]()
+[Download the notebook here](./materials/hw5_start.ipynb)  
 [Documentation for the Dataset](https://vincentarelbundock.github.io/Rdatasets/doc/ggplot2movies/movies.html)
+
+*Right-Click on the notebook link and click "Save-As" to Download it.* Make sure you rename the file
+to the required name before submitting.
 
 There are two figures that need to be created:
 
@@ -29,10 +33,10 @@ Figure 1:
 
 Figure 2:
 
-* horizontal bar chart of the top 10 most voted movies. 
-* ten evenly spaced tick marks on the x axis from lowest top 10 votes to most.
-* appropriate labels on the x and y axes
-* appropriate title
+* horizontal bar chart of the top 10 movies based on number of votes. 
+* The movie with the most votes should be at the top of the chart.
+* appropriate labels on the x and y axes.
+* appropriate title.
 
 ## Submission
 

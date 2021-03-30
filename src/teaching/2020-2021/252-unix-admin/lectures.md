@@ -9,7 +9,8 @@ title: Lectures
     {"name": "The Shell", "file": "slides/shell.md"},
     {"name": "bash & Shell Scripting", "file": "slides/bash.md"},
     {"name": "Processes", "file": "slides/processes.md"},
-    {"name": "System Administration", "file": "slides/sysadmin.md"}
+    {"name": "System Administration", "file": "slides/sysadmin.md"},
+    {"name": "System Administration Tasks (PowerPoint)", "file": "slides/SA-Tasks_User_Disks.pptx"}
 ) %}
 
 ## Course Lectures
@@ -17,6 +18,6 @@ title: Lectures
 These are the lecture slides used in the course.
 
 {% for lec in lectures -%}
-* {{ lec['name'] }} - [Slide Form]({{ get_link(lec['file']) }})
+* {{ lec['name'] }} - [Slides]({{ get_link(lec['file']) }})
 {% endfor -%}
 

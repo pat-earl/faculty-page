@@ -1,262 +1,262 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+  <meta charset="utf-8">
 
-<title>Arrays - Chapter 9</title>
+  <title>Arrays - Chapter 9</title>
 
-<meta name="description" content="Arrays - Chapter 9">    
+  <meta name="description" content="Arrays - Chapter 9">    
 
-  <meta name="author" content="Patrick Earl" />
+      <meta name="author" content="Patrick Earl" />
+  
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+   -->
 
-<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
- -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  
 
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+  <!-- For syntax highlighting -->
+  <!--     <link rel="stylesheet" href="/share/revealjs/plugin/highlight/zenburn.css">
+   -->
 
+  <!-- For syntax highlighting -->
+      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  
 
-<!-- For syntax highlighting -->
-<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
- -->
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <!-- <script>
+    document.write( '<link rel="stylesheet" href="css/print/' +
+      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+      '.css" type="text/css" media="print">' );
+  </script> -->
 
-<!-- For syntax highlighting -->
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+    </head>
 
+  <body>
+  
+  <div class="reveal">
 
-<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-<!-- <script>
-  document.write( '<link rel="stylesheet" href="css/print/' +
-    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
-    '.css" type="text/css" media="print">' );
-</script> -->
+  <!-- Any section element inside of this container is displayed as a slide -->
+  <div class="slides">
 
-<!--[if lt IE 9]>
-<script src="lib/js/html5shiv.js"></script>
-<![endif]-->
-</head>
+  <section>
+  <h1>Arrays - Chapter 9</h1>
+  <h3>Patrick Earl</h3>
+  <p>
+  <h4>03/16/2021</h4>
+  </p>
+  </section>  
 
-<body>
+  
+  <section id="arrays-overview" class="slide level2">
+  <h2>Arrays Overview</h2>
+  <ul>
+  <li>What is an array?</li>
+  <li>Declaring an array</li>
+  <li>Initializing an array</li>
+  <li>Array operations</li>
+  <li>Array of objects</li>
+  </ul>
+  </section>
+  <section id="arrays" class="slide level2">
+  <h2>Arrays</h2>
+  <ul>
+  <li>Allows for multiple instances of similar data</li>
+  <li>Declaring 100 versions of the <em>Car</em> object</li>
+  <li>Arrays point to a sequence of items in memory
+  <ul>
+  <li>Similarly to how a variable points to a single thing in memory</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
-<div class="reveal">
+  <ul>
+  <li>This allows a program to think of an array as a <em>list</em>
+  <ul>
+  <li>Keep track of the <em>elements</em> in the list</li>
+  <li>Keep track of the <em>order</em> of elements.</li>
+  </ul></li>
+  <li>The position of an element is known as it’s <em>index</em>.
+  <ul>
+  <li>This is a unique <em>integer</em> that designates the position in the array</li>
+  </ul></li>
+  <li>Indices start at <em>zero</em>
+  <ul>
+  <li>Start at index <em>zero</em> since the first element is <em>0</em> positions away from the start.</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="array-declaration" class="slide level2">
+  <h2>Array Declaration</h2>
+  <ul>
+  <li>Arrays, like variables, <strong>must</strong> have a name and type.</li>
+  <li><code>int[] arrayOfInts;</code>
+  <ul>
+  <li>Declaring an array</li>
+  </ul></li>
+  <li>Arrays are of <em>fixed-sized</em>, meaning once they’re initialized you can’t add more than the size specified.
+  <ul>
+  <li>An array of size 10, <em>can’t hold 11 elements</em>.</li>
+  </ul></li>
+  <li><code>arrayOfInts = new int[42];</code>
+  <ul>
+  <li>Use the <em>new</em> keyword to create an array.</li>
+  <li><em>Make a new array of 42 integers</em></li>
+  </ul></li>
+  <li>The size must be a non-negative integer.</li>
+  </ul>
+  </section>
+  <section id="array-initialization" class="slide level2">
+  <h2>Array Initialization</h2>
+  <ul>
+  <li>Filling an array with values?</li>
+  <li>Manual Assignment:</li>
+  </ul>
+  <pre><code>int[] stuff = new int[3];
+  stuff[0] = 1;
+  stuff[1] = 2;
+  stuff[2] = 3;</code></pre>
+  <ul>
+  <li>Initialize all at once:</li>
+  </ul>
+  <pre><code>int[] stuff = {1, 5, 7, 9, 11};</code></pre>
+  <ul>
+  <li><em>This is not the recommended way</em></li>
+  <li>Using iteration to work on <em>each</em> element</li>
+  </ul>
+  </section>
+  <section id="array-operations" class="slide level2">
+  <h2>Array Operations</h2>
+  <ul>
+  <li>Consider the following problem:
+  <ul>
+  <li>Create an array with <em>1,000</em> floating-point numbers and initialize it to a random number between 0 and 10.</li>
+  </ul></li>
+  <li>What would this look like in code?</li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
-<!-- Any section element inside of this container is displayed as a slide -->
-<div class="slides">
+  <ul>
+  <li>Using a loop to initialize
+  <ul>
+  <li>while</li>
+  <li>for</li>
+  </ul></li>
+  <li>Array’s Length
+  <ul>
+  <li><code>array.length</code></li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="simple-example" class="slide level2">
+  <h2>Simple Example</h2>
+  <ul>
+  <li>Drawing a snake that stores the last <em>N</em> positions of the mouse.</li>
+  <li>Two arrays: X positions and Y positions</li>
+  <li>Setup:
+  <ul>
+  <li>Init the arrays to 0</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
-<section>
-<h1>Arrays - Chapter 9</h1>
-<h3>Patrick Earl</h3>
-<p>
-<h4>03/16/2021</h4>
-</p>
-</section>  
+  <ul>
+  <li>Draw:
+  <ul>
+  <li>Each loop of draw, update the array with the current mouse’s location</li>
+  <li>Store up to 50 positions which would be indices 0 to 49
+  <ul>
+  <li><em>-or-</em> <code>array.length - 1</code></li>
+  </ul></li>
+  <li>Problems?</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section class="slide level2">
 
+  <ul>
+  <li>Draw:
+  <ul>
+  <li>Shift all the elements down one spot before updating the current position.</li>
+  <li>Draw circles based on the array</li>
+  </ul></li>
+  <li><em>Example 9-8</em></li>
+  </ul>
+  </section>
+  <section id="arrays-of-objects" class="slide level2">
+  <h2>Arrays of Objects</h2>
+  <ul>
+  <li>Using the car object
+  <ul>
+  <li>Since objects are a <em>data type</em> we can make arrays of them too</li>
+  </ul></li>
+  <li><strong>Example 9-9</strong></li>
+  </ul>
+  </section>
+  <section id="interactive-objects" class="slide level2">
+  <h2>Interactive Objects</h2>
+  <ul>
+  <li>Arrays make it easy to have interactive objects</li>
+  <li>Building upon the rollover example from Chapter 5</li>
+  <li><strong>Example 9-10</strong></li>
+  </ul>
+  </section>
+  <section id="processing-array-functions" class="slide level2">
+  <h2>Processing Array Functions</h2>
+  <ul>
+  <li>Arrays can actually be changed after creation
+  <ul>
+  <li>If we needed to make an array bigger, we could copy the contents of the old one to a new one of larger size</li>
+  </ul></li>
+  <li><em>Processing</em> provides this ability for us!</li>
+  <li><a href="https://processing.org/reference/"><em>Processing Array Functions</em></a></li>
+  </ul>
+  </section>
+  <section id="zoogs" class="slide level2">
+  <h2>1001 Zoogs</h2>
+  <ul>
+  <li><strong>Example 9-12</strong></li>
+  </ul>
+  </section>
+  </div>
 
-<section id="arrays-overview" class="slide level2">
-<h2>Arrays Overview</h2>
-<ul>
-<li>What is an array?</li>
-<li>Declaring an array</li>
-<li>Initializing an array</li>
-<li>Array operations</li>
-<li>Array of objects</li>
-</ul>
-</section>
-<section id="arrays" class="slide level2">
-<h2>Arrays</h2>
-<ul>
-<li>Allows for multiple instances of similar data</li>
-<li>Declaring 100 versions of the <em>Car</em> object</li>
-<li>Arrays point to a sequence of items in memory
-<ul>
-<li>Similarly to how a variable points to a single thing in memory</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
 
-<ul>
-<li>This allows a program to think of an array as a <em>list</em>
-<ul>
-<li>Keep track of the <em>elements</em> in the list</li>
-<li>Keep track of the <em>order</em> of elements.</li>
-</ul></li>
-<li>The position of an element is known as it’s <em>index</em>.
-<ul>
-<li>This is a unique <em>integer</em> that designates the position in the array</li>
-</ul></li>
-<li>Indices start at <em>zero</em>
-<ul>
-<li>Start at index <em>zero</em> since the first element is <em>0</em> positions away from the start.</li>
-</ul></li>
-</ul>
-</section>
-<section id="array-declaration" class="slide level2">
-<h2>Array Declaration</h2>
-<ul>
-<li>Arrays, like variables, <strong>must</strong> have a name and type.</li>
-<li><code>int[] arrayOfInts;</code>
-<ul>
-<li>Declaring an array</li>
-</ul></li>
-<li>Arrays are of <em>fixed-sized</em>, meaning once they’re initialized you can’t add more than the size specified.
-<ul>
-<li>An array of size 10, <em>can’t hold 11 elements</em>.</li>
-</ul></li>
-<li><code>arrayOfInts = new int[42];</code>
-<ul>
-<li>Use the <em>new</em> keyword to create an array.</li>
-<li><em>Make a new array of 42 integers</em></li>
-</ul></li>
-<li>The size must be a non-negative integer.</li>
-</ul>
-</section>
-<section id="array-initialization" class="slide level2">
-<h2>Array Initialization</h2>
-<ul>
-<li>Filling an array with values?</li>
-<li>Manual Assignment:</li>
-</ul>
-<pre><code>int[] stuff = new int[3];
-stuff[0] = 1;
-stuff[1] = 2;
-stuff[2] = 3;</code></pre>
-<ul>
-<li>Initialize all at once:</li>
-</ul>
-<pre><code>int[] stuff = {1, 5, 7, 9, 11};</code></pre>
-<ul>
-<li><em>This is not the recommended way</em></li>
-<li>Using iteration to work on <em>each</em> element</li>
-</ul>
-</section>
-<section id="array-operations" class="slide level2">
-<h2>Array Operations</h2>
-<ul>
-<li>Consider the following problem:
-<ul>
-<li>Create an array with <em>1,000</em> floating-point numbers and initialize it to a random number between 0 and 10.</li>
-</ul></li>
-<li>What would this look like in code?</li>
-</ul>
-</section>
-<section class="slide level2">
+  <script>
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: false,
 
-<ul>
-<li>Using a loop to initialize
-<ul>
-<li>while</li>
-<li>for</li>
-</ul></li>
-<li>Array’s Length
-<ul>
-<li><code>array.length</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="simple-example" class="slide level2">
-<h2>Simple Example</h2>
-<ul>
-<li>Drawing a snake that stores the last <em>N</em> positions of the mouse.</li>
-<li>Two arrays: X positions and Y positions</li>
-<li>Setup:
-<ul>
-<li>Init the arrays to 0</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
+      hash: true,
 
-<ul>
-<li>Draw:
-<ul>
-<li>Each loop of draw, update the array with the current mouse’s location</li>
-<li>Store up to 50 positions which would be indices 0 to 49
-<ul>
-<li><em>-or-</em> <code>array.length - 1</code></li>
-</ul></li>
-<li>Problems?</li>
-</ul></li>
-</ul>
-</section>
-<section class="slide level2">
+      plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
 
-<ul>
-<li>Draw:
-<ul>
-<li>Shift all the elements down one spot before updating the current position.</li>
-<li>Draw circles based on the array</li>
-</ul></li>
-<li><em>Example 9-8</em></li>
-</ul>
-</section>
-<section id="arrays-of-objects" class="slide level2">
-<h2>Arrays of Objects</h2>
-<ul>
-<li>Using the car object
-<ul>
-<li>Since objects are a <em>data type</em> we can make arrays of them too</li>
-</ul></li>
-<li><strong>Example 9-9</strong></li>
-</ul>
-</section>
-<section id="interactive-objects" class="slide level2">
-<h2>Interactive Objects</h2>
-<ul>
-<li>Arrays make it easy to have interactive objects</li>
-<li>Building upon the rollover example from Chapter 5</li>
-<li><strong>Example 9-10</strong></li>
-</ul>
-</section>
-<section id="processing-array-functions" class="slide level2">
-<h2>Processing Array Functions</h2>
-<ul>
-<li>Arrays can actually be changed after creation
-<ul>
-<li>If we needed to make an array bigger, we could copy the contents of the old one to a new one of larger size</li>
-</ul></li>
-<li><em>Processing</em> provides this ability for us!</li>
-<li><a href="https://processing.org/reference/"><em>Processing Array Functions</em></a></li>
-</ul>
-</section>
-<section id="zoogs" class="slide level2">
-<h2>1001 Zoogs</h2>
-<ul>
-<li><strong>Example 9-12</strong></li>
-</ul>
-</section>
-</div>
+    });
 
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
-<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+  </script>
 
-<script>
-// More info about initialization & config:
-// - https://revealjs.com/initialization/
-// - https://revealjs.com/config/
-  Reveal.initialize({
-    controls: true,
-    progress: true,
-    history: true,
-    center: false,
-
-    hash: true,
-
-    plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
-
-  });
-
-</script>
-
-</body>
+  </body>
 </html>
