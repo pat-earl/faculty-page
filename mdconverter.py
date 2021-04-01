@@ -79,7 +79,7 @@ class mdconverter:
             # Use https for all links with an auth in the URL.
             return os.path.join( g['site_surl'], link )
         else:
-            return os.path.join( g['site_url'], link )
+            return os.path.join( g['site_surl'], link )
 
     def build_url( self, text ):
         """

@@ -168,5 +168,84 @@ println(sum);
 
 ---
 
-## Part 4:
-*Start here on Thursday*
+## Part 4
+* Creating the falling raindrops. Also can be split into smaller parts
+    1. A single moving raindrop
+    2. An array of raindrops
+    3. Flexible number of raindrops (appearing one at a time)
+    4. Fancier raindrop appearance.
+
+---
+
+## 4.1
+* A simple raindrop
+    * Increment raindrop's Y position
+    * Display raindrop
+* Of course, this should be placed in a class
+    * Additionally the speed and size should vary.
+
+---
+
+## 4.2
+* Make an array of the *Drop* class
+* Easy as it was in chapter 9
+* `Drop[] drops = new Drop[50];`
+* Use a loop to control the drops in *setup* and *draw*.
+
+---
+
+## 4.3
+* Raindrops should appear one at a time, every *N* seconds.
+    * We'll just focus on one per new frame for now.
+* **Setup**
+    * Create a drop array with 1000 spaces in it
+    * Set `totalDrops` to zero
+
+---
+
+* **Draw**
+    * Create a new drop in the array (at the index stored in `totalDrops`).
+    * Increment totalDrops
+    * If totalDrops exceeds the array size, reset it to zero and start over.
+    * Move and display all available drops (use totalDrops instead of the array length)
+
+---
+
+## 4.4
+* Make the raindrop look like a raindrop
+* Use a sequence of circles starting small and getting larger moving down
+
+```
+background(255);
+for(int i = 2; i < 8; i++) {
+    noStroke();
+    fill(0);
+    ellipse(width/2, height/2 + i*4, i*2, i*2);
+}
+```
+
+---
+
+## Bring it all together
+* Time to integrate all the classes together. 
+* The *pseudocode* algorithm for the game:
+* **Setup**
+    * Create a catcher object.
+    * Create array of `Drop` objects.
+    * Set totalDrops to 0.
+    * Create `Timer` object.
+    * Start timer.
+
+---
+
+* **Draw**
+    * Set catcher location to mouse location.
+    * Display catcher.
+    * Move all available drops.
+    * Display all available drops.
+    * If the catcher intersects any drop.
+        * Remove drop from game.
+    * If the timer is finished
+        * Increase the number of drops
+        * Restart timer.
+  
