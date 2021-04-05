@@ -276,8 +276,114 @@
   </ul>
   </section>
   <section id="part-4" class="slide level2">
-  <h2>Part 4:</h2>
-  <p><em>Start here on Thursday</em></p>
+  <h2>Part 4</h2>
+  <ul>
+  <li>Creating the falling raindrops. Also can be split into smaller parts
+  <ol type="1">
+  <li>A single moving raindrop</li>
+  <li>An array of raindrops</li>
+  <li>Flexible number of raindrops (appearing one at a time)</li>
+  <li>Fancier raindrop appearance.</li>
+  </ol></li>
+  </ul>
+  </section>
+  <section id="section" class="slide level2">
+  <h2>4.1</h2>
+  <ul>
+  <li>A simple raindrop
+  <ul>
+  <li>Increment raindrop’s Y position</li>
+  <li>Display raindrop</li>
+  </ul></li>
+  <li>Of course, this should be placed in a class
+  <ul>
+  <li>Additionally the speed and size should vary.</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="section-1" class="slide level2">
+  <h2>4.2</h2>
+  <ul>
+  <li>Make an array of the <em>Drop</em> class</li>
+  <li>Easy as it was in chapter 9</li>
+  <li><code>Drop[] drops = new Drop[50];</code></li>
+  <li>Use a loop to control the drops in <em>setup</em> and <em>draw</em>.</li>
+  </ul>
+  </section>
+  <section id="section-2" class="slide level2">
+  <h2>4.3</h2>
+  <ul>
+  <li>Raindrops should appear one at a time, every <em>N</em> seconds.
+  <ul>
+  <li>We’ll just focus on one per new frame for now.</li>
+  </ul></li>
+  <li><strong>Setup</strong>
+  <ul>
+  <li>Create a drop array with 1000 spaces in it</li>
+  <li>Set <code>totalDrops</code> to zero</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section class="slide level2">
+
+  <ul>
+  <li><strong>Draw</strong>
+  <ul>
+  <li>Create a new drop in the array (at the index stored in <code>totalDrops</code>).</li>
+  <li>Increment totalDrops</li>
+  <li>If totalDrops exceeds the array size, reset it to zero and start over.</li>
+  <li>Move and display all available drops (use totalDrops instead of the array length)</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section id="section-3" class="slide level2">
+  <h2>4.4</h2>
+  <ul>
+  <li>Make the raindrop look like a raindrop</li>
+  <li>Use a sequence of circles starting small and getting larger moving down</li>
+  </ul>
+  <pre><code>background(255);
+  for(int i = 2; i &lt; 8; i++) {
+      noStroke();
+      fill(0);
+      ellipse(width/2, height/2 + i*4, i*2, i*2);
+  }</code></pre>
+  </section>
+  <section id="bring-it-all-together" class="slide level2">
+  <h2>Bring it all together</h2>
+  <ul>
+  <li>Time to integrate all the classes together.</li>
+  <li>The <em>pseudocode</em> algorithm for the game:</li>
+  <li><strong>Setup</strong>
+  <ul>
+  <li>Create a catcher object.</li>
+  <li>Create array of <code>Drop</code> objects.</li>
+  <li>Set totalDrops to 0.</li>
+  <li>Create <code>Timer</code> object.</li>
+  <li>Start timer.</li>
+  </ul></li>
+  </ul>
+  </section>
+  <section class="slide level2">
+
+  <ul>
+  <li><strong>Draw</strong>
+  <ul>
+  <li>Set catcher location to mouse location.</li>
+  <li>Display catcher.</li>
+  <li>Move all available drops.</li>
+  <li>Display all available drops.</li>
+  <li>If the catcher intersects any drop.
+  <ul>
+  <li>Remove drop from game.</li>
+  </ul></li>
+  <li>If the timer is finished
+  <ul>
+  <li>Increase the number of drops</li>
+  <li>Restart timer.</li>
+  </ul></li>
+  </ul></li>
+  </ul>
   </section>
   </div>
 
