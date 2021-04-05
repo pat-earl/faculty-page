@@ -11,6 +11,7 @@ title: Lectures
     {"name": "NumPy", "file": "slides/numpy.md"},
     {"name": "Pandas - Data Types", "file": "slides/pandas_types.md"},
     {"name": "Matplotlib", "file": "slides/matplotlib.md"},
+    {"name": "Pandas - Combining Data", "file": "slides/combine.md"},
 ) %}
 
 ## Course Lectures

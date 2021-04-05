@@ -1,0 +1,27 @@
+/*
+    Testing a custom theme.
+
+    Inspired from here:
+    https://bloch.ece.gatech.edu/2020/02/15/workflow.html
+
+*/
+
+.reveal .theorem {
+    display: block;
+    text-align: left;
+    font-style: normal;
+    border-left-style: solid;
+    border-left-color: orange;
+    padding-left: 5px;
+    border-left-width: 5px;
+  }
+  .reveal .theorem:before {
+    content: "Theorem. ";
+    font-weight: bold;
+    color: orange;
+    font-style: normal;
+  }
+  .reveal .theorem[name]:before {
+    content: "Theorem (" attr(name) ") ";
+  }
+  
