@@ -1,95 +1,310 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
 
-  <title>Pandas - Combining Data</title>
+<title>Pandas - Combining Data</title>
 
-  <meta name="description" content="Pandas - Combining Data">    
+<meta name="description" content="Pandas - Combining Data">    
 
-      <meta name="author" content="Patrick Earl" />
-  
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="author" content="Patrick Earl" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-  <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/robot-lung.css" id="theme">
-   -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/robot-lung.css" id="theme">
-  
+<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/robot-lung.css" id="theme">
+ -->
 
-  <!-- For syntax highlighting -->
-  <!--     <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
-   -->
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/robot-lung.css" id="theme">
 
-  <!-- For syntax highlighting -->
-      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
-  
 
-  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
-  <!-- <script>
-    document.write( '<link rel="stylesheet" href="css/print/' +
-      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
-      '.css" type="text/css" media="print">' );
-  </script> -->
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
 
-  <!--[if lt IE 9]>
-  <script src="lib/js/html5shiv.js"></script>
-  <![endif]-->
-    </head>
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
 
-  <body>
-  
-  <div class="reveal">
 
-  <!-- Any section element inside of this container is displayed as a slide -->
-  <div class="slides">
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
 
-  <section>
-  <h1>Pandas - Combining Data</h1>
-  <h3>Patrick Earl</h3>
-  <p>
-  <h4>04/05/2021</h4>
-  </p>
-  </section>  
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
 
-  
-  <section id="combining-data" class="slide level2">
-  <h2>Combining Data</h2>
-  <ul>
-  <li>Testing</li>
-  </ul>
-  </section>
-  </div>
+<body>
 
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+<div class="reveal">
 
-  <script>
-  // More info about initialization & config:
-  // - https://revealjs.com/initialization/
-  // - https://revealjs.com/config/
-    Reveal.initialize({
-      controls: true,
-      progress: true,
-      history: true,
-      center: false,
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
 
-      hash: true,
+<section>
+<h1>Pandas - Combining Data</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>04/05/2021</h4>
+</p>
+</section>  
 
-      plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
 
-    });
+<section id="combining-data" class="slide level2">
+<h2>Combining Data</h2>
+<ul>
+<li>Data Science/Analysis requires combining of data from a similar or different sources.</li>
+<li>Pandas provides functionality to combine the <code>Series</code> and <code>DataFrame</code> objects.</li>
+<li>Concatenation/Appending</li>
+<li>Merging/Joining</li>
+</ul>
+</section>
+<section id="concatenation" class="slide level2">
+<h2>Concatenation</h2>
+<ul>
+<li>Pandas provides the <code>concat</code> function to concatenate <code>Series</code> or <code>DataFrame</code> objects.</li>
+<li><code>concat</code> takes a sequence or mapping of <code>Series</code> or <code>DataFrame</code> objects.</li>
+</ul>
+</section>
+<section id="concatenation-1" class="slide level2">
+<h2>Concatenation</h2>
+<ul>
+<li>The Pandas <code>concat</code> function has additional keyword arguments that effect the concatenation</li>
+<li>Some examples:
+<ul>
+<li><code>axis</code>: Which axis to concatenate on.</li>
+<li><code>ignore_index</code>: If True, do not use the index values along the concatenation axis</li>
+<li><code>verify_integrity</code>: If True, raises an exception when there are duplicate indices.</li>
+<li><code>keys</code>: Construct a hierarchical index using the key values</li>
+<li><code>join</code>: Specify an inner or outer join</li>
+</ul></li>
+</ul>
+</section>
+<section id="concatenation-examples" class="slide level2">
+<h2>Concatenation Examples</h2>
+<ul>
+<li>Function for quick creation of DataFrames</li>
+</ul>
+<pre><code>In [2]: def make_df(cols, ind):
+   ...:     data = { c: [str(c) + str(i) for i in ind]
+   ...:             for c in cols}
+   ...:     return pd.DataFrame(data, ind)
+   ...:
 
-  </script>
+In [3]: make_df(&#39;ABC&#39;, range(3))
+Out[3]:
+    A   B   C
+0  A0  B0  C0
+1  A1  B1  C1
+2  A2  B2  C2</code></pre>
+</section>
+<section class="slide level2">
 
-  </body>
+<ul>
+<li>Concat on default axis</li>
+</ul>
+<pre><code>In [4]: df1 = make_df(&#39;AB&#39;, [1, 2])
+
+In [5]: df2 = make_df(&#39;AB&#39;, [3, 4])
+
+In [6]: pd.concat([df1, df2])
+Out[6]:
+    A   B
+1  A1  B1
+2  A2  B2
+3  A3  B3
+4  A4  B4</code></pre>
+<ul>
+<li>On a different axis</li>
+</ul>
+<pre><code>In [7]: df3 = make_df(&#39;AB&#39;, [1, 2])
+
+In [8]: df4 = make_df(&#39;AB&#39;, [1, 2])
+
+In [10]: pd.concat([df3, df4], axis=1)
+Out[10]:
+    A   B   A   B
+1  A1  B1  A1  B1
+2  A2  B2  A2  B2</code></pre>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Duplicate Indices</li>
+</ul>
+<pre><code>In [11]: x = make_df(&#39;AB&#39;, [0, 1])
+
+In [12]: y = make_df(&#39;AB&#39;, [2, 3])
+
+In [13]: y.index = x.index
+
+In [14]: pd.concat([x, y])
+Out[14]:
+    A   B
+0  A0  B0
+1  A1  B1
+0  A2  B2
+1  A3  B3</code></pre>
+<ul>
+<li>Catching duplicates</li>
+</ul>
+<pre><code>In [15]: pd.concat([x, y], verify_integrity=True)
+...
+ValueError: Indexes have overlapping values: Int64Index([0, 1], dtype=&#39;int64&#39;)</code></pre>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Ignore the index</li>
+</ul>
+<pre><code>In [18]: pd.concat([x, y], ignore_index=True)
+Out[18]:
+    A   B
+0  A0  B0
+1  A1  B1
+2  A2  B2
+3  A3  B3</code></pre>
+<ul>
+<li>Using MutliIndex Keys</li>
+</ul>
+<pre><code>In [19]: pd.concat([x, y], keys=[&#39;x&#39;, &#39;y&#39;])
+Out[19]:
+      A   B
+x 0  A0  B0
+  1  A1  B1
+y 0  A2  B2
+  1  A3  B3</code></pre>
+</section>
+<section id="merging" class="slide level2">
+<h2>Merging</h2>
+<ul>
+<li>Relational algebra provides a formal set of rules for manipulating relational data.</li>
+<li>Pandas’ <code>merge</code> function provides an interface to perform these operations.</li>
+<li>Categories of joins:
+<ul>
+<li><em>one-to-one</em></li>
+<li><em>many-to-one</em></li>
+<li><em>many-to-many</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="one-to-one" class="slide level2">
+<h2>One-to-one</h2>
+<ul>
+<li>Using one-to-one joins is similar to column-wise concatenation.</li>
+<li>This example works when at least one column has the same values in both DataFrames.</li>
+</ul>
+<pre><code>In [8]: df1
+Out[8]:
+    name group
+0    Bob     A
+1  Alice     B
+2    Eve     B
+
+In [9]: df2
+Out[9]:
+    name  number
+0    Eve       1
+1  Alice       2
+2    Bob       3
+
+In [10]: pd.merge(df1, df2)
+Out[10]:
+    name group  number
+0    Bob     A       3
+1  Alice     B       2
+2    Eve     B       1</code></pre>
+</section>
+<section id="many-to-one" class="slide level2">
+<h2>Many-to-one</h2>
+<ul>
+<li>One of the two key columns contains duplicate entires.
+<ul>
+<li>The <em>key</em> being the shared column between the datasets</li>
+</ul></li>
+</ul>
+<pre><code>In [12]: df3
+Out[12]:
+  group        skill
+0     A         math
+1     B  programming
+2     C      biology
+
+In [13]: pd.merge(df1, df3)
+Out[13]:
+    name group        skill
+0    Bob     A         math
+1  Alice     B  programming
+2    Eve     B  programming</code></pre>
+</section>
+<section id="many-to-many" class="slide level2">
+<h2>Many-to-many</h2>
+<ul>
+<li>The key column in both the <em>left</em> and <em>right</em> data sets contain duplicate values.</li>
+</ul>
+<pre><code>In [18]: df4
+Out[18]:
+  group leaders
+0     A    Jack
+1     B    John
+2     B    Jill
+
+In [19]: pd.merge(df1, df4)
+Out[19]:
+    name group leaders
+0    Bob     A    Jack
+1  Alice     B    John
+2  Alice     B    Jill
+3    Eve     B    John
+4    Eve     B    Jill</code></pre>
+</section>
+<section id="merge-options" class="slide level2">
+<h2>Merge Options</h2>
+<ul>
+<li>Merge also has other key arguments
+<ul>
+<li><code>on</code>: Which column should be the key.</li>
+<li><code>left_on</code> and <code>right_on</code>: Specify a key column with different names in each table</li>
+<li><code>left_index</code> and <code>right_index</code>: Merge on index instead of column</li>
+<li><code>how</code>: Specify inner, outer, left, or right join</li>
+<li><code>suffixes</code>: Append a suffix to any conflicting column names.</li>
+</ul></li>
+</ul>
+</section>
+</div>
+
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    //plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+    plugins: [ RevealMarkdown, PdfExport ]
+  });
+
+</script>
+
+</body>
 </html>
