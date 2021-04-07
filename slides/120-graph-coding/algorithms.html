@@ -1,414 +1,414 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
 
-  <title>Algorithms</title>
+<title>Algorithms</title>
 
-  <meta name="description" content="Algorithms">    
+<meta name="description" content="Algorithms">    
 
-      <meta name="author" content="Patrick Earl" />
-  
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="author" content="Patrick Earl" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-  <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
-   -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
-  
+<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+ -->
 
-  <!-- For syntax highlighting -->
-  <!--     <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
-   -->
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
 
-  <!-- For syntax highlighting -->
-      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
-  
 
-  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
-  <!-- <script>
-    document.write( '<link rel="stylesheet" href="css/print/' +
-      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
-      '.css" type="text/css" media="print">' );
-  </script> -->
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
 
-  <!--[if lt IE 9]>
-  <script src="lib/js/html5shiv.js"></script>
-  <![endif]-->
-    </head>
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
 
-  <body>
-  
-  <div class="reveal">
 
-  <!-- Any section element inside of this container is displayed as a slide -->
-  <div class="slides">
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
 
-  <section>
-  <h1>Algorithms</h1>
-  <h3>Patrick Earl</h3>
-  <p>
-  <h4>03/30/2021</h4>
-  </p>
-  </section>  
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
 
-  
-  <section id="algorithms" class="slide level2">
-  <h2>Algorithms</h2>
-  <ul>
-  <li><em>Most</em> of the examples up to this point have been relatively simple.
-  <ul>
-  <li>One or two major features about sketch</li>
-  </ul></li>
-  <li>As projects become more complex, you should adopt a process to prevent yourself from becoming overwhelmed.</li>
-  <li><em>Algorithm</em> is defined as a procedure or formula for solving a problem.
-  <ul>
-  <li>In programming this is a sequence of steps to perform a task.</li>
-  </ul></li>
-  <li>Recipes are not far off from a algorithm.</li>
-  </ul>
-  </section>
-  <section class="slide level2">
+<body>
 
-  <ul>
-  <li>Math <em>Algorithm</em>
-  <ul>
-  <li>Evaluate the sum of a sequence of numbers from 1 through <em>N</em>.
-  <ul>
-  <li><em>N</em> can be any given whole number greater than zero.</li>
-  </ul></li>
-  <li><code>SUM(N) = 1 + 2 + 3 + ... + N</code></li>
-  </ul></li>
-  <li>Algorithm:</li>
-  </ul>
-  <pre><code>1. Set SUM = 0 and a counter i = 1
-  2. Repeat the following while i is less than or equal to N.
-      a. Calculate SUM + i and save the result in SUM.
-      b. Increase the value of i by 1.
-  3. The solution is the value of SUM.</code></pre>
-  </section>
-  <section class="slide level2">
+<div class="reveal">
 
-  <ul>
-  <li>Code:</li>
-  </ul>
-  <pre><code>
-  int sum = 0;
-  int n = 10;
-  int i = 0;
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
 
-  while (i &lt;= n) {
-      sum = sum + 1;
+<section>
+<h1>Algorithms</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>03/30/2021</h4>
+</p>
+</section>  
 
-      i++;
-  }
 
-  println(sum);
-  </code></pre>
-  </section>
-  <section id="the-process" class="slide level2">
-  <h2>The Process</h2>
-  <ol type="1">
-  <li>Idea - Start with an Idea. (Should probably write it down)</li>
-  <li>Parts - Break it down into smaller parts
-  <ol type="1">
-  <li>Algorithm Psudeocode</li>
-  <li>Algorithm Code</li>
-  <li>Objects - Take the data and functionality and build it into a class.</li>
-  </ol></li>
-  <li>Integration - Take all the classes and integrate them into one larger process</li>
-  </ol>
-  </section>
-  <section id="ideas-to-parts" class="slide level2">
-  <h2>Ideas to parts</h2>
-  <ul>
-  <li>As an example, let’s make the rain game:</li>
-  </ul>
-  <blockquote>
-  <p>The object of this game is to catch raindrops before they hit the ground. Every so often (difficulty can vary), a new drop falls from the top of the screen at a random horizontal location with random vertical speed. The player must catch the raindrops with the mouse while not letting any reach the bottom of the screen.</p>
-  </blockquote>
-  </section>
-  <section class="slide level2">
+<section id="algorithms" class="slide level2">
+<h2>Algorithms</h2>
+<ul>
+<li><em>Most</em> of the examples up to this point have been relatively simple.
+<ul>
+<li>One or two major features about sketch</li>
+</ul></li>
+<li>As projects become more complex, you should adopt a process to prevent yourself from becoming overwhelmed.</li>
+<li><em>Algorithm</em> is defined as a procedure or formula for solving a problem.
+<ul>
+<li>In programming this is a sequence of steps to perform a task.</li>
+</ul></li>
+<li>Recipes are not far off from a algorithm.</li>
+</ul>
+</section>
+<section class="slide level2">
 
-  <ul>
-  <li>The parts:
-  <ol type="1">
-  <li>Develop a program with a circle controlled by the mouse. This is used to determine if the rain catcher as caught a raindrop.</li>
-  <li>Write a program to test if two circles intersect. This will be used to if the rain catcher as caught a raindrop.</li>
-  <li>Write a timer program that executes a function every <em>N</em> seconds</li>
-  <li>Write a program with circles falling from the top of the screen to the bottom. These are the raindrops.</li>
-  </ol></li>
-  </ul>
-  </section>
-  <section id="part-1-rain-catcher" class="slide level2">
-  <h2>Part 1: Rain Catcher</h2>
-  <ul>
-  <li>Pseudocode:
-  <ul>
-  <li>Erase the background</li>
-  <li>Draw an ellipse at the mouse’s position</li>
-  </ul></li>
-  </ul>
-  </section>
-  <section class="slide level2">
+<ul>
+<li>Math <em>Algorithm</em>
+<ul>
+<li>Evaluate the sum of a sequence of numbers from 1 through <em>N</em>.
+<ul>
+<li><em>N</em> can be any given whole number greater than zero.</li>
+</ul></li>
+<li><code>SUM(N) = 1 + 2 + 3 + ... + N</code></li>
+</ul></li>
+<li>Algorithm:</li>
+</ul>
+<pre><code>1. Set SUM = 0 and a counter i = 1
+2. Repeat the following while i is less than or equal to N.
+    a. Calculate SUM + i and save the result in SUM.
+    b. Increase the value of i by 1.
+3. The solution is the value of SUM.</code></pre>
+</section>
+<section class="slide level2">
 
-  <ul>
-  <li>Taking it a step further and make it object-oriented
-  <ul>
-  <li><strong>Setup:</strong>
-  <ul>
-  <li>Initialize the catcher object</li>
-  </ul></li>
-  <li><strong>Draw:</strong>
-  <ul>
-  <li>Erase the background</li>
-  <li>Set the catcher’s location to the mouse’s</li>
-  <li>Display catcher</li>
-  </ul></li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="part-2-intersection" class="slide level2">
-  <h2>Part 2: Intersection</h2>
-  <ul>
-  <li>Focus on determining if two bouncing circles intersect. The intersection function will become a part of the <em>Catcher</em> class.</li>
-  <li><strong>Setup:</strong>
-  <ul>
-  <li>Create two ball objects</li>
-  </ul></li>
-  <li><strong>Draw:</strong>
-  <ul>
-  <li>Move balls.</li>
-  <li>If ball #1 intersects ball #2, change color of both balls to white. Otherwise leave the color gray.</li>
-  <li>Display the ball objects.</li>
-  </ul></li>
-  </ul>
-  </section>
-  <section class="slide level2">
+<ul>
+<li>Code:</li>
+</ul>
+<pre><code>
+int sum = 0;
+int n = 10;
+int i = 0;
 
-  <ul>
-  <li><strong>Data:</strong>
-  <ul>
-  <li>x and y location</li>
-  <li>Radius</li>
-  <li>Speed in x and y directions.</li>
-  </ul></li>
-  </ul>
-  </section>
-  <section class="slide level2">
+while (i &lt;= n) {
+    sum = sum + 1;
 
-  <ul>
-  <li><strong>Functions:</strong>
-  <ul>
-  <li>Constructor
-  <ul>
-  <li>Set radius based on argument.</li>
-  <li>Pick random location.</li>
-  <li>Pick random speed.</li>
-  </ul></li>
-  <li>Move:
-  <ul>
-  <li>Increment (x, y) based on speed in (x, y) directions.</li>
-  <li>If the ball hits an edge, reverse direction</li>
-  </ul></li>
-  <li>Display:
-  <ul>
-  <li>Draw a circle at x and y locations.</li>
-  </ul></li>
-  </ul></li>
-  </ul>
-  </section>
-  <section class="slide level2">
+    i++;
+}
 
-  <ul>
-  <li><strong>Intersection</strong></li>
-  <li>Determining if two objects are intersecting.</li>
-  </ul>
-  <p><img data-src="./images/figure-10-1.jpg" /></p>
-  <p><em>Figure 10-3 (Page 189)</em></p>
-  </section>
-  <section class="slide level2">
+println(sum);
+</code></pre>
+</section>
+<section id="the-process" class="slide level2">
+<h2>The Process</h2>
+<ol type="1">
+<li>Idea - Start with an Idea. (Should probably write it down)</li>
+<li>Parts - Break it down into smaller parts
+<ol type="1">
+<li>Algorithm Psudeocode</li>
+<li>Algorithm Code</li>
+<li>Objects - Take the data and functionality and build it into a class.</li>
+</ol></li>
+<li>Integration - Take all the classes and integrate them into one larger process</li>
+</ol>
+</section>
+<section id="ideas-to-parts" class="slide level2">
+<h2>Ideas to parts</h2>
+<ul>
+<li>As an example, let’s make the rain game:</li>
+</ul>
+<blockquote>
+<p>The object of this game is to catch raindrops before they hit the ground. Every so often (difficulty can vary), a new drop falls from the top of the screen at a random horizontal location with random vertical speed. The player must catch the raindrops with the mouse while not letting any reach the bottom of the screen.</p>
+</blockquote>
+</section>
+<section class="slide level2">
 
-  <ul>
-  <li>Assuming the following:
-  <ul>
-  <li>x<sub>1</sub>, y<sub>1</sub> coords. of circle one</li>
-  <li>x<sub>2</sub>, y<sub>2</sub> coords. of circle two</li>
-  <li>r<sub>1</sub> radius of circle 1</li>
-  <li>r<sub>2</sub> radius of circle 2</li>
-  </ul></li>
-  <li>If the distance between (x<sub>1</sub>, y<sub>1</sub>) and (x<sub>2</sub>, y<sub>2</sub>) is less than the sum of r<sub>1</sub> and r<sub>2</sub>, circle one intersects circle two.</li>
-  <li>Put this into a function using Processing’s <code>distance()</code> function.</li>
-  </ul>
-  </section>
-  <section id="part-3-the-timer" class="slide level2">
-  <h2>Part 3: The Timer</h2>
-  <ul>
-  <li>Processing provides functionality to deal with time: <code>hour()</code>, <code>second()</code>, <code>minute()</code>, <code>month()</code>, etc.</li>
-  <li><code>millis()</code> returns the number of milliseconds since the sketch started. Can be used to calculate the amount of time that has passed.
-  <ul>
-  <li><em>1s = 1000ms</em></li>
-  </ul></li>
-  </ul>
-  </section>
-  <section class="slide level2">
+<ul>
+<li>The parts:
+<ol type="1">
+<li>Develop a program with a circle controlled by the mouse. This is used to determine if the rain catcher as caught a raindrop.</li>
+<li>Write a program to test if two circles intersect. This will be used to if the rain catcher as caught a raindrop.</li>
+<li>Write a timer program that executes a function every <em>N</em> seconds</li>
+<li>Write a program with circles falling from the top of the screen to the bottom. These are the raindrops.</li>
+</ol></li>
+</ul>
+</section>
+<section id="part-1-rain-catcher" class="slide level2">
+<h2>Part 1: Rain Catcher</h2>
+<ul>
+<li>Pseudocode:
+<ul>
+<li>Erase the background</li>
+<li>Draw an ellipse at the mouse’s position</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
 
-  <ul>
-  <li>Implementation:
-  <ul>
-  <li>Setup:
-  <ul>
-  <li>Save the time at startup (usually zero but should save anyway).</li>
-  </ul></li>
-  <li>Draw:
-  <ul>
-  <li>Calculate the time passed as current time minus <em>savedTime</em>.</li>
-  <li>If the time passed is greater than 5,000, fill a new random background and reset <em>savedTime</em>.</li>
-  </ul></li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="part-4" class="slide level2">
-  <h2>Part 4</h2>
-  <ul>
-  <li>Creating the falling raindrops. Also can be split into smaller parts
-  <ol type="1">
-  <li>A single moving raindrop</li>
-  <li>An array of raindrops</li>
-  <li>Flexible number of raindrops (appearing one at a time)</li>
-  <li>Fancier raindrop appearance.</li>
-  </ol></li>
-  </ul>
-  </section>
-  <section id="section" class="slide level2">
-  <h2>4.1</h2>
-  <ul>
-  <li>A simple raindrop
-  <ul>
-  <li>Increment raindrop’s Y position</li>
-  <li>Display raindrop</li>
-  </ul></li>
-  <li>Of course, this should be placed in a class
-  <ul>
-  <li>Additionally the speed and size should vary.</li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="section-1" class="slide level2">
-  <h2>4.2</h2>
-  <ul>
-  <li>Make an array of the <em>Drop</em> class</li>
-  <li>Easy as it was in chapter 9</li>
-  <li><code>Drop[] drops = new Drop[50];</code></li>
-  <li>Use a loop to control the drops in <em>setup</em> and <em>draw</em>.</li>
-  </ul>
-  </section>
-  <section id="section-2" class="slide level2">
-  <h2>4.3</h2>
-  <ul>
-  <li>Raindrops should appear one at a time, every <em>N</em> seconds.
-  <ul>
-  <li>We’ll just focus on one per new frame for now.</li>
-  </ul></li>
-  <li><strong>Setup</strong>
-  <ul>
-  <li>Create a drop array with 1000 spaces in it</li>
-  <li>Set <code>totalDrops</code> to zero</li>
-  </ul></li>
-  </ul>
-  </section>
-  <section class="slide level2">
+<ul>
+<li>Taking it a step further and make it object-oriented
+<ul>
+<li><strong>Setup:</strong>
+<ul>
+<li>Initialize the catcher object</li>
+</ul></li>
+<li><strong>Draw:</strong>
+<ul>
+<li>Erase the background</li>
+<li>Set the catcher’s location to the mouse’s</li>
+<li>Display catcher</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="part-2-intersection" class="slide level2">
+<h2>Part 2: Intersection</h2>
+<ul>
+<li>Focus on determining if two bouncing circles intersect. The intersection function will become a part of the <em>Catcher</em> class.</li>
+<li><strong>Setup:</strong>
+<ul>
+<li>Create two ball objects</li>
+</ul></li>
+<li><strong>Draw:</strong>
+<ul>
+<li>Move balls.</li>
+<li>If ball #1 intersects ball #2, change color of both balls to white. Otherwise leave the color gray.</li>
+<li>Display the ball objects.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
 
-  <ul>
-  <li><strong>Draw</strong>
-  <ul>
-  <li>Create a new drop in the array (at the index stored in <code>totalDrops</code>).</li>
-  <li>Increment totalDrops</li>
-  <li>If totalDrops exceeds the array size, reset it to zero and start over.</li>
-  <li>Move and display all available drops (use totalDrops instead of the array length)</li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="section-3" class="slide level2">
-  <h2>4.4</h2>
-  <ul>
-  <li>Make the raindrop look like a raindrop</li>
-  <li>Use a sequence of circles starting small and getting larger moving down</li>
-  </ul>
-  <pre><code>background(255);
-  for(int i = 2; i &lt; 8; i++) {
-      noStroke();
-      fill(0);
-      ellipse(width/2, height/2 + i*4, i*2, i*2);
-  }</code></pre>
-  </section>
-  <section id="bring-it-all-together" class="slide level2">
-  <h2>Bring it all together</h2>
-  <ul>
-  <li>Time to integrate all the classes together.</li>
-  <li>The <em>pseudocode</em> algorithm for the game:</li>
-  <li><strong>Setup</strong>
-  <ul>
-  <li>Create a catcher object.</li>
-  <li>Create array of <code>Drop</code> objects.</li>
-  <li>Set totalDrops to 0.</li>
-  <li>Create <code>Timer</code> object.</li>
-  <li>Start timer.</li>
-  </ul></li>
-  </ul>
-  </section>
-  <section class="slide level2">
+<ul>
+<li><strong>Data:</strong>
+<ul>
+<li>x and y location</li>
+<li>Radius</li>
+<li>Speed in x and y directions.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
 
-  <ul>
-  <li><strong>Draw</strong>
-  <ul>
-  <li>Set catcher location to mouse location.</li>
-  <li>Display catcher.</li>
-  <li>Move all available drops.</li>
-  <li>Display all available drops.</li>
-  <li>If the catcher intersects any drop.
-  <ul>
-  <li>Remove drop from game.</li>
-  </ul></li>
-  <li>If the timer is finished
-  <ul>
-  <li>Increase the number of drops</li>
-  <li>Restart timer.</li>
-  </ul></li>
-  </ul></li>
-  </ul>
-  </section>
-  </div>
+<ul>
+<li><strong>Functions:</strong>
+<ul>
+<li>Constructor
+<ul>
+<li>Set radius based on argument.</li>
+<li>Pick random location.</li>
+<li>Pick random speed.</li>
+</ul></li>
+<li>Move:
+<ul>
+<li>Increment (x, y) based on speed in (x, y) directions.</li>
+<li>If the ball hits an edge, reverse direction</li>
+</ul></li>
+<li>Display:
+<ul>
+<li>Draw a circle at x and y locations.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
 
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+<ul>
+<li><strong>Intersection</strong></li>
+<li>Determining if two objects are intersecting.</li>
+</ul>
+<p><img data-src="./images/figure-10-1.jpg" /></p>
+<p><em>Figure 10-3 (Page 189)</em></p>
+</section>
+<section class="slide level2">
 
-  <script>
-  // More info about initialization & config:
-  // - https://revealjs.com/initialization/
-  // - https://revealjs.com/config/
-    Reveal.initialize({
-      controls: true,
-      progress: true,
-      history: true,
-      center: false,
+<ul>
+<li>Assuming the following:
+<ul>
+<li>x<sub>1</sub>, y<sub>1</sub> coords. of circle one</li>
+<li>x<sub>2</sub>, y<sub>2</sub> coords. of circle two</li>
+<li>r<sub>1</sub> radius of circle 1</li>
+<li>r<sub>2</sub> radius of circle 2</li>
+</ul></li>
+<li>If the distance between (x<sub>1</sub>, y<sub>1</sub>) and (x<sub>2</sub>, y<sub>2</sub>) is less than the sum of r<sub>1</sub> and r<sub>2</sub>, circle one intersects circle two.</li>
+<li>Put this into a function using Processing’s <code>distance()</code> function.</li>
+</ul>
+</section>
+<section id="part-3-the-timer" class="slide level2">
+<h2>Part 3: The Timer</h2>
+<ul>
+<li>Processing provides functionality to deal with time: <code>hour()</code>, <code>second()</code>, <code>minute()</code>, <code>month()</code>, etc.</li>
+<li><code>millis()</code> returns the number of milliseconds since the sketch started. Can be used to calculate the amount of time that has passed.
+<ul>
+<li><em>1s = 1000ms</em></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
 
-      hash: true,
+<ul>
+<li>Implementation:
+<ul>
+<li>Setup:
+<ul>
+<li>Save the time at startup (usually zero but should save anyway).</li>
+</ul></li>
+<li>Draw:
+<ul>
+<li>Calculate the time passed as current time minus <em>savedTime</em>.</li>
+<li>If the time passed is greater than 5,000, fill a new random background and reset <em>savedTime</em>.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="part-4" class="slide level2">
+<h2>Part 4</h2>
+<ul>
+<li>Creating the falling raindrops. Also can be split into smaller parts
+<ol type="1">
+<li>A single moving raindrop</li>
+<li>An array of raindrops</li>
+<li>Flexible number of raindrops (appearing one at a time)</li>
+<li>Fancier raindrop appearance.</li>
+</ol></li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2>4.1</h2>
+<ul>
+<li>A simple raindrop
+<ul>
+<li>Increment raindrop’s Y position</li>
+<li>Display raindrop</li>
+</ul></li>
+<li>Of course, this should be placed in a class
+<ul>
+<li>Additionally the speed and size should vary.</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2>4.2</h2>
+<ul>
+<li>Make an array of the <em>Drop</em> class</li>
+<li>Easy as it was in chapter 9</li>
+<li><code>Drop[] drops = new Drop[50];</code></li>
+<li>Use a loop to control the drops in <em>setup</em> and <em>draw</em>.</li>
+</ul>
+</section>
+<section id="section-2" class="slide level2">
+<h2>4.3</h2>
+<ul>
+<li>Raindrops should appear one at a time, every <em>N</em> seconds.
+<ul>
+<li>We’ll just focus on one per new frame for now.</li>
+</ul></li>
+<li><strong>Setup</strong>
+<ul>
+<li>Create a drop array with 1000 spaces in it</li>
+<li>Set <code>totalDrops</code> to zero</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
 
-      plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+<ul>
+<li><strong>Draw</strong>
+<ul>
+<li>Create a new drop in the array (at the index stored in <code>totalDrops</code>).</li>
+<li>Increment totalDrops</li>
+<li>If totalDrops exceeds the array size, reset it to zero and start over.</li>
+<li>Move and display all available drops (use totalDrops instead of the array length)</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-3" class="slide level2">
+<h2>4.4</h2>
+<ul>
+<li>Make the raindrop look like a raindrop</li>
+<li>Use a sequence of circles starting small and getting larger moving down</li>
+</ul>
+<pre><code>background(255);
+for(int i = 2; i &lt; 8; i++) {
+    noStroke();
+    fill(0);
+    ellipse(width/2, height/2 + i*4, i*2, i*2);
+}</code></pre>
+</section>
+<section id="bring-it-all-together" class="slide level2">
+<h2>Bring it all together</h2>
+<ul>
+<li>Time to integrate all the classes together.</li>
+<li>The <em>pseudocode</em> algorithm for the game:</li>
+<li><strong>Setup</strong>
+<ul>
+<li>Create a catcher object.</li>
+<li>Create array of <code>Drop</code> objects.</li>
+<li>Set totalDrops to 0.</li>
+<li>Create <code>Timer</code> object.</li>
+<li>Start timer.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
 
-    });
+<ul>
+<li><strong>Draw</strong>
+<ul>
+<li>Set catcher location to mouse location.</li>
+<li>Display catcher.</li>
+<li>Move all available drops.</li>
+<li>Display all available drops.</li>
+<li>If the catcher intersects any drop.
+<ul>
+<li>Remove drop from game.</li>
+</ul></li>
+<li>If the timer is finished
+<ul>
+<li>Increase the number of drops</li>
+<li>Restart timer.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+</div>
 
-  </script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
 
-  </body>
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    //plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+    plugins: [ RevealMarkdown, PdfExport ]
+  });
+
+</script>
+
+</body>
 </html>

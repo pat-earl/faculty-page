@@ -50,9 +50,9 @@ Grade out of 50 Points
 * 5 Points - Appropriate File Name
 * 5 Points - Correct Sha-Bang Line
 * 30 Points - Functionality
-    * 5 Points - Correct defaults
-    * 5 Points - Usage Statement
-    * 10 Points - Accepts none up to three arguments
-    * 10 Points - Correct use of *case* statements
+    * 5 Points - Correct defaults/Usage statement
+    * 5 Points - Accepts 0-3 arguments
+    * 5 Points - Uses a `case` statement to handle positional arguments
+    * 15 Points - Correct implementation of `find` and outputting the found files.
 * 10 Points - Thoughtful comments in script.
 * (**EC** 5 Points *all or nothing*) - Handles *-h* option argument
