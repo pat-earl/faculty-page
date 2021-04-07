@@ -13,6 +13,7 @@ title: Lectures
     {"name": "Matplotlib", "file": "slides/matplotlib.md"},
     {"name": "Pandas - MultiIndex", "file": "slides/mutli_index.md"},
     {"name": "Pandas - Combining Data", "file": "slides/combine.md"},
+    {"name": "Pandas - Aggregation & Grouping", "file": "slides/agg.md"},
 ) %}
 
 ## Course Lectures

@@ -159,10 +159,45 @@ df.groupby('key').transform(lambda x: x - x.mean())
 
 ## GroupBy - Apply
 * `apply()` allows you to apply an arbitrary function to the group results.
-*Example*
+* As an example, this apply will normalize the first column by the sum of the second.
+
+```
+def norm_by_data2(x):
+  x['data1'] /= x['data2'].sum()
+  return x
+
+df.groupby('key').apply(norm_by_data2)
+```
 
 ---
 
 ## Specifying the split key
+* More than one key can be used to group the data.
+* The key can be any series or list that matches the length of the `DataFrame`.
+
+```
+L = [0, 1, 0, 1, 2, 0]
+df.groupby(L).sum()
+```
+
+* Or a dictionary that maps index values to a group key
+
+```
+df2 = df.set_index('key')
+mapping = {'A': 'vowel', 'B': 'consonant', 'C': 'consonant'}
+df2.groupby(mapping).sum()
+```
 
 ---
+
+* A Python function can be used
+
+```
+df2.groupby(str.lower).mean()
+```
+
+* Any of these keys can be combined to group on a mutli-index
+
+```
+df2.groupby([str.lower, mapping]).mean()
+```

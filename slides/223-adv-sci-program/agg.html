@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Pandas - Aggregation and Grouping</title>
+
+<meta name="description" content="Pandas - Aggregation and Grouping">    
+
+  <meta name="author" content="Patrick Earl" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/robot-lung.css" id="theme">
+ -->
+
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/robot-lung.css" id="theme">
+
+
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
+
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+<h1>Pandas - Aggregation and Grouping</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>04/07/2021</h4>
+</p>
+</section>  
+
+
+<section id="aggregation" class="slide level2">
+<h2>Aggregation</h2>
+<ul>
+<li>An effective method for getting summarization information about large datasets.</li>
+<li>Aggregations (i.e. sum, mean, min) reduce data to a single number and may provide insights when performing data analysis.</li>
+<li>Pandas has built-in methods for computing these aggregations.</li>
+</ul>
+</section>
+<section id="simple-aggregations" class="slide level2">
+<h2>Simple Aggregations</h2>
+<ul>
+<li>Pandas <code>Series</code> are going to return single values like numpy arrays.</li>
+</ul>
+<pre><code>rng = np.random.RandomState(42)
+s1 = pd.Series(rng.rand(5))
+s1</code></pre>
+<ul>
+<li>Aggregations on these random values:</li>
+</ul>
+<pre><code>s1.sum()
+s1.mean()
+s1.min() # .max()</code></pre>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>These can also be used on Pandas <code>DataFrame</code> objects. By default aggregates return results within a column</li>
+</ul>
+<pre><code>df = pd.DataFrame({&#39;A&#39;: rng.rand(5),
+                   &#39;B&#39;: rng.rand(5)})
+df</code></pre>
+<ul>
+<li>Aggregation functions on the random values:</li>
+</ul>
+<pre><code>df.mean()
+df.mean(axis=&#39;columns&#39;) # or axis=1</code></pre>
+</section>
+<section id="summarization" class="slide level2">
+<h2>Summarization</h2>
+<ul>
+<li>The <code>describe</code> method provides common aggregations
+<ul>
+<li><em>count, mean, std, min, 25%, 50%, 75%, max</em></li>
+</ul></li>
+</ul>
+<pre><code>df.describe()</code></pre>
+</section>
+<section id="other-built-in-methods" class="slide level2">
+<h2>Other built-in methods</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Aggregation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>count()</code></td>
+<td>Total number of items</td>
+</tr>
+<tr class="even">
+<td><code>first()</code>, <code>last()</code></td>
+<td>First and last item</td>
+</tr>
+<tr class="odd">
+<td><code>mean()</code>, <code>median()</code></td>
+<td>Mean and median</td>
+</tr>
+<tr class="even">
+<td><code>min()</code>, <code>max()</code></td>
+<td>Minimum and Maximum</td>
+</tr>
+<tr class="odd">
+<td><code>std()</code>, <code>var()</code></td>
+<td>Standard Deviation and Variance</td>
+</tr>
+<tr class="even">
+<td><code>mad()</code></td>
+<td>Mean Absolute Deviation</td>
+</tr>
+<tr class="odd">
+<td><code>prod()</code></td>
+<td>Product of all items</td>
+</tr>
+<tr class="even">
+<td><code>sum()</code></td>
+<td>Sum of all items</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="groupby" class="slide level2">
+<h2>GroupBy</h2>
+<ul>
+<li>Simple aggregation of data is usually not enough to do effective analysis.</li>
+<li><code>groupby</code> allows for computing aggregates on subsets of data.
+<ul>
+<li>The name comes from a similar feature available with SQL.</li>
+</ul></li>
+<li><code>groupby</code> works in 3 parts:
+<ol type="1">
+<li>Split - Breaking up and grouping a <code>DataFrame</code> on the value of a specific key.</li>
+<li>Apply - Computing some function (aggregate, transformation, or filtering) within the individual groups</li>
+<li>Combine - Merge the results of these operations into an output array</li>
+</ol></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p><img data-src="./images/03.08-split-apply-combine.png" /> <em>From Section on Aggregation and Grouping in DSH</em></p>
+</section>
+<section id="using-groupby" class="slide level2">
+<h2>Using GroupBy</h2>
+<pre><code>df = pd.DataFrame({&#39;key&#39;: list(&#39;ABCABC&#39;),
+                    &#39;data1&#39;: range(6),
+                    &#39;data2&#39;: range(5, 15)})
+df
+
+df.groupby(&#39;key&#39;)</code></pre>
+<ul>
+<li>Note that this only returns a <code>DataFrameGroupBy</code> object.
+<ul>
+<li>This is a special abstract view of the DataFrame.</li>
+<li>Aggregates can be applied to this</li>
+</ul></li>
+<li>The key becomes the new index</li>
+</ul>
+<pre><code>df.groupby(&#39;key&#39;).sum()</code></pre>
+</section>
+<section id="applying-functions-to-a-groupby-object" class="slide level2">
+<h2>Applying functions to a groupby object</h2>
+<ul>
+<li><code>GroupBy</code> objects have the following methods available:
+<ul>
+<li><code>aggregate()</code></li>
+<li><code>filter()</code></li>
+<li><code>transform()</code></li>
+<li><code>apply()</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="groupby---aggregate" class="slide level2">
+<h2>GroupBy - Aggregate</h2>
+<ul>
+<li>The aggregate can be used to do multiple aggregates at once
+<ul>
+<li>Taking a string, function, or list.</li>
+</ul></li>
+</ul>
+<pre><code>df.groupby(&#39;key&#39;).aggregate([&#39;min&#39;, np.median, max])</code></pre>
+<ul>
+<li>Dictionary mappings can be used to apply an operation to specific columns</li>
+</ul>
+<pre><code>df.groupby(&#39;key&#39;).aggregate({&#39;data1&#39;: &#39;min&#39;, &#39;data2&#39;: &#39;max})</code></pre>
+</section>
+<section id="groupby---filtering" class="slide level2">
+<h2>GroupBy - Filtering</h2>
+<ul>
+<li>Allows for grouping based on the group’s properties.</li>
+<li>The <code>filter</code> method takes a function that returns a Boolean value</li>
+</ul>
+<pre><code>def filter_func(x):
+    return x[&#39;data1&#39;] &gt; 2
+
+df.groupby(&#39;key&#39;).filter(filter_func)</code></pre>
+</section>
+<section id="groupby---transformation" class="slide level2">
+<h2>GroupBy - Transformation</h2>
+<ul>
+<li>Transformations returns a transformed version of the full data. The output will have the same shape as the input</li>
+<li>Centering data by subtracting the group-wise mean:</li>
+</ul>
+<pre><code>df.groupby(&#39;key&#39;).transform(lambda x: x - x.mean())</code></pre>
+</section>
+<section id="groupby---apply" class="slide level2">
+<h2>GroupBy - Apply</h2>
+<ul>
+<li><code>apply()</code> allows you to apply an arbitrary function to the group results.</li>
+<li>As an example, this apply will normalize the first column by the sum of the second.</li>
+</ul>
+<pre><code>def norm_by_data2(x):
+  x[&#39;data1&#39;] /= x[&#39;data2&#39;].sum()
+  return x
+
+df.groupby(&#39;key&#39;).apply(norm_by_data2)</code></pre>
+</section>
+<section id="specifying-the-split-key" class="slide level2">
+<h2>Specifying the split key</h2>
+<ul>
+<li>More than one key can be used to group the data.</li>
+<li>The key can be any series or list that matches the length of the <code>DataFrame</code>.</li>
+</ul>
+<pre><code>L = [0, 1, 0, 1, 2, 0]
+df.groupby(L).sum()</code></pre>
+<ul>
+<li>Or a dictionary that maps index values to a group key</li>
+</ul>
+<pre><code>df2 = df.set_index(&#39;key&#39;)
+mapping = {&#39;A&#39;: &#39;vowel&#39;, &#39;B&#39;: &#39;consonant&#39;, &#39;C&#39;: &#39;consonant&#39;}
+df2.groupby(mapping).sum()</code></pre>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>A Python function can be used</li>
+</ul>
+<pre><code>df2.groupby(str.lower).mean()</code></pre>
+<ul>
+<li>Any of these keys can be combined to group on a mutli-index</li>
+</ul>
+<pre><code>df2.groupby([str.lower, mapping]).mean()</code></pre>
+</section>
+</div>
+
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    //plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+    plugins: [ RevealMarkdown, PdfExport ]
+  });
+
+</script>
+
+</body>
+</html>
