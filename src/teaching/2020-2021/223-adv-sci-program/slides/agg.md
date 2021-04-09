@@ -93,7 +93,7 @@ df.describe()
 ```
 df = pd.DataFrame({'key': list('ABCABC'),
                     'data1': range(6),
-                    'data2': range(5, 15)})
+                    'data2': range(5, 11)})
 df
 
 df.groupby('key')
@@ -140,7 +140,7 @@ df.groupby('key').aggregate({'data1': 'min', 'data2': 'max})
 
 ```
 def filter_func(x):
-    return x['data1'] > 2
+    return x['data1'].std() > 2
 
 df.groupby('key').filter(filter_func)
 ```

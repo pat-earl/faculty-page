@@ -16,6 +16,12 @@ Dr. Dylan Schwesinger and [his version can be found by following this link](http
 * [GitHub Markdown Cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
 * [Markdown Tutorial](https://www.markdowntutorial.com/)
 
+# Dataset Sources
+* [Kaggle](https://www.kaggle.com/datasets)
+* [RDatasets](https://vincentarelbundock.github.io/Rdatasets/)
+* [U.S. Government Data.gov](https://catalog.data.gov/dataset)
+* [Google Dataset Search](https://datasetsearch.research.google.com/) - ***NOTE***: Avoid results from 'statista.com'
+
 # Python Basics
 
 * [Python String Formatting](https://pyformat.info) (Use *new style* for Python 3)

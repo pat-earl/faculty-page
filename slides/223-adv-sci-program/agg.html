@@ -176,7 +176,7 @@ df.mean(axis=&#39;columns&#39;) # or axis=1</code></pre>
 <h2>Using GroupBy</h2>
 <pre><code>df = pd.DataFrame({&#39;key&#39;: list(&#39;ABCABC&#39;),
                     &#39;data1&#39;: range(6),
-                    &#39;data2&#39;: range(5, 15)})
+                    &#39;data2&#39;: range(5, 11)})
 df
 
 df.groupby(&#39;key&#39;)</code></pre>
@@ -223,7 +223,7 @@ df.groupby(&#39;key&#39;)</code></pre>
 <li>The <code>filter</code> method takes a function that returns a Boolean value</li>
 </ul>
 <pre><code>def filter_func(x):
-    return x[&#39;data1&#39;] &gt; 2
+    return x[&#39;data1&#39;].std() &gt; 2
 
 df.groupby(&#39;key&#39;).filter(filter_func)</code></pre>
 </section>
