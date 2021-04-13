@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Text Processing</title>
+
+<meta name="description" content="Text Processing">    
+
+  <meta name="author" content="Patrick Earl" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/robot-lung.css" id="theme">
+ -->
+
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/robot-lung.css" id="theme">
+
+
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
+
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+<h1>Text Processing</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>04/13/2021</h4>
+</p>
+</section>  
+
+
+<section id="regular-expressions" class="slide level2">
+<h2>Regular Expressions</h2>
+<ul>
+<li><em>Regular Expressions</em> define a set of one or more strings of characters.
+<ul>
+<li>There is different flavors of REGEX</li>
+</ul></li>
+<li>For these regular expressions, the forward slash is used to mark the start and end.</li>
+<li><em>Appendix A</em> in textbook.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Simple Strings:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>REGEX</th>
+<th>Matches</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>/ring/</td>
+<td><em>ring</em></td>
+<td><em>ring</em>, sp<em>ring</em>, <em>ring</em>ing, st<em>ring</em>ing</td>
+</tr>
+<tr class="even">
+<td>/Thursday/</td>
+<td><em>Thursday</em></td>
+<td><em>Thursday</em>, <em>Thursday</em>’s</td>
+</tr>
+<tr class="odd">
+<td>/or not/</td>
+<td><em>or not</em></td>
+<td><em>or not</em>, po<em>or no</em>thing</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="special-characters" class="slide level2">
+<h2>Special Characters</h2>
+<ul>
+<li>. (Dot) - Matches any character</li>
+<li>[] (Brackets) - Defines a character class. Will match any character within the class
+<ul>
+<li>You can use a hyphen (<code>-</code>)to define a range of characters</li>
+</ul></li>
+<li><code>*</code> (Star) - Represents a zero character. Will match on zero or more occurrences</li>
+<li><code>^</code> (Carrot) - Regex can only match at the start of a string</li>
+<li><code>$</code> (Dollar) - Can only match at the end of a line.
+<ul>
+<li>These two are known as <em>anchors</em> because force matching at the start or end of a line.</li>
+</ul></li>
+<li><code>\</code> (Back Slash) - Used to quote these special characters (Some exceptions like Perl).</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Character Class Examples</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Class</th>
+<th>Defines</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>[xyz]</td>
+<td>Defines a character class that matches <em>x, y, or z</em>.</td>
+</tr>
+<tr class="even">
+<td>[^xyz]</td>
+<td>Defines a character class that matches anything <em>except</em> <em>x, y, or z</em>.</td>
+</tr>
+<tr class="odd">
+<td>[x-z]</td>
+<td>Defines a character class that matches any character <em>x</em> through <em>z</em> inclusive.</td>
+</tr>
+<tr class="even">
+<td><code>\(xyz\)</code></td>
+<td>Matches what <em>xyz</em> matches</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Extended Regular Expressions</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Expression</th>
+<th>Matches</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>+</td>
+<td>Matches one or more of the preceding character</td>
+</tr>
+<tr class="even">
+<td>?</td>
+<td>Matches zero or more of the preceding character</td>
+</tr>
+<tr class="odd">
+<td>(xyz)+</td>
+<td>Matches one or more of what <em>xyz</em> matches</td>
+</tr>
+<tr class="even">
+<td>(xyz)?</td>
+<td>Zero or more of what <em>xyz</em> matches</td>
+</tr>
+<tr class="odd">
+<td><code>xyz|abc</code></td>
+<td>Matches either <em>xyz</em> or <em>abc</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sed" class="slide level2">
+<h2><em>sed</em></h2>
+<ul>
+<li>Stream Editor (SED)
+<ul>
+<li>Transforms an input stream (file or stdin).</li>
+</ul></li>
+<li>SED in default will transform line by line</li>
+<li>Syntax:</li>
+</ul>
+<pre><code>sed [-n] program [file-list]</code></pre>
+<ul>
+<li>Output from the SED command goes to standard output</li>
+</ul>
+</section>
+<section id="sed-continued" class="slide level2">
+<h2><em>sed</em> (continued)</h2>
+<ul>
+<li>Options of note:
+<ul>
+<li><em>-f</em> - Read a program file instead from the command line</li>
+<li><em>-i[suffix]</em> - Edit the file in place. Using suffix will make a backup of the original file</li>
+<li><em>-n</em> - SED won’t send output to stdout, unless the Print <strong>(p)</strong> flag is used.</li>
+</ul></li>
+<li>General syntax of a program:</li>
+</ul>
+<pre><code>[address[,address]] instruction [argument-list]</code></pre>
+<ul>
+<li>Address optionally select line(s) and runs the command on it.
+<ul>
+<li>No address means the instruction will be ran on <em>ALL</em> lines.</li>
+</ul></li>
+<li>sed commands can be separated using a semicolon (;).</li>
+</ul>
+</section>
+<section id="sed-continued-1" class="slide level2">
+<h2><em>sed</em> (continued)</h2>
+<ul>
+<li><em>sed</em> processes input as follows:
+<ul>
+<li>Read one line of input</li>
+<li>If the addresses matches the input line, run the instruction.</li>
+<li>Repeat if there is more than on instruction that matches the address.</li>
+<li>Repeat until all lines of input are processed.</li>
+</ul></li>
+</ul>
+</section>
+<section id="sed---addresses" class="slide level2">
+<h2><em>sed</em> - Addresses</h2>
+<ul>
+<li>Line numbers can be used as an address to select a line. <code>$</code> can be used to represent the last line of input.</li>
+<li>A regular expression can also be used to select lines that match the REGEX pattern.</li>
+</ul>
+</section>
+<section id="sed---instructions" class="slide level2">
+<h2><em>sed</em> - Instructions</h2>
+<ul>
+<li>There are two buffers:
+<ul>
+<li><em>Pattern Space</em> - Holds the initially read line</li>
+<li><em>Hold Space</em> - Can hold data while manipulating data in <em>Pattern Space</em></li>
+</ul></li>
+<li><em>a</em> (append):
+<ul>
+<li>Append one or more lines to the currently selected line</li>
+<li><code>[address[,address]] a\ text \ text \ text</code></li>
+</ul></li>
+<li><em>c</em> (change):
+<ul>
+<li>Replace text at the current line with the new text</li>
+</ul></li>
+<li><em>d</em> (delete):
+<ul>
+<li>Causes sed to not write out the current line or process more instructions.</li>
+<li>It’ll read the next input line</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><em>i</em> (insert):
+<ul>
+<li>Similar to append, except text is placed <em>before</em> the selected line.</li>
+</ul></li>
+<li><em>N</em> (next w/o write):
+<ul>
+<li>Reads the next input line and appends it to the current line.</li>
+<li>Can be used to remove <strong>NEWLINESs</strong> from a file.</li>
+</ul></li>
+<li><em>n</em> (next):
+<ul>
+<li>Writes out the currently selected line, reads the next, and starts processing the new line.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><em>p</em> (print):
+<ul>
+<li>Prints out the selected line to stdout. Does not reflect possible changes of subsequent instructions.</li>
+</ul></li>
+<li><em>q</em> (quit):
+<ul>
+<li>Causes <em>sed</em> to quit immediately.</li>
+</ul></li>
+<li><em>r</em> (file read):
+<ul>
+<li>Read the contents of a file and append it to the currently selected line.</li>
+<li>Syntax: <code>r file-name</code> (Can only be a single file)</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><em>s</em> (substitute):
+<ul>
+<li>Allows for matching on a pattern and replacing the contents</li>
+<li>Syntax: <code>s/pattern/replacement-string/[g][p][w file]</code></li>
+<li><em>Pattern</em> is a regular expression</li>
+<li>The flags:
+<ul>
+<li><em>g</em> - Global flag: Replace all non-overlapping occurrences</li>
+<li><em>p</em> - Print Flag: Send substitutions made to stdout.</li>
+<li><em>w</em> - Write Flag: Sends the output to the specified file.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="control-structure" class="slide level2">
+<h2>Control Structure</h2>
+<ul>
+<li><code>!</code> (NOT) -
+<ul>
+<li>Causes <em>sed</em> to apply instructions to lines <em>not</em> selected by the address portion.</li>
+<li><code>"3!d"</code> - Deletes all lines except line 3.</li>
+</ul></li>
+<li><code>{}</code> (Group Instructions) -
+<ul>
+<li>Allows for grouping of instructions together for a given address.</li>
+<li>Use a semicolon on a single line.</li>
+</ul></li>
+</ul>
+</section>
+</div>
+
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    //plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+    plugins: [ RevealMarkdown, PdfExport ]
+  });
+
+</script>
+
+</body>
+</html>

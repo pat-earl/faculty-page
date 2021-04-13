@@ -19,7 +19,7 @@ Dr. Dylan Schwesinger and [his version can be found by following this link](http
 # Dataset Sources
 * [Kaggle](https://www.kaggle.com/datasets)
 * [RDatasets](https://vincentarelbundock.github.io/Rdatasets/)
-* [U.S. Government Data.gov](https://catalog.data.gov/dataset)
+* [U.S. Gov: Data.gov](https://catalog.data.gov/dataset)
 * [Google Dataset Search](https://datasetsearch.research.google.com/) - ***NOTE***: Avoid results from 'statista.com'
 
 # Python Basics

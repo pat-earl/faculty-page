@@ -1,0 +1,160 @@
+---
+title: "Text Processing"
+subtitle: "CSC252"
+author: Patrick Earl
+date: 04/13/2021
+slideNumber: true
+revealjstheme: robot-lung
+width: 1600
+height: 1000
+transition: fade
+---
+
+## Regular Expressions
+* *Regular Expressions* define a set of one or more strings of characters. 
+    * There is different flavors of REGEX
+* For these regular expressions, the forward slash is used to mark the start and end. 
+* *Appendix A* in textbook.
+
+---
+  
+* Simple Strings:
+
+| REGEX | Matches | Examples |
+| -- | -- | -- |
+| /ring/ | *ring* | *ring*, sp*ring*, *ring*ing, st*ring*ing |
+| /Thursday/ | *Thursday* | *Thursday*, *Thursday*'s |
+| /or not/ | *or not* | *or not*, po*or no*thing |
+
+---
+
+## Special Characters
+* . (Dot) - Matches any character
+* [] (Brackets) - Defines a character class. Will match any character within the class
+    * You can use a hyphen (`-`)to define a range of characters
+* `*` (Star) - Represents a zero character. Will match on zero or more occurrences
+* `^` (Carrot) - Regex can only match at the start of a string
+* `$` (Dollar) - Can only match at the end of a line. 
+    * These two are known as *anchors* because force matching at the start or end of a line.
+* `\` (Back Slash) - Used to quote these special characters (Some exceptions like Perl).
+
+---
+
+* Character Class Examples
+  
+| Class | Defines | 
+| -- | -- |
+| [xyz] | Defines a character class that matches *x, y, or z*. | 
+| [^xyz] | Defines a character class that matches anything *except* *x, y, or z*. |
+| [x-z] | Defines a character class that matches any character *x* through *z* inclusive. |
+| `\(xyz\)` | Matches what *xyz* matches |
+
+---
+
+* Extended Regular Expressions
+  
+| Expression | Matches |
+| -- | -- | 
+| + | Matches one or more of the preceding character | 
+| ? | Matches zero or more of the preceding character | 
+| (xyz)+ | Matches one or more of what *xyz* matches |
+| (xyz)? | Zero or more of what *xyz* matches |
+| `xyz|abc` | Matches either *xyz* or *abc* |
+
+---
+
+## *sed*
+* Stream Editor (SED)
+    * Transforms an input stream (file or stdin).
+* SED in default will transform line by line
+* Syntax:
+
+```
+sed [-n] program [file-list]
+```
+
+* Output from the SED command goes to standard output
+
+## *sed* (continued)
+* Options of note:
+    * *-f* - Read a program file instead from the command line
+    * *-i[suffix]* - Edit the file in place. Using suffix will make a backup of the original file
+    * *-n* - SED won't send output to stdout, unless the Print **(p)** flag is used.
+
+* General syntax of a program:
+
+```
+[address[,address]] instruction [argument-list]
+```
+
+* Address optionally select line(s) and runs the command on it.
+    * No address means the instruction will be ran on *ALL* lines.
+* sed commands can be separated using a semicolon (;).
+
+---
+
+## *sed* (continued)
+* *sed* processes input as follows:
+    * Read one line of input
+    * If the addresses matches the input line, run the instruction.
+    * Repeat if there is more than on instruction that matches the address.
+    * Repeat until all lines of input are processed.
+  
+## *sed* - Addresses
+* Line numbers can be used as an address to select a line. `$` can be used to represent the last line of input.
+* A regular expression can also be used to select lines that match the REGEX pattern.
+
+## *sed* - Instructions
+
+* There are two buffers:
+    * *Pattern Space* - Holds the initially read line
+    * *Hold Space* - Can hold data while manipulating data in *Pattern Space*
+* *a* (append):
+    * Append one or more lines to the currently selected line
+    * `[address[,address]] a\ text \ text \ text`
+* *c* (change):
+    * Replace text at the current line with the new text
+* *d* (delete):
+    * Causes sed to not write out the current line or process more instructions.
+    * It'll read the next input line
+
+---
+
+* *i* (insert):
+    * Similar to append, except text is placed *before* the selected line.
+* *N* (next w/o write):
+    * Reads the next input line and appends it to the current line. 
+    * Can be used to remove **NEWLINESs** from a file.
+* *n* (next):
+    * Writes out the currently selected line, reads the next, and starts processing the new line.
+
+---
+
+* *p* (print):
+    * Prints out the selected line to stdout. Does not reflect possible changes of subsequent instructions.
+* *q* (quit):
+    * Causes *sed* to quit immediately.
+* *r* (file read):
+    * Read the contents of a file and append it to the currently selected line.
+    * Syntax: `r file-name` (Can only be a single file)
+
+---
+
+* *s* (substitute):
+    * Allows for matching on a pattern and replacing the contents
+    * Syntax: `s/pattern/replacement-string/[g][p][w file]`
+    * *Pattern* is a regular expression
+    * The flags:
+        * *g* - Global flag: Replace all non-overlapping occurrences
+        * *p* - Print Flag: Send substitutions made to stdout.
+        * *w* - Write Flag: Sends the output to the specified file.
+  
+---
+
+## Control Structure
+* `!` (NOT) -
+    * Causes *sed* to apply instructions to lines *not* selected by the address portion. 
+    * `"3!d"` - Deletes all lines except line 3.
+* `{}` (Group Instructions) -
+    * Allows for grouping of instructions together for a given address.
+    * Use a semicolon on a single line.

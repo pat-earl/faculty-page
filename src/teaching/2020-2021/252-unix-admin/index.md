@@ -14,6 +14,7 @@ stylesheet: ../../course.css
 * [CS&IT Academic Integrity Policy](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/AcademicIntegrityPolicy.pdf)
 * [Lectures]({{get_link('lectures.html')}})
 * [GNU BASH Manual](https://www.gnu.org/software/bash/manual/bash.html)
+* [Regular Expression Cheatsheet](https://remram44.github.io/regex-cheatsheet/regex.html)
 
 ## Tentative Schedule
 
@@ -151,43 +152,49 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>11 (03/29 - 04/02)<br><strong>WD:</strong> 04/02</td>
             <td>
-                System Admin.<br>
-                Text Processing (Awk & SED)
+                System Administration
             </td>
             <td>
-                <ul>
-                    <li>Chapter 14 - AWK</li>
-                    <li>Chapter 15 - SED</li>
-                </ul>
             </td>
         </tr>
         <tr>
             <td scope='row'>12 (04/05 - 04/09)</td>
             <td>
                 <strong>Exam #2</strong> - Shells, Processes, & Sys. Administration<br>
-                Text Processing
             </td>
             <td></td>
         </tr>
         <tr>
             <td scope='row'>13 (04/12 - 04/16)</td>
             <td>
-               Scripting Language
+                Regular Expressions<br>
+                Text Processing (Awk & SED)
             </td>
-            <td></td>
+            <td>
+                <ul>
+                    <li>Chapter 14 - AWK</li>
+                    <li>Chapter 15 - SED</li>
+                    <li>Appendix A</li>
+                </ul>
+            </td>
         </tr>
         <tr>
             <td scope='row'>14 (04/19 - 04/23)<br><strong>WD:</strong> 04/20</td>
             <td>
                 NO CLASS TUESDAY - Wellness Day<br>
-                Scripting Language
+                Scripting Language - Python
             </td>
-            <td></td>
+            <td>
+                <ul>
+                    <li>Chapter 12</li>
+                </ul>
+            </td>
         </tr>
         <tr>
             <td scope='row'>15 (04/26 - 04/30)</td>
             <td>
-                makefiles
+                Scripting Language<br>
+                Makefiles
             </td>
             <td></td>
         </tr>

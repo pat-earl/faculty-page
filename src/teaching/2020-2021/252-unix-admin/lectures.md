@@ -10,7 +10,8 @@ title: Lectures
     {"name": "bash & Shell Scripting", "file": "slides/bash.md"},
     {"name": "Processes", "file": "slides/processes.md"},
     {"name": "System Administration", "file": "slides/sysadmin.md"},
-    {"name": "System Administration Tasks (PowerPoint)", "file": "slides/SA-Tasks_User_Disks.pptx"}
+    {"name": "System Administration Tasks (PowerPoint)", "file": "slides/SA-Tasks_User_Disks.pptx"},
+    {"name": "Text Processing", "file": "slides/text_processing.md"}
 ) %}
 
 ## Course Lectures

@@ -12,6 +12,7 @@ title: Lectures
     {"name": "Chapter 9: Arrays", "file": "slides/arrays.md"},
     {"name": "Chapter 17: Text", "file": "slides/strings.md"},
     {"name": "Chapter 10: Algorithms", "file": "slides/algorithms.md"},
+    {"name": "Chapters 11 & 12", "file": "slides/debugging.md"},
 ) %}
 
 ## Course Lectures
