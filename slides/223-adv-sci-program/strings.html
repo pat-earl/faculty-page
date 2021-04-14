@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Pandas - String Operations</title>
+
+<meta name="description" content="Pandas - String Operations">    
+
+  <meta name="author" content="Patrick Earl" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/robot-lung.css" id="theme">
+ -->
+
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/robot-lung.css" id="theme">
+
+
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
+
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+<h1>Pandas - String Operations</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>04/14/2021</h4>
+</p>
+</section>  
+
+
+<section id="pandas-string-operations" class="slide level2">
+<h2>Pandas String Operations</h2>
+<ul>
+<li>NumPy doesn’t have the ability to generalize string operations like arithmetic.</li>
+</ul>
+<pre><code>x = np.array([2, 3, 5, 7, 11, 13])
+x * 2
+
+&gt;&gt;&gt; array([4, 6, 10, 14, 22, 26])</code></pre>
+</section>
+<section id="pandas-string-operations-1" class="slide level2">
+<h2>Pandas String Operations</h2>
+<ul>
+<li>Without the access to this generalization with NumPy, we have to use verbose loops:</li>
+</ul>
+<pre><code>data = [&#39;Elfo&#39;, &#39;Shocko&#39;, &#39;speako&#39;, &#39;LEaVo&#39;, &#39;Pops&#39;]
+[w.capitalize() for w in data]
+
+&gt;&gt;&gt; [&#39;Elfo&#39;, &#39;Shocko&#39;, &#39;Speako&#39;, &#39;Leavo&#39;, &#39;Pops&#39;]</code></pre>
+<ul>
+<li>However, if one is missing this will break.</li>
+</ul>
+<pre><code>data = [&#39;Elfo&#39;, &#39;Shocko&#39;, &#39;speako&#39;, None, &#39;Pops&#39;]
+[w.capitalize() for w in data]
+
+...
+&gt;&gt;&gt; AttributeError: &#39;NoneType&#39; object has no attribute &#39;capitalize&#39;</code></pre>
+</section>
+<section id="pandas-string-operations-2" class="slide level2">
+<h2>Pandas String Operations</h2>
+<ul>
+<li>Pandas includes features to address the need for vectorized string operations</li>
+</ul>
+<pre><code>elves = pd.Series(data)
+elves.str.capitalize()</code></pre>
+<ul>
+<li>Often times when dealing with real-world string data, it’s going to be messy.</li>
+<li>i.e User-Entered Data:
+<ul>
+<li>Names</li>
+<li>Street Address</li>
+<li>City</li>
+<li>State</li>
+</ul></li>
+</ul>
+</section>
+<section id="pandas-string-methods" class="slide level2">
+<h2>Pandas String Methods</h2>
+<ul>
+<li>Most of Python’s built in str methods are reflected in the Pandas str</li>
+</ul>
+<table>
+<tbody>
+<tr class="odd">
+<td>len</td>
+<td>lower</td>
+<td>translate</td>
+<td>islower</td>
+</tr>
+<tr class="even">
+<td>ljust</td>
+<td>upper</td>
+<td>startswith</td>
+<td>isupper</td>
+</tr>
+<tr class="odd">
+<td>rjust</td>
+<td>find</td>
+<td>endswith</td>
+<td>isnumeric</td>
+</tr>
+<tr class="even">
+<td>center</td>
+<td>rfind</td>
+<td>isalnum</td>
+<td>isdecimal</td>
+</tr>
+<tr class="odd">
+<td>zfill</td>
+<td>index</td>
+<td>isalpha</td>
+<td>split</td>
+</tr>
+<tr class="even">
+<td>strip</td>
+<td>rindex</td>
+<td>isdigit</td>
+<td>rsplit</td>
+</tr>
+<tr class="odd">
+<td>rstrip</td>
+<td>capitalize</td>
+<td>isspace</td>
+<td>partition</td>
+</tr>
+<tr class="even">
+<td>lstrip</td>
+<td>swapcase</td>
+<td>istitle</td>
+<td>rpartition</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="regular-expressions" class="slide level2">
+<h2>Regular Expressions</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>match()</code></td>
+<td>Return a boolean indicating a match</td>
+</tr>
+<tr class="even">
+<td><code>extract()</code></td>
+<td>Return matched groups as strings</td>
+</tr>
+<tr class="odd">
+<td><code>findall()</code></td>
+<td>Call <code>re.findall()</code> on each element</td>
+</tr>
+<tr class="even">
+<td><code>replace()</code></td>
+<td>Replace occurrences of pattern</td>
+</tr>
+<tr class="odd">
+<td><code>contains()</code></td>
+<td>Call <code>re.search()</code> on each element, returning a boolean</td>
+</tr>
+<tr class="even">
+<td><code>count()</code></td>
+<td>Count occurrences of pattern</td>
+</tr>
+<tr class="odd">
+<td><code>split()</code></td>
+<td><code>str.split()</code> that accepts regexps</td>
+</tr>
+<tr class="even">
+<td><code>rsplit()</code></td>
+<td><code>str.rsplit()</code> that accepts regexps</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Example: Find all elf names that end with ‘o’.</li>
+</ul>
+<pre><code>elves.str.findall(r&#39;.*o$&#39;)
+
+0      [Elfo]
+1    [Shocko]
+2    [speako]
+3        None
+4          []
+dtype: object</code></pre>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Example: Using regexp on different phone number formats:
+<ul>
+<li>Doesn’t handle <em>every</em> format</li>
+</ul></li>
+</ul>
+<pre><code>phones = pd.Series([&#39;484-555-1234&#39;, &#39;(484) 555 1234&#39;, &#39;484 555-1234&#39;, &#39;+1 484-555-1234&#39;])
+formatted = phones.str.extract(r&#39;(\d{3}).*(\d{3}).*(\d{4})$&#39;) 
+formatted.agg(&#39;-&#39;.join, axis=1)</code></pre>
+</section>
+<section id="other-useful-methods" class="slide level2">
+<h2>Other useful methods</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>get()</code></td>
+<td>Index each element</td>
+</tr>
+<tr class="even">
+<td><code>slice()</code></td>
+<td>Slice each element</td>
+</tr>
+<tr class="odd">
+<td><code>splice_replace()</code></td>
+<td>Replace slice in each element with passed value</td>
+</tr>
+<tr class="even">
+<td><code>cat()</code></td>
+<td>Concatenate strings</td>
+</tr>
+<tr class="odd">
+<td><code>repeat()</code></td>
+<td>Repeat values</td>
+</tr>
+<tr class="even">
+<td><code>normalize()</code></td>
+<td>Return Unicode form of string</td>
+</tr>
+<tr class="odd">
+<td><code>pad()</code></td>
+<td>Add whitespace to left, right, or both sides of strings</td>
+</tr>
+<tr class="even">
+<td><code>wrap()</code></td>
+<td>Split long strings into lines with length less than a given width</td>
+</tr>
+<tr class="odd">
+<td><code>join()</code></td>
+<td>Join strings in each element of the Series with passes separator</td>
+</tr>
+<tr class="even">
+<td><code>get_dummies()</code></td>
+<td>Extract dummy variables as a DataFraame</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
+
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    //plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+    plugins: [ RevealMarkdown, PdfExport ]
+  });
+
+</script>
+
+</body>
+</html>

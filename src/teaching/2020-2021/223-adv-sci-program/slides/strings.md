@@ -66,6 +66,8 @@ elves.str.capitalize()
 
 * Most of Python's built in str methods are reflected in the Pandas str 
 
+|     |       |           |         |
+| -- |    -- | -- | -- |
 | len | lower | translate | islower |
 | ljust | upper | startswith | isupper |
 | rjust | find | endswith | isnumeric |
@@ -79,14 +81,14 @@ elves.str.capitalize()
 
 | Method | Description |
 | -- | -- |
-| `match()` | Call `re.match()` on each element, returning a boolean. |
-| `extract()` | Call `re.match()` on each element, returning matched groups as strings | 
+| `match()` | Return a boolean indicating a match |
+| `extract()` | Return matched groups as strings | 
 | `findall()` | Call `re.findall()` on each element |
-| `replace()` | Replace occurrences of pattern with some other string |
+| `replace()` | Replace occurrences of pattern |
 | `contains()` | Call `re.search()` on each element, returning a boolean |
 | `count()` | Count occurrences of pattern |
-| `split()` | Equivalent to `str.split()`, but accepts regexps |
-| `rsplit()` | Equivalent to `str.rsplit()`, but accepts regexps |
+| `split()` | `str.split()` that accepts regexps |
+| `rsplit()` | `str.rsplit()` that accepts regexps |
 
 ---
 
@@ -105,11 +107,13 @@ dtype: object
 
 ---
 
-* Using regexp on different phone number formats:
+* Example: Using regexp on different phone number formats:
   * Doesn't handle *every* format
 
 ```
 phones = pd.Series(['484-555-1234', '(484) 555 1234', '484 555-1234', '+1 484-555-1234'])
+formatted = phones.str.extract(r'(\d{3}).*(\d{3}).*(\d{4})$') 
+formatted.agg('-'.join, axis=1)
 ```
 
 ---
@@ -129,4 +133,3 @@ phones = pd.Series(['484-555-1234', '(484) 555 1234', '484 555-1234', '+1 484-55
 | `join()` | Join strings in each element of the Series with passes separator | 
 | `get_dummies()` | Extract dummy variables as a DataFraame |
 
----

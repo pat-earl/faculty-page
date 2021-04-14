@@ -14,6 +14,7 @@ title: Lectures
     {"name": "Pandas - MultiIndex", "file": "slides/mutli_index.md"},
     {"name": "Pandas - Combining Data", "file": "slides/combine.md"},
     {"name": "Pandas - Aggregation & Grouping", "file": "slides/agg.md"},
+     {"name": "Pandas - String Operations", "file": "slides/strings.md"},
 ) %}
 
 ## Course Lectures
