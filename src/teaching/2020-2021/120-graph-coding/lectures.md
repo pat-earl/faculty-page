@@ -13,6 +13,7 @@ title: Lectures
     {"name": "Chapter 17: Text", "file": "slides/strings.md"},
     {"name": "Chapter 10: Algorithms", "file": "slides/algorithms.md"},
     {"name": "Chapters 11 & 12", "file": "slides/debugging.md"},
+    {"name": "Chapters 13: Mathematics", "file": "slides/mathematics.md"},
 ) %}
 
 ## Course Lectures

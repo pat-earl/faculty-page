@@ -338,6 +338,152 @@
 </ul></li>
 </ul>
 </section>
+<section id="awk" class="slide level2">
+<h2><em>awk</em></h2>
+<ul>
+<li>Pattern-Scanning and Processing Language that searches one or more files for records (usually a line) that matches a pattern.</li>
+<li><em>AWK</em> is data-driven:
+<ul>
+<li>Describe what data you want to find.</li>
+<li>Do something with that data once it’s found.</li>
+</ul></li>
+<li><em>awk</em> takes this general form (<em>gawk</em>):
+<ul>
+<li><code>gawk [options] [program] [file-list]</code></li>
+<li><code>gawk [options] -f program-file [file-list]</code></li>
+</ul></li>
+<li>Be aware there are different versions of awk:
+<ul>
+<li>GNU AWK (gawk), original awk, or mawk.</li>
+<li>Most of our examples will work with <em>gawk</em>.</li>
+</ul></li>
+</ul>
+</section>
+<section id="awk-program" class="slide level2">
+<h2><em>awk</em> Program</h2>
+<ul>
+<li>Awk can accept a program file or a program enclosed in single quotes on the command line.</li>
+<li>The program is made up of one more <em>patterns</em> followed by an <em>action</em>.
+<ul>
+<li><code>[pattern] {action}</code></li>
+<li>If a pattern isn’t given, the action is applied to all lines of input.</li>
+</ul></li>
+<li><strong>Patterns</strong>
+<ul>
+<li>BEGIN &amp; END:
+<ul>
+<li>Execute a command before <em>awk</em> starts processing a file and afterwards.</li>
+</ul></li>
+<li>~ and !~:
+<ul>
+<li>Use a regular expression as a <em>pattern</em>
+<ul>
+<li>!~ tests for not matching the pattern</li>
+</ul></li>
+</ul></li>
+<li>comma (,):
+<ul>
+<li>Range operator. Select a range based on matched patterns</li>
+</ul></li>
+<li>Patterns can be combined using BOOLEAN operators (&amp;&amp; (AND), || (OR))</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><strong>Actions</strong>
+<ul>
+<li>By default the action is to <em>print</em>
+<ul>
+<li><code>{print}</code></li>
+<li>Takes the input and outputs to stdout.</li>
+</ul></li>
+<li>Comments - #</li>
+<li>Variables
+<ul>
+<li>Variables can be created at any time and are initialized to 0.</li>
+<li>You can declare user variables with <em>BEGIN</em></li>
+<li>There are also system variables</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><strong>Actions</strong>
+<ul>
+<li>Functions
+<ul>
+<li>awk provides functions to manipulating numbers and strings</li>
+</ul></li>
+<li>Arithmetic</li>
+<li>Associative Arrays</li>
+<li>printf
+<ul>
+<li><em>print</em> but with the ability to control the output format</li>
+</ul></li>
+<li>Control Structures
+<ul>
+<li>if..else</li>
+<li>while</li>
+<li>for</li>
+<li>break</li>
+<li>continue</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="system-variables" class="slide level2">
+<h2>System Variables</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>$0</td>
+<td>The current record (as a single variable)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">1−</span>n</td>
+<td>Fields in the current record</td>
+</tr>
+<tr class="odd">
+<td>FILENAME</td>
+<td>Name of the current input file (or null if stdin)</td>
+</tr>
+<tr class="even">
+<td>FS</td>
+<td>Input field separator (Default: SPACE or TAB)</td>
+</tr>
+<tr class="odd">
+<td>NF</td>
+<td>Number of fields in current record</td>
+</tr>
+<tr class="even">
+<td>NR</td>
+<td>Record number of current record</td>
+</tr>
+<tr class="odd">
+<td>OFS</td>
+<td>Output Field Separator</td>
+</tr>
+<tr class="even">
+<td>ORS</td>
+<td>Output Record Separator</td>
+</tr>
+<tr class="odd">
+<td>RS</td>
+<td>Input Record Separator</td>
+</tr>
+</tbody>
+</table>
+</section>
 </div>
 
 <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>

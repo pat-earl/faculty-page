@@ -2,9 +2,9 @@
 title: "Chapters 11 & 12"
 subtitle: "CSC120"
 author: Patrick Earl
-date: 01/25/2021
+date: 04/15/2021
 slideNumber: true
-revealjstheme: simple
+revealjstheme: robot-lung
 width: 1600
 height: 1000
 transition: fade

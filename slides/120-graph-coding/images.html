@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 
-<title>Chapters 11 &amp; 12</title>
+<title>Chapters 15 - Images</title>
 
-<meta name="description" content="Chapters 11 &amp; 12">    
+<meta name="description" content="Chapters 15 - Images">    
 
   <meta name="author" content="Patrick Earl" />
 
@@ -52,7 +52,7 @@
 <div class="slides">
 
 <section>
-<h1>Chapters 11 &amp; 12</h1>
+<h1>Chapters 15 - Images</h1>
 <h3>Patrick Earl</h3>
 <p>
 <h4>04/15/2021</h4>
@@ -60,59 +60,30 @@
 </section>  
 
 
-<section id="debugging" class="slide level2">
-<h2>Debugging</h2>
+<section id="working-with-images" class="slide level2">
+<h2>Working with images</h2>
 <ul>
-<li>General Tips
+<li><code>PImage</code> is similar to working with a user-defined class.</li>
+<li>Stored in a variable named <code>img</code> of type <code>PImage</code>.
 <ul>
-<li>Take a break</li>
-<li>Ask a friend.</li>
-<li>Simplify
-<ul>
-<li>Added a new feature recently? Start taking stuff out until things work again</li>
+<li><code>loadImage()</code> loads the image and creates a new instance of <code>PImage</code></li>
 </ul></li>
-<li>Use <code>println()</code>
+<li><code>createImage()</code> can be used to create a blank image
 <ul>
-<li>Check the value of a variable as things go on.</li>
-<li>Or better, use the <em>Debug</em> menu.</li>
+<li>This process is slow and should be done once (Like in setup)</li>
 </ul></li>
-</ul></li>
+<li>Use the <code>image</code> function to actually display it</li>
 </ul>
 </section>
-<section id="libraries" class="slide level2">
-<h2>Libraries</h2>
+<section id="image-animation" class="slide level2">
+<h2>Image Animation</h2>
 <ul>
-<li>Code written by others.
-<ul>
-<li>Sometimes referred to as <em>helper</em> code.</li>
-</ul></li>
-<li>Processing does an <code>import</code> statement by default</li>
+<li><strong>Example 15-2</strong></li>
 </ul>
-<pre><code>import processing.core.*;</code></pre>
+<p>–</p>
 </section>
-<section id="the-built-ins" class="slide level2">
-<h2>The Built-Ins</h2>
-<ul>
-<li>Processing provides some libraries that don’t require additional installation steps.
-<ul>
-<li>Serial</li>
-<li>Network</li>
-<li>PDF</li>
-<li>Video</li>
-<li>Sound</li>
-</ul></li>
-<li>If you wanted to import the Network library:</li>
-</ul>
-<pre><code>import processing.net.*</code></pre>
-</section>
-<section id="contributed-libraries" class="slide level2">
-<h2>Contributed Libraries</h2>
-<ul>
-<li>Known as <em>Third-Party</em> libraries.</li>
-<li>Code written by parties outside of the <em>Processing</em> foundation.</li>
-<li>Can be searched and installed by going to <em>Sketch</em> → <em>Add Library</em>.</li>
-<li>You have the ability to write your own libraries as well, but that’s outside our scope.</li>
-</ul>
+<section id="image-filters" class="slide level2">
+<h2>Image Filters</h2>
 </section>
 </div>
 

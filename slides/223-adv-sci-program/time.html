@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Pandas - Time Series</title>
+
+<meta name="description" content="Pandas - Time Series">    
+
+  <meta name="author" content="Patrick Earl" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/robot-lung.css" id="theme">
+ -->
+
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/robot-lung.css" id="theme">
+
+
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
+
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+<h1>Pandas - Time Series</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>04/19/2021</h4>
+</p>
+</section>  
+
+
+<section id="time-data-in-pandas" class="slide level2">
+<h2>Time Data in Pandas</h2>
+<ul>
+<li>Dates and times are commonly found in datasets and come a few different formats:
+<ul>
+<li>Timestamps - Reference to a particular moment in time.</li>
+<li>Time Intervals and Periods - Reference a length of time between a particular beginning and end point.</li>
+<li>Time Deltas or Durations - Reference an exact length of time.</li>
+</ul></li>
+</ul>
+</section>
+<section id="date-and-time-in-python" class="slide level2">
+<h2>Date and Time in Python</h2>
+<ul>
+<li>Pandas provides tools, but they are related to Python’s built-in modules:
+<ul>
+<li><code>datetime</code></li>
+<li><code>dateutil</code></li>
+</ul></li>
+<li>To manually build a date and represent it as a Python object:</li>
+</ul>
+<pre><code>from datetime import datetime
+datetime(year=2012, month=12, day=21)</code></pre>
+<ul>
+<li><code>dateutil</code> can parse dates from strings</li>
+</ul>
+<pre><code>from dateutil import parser
+date = parser.parse(&#39;4th of July, 2015&#39;)
+date</code></pre>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><code>datetime</code> objects provide useful methods, like getting the day of the week</li>
+<li><a href="https://docs.python.org/3/library/datetime.html">And many more</a></li>
+</ul>
+<pre><code>date.strftime(&#39;%A&#39;)</code></pre>
+</section>
+<section id="numpys-datetime64" class="slide level2">
+<h2>NumPy’s <code>datetime64</code></h2>
+<ul>
+<li>NumPy added a native time series data type.
+<ul>
+<li>This dtype encodes dates as 64-bit integers. (Memory &amp; Performance Savings)</li>
+</ul></li>
+<li><code>datetime64</code> expects dates to be in a specific format (ISO 8601)
+<ul>
+<li>However the tradeoff allows for very efficient operations</li>
+</ul></li>
+<li><code>timedelta64</code> provides functionality for keeping an exact length of time.</li>
+</ul>
+<pre><code>import numpy as np
+date = np.array(&#39;2012-12-21&#39;, dtype=np.datetime64)
+date
+
+date + np.arange(12)</code></pre>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>NumPy’s objects are built on a <em>fundamental time unit</em> which imposes a limit between time resolution and maximum time span.
+<ul>
+<li><a href="https://numpy.org/doc/stable/reference/arrays.datetime.html#datetime-units">Fundamental Time Units</a></li>
+</ul></li>
+</ul>
+<pre><code># Day based 
+np.datetime64(&#39;2015-07-04&#39;)
+
+# Minute-based
+np.datetime64(&#39;2015-07-04 12:00&#39;)
+
+# Forcing nanosecond
+np.datetime64(&#39;2015-07-04 12:59:59.50&#39;, &#39;ns&#39;)</code></pre>
+</section>
+<section id="dates-and-times-in-pandas" class="slide level2">
+<h2>Dates and Times in Pandas</h2>
+<ul>
+<li><p>Pandas adds in a <code>Timestamp</code> object which combines the ease-of-use of <code>datetime</code> and <code>dateutil</code> with the efficient storage and vectorized interface of <code>numpy.datetime64</code>.</p></li>
+<li><p>Creating a date similar to using the <code>dateutil</code> parser and then applying an operation to the date:</p></li>
+</ul>
+<pre><code>import pandas as pd
+date = pd.to_datetime(&#39;4th of July, 2015&#39;)
+date
+
+date.strftime(&#39;%A&#39;)
+
+date + pd.to_timedelta(np.arange(12), &#39;D&#39;)</code></pre>
+</section>
+<section id="indexing-by-time" class="slide level2">
+<h2>Indexing by Time</h2>
+<ul>
+<li>Timestamps can be used to index data:</li>
+</ul>
+<pre><code>index = pd.DatetimeIndex([&#39;2014-07-04&#39;, &#39;2014-08-04&#39;,
+                          &#39;2015-07-04&#39;, &#39;2015-08-04&#39;])
+
+data = pd.Series([0, 1, 2, 3], index=index)
+data</code></pre>
+<ul>
+<li>Any indexing pattern can be used to access information:</li>
+</ul>
+<pre><code>data[&#39;2014-07-04&#39;:&#39;2015-07-04&#39;]</code></pre>
+<ul>
+<li>Additionally, there are date-only index operations. For example, passing a year to obtain a slice of all the data from that year:</li>
+</ul>
+<pre><code>data.loc[&quot;2015&quot;]</code></pre>
+</section>
+<section id="time-series-data-structures" class="slide level2">
+<h2>Time Series Data Structures</h2>
+<ul>
+<li>Pandas provides objects (data and indexing) for each of the aforementioned time types.
+<ul>
+<li>Timestamps - Data: <code>Timestamp</code>, Index: <code>DatetimeIndex</code></li>
+<li>Time Periods - Data: <code>Period</code>, Index: <code>PeriodIndex</code></li>
+<li>Time Deltas or Durations - Data: <code>Timedelta</code>, Index: <code>TimedeltaIndex</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="timestamp" class="slide level2">
+<h2>Timestamp</h2>
+<ul>
+<li>Typically these objects are created using the <code>pd.to_datetime()</code> method.
+<ul>
+<li>Passing a single date yields a <code>Timestamp</code></li>
+<li>A series of dates yields a <code>DatetimeIndex</code></li>
+</ul></li>
+</ul>
+<pre><code>dates = pd.to_datetime([datetime(2015, 7, 3), &#39;4th of July 2015&#39;, &#39;2015-Jul-6&#39;, &#39;07-07-2015&#39;, &#39;20150708&#39;])</code></pre>
+</section>
+<section id="period" class="slide level2">
+<h2>Period</h2>
+<ul>
+<li><code>DatetimeIndex</code> can be converted to a <code>PeriodIndex</code> using <code>to_period()</code>.
+<ul>
+<li>A frequency code can be used.</li>
+</ul></li>
+</ul>
+<pre><code>dates.to_period(&#39;D&#39;)</code></pre>
+</section>
+<section id="timedeltaindex" class="slide level2">
+<h2>TimedeltaIndex</h2>
+<ul>
+<li><code>TimedeltaIndex</code> is created when a date is subtracting one date from another:</li>
+</ul>
+<pre><code>dates - dates[0]</code></pre>
+</section>
+<section id="regular-sequences" class="slide level2">
+<h2>Regular Sequences</h2>
+<ul>
+<li>For more convince, data sequences can be created with these Pandas functions:
+<ul>
+<li><code>date_range</code></li>
+<li><code>period_range</code></li>
+<li><code>timedelta_range()</code></li>
+</ul></li>
+</ul>
+<pre><code># Using date_range with a start and stop
+pd.date_range(&#39;2015-07-03&#39;, &#39;2015-07-10&#39;)
+
+# Using date_range with a number of periods
+pd.date_range(&#39;2015-07-03&#39;, periods=8)
+
+# The period can be defined by the freq keyword, which defaults to D
+pd.date_range(&#39;2015-07-03&#39;, periods=8, freq=&#39;H&#39;)</code></pre>
+</section>
+<section class="slide level2">
+
+<pre><code># Sequence of Period
+pd.period_range(&#39;2015-07&#39;, periods=8, freq=&#39;M&#39;)
+
+# Sequence of durations increasing by an hour:
+pd.timedelta_range(0, periods=10, freq=&#39;H&#39;)</code></pre>
+</section>
+<section id="frequencies-and-offsets" class="slide level2">
+<h2>Frequencies and Offsets</h2>
+<ul>
+<li>Codes can be used to specify any desired frequency spacing.</li>
+<li><a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects">Table from Pandas Doc</a></li>
+<li>Codes that mark an end (i.e. <code>M - Month End</code>), can be be changed to mark a start by adding an S suffix (i.e. <code>MS - Month Start</code>)</li>
+<li>The month used to mark any quarterly or annual code can be changed by adding a three-letter month code suffix:
+<ul>
+<li><code>Q-JAN, BQ-FEB, QS-MAR, BQS-APR</code>, etc.</li>
+<li><code>A-JAN, BA-FEB, AS-MAR, BAS-APR</code>, etc.</li>
+</ul></li>
+<li>The split-point of a weekly frequency can be changed by adding a three-letter weekday code:
+<ul>
+<li><code>W-SUN, W-MON, W-TUE, W-WED</code>, etc.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Codes can also be combined with numbers to specify other frequencies, such as creating one of 2 hours 30 minutes:</li>
+</ul>
+<pre><code>pd.timedelta_range(0, periods=9, freq=&quot;2H30T&quot;)</code></pre>
+<ul>
+<li>Business day offsets:</li>
+</ul>
+<pre><code>from pandas.tseries.offsets import BDay()
+pd.date_range(&#39;2021-04-15&#39;, periods=5, freq=BDay())</code></pre>
+</section>
+<section id="resampling-shifting-and-windowing" class="slide level2">
+<h2>Resampling, Shifting, and Windowing</h2>
+<ul>
+<li>Resample time series data at a higher or low frequency:
+<ul>
+<li><code>resample</code>: Data Aggregation</li>
+<li><code>asfreq</code>: Data Selection</li>
+</ul></li>
+<li>Shifting data in time:
+<ul>
+<li><code>shift</code>: Shifts the data</li>
+<li><code>tshift</code>: Shifts the index</li>
+</ul></li>
+<li>Rolling statistics are similar to the <code>groupby</code> operation on windows of time series data
+<ul>
+<li><code>rolling</code></li>
+</ul></li>
+</ul>
+</section>
+</div>
+
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    //plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+    plugins: [ RevealMarkdown, PdfExport ]
+  });
+
+</script>
+
+</body>
+</html>

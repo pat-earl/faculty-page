@@ -158,3 +158,79 @@ sed [-n] program [file-list]
 * `{}` (Group Instructions) -
     * Allows for grouping of instructions together for a given address.
     * Use a semicolon on a single line.
+
+--- 
+
+## *awk*
+* Pattern-Scanning and Processing Language that searches one or more files for records (usually a line) that matches a pattern.
+* *AWK* is data-driven:
+    * Describe what data you want to find.
+    * Do something with that data once it's found.
+* *awk* takes this general form (*gawk*):
+    * `gawk [options] [program] [file-list]`
+    * `gawk [options] -f program-file [file-list]`
+* Be aware there are different versions of awk: 
+    * GNU AWK (gawk), original awk, or mawk. 
+    * Most of our examples will work with *gawk*.
+
+---
+
+## *awk* Program
+* Awk can accept a program file or a program enclosed in single quotes on the command line.
+* The program is made up of one more *patterns* followed by an *action*.
+    * `[pattern] {action}`
+    * If a pattern isn't given, the action is applied to all lines of input.
+* **Patterns**
+    * BEGIN & END:
+        * Execute a command before *awk* starts processing a file and afterwards.
+    * ~ and !~:
+        * Use a regular expression as a *pattern*
+            * !~ tests for not matching the pattern
+    * comma (,):
+        * Range operator. Select a range based on matched patterns
+    * Patterns can be combined using BOOLEAN operators (&& (AND), || (OR))
+
+---
+
+* **Actions**
+    * By default the action is to *print*
+        * `{print}`
+        * Takes the input and outputs to stdout.
+    * Comments - #
+    * Variables
+        * Variables can be created at any time and are initialized to 0.
+        * You can declare user variables with *BEGIN*
+        * There are also system variables 
+
+---
+
+* **Actions**
+    * Functions
+        * awk provides functions to manipulating numbers and strings
+    * Arithmetic
+    * Associative Arrays
+    * printf
+        * *print* but with the ability to control the output format
+    * Control Structures
+        * if..else
+        * while
+        * for
+        * break
+        * continue
+
+---
+
+## System Variables
+
+| Variable | Meaning |
+| -- | -- |
+| $0 | The current record (as a single variable) |
+| $1-$n | Fields in the current record |
+| FILENAME | Name of the current input file (or null if stdin) |
+| FS | Input field separator (Default: SPACE or TAB) |
+| NF | Number of fields in current record |
+| NR | Record number of current record |
+| OFS | Output Field Separator |
+| ORS | Output Record Separator |
+| RS | Input Record Separator |
+
