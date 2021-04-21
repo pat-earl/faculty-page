@@ -2,9 +2,9 @@
 title: "Statistics"
 subtitle: "CSC223"
 author: Patrick Earl
-date: 03/29/2021
+date: 04/21/2021
 slideNumber: true
-revealjstheme: simple
+revealjstheme: robot-lung
 width: 1600
 height: 1000
 transition: slide
@@ -55,9 +55,3 @@ transition: slide
 
 * The *range* of a dataset is the difference between the max and min data entries.
 * *Deviation* of an entry in a population dataset is the difference between the entry and the mean (μ *mu*).
-  
-
----
-
-## Acknowledgements
-Majority of the materials come from Dr. Schwesinger's slides on Descriptive Statistics.

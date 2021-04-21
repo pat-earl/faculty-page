@@ -16,6 +16,7 @@ title: Lectures
     {"name": "Pandas - Aggregation & Grouping", "file": "slides/agg.md"},
     {"name": "Pandas - String Operations", "file": "slides/strings.md"},
     {"name": "Pandas - Time Series", "file": "slides/time.md"},
+    {"name": "Statistics Summary", "file": "slides/stats.md"}
 ) %}
 
 ## Course Lectures
