@@ -182,7 +182,7 @@ stylesheet: ../../course.css
             <td scope='row'>14 (04/19 - 04/23)<br><strong>WD:</strong> 04/20</td>
             <td>
                 NO CLASS TUESDAY - Wellness Day<br>
-                Scripting Language - Python
+                AWK
             </td>
             <td>
                 <ul>
@@ -193,8 +193,8 @@ stylesheet: ../../course.css
         <tr>
             <td scope='row'>15 (04/26 - 04/30)</td>
             <td>
-                Scripting Language<br>
-                Makefiles
+                Scripting Language - Python<br>
+                Makefiles (If time permits)
             </td>
             <td></td>
         </tr>

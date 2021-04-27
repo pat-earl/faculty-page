@@ -80,10 +80,81 @@
 <ul>
 <li><strong>Example 15-2</strong></li>
 </ul>
-<p>–</p>
 </section>
 <section id="image-filters" class="slide level2">
 <h2>Image Filters</h2>
+<ul>
+<li>Processing provides the ability to change the brightness, transparency, etc.</li>
+<li><code>tint()</code></li>
+</ul>
+</section>
+<section id="arrays-of-images" class="slide level2">
+<h2>Arrays of Images</h2>
+<ul>
+<li>You could have a different background whenever a user clicks the mouse.</li>
+<li>Arrays would be a great storage method for having multiple images, however it does become a bit clunky.</li>
+</ul>
+<pre><code>PImage[] images = new PImage[5];
+
+images[0] = loadImage(&quot;cat.jpg&quot;);
+images[1] = loadImage(&quot;mouse.jpg&quot;);
+images[2] = loadImage(&quot;dog.jpg&quot;);
+images[3] = loadImage(&quot;kangaroo.jpg&quot;);
+images[4] = loadImage(&quot;porcupine.jpg&quot;);</code></pre>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Another option is to define the files in an array of Strings:</li>
+</ul>
+<pre><code>String[] filenames = {&quot;cat.jpg&quot;, &quot;mouse.jpg&quot;, &quot;dog.jpg&quot;, &quot;kangaroo.jpg&quot;};
+
+for (int i = 0; i &lt; filenames.length; i++) {
+    images[i] = loadImage(filenames[i])
+}</code></pre>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Or, name the files a common name + an integer.
+<ul>
+<li>Like “animal1.jpg”, “animal2.jpg”</li>
+</ul></li>
+<li><strong>Example 15-3</strong></li>
+<li><strong>Example 15-4</strong></li>
+</ul>
+</section>
+<section id="pixels" class="slide level2">
+<h2>Pixels</h2>
+<ul>
+<li>The many functions used to draw shapes are only one part of the process. They are using code written by others to change the colors of a particular pixel on the display.</li>
+<li>Processing provides the <code>pixels</code> array which allows the user to directly manipulate the underlying pixels.</li>
+<li>Pixels are stored in a one dimensional or linear sequence, even though we think of them on a 2D plane.</li>
+<li>You have to follow this flow when attempting to change the <code>pixels</code> array.
+<ul>
+<li><code>loadPixels()</code></li>
+<li>Do stuff to them</li>
+<li><code>updatePixels()</code></li>
+</ul></li>
+<li>What index do you want? Use this formula:
+<ul>
+<li><code>x + y * width</code></li>
+</ul></li>
+<li><strong>Example 15-6</strong></li>
+</ul>
+</section>
+<section id="image-pixels" class="slide level2">
+<h2>Image Pixels</h2>
+<ul>
+<li>Processing also provides the capability to change pixels in an Image as well.</li>
+<li><strong>Example 15-7</strong></li>
+</ul>
+</section>
+<section id="image-processing" class="slide level2">
+<h2>Image Processing</h2>
+<ul>
+<li><strong>Example 15-8</strong></li>
+</ul>
 </section>
 </div>
 

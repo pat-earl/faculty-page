@@ -186,6 +186,9 @@ sed [-n] program [file-list]
     * ~ and !~:
         * Use a regular expression as a *pattern*
             * !~ tests for not matching the pattern
+
+---
+
     * comma (,):
         * Range operator. Select a range based on matched patterns
     * Patterns can be combined using BOOLEAN operators (&& (AND), || (OR))
@@ -234,3 +237,34 @@ sed [-n] program [file-list]
 | ORS | Output Record Separator |
 | RS | Input Record Separator |
 
+---
+
+## Built-in Functions
+
+| Function | Meaning |
+| -- | -- |
+| `length(str)` | Returns the number of characters in *str* - or - num of chars. in current record. |
+| `int(num)` | Returns the integer portion of *num*. |
+| `index(str1, str2)` | Returns the index of *str2* in *str1* or 0 if *str2* is not present. | 
+
+---
+
+| Function | Meaning |
+| -- | -- |
+| `split(str, arr, del)` | Places elements of *str*, delimited by *del*, in the array *arr*. |
+| `sprintf(fmt, args)` | Formats *args* according to *fmt* and returns the formatted string. |
+| `substr(str, pos, len)` | Returns the substring of *str* that beings and *pos* and is *len* chars long. |
+| `tolower/toupper` | Returns a copy of the passed *str* replacing with their lower/upper case counterpart. |
+
+---
+
+## printf formatting
+
+| conv | Type of conversion |
+| -- | -- | 
+| *d* | Decimal |
+| *e* | Exponential Notation |
+| *f* | Floating-point number | 
+| *o* | Unsigned Octal | 
+| *s* | String of characters |
+| *x* | Unsigned hexadecimal |

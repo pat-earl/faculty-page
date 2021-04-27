@@ -11,7 +11,8 @@ title: Lectures
     {"name": "Processes", "file": "slides/processes.md"},
     {"name": "System Administration", "file": "slides/sysadmin.md"},
     {"name": "System Administration Tasks (PowerPoint)", "file": "slides/SA-Tasks_User_Disks.pptx"},
-    {"name": "Text Processing", "file": "slides/text_processing.md"}
+    {"name": "Text Processing", "file": "slides/text_processing.md"},
+    {"name": "Python", "file": "slides/python.md"},
 ) %}
 
 ## Course Lectures

@@ -37,6 +37,7 @@ transition: slide
     * *Numerical*
         * *Discrete*: Data that can't be measured, but counted.
         * *Continuous*: Can't be counted, but measured
+  
 ---
 
 ## Measures of Central Tendency

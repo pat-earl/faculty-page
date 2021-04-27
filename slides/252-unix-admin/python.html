@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Python</title>
+
+<meta name="description" content="Python">    
+
+  <meta name="author" content="Patrick Earl" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/robot-lung.css" id="theme">
+ -->
+
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/robot-lung.css" id="theme">
+
+
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
+
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+<h1>Python</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>04/22/2021</h4>
+</p>
+</section>  
+
+
+<section id="other-scripting-languages" class="slide level2">
+<h2>Other Scripting Languages</h2>
+<ul>
+<li>Most *NIX distros ship with some default “scripting” languages.</li>
+<li><em>Perl</em> was one of the original scripting languages to come about outside of the shell.
+<ul>
+<li>Main design principle was for working with text files to find and extract information from them to generate some report.</li>
+<li>Follows many syntax features from <em>awk</em>, <em>sed</em>, <em>C</em>, <em>BASH</em>, etc.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li><em>Python</em> has also become popular for use in automating Sys. Admin tasks.
+<ul>
+<li>Has a massive standard library, with many providing hook-ins to *NIX.</li>
+<li>Two major versions 2 and 3.</li>
+</ul></li>
+</ul>
+</section>
+<section id="running-python" class="slide level2">
+<h2>Running Python</h2>
+<ul>
+<li>Python can be ran interactively or using a source code file.
+<ul>
+<li><code>python</code> without any arguments</li>
+<li><code>python &lt;file&gt;</code> to run a script file</li>
+<li><code>#!/usr/bin/env python</code> for script file with sha-bang line</li>
+</ul></li>
+</ul>
+</section>
+<section id="python-basics" class="slide level2">
+<h2>Python Basics</h2>
+<ul>
+<li>Variables
+<ul>
+<li>Python is a dynamic language, you do not need to define a data type, as they will be inferred based on the value.</li>
+<li><code>num = 20</code> - int</li>
+<li><code>floating = 6.7</code> - floating-point number</li>
+<li><code>word = "Hello World!"</code> - A string (can use single or double quotes to enclose the string)</li>
+</ul></li>
+<li>Depending on the type, various functions will be available</li>
+<li>Comments
+<ul>
+<li>Comments are denoted using the pound sign <em>#</em>.</li>
+<li>Any text the follows it will be ignored by the interpreter.</li>
+</ul></li>
+</ul>
+</section>
+<section id="python-basics-1" class="slide level2">
+<h2>Python Basics</h2>
+<ul>
+<li>Input/Output
+<ul>
+<li>Python in it’s basic form provides input/output capabilities.</li>
+<li><code>print</code> - Will allow you to print expressions, values, variables to standard output</li>
+<li><code>input</code> - Allows for reading from standard input with an optional prompt line.</li>
+</ul></li>
+</ul>
+<pre><code>print(&quot;Hello World!&quot;)
+print(&quot;Hello&quot;, &quot;World&quot;, &quot;!&quot;)
+print(2+2)
+
+msg = input()
+print(msg)
+
+msg2 = input(&quot;Please enter some text: &quot;)
+print(msg2)</code></pre>
+</section>
+<section id="arithmetic" class="slide level2">
+<h2>Arithmetic</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>+</td>
+<td>Addition</td>
+</tr>
+<tr class="even">
+<td>-</td>
+<td>Subtraction</td>
+</tr>
+<tr class="odd">
+<td>*</td>
+<td>Muplication</td>
+</tr>
+<tr class="even">
+<td>/</td>
+<td>Division</td>
+</tr>
+<tr class="odd">
+<td>//</td>
+<td>Floor Division</td>
+</tr>
+<tr class="even">
+<td>%</td>
+<td>Modulus (Remainder)</td>
+</tr>
+<tr class="odd">
+<td>**</td>
+<td>Exponential</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="boolean-valuesexpressions" class="slide level2">
+<h2>Boolean Values/Expressions</h2>
+<ul>
+<li>Python offers a boolean type just like most languages. A boolean variable can be <em>True</em> or <em>False</em>
+<ul>
+<li>Note the capitalization of the T and F. It does matter.</li>
+</ul></li>
+<li>Boolean variables are created from assigning a T/F value or through a boolean expression such as <code>3 &gt; 5</code> which would evaluate to <em>False</em>.</li>
+<li>The relational operators are similar to those found in C++</li>
+</ul>
+</section>
+<section id="comparison-operators" class="slide level2">
+<h2>Comparison Operators</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;</td>
+<td>Less Than</td>
+</tr>
+<tr class="even">
+<td>&gt;</td>
+<td>Greater Than</td>
+</tr>
+<tr class="odd">
+<td>&lt;=</td>
+<td>Less than or equal to</td>
+</tr>
+<tr class="even">
+<td>&gt;=</td>
+<td>Greater than or equal to</td>
+</tr>
+<tr class="odd">
+<td>==</td>
+<td>Equal to</td>
+</tr>
+<tr class="even">
+<td>!=</td>
+<td>Not equal to</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="logical-operators" class="slide level2">
+<h2>Logical Operators</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>and</em></td>
+<td>Returns <em>True</em> if both statements are true</td>
+</tr>
+<tr class="even">
+<td><em>or</em></td>
+<td>Returns <em>True</em> if ONE of the statements is true</td>
+</tr>
+<tr class="odd">
+<td><em>not</em></td>
+<td>Inverts the result. False if True, True if False</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="python-control-structures" class="slide level2">
+<h2>Python Control Structures</h2>
+<ul>
+<li>Python provides controls structures similar to most programming languages
+<ul>
+<li>If..else</li>
+<li>for</li>
+<li>while</li>
+</ul></li>
+</ul>
+</section>
+<section id="if-statements" class="slide level2">
+<h2><em>if</em> statements</h2>
+<ul>
+<li><em>if</em> statements allow for controlling the flow of a program. The general syntax is:</li>
+<li>Syntax: <code>if boolean-expression:</code></li>
+<li>Note that the <em>if</em> statement ends with a colon. Python does not rely on brackets to define blocks of code, but instead uses consistent whitespace.</li>
+</ul>
+<pre><code>num = input(&quot;Please enter a number: &quot;)
+
+if int(num) &gt; 3:
+    # If the input is greater than 3, output the message below
+    print(&quot;You entered a number greater than 3!&quot;)</code></pre>
+</section>
+<section id="while-statements" class="slide level2">
+<h2><em>while</em> statements</h2>
+<ul>
+<li>Repeat one or more statements as long as the condition is true.</li>
+<li>Syntax: <code>while conditional:</code></li>
+</ul>
+<pre><code>i = 0
+while i &lt; 10:
+    print(i)
+    i++</code></pre>
+</section>
+<section id="for-statements" class="slide level2">
+<h2><em>for</em> statements</h2>
+<ul>
+<li>Repeat one ore more statements</li>
+<li>Syntax: <code>for var in seq</code></li>
+</ul>
+<pre><code>for i in range(10):
+    print(i)</code></pre>
+</section>
+<section id="functions" class="slide level2">
+<h2>Functions</h2>
+<ul>
+<li>Functions accept parameters and can return one more values.</li>
+<li>User-Defined functions can be created using the syntax: <code>def funcName(parameter, list)</code></li>
+</ul>
+<pre><code>def add(x, y):
+    return x + y
+
+print(add(2, 2))</code></pre>
+</section>
+<section id="sequences" class="slide level2">
+<h2>Sequences</h2>
+<ul>
+<li>Python provides many types of data structures to hold sequences of data, but we’ll focus on three here.</li>
+<li>Lists/Tuples</li>
+<li>Strings</li>
+<li>Dictionaries</li>
+</ul>
+</section>
+<section id="lists" class="slide level2">
+<h2>Lists</h2>
+<ul>
+<li>Lists are the basic implementation of arrays in Python. They are mutable and use zero-based index</li>
+<li>Lists are created by using square brackets and separating elements</li>
+<li>Tuples are similar to lists, but are considered immutable. Once set, values can’t be changed, removed, or added.</li>
+</ul>
+<pre><code>l = [1, 2, 3, 4]
+print(l[0]) # Prints out 1 to stdout
+l.append(l[0] + l[2]) # Appends a value of 4 by adding 1 + 3 (index 0 &amp; 2)</code></pre>
+</section>
+<section id="strings" class="slide level2">
+<h2>Strings</h2>
+<ul>
+<li>Strings are sequences of characters and Python’s standard library provides many features to interact with them.</li>
+<li>Most functions are not going to effect the string themselves, but will return a new copy.</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operation</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>len(string)</td>
+<td>Will return the number of characters in a string</td>
+</tr>
+<tr class="even">
+<td>string.upper()</td>
+<td>Returns the upper case version of a given string</td>
+</tr>
+<tr class="odd">
+<td><code>string + "Hello"</code></td>
+<td>Concatenates the two strings together and returns a new one</td>
+</tr>
+<tr class="even">
+<td><code>string[0]</code></td>
+<td>Will return the first character of a given string</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dictionaries" class="slide level2">
+<h2>Dictionaries</h2>
+<ul>
+<li>Data Structure that provides a Key/Value pair mapping.</li>
+<li>Created by using curly braces</li>
+</ul>
+<pre><code>d = {
+    &#39;key&#39;: &#39;value&#39;,
+    1: &#39;one&#39;,
+    &#39;person&#39;: &#39;Johnny&#39;
+}
+
+d[&quot;person&quot;] # Would give the value Johnny</code></pre>
+</section>
+<section id="libraries" class="slide level2">
+<h2>Libraries</h2>
+<ul>
+<li>Python comes with many additional modules/packages</li>
+<li>os</li>
+<li>sys</li>
+<li>subprocess</li>
+</ul>
+</section>
+<section id="os-library" class="slide level2">
+<h2><em>os</em> library</h2>
+<ul>
+<li>Provides many utilities for operating with the host’s operating system and file tree.
+<ul>
+<li>The <code>os.path</code> sub-module has the file tree methods</li>
+</ul></li>
+</ul>
+<pre><code>import os
+
+if not os.path.isdir(&#39;./logs&#39;):
+    os.mkdir(&#39;./logs&#39;)
+
+if os.path.isfile(&quot;config.txt&quot;):
+    f = open(&quot;config.txt&quot;)</code></pre>
+</section>
+<section id="sys-module" class="slide level2">
+<h2><em>sys</em> module</h2>
+<ul>
+<li>Used for interacting with the Python Interpreter.</li>
+<li>Two properties to note:
+<ul>
+<li><code>sys.argv</code> - List of command line arguments passed to a script.</li>
+<li><code>sys.exit</code> - Cause the Python Interpreter to exit on the spot.</li>
+</ul></li>
+</ul>
+</section>
+<section id="subprocess" class="slide level2">
+<h2>Subprocess</h2>
+<ul>
+<li>Will start here on Thursday</li>
+</ul>
+</section>
+</div>
+
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    //plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+    plugins: [ RevealMarkdown, PdfExport ]
+  });
+
+</script>
+
+</body>
+</html>

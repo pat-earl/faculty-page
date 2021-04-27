@@ -51,3 +51,5 @@ below when they become available.
         * Section 10: [Notebook](./pdfs/flights/flights_demo_10.ipynb) [HTML](./pdfs/flights/flights_demo_10.html)
         * Section 20: [Notebook](./pdfs/flights/flights_demo_20.ipynb) [HTML](./pdfs/flights/flights_demo_20.html)
 
+* Weeks 14-15
+    * [Time Series](./pdfs/tseries/)

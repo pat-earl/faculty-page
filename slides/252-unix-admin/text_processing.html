@@ -381,13 +381,14 @@
 <li>!~ tests for not matching the pattern</li>
 </ul></li>
 </ul></li>
-<li>comma (,):
-<ul>
-<li>Range operator. Select a range based on matched patterns</li>
-</ul></li>
-<li>Patterns can be combined using BOOLEAN operators (&amp;&amp; (AND), || (OR))</li>
 </ul></li>
 </ul>
+</section>
+<section class="slide level2">
+
+<pre><code>* comma (,):
+    * Range operator. Select a range based on matched patterns
+* Patterns can be combined using BOOLEAN operators (&amp;&amp; (AND), || (OR))</code></pre>
 </section>
 <section class="slide level2">
 
@@ -480,6 +481,105 @@
 <tr class="odd">
 <td>RS</td>
 <td>Input Record Separator</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="built-in-functions" class="slide level2">
+<h2>Built-in Functions</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>length(str)</code></td>
+<td>Returns the number of characters in <em>str</em> - or - num of chars. in current record.</td>
+</tr>
+<tr class="even">
+<td><code>int(num)</code></td>
+<td>Returns the integer portion of <em>num</em>.</td>
+</tr>
+<tr class="odd">
+<td><code>index(str1, str2)</code></td>
+<td>Returns the index of <em>str2</em> in <em>str1</em> or 0 if <em>str2</em> is not present.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="slide level2">
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>split(str, arr, del)</code></td>
+<td>Places elements of <em>str</em>, delimited by <em>del</em>, in the array <em>arr</em>.</td>
+</tr>
+<tr class="even">
+<td><code>sprintf(fmt, args)</code></td>
+<td>Formats <em>args</em> according to <em>fmt</em> and returns the formatted string.</td>
+</tr>
+<tr class="odd">
+<td><code>substr(str, pos, len)</code></td>
+<td>Returns the substring of <em>str</em> that beings and <em>pos</em> and is <em>len</em> chars long.</td>
+</tr>
+<tr class="even">
+<td><code>tolower/toupper</code></td>
+<td>Returns a copy of the passed <em>str</em> replacing with their lower/upper case counterpart.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="printf-formatting" class="slide level2">
+<h2>printf formatting</h2>
+<table>
+<thead>
+<tr class="header">
+<th>conv</th>
+<th>Type of conversion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><em>d</em></td>
+<td>Decimal</td>
+</tr>
+<tr class="even">
+<td><em>e</em></td>
+<td>Exponential Notation</td>
+</tr>
+<tr class="odd">
+<td><em>f</em></td>
+<td>Floating-point number</td>
+</tr>
+<tr class="even">
+<td><em>o</em></td>
+<td>Unsigned Octal</td>
+</tr>
+<tr class="odd">
+<td><em>s</em></td>
+<td>String of characters</td>
+</tr>
+<tr class="even">
+<td><em>x</em></td>
+<td>Unsigned hexadecimal</td>
 </tr>
 </tbody>
 </table>

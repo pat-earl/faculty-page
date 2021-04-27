@@ -98,4 +98,12 @@ void draw() {
 --- 
 
 ## Angles
-* Will continue with this next week.
+* Processing requires angles to be specified in *radians*. 
+    * A unit of measurement for angles defined by the ratio of the length of the arc of a circle to the radius of that circle. 
+    * or - Measuring angles by distance traveled from the mover's viewpoint.
+* If you prefer to think in degrees, you can use the `radians` function to easily convert between the two.
+
+```
+float angle = radians(60);
+rotate(angle);
+```
