@@ -393,7 +393,9 @@ if not os.path.isdir(&#39;./logs&#39;):
     os.mkdir(&#39;./logs&#39;)
 
 if os.path.isfile(&quot;config.txt&quot;):
-    f = open(&quot;config.txt&quot;)</code></pre>
+    f = open(&quot;config.txt&quot;)\
+
+print(os.getcwd())</code></pre>
 </section>
 <section id="sys-module" class="slide level2">
 <h2><em>sys</em> module</h2>
@@ -409,7 +411,13 @@ if os.path.isfile(&quot;config.txt&quot;):
 <section id="subprocess" class="slide level2">
 <h2>Subprocess</h2>
 <ul>
-<li>Will start here on Thursday</li>
+<li>The <code>subprocess</code> allows for Python to execute system executables</li>
+<li>This is done through three methods
+<ul>
+<li><code>POpen</code> - A <em>non-blocking</em> function call. Used in more advanced use cases.</li>
+<li><code>run</code> - The recommended way of using the subprocess module</li>
+<li><code>call</code> - A left over from an earlier version of Python 3.</li>
+</ul></li>
 </ul>
 </section>
 </div>

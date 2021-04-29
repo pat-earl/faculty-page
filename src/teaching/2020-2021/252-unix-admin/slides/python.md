@@ -236,7 +236,9 @@ if not os.path.isdir('./logs'):
     os.mkdir('./logs')
 
 if os.path.isfile("config.txt"):
-    f = open("config.txt")
+    f = open("config.txt")\
+
+print(os.getcwd())
 ```
 
 ---
@@ -250,4 +252,8 @@ if os.path.isfile("config.txt"):
 ---
 
 ## Subprocess
-* Will start here on Thursday
+* The `subprocess` allows for Python to execute system executables
+* This is done through three methods
+    * `POpen` - A *non-blocking* function call. Used in more advanced use cases.
+    * `run` - The recommended way of using the subprocess module
+    * `call` - A left over from an earlier version of Python 3.
