@@ -32,38 +32,25 @@
 {% endblock %}{# }}} #}
 {% block heading1 %}{# {{{ #}
   {% markdown %}
-  <div class='alert alert-info' markdown>
-
-    <h4>Office Hours Change - Week of April 26th</h4>
-    
-    <p>Wednesday's office hours are cancelled. 
-    Friday's office hours will be 8am-10am.</p>
-
-    <h4>Office Hours - Finals Week</h4>
-    
-    * Mon: 8:00 AM - 10:00 AM
-    * Tues: 1:30 PM - 2:30 PM
-    * Wed: 8:00 AM - 10:00 AM ([Using this Zoom Link](https://kutztown.zoom.us/j/98763710941))
-
-    Appointments may be scheduled Monday-Thursday. No appointments will be accepted on Friday or after the semester ends that evening. 
-
-    Have a wonderful summer!
-
+  <div class='alert alert-info'>
+    Summer course websites are currently under construction. 
+    More information will be sent out before the start of Summer Session I (May 24th)
   </div>
   {% endmarkdown %}
   <h2>Current Courses</h2>
   {% markdown %}
   <div class='media mb-4' markdown='1'>
     {{ md_current_courses() -}}
-
-    * [Networking IS](./teaching/independent/networking.html)
+    * [CSC123 - Individualized Instruction](TBD)
+    * [CSC273 - Individualized Instruction](TBD)
   </div>{# /media #}
   {% endmarkdown %}
 
-  <h2 id='schedule'>Schedule</h2>
+  {# <h2 id='schedule'>Schedule</h2>
   <p>
   <a href='./schedule.png'>Click here to see my Spring 2021 schedule</a>
   </p>
+  #}
   <br>
   <h2 id='publications'>Publications</h2>
 
@@ -119,7 +106,7 @@
 ## Office Hours 
 
 <table class="table table-responsive">
-  <thead>
+  {# <thead>
     <tr>
       <th scope="col">Day</th>
       <th scope="col">Time</th>
@@ -132,20 +119,22 @@
       <td>{{ time }}</td>
     </tr>
     {% endfor %}
-  </tbody>
+  </tbody> #}
 </table>
 
-**Other times available by appointment**  
-Office hours are 100% online for the Spring semester, [please use this link](https://kutztown.zoom.us/j/96663053507)
+**Summer Courses - Office hours are by appointment only**  
+Please contact me via email to setup an appointment.
+[Use this link](https://kutztown.zoom.us/j/96663053507)
 to access the Zoom room for office hours.
 
 {% endmarkdown %}{% endblock %}{# }}} #}
-{% block heading3 %}{% markdown %}{# {{{ #}
+
+{% block heading3 %} {% markdown %}{# {{{ #}
 <div class='small flushed-left-list' markdown='1'>
 ### Tutoring Info 
 
-* [How to access virtual tutoring hours](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/VirtualRooms.pdf)
-* [CS&IT GA and Tutoring Lab Schedule](./SPRING_2021_TUTOR_SCHEDULE.png)
+Tutoring information will become available about a week into the Fall 21 semester.
 
 </div>
-{% endmarkdown %}{% endblock %}{# }}} #}
+{% endmarkdown %}{% endblock %} {# }}}} #}
+

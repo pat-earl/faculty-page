@@ -6,6 +6,11 @@ title: Courses
 
 {{ md_current_courses_long() }}
 
+## Independent Studies
+
+* [Summer 2021 - CSC123](./independent/csc123.html) - Under Construction
+* [Summer 2021 - CSC273](./independent/csc273.html) - Under Construction
+
 ## {{secs.previous_courses}}
 
 Courses previously taught at KU (Some may not have links)
@@ -22,7 +27,7 @@ Courses previously taught at KU (Some may not have links)
   {%- endfor %}
 {% endfor %}
 
-## Independent Studies
+#### Previous IS/IIs
 
-* [Spring 2021 Networking IS](./independent/networking.html)
+* [Spring 2021 Networking IS](./independent/networking.html) (Archived)
 

@@ -12,7 +12,7 @@
         (2021, 's', '2020-2021/120-graph-coding'),
     )),
 
-    (123, 'Introduction Secientfic Programming', (
+    (123, 'Introduction to Scientific Programming', (
         (2020, 's', old_teaching ~ 'SP2020/CSC223'),
     )),
 
@@ -27,6 +27,7 @@
     (252, 'UNIX: Scripting & Administration', (
         (2021, 's', '2020-2021/252-unix-admin'),
         (2020, 's', old_teaching ~ 'SP2020/CSC252/'),
+        (2021, 'SUMM S1 ', '2020-2021/252-unix-admin-summer'),
     )),
 
     (311, 'Computer Networks', (
@@ -34,10 +35,10 @@
     )),
 
   ) %}
-{# {% set cur_index = () %} #}
+{% set cur_index = ( (6, 2), ) %} 
 {# Use this to set the current courses! #}
 {# Don't try to index stuff either :> #}
-{% set cur_index = ( (1, 0), (2, 0), (5, 0), (6, 0), ) %}
+{# {% set cur_index = ( (1, 0), (2, 0), (5, 0), (6, 0), ) %} #}
 {% macro md_current_courses() -%}
 {% for i, j in cur_index -%}
 {%- set c = courses[i] %}
@@ -55,7 +56,7 @@
     {% elif cs == 'f' -%}
         {% set cs = 'Fall, ' -%}
     {% else -%}
-        {% set cs = '' -%}
+        {% set cs = cs -%}
     {% endif -%}
 * [{{- ('CSC' ~cn~': ' if cn else '') ~ ct}} ({{cs ~ cy}})]({{cl -}})
 {% else -%}
