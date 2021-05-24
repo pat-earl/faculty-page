@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>UNIX Processes</title>
+
+<meta name="description" content="UNIX Processes">    
+
+  <meta name="author" content="Patrick Earl" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+ -->
+
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+
+
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
+
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+<h1>UNIX Processes</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>03/18/2021</h4>
+</p>
+</section>  
+
+
+<section id="program-space" class="slide level2">
+<h2>Program Space</h2>
+<ul>
+<li>Memory Space separation to protect system internals</li>
+<li>User(Land)
+<ul>
+<li>User Applications</li>
+<li>File Utilities</li>
+</ul></li>
+<li>Kernel
+<ul>
+<li>stat</li>
+<li>System Calls</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-is-a-process" class="slide level2">
+<h2>What is a process?</h2>
+<ul>
+<li>Each program launched becomes a <em>process</em> until it exits</li>
+<li>The Kernel will manage processes
+<ul>
+<li>Assign a <em>process id</em> (PID)</li>
+<li>Assign memory space</li>
+<li>Accept System Calls</li>
+<li>Scheduling on the processor</li>
+<li>Send SIGNALs</li>
+</ul></li>
+<li><code>ps</code> - View current processes</li>
+</ul>
+</section>
+<section id="unix-boot" class="slide level2">
+<h2>UNIX Boot</h2>
+<ul>
+<li>Once control is handled over the kernel, the first process is <em>created</em> (or <em>spawned</em>).</li>
+<li>Usually known as <em>init</em>
+<ul>
+<li>Will have <em>pid</em> of 0 or 1</li>
+</ul></li>
+<li>Init is responsible for launching all the processes required to run the system
+<ul>
+<li>Daemons</li>
+<li>Memory Management</li>
+<li>I/O Events</li>
+</ul></li>
+<li>All processes created could be considered <em>children</em> of init.</li>
+</ul>
+</section>
+<section id="parent-and-children" class="slide level2">
+<h2>Parent and Children</h2>
+<ul>
+<li>The two main system calls for process creation:
+<ul>
+<li><code>fork()</code></li>
+<li><code>exec()</code> - exec has many different forms</li>
+</ul></li>
+<li>The process calling <code>fork()</code> becomes the parent process
+<ul>
+<li><em>PPID</em> - Parent Process ID</li>
+<li>The newly created process is consider a <em>child</em> process</li>
+</ul></li>
+<li><code>exec()</code> - Will execute an executable and replace a processes’ memory space</li>
+</ul>
+</section>
+<section id="sessions" class="slide level2">
+<h2>Sessions</h2>
+<ul>
+<li>After successful login, a new <em>session</em> is created.</li>
+<li>The process that handles login, will fork and exec the user’s configured shell</li>
+<li><code>job</code> - Manage jobs in a session</li>
+<li><code>&amp;</code> - Send a command to the background</li>
+</ul>
+</section>
+<section id="basic-process-commands" class="slide level2">
+<h2>Basic Process Commands</h2>
+<ul>
+<li>history</li>
+<li>jobs</li>
+<li>kill</li>
+<li>fg,bg</li>
+<li>ps</li>
+<li>top</li>
+<li>uptime</li>
+<li>free</li>
+<li>pstree</li>
+<li>nohup</li>
+</ul>
+</section>
+<section id="the-process-table" class="slide level2">
+<h2>The Process Table</h2>
+<ul>
+<li>Kernel Data Structure to manage running processes</li>
+<li>Contains the following:
+<ul>
+<li><em>Process ID</em></li>
+<li><em>Process Owner</em></li>
+<li><em>Process Priority</em></li>
+<li><em>Environment Variables</em></li>
+<li><em>Parent Process</em></li>
+<li><em>Location of code, data, stack, and user area</em> (Memory Space)</li>
+<li><em>Pending Signals</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="ps-command" class="slide level2">
+<h2>ps command</h2>
+<ul>
+<li>Useful <code>ps</code> options
+<ul>
+<li><em>Different Options</em>
+<ul>
+<li>UNIX</li>
+<li>BSD</li>
+<li>GNU</li>
+</ul></li>
+<li>No Arguments</li>
+<li><code>ps -A</code> or <code>ps -e</code> - Every Active Process</li>
+<li><code>ps -f</code> - Full format</li>
+<li><code>ps -x</code> - Commands ran by the user running <em>ps</em> (Usually you)</li>
+<li><code>ps -fu &lt;username&gt;</code> - Commands owned by another user (name or ID)</li>
+<li><code>ps -fG</code> - Commands ran by a group</li>
+</ul></li>
+</ul>
+</section>
+<section id="daemon-process" class="slide level2">
+<h2>Daemon Process</h2>
+<ul>
+<li>Typically a process running in the background <em>indirectly</em> interacting with a user.</li>
+<li><code>daemon</code> in section 7 of man page</li>
+<li>Example Daemons:
+<ul>
+<li><code>sshd</code></li>
+<li><code>httpd</code></li>
+<li><code>ftpd</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="process-termination" class="slide level2">
+<h2>Process Termination</h2>
+<ul>
+<li>Two Ways:
+<ul>
+<li>Normal - Process Runs and Exits as planned</li>
+<li>Abnormal - Termination via an external control</li>
+</ul></li>
+<li><code>wait()</code>
+<ul>
+<li>Allows a parent process to <em>wait</em> until child process(es) finish</li>
+<li>Parent is a <em>suspended</em> state</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Zombie Process
+<ul>
+<li>Child process that terminates, but is waiting for parent process to read it’s exit status</li>
+<li>Sits in Process Table</li>
+</ul></li>
+<li>Orphan Process
+<ul>
+<li>Parent Process Terminates before child(ren)</li>
+<li>New PPID becomes <em>init</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="process-states" class="slide level2">
+<h2>Process States</h2>
+<p><img data-src="./images/process_states.jpg" /></p>
+</section>
+<section id="process-internals" class="slide level2">
+<h2>Process Internals</h2>
+<ul>
+<li>Scheduler
+<ul>
+<li>Algorithms to decide which process gets time on the <em>processor</em> and for how long</li>
+<li>Preemptive MultiTasking - The amount of time a process runs is predetermined</li>
+</ul></li>
+<li>Memory Manager
+<ul>
+<li><em>Virtual Memory</em></li>
+</ul></li>
+<li>Magic Number
+<ul>
+<li>Special combo of bits near beginning of file</li>
+<li>Can be used to identify it’s type</li>
+<li><code>file</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="process-areas" class="slide level2">
+<h2>Process Areas</h2>
+<ul>
+<li>User
+<ul>
+<li>Code Area - The program’s instructions</li>
+<li>Data Area - Data associated with program</li>
+<li>Stack Area - Program Stack (Function Calls)</li>
+<li>User Area - Misc. Stuff (Opened Files, Current Directory, etc.)</li>
+</ul></li>
+<li>Kernel
+<ul>
+<li>Process Table</li>
+<li>Page Table
+<ul>
+<li><em>Virtual Memory Table</em></li>
+</ul></li>
+<li>File Tables</li>
+</ul></li>
+</ul>
+</section>
+<section id="scheduling-jobs" class="slide level2">
+<h2>Scheduling Jobs</h2>
+<ul>
+<li>crontab</li>
+<li>at</li>
+</ul>
+</section>
+</div>
+
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    //plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+    plugins: [ RevealMarkdown, PdfExport ]
+  });
+
+</script>
+
+</body>
+</html>
