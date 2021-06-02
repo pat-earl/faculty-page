@@ -6,10 +6,10 @@ title: Courses
 
 {{ md_current_courses_long() }}
 
-## Independent Studies
+## Independent Studies/Individualized Instructions
 
-* [Summer 2021 - CSC123](./independent/csc123.html) - Under Construction
-* [Summer 2021 - CSC273](./independent/csc273.html) - Under Construction
+* [Summer 2021 - CSC123](https://csit.kutztown.edu/~earl/archive/SP2020/CSC123/) 
+* [Summer 2021 - CSC273]({{get_link('./teaching/independent/csc273.md')}})
 
 ## {{secs.previous_courses}}
 

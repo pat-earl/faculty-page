@@ -32,17 +32,16 @@
 {% endblock %}{# }}} #}
 {% block heading1 %}{# {{{ #}
   {% markdown %}
-  <div class='alert alert-info'>
-    Summer course websites are currently under construction. 
-    More information will be sent out before the start of Summer Session I (May 24th)
-  </div>
+  <!-- <div class='alert alert-info'>
+
+  </div> -->
   {% endmarkdown %}
   <h2>Current Courses</h2>
   {% markdown %}
   <div class='media mb-4' markdown='1'>
     {{ md_current_courses() -}}
-    * [CSC123 - Individualized Instruction](TBD)
-    * [CSC273 - Individualized Instruction](TBD)
+    * [CSC123 - Individualized Instruction](https://csit.kutztown.edu/~earl/archive/SP2020/CSC123/)
+    * [CSC273 - Individualized Instruction]({{get_link('./teaching/independent/csc273.md')}})
   </div>{# /media #}
   {% endmarkdown %}
 
