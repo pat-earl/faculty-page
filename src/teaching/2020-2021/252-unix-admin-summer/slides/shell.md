@@ -3,7 +3,7 @@ title: "The Shell"
 subtitle: "CSC252"
 author: Patrick Earl
 slideNumber: true
-revealjstheme: simple
+revealjstheme: robot-lung
 width: 1600
 height: 1000
 transition: fade

@@ -3,7 +3,7 @@ title: "Getting Help"
 subtitle: "CSC252"
 author: Patrick Earl
 slideNumber: true
-revealjstheme: simple
+revealjstheme: robot-lung
 width: 1600
 height: 1000
 transition: fade
@@ -28,7 +28,7 @@ if directly connected to it.
 ## Documentation
 
 * `man` command - The System Manual
-  * Split into 10 seconds
+  * Split into 10 sections
   * User Commands (1), System Calls (2), Subroutines (3)....
 * `apropos` - Keyword search
   * Searches for the keyword in short description of man pages
