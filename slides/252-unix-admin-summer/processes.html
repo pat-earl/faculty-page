@@ -129,7 +129,7 @@
 <ul>
 <li>After successful login, a new <em>session</em> is created.</li>
 <li>The process that handles login, will fork and exec the user’s configured shell</li>
-<li><code>job</code> - Manage jobs in a session</li>
+<li><code>jobs</code> - Manage jobs in a session</li>
 <li><code>&amp;</code> - Send a command to the background</li>
 </ul>
 </section>
@@ -169,18 +169,55 @@
 <ul>
 <li>Useful <code>ps</code> options
 <ul>
-<li><em>Different Options</em>
-<ul>
-<li>UNIX, BSD, GNU</li>
-</ul></li>
-<li>No Arguments</li>
 <li><code>ps -A</code> or <code>ps -e</code> - Every Active Process</li>
 <li><code>ps -f</code> - Full format</li>
 <li><code>ps -x</code> - Commands ran by the user running <em>ps</em> (Usually you)</li>
 <li><code>ps -fu &lt;username&gt;</code> - Commands owned by another user (name or ID)</li>
 <li><code>ps -fG</code> - Commands ran by a group</li>
 </ul></li>
+<li>These codes will appear under the <em>STAT</em> column header in ps output.</li>
 </ul>
+</section>
+<section id="ps-process-codes" class="slide level2">
+<h2>ps process codes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Code</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>D</td>
+<td>Uninterruptible Sleep (I/O Block)</td>
+</tr>
+<tr class="even">
+<td>R</td>
+<td>Running or Runnable (On Run Queue)</td>
+</tr>
+<tr class="odd">
+<td>S</td>
+<td>Interruptive Sleep (Waiting on an Event)</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>Stopped by job control signal</td>
+</tr>
+<tr class="odd">
+<td>t</td>
+<td>Stopped by debugger during the tracing</td>
+</tr>
+<tr class="even">
+<td>X</td>
+<td>dead (Should never see this state)</td>
+</tr>
+<tr class="odd">
+<td>Z</td>
+<td>Defunct (“zombie”) process</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="daemon-process" class="slide level2">
 <h2>Daemon Process</h2>
@@ -225,10 +262,6 @@
 </ul></li>
 </ul>
 </section>
-<section id="process-states" class="slide level2">
-<h2>Process States</h2>
-<p><img data-src="./images/process_states.jpg" /></p>
-</section>
 <section id="process-internals" class="slide level2">
 <h2>Process Internals</h2>
 <ul>
@@ -248,6 +281,13 @@
 <li><code>file</code></li>
 </ul></li>
 </ul>
+</section>
+<section id="process-states" class="slide level2">
+<h2>Process States</h2>
+<p><img data-src="./images/process_states.jpg" /></p>
+</section>
+<section class="slide level2">
+
 </section>
 <section id="process-areas" class="slide level2">
 <h2>Process Areas</h2>

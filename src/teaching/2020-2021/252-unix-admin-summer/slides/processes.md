@@ -58,7 +58,7 @@ transition: fade
 ## Sessions
 * After successful login, a new *session* is created.
 * The process that handles login, will fork and exec the user's configured shell
-* `job` - Manage jobs in a session
+* `jobs` - Manage jobs in a session
 * `&` - Send a command to the background
 
 ---
@@ -92,14 +92,26 @@ transition: fade
 
 ## ps command
 * Useful `ps` options
-  * *Different Options*
-    * UNIX, BSD, GNU
-  * No Arguments
   * `ps -A` or `ps -e` - Every Active Process
   * `ps -f` - Full format
   * `ps -x` - Commands ran by the user running *ps* (Usually you)
   * `ps -fu <username>` - Commands owned by another user (name or ID)
   * `ps -fG` - Commands ran by a group
+* These codes will appear under the *STAT* column header in ps output.
+
+---
+
+## ps process codes
+
+| Code | Meaning |
+| -- | -- |
+| D | Uninterruptible Sleep (I/O Block) |
+| R | Running or Runnable (On Run Queue) |
+| S | Interruptive Sleep (Waiting on an Event) |
+| T | Stopped by job control signal |
+| t | Stopped by debugger during the tracing |
+| X | dead (Should never see this state) |
+| Z | Defunct ("zombie") process |
 
 ---
 
@@ -132,11 +144,6 @@ transition: fade
   
 ---
 
-## Process States
-![](./images/process_states.jpg)
-
----
-
 ## Process Internals
 * Scheduler
   * Algorithms to decide which process gets time on the *processor* and for how long
@@ -148,6 +155,11 @@ transition: fade
   * Can be used to identify it's type
   * `file`
   
+## Process States
+![](./images/process_states.jpg)
+
+---
+
 ---
 
 ## Process Areas
