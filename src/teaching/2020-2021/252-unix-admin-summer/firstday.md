@@ -65,8 +65,8 @@ Your final course grade will be made up of the following:
 
 * Assignments: 60%
 * Weekly Quizzes: 20%
-* Final Exam: 20%
-* Discussion Board: 10%
+* Final Exam: 15%
+* Discussion Board: 5%
 
 The standard [University Grading Policy](http://app.kutztown.edu/policyregister/Policy/ACA-048) will be used to calculate your final letter grade. 
 

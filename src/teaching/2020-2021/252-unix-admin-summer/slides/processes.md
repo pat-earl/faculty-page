@@ -2,7 +2,6 @@
 title: "UNIX Processes"
 subtitle: "CSC252"
 author: Patrick Earl
-date: 03/18/2021
 slideNumber: true
 revealjstheme: simple
 width: 1600
@@ -94,9 +93,7 @@ transition: fade
 ## ps command
 * Useful `ps` options
   * *Different Options*
-    * UNIX
-    * BSD
-    * GNU
+    * UNIX, BSD, GNU
   * No Arguments
   * `ps -A` or `ps -e` - Every Active Process
   * `ps -f` - Full format

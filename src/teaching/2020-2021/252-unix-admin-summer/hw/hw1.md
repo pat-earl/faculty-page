@@ -3,7 +3,7 @@ title: Homework #1
 ## Basic Linux Commands
 
 **Due:**
-: Saturday May 29, 11:59PM
+: Monday May 31st by 11:59PM
 
 **Purpose:**
 : Use basic UNIX utilities, create a BASH script. 
