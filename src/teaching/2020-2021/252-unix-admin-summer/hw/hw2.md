@@ -3,7 +3,7 @@ title: Homework #2
 ## File Commands
 
 **Due:**
-: Saturday, June 5th by 11:59PM
+: Monday June 7th by 11:59PM
 
 Write a command to satisfy the requirements below.
 You can also choose to use several commands with a "pipe." As with the previous assignment
