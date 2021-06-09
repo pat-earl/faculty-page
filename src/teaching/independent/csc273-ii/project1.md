@@ -25,6 +25,7 @@ You'll write a paper split into sections. Loosely use the MLA standards, meaning
 font, double spaced. Include your name, the course, my name, and date at the top of the paper.
 
 The Four Sections:
+
 1) Write a summary, using your own words, about the article. This section should be *at least* one page in length.
 2) Answer the following questions, your answers should be a sentence or two in length. 
     1) Who was in charge of managing the system's development, 
@@ -33,10 +34,11 @@ The Four Sections:
 3) What was the name of the integrated system? Explain in a few sentences using your own words what this product does. What system architecture does it use (Chpt. 2)? What are its benefits/advantages over the legacy/other systems (Chpt. 3)? Include information such as tier and module(s)
 4) List key issues and briefly describe each issue in a few sentences, including whom each issue impacted and any resolution(s) for each issue.
 
+[You can view the available articles here](./pdfs)
 
-### List of Articles:
+## Submission
 
-TBD
+Submit in a word document or PDF file by the due date. Submissions will only be accepted via email.
 
 ## References
 [^1]: <https://www.cleo.com/blog/system-integration>
