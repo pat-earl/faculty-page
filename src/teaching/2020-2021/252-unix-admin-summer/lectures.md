@@ -7,7 +7,9 @@ title: Lectures
     {"name": "The Shells", "file": "slides/shell.md"},
     {"name": "Filesystem (PowerPoint)", "file": "slides/files.pptx"},
     {"name": "The BASH Shell & Scripting", "file": "slides/bash.md"},
-    {"name": "UNIX Processes", "file": "slides/processes.md"}
+    {"name": "UNIX Processes", "file": "slides/processes.md"},
+    {"name": "System Administration", "file": "slides/sysadmin.md"},
+    {"name": "Text Processing", "file": "slides/text_processing.md"}
 ) %}
 
 ## Course Lectures

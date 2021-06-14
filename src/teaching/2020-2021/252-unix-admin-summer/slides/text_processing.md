@@ -2,7 +2,6 @@
 title: "Text Processing"
 subtitle: "CSC252"
 author: Patrick Earl
-date: 04/13/2021
 slideNumber: true
 revealjstheme: robot-lung
 width: 1600

@@ -26,13 +26,13 @@ font, double spaced. Include your name, the course, my name, and date at the top
 
 The Four Sections:
 
-1) Write a summary, using your own words, about the article. This section should be *at least* one page in length.
-2) Answer the following questions, your answers should be a sentence or two in length. 
-    1) Who was in charge of managing the system's development, 
-    2) Who requested/required the system and why?,
-    3) Who was/were the users? 
-3) What was the name of the integrated system? Explain in a few sentences using your own words what this product does. What system architecture does it use (Chpt. 2)? What are its benefits/advantages over the legacy/other systems (Chpt. 3)? Include information such as tier and module(s)
-4) List key issues and briefly describe each issue in a few sentences, including whom each issue impacted and any resolution(s) for each issue.
+1. Write a summary, using your own words, about the article. This section should be *at least* one page in length.
+2. Answer the following questions, your answers should be a sentence or two in length. 
+    * Who was in charge of managing the system's development, 
+    * Who requested/required the system and why?,
+    * Who was/were the users? 
+3. What was the name of the integrated system? Explain in a few sentences using your own words what this product does. What system architecture does it use (Chpt. 2)? What are its benefits/advantages over the legacy/other systems (Chpt. 3)? Include information such as tier and module(s)
+4. List key issues and briefly describe each issue in a few sentences, including whom each issue impacted and any resolution(s) for each issue.
 
 [You can view the available articles here](./pdfs)
 

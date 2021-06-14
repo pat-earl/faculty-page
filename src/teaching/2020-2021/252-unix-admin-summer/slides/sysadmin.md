@@ -2,7 +2,6 @@
 title: "System Administration"
 subtitle: "CSC252"
 author: Patrick Earl
-date: 03/25/2021
 slideNumber: true
 revealjstheme: simple
 width: 1600
