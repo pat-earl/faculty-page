@@ -9,7 +9,8 @@ title: Lectures
     {"name": "The BASH Shell & Scripting", "file": "slides/bash.md"},
     {"name": "UNIX Processes", "file": "slides/processes.md"},
     {"name": "System Administration", "file": "slides/sysadmin.md"},
-    {"name": "Text Processing", "file": "slides/text_processing.md"}
+    {"name": "Text Processing", "file": "slides/text_processing.md"},
+    {"name": "Python", "file": "slides/python.md"}
 ) %}
 
 ## Course Lectures
