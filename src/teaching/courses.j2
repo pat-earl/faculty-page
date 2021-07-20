@@ -4,6 +4,10 @@
 
     )),
 
+    (105, 'Introduction to Data Visualization', (
+        (2021, 'f', '2020-2021/105-data-viz'),
+    )),
+
     (111, 'Computer Forensics', (
         (2021, 's', '2020-2021/111-comp-foren'),
     )),
@@ -18,6 +22,7 @@
 
     (135, 'Computer Science I', (
         (2020, 'f', old_teaching ~ 'FA2020/CSC135/'),
+        (2021, 'f', '2020-2021/135-comp-sci-I'),
     )),
 
     (223, 'Advanced Scientific Programming', (
@@ -32,13 +37,14 @@
 
     (311, 'Computer Networks', (
         (2020, 'f', old_teaching ~ 'FA2020/CSC311/'),
+        (2021, 'f', '2020-2021/311-comp-network'),
     )),
 
   ) %}
-{% set cur_index = ( (6, 2), ) %} 
+{# set cur_index = ( (6, 2), ) #} 
 {# Use this to set the current courses! #}
 {# Don't try to index stuff either :> #}
-{# {% set cur_index = ( (1, 0), (2, 0), (5, 0), (6, 0), ) %} #}
+{% set cur_index = ( (1, 0), (5, 1), (8, 1), ) %}
 {% macro md_current_courses() -%}
 {% for i, j in cur_index -%}
 {%- set c = courses[i] %}
