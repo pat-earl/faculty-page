@@ -1,329 +1,329 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
 
-  <title>Chapter 5: The Shell</title>
+<title>Chapter 5: The Shell</title>
 
-  <meta name="description" content="Chapter 5: The Shell">    
+<meta name="description" content="Chapter 5: The Shell">    
 
-      <meta name="author" content="Patrick Earl" />
-  
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="author" content="Patrick Earl" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-  <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
-   -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
-  
+<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+ -->
 
-  <!-- For syntax highlighting -->
-  <!--     <link rel="stylesheet" href="/share/revealjs/plugin/highlight/zenburn.css">
-   -->
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
 
-  <!-- For syntax highlighting -->
-      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
-  
 
-  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
-  <!-- <script>
-    document.write( '<link rel="stylesheet" href="css/print/' +
-      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
-      '.css" type="text/css" media="print">' );
-  </script> -->
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
 
-  <!--[if lt IE 9]>
-  <script src="lib/js/html5shiv.js"></script>
-  <![endif]-->
-    </head>
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
 
-  <body>
-  
-  <div class="reveal">
 
-  <!-- Any section element inside of this container is displayed as a slide -->
-  <div class="slides">
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
 
-  <section>
-  <h1>Chapter 5: The Shell</h1>
-  <h3>Patrick Earl</h3>
-  <p>
-  <h4>02/23/2021</h4>
-  </p>
-  </section>  
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
 
-  
-  <section id="unix-shells" class="slide level2">
-  <h2>UNIX Shells</h2>
-  <ul>
-  <li>sh - Bourne Shell</li>
-  <li>ksh - Korn Shell</li>
-  <li><strong>bash</strong> - <em>Bourne Again Shell</em></li>
-  <li>dash - Debian Almquist Shell</li>
-  <li>tcsh - TC Shell</li>
-  <li>zsh - Z Shell</li>
-  <li><em>Most of following information will apply to bash and tcsh</em></li>
-  </ul>
-  </section>
-  <section id="special-characters" class="slide level2">
-  <h2>Special Characters</h2>
-  <ul>
-  <li><ul>
-  <li>; | * ? ’ " ` [ ] ( ) $ &lt; &gt; { } # /  ! ~</li>
-  </ul></li>
-  <li>Whitespace</li>
-  <li>Quoting
-  <ul>
-  <li><code>/</code> pathnames</li>
-  </ul></li>
-  <li>Backslash - <code>\</code></li>
-  <li>Single Quotes - <code>' '</code>
-  <ul>
-  <li>Preserve the literal value of each character in the quotes</li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="the-command-line" class="slide level2">
-  <h2>The Command Line</h2>
-  <ul>
-  <li>Commands execute a program in response to a prompt
-  <ul>
-  <li><code>ls</code></li>
-  </ul></li>
-  <li>A <em>simple</em> command includes the command and any arguments.
-  <ul>
-  <li><em>Simple</em> commands can be any utility program, shell script, application program, etc.</li>
-  </ul></li>
-  <li><code>command arg1 [arg2] ... [argn] RETURN</code>
-  <ul>
-  <li>The shell will interpret this command</li>
-  <li><em>Whitespace</em> is used to separate the various parts</li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="command-syntax" class="slide level2">
-  <h2>Command Syntax</h2>
-  <ul>
-  <li>Some commands work with just the command name
-  <ul>
-  <li><em>meaning no arguments are required</em></li>
-  </ul></li>
-  <li>Others will require arguments:
-  <ul>
-  <li><code>mkdir</code></li>
-  <li><em>Usage Message</em></li>
-  <li>Optional Arguments - <code>[ ]</code></li>
-  </ul></li>
-  <li>Arguments are <em>tokens</em> a command acts on
-  <ul>
-  <li><em>token</em> or <em>word</em> - A sequence of nonblank characters</li>
-  </ul></li>
-  <li><code>cp temp tempcopy</code></li>
-  <li>Command arguments are numbered starting at zero and include the command itself</li>
-  </ul>
-  </section>
-  <section id="command-syntax-continued" class="slide level2">
-  <h2>Command Syntax (continued)</h2>
-  <ul>
-  <li><em>Options</em>
-  <ul>
-  <li>Modifies the effects of the command</li>
-  </ul></li>
-  <li><em>Usually</em> optional in a command
-  <ul>
-  <li><code>ls</code> options?</li>
-  </ul></li>
-  <li>Options are interpreted by the program called by the command line
-  <ul>
-  <li>Proceed arguments for the command</li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="command-syntax-continued-1" class="slide level2">
-  <h2>Command Syntax (continued)</h2>
-  <ul>
-  <li>Short v Long Options
-  <ul>
-  <li><code>-h</code> - Short Options (Hyphen followed by one character)</li>
-  <li><code>--help</code> - Long Options (Two Hyphens followed by two or more chars)</li>
-  <li><em>Not a standard, depends on the program</em></li>
-  </ul></li>
-  <li>Short options can <em>usually</em> be combined
-  <ul>
-  <li><code>ls -l -a</code> and <code>ls -la</code></li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="command-syntax-continued-2" class="slide level2">
-  <h2>Command Syntax (continued)</h2>
-  <ul>
-  <li>Option commands <em>with</em> required arguments
-  <ul>
-  <li><code>gcc -o</code></li>
-  </ul></li>
-  <li>“Human-Readable” file sizes
-  <ul>
-  <li><code>ls -lh</code></li>
-  </ul></li>
-  <li><code>--</code> - Convention that indicates the end of options
-  <ul>
-  <li>File named <code>-l</code></li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="processing" class="slide level2">
-  <h2>Processing</h2>
-  <ul>
-  <li>tty device driver examines the characters entered and determines to send them to the shell.
-  <ul>
-  <li><code>CONTROL-H</code> - Character erase</li>
-  <li><code>CONTROL-U</code> - Kill a line</li>
-  <li><code>CONTROL-W</code> - Erase a word</li>
-  <li>Immediate Actions</li>
-  </ul></li>
-  <li>Non immediate actions are placed in a buffer for tty until RETURN is pressed and then handled by the shell.</li>
-  </ul>
-  </section>
-  <section id="processing-1" class="slide level2">
-  <h2>Processing</h2>
-  <ul>
-  <li>The Shell will look at the line as whole and <em>parse</em> it into various parts.
-  <ul>
-  <li>Using whitespace to separate.</li>
-  <li>The shell will start by looking for the command by filename.</li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="processing-2" class="slide level2">
-  <h2>Processing</h2>
-  <ul>
-  <li><code>ls</code></li>
-  <li><code>/bin/ls</code></li>
-  <li>Absolute and Relative Paths</li>
-  <li>Simple filenames require the shell to search a list of directories for a filename that matches.
-  <ul>
-  <li>PATH</li>
-  </ul></li>
-  <li>If found, the shell spawns a new <em>process</em> and waits for it to finish.</li>
-  </ul>
-  </section>
-  <section id="standard-input-output" class="slide level2">
-  <h2>Standard Input &amp; Output</h2>
-  <ul>
-  <li><em>Standard Output</em> - Place where the program can send information (usually text)</li>
-  <li><em>Standard Input</em> - Where information can come from (again usually text)</li>
-  <li>Program never “knows” if it’s a keyboard, printer, monitor, etc.
-  <ul>
-  <li>Programs can query the Kernel to determine if talking to a terminal (<code>isatty()</code>)</li>
-  </ul></li>
-  <li><em>Standard Error</em> - Used for error messages</li>
-  <li><code>cat</code>
-  <ul>
-  <li><em>CONTROL-D</em> - “EOF”</li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="redirection" class="slide level2">
-  <h2>Redirection</h2>
-  <ul>
-  <li><code>&gt;</code> - Standard Output
-  <ul>
-  <li><em>Can destroy a file (clobber)</em></li>
-  </ul></li>
-  <li><code>&gt;&gt;</code> - Append</li>
-  <li><code>&lt;</code> - Standard Input</li>
-  </ul>
-  </section>
-  <section id="filename-generation" class="slide level2">
-  <h2>Filename Generation</h2>
-  <ul>
-  <li><em>globbing</em>
-  <ul>
-  <li><code>*</code> - Wildcard (Zero or More Matches)</li>
-  <li><code>?</code> - Wildcard (One Character)</li>
-  <li><code>[..]</code> - Any Character within the brackets</li>
-  </ul></li>
-  <li><code>\</code>command`` - Command substitution</li>
-  <li><code>|</code> - Pipe</li>
-  <li><code>;</code> - Separate Commands</li>
-  </ul>
-  </section>
-  <section id="set" class="slide level2">
-  <h2>set</h2>
-  <ul>
-  <li>Configuration of various shell options</li>
-  <li><code>set</code>
-  <ul>
-  <li><code>-o</code> sets an option</li>
-  <li><code>+o</code> unsets</li>
-  <li><code>noclobber</code></li>
-  <li><code>ignoreeof</code></li>
-  <li><code>history</code></li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="pipelines" class="slide level2">
-  <h2>Pipelines</h2>
-  <ul>
-  <li>One or more commands separated by the pipe <code>|</code></li>
-  <li>Sends the standard output of proceeding command to the standard input of the next</li>
-  <li><code>command_a [arguments] | command_b [arguments]</code></li>
-  <li><code>command_a [arguments] &gt; temp; command_b [arguments] &lt; temp; rm temp</code></li>
-  <li><em>Filters</em>
-  <ul>
-  <li>Command that processes an input stream to processes to an output</li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="environment" class="slide level2">
-  <h2>Environment</h2>
-  <ul>
-  <li>Environment Variables
-  <ul>
-  <li><code>export</code></li>
-  <li><code>printenv</code> or <code>env</code></li>
-  </ul></li>
-  <li><em>NAME=VALUE</em> pairs</li>
-  <li><code>HOME</code></li>
-  <li><code>PATH</code></li>
-  <li><code>PS1</code></li>
-  <li><code>USER</code></li>
-  <li><code>SHELL</code></li>
-  <li><code>TERM</code></li>
-  <li><code>CDPATH</code></li>
-  </ul>
-  </section>
-  </div>
+<body>
 
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+<div class="reveal">
 
-  <script>
-  // More info about initialization & config:
-  // - https://revealjs.com/initialization/
-  // - https://revealjs.com/config/
-    Reveal.initialize({
-      controls: true,
-      progress: true,
-      history: true,
-      center: false,
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
 
-      hash: true,
+<section>
+<h1>Chapter 5: The Shell</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>02/23/2021</h4>
+</p>
+</section>  
 
-      plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
 
-    });
+<section id="unix-shells" class="slide level2">
+<h2>UNIX Shells</h2>
+<ul>
+<li>sh - Bourne Shell</li>
+<li>ksh - Korn Shell</li>
+<li><strong>bash</strong> - <em>Bourne Again Shell</em></li>
+<li>dash - Debian Almquist Shell</li>
+<li>tcsh - TC Shell</li>
+<li>zsh - Z Shell</li>
+<li><em>Most of following information will apply to bash and tcsh</em></li>
+</ul>
+</section>
+<section id="special-characters" class="slide level2">
+<h2>Special Characters</h2>
+<ul>
+<li><ul>
+<li>; | * ? ’ " ` [ ] ( ) $ &lt; &gt; { } # /  ! ~</li>
+</ul></li>
+<li>Whitespace</li>
+<li>Quoting
+<ul>
+<li><code>/</code> pathnames</li>
+</ul></li>
+<li>Backslash - <code>\</code></li>
+<li>Single Quotes - <code>' '</code>
+<ul>
+<li>Preserve the literal value of each character in the quotes</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-command-line" class="slide level2">
+<h2>The Command Line</h2>
+<ul>
+<li>Commands execute a program in response to a prompt
+<ul>
+<li><code>ls</code></li>
+</ul></li>
+<li>A <em>simple</em> command includes the command and any arguments.
+<ul>
+<li><em>Simple</em> commands can be any utility program, shell script, application program, etc.</li>
+</ul></li>
+<li><code>command arg1 [arg2] ... [argn] RETURN</code>
+<ul>
+<li>The shell will interpret this command</li>
+<li><em>Whitespace</em> is used to separate the various parts</li>
+</ul></li>
+</ul>
+</section>
+<section id="command-syntax" class="slide level2">
+<h2>Command Syntax</h2>
+<ul>
+<li>Some commands work with just the command name
+<ul>
+<li><em>meaning no arguments are required</em></li>
+</ul></li>
+<li>Others will require arguments:
+<ul>
+<li><code>mkdir</code></li>
+<li><em>Usage Message</em></li>
+<li>Optional Arguments - <code>[ ]</code></li>
+</ul></li>
+<li>Arguments are <em>tokens</em> a command acts on
+<ul>
+<li><em>token</em> or <em>word</em> - A sequence of nonblank characters</li>
+</ul></li>
+<li><code>cp temp tempcopy</code></li>
+<li>Command arguments are numbered starting at zero and include the command itself</li>
+</ul>
+</section>
+<section id="command-syntax-continued" class="slide level2">
+<h2>Command Syntax (continued)</h2>
+<ul>
+<li><em>Options</em>
+<ul>
+<li>Modifies the effects of the command</li>
+</ul></li>
+<li><em>Usually</em> optional in a command
+<ul>
+<li><code>ls</code> options?</li>
+</ul></li>
+<li>Options are interpreted by the program called by the command line
+<ul>
+<li>Proceed arguments for the command</li>
+</ul></li>
+</ul>
+</section>
+<section id="command-syntax-continued-1" class="slide level2">
+<h2>Command Syntax (continued)</h2>
+<ul>
+<li>Short v Long Options
+<ul>
+<li><code>-h</code> - Short Options (Hyphen followed by one character)</li>
+<li><code>--help</code> - Long Options (Two Hyphens followed by two or more chars)</li>
+<li><em>Not a standard, depends on the program</em></li>
+</ul></li>
+<li>Short options can <em>usually</em> be combined
+<ul>
+<li><code>ls -l -a</code> and <code>ls -la</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="command-syntax-continued-2" class="slide level2">
+<h2>Command Syntax (continued)</h2>
+<ul>
+<li>Option commands <em>with</em> required arguments
+<ul>
+<li><code>gcc -o</code></li>
+</ul></li>
+<li>“Human-Readable” file sizes
+<ul>
+<li><code>ls -lh</code></li>
+</ul></li>
+<li><code>--</code> - Convention that indicates the end of options
+<ul>
+<li>File named <code>-l</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="processing" class="slide level2">
+<h2>Processing</h2>
+<ul>
+<li>tty device driver examines the characters entered and determines to send them to the shell.
+<ul>
+<li><code>CONTROL-H</code> - Character erase</li>
+<li><code>CONTROL-U</code> - Kill a line</li>
+<li><code>CONTROL-W</code> - Erase a word</li>
+<li>Immediate Actions</li>
+</ul></li>
+<li>Non immediate actions are placed in a buffer for tty until RETURN is pressed and then handled by the shell.</li>
+</ul>
+</section>
+<section id="processing-1" class="slide level2">
+<h2>Processing</h2>
+<ul>
+<li>The Shell will look at the line as whole and <em>parse</em> it into various parts.
+<ul>
+<li>Using whitespace to separate.</li>
+<li>The shell will start by looking for the command by filename.</li>
+</ul></li>
+</ul>
+</section>
+<section id="processing-2" class="slide level2">
+<h2>Processing</h2>
+<ul>
+<li><code>ls</code></li>
+<li><code>/bin/ls</code></li>
+<li>Absolute and Relative Paths</li>
+<li>Simple filenames require the shell to search a list of directories for a filename that matches.
+<ul>
+<li>PATH</li>
+</ul></li>
+<li>If found, the shell spawns a new <em>process</em> and waits for it to finish.</li>
+</ul>
+</section>
+<section id="standard-input-output" class="slide level2">
+<h2>Standard Input &amp; Output</h2>
+<ul>
+<li><em>Standard Output</em> - Place where the program can send information (usually text)</li>
+<li><em>Standard Input</em> - Where information can come from (again usually text)</li>
+<li>Program never “knows” if it’s a keyboard, printer, monitor, etc.
+<ul>
+<li>Programs can query the Kernel to determine if talking to a terminal (<code>isatty()</code>)</li>
+</ul></li>
+<li><em>Standard Error</em> - Used for error messages</li>
+<li><code>cat</code>
+<ul>
+<li><em>CONTROL-D</em> - “EOF”</li>
+</ul></li>
+</ul>
+</section>
+<section id="redirection" class="slide level2">
+<h2>Redirection</h2>
+<ul>
+<li><code>&gt;</code> - Standard Output
+<ul>
+<li><em>Can destroy a file (clobber)</em></li>
+</ul></li>
+<li><code>&gt;&gt;</code> - Append</li>
+<li><code>&lt;</code> - Standard Input</li>
+</ul>
+</section>
+<section id="filename-generation" class="slide level2">
+<h2>Filename Generation</h2>
+<ul>
+<li><em>globbing</em>
+<ul>
+<li><code>*</code> - Wildcard (Zero or More Matches)</li>
+<li><code>?</code> - Wildcard (One Character)</li>
+<li><code>[..]</code> - Any Character within the brackets</li>
+</ul></li>
+<li><code>\</code>command`` - Command substitution</li>
+<li><code>|</code> - Pipe</li>
+<li><code>;</code> - Separate Commands</li>
+</ul>
+</section>
+<section id="set" class="slide level2">
+<h2>set</h2>
+<ul>
+<li>Configuration of various shell options</li>
+<li><code>set</code>
+<ul>
+<li><code>-o</code> sets an option</li>
+<li><code>+o</code> unsets</li>
+<li><code>noclobber</code></li>
+<li><code>ignoreeof</code></li>
+<li><code>history</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="pipelines" class="slide level2">
+<h2>Pipelines</h2>
+<ul>
+<li>One or more commands separated by the pipe <code>|</code></li>
+<li>Sends the standard output of proceeding command to the standard input of the next</li>
+<li><code>command_a [arguments] | command_b [arguments]</code></li>
+<li><code>command_a [arguments] &gt; temp; command_b [arguments] &lt; temp; rm temp</code></li>
+<li><em>Filters</em>
+<ul>
+<li>Command that processes an input stream to processes to an output</li>
+</ul></li>
+</ul>
+</section>
+<section id="environment" class="slide level2">
+<h2>Environment</h2>
+<ul>
+<li>Environment Variables
+<ul>
+<li><code>export</code></li>
+<li><code>printenv</code> or <code>env</code></li>
+</ul></li>
+<li><em>NAME=VALUE</em> pairs</li>
+<li><code>HOME</code></li>
+<li><code>PATH</code></li>
+<li><code>PS1</code></li>
+<li><code>USER</code></li>
+<li><code>SHELL</code></li>
+<li><code>TERM</code></li>
+<li><code>CDPATH</code></li>
+</ul>
+</section>
+</div>
 
-  </script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
 
-  </body>
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    //plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+    plugins: [ RevealMarkdown, PdfExport ]
+  });
+
+</script>
+
+</body>
 </html>

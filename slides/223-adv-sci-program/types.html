@@ -1,250 +1,250 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
 
-  <title>Python Data Types</title>
+<title>Python Data Types</title>
 
-  <meta name="description" content="Python Data Types">    
+<meta name="description" content="Python Data Types">    
 
-      <meta name="author" content="Patrick Earl" />
-  
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="author" content="Patrick Earl" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-  <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
-   -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
-  
+<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+ -->
 
-  <!-- For syntax highlighting -->
-  <!--     <link rel="stylesheet" href="/share/revealjs/plugin/highlight/zenburn.css">
-   -->
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
 
-  <!-- For syntax highlighting -->
-      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
-  
 
-  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
-  <!-- <script>
-    document.write( '<link rel="stylesheet" href="css/print/' +
-      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
-      '.css" type="text/css" media="print">' );
-  </script> -->
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
+ -->
 
-  <!--[if lt IE 9]>
-  <script src="lib/js/html5shiv.js"></script>
-  <![endif]-->
-    </head>
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
 
-  <body>
-  
-  <div class="reveal">
 
-  <!-- Any section element inside of this container is displayed as a slide -->
-  <div class="slides">
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
 
-  <section>
-  <h1>Python Data Types</h1>
-  <h3>Patrick Earl</h3>
-  <p>
-  <h4>01/24/2021</h4>
-  </p>
-  </section>  
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
 
-  
-  <section id="python-simple-types" class="slide level2">
-  <h2>Python Simple Types</h2>
-  <ul>
-  <li><em>Scalar</em> types - One Dimensional</li>
-  <li><em>int</em> - <code>x = 1</code></li>
-  <li><em>float</em> - <code>x = 1.2</code></li>
-  <li><em>complex</em> - <code>x = 1 + 2j</code></li>
-  <li><em>bool</em> - <code>x = True</code></li>
-  <li><em>str</em> - <code>x = 'abc'</code></li>
-  <li><em>NoneType</em> - <code>x = None</code></li>
-  </ul>
-  </section>
-  <section id="integers" class="slide level2">
-  <h2>Integers</h2>
-  <ul>
-  <li>Basic Numerical Type</li>
-  <li>Numbers without decimal points</li>
-  <li>Can handle larger numbers than typical languages
-  <ul>
-  <li><code>2 ** 200</code></li>
-  </ul></li>
-  <li>Division up-casts to floating point</li>
-  </ul>
-  </section>
-  <section id="floating-point" class="slide level2">
-  <h2>Floating-Point</h2>
-  <ul>
-  <li>Used to store fractional numbers</li>
-  <li>Can be defined in two ways:
-  <ul>
-  <li>Standard: <code>x = 0.0000005</code></li>
-  <li>Exponential Notation: <code>y = 5e-6</code></li>
-  </ul></li>
-  <li><em>Precision</em></li>
-  </ul>
-  </section>
-  <section id="complex-numbers" class="slide level2">
-  <h2>Complex Numbers</h2>
-  <ul>
-  <li><code>complex(1, 2)</code></li>
-  </ul>
-  </section>
-  <section id="string-type" class="slide level2">
-  <h2>String Type</h2>
-  <ul>
-  <li>Strings are created with single or double quotes</li>
-  <li>Useful methods:
-  <ul>
-  <li><code>len()</code></li>
-  <li><code>.upper()</code></li>
-  <li><code>.capitalize()</code></li>
-  <li><code>'test string' + 's'</code> - <strong><em>concatenation</em></strong></li>
-  <li><code>"test" * 5</code> - <strong><em>concatenation</em></strong> by multiplication</li>
-  <li><code>message = 'hello'; message[0]</code></li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="nonetype" class="slide level2">
-  <h2>NoneType</h2>
-  <ul>
-  <li>Default function return</li>
-  <li>Only one type of value <code>None</code></li>
-  </ul>
-  </section>
-  <section id="boolean-type" class="slide level2">
-  <h2>Boolean Type</h2>
-  <ul>
-  <li>Two Values: <code>True</code> or <code>False</code></li>
-  <li><em>case-sensitive</em></li>
-  </ul>
-  </section>
-  <section id="data-structures" class="slide level2">
-  <h2>Data Structures</h2>
-  <ul>
-  <li>Python has built-in compound types</li>
-  <li>Lists</li>
-  <li>Tuples</li>
-  <li>Dictionaries</li>
-  <li>Sets</li>
-  </ul>
-  </section>
-  <section id="lists" class="slide level2">
-  <h2>Lists</h2>
-  <ul>
-  <li>Basic ordered and mutable data collection</li>
-  <li><code>l = [1, 2, 3, 4]</code></li>
-  <li>Useful methods, properties:
-  <ul>
-  <li><code>len()</code></li>
-  <li><code>.append()</code></li>
-  <li>Concatenation - <code>+</code></li>
-  <li><code>.sort()</code></li>
-  </ul></li>
-  <li>Python lists can contain objects of any type</li>
-  </ul>
-  </section>
-  <section id="list-indexing" class="slide level2">
-  <h2>List Indexing</h2>
-  <ul>
-  <li>Access a single element through <em>indexing</em></li>
-  <li><code>l = [2, 3, 5, 7, 11]</code></li>
-  <li>Zero-Based indexing</li>
-  <li>Negative Indexing</li>
-  </ul>
-  </section>
-  <section id="list-slicing" class="slide level2">
-  <h2>List Slicing</h2>
-  <ul>
-  <li>Slicing allows for accessing multiple values in a sub-list</li>
-  <li>Inclusive start point, Non-inclusive end point</li>
-  <li><code>l[0:3]</code></li>
-  <li><code>l[:3]; l[3:]</code></li>
-  <li><code>l[::2]</code></li>
-  <li><code>l[1:3] = [55, 66]</code></li>
-  </ul>
-  </section>
-  <section id="tuples" class="slide level2">
-  <h2>Tuples</h2>
-  <ul>
-  <li>Similar to lists, but <em>immutable</em></li>
-  <li>Once created, size and contents cannot be changed</li>
-  </ul>
-  </section>
-  <section id="dictionaries" class="slide level2">
-  <h2>Dictionaries</h2>
-  <ul>
-  <li>Key:Value pairs</li>
-  <li><code>numbers = {'one':1, 'two':2}</code></li>
-  <li>Access via key in dictionary
-  <ul>
-  <li><code>numbers['two']</code></li>
-  </ul></li>
-  <li>Add via Indexing</li>
-  </ul>
-  </section>
-  <section id="sets" class="slide level2">
-  <h2>Sets</h2>
-  <ul>
-  <li>Unordered Collections of Unique Items</li>
-  <li>Defined using brackets
-  <ul>
-  <li><code>evens = {2, 4, 6, 8, 10}</code></li>
-  <li><code>odds = {1, 3, 5, 7, 9}</code></li>
-  </ul></li>
-  <li>Operations
-  <ul>
-  <li>Union <code>|</code> - Items appearing in either</li>
-  <li>Intersection: <code>&amp;</code> - Items appearing in both</li>
-  <li>Difference: <code>-</code> - Items in left, not right</li>
-  <li>Symmetric Difference <code>^</code> - Items only appearing in one set</li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="multidimensional-lists" class="slide level2">
-  <h2>Multidimensional Lists</h2>
-  <ul>
-  <li>Python supports 2D, 3D, etc. lists</li>
-  <li>List in a List</li>
-  <li>Type Mixing</li>
-  </ul>
-  </section>
-  </div>
+<body>
 
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+<div class="reveal">
 
-  <script>
-  // More info about initialization & config:
-  // - https://revealjs.com/initialization/
-  // - https://revealjs.com/config/
-    Reveal.initialize({
-      controls: true,
-      progress: true,
-      history: true,
-      center: false,
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
 
-      hash: true,
+<section>
+<h1>Python Data Types</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>01/24/2021</h4>
+</p>
+</section>  
 
-      plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
 
-    });
+<section id="python-simple-types" class="slide level2">
+<h2>Python Simple Types</h2>
+<ul>
+<li><em>Scalar</em> types - One Dimensional</li>
+<li><em>int</em> - <code>x = 1</code></li>
+<li><em>float</em> - <code>x = 1.2</code></li>
+<li><em>complex</em> - <code>x = 1 + 2j</code></li>
+<li><em>bool</em> - <code>x = True</code></li>
+<li><em>str</em> - <code>x = 'abc'</code></li>
+<li><em>NoneType</em> - <code>x = None</code></li>
+</ul>
+</section>
+<section id="integers" class="slide level2">
+<h2>Integers</h2>
+<ul>
+<li>Basic Numerical Type</li>
+<li>Numbers without decimal points</li>
+<li>Can handle larger numbers than typical languages
+<ul>
+<li><code>2 ** 200</code></li>
+</ul></li>
+<li>Division up-casts to floating point</li>
+</ul>
+</section>
+<section id="floating-point" class="slide level2">
+<h2>Floating-Point</h2>
+<ul>
+<li>Used to store fractional numbers</li>
+<li>Can be defined in two ways:
+<ul>
+<li>Standard: <code>x = 0.0000005</code></li>
+<li>Exponential Notation: <code>y = 5e-6</code></li>
+</ul></li>
+<li><em>Precision</em></li>
+</ul>
+</section>
+<section id="complex-numbers" class="slide level2">
+<h2>Complex Numbers</h2>
+<ul>
+<li><code>complex(1, 2)</code></li>
+</ul>
+</section>
+<section id="string-type" class="slide level2">
+<h2>String Type</h2>
+<ul>
+<li>Strings are created with single or double quotes</li>
+<li>Useful methods:
+<ul>
+<li><code>len()</code></li>
+<li><code>.upper()</code></li>
+<li><code>.capitalize()</code></li>
+<li><code>'test string' + 's'</code> - <strong><em>concatenation</em></strong></li>
+<li><code>"test" * 5</code> - <strong><em>concatenation</em></strong> by multiplication</li>
+<li><code>message = 'hello'; message[0]</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="nonetype" class="slide level2">
+<h2>NoneType</h2>
+<ul>
+<li>Default function return</li>
+<li>Only one type of value <code>None</code></li>
+</ul>
+</section>
+<section id="boolean-type" class="slide level2">
+<h2>Boolean Type</h2>
+<ul>
+<li>Two Values: <code>True</code> or <code>False</code></li>
+<li><em>case-sensitive</em></li>
+</ul>
+</section>
+<section id="data-structures" class="slide level2">
+<h2>Data Structures</h2>
+<ul>
+<li>Python has built-in compound types</li>
+<li>Lists</li>
+<li>Tuples</li>
+<li>Dictionaries</li>
+<li>Sets</li>
+</ul>
+</section>
+<section id="lists" class="slide level2">
+<h2>Lists</h2>
+<ul>
+<li>Basic ordered and mutable data collection</li>
+<li><code>l = [1, 2, 3, 4]</code></li>
+<li>Useful methods, properties:
+<ul>
+<li><code>len()</code></li>
+<li><code>.append()</code></li>
+<li>Concatenation - <code>+</code></li>
+<li><code>.sort()</code></li>
+</ul></li>
+<li>Python lists can contain objects of any type</li>
+</ul>
+</section>
+<section id="list-indexing" class="slide level2">
+<h2>List Indexing</h2>
+<ul>
+<li>Access a single element through <em>indexing</em></li>
+<li><code>l = [2, 3, 5, 7, 11]</code></li>
+<li>Zero-Based indexing</li>
+<li>Negative Indexing</li>
+</ul>
+</section>
+<section id="list-slicing" class="slide level2">
+<h2>List Slicing</h2>
+<ul>
+<li>Slicing allows for accessing multiple values in a sub-list</li>
+<li>Inclusive start point, Non-inclusive end point</li>
+<li><code>l[0:3]</code></li>
+<li><code>l[:3]; l[3:]</code></li>
+<li><code>l[::2]</code></li>
+<li><code>l[1:3] = [55, 66]</code></li>
+</ul>
+</section>
+<section id="tuples" class="slide level2">
+<h2>Tuples</h2>
+<ul>
+<li>Similar to lists, but <em>immutable</em></li>
+<li>Once created, size and contents cannot be changed</li>
+</ul>
+</section>
+<section id="dictionaries" class="slide level2">
+<h2>Dictionaries</h2>
+<ul>
+<li>Key:Value pairs</li>
+<li><code>numbers = {'one':1, 'two':2}</code></li>
+<li>Access via key in dictionary
+<ul>
+<li><code>numbers['two']</code></li>
+</ul></li>
+<li>Add via Indexing</li>
+</ul>
+</section>
+<section id="sets" class="slide level2">
+<h2>Sets</h2>
+<ul>
+<li>Unordered Collections of Unique Items</li>
+<li>Defined using brackets
+<ul>
+<li><code>evens = {2, 4, 6, 8, 10}</code></li>
+<li><code>odds = {1, 3, 5, 7, 9}</code></li>
+</ul></li>
+<li>Operations
+<ul>
+<li>Union <code>|</code> - Items appearing in either</li>
+<li>Intersection: <code>&amp;</code> - Items appearing in both</li>
+<li>Difference: <code>-</code> - Items in left, not right</li>
+<li>Symmetric Difference <code>^</code> - Items only appearing in one set</li>
+</ul></li>
+</ul>
+</section>
+<section id="multidimensional-lists" class="slide level2">
+<h2>Multidimensional Lists</h2>
+<ul>
+<li>Python supports 2D, 3D, etc. lists</li>
+<li>List in a List</li>
+<li>Type Mixing</li>
+</ul>
+</section>
+</div>
 
-  </script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
 
-  </body>
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    //plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+    plugins: [ RevealMarkdown, PdfExport ]
+  });
+
+</script>
+
+</body>
 </html>
