@@ -1,6 +1,4 @@
-title: Project 2
-
-## Project 3
+title: Project 3
 
 **Due:**
 : July 30th, 2021
