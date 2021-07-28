@@ -1,4 +1,4 @@
-## Program \#1
+title: Program 1
 
 **Due:**
 : Friday 09/17
@@ -10,17 +10,16 @@
 
 ## Description
 
-Program \#1 -- Introduction (Monthly Sales Tax)
-
+**Program \#1 -- Introduction (Monthly Sales Tax)**
 
 A retail company must file a monthly sales tax report listing the sales
 for the month and the amount of sales tax collected. Write a program
 that asks for the month, the year, and the total amount collected at the
 cash register (that is, product sales plus sales tax). The sales tax is
-split between the state and the county. Assume state sales tax is 5
-percent and the county sales tax is 1.5 percent.
+split between the state and the county. Assume state sales tax is 4
+percent and the county sales tax is 2 percent.
 
-If the total amount collected is known and the total sales tax is 5.5
+If the total amount collected is known and the total sales tax is 6
 percent, the amount of product sales is calculated using the formula:
 
 $S = T/1.06$
@@ -30,10 +29,9 @@ where S is the product sales and T is the total income (product sales plus sales
 The program should display a report similar to
 
 Month: October
-
 Year: 2008
 
-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
+\-\-\-\-\-\-\-\-\-\-\-\-\-
 
 Total Collected: \$ 26572.89
 
@@ -45,10 +43,6 @@ State Sales Tax: \$ 1002.75
 
 Total Sales Tax: \$ 1504.13
 
-When you run the program to hand in, use the following data:
+## Submission
 
-Month: September
-
-Year: 2008
-
-Total Collected: \$32905.65
+TBD

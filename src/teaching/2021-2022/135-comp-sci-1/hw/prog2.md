@@ -1,4 +1,4 @@
-## Program \#2
+title: Program 2
 
 **Due:**
 : Friday 09/24
@@ -7,21 +7,18 @@
 : Analyze a program's requirements.
 : Effectively use C++ control structures like if and switch statements.
 
-### Description
+## Description
 
-Program \#2 -- Selection (Internet Service Provider)
-
+**Program \#2 -- Selection (Internet Service Provider)**
 
 An internet service provider has three different subscription packages
 for its customer:
 
-Package A: For \$30.95 per month 15 GB of data is provided.
-Additional gigabytes are \$2.00 each.
-
-Package B: For \$40.95 per month 25 hours of access are provided.
-Additional gigabytes are \$1.00 each.
-
-Package C: For \$69.99 per month unlimited access is provided.
+* **Package A:** For \$30.95 per month 15 GB of data is provided.
+    * Additional gigabytes are \$2.00 each.
+* **Package B:** For \$40.95 per month 25 hours of access are provided.
+    * Additional gigabytes are \$1.00 each.
+* **Package C:** For \$69.99 per month unlimited access is provided.
 
 Write a program that calculates a customer's monthly bill. The program
 should ask for the package the customer has purchased. It should accept
@@ -33,30 +30,5 @@ the customer showing the package, gigabytes and total due.
 The program MUST contains at least one if statement and at least one
 switch statement.
 
-When producing the typescript to hand in, run the program four different
-times using the following input:
-
-A 100
-
-B 100
-
-C
-
-D
-
-When creating a typescript where you run the program more than once you
-should do
-
-script
-
-cat \<program\>
-
-g++ \< program\>
-
-./a.out
-
-./a.out
-
-./a.out
-
-Ctrl-D
+## Submission
+TBD

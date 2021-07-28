@@ -27,9 +27,7 @@ stylesheet: ../../course.css
     <tbody>
         <tr>
             <td>
-                Course Introduction (FDH)<br>
-                Overview of Computers and Programming<br>
-                Linux & Nano
+                Overview of Computers and Programming
             </td>
             <td>
                 Chapter 1
@@ -72,6 +70,14 @@ stylesheet: ../../course.css
             </td>
             <td>
                 Chapter 5
+            </td>
+        </tr>
+        <tr>
+            <td>
+                File Input/Output
+            </td>
+            <td>
+                Chapter 3 Section 8
             </td>
         </tr>
         <tr>
