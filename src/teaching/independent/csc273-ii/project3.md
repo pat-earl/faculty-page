@@ -22,6 +22,7 @@ to sign in.
 Refer to this tutorial while working on the assignment:
 
 Part 1: <https://www.intricatecloud.io/2019/07/adding-google-sign-in-to-your-webapp-pt-1/>
+
 Part 2: <https://www.intricatecloud.io/2019/07/adding-google-sign-in-to-your-webapp-using-the-js-library/>
 
 ### Submission
