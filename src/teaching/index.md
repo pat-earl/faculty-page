@@ -6,11 +6,6 @@ title: Courses
 
 {{ md_current_courses_long() }}
 
-## Independent Studies/Individualized Instructions
-
-* [Summer 2021: CSC123](https://csit.kutztown.edu/~earl/archive/SP2020/CSC123/) 
-* [Summer 2021: CSC273]({{get_link('./independent/csc273.md')}})
-
 ## {{secs.previous_courses}}
 
 Courses previously taught at KU (Some may not have links)
@@ -30,4 +25,5 @@ Courses previously taught at KU (Some may not have links)
 #### Previous IS/IIs
 
 * [Spring 2021 Networking IS](./independent/networking.html) (Archived)
+* [Summer 2021: CSC273]({{get_link('./independent/csc273.md')}}) (Archived)
 
