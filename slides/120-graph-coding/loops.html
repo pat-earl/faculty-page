@@ -1,190 +1,190 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
 
-  <title>Loops</title>
+<title>Loops</title>
 
-  <meta name="description" content="Loops">    
+<meta name="description" content="Loops">    
 
-      <meta name="author" content="Patrick Earl" />
-  
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="author" content="Patrick Earl" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-  <!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
-   -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
-      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
-  
+<!-- <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
+ -->
 
-  <!-- For syntax highlighting -->
-  <!--     <link rel="stylesheet" href="/share/revealjs/plugin/highlight/zenburn.css">
-   -->
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/theme/simple.css" id="theme">
 
-  <!-- For syntax highlighting -->
-      <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
-  
 
-  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
-  <!-- <script>
-    document.write( '<link rel="stylesheet" href="css/print/' +
-      ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
-      '.css" type="text/css" media="print">' );
-  </script> -->
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/share/revealjs/plugin/highlight/zenburn.css">
+ -->
 
-  <!--[if lt IE 9]>
-  <script src="lib/js/html5shiv.js"></script>
-  <![endif]-->
-    </head>
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/default.css">
 
-  <body>
-  
-  <div class="reveal">
 
-  <!-- Any section element inside of this container is displayed as a slide -->
-  <div class="slides">
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
 
-  <section>
-  <h1>Loops</h1>
-  <h3>Patrick Earl</h3>
-  <p>
-  <h4>02/16/2021</h4>
-  </p>
-  </section>  
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
 
-  
-  <section id="repeating-of-code" class="slide level2">
-  <h2>Repeating of code</h2>
-  <ul>
-  <li><em>Iteration</em> - Repeating a set of rules (or steps) over and over (…and over)</li>
-  <li>Drawing lots of “legs”
-  <ul>
-  <li><strong>Example 6-1</strong></li>
-  <li><strong>Example 6-2</strong></li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="control-structures---loops" class="slide level2">
-  <h2>Control Structures - Loops</h2>
-  <ul>
-  <li>Similar to conditionals
-  <ul>
-  <li>“yes or no question” to determine how many times</li>
-  </ul></li>
-  <li>Loop Types
-  <ul>
-  <li><strong>while</strong></li>
-  <li>do-while</li>
-  <li>for</li>
-  </ul></li>
-  </ul>
-  </section>
-  <section id="while-loops" class="slide level2">
-  <h2>While loops</h2>
-  <ul>
-  <li>A conditional test
-  <ul>
-  <li>As long as the test evaluates to <em>True</em> continue the loop</li>
-  </ul></li>
-  <li><strong>Example 6-3</strong></li>
-  </ul>
-  </section>
-  <section id="infinite-loops" class="slide level2">
-  <h2>Infinite Loops</h2>
-  <ul>
-  <li>“exit” condition</li>
-  <li>Infinite Loops
-  <ul>
-  <li>The “exit” condition can never be meant</li>
-  </ul></li>
-  <li><strong>Example 6-4</strong></li>
-  <li><strong>Example 6-5</strong></li>
-  </ul>
-  </section>
-  <section id="for-loops" class="slide level2">
-  <h2>For Loops</h2>
-  <ul>
-  <li>Initialization, Boolean Test, Iteration Expression</li>
-  <li><strong>Example 6-6</strong></li>
-  </ul>
-  </section>
-  <section id="variable-scope" class="slide level2">
-  <h2>Variable Scope</h2>
-  <ul>
-  <li>Global v Local Scope</li>
-  <li><em>Local</em> variables are only available to that code block</li>
-  </ul>
-  </section>
-  <section id="variable-scope-1" class="slide level2">
-  <h2>Variable Scope</h2>
-  <pre><code>int num = 0;
-  int display_width = 200;
-  int display_height = 200;
+<body>
 
-  void setup() {
-      size(display_width, display_height);
-      num = num + 1;
-      // This isn&#39;t &quot;local&quot; to the setup block of code.
-      num2 = 2;
-  }
+<div class="reveal">
 
-  void draw() {
-      int num2 = 0;
-      ...
-      // More code here
-      ...
-  }</code></pre>
-  <ul>
-  <li><strong>Example 6-7</strong></li>
-  <li>Exercise 6-4</li>
-  </ul>
-  </section>
-  <section id="loop-in-draw" class="slide level2">
-  <h2>Loop in draw()</h2>
-  <ul>
-  <li>The display isn’t updated until the end of <em>draw()</em></li>
-  <li><strong>Example 6-8</strong></li>
-  <li><strong>Example 6-9</strong></li>
-  </ul>
-  </section>
-  <section id="zoog-w-loops" class="slide level2">
-  <h2>Zoog w/ Loops</h2>
-  <ul>
-  <li><strong>Example 6-10</strong></li>
-  <li><strong>Example 6-11</strong></li>
-  </ul>
-  </section>
-  </div>
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
 
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
-  <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+<section>
+<h1>Loops</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>02/16/2021</h4>
+</p>
+</section>  
 
-  <script>
-  // More info about initialization & config:
-  // - https://revealjs.com/initialization/
-  // - https://revealjs.com/config/
-    Reveal.initialize({
-      controls: true,
-      progress: true,
-      history: true,
-      center: false,
 
-      hash: true,
+<section id="repeating-of-code" class="slide level2">
+<h2>Repeating of code</h2>
+<ul>
+<li><em>Iteration</em> - Repeating a set of rules (or steps) over and over (…and over)</li>
+<li>Drawing lots of “legs”
+<ul>
+<li><strong>Example 6-1</strong></li>
+<li><strong>Example 6-2</strong></li>
+</ul></li>
+</ul>
+</section>
+<section id="control-structures---loops" class="slide level2">
+<h2>Control Structures - Loops</h2>
+<ul>
+<li>Similar to conditionals
+<ul>
+<li>“yes or no question” to determine how many times</li>
+</ul></li>
+<li>Loop Types
+<ul>
+<li><strong>while</strong></li>
+<li>do-while</li>
+<li>for</li>
+</ul></li>
+</ul>
+</section>
+<section id="while-loops" class="slide level2">
+<h2>While loops</h2>
+<ul>
+<li>A conditional test
+<ul>
+<li>As long as the test evaluates to <em>True</em> continue the loop</li>
+</ul></li>
+<li><strong>Example 6-3</strong></li>
+</ul>
+</section>
+<section id="infinite-loops" class="slide level2">
+<h2>Infinite Loops</h2>
+<ul>
+<li>“exit” condition</li>
+<li>Infinite Loops
+<ul>
+<li>The “exit” condition can never be meant</li>
+</ul></li>
+<li><strong>Example 6-4</strong></li>
+<li><strong>Example 6-5</strong></li>
+</ul>
+</section>
+<section id="for-loops" class="slide level2">
+<h2>For Loops</h2>
+<ul>
+<li>Initialization, Boolean Test, Iteration Expression</li>
+<li><strong>Example 6-6</strong></li>
+</ul>
+</section>
+<section id="variable-scope" class="slide level2">
+<h2>Variable Scope</h2>
+<ul>
+<li>Global v Local Scope</li>
+<li><em>Local</em> variables are only available to that code block</li>
+</ul>
+</section>
+<section id="variable-scope-1" class="slide level2">
+<h2>Variable Scope</h2>
+<pre><code>int num = 0;
+int display_width = 200;
+int display_height = 200;
 
-      plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+void setup() {
+    size(display_width, display_height);
+    num = num + 1;
+    // This isn&#39;t &quot;local&quot; to the setup block of code.
+    num2 = 2;
+}
 
-    });
+void draw() {
+    int num2 = 0;
+    ...
+    // More code here
+    ...
+}</code></pre>
+<ul>
+<li><strong>Example 6-7</strong></li>
+<li>Exercise 6-4</li>
+</ul>
+</section>
+<section id="loop-in-draw" class="slide level2">
+<h2>Loop in draw()</h2>
+<ul>
+<li>The display isn’t updated until the end of <em>draw()</em></li>
+<li><strong>Example 6-8</strong></li>
+<li><strong>Example 6-9</strong></li>
+</ul>
+</section>
+<section id="zoog-w-loops" class="slide level2">
+<h2>Zoog w/ Loops</h2>
+<ul>
+<li><strong>Example 6-10</strong></li>
+<li><strong>Example 6-11</strong></li>
+</ul>
+</section>
+</div>
 
-  </script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://csit.kutztown.edu/~earl/s/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
 
-  </body>
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    //plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+    plugins: [ RevealMarkdown, PdfExport ]
+  });
+
+</script>
+
+</body>
 </html>
