@@ -48,9 +48,6 @@ Always refer to my website for the latest office hours.
 **NOTE**: This book is part of KU Bookstore's inclusive access, the book will be charged to your tuition bill. 
 You may opt-out of this program, read more here: <https://kubstore.com/inclusive-access>
 
-## Description
-
-
 ## Learning Objectives
 
 1. Analyze scientific problems
@@ -77,16 +74,14 @@ Your final course grade will be made up of the following:
 The standard [University Grading Policy](http://app.kutztown.edu/policyregister/Policy/ACA-048) will 
 be used to calculate your final letter grade. 
 
-*NOTE: Even though the university uses the 4.0 GPA scale in it's policy, 
-grades will be displayed and reported on a typical 100 point scale.*
-
 **Class Participation:**
 : Grade is based off regular class attendance and participation in discussions.
 
-**Exams/Quizzes:**
+**Exams:**
 
-: Exams and Quizzes times will be announced during class and must be taken during their scheduled time/location. Students who are unable to take the exam or quiz at the scheduled time for university approved reasons, **must do their best to contact the instructor beforehand**. 
-Missed exams/quizzes will be handled on a case-by-case basis. For a list of approved reasons review the *Class Absence* section from the [Class Attendance](http://app.kutztown.edu/policyregister/Policy/ACA-016) University policy. 
+: There will be two exams in addition to the final exam throughout the semester. Exams will be announced ahead of time during class. The Final Exam will be held the Saturday before Finals Week. More information will be given towards 
+the end of the semester.
+: Missed exams/quizzes will be handled on a case-by-case basis. For a list of approved reasons review the *Class Absence* section from the [Class Attendance](http://app.kutztown.edu/policyregister/Policy/ACA-016) University policy. 
 
 **Homework (Assignments/Projects):**
 : This policy is adopted from this [first day handout](https://csit.kutztown.edu/~schwesin/fall20/csc223/syllabus.html).
@@ -110,6 +105,13 @@ receive full credit for the assignment and automatically spend one grace day.
 
 
 # Course Policies
+
+**Masks:**
+: You will be required to wear a mask properly while in the classroom and inside my office following CDC guidance. 
+According to CDC guidelines, masks should be worn inside with counties that have high or substantial transmission rates. 
+Failure to follow this policy after verbal warning will lead to a report being filled with the student conduct board. 
+Disposable masks will be available in the department office. Cloth masks and other PPE can be requested by emailing
+<ppe@kutztown.edu>.
 
 **Attendance:**
 : Regular class attendance and participation is expected and highly encouraged. Students will be responsible for materials covered during class time. 
