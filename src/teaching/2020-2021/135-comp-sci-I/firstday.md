@@ -43,6 +43,10 @@ Always refer to my website for the latest office hours.
 
 ### Required Textbooks
 
+*C++ Programming: From Problem Analysis to Program Design* D.S. Malik, Cengage Learning, 2018, 8th Edition.
+
+**NOTE**: This book is part of KU Bookstore's inclusive access, the book will be charged to your tuition bill. 
+You may opt-out of this program, read more here: <https://kubstore.com/inclusive-access>
 
 ## Description
 
