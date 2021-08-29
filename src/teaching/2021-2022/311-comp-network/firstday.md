@@ -34,40 +34,46 @@ title: First Day Handout
 Always refer to my website for the latest office hours.
 
 **Meetings:** 
-: Mon/Wed/Fri 2:00PM - 2:50PM, OM159
+: Section 10: MWF 10:00AM - 10:50AM, GR307
+: Section 20: MWF 11:00AM - 11:50AM, GR307
 
 **Format:** 
 : In-Person
 
 ## Materials
 
-### Required Textbooks
+### Required Textbook
 
+*Computer Networking: A Top-Down Approach*, James F. Kurose, Keith Ross, 7E. Pearson
 
+You may also use the 6th or 8th editions of this textbook. 
+
+**NOTE**: This book is part of KU Bookstore's inclusive access, the book will be charged to your tuition bill. 
+You may opt-out of this program, read more here: <https://kubstore.com/inclusive-access>
 
 ## Description
 
+Computer networks have become ubiquitous in our society. In depth understanding of their workings is an important part of the foundation of knowledge not only for a computer science student who intends to incorporate networking in their scholastic or professional endeavors, but for anyone working in the discipline, as networking concepts are applicable in many areas inside and outside the discipline. The students will learn the terminology and implementation of computer networks, and the physical components of networks, including cabling and devices, as well as how these components work. Several application layer protocols will also be studied, including HTTP, E-mail, DNS and DHCP. 
 
 ## Learning Objectives
 
-1. Analyze scientific problems
-1. Design and implement high level programs in scientific arena.
-1. Explain scientific data manipulation techniques.
-1. Employ data analysis effectively in the scientific arena.
-1. Employ simulation effectively in the scientific arena.
-1. Explain the process and problems of casual inference.
-1. Choose and employ specialized scientific programming libraries.
+1. Demonstrate an understanding of various hardware used to permit networks to communicate, , such as hubs, switches, access points, and routers.
+2. Summarize the layers of the OSI and Internet architecture stacks.
+3. Describe how several common application-layer protocols work, such as HTTP, FTP SMTP and DNS.
+4. Summarize the workings of the two primary transport-layer protocols, TCP and UDP.
+5. Summarize the network-layer functionality, including IP, the primary protocol for that layer
+6. Employ various network tools to observe the behavior of networks.
 
 ## Course Prerequisites
 
-None
+(CSC237 or CSC253) AND Junior Status
 
 ## Grading 
 
 Your final course grade will be made up of the following:
 
-* Assignments/Projects: 50%
-* Exams: 30%
+* Assignments: 50%
+* Exams (2): 30%
 * Final Exam: 15%
 * Class Participation: 5%
 
@@ -82,8 +88,8 @@ grades will be displayed and reported on a typical 100 point scale.*
 
 **Exams/Quizzes:**
 
-: Exams and Quizzes times will be announced during class and must be taken during their scheduled time/location. Students who are unable to take the exam or quiz at the scheduled time for university approved reasons, **must do their best to contact the instructor beforehand**. 
-Missed exams/quizzes will be handled on a case-by-case basis. For a list of approved reasons review the *Class Absence* section from the [Class Attendance](http://app.kutztown.edu/policyregister/Policy/ACA-016) University policy. 
+: Exams will be announced during class and must be taken during their scheduled time/location.
+: Missed exams/quizzes will be handled on a case-by-case basis. For a list of approved reasons review the *Class Absence* section from the [Class Attendance](http://app.kutztown.edu/policyregister/Policy/ACA-016) University policy. 
 
 **Homework (Assignments/Projects):**
 : This policy is adopted from this [first day handout](https://csit.kutztown.edu/~schwesin/fall20/csc223/syllabus.html).
@@ -108,98 +114,28 @@ receive full credit for the assignment and automatically spend one grace day.
 
 # Course Policies
 
+**Masks:**
+: Due to the continuing pandemic and spread of the COVID delta variant, you will be required
+to properly wear masks while attending class and in my office regardless of your vaccination status. 
+Students who show up to class without a mask will be asked to put one on, 
+go to the department's office in OM254 to get a disposable one, or leave class.
+
+: Students who break this policy on multiple occasions will be reported to the Student Conduct Board. 
+
+: This policy will be in effect while Berks County has a high or substantial transmission rate and/or
+based on University mandates. 
+
+: CDC County Level Map: <https://covid.cdc.gov/covid-data-tracker/#county-view>
+
+: Reusable cloth masks and other PPE can be requested by emailing <ppesupplies@kutztown.edu>
+
 **Attendance:**
-: Regular class attendance and participation is expected and highly encouraged. Students will be responsible for materials covered during class time. 
+: Regular and timely class attendance is expected and highly encouraged. Students are responsible for materials covered during class time. 
 
 **Academic Dishonesty:**  
-
-: You should be aware of the 
-[Computer Science & Information Technology Department's Academic Integrity Policy](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/AcademicIntegrityPolicy.pdf)
-and the [University's Academic Dishonesty Policy](https://app.kutztown.edu/policyregister/policy.aspx?policy=ACA-027)
-
-: The rest of this policy is adapted from these two syllabi: [1](https://csit.kutztown.edu/~schwesin/fall20/csc223/syllabus.html)
-and [2](https://www.cs.cmu.edu/afs/cs/academic/class/15213-f19/www/syllabus/syllabus.pdf). 
-This policy is based on the following beliefs:
-
-* Developing programs from scratch, or with limited starting code, requires using design
-principles and logical thinking that are much deeper than what can be obtained by copying
-and modifying an existing implementation. Making use of unauthorized sources diminishes the 
-educational value of an assignment. 
-* Although teamwork and collaboration are important real-world skills, it is important to first gain
-the core competencies that enable individuals to serve as effective team members. This course is
-designed to to teach and assess these core competencies. Unauthorized collaboration diminishes the 
-educational experience and the reliability of assessments. 
-  
-: Based on these principles, here are guidelines on what forms of resource use, resource sharing,
-and collaboration are permitted in this course. 
-
-: **Exams:** Each exam must be the sole work of the student taking it. No collaboration of any form
-is allowed on exams. Students may not discuss any aspect of any exam question with someone who
-has not yet taken the exam.
-
-: **Assignments and Information Sources:** As a general rule, you may not obtain any information
-about an assignment from an unauthorized source. Clarifications as to which sources are authorized
-and which are not are as follows:
-
-* **Copying:**
-    * You **may** use material that is explicitly provided for the assignment. No attribution is
-required.
-    * You **may** use other course material, including lectures and material from the course website,
-but you must provide clear attribution, including the source and where the included material
-begins and ends.
-    * You **may** use materials from the course textbook(s). For any such use involving code you 
-must provide clear attribution, including the source and where the included material begins
-and ends.
-    * You **may not** obtain code or other solution information from an unauthorized external source,
-including web pages, code repositories, blog posts, etc.
-
-
-* **Searching:** 
-    * You **may** search for or refer to general information including the use of systems,
-    networks, compilers, program libraries, library databases, and documentation.
-    * You **may not** search the Web for solutions or for any advice on how to solve an assignment.
-
-
-* **Reusing:**
-    * You **may** reuse elements of general knowledge from prior courses. For example, you may use
-    existing code for a linked list or to process command line arguments. For any such use involving
-    code, you must provide clear attribution, including the source, and where the included
-    material begins and ends.
-    * If you have worked on a specific assignment in a previous semester, then you should arrange
-    a meeting with the course instructor to devise a policy on which parts of your solutions you
-    may use. Reuse without explicit permission of an instructor, even if it is your own code,
-    is forbidden.
-
-
-* **Using other’s code or documents:**
-    * You **may not** look at someone else’s code (or other documents). This includes one person looking at the code and describing it to another.
-    * You **may not** make use of any information about the assignment posted online except for the authorized sources listed above.
-
-
-* **Assistance:**
-    * You **may** get assistance on an assignment from the instructors, graduate assistants, and university tutors.
-    * You **may only** get high-level strategic advice from others, including current and former students. Forbidden forms of advice include anything more detailed than a brief verbal description or block diagram, any kind of code or pseudo-code, explicit directions on how to assemble allowed blocks of code, and code-level debugging assistance.
-   
-
-: **Assignments and Collaboration:** As a general rule, you may not provide detailed help with an assignment other students. Clarifications about which forms of aid are authorized and which are not are as follows:
-
-* **Sharing:**
-    * You **may not** supply a copy of a file or document to an individual student or via a public channel, such as a blog post.
-
-
-* **Providing access:**
-    * You **may not** have any of your solution files in unprotected directories or in unprotected code repositories.
-
-
-* **Coaching, Assisting, and Collaborating:**
-    * You **may not** provide electronic, verbal, or written descriptions of code or other solution information.
-    * You **may** clarify ambiguities or vague points in class handouts or textbooks.
-    * You **may** help others use the computer systems, networks, compilers, debuggers, profilers, code libraries and other system facilities.
-    * You **may** discuss and provide general strategic advice about an assignment. Providing anything more detailed than a brief description or block diagram is not allowed. Providing any kind of code or pseudo-code is not allowed.
-    * You **may** provide suggestions of potential bugs based on high-level symptoms. Code-based debugging assistance is forbidden.
-
-
-: **Enforcement:** Assignments will be closely monitored for plagiarism. All infractions will be reported to the department chair. The penalty for cheating will be determined on a case-by-case basis, **but it will always be worse than having not turned in the assignment.**
+: Refer to to the following policies. Repeated violators will receive the maximum allowable penalty for any infraction. 
+: [Computer Science & Information Technology Department's Academic Integrity Policy](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/AcademicIntegrityPolicy.pdf)
+: [University's Academic Dishonesty Policy](https://app.kutztown.edu/policyregister/policy.aspx?policy=ACA-027)
 
 **Classroom Etiquette:**
 : Respect for your classmates, instructor, and the class is expected. Please come to class on time
@@ -207,22 +143,6 @@ and prepared to learn. Coming and going during class should be limited to unavoi
 **Electronic devices should not be seen or heard**, unless being used for class activities, note taking,
 etc. Using your cell phone to take pictures of lecture notes, is not a valid purpose. There should be
 no classroom conversations, sleeping (with snoring), or general disruptions during class.
-
-**Zoom Etiquette:**
-: Due to the hybrid nature of this course, Zoom participates are expected be professional and 
-behave as if in the classroom. Below are some guidelines to keep in mind while attending on Zoom:
-
-* Use of your webcam is not required and should be off to avoid disrupting participates with 
-poor internet connections.
-* Mute yourself unless you are speaking. Background noise is distracting to meeting participants.
-* Be mindful of your physical and virtual surroundings. When using your mic, mute other applications
-on your computer and your phone. While not always possible, make your best effort to attend class
-in a quiet and distraction free environment. 
-* Headphones/earbuds greatly reduce accidental feedback when using your microphone.
-* Parliamentary rules always apply. If you want to participate in the discussion, you should raise
-your (virtual) hand or type your question in chat and wait for the speaker to recognize you. 
-You may interrupt the speaker if they do not recognize your message or raised hand in a reasonable 
-amount of time. (e.g. Moving on to the next topic.)
 
 **Course Work / Accreditation:**
 : Any coursework submitted to the instructor (included by not limited to assignments, tests, and
