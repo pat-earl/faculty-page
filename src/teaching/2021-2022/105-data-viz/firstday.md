@@ -43,9 +43,11 @@ Always refer to my website for the latest office hours.
 
 ### Required Textbooks
 
-*Envisioning Information*, Edward R Tufte, Graphics Press.
+*Visual Display of Quantitative Information*, Edward R Tufte, Graphics Press. 2018.
 
-*Visual Display of Quantitative Information*, Edward R Tufte, Graphics Press.
+### Optional Textbooks
+
+*Envisioning Information*, Edward R Tufte, Graphics Press. 2008.
 
 ## Description
 

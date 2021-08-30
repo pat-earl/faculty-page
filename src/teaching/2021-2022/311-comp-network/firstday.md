@@ -92,25 +92,10 @@ grades will be displayed and reported on a typical 100 point scale.*
 : Missed exams/quizzes will be handled on a case-by-case basis. For a list of approved reasons review the *Class Absence* section from the [Class Attendance](http://app.kutztown.edu/policyregister/Policy/ACA-016) University policy. 
 
 **Homework (Assignments/Projects):**
-: This policy is adopted from this [first day handout](https://csit.kutztown.edu/~schwesin/fall20/csc223/syllabus.html).
-
-: All homework submissions must include the following information: your name, the course,
-semester, year, and assignment number/name. Programming assignments must follow the 
-[Documentation Standards](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/DocumentationStandard.pdf) set by the CS&IT Department. Failure to meet these 
-requirements will result in a minimum 10% penalty for that assignment.
-
-: Homework is due at the specified date and time, with a penalty of 10% for each day late.
-Homework can be at most up to three (3) days late. Students have a budget of three (3) grace days
-for the course. Grace days will work as followed:
-
-* Some homework may not be eligible for these grace days and will be marked as such in the homework's
-handout.
-* Grace days will be automatically applied until you run out.
-* If your last submission is one day late and you have at least one day remaining, then you will
-receive full credit for the assignment and automatically spend one grace day.
-* Once you have spent your grace days, you will start receiving the 10% penalty. 
-* No submission will be accepted more than three (3) days late.
-
+: All homework submissions must include the following information:
+Your Name(s), The Course, Semester, Year, and Assignment/Project Number or Name.
+Homework can be submitted up to two days late, with a 10% penalty applied
+each day.
 
 # Course Policies
 

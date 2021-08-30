@@ -13,3 +13,27 @@ stylesheet: ../../course.css
 * [**Lectures**]({{get_link('lectures.md')}})
 
 ## Topics
+
+**Under Construction**
+
+<table id="schedule">
+    <colgroup>
+        <col span="1" style="width: 65%;">
+        <col span="1" style="width: 35%;">
+    <thead>
+        <tr>
+            <th scope="col" style="text-align: center;">Topic(s)</th>
+            <th scope="col" style="text-align: center;">Reading(s)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                Graphical Excellence
+            </td>
+            <td>
+                Chapter 1 - <em>Visual Display of Quantitative Information</em>
+            </td>
+        </tr>
+    </tbody>
+</table>
