@@ -22,26 +22,22 @@ percent and the county sales tax is 2 percent.
 If the total amount collected is known and the total sales tax is 6
 percent, the amount of product sales is calculated using the formula:
 
-$S = T/1.06$
+$S = T / 1.06$
 
 where S is the product sales and T is the total income (product sales plus sales tax)
 
-The program should display a report similar to
+The program should display a report similar to the one below.
 
+```
 Month: October
 Year: 2008
-
-\-\-\-\-\-\-\-\-\-\-\-\-\-
-
-Total Collected: \$ 26572.89
-
-Product Sales: \$ 25068.76
-
-County Sales Tax: \$ 501.38
-
-State Sales Tax: \$ 1002.75
-
-Total Sales Tax: \$ 1504.13
+---------------
+Total Collected: $ 26572.89
+Product Sales: $ 25068.76
+County Sales Tax: $ 501.38
+State Sales Tax: $ 1002.75
+Total Sales Tax: $ 1504.13
+```
 
 ## Submission
 

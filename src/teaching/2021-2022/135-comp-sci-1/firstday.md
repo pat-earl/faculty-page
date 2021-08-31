@@ -71,7 +71,7 @@ None
 Your final course grade will be made up of the following:
 
 * Assignments: 50%
-* Exam (2): 30%
+* Exams (2): 30%
 * Final Exam: 15%
 * Class Participation: 5%
 
@@ -87,24 +87,13 @@ be used to calculate your final letter grade.
 : Missed exams/quizzes will be handled on a case-by-case basis. For a list of approved reasons review the *Class Absence* section from the [Class Attendance](http://app.kutztown.edu/policyregister/Policy/ACA-016) University policy. 
 : Note that the final exam falls on the Saturday before finals week. More information will be given through out the semester. 
 
-**Homework (Assignments/Projects):**
+**Homework (Assignments):**
 
 : All homework submissions must include the following information: your name, the course,
 semester, year, and assignment number/name. Programming assignments must follow the 
-[Documentation Standards](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/DocumentationStandard.pdf) set by the CS&IT Department. Failure to meet these 
-requirements will result in a minimum 10% penalty for that assignment.
+[Documentation Standards](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/DocumentationStandard.pdf) set by the CS&IT Department. 
 
-: Homework is due at the specified date and time, with a penalty of 10% for each day late.
-Homework can be at most up to three (3) days late. Students have a budget of three (3) grace days
-for the course. Grace days will work as followed:
-
-* Some homework may not be eligible for these grace days and will be marked as such in the homework's
-handout.
-* Grace days will be automatically applied until you run out.
-* If your last submission is one day late and you have at least one day remaining, then you will
-receive full credit for the assignment and automatically spend one grace day.
-* Once you have spent your grace days, you will start receiving the 10% penalty. 
-* No submission will be accepted more than three (3) days late.
+: Refer to the homework guidelines page for more information. 
 
 
 # Course Policies
