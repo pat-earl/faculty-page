@@ -35,5 +35,24 @@ stylesheet: ../../course.css
                 Chapter 1 - <em>Visual Display of Quantitative Information</em>
             </td>
         </tr>
+        <tr>
+            <td>
+                Asking Questions
+            </td>
+            <td>
+                <a href="https://www.sciencemuseum.org.uk/objects-and-stories/florence-nightingale-pioneer-statistician">
+                    Florence Nightingale: The Pioneer Statistician
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Statistics Overview/Review
+            </td>
+            <td>
+                <a href="https://onlinestatbook.com/2/index.html">Online Statistics Book</a><br>
+                Sections TBD
+            </td>
+        </tr>
     </tbody>
 </table>
