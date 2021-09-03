@@ -54,5 +54,13 @@ stylesheet: ../../course.css
                 Sections TBD
             </td>
         </tr>
+        <tr>
+            <td>
+                Graphical Integrity
+            </td>
+            <td>
+                Chapter 2 - <em>Visual Display of Quantitative Information</em>
+            </td>
+        </tr>
     </tbody>
 </table>
