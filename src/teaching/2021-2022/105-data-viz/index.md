@@ -51,7 +51,7 @@ stylesheet: ../../course.css
             </td>
             <td>
                 <a href="https://onlinestatbook.com/2/index.html">Online Statistics Book</a><br>
-                Sections TBD
+                Chapter 1 - Introduction
             </td>
         </tr>
         <tr>
