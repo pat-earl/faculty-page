@@ -10,7 +10,7 @@ submissions received beyond that will not be accepted.
 
 ## Grading Criteria
 
-* **Analysis and Design (10 Points):** The program submission must include a project plan document. [See a template here](./project_plan.docx)
+* **Analysis and Design (10 Points):** The program submission must include a project plan document. [Read more about project planning here]({{get_link('./project_plan.md')}})
 * **Style (20 Points):** 
     * The program must be documented according to the [Documentation Standards](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/DocumentationStandard.pdf)
     * The program must be written in a structured form with appropriate indentation and white space.

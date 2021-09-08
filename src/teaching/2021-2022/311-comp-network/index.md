@@ -31,7 +31,7 @@ stylesheet: ../../course.css
         </tr>
         <tr>
             <td>Networking Devices</td>
-            <td>TBD</td>
+            <td><em>Top-Down Approach</em> - Sections 4.2 (pgs 311-314), 6.43</td>
         <tr>
             <td>Circuit and Packet Switching</td>
             <td><em>Top-Down Approach</em> - Sections 1.3 & 1.4</td>

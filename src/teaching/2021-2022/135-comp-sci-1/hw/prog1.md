@@ -39,6 +39,18 @@ State Sales Tax: $ 1002.75
 Total Sales Tax: $ 1504.13
 ```
 
-## Submission
+## Setup & Submission
 
-TBD
+To start the assignment copy the skelton directory:
+
+`cp -r ~earl/public/csc135/projects/project1 ~/csc135`
+
+This will place the files in a directory I own into your home csc135 directory.
+Make a file called project1.cpp and put your source code there. You'll also need to make a file
+named `project_plan.txt`. This is where you'll put your project plan.
+
+To submit type:
+
+`make submit`
+
+Follow the prompts to send your directory to me.
