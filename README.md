@@ -1,6 +1,6 @@
 # Kutztown Faculty Page
 
-This is the repo for what is currently running on my employer's web server, located [here](csit.kutztown.edu/~earl/). This work
+This is the repo for what is currently running on my employer's web server, located [here](https://csit.kutztown.edu/~earl/s). This work
 is very much based off the amazing work of [Gautam Iyer](http://www.math.cmu.edu/~gautam/sj/). Thanks to him for publishing his work, sjinja-www, which can be found on [here on gitlab](https://gitlab.com/gi1242/sjinja-www/)
 
 ## Setup Instructions
