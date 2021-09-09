@@ -16,6 +16,10 @@ from pprint import pprint
 
 if __name__ == "__main__":
 
+    if len(sys.argv) < 2: 
+        print("Provide the year you'd like to generate PDFs from.")
+        sys.exit()
+
     if not os.path.isdir('./out'):
         print("./out directory isn't created!")
         sys.exit()
@@ -23,7 +27,7 @@ if __name__ == "__main__":
     if not os.path.isdir("./syllabus-pdfs/"):
         os.mkdir("./syllabus-pdfs")
 
-    for (root, dirs, files) in os.walk("./out", topdown=False):
+    for (root, dirs, files) in os.walk("./out/teaching/" + sys.argv[1], topdown=False):
 
         for name in files:
             if 'firstday' in name:           

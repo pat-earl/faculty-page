@@ -60,73 +60,11 @@
 </section>  
 
 
-<section id="grep-fgrep" class="title-slide slide level1">
-<h1>grep &amp; fgrep</h1>
-<ul>
-<li>Allows for searching for patterns within a file
-<ul>
-<li>Can take a list of files or input from standard input</li>
-<li><em>[file-list] should be ordinary files</em></li>
-<li><em>pattern</em> is a regular expression <strong>Appendix A</strong></li>
-</ul></li>
-<li><code>fgrep</code> or <code>grep -f</code>
-<ul>
-<li>Can only process simple strings and doesn’t process regular expressions</li>
-</ul></li>
-<li>Returns lines that matter the pattern</li>
-</ul>
-</section>
-
-<section id="grep-examples" class="title-slide slide level1">
-<h1>grep examples</h1>
-<ul>
-<li><code>~earl/public/csc252/grep/</code></li>
-<li><code>-v</code> - Inverses the search (Lines that <em>DON’T</em> contain the pattern)</li>
-<li><code>-n</code> - Display the line number of each displayed line</li>
-<li><code>-w</code> - Pattern match a whole word</li>
-<li><code>-i</code> - Case insensitive</li>
-</ul>
-</section>
-
-<section id="bzip2" class="title-slide slide level1">
-<h1>bzip2</h1>
-<ul>
-<li><code>bzip2</code> - Compresses files</li>
-<li><code>bunzip2</code> - Unzips files compressed using <em>bzip2</em></li>
-<li><code>bzcat</code> - Display files compressed with <em>bzip2</em></li>
-<li>Difference from gzip?
-<ul>
-<li>Uses a different algorithm for compression</li>
-<li>Compresses files better than <code>gzip</code></li>
-</ul></li>
-<li><code>~earl/public/csc252/bzip</code></li>
-</ul>
-</section>
-
-<section id="ssh" class="title-slide slide level1">
-<h1>ssh</h1>
-<ul>
-<li>ssh has many different aspects, allowing you to interact with a remote machine.</li>
-<li><code>~/.ssh</code> directory
-<ul>
-<li><code>config</code></li>
-<li><code>known_hosts</code></li>
-</ul></li>
-<li>Login or Run a Command
-<ul>
-<li><code>ssh [user]@machine-name</code></li>
-<li><code>ssh [user]@machine-name command [with] [arguments]</code></li>
-</ul></li>
-</ul>
-</section>
-
-<section id="bonus---scp" class="title-slide slide level1">
-<h1>Bonus - scp</h1>
-<ul>
-<li>Copy files from and to a remote server</li>
-<li>`scp [user]<span class="citation" data-cites="from-host:source-file">@from-host:source-file [user]</span><span class="citation" data-cites="to-host:destination-file">@to-host:destination-file</span></li>
-</ul>
-</section>
+<section><section id="grep-fgrep" class="title-slide slide level1"><h1>grep &amp; fgrep</h1></section></section>
+<section><section id="grep-examples" class="title-slide slide level1"><h1>grep examples</h1></section></section>
+<section><section id="bzip2" class="title-slide slide level1"><h1>bzip2</h1></section></section>
+<section><section id="ssh" class="title-slide slide level1"><h1>ssh</h1></section></section>
+<section><section id="bonus---scp" class="title-slide slide level1"><h1>Bonus - scp</h1></section></section>
 </div>
 
 <script src="https://csit.kutztown.edu/~earl/s/share/revealjs/dist/reveal.js"></script>

@@ -41,7 +41,7 @@ Total Sales Tax: $ 1504.13
 
 ## Setup & Submission
 
-To start the assignment copy the skelton directory:
+To start the assignment, copy the skelton directory:
 
 `cp -r ~earl/public/csc135/projects/project1 ~/csc135`
 
