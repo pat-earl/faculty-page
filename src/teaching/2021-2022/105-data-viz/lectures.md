@@ -2,7 +2,8 @@ title: CSC105 - Lectures
 
 {% set lectures = (
     {"name": "Graphical Excellence", "file": "slides/introduction.pdf"},
-    {"name": "Asking the Right Questions", "file": "slides/questions.pdf"}
+    {"name": "Asking the Right Questions", "file": "slides/questions.pdf"},
+    {"name": "Statistics", "file": "slides/stats.md"}
 ) %}
 
 ## Course Lectures
