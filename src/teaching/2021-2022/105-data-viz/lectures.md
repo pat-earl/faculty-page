@@ -3,7 +3,9 @@ title: CSC105 - Lectures
 {% set lectures = (
     {"name": "Graphical Excellence", "file": "slides/introduction.pdf"},
     {"name": "Asking the Right Questions", "file": "slides/questions.pdf"},
-    {"name": "Statistics", "file": "slides/stats.md"}
+    {"name": "Statistics", "file": "slides/stats.md"},
+    {"name": "Data Fundamentals", "file": "slides/Data Fundamentals.pptx"},
+    {"name": "Connecting to Data w/ Tableau", "file": "slides/Tableau - Connecting to Data.pptx"},
 ) %}
 
 ## Course Lectures

@@ -62,5 +62,16 @@ stylesheet: ../../course.css
                 Chapter 2 - <em>Visual Display of Quantitative Information</em>
             </td>
         </tr>
+        <tr>
+            <td>
+                Data Fundamentals
+            </td>
+            <td>
+                <a href="{{ get_link('./slides/analysis-reading.docx') }}">
+                    Structuring Data for Analysis (by Lari McEdward)
+                </a>
+            </td>
+        </tr>
+        
     </tbody>
 </table>
