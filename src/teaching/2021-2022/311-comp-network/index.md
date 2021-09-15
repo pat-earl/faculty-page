@@ -42,7 +42,15 @@ stylesheet: ../../course.css
         </tr>
         <tr>
             <td>Application Layer - HTTP</td>
-            <td><em>Top-Down Approach</em> - Section 2.2</td>
+            <td>
+                <em>Top-Down Approach</em> - Section 2.2<br>
+                (Optional)<a href="https://robertheaton.com/2014/03/27/how-does-https-actually-work/">
+                    How does HTTPS actually work? - Robert Heaton
+                    </a><br>
+                (Optional)<a href="https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/">
+                    How Browsers Work
+                    </a>
+            </td>
         </tr>
         <tr>
             <td>Application Layer - FTP</td>
