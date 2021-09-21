@@ -4,6 +4,7 @@ title: CSC135 - Lectures
     {"name": "Chapter 1 - Introduction", "file": "slides/ch01.pdf"},
     {"name": "Chapter 2 - Elements of C++", "file": "slides/ch02.pdf"},
     {"name": "Chapter 3 - Input/Output ", "file": "slides/ch03.pdf"},
+    {"name": "Chapter 4 - Selection ", "file": "slides/ch04.pdf"},
 ) %}
 
 ## Course Lectures

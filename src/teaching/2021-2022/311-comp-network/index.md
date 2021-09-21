@@ -54,7 +54,11 @@ stylesheet: ../../course.css
         </tr>
         <tr>
             <td>Application Layer - FTP</td>
-            <td>TBD</td>
+            <td>(For Reference)
+                <a href="https://datatracker.ietf.org/doc/html/rfc959">
+                    FTP - RFC959
+                </a>
+            </td>
         </tr>
         <tr>
             <td>Application Layer - E-Mail</td>

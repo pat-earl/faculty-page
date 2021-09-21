@@ -1,7 +1,7 @@
 title: Program 2
 
 **Due:**
-: Friday 09/24
+: Friday, 10/01
 
 **Purpose:**
 : Analyze a program's requirements.
@@ -16,7 +16,7 @@ for its customer:
 
 * **Package A:** For \$30.95 per month 15 GB of data is provided.
     * Additional gigabytes are \$2.00 each.
-* **Package B:** For \$40.95 per month 25 hours of access are provided.
+* **Package B:** For \$40.95 per month 25 GB of data is provided.
     * Additional gigabytes are \$1.00 each.
 * **Package C:** For \$69.99 per month unlimited access is provided.
 
@@ -30,5 +30,16 @@ the customer showing the package, gigabytes and total due.
 The program MUST contains at least one if statement and at least one
 switch statement.
 
-## Submission
-TBD
+## Setup and Submission
+
+Copy the skelton directory similarly to how you did in Project 1.
+
+`cp -r ~earl/public/csc135/projects/project2 ~/csc135`
+
+*NOTE: Remember to change the target directory to whatever your directory is named (i.e: CSC135 vs csc135).*
+
+There is a `project2.cpp` file already in the directory, you should put your code for this
+assignment in there.
+
+To submit, just type `make submit`.
+
