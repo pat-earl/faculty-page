@@ -72,6 +72,15 @@ stylesheet: ../../course.css
                 </a>
             </td>
         </tr>
-        
+        <tr>
+            <td>
+                Dimensions and Measures / Field Types
+            </td>
+            <td>
+                <a href="https://help.tableau.com/current/pro/desktop/en-us/datafields_typesandroles.htm">
+                    Tableau Reference
+                </a>
+            </td>
+        </tr>
     </tbody>
 </table>
