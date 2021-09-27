@@ -25,7 +25,7 @@
 
 
 <!-- For syntax highlighting -->
-<!--   <link rel="stylesheet" href="/share/revealjs/plugin/highlight/zenburn.css">
+<!--   <link rel="stylesheet" href="/~earl/s/share/revealjs/plugin/highlight/zenburn.css">
  -->
 
 <!-- For syntax highlighting -->
@@ -242,7 +242,7 @@
 <li>Preserves the literal value of each character</li>
 <li><a href="https://www.gnu.org/software/bash/manual/html_node/Single-Quotes.html">GNU BASH Manual 3.1.2.2</a></li>
 </ul></li>
-<li><code>&quot;</code> - Double Quotes
+<li><code>"</code> - Double Quotes
 <ul>
 <li>Preserves the literal value of each character except: <em>$, `, \, and !</em></li>
 <li><a href="https://www.gnu.org/software/bash/manual/html_node/Double-Quotes.html">GNU BASH Manual 3.1.2.3</a></li>
@@ -274,7 +274,7 @@
 <h2>Control Flow</h2>
 <ul>
 <li><code>if..then</code> - <em>test</em> command</li>
-<li><code>test &quot;thing&quot; = &quot;thing2&quot;</code></li>
+<li><code>test "thing" = "thing2"</code></li>
 <li><code>test $# -eq 0</code></li>
 <li><code>[]</code> - Alias for <em>test</em>
 <ul>
@@ -320,8 +320,8 @@
 <ul>
 <li>Expand array into a variable</li>
 </ul></li>
-<li><code>A=(&quot;${NAMES}[*]&quot;)</code></li>
-<li><code>B=(&quot;${NAMES}[@]&quot;)</code></li>
+<li><code>A=("${NAMES}[*]")</code></li>
+<li><code>B=("${NAMES}[@]")</code></li>
 <li><code>${ #NAMES[@]}</code></li>
 </ul>
 </section>
