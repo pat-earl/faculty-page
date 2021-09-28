@@ -2,7 +2,7 @@ title: Project Planning
 breadcrumb: homework_guidelines.md
 
 <style type="text/css">
-    ol { list-style-type: upper-alpha; }
+    ol li ol li { list-style-type: upper-alpha; }
 </style>
 
 Programming is a long process that involves a lot of planning prior to writing any code. The first step is the program plan. Many systems are developed by following the Systems Development Life Cycle (SDLC). The program planning for CSC135 will consist of five steps, with some of the steps being the first three steps of the SDLC. You are required to do each of these steps for your program.
