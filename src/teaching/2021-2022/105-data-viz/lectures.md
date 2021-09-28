@@ -7,8 +7,9 @@ title: CSC105 - Lectures
     {"name": "Data Fundamentals", "file": "slides/Data Fundamentals.pptx"},
     {"name": "Connecting to Data w/ Tableau", "file": "slides/Tableau - Connecting to Data.pptx"},
     {"name": "Preparing Data in Tableau", "file": "slides/Preparing Data in Tableau.pptx"},
-    {"name": "Charts and Chart Types", "file": "chart_types.pdf"},
-    {"name": "Field Types and Variables in Tableau", "file": "fields_and_variables.pptx"},
+    {"name": "Charts and Chart Types", "file": "slides/chart_types.pdf"},
+    {"name": "Field Types and Variables in Tableau", "file": "slides/fields_and_variables.pptx"},
+    {"name": "Critiquing Data Visualizations", "file": "slides/critiquing.md"}
 ) %}
 
 ## Course Lectures
