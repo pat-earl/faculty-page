@@ -1,4 +1,5 @@
 title: CSC135 Homework Guidelines
+breadcrumb: ../index.md
 
 ## Requirements
 

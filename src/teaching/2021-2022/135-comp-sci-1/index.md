@@ -1,5 +1,6 @@
 infotable: 0
 stylesheet: ../../course.css
+title: CSC135 - Computer Science I (Fall 2021)
 {% from 'includes/macros.j2' import course_info_table with context -%}
 {% from get_file('course_info.j2') import course %}
 
@@ -11,6 +12,10 @@ stylesheet: ../../course.css
 * [CS&IT Documentation Standards](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/DocumentationStandard.pdf)
 * [CS&IT Academic Integrity Policy](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/AcademicIntegrityPolicy.pdf)
 * [**Lectures**]({{get_link('lectures.md')}})
+* References for C++
+    * [cplusplus.com](https://www.cplusplus.com/)
+    * [cppreference.com](https://en.cppreference.com/w/)
+* [UNIXBootcamp](https://csit.kutztown.edu/UNIXbootcamp/)
 
 ## Topics
 
