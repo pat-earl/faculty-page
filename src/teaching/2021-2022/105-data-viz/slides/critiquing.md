@@ -2,7 +2,7 @@
 title: "Data Visualization Critiquing"
 subtitle: "CSC105"
 author: Patrick Earl
-date: 09/28/2021
+date: 10/01/2021
 slideNumber: true
 revealjstheme: robot-lung
 width: 1600
@@ -43,6 +43,58 @@ complex ideas with clarity, precision, and efficiency.
   * Don't distort the data.
 
 ---
+
+## The Grammar of Graphics
+* Leland Wilkinson sorts a graphic into these parts:
+  * Data
+  * Variables
+  * Algebra
+  * Scales
+  * Statistics
+  * Geometry
+  * Coordinates
+  * Aesthetics
+  * Facets
+  * Guides
+
+---
+
+## Grammar of Data Visualization Evaluation (VisQual)
+* 11 Categories to objectively evaluate the effectiveness of a data visualization.
+  * Within the categories, simple yes/no questions can be asked.
+* **Data**
+  * Is a reference to the original data source included?
+* **Aesthetics**
+  * The **LATCH** Principle
+    * *Location*
+    * *Alphabet*
+    * *Time*
+    * *Category*
+    * *Hierarchy*
+
+---
+
+* **Coordinates**
+* **Position**
+* **Guides**
+* **Geometry**
+* **Statistics**
+
+---
+
+* **Facets**
+* **Theme**
+* **Manipulation**
+* **Subjective**
+
+## VisQual Tool
+* [Visual Quality](https://visqual.herokuapp.com/)
+
+---
+
+## Data Visualization Critiquing Homework
+* **Due:** 10/15/2021
+* Handout is on D2L.
 
 ---
 
