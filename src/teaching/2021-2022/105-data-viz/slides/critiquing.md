@@ -31,8 +31,13 @@ complex ideas with clarity, precision, and efficiency.
 
 ---
 
+## One Approach: 
+* Edward Tufte's idea of the *Lie Factor*
+  * Basically the scale of ink/number
+
+![](./slide_imgs/Lie_factor_example1_image.jpg)
+
 ## Best Practices?
-* "Beauty is in the eye of the beholder"
 * Some guiding principles:
   * Define a clear purpose.
   * Know the audience.
@@ -64,6 +69,9 @@ complex ideas with clarity, precision, and efficiency.
   * Within the categories, simple yes/no questions can be asked.
 * **Data**
   * Is a reference to the original data source included?
+
+---
+
 * **Aesthetics**
   * The **LATCH** Principle
     * *Location*
@@ -99,6 +107,7 @@ complex ideas with clarity, precision, and efficiency.
 ---
 
 ## References
+* [NYTimes MPG](https://infovis-wiki.net/wiki/Lie_Factor) - Comes from Chapter 2 of Tufte's Book
 * [Data Visualization Best Practices](https://www.toptal.com/designers/data-visualization/data-visualization-best-practices)
 * [Why is this chart bad?](https://towardsdatascience.com/why-is-this-chart-bad-5f16da298afa) - Jan Sawicki, *Towards Data Science*
 * [Five Hat Racks](https://infovis-wiki.net/wiki/Five_Hat_Racks) - *LATCH* Principle

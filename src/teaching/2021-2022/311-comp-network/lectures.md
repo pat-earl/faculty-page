@@ -5,7 +5,7 @@ title: CSC311 - Lectures
     {"name": "Networking Hardware", "file": "slides/hardware.pdf"},
     {"name": "Chapter 2 - Application Layer", "file": "slides/chapter2.pdf"},
     {"name": "DNS Overview", "file": "slides/dns.pdf"},
-    {"name": "DNS Overview", "file": "slides/telnet_and_ftp.pdf"},
+    {"name": "Telnet and FTP Overview", "file": "slides/telnet_and_ftp.pdf"},
 ) %}
 
 ## Course Lectures

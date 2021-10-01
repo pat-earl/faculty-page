@@ -9,15 +9,14 @@ title: CSC105 - Lectures
     {"name": "Preparing Data in Tableau", "file": "slides/Preparing Data in Tableau.pptx"},
     {"name": "Charts and Chart Types", "file": "slides/chart_types.pdf"},
     {"name": "Field Types and Variables in Tableau", "file": "slides/fields_and_variables.pptx"},
-    {"name": "Critiquing Data Visualizations", "file": "slides/critiquing.md"}
+    {"name": "Critiquing Data Visualizations", "file": "slides/critiquing.md"},
+    {"name": "Compare and Contrast - Real World Examples", "file": "slides/compare_and_contrast.pdf"}
 ) %}
 
 ## Course Lectures
 
-Below are the PowerPoint slides from class in PDF form.
-
 {% for lec in lectures -%}
-* {{ lec['name'] }} - [Slide Form]({{ get_link(lec['file']) }})
+* {{ lec['name'] }} - [Slides]({{ get_link(lec['file']) }})
 {% endfor -%}
 
 ## Tableau Information
