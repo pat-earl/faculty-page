@@ -6,6 +6,7 @@ title: CSC311 - Lectures
     {"name": "Chapter 2 - Application Layer", "file": "slides/chapter2.pdf"},
     {"name": "DNS Overview", "file": "slides/dns.pdf"},
     {"name": "Telnet and FTP Overview", "file": "slides/telnet_and_ftp.pdf"},
+    {"name": "Chapter 3 - Transport Layer", "file": "slides/chapter3.pdf"},
 ) %}
 
 ## Course Lectures
@@ -16,3 +17,7 @@ original form on the Author's webpage: <https://gaia.cs.umass.edu/kurose_ross/pp
 {% for lec in lectures -%}
 * {{ lec['name'] }} - [Slide Form]({{ get_link(lec['file']) }})
 {% endfor -%}
+
+## Other Interesting Things
+
+* [Cloudflare Blog - Facebook Outage](https://blog.cloudflare.com/october-2021-facebook-outage/)

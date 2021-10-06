@@ -45,7 +45,7 @@ There is no sentinel.
 Additionally, you must include the following requirements for this
 project:
 
-1.  Analysis and Design
+1.  Analysis and Design - Required for this project
     - Problem statement
     - Program inputs and outputs
     - Formulas
