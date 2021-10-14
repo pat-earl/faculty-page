@@ -2,7 +2,7 @@ title: Program 3
 breadcrumb: ../index.md
 
 **Due:**
-: Tuesday, October 12.
+: Friday, Oct. 22
 
 **Purpose:**
 : Demonstrate understanding of writing user-defined functions in C++
@@ -12,18 +12,17 @@ breadcrumb: ../index.md
 
 **Program \#3 -- Functions (Pressure Washing)**
 
-A pressure washing company has decided that every 60 square feet of siding
-that needs to be washed, one gallon of bleach is used. Additionally it will require
-three hours of labor, with each hour costing \$40.00. Write a program that will
-ask the user to enter the square footage that requires pressure washing. The program should
-also ask for the cost for a gallon of bleach. The program should display the number of 
+A pressure washing company has decided that every 60 square feet of siding they wash, 
+one gallon of bleach is used. Additionally it will require
+three hours of labor, which costs \$40.00 an hour. Write a program that will
+ask the user to enter the square footage and
+the cost of a gallon of bleach. The program should display the number of 
 square feet to be washed, the cost of the bleach, the cost of labor, and the total cost.
 
 Do not accept a value less than \$3.00 per gallon for the price of bleach.
 
 At a minimum write and call a function for each of the following tasks:
 
-* Display instructions for the user.
 * Prompt for and return the area to be washed.
 * Prompt for and return the price for a gallon of bleach.
 * Compute and return the cost for bleach used.
