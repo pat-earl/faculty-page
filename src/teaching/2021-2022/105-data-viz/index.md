@@ -82,5 +82,13 @@ stylesheet: ../../course.css
                 </a>
             </td>
         </tr>
+        <tr>
+            <td>
+                Tableau UI Overview
+            </td>
+            <td>
+                Posted on D2L.
+            </td>
+        </tr>
     </tbody>
 </table>

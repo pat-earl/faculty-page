@@ -17,6 +17,18 @@ title: CSC135 - Computer Science I (Fall 2021)
     * [cppreference.com](https://en.cppreference.com/w/)
 * [UNIXBootcamp](https://csit.kutztown.edu/UNIXbootcamp/)
 
+
+## CSC135 SI Info
+
+Patrick Perrin will be providing *Supplemental Instruction* for this course. He is scheduled to
+be in OM242 during the times below:
+
+*Note: The Wednesday Oct. 20th hours are rescheduled for Thursday Oct. 21st 3:00PM-4:00PM*
+
+* **Monday:** 1:30PM - 2:30PM
+* **Wednesday:** 3:00PM - 4:00PM
+* **Friday:** 1:30PM - 2:30PM
+
 ## Topics
 
 <table id="schedule">
