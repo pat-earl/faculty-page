@@ -14,3 +14,6 @@ breadcrumb: index.md
 {% for lec in lectures -%}
 * {{ lec['name'] }} - [Slides]({{ get_link(lec['file']) }})
 {% endfor -%}
+
+## Other Materials
+* [Program Trace]({{ get_link('slides/tracing_10_19_21.pdf') }}) - From Thursday Oct. 10 Class

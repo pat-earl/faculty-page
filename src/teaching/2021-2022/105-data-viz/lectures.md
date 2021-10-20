@@ -1,4 +1,5 @@
 title: CSC105 - Lectures
+breadcrumb: index.md
 
 {% set lectures = (
     {"name": "Graphical Excellence", "file": "slides/introduction.pdf"},
@@ -10,7 +11,8 @@ title: CSC105 - Lectures
     {"name": "Charts and Chart Types", "file": "slides/chart_types.pdf"},
     {"name": "Field Types and Variables in Tableau", "file": "slides/fields_and_variables.pptx"},
     {"name": "Critiquing Data Visualizations", "file": "slides/critiquing.md"},
-    {"name": "Compare and Contrast - Real World Examples", "file": "slides/compare_and_contrast.pdf"}
+    {"name": "Compare and Contrast - Real World Examples", "file": "slides/compare_and_contrast.pdf"},
+    {"name": "Distributions", "file": "slides/Distributions.pptx"}
 ) %}
 
 ## Course Lectures
