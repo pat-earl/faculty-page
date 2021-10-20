@@ -25,6 +25,7 @@ At a minimum write and call a function for each of the following tasks:
 
 * Prompt for and return the area to be washed.
 * Prompt for and return the price for a gallon of bleach.
+    * Your program should check the return value of this function in `main`. If the value is less than \$3, have the program exit in main.
 * Compute and return the cost for bleach used.
 * Compute and return the cost of labor.
 * Compute and return the total cost.
