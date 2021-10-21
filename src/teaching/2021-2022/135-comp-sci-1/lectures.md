@@ -7,6 +7,7 @@ breadcrumb: index.md
     {"name": "Chapter 3 - Input/Output ", "file": "slides/ch03.pdf"},
     {"name": "Chapter 4 - Selection", "file": "slides/ch04.pdf"},
     {"name": "Chapter 6 - Functions", "file": "slides/ch06.pdf"},
+    {"name": "Chapter 5 - Repetition", "file": "slides/ch05.pdf"}
 ) %}
 
 ## Course Lectures
