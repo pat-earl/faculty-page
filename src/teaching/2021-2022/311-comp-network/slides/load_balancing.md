@@ -51,3 +51,4 @@ transition: slide
 
 ## References
 * [Types of Load Balancing](https://www.cloudflare.com/learning/performance/types-of-load-balancing-algorithms/)
+* [HTTP Load Balancing - NGINX](https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/)
