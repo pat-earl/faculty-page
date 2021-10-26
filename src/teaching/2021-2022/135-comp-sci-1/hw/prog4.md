@@ -2,7 +2,7 @@ title: Program 4
 breadcrumb: ../index.md
 
 **Due:**
-: TBD
+: Friday, Nov. 5
 
 **Purpose:**
 : Effectively use C++ repetition control structures (loops).
@@ -11,20 +11,53 @@ breadcrumb: ../index.md
 
 **Program \#4 -- Loops (Restaurant Bill)**
 
-You are to write a C++ program that will calculate the amount owed from
-customers at tables in a restaurant. For each table, the program will
-ask how many people are at the table. The program will ask the user for
-the price of each meal purchased at the table (you may assume that each
-person orders 1 all inclusive meal). The program will produce a bill
-showing the subtotal, the sales tax, the tip and the final total for the
-bill. Make sure all out is neat, clear, and is clearly money.
+Write a C++ program that calculates amount owed by customers in a restaurant. 
+Start by asking for the number of people seated at the table. Then 
+the program will ask the user for the price of each meal purchased at the table 
+(you may assume that each person orders 1 all inclusive meal). The program will 
+output a bill showing the subtotal, the sales tax, the tip, and the final 
+total for the bill. Make sure the output is neat, clear, and clearly looks
+like money. 
 
-The program will continue processing tables until the number of the
-people at the table is 0.
+Your program should continue accepting new tables until a value of zero (0) is
+entered for a table. 
 
-Sales tax is calculated on the subtotal and is 6%. The tip is also
-calculated on the subtotal. The tip is 18% if the number of people at
-the table is less than 5. The tip is 20% if the number of people at the
-table is 5 or more.
+Sales tax is calculated on the subtotal and is 7%. You should also calculate the 
+tip based off the subtotal. The tip is 20% if the number of people at the table
+is six (6) or less. The tip 25% if there are more than six people.
 
-## Submission
+
+Example Input:
+
+```
+3
+10 20 15
+
+4 
+7.99 8.25 10.00 9.99
+
+0
+```
+
+Example Output:
+
+```
+Table 1:
+Subtotal:   $45.00
+Tax:        $3.15
+Tip:        $9.00
+Total:      $57.15
+
+Table 2:
+Subtotal:   $36.23
+Tax:        $2.54
+Tip:        $7.25
+Total:      $46.02
+```
+
+## Setup and Submission
+
+Copy the setup directory from here, `~earl/public/csc135/projects/project4/`, and
+place your code in the project4.cpp
+
+Submit using `make submit`.
