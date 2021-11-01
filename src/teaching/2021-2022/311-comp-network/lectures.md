@@ -7,7 +7,8 @@ title: CSC311 - Lectures
     {"name": "DNS Overview", "file": "slides/dns.pdf"},
     {"name": "Telnet and FTP Overview", "file": "slides/telnet_and_ftp.pdf"},
     {"name": "Chapter 3 - Transport Layer", "file": "slides/chapter3.pdf"},
-    {"name": "Load Balancing", "file": "slides/load_balancing.md"}
+    {"name": "Load Balancing", "file": "slides/load_balancing.md"},
+    {"name": "Chapter 4 - Network Layer", "file": "slides/chapter4.pdf"}
 ) %}
 
 ## Course Lectures
