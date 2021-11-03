@@ -40,8 +40,13 @@ transition: fade
 
 ---
 
-## ICMP - Ping & Traceroute
-* Stuff
+## ICMP - Traceroute
+* Source sends UDP segments to destination
+  * Increase the TTL for each hop.
+  * *1st segment = 1 TTL*
+  * *2nd segment = 2 TTL*
+  * *nth segment = N TTL*
+* Causes an ICMP error. When the message arrives back at the host, records the RRT
 
 ---
 
