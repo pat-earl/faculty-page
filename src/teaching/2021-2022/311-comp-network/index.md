@@ -1,4 +1,5 @@
 infotable: 0
+title: CSC311 - Computer Networking
 stylesheet: ../../course.css
 {% from 'includes/macros.j2' import course_info_table with context -%}
 {% from get_file('course_info.j2') import course %}
