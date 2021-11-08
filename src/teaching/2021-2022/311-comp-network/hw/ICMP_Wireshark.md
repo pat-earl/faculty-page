@@ -32,6 +32,7 @@ Do the following:
     * `ping *hostname*`, where *hostname* is the target machine you want to check. (Without the stars(\*))
 * For your lab, ping the web server for *University of Waterloo* 10 times: `ping -n 10 uwaterloo.ca`
     * The `-n 10` tells ping to send 10 requests instead of the 4 that happen by default. 
+    * *NOTE:* If you are using MacOS/Linux, use `ping -c 10 uwaterloo.ca` instead. 
 * Once the Ping program stops, stop packet capture in Wireshark.
 
 Assuming you did everything correctly, you should see something similar to the screenshot below. In
