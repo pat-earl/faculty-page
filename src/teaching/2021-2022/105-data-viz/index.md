@@ -12,9 +12,10 @@ stylesheet: ../../course.css
 * [**Lectures**]({{get_link('lectures.md')}})
 * [The Data Visualization Catalogue](https://datavizcatalogue.com/index.html)
 
-## Topics
+## Final Project
+* [Final Project Handout]({{ get_link('./hw/final_project.md') }})
 
-**Under Construction**
+## Topics
 
 <table id="schedule">
     <colgroup>

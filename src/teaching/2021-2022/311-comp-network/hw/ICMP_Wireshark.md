@@ -118,7 +118,7 @@ Answer the following questions:
     1. How are these packets different from the ICMP error packets?
     2. Why are they different?
 6. Within the tracert measurements, is there a link (hop) whose delay is significantly longer than others?
-7. In **Figure 4**, is there a link (hop) whose delay is significantly longer than others?
+7. In **Figure 3**, is there a link (hop) whose delay is significantly longer than others?
 
 
 That's all folks!
