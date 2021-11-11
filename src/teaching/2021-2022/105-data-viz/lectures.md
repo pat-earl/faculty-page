@@ -12,7 +12,8 @@ breadcrumb: index.md
     {"name": "Field Types and Variables in Tableau", "file": "slides/fields_and_variables.pptx"},
     {"name": "Critiquing Data Visualizations", "file": "slides/critiquing.md"},
     {"name": "Compare and Contrast - Real World Examples", "file": "slides/compare_and_contrast.pdf"},
-    {"name": "Distributions", "file": "slides/Distributions.pptx"}
+    {"name": "Distributions", "file": "slides/Distributions.pptx"},
+    {"name": "Basic Charts (Global Superstore)", "file": "slides/Basic Charts.pptx"}
 ) %}
 
 ## Course Lectures
