@@ -62,7 +62,7 @@ Answer the following questions:
     2. What other fields does this ICMP packet have? 
     3. How many bytes are the checksum, sequence number, and identifier fields?
 4. Examine the corresponding ping reply packet.
-    1. What are the ICMP byte and code numbers?
+    1. What are the ICMP type and code numbers?
     2. What other fields does this ICMP packet have? 
     3. How many bytes are the checksum, sequence, and identifier fields?
 

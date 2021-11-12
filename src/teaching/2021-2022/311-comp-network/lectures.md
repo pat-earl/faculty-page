@@ -24,6 +24,8 @@ original form on the Author's webpage: <https://gaia.cs.umass.edu/kurose_ross/pp
 ## Other Interesting Things
 
 * [Cloudflare Blog - Facebook Outage](https://blog.cloudflare.com/october-2021-facebook-outage/)
+* [Cloudflare's Learning Center](https://www.cloudflare.com/learning/)
+    * Another resource for topic's covered in class & more. 
 
 The TCP & UDP client/server programs I went over in class to demonstrate sockets are available 
 on the Department's Linux machine. You can find them in this directory: `~earl/public/csc311`.
