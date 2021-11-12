@@ -13,6 +13,8 @@ breadcrumb: index.md
     {"name": "Critiquing Data Visualizations", "file": "slides/critiquing.md"},
     {"name": "Compare and Contrast - Real World Examples", "file": "slides/compare_and_contrast.pdf"},
     {"name": "Distributions", "file": "slides/Distributions.pptx"},
+    {"name": "Statistical Thinking", "file": "slides/Statistical Thinking.pptx"},
+    {"name": "Aggregation and Granularity", "file": "slides/Aggregation and Granularity.pptx"},
     {"name": "Basic Charts (Global Superstore)", "file": "slides/Basic Charts.pptx"},
     {"name": "Dashboards & Stories in Tableau", "file": "slides/Dashboards & Stories.pptx"}
 ) %}
