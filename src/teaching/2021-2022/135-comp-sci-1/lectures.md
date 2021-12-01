@@ -8,7 +8,8 @@ breadcrumb: index.md
     {"name": "Chapter 4 - Selection (If/Switch)", "file": "slides/ch04.pdf"},
     {"name": "Chapter 5 - Repetition (While/For/Do While)", "file": "slides/ch05.pdf"},
     {"name": "Chapter 6 - Functions", "file": "slides/ch06.pdf"},
-    {"name": "Chapter 7 - User-Defined Types, Namespaces, and String", "file": "slides/ch07.pdf"}
+    {"name": "Chapter 7 - User-Defined Types, Namespaces, and String", "file": "slides/ch07.pdf"},
+    {"name": "Chapter 8 - Strings & Arrays", "file": "slides/ch08.pdf"}
 ) %}
 
 ## Course Lectures

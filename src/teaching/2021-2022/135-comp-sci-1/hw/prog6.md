@@ -2,10 +2,10 @@ title: Program 6
 breadcrumb: ../index.md
 
 **Due:**
-: TBD
+: Friday, Dec. 10, 2021 
 
 **Purpose:**
-:
+: Demonstrate understanding of arrays and parallel arrays.
 
 ## Description
 
@@ -16,26 +16,15 @@ the driver's test. Student's take this test upon completing the
 classroom portion of driver's ed. The test has 20 multiple choice
 questions. The correct answers are:
 
-```
-1. B 6. A 11. B 16. C
-
-2. D 7. B 12. C 17. C
-
-3. A 8. A 13. D 18. B
-
-4. A 9. C 14. A 19. D
-
-5. C 10. D 15. D 20. A
-```
 
 ```
-1. B, 2. D, 3. A, 4. A, 5. C,
+1. B  2. D  3. A, 4. A, 5. C,
 
-6. A, 7. B, 8. A, 9. C, 10. D,
+2. A, 7. B, 8. A, 9. C, 10. D,
 
-11. B, 12. C, 13. D, 14. A, 15. D,
+3.  B, 12. C, 13. D, 14. A, 15. D,
 
-16. C, 17. C, 18. B, 19. D, 20. A
+4.  C, 17. C, 18. B, 19. D, 20. A
 ```
 
 Your program should store the correct answers in an array. It should
@@ -58,10 +47,14 @@ of incorrect answers, whether or not the student passed, and a list of
 the numbers for the questions missed. The table should have headings for
 the columns.
 
-Student answers can be found in the data file **driving.dat**. You can
-copy this file by typing
-
-`cp ~earl/public/csc135/driving.dat driving.dat`
-
 Each line contains the 20 answers a student gave. You do not know how
 many students so you must process until the end of the file.
+
+Student answers can be found in the data file *driving.dat*. 
+
+## Setup & Submission
+
+To get started copy the setup directory as you have done for previous assignments. The setup
+directory is at this file path: `~earl/public/csc135/projects/project6`
+
+To submit type `make submit`. 
