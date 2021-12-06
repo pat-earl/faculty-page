@@ -18,13 +18,10 @@ questions. The correct answers are:
 
 
 ```
-1. B  2. D  3. A, 4. A, 5. C,
-
-2. A, 7. B, 8. A, 9. C, 10. D,
-
-3.  B, 12. C, 13. D, 14. A, 15. D,
-
-4.  C, 17. C, 18. B, 19. D, 20. A
+ 1. B   2. D    3. A    4. A    5. C
+ 6. A   7. B    8. A    9. C   10. D
+11. B  12. C   13. D   14. A   15. D
+16. C  17. C   18. B   19. D   20. A
 ```
 
 Your program should store the correct answers in an array. It should

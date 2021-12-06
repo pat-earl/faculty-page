@@ -16,7 +16,8 @@ breadcrumb: index.md
     {"name": "Statistical Thinking", "file": "slides/Statistical Thinking.pptx"},
     {"name": "Aggregation and Granularity", "file": "slides/Aggregation and Granularity.pptx"},
     {"name": "Basic Charts (Global Superstore)", "file": "slides/Basic Charts.pptx"},
-    {"name": "Dashboards & Stories in Tableau", "file": "slides/Dashboards & Stories.pptx"}
+    {"name": "Dashboards & Stories in Tableau", "file": "slides/Dashboards & Stories.pptx"},
+    {"name": "Worksheet Formatting", "file": "slides/Worksheet.pptx"},
 ) %}
 
 ## Course Lectures
