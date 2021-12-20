@@ -9,7 +9,8 @@ title: CSC311 - Lectures
     {"name": "Chapter 3 - Transport Layer", "file": "slides/chapter3.pdf"},
     {"name": "Load Balancing", "file": "slides/load_balancing.md"},
     {"name": "Chapter 4 - Network Layer", "file": "slides/chapter4.pdf"},
-    {"name": "Chapter 5 - Control Plane Overview", "file": "slides/chapter5.pdf"}
+    {"name": "Chapter 5 - Control Plane Overview", "file": "slides/chapter5.pdf"},
+    {"name": "Chapter 6 - Link Layer", "file": "slides/chapter6.pdf"}
 ) %}
 
 ## Course Lectures

@@ -27,12 +27,18 @@
 
     (223, 'Advanced Scientific Programming', (
         (2021, 's', '2020-2021/223-adv-sci-program'),
+        (2022, 's', '2021-2022/252-adv-sci-program'),
     )),
 
     (252, 'UNIX: Scripting & Administration', (
         (2021, 's', '2020-2021/252-unix-admin'),
         (2020, 's', old_teaching ~ 'SP2020/CSC252/'),
         (2021, 'SUMM S1 ', '2020-2021/252-unix-admin-summer'),
+        (2022, 's', '2021-2022/252-unix-admin')
+    )),
+
+    (273, 'Computing Systems Integration', (
+        (2022, 's', '2021-2022/273-comp-sys-int'),
     )),
 
     (311, 'Computer Networks', (
@@ -40,11 +46,15 @@
         (2021, 'f', '2021-2022/311-comp-network'),
     )),
 
+    (411, 'Advanced Computer Networking', (
+        (2022, 's', '2021-2022/411-adv-comp-network'),
+    ))
+
   ) %}
 {# set cur_index = ( (6, 2), ) #} 
 {# Use this to set the current courses! #}
 {# Don't try to index stuff either :> #}
-{% set cur_index = ( (1, 0), (5, 1), (8, 1), ) %}
+{% set cur_index = ( (6, 1), (7, 3), (8, 0), (10, 0), ) %}
 {% macro md_current_courses() -%}
 {% for i, j in cur_index -%}
 {%- set c = courses[i] %}

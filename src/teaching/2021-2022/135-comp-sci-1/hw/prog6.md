@@ -40,7 +40,7 @@ required in the output.
 
 The program should write out a table with one line for each student. For
 each student it should report the number of correct answers, the number
-of incorrect answers, whether or not the student passed, and a list of
+of incorrect answers, whether or not the student passed, and (**optional**) a list of
 the numbers for the questions missed. The table should have headings for
 the columns.
 
