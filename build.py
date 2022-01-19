@@ -13,7 +13,6 @@ from jinja2 import contextfunction, contextfilter
 
 import mdconverter
 import pypandoc
-import docker
 
 import coloredlogs
 
@@ -245,30 +244,64 @@ def slide_convert(site, template, **context):
     # Get the site_prefix for $base$ variable in template
     prefix = site.env.globals['site_prefix']
 
+    # Check if the slide should be rendered using Marp
+    use_marp = False
+    with open(template.filename) as f:
+        # Check if the first line is the opening YAML
+        line = f.readline().strip()
+        if line == "---":
+            line = f.readline().strip()
+            while line != "---":
+                if "marp" in line and "true" in line:
+                    use_marp = True
+                    break
+                
+                line = f.readline().strip()
 
-    # Arguments to pass to pandoc
-    extra_args = [
-        '--standalone',
-        '-t', 'revealjs',
-        '--template=./src/layouts/template-revealjs.html',
-        # '--section-divs',
-        '--slide-level', '2',
-        '-V', 'base=' + prefix
-    ]
+    # Slide deck isn't using Marp, use pandoc      
+    if not use_marp:
 
-    # Convert the file from markdown to the standalone HTML file
-    output = pypandoc.convert_file(template.filename, 
-                    to='html5',
-                    format='md',
-                    extra_args=extra_args,
-                    outputfile=filepath)
-    # output should be empty because we're using outputfile
-    assert output == ""
+        # Arguments to pass to pandoc
+        extra_args = [
+            '--standalone',
+            '-t', 'revealjs',
+            '--template=./src/layouts/template-revealjs.html',
+            # '--section-divs',
+            '--slide-level', '2',
+            '-V', 'base=' + prefix
+        ]
+
+        # Convert the file from markdown to the standalone HTML file
+        output = pypandoc.convert_file(template.filename, 
+                        to='html5',
+                        format='md',
+                        extra_args=extra_args,
+                        outputfile=filepath)
+        # output should be empty because we're using outputfile
+        assert output == ""
+
+        # # Copy the permissions from 
+        # shutil.copymode(template.filename, filepath)
+
+        # # Get directory for output
+        # course = template.name.split('/')[2]
+        # base = os.path.basename(template.name)
+        # print(course)
+        # print(base)
+        # slides_path = './slides/' + course + '/' + base.split('.')[0] + '.html'
+
+        # if not os.path.isdir('./slides/' + course):
+        #     Path("./slides/" + course).mkdir(parents=True, exist_ok=True)
+
+        # shutil.copy(filepath, slides_path)
+
+    else:
+        # TODO: Enable Marp converts
+        os.system("./marp {} -o {}".format(template.filename, filepath))
 
     # Copy the permissions from 
     shutil.copymode(template.filename, filepath)
 
-    # Create PDFs for annotating later
     # Get directory for output
     course = template.name.split('/')[2]
     base = os.path.basename(template.name)
@@ -280,13 +313,6 @@ def slide_convert(site, template, **context):
         Path("./slides/" + course).mkdir(parents=True, exist_ok=True)
 
     shutil.copy(filepath, slides_path)
-
-    # output = pypandoc.convert_file(template.filename,
-    #                 to='beamer',
-    #                 format='md',
-    #                 outputfile=pdf_out)
-
-    # assert output == ""
 
 
 
