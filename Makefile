@@ -24,6 +24,7 @@ prod:
 	${PYTHON} build.py -fp
 
 upload: prod
-	    rsync --omit-dir-times --checksum --delete -av out-prod/ csit:~/public_html/s
+	    # rsync --omit-dir-times --checksum --delete -av out-prod/ csit:~/public_html/s
+		rsync --omit-dir-times --checksum --delete -av out-prod/ vps:/var/www/pat-earl.com/faculty-bak 
 
 .PHONY: local clean prod-clean prod upload

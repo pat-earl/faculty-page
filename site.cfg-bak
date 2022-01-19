@@ -14,9 +14,9 @@ author_office_phone:	610 683 4434
 
 [production]
 # Options only set in the production environment.
-site_host: www.pat-earl.com
-path_prefix: faculty-bak
-site_prefix: /%(path_prefix)s
+site_host: csit.kutztown.edu
+path_prefix: s
+site_prefix: /~earl/%(path_prefix)s
 site_rurl: //%(site_host)s%(site_prefix)s
 site_url: http:%(site_rurl)s
 site_surl: https:%(site_rurl)s
