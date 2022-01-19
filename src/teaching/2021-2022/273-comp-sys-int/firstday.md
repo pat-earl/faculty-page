@@ -9,7 +9,7 @@ title: First Day Handout
 : <span id='course_code'>{{course.abv_title}}</span> {{course.abv_name}} <span hidden id='semester_code'>{{course.abv_semester}}</span>
 
 **Semester:**
-: Fall 2021
+: Spring 2022
 
 **Instructor:**
 : Mr. {{site_author}}
@@ -34,35 +34,25 @@ title: First Day Handout
 Always refer to my website for the latest office hours.
 
 **Meetings:** 
-: MWF 2:00PM - 2:50PM, OM159
+: Tues/Thur 1:30PM - 2:50 PM OM159
 
 **Format:** 
 : In-Person
 
 ## Materials
 
-### Required Textbooks
+### Recommended Textbooks
 
-*Visual Display of Quantitative Information*, Edward R Tufte, Graphics Press. 2018.
-
-### Optional Textbooks
-
-*Envisioning Information*, Edward R Tufte, Graphics Press. 2008.
+*Modern Systems Analysis and Design*, 9th Edition. Joseph S Valacich, Joey F. George. Pearson. *ISBN*: 9780135172759
 
 ## Description
 
-Have you ever wondered how computers can make data look interesting and readily understandable? Data visualization is a computing process that can make data more understandable and approachable. Visualization can be done by people who have little experience with computers beyond browsing and using email. This course teaches students about different kinds of data visualizations and also how to create them. Reading charts, graphs, and more complex data visualizations is an important skill; knowing how to create these from data is also an important skill.
+This course focuses on the integration of information systems in organizations, which is the process by which different computing systems and software applications are interconnected. It examines the strategies, methodologies, and implementation for combining interdependent systems, enabling two or more applications to interact and exchange data seamlessly. The course will explore various trends in computing system integration, including Enterprise Resource Planning (ERP) software, cloud computing, and mobile integration. 
 
-## Learning Objectives
-
-1. Identify the different types of data visualization.
-2. Understand the process of data visualization.
-3. Demonstrate the ability to analyze data visualizations. 
-4. Create data visualizations using various techniques with a current software tool.
 
 ## Course Prerequisites
 
-None
+CSC237 or CSC253
 
 ## Grading 
 
@@ -82,36 +72,64 @@ grades will be displayed and reported on a typical 100 point scale.*
 **Class Participation:**
 : Grade is based off regular class attendance and participation in discussions.
 
-**Exams:**
+**Exams**
 
-: Exams times/location will be announced during class time. 
-: Missed exams/quizzes will be handled on a case-by-case basis. For a list of approved reasons review the *Class Absence* section from the [Class Attendance](http://app.kutztown.edu/policyregister/Policy/ACA-016) University policy. 
+: Exams will be announced during class and must be taken during their scheduled time/location.
+: Missed exams will be handled on a case-by-case basis. For a list of approved reasons review the *Class Absence* section from the [Class Attendance](http://app.kutztown.edu/policyregister/Policy/ACA-016) University policy. Please contact the instructor to discuss the possibility of making up an exam. Be aware that you may be asked to provide evidence supporting an approved absence reason.  
 
 **Homework (Assignments/Projects):**
 : All homework submissions must include the following information:
 Your Name(s), The Course, Semester, Year, and Assignment/Project Number or Name.
-Homework can be submitted up to three days late, with a 10% penalty applied
+Homework can be submitted up to two days late, with a 10% penalty applied
 each day.
 
 # Course Policies
 
-**Masks:**
-: Due to the continuing pandemic and spread of the COVID delta variant, you will be required
-to properly wear masks while attending class and in my office regardless of your vaccination status. 
-Students who show up to class without a mask will be asked to put one on, 
-go to the department's office in OM254 to get a disposable one, or leave class.
+**Healthy Practices and Mask Information:**
+: Students should take reasonable action to reduce the possibility
+of transmission of communicable illnesses, such as COVID-19. Proactive
+actions include washing hands frequently, using wipes to clean personal
+classroom seating area, covering coughs and sneezes with a tissue or 
+elbow, and staying home when feeling ill. It is appropriate to contact the
+instructor (before class if possible) and to ask a classmate for notes when 
+missing class due to illness. In the event of a medical emergency and/or
+hospitalization that prevents a student from attending class or being on 
+campus for five (5) days or more, including a positive COVID test from an
+off-campus medical facility, Health and Wellness/Clinical Services should be
+contacted at 610-683-4082 or <health@kutztown.edu>
 
-: Students who break this policy on multiple occasions will be reported to the Student Conduct Board. 
+: **Masks are required inside all university buildings for all individuals,
+regardless of vaccination status.**
 
-: This policy will be in effect while Berks County has a high or substantial transmission rate and/or
-based on University mandates. 
+* Individuals are required to wear masks indoors, including all classrooms, 
+meeting rooms, common areas in residence halls and indoor events. 
+* Masks are not required outdoors. CDC recommends that people who are not 
+fully vaccinated wear a mask in crowded outdoor settings. The university
+supports all members of the campus community who choose to wear a mask outdoors.
+* Mask must cover the nose and mouth
 
-: CDC County Level Map: <https://covid.cdc.gov/covid-data-tracker/#county-view>
+: **Masks will remain required while the CDC advises that they be worn in our
+area.** Should the situation improve, the university will adjust its 
+protocols to align with current CDC guidance, and all individuals will
+be strongly encouraged to wear a mask while indoors. 
 
-: Reusable cloth masks and other PPE can be requested by emailing <ppesupplies@kutztown.edu>
 
 **Attendance:**
-: Regular class attendance and participation is expected and highly encouraged. Students will be responsible for materials covered during class time. 
+: Regular and timely class attendance is expected and highly encouraged. Students are responsible for materials covered during class time. Students
+who will be missing class for extended periods of time, due to illness,
+university excused reasons, etc., should contact the instructor as soon as
+possible. 
+
+**Attendance Verification:**
+: Attendance status will be submitted to University Administration
+during the following periods: 
+
+* 1st Period: Wed 2/02 - Tues 2/08
+* 2nd Period: Mon 3/21 - Fri 3/25
+
+: Attendance will not be tracked otherwise and students should refer to the
+general guidelines above. 
+: For more information, please refer to [University Policy ACA-090](https://apps.kutztown.edu/SZ_001_POLICY_REGISTER/Policy/ACA-090))
 
 **Academic Dishonesty:**  
 : Refer to to the following policies. Repeated violators will receive the maximum allowable penalty for any infraction. 

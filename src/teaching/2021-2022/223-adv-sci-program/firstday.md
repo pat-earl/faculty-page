@@ -34,7 +34,8 @@ title: First Day Handout
 Always refer to my website for the latest office hours.
 
 **Meetings:** 
-: TBD
+: **Section 10**: MWF 11:00AM - 11:50AM GR307
+: **Section 20**: MWF 12:00PM - 12:50PM GR307
 
 **Format:** 
 : In-Person
@@ -45,8 +46,7 @@ Always refer to my website for the latest office hours.
 * *A Whirlwind Tour of Python* by Jake VanderPlas. **ISBN:** 978-1491964644
 * *Python Data Science Handbook* by Jake VanderPlas. **ISB:** 978-1491912058
 
-*NOTE:* Both these textbooks are available on the course web page for free. You only need
-to purchase the books if you want a physical copy (or support the author).
+*NOTE:* Both these textbooks are available on the course web page for free. 
 
 ## Description
 
@@ -78,41 +78,67 @@ Your final course grade will be made up of the following:
 The standard [University Grading Policy](http://app.kutztown.edu/policyregister/Policy/ACA-048) will 
 be used to calculate your final letter grade. 
 
-**Your exam average must be at least 60% in order to pass the course.**
+**Your exam average must be 60% or higher in order to pass the course.**
 
 **Class Participation:**
 : Grade is based off regular class attendance and participation in the classroom.
 
-**Exams/Quizzes:**
+**Exams**
 
 : Exams will be announced during class and must be taken during their scheduled time/location.
-: Missed exams/quizzes will be handled on a case-by-case basis. For a list of approved reasons review the *Class Absence* section from the [Class Attendance](http://app.kutztown.edu/policyregister/Policy/ACA-016) University policy. 
+: Missed exams will be handled on a case-by-case basis. For a list of approved reasons review the *Class Absence* section from the [Class Attendance](http://app.kutztown.edu/policyregister/Policy/ACA-016) University policy. Please contact the instructor to discuss the possibility of making up an exam. Be aware that you may be asked to provide evidence supporting an approved absence reason.  
 
-**Homework (Assignments/Projects):**
-: All homework submissions must include the following information:
-Your Name(s), The Course, Semester, Year, and Assignment/Project Number or Name.
-Homework can be submitted up to two days late, with a 10% penalty applied
-each day.
+**Assignments:**
+: All programming assignments must follow the department's documentation standards. Failure to do so will result up to a 20% grade penalty for that assignment. 
+: Assignments can be submitted up to two days late, with a 10% penalty applied each day.
 
 # Course Policies
 
-**Masks:**
-: Due to the continuing pandemic and spread of the COVID delta variant, you will be required
-to properly wear masks while attending class and in my office regardless of your vaccination status. 
-Students who show up to class without a mask will be asked to put one on, 
-go to the department's office in OM254 to get a disposable one, or leave class.
+**Healthy Practices and Mask Information:**
+: Students should take reasonable action to reduce the possibility
+of transmission of communicable illnesses, such as COVID-19. Proactive
+actions include washing hands frequently, using wipes to clean personal
+classroom seating area, covering coughs and sneezes with a tissue or 
+elbow, and staying home when feeling ill. It is appropriate to contact the
+instructor (before class if possible) and to ask a classmate for notes when 
+missing class due to illness. In the event of a medical emergency and/or
+hospitalization that prevents a student from attending class or being on 
+campus for five (5) days or more, including a positive COVID test from an
+off-campus medical facility, Health and Wellness/Clinical Services should be
+contacted at 610-683-4082 or <health@kutztown.edu>
 
-: Students who break this policy on multiple occasions will be reported to the Student Conduct Board. 
+: **Masks are required inside all university buildings for all individuals,
+regardless of vaccination status.**
 
-: This policy will be in effect while Berks County has a high or substantial transmission rate and/or
-based on University mandates. 
+* Individuals are required to wear masks indoors, including all classrooms, 
+meeting rooms, common areas in residence halls and indoor events. 
+* Masks are not required outdoors. CDC recommends that people who are not 
+fully vaccinated wear a mask in crowded outdoor settings. The university
+supports all members of the campus community who choose to wear a mask outdoors.
+* Mask must cover the nose and mouth
 
-: CDC County Level Map: <https://covid.cdc.gov/covid-data-tracker/#county-view>
+: **Masks will remain required while the CDC advises that they be worn in our
+area.** Should the situation improve, the university will adjust its 
+protocols to align with current CDC guidance, and all individuals will
+be strongly encouraged to wear a mask while indoors. 
 
-: Reusable cloth masks and other PPE can be requested by emailing <ppesupplies@kutztown.edu>
 
 **Attendance:**
-: Regular and timely class attendance is expected and highly encouraged. Students are responsible for materials covered during class time. 
+: Regular and timely class attendance is expected and highly encouraged. Students are responsible for materials covered during class time. Students
+who will be missing class for extended periods of time, due to illness,
+university excused reasons, etc., should contact the instructor as soon as
+possible. 
+
+**Attendance Verification:**
+: Attendance status will be submitted to University Administration
+during the following periods: 
+
+* 1st Period: Wed 2/02 - Tues 2/08
+* 2nd Period: Mon 3/21 - Fri 3/25
+
+: Attendance will not be tracked otherwise and students should refer to the
+general guidelines above. 
+: For more information, please refer to [University Policy ACA-090](https://apps.kutztown.edu/SZ_001_POLICY_REGISTER/Policy/ACA-090))
 
 **Academic Dishonesty:**  
 : Refer to to the following policies. Repeated violators will receive the maximum allowable penalty for any infraction. 

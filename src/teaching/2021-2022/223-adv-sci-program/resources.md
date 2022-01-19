@@ -1,4 +1,5 @@
 title: Class Resources
+breadcrumb: ./index.md
 
 Many of these resources were originally gathered and aggregated by my colleague 
 Dr. Dylan Schwesinger and [his version can be found by following this link](https://csit.kutztown.edu/~schwesin/fall20/csc223/resources.html). More items will be added throughout the semester. 
