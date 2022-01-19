@@ -1,3 +1,4 @@
+title: CSC273 - Computing Systems Integration
 infotable: 0
 stylesheet: ../../course.css
 {% from 'includes/macros.j2' import course_info_table with context -%}

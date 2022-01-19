@@ -1,4 +1,5 @@
 title: First Day Handout
+breadcrumb: ./index.md
 {%- import 'includes/site.j2' as site -%}
 {% from 'includes/macros.j2' import office_hours_table with context -%}
 {% from get_file('course_info.j2') import course %}

@@ -1,4 +1,5 @@
 title: CSC252-020 First Day Handout
+breadcrumb: ./index.md
 stylesheet: ../../firstday.css
 {%- import 'includes/site.j2' as site -%}
 {% from 'includes/macros.j2' import office_hours_table with context -%}

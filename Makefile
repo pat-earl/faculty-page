@@ -21,10 +21,11 @@ prod-clean:
 	rm -rf ./pdfs
 
 prod:
-	${PYTHON} build.py -fp
+	${PYTHON} build.py -p
 
 upload: prod
 	    # rsync --omit-dir-times --checksum --delete -av out-prod/ csit:~/public_html/s
-		rsync --omit-dir-times --checksum --delete -av out-prod/ vps:/var/www/pat-earl.com/faculty-bak 
+		# rsync --omit-dir-times --checksum --delete -av out-prod/ vps:/var/www/pat-earl.com/faculty-bak 
+		./lftp_upload.sh
 
 .PHONY: local clean prod-clean prod upload

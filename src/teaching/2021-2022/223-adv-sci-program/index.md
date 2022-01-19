@@ -1,4 +1,5 @@
 infotable: 0
+title: CSC223 - Advanced Scientific Programming
 stylesheet: ../../course.css
 {% from 'includes/macros.j2' import course_info_table with context -%}
 {% from get_file('course_info.j2') import course %}
@@ -51,7 +52,5 @@ stylesheet: ../../course.css
 </table>
 
 <br>
-
-* **WD** - Wellness Day  
 * **WTP** - [A Whirlwind Tour of Python](https://jakevdp.github.io/WhirlwindTourOfPython/)
 * **DSH** - [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
