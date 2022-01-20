@@ -1,37 +1,72 @@
 title: Homework #1
+breadcrumb: ../index.md
 
-## Basic Linux Commands
+**Due:** 
+: Friday, February 2
 
-**Due:**
-: Friday, Feb 5, 2021
+**Purpose:**
+: Demonstrate the ability to create a basic shell script
+: Learn about placing commands inside a shell script
 
-Create a bash script that will run commands based on the requirements below. Before each 
-section, display the category number. 
+## Description
 
-1. Information about your current login.  
-    * username
-    * user ID
-    * group ID
-    * Name of each group your user is part of
-2. Display information about the current system.  
-    * The current operating system
-    * Hostname
-    * Kernel name, release, and version
-3. Use the `date` to do the following:  
-    * The date September 5, 2019 in MM/DD/YYYY format
-    * Current weekday name, month day, year (For Example: Sunday, January 10, 2020)
-    * The current date and time in RFC 3339 format
+This assignment is to get you familiar with creating *BASH* shell scripts and using
+the assignment submitter. 
 
+*NOTE*: If you haven't done so already, it's recommended that you create a `csc252` directory in your home
+directory on CSITRD and store this assignment and all future assignments there. 
 
-### Submission:
+### Assignment Setup:
 
-**Place your script in a directory named hw1_FirstLast**. For Example: hw1_PatrickEarl.
-The name of the script doesn't matter, but put `.bash` as the file extension. `main.bash` would be fine.
+1. Create a new directory called `hw1_bash` (in the csc252 directory if you created it) and change into
+it. The submit script you'll be using creates an archive of your current working directory, so
+make sure you're in the right one!
+2. Within this directory you should create a new shell script called `hw1.sh`. You can use
+whatever command line text editor you're most familiar with (nano, vim, emacs, etc.). 
+3. Make sure you add the SHA-BANG (`#!`) on the *first* line of the shell script. 
+    1. This tells Linux which interpreter to use when executing the script. 
+    2. Since it's a *BASH* script, you should put `#!/bin/bash`.
+4. **After** the SHA-BANG line, make sure you put your documentation header and include all
+the information as required by the [CS&IT Department's Documentation Standards](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/DocumentationStandard.pdf)
+5. Now you are ready to start creating the script.
 
-Submit using my submit.bash script. Make sure your current directory is the one created earlier
-with just the script. Run this command, `~earl/bin/submit.bash csc252`, to submit your script.
+### Requirements:
 
-## Grading 
+Your shell script should achieve the following requirements in-order:
 
-This assignment is worth 15 points. Be sure to include the documentation header. 
-Other documentation is not required. 
+***NOTE***: For each step, please display the step number you are achieving. Refer to this example:
+
+```bash
+# DOCUMENTATION HEADER END
+
+echo 1.
+# Command to fullfil requirement 1 goes here
+
+echo 2.
+# Command for requirement 2
+
+echo N.
+# etc.
+```
+
+1. Write a command that will output a quote/lyric from one of your favorite movies, shows, artists, etc.
+2. Write a command that will output your current login name. 
+3. Write a command that will print the current working directory
+
+That's it
+
+## Submission:
+
+In order to submit this assignment, you'll run the following command inside the assignment directory
+you created earlier:
+
+`~earl/bin/submit <course> <assignment_name>` 
+
+*You don't need the arrows `<` `>`, they are used to show where you'll be put your information*
+
+Replace `<course>` with the class's course code, `csc252`, and `<assignment_name>` with `hw1`. 
+Confirm that you want to submit the assignment by typing `y` or `Y` and hitting enter. Upon successful submission 
+you should receive an email receipt. If you run into any errors, please e-mail the instructor and 
+be sure to include *ALL* the output from the `submit` command.
+
+*CSC252 - Spring 2022*

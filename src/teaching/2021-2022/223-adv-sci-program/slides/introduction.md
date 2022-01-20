@@ -23,7 +23,7 @@ Prof. Patrick Earl
   - Masks 😷
   - Office Hours
   - Assignments / Grading Policy
-  - Policies
+  - Other Course Policies
 
 ---
 
@@ -32,11 +32,3 @@ Prof. Patrick Earl
 - You should know at least one programming language
   - Learning Python
 - Python Environment - [Anaconda](https://www.anaconda.com/products/individual)
-
----
-
-# **Expectations**
-
-- My Expectations?
-- Your Expectations?
-- Expectations of your peers?

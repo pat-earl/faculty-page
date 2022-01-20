@@ -11,7 +11,62 @@ stylesheet: ../../course.css
 * [First Day Handout]({{get_link('firstday.html')}})
 * [CS&IT Academic Integrity Policy](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/AcademicIntegrityPolicy.pdf)
 * [**Lectures**]({{get_link('lectures.md')}})
-* [The Data Visualization Catalogue](https://datavizcatalogue.com/index.html)
 
 ## Topics
 
+*Table is provided as general guidance, topic order is subject to change as needed.*
+
+<table id="schedule">
+    <colgroup>
+        <col span="1" style="width: 45%;">
+        <col span="1" style="width: 35%;">
+    <thead>
+        <tr>
+            <th scope="col">Topic(s)</th>
+            <th scope="col">Reading(s)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2">
+                <b>Section 1</b>: Computing Systems Overview
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Systems Development
+            </td>
+            <td>
+                Chapter 1
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Origins of Software
+            </td>
+            <td>
+                Chapter 2
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b>Section 2</b>: Application Integration
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b>Section 3</b>: Data Management
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b>Section 4</b>: Architecture Integration
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b>Section 5:</b>: Enterprise Resource Planning (ERPs)
+            </td>
+        </tr>
+    </tbody>
+</table>

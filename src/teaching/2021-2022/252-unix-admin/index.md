@@ -8,34 +8,31 @@ stylesheet: ../../course.css
 
 ## Course Resources
 
+* [**Lectures**]({{get_link('lectures.html')}})
 * [First Day Handout]({{get_link('firstday.html')}})
 * [Linux Fundamentals](https://linux-training.be/linuxfun.pdf) by Paul Cobbaut
     * Supplemental textbook
 * [CS&IT Documentation Standard](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/DocumentationStandard.pdf)
 * [CS&IT Academic Integrity Policy](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/AcademicIntegrityPolicy.pdf)
-* [Lectures]({{get_link('lectures.html')}})
 * [GNU BASH Manual](https://www.gnu.org/software/bash/manual/bash.html)
 * [Regular Expression Cheatsheet](https://remram44.github.io/regex-cheatsheet/regex.html)
 
-## Tentative Schedule
+## Topics
 
-*Schedule is subject to change and is provided as guidance*
+*Table is provided as general guidance, topic order is subject to change as needed.*
 
 <table id="schedule">
     <colgroup>
-        <col span="1" style="width: 20%;">
         <col span="1" style="width: 45%;">
         <col span="1" style="width: 35%;">
     <thead>
         <tr>
-            <th scope="col">Week</th>
             <th scope="col">Topic(s)</th>
             <th scope="col">Reading(s)</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td scope='row'>1 (01/19 - 01/22)</td>
             <td>
                 Course Intro<br>
                 History of UNIX/Linux<br>
@@ -49,86 +46,50 @@ stylesheet: ../../course.css
             </td>
         </tr>
         <tr>
-            <td scope='row'>2 (01/25 - 01/29)</td>
             <td>
-                Basic Commands<br>
-                File and Directory
+                The Utilities<br>
             </td>
             <td>
                 <ul>
-                    <li>Chapter 3 (Pages 49-68)</li>
-                    <li>Chapter 4</li>
+                    <li>Chapter 3</li>
                 </ul>
             </td>
         </tr>
         <tr>
-            <td scope='row'>3 (02/01 - 02/05)</td>
             <td>
                 Files and Directories
             </td> 
             <td>
                 <ul>
                     <li>Chapter 4</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td scope='row'>4 (02/08 - 02/12)<br><strong>WD:</strong> 02/11</td>
-            <td>
-                Files and Directories<br>
-                NO CLASS THURSDAY - Wellness Day
-            </td>
-            <td>
-                <ul>
                     <li>Chapter 8 (Pages: 285 - 294)</li>
                 </ul>
             </td>
         </tr>
         <tr>
-            <td scope='row'>5 (02/15 - 02/19)</td>
             <td>
-                Files and Directories<br>
                 The Shell<br>
-                Bourne Again Shell
+                Bourne Again Shell (BASH)
             </td>
             <td>
                 <ul>
                     <li>Chapter 5</li>
                     <li>Chapter 8 (Pages: 294-299)</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Shell Scripting
+            </td>
+            <td>
+                <ul>
                     <li>Chapter 10</li>
                 </ul>
             </td>
         </tr>
         <tr>
-            <td scope='row'>6 (02/22 - 02/26)</td>
             <td>
-                BASH<br>
-                Shell Scripting
-            </td>
-            <td>
-            </td>
-        </tr>
-        <tr>
-            <td scope='row'>7 (03/01 - 03/05)</td>
-            <td>
-                <strong>Exam #1</strong> - Tuesday<br>
-                Shell Scripting
-            </td>
-            <td>
-            </td>
-        </tr>
-        <tr>
-            <td scope='row'>8 (03/08 - 03/12)<br><strong>WD:</strong> 03/10</td>
-            <td>
-                Shell Scripting
-            </td>
-            <td>
-            </td>
-        </tr>
-        <tr>
-            <td scope='row'>9 (03/15 - 03/19)</td>
-            <td>
-                Shell Scripting<br>
                 Processes
             </td>
             <td>
@@ -138,9 +99,7 @@ stylesheet: ../../course.css
             </td>
         </tr>
         <tr>
-            <td scope='row'>10 (03/22 - 03/26)</td>
             <td>
-                Processes<br>
                 System Administration
             </td>
             <td>
@@ -151,63 +110,39 @@ stylesheet: ../../course.css
             </td>
         </tr>
         <tr>
-            <td scope='row'>11 (03/29 - 04/02)<br><strong>WD:</strong> 04/02</td>
-            <td>
-                System Administration
-            </td>
-            <td>
-            </td>
-        </tr>
-        <tr>
-            <td scope='row'>12 (04/05 - 04/09)</td>
-            <td>
-                <strong>Exam #2</strong> - Shells, Processes, & Sys. Administration<br>
-            </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td scope='row'>13 (04/12 - 04/16)</td>
             <td>
                 Regular Expressions<br>
-                Text Processing (Awk & SED)
+                Text Processing - SED
             </td>
             <td>
                 <ul>
-                    <li>Chapter 14 - AWK</li>
                     <li>Chapter 15 - SED</li>
                     <li>Appendix A</li>
                 </ul>
             </td>
         </tr>
         <tr>
-            <td scope='row'>14 (04/19 - 04/23)<br><strong>WD:</strong> 04/20</td>
             <td>
-                NO CLASS TUESDAY - Wellness Day<br>
-                AWK
+                Text Processing - AWK
             </td>
             <td>
                 <ul>
-                    <li>Chapter 12</li>
+                    <li>Chapter 14 - AWK</li>
                 </ul>
             </td>
         </tr>
         <tr>
-            <td scope='row'>15 (04/26 - 04/30)</td>
             <td>
                 Scripting Language - Python<br>
                 Makefiles (If time permits)
             </td>
-            <td></td>
-        </tr>
-        <tr>
-            <td scope='row'>16 (05/03 - 05/07)</td>
             <td>
-                <em>FINAL EXAMS WEEK - See Day & Time Above</em>
+                <ul>
+                    <li>Chapter 12 - Python</li>
+                </ul>
             </td>
-            <td></td>
         </tr>
     </tbody>
 </table>
 
 
-**WD** - Wellness Day
