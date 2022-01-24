@@ -24,6 +24,7 @@ Prof. Patrick Earl
   - Office Hours
   - Assignments / Grading Policy
   - Other Course Policies
+- D2L - Assignment Submission
 
 ---
 
@@ -31,4 +32,7 @@ Prof. Patrick Earl
 
 - You should know at least one programming language
   - Learning Python
+- (*Recommended*) Personal Machine (Running Windows, MacOS, Linux)
 - Python Environment - [Anaconda](https://www.anaconda.com/products/individual)
+- (*Recommended*) VS Code ( + Python Extension)
+- (*Recommended*) VPN Setup
