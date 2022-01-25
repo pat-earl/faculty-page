@@ -28,7 +28,7 @@ stylesheet: ../../firstday.css
 : <{{author_email}}>
 
 **Faculty Web Page:**
-: <https://csit.kutztown.edu/~earl/s>
+: <https://faculty.kutztown.edu/earl>
 
 **Office Hours:**
 {% for day,time in site.office_hours.items() -%}
