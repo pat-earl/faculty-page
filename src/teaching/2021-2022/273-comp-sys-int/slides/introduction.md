@@ -16,7 +16,8 @@ Prof. Patrick Earl
 
 # **Course Overview**
 
-- First Day Handout (Of Course!)
+- First Day Handout
+  - Masks
   - Office Hours
   - Grading Policy
   - Assignments
