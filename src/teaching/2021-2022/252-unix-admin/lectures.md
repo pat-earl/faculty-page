@@ -1,4 +1,5 @@
 title: Lectures
+breadcrumb: ./index.md
 
 {% set lectures = (
     {"name": "Introduction", "file": "slides/intro.md"},

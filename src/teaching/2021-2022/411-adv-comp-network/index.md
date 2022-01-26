@@ -17,6 +17,10 @@ concerned with the various layers of the Internet architecture stack, with conce
 3 and 4. The primary protocols of these layers, Transmission Control Protocol (TCP) and Internet
 Protocol (IP), will be studied in detail. Network addressing and related protocols will be covered. 
 
+## Assignments
+
+* Week 1 - [Get Mininet Running]({{get_link('./hw/mininet_setup.md')}})
+
 ## Topics
 
 *Under Construction*
@@ -37,7 +41,18 @@ Protocol (IP), will be studied in detail. Network addressing and related protoco
                 Local Area Networks & Topologies
             </td>
             <td>
-                TBD
+                <ul>
+                    <li>
+                        <a href="https://faculty.kutztown.edu/earl/teaching/2021-2022/311-comp-network/slides/chapter6.pdf">
+                            Link Layer Slides
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://faculty.kutztown.edu/earl/teaching/2021-2022/311-comp-network/slides/hardware.pdf">
+                            Networking Hardware
+                        </a>
+                    </li>
+                </ul>
             </td>
         </tr>
         <tr>
