@@ -3,7 +3,8 @@ breadcrumb: ./index.md
 
 {% set lectures = (
     {"name": "Introduction", "file": "slides/introduction.md"},
-    {"name": "Python Introduction", "file": "slides/python_intro.md"}
+    {"name": "Python Introduction", "file": "slides/python_intro.md"},
+    {"name": "Python Data Types", "file": "slides/types.md"},
 ) %}
 
 ## Course Lectures
