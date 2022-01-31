@@ -1,39 +1,55 @@
 ---
-title: "Python Control Flow"
-subtitle: "CSC223"
-author: Patrick Earl
-date: 01/31/2022
-slideNumber: true
-revealjstheme: simple
-width: 1600
-height: 1000
-transition: slide
+marp: true
+theme: gaia
+_class:
+  - lead
+paginate: true
+backgroundColor: #fff
+size: 16:9
 ---
 
-## Conditional Statements
+# **Python Control Structures**
 
-* *if-then* statements
-* `if, elif, else`
-* **Syntax**
-  * `if expression:`
+CSC223 - Advanced Scientific Programming
+
+Prof. Patrick Earl
+
+Spring 2022
+
+---
+
+# Conditional Statements
+
+- *if-then* statements
+- `if, elif, else`
+- **Syntax**
+  - `if expression:`
   
-## for
+---
 
-* Loops are used to repeat some code
-* `for expression in iterator`
-* `range()`
+# for
 
-## while
+- Loops are used to repeat some code
+- `for expression in iterator`
+- `range()`
 
-* Iterates until condition is met
-* Evaluated as boolean statement, until statement is `False`.
+---
 
-## break & continue
+# while
 
-* Serve same purpose as C++
-* `break` out of loop
-* `continue` to next iteration
+- Iterates until condition is met
+- Evaluated as boolean statement, until statement is `False`.
 
-## loop with `else`
+---
 
-* Executed if loop ends naturally (w/o a `break`)
+# break & continue
+
+- Serve same purpose as C++
+- `break` out of loop
+- `continue` to next iteration
+
+---
+
+# loop with `else`
+
+- Executed if loop ends naturally (w/o a `break`)
