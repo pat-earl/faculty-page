@@ -15,7 +15,8 @@ You are to write a program that will process employees and their pay. For each e
 will read in an employee's name and hourly pay rate. It should also read in the number of hours
 worked each day for 5 days and calculate their total number of hours worked. You must read the 
 hours using a loop. The program should output the employee's name, gross pay, total withholding
-amount and net pay.
+amount and net pay. Your program should valid that the user is entering a valid number of hours worked
+for each day and valid hourly pay rate.
 
 Withholding is made up of state tax, federal tax, and FICA. The following tax values will be used:
 
@@ -42,6 +43,7 @@ Assignment is worth 100 points.
 - *Correct File Name* - 5 Points
 - *User Input* - 45 Points
     - Program reads in employee name, pay, and hours worked correctly. Stops accepting input when `done` is entered.
+    - Program validates user input for pay and hours worked.
 - *Program Output* - 50 Points
     - Program outputs the required information as specified and money looks like money. 
 
