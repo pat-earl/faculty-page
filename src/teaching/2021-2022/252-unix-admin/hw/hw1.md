@@ -2,7 +2,7 @@ title: Homework #1
 breadcrumb: ../index.md
 
 **Due:** 
-: Friday, February 2
+: Friday, February 4
 
 **Purpose:**
 : Demonstrate the ability to create a basic shell script
