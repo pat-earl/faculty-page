@@ -88,7 +88,7 @@ Prof. Patrick Earl
 
 # **The Kernel**
 
-![](./images/figure-1-1.png)
+![](./images/figure-1-1.jpg)
 
 *Figure 1-1 from Textbook*
 
