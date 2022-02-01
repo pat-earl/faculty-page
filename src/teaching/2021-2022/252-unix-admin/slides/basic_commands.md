@@ -120,3 +120,14 @@ Use of the pipe allows for sending the *output* of one command to be *input* of 
 - `which`
 - `whereis`
 - `locate`
+
+---
+
+# **User & System Information**
+
+- `who`
+- `w`
+- `uptime`
+- `free`
+- `id`
+- `groups`
