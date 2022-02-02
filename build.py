@@ -296,7 +296,6 @@ def slide_convert(site, template, **context):
         # shutil.copy(filepath, slides_path)
 
     else:
-        # TODO: Enable Marp converts
         os.system("./marp {} -o {}".format(template.filename, filepath))
 
     # Copy the permissions from 
