@@ -55,6 +55,15 @@ stylesheet: ../../course.css
             </td>
         </tr>
         <tr>
+            <td>
+                Application Architectures
+            </td>
+            <td>
+                <a href="https://martinfowler.com/architecture/">
+                    Various Blog Posts on Software Architecture
+                </a>
+            </td>
+        <tr>
             <td colspan="2">
                 <b>Section 3</b>: Data Management
             </td>

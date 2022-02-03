@@ -42,9 +42,11 @@ Spring 2022
 
 # Special Directories
 
-- **Working Directory** - When in command-line environments, you will always be in an associated directory. Referred to ask your working directory. 
+- **Working Directory** - When in command-line environments, you will always be in an associated directory. 
 - **Home Directory** - Your working directory when first logging into a command-line environment.
   - Typically used to hold `start-up` files.
+
+---
 
 # Pathnames
 
@@ -64,15 +66,64 @@ Spring 2022
 
 ---
 
+# Special File Types
+
+- `info ls`
+
+---
+
+# Long Listing Format
+
+- `ls -l` Long Format
+- Displays the following information:
+  - File Type
+  - File Mode Bits
+  - Number of Hard Links
+  - Owner Name
+  - Group Name
+  - Size
+  - Timestamp (Modification)
+  - File Name
+
+---
+
 # File Permissions
 
-*TODO*
+- Every user *can* have the following three permissions on a given file:
+  - Read - The user can view the contents of the file
+  - Write - User can write to the file
+  - Execute - User can execute the file (This can mean different things depending on file type)
+
+- These 3 permissions are put into three groups:
+  - Owner
+  - Group
+  - Other
 
 ---
 
 # `chmod`
 
-*TODO*
+- Command used to change the permission bits for files
+- Symbolic vs Numeric (Octal)
+  - `chmod u+rw file1.txt`
+  - `chmod 600 file1.txt`
+  - 1 - Execute
+  - 2 - Write
+  - 4 - Read
 
 ---
+
+# Special File Permissions
+
+- `setuid` - Process runs with the file's owner
+- `setgid` - Process runs with the group owner of file
+- `sticky` - Protects files within a directory. File can only be deleted by owner of file, directory, or root. 
+
+---
+
+# Changing File Attributes
+
+- `chown`
+- `chgrp`
+- `touch`
 
