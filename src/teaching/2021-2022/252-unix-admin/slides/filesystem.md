@@ -64,3 +64,15 @@ Spring 2022
 
 ---
 
+# File Permissions
+
+*TODO*
+
+---
+
+# `chmod`
+
+*TODO*
+
+---
+
