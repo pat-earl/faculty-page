@@ -68,8 +68,8 @@ This course deals with the study of the UNIX operating system, particularly, sys
 Your final course grade will be made up of the following:
 
 * Assignments/Projects: 50%
-* Exams: 25%
-* Final Exam: 20%
+* Exams (2): 30%
+* Final Exam: 15%
 * Class Participation: 5%
 
 The standard [University Grading Policy](http://app.kutztown.edu/policyregister/Policy/ACA-048) will be used to calculate your final letter grade. 

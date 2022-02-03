@@ -23,9 +23,17 @@ prod-clean:
 prod:
 	${PYTHON} build.py -p
 
+prod-force:
+	${PYTHON} build.py -fp
+
 upload: prod
-	    # rsync --omit-dir-times --checksum --delete -av out-prod/ csit:~/public_html/s
-		# rsync --omit-dir-times --checksum --delete -av out-prod/ vps:/var/www/pat-earl.com/faculty-bak 
-		./lftp_upload.sh
+	./lftp_upload.sh	
+
+upload-force: prod-force
+	./lftp_upload.sh
 
 .PHONY: local clean prod-clean prod upload
+
+# old stuff for "prod" uploads
+# rsync --omit-dir-times --checksum --delete -av out-prod/ csit:~/public_html/s
+# rsync --omit-dir-times --checksum --delete -av out-prod/ vps:/var/www/pat-earl.com/faculty-bak 
