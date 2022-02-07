@@ -20,10 +20,11 @@ Protocol (IP), will be studied in detail. Network addressing and related protoco
 ## Assignments
 
 * Week 1 - [Get Mininet Running]({{get_link('./hw/mininet_setup.md')}})
+* Week 2 - [Subnetting Assignment]({{get_link('./hw/subnetting.md')}})
 
 ## Topics
 
-*Under Construction*
+Links to Dr. Frye's lectures will require login (Use your KU email and password)
 
 <table id="schedule">
     <colgroup>
@@ -60,7 +61,18 @@ Protocol (IP), will be studied in detail. Network addressing and related protoco
                 IPv4 - Addressing, Subnets, Etc.
             </td>
             <td>
-                TBD
+                <ul>
+                    <li>
+                        <a href="https://faculty.kutztown.edu/frye/secure/CSC411/Lectures/2NWaddresses.pdf">
+                        Dr. Frye's Lecture on Network Addresses
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking">
+                        DigitalOcean post by Justin Ellingwood
+                        </a>
+                    </li>
+                </ul>
             </td>
         </tr>
         <tr>

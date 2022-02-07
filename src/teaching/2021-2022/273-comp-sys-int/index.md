@@ -63,6 +63,31 @@ stylesheet: ../../course.css
                     Various Blog Posts on Software Architecture
                 </a>
             </td>
+        </tr>
+        <tr>
+            <td>
+                Application Programming Interfaces
+            </td>
+            <td>
+                TBD
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Events and Actions
+            </td>
+            <td>
+                TBD
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Data Mapping
+            </td>
+            <td>
+                TBD
+            </td>
+        </tr>
         <tr>
             <td colspan="2">
                 <b>Section 3</b>: Data Management
