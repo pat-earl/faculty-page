@@ -7,8 +7,6 @@ breadcrumb: index.md
     {"name": "Chapter 2 - Origins of Software", "file": "slides/chapter2.pdf"}
 ) %}
 
-## Course Lectures
-
 {% for lec in lectures -%}
 * {{ lec['name'] }} - [Slides]({{ get_link(lec['file']) }})
 {% endfor -%}

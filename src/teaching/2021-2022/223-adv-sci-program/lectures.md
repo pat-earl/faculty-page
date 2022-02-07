@@ -1,4 +1,4 @@
-title: Lectures
+title: CSC223 - Lectures
 breadcrumb: ./index.md
 
 {% set lectures = (
@@ -7,12 +7,10 @@ breadcrumb: ./index.md
     {"name": "Python Data Types", "file": "slides/types.md"},
     {"name": "Python Control Structures" , "file": "slides/control.md"},
     {"name": "Python Functions", "file": "slides/functions.md"},
+    {"name": "Python Input/Output", "file": "slides/io.md"}
 ) %}
 
-## Course Lectures
-
-These are the lecture slides used in the course.
 
 {% for lec in lectures -%}
-* {{ lec['name'] }} - [Slide Form]({{ get_link(lec['file']) }})
+* {{ lec['name'] }} - [Slides]({{ get_link(lec['file']) }})
 {% endfor %}

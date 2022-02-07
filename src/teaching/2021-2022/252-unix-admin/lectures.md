@@ -1,4 +1,4 @@
-title: Lectures
+title: CSC252 - Lectures
 breadcrumb: ./index.md
 
 {% set lectures = (
@@ -6,10 +6,6 @@ breadcrumb: ./index.md
     {"name": "General Information", "file": "slides/basic_commands.md"},
     {"name": "Filesystem", "file": "slides/filesystem.md"},
 ) %}
-
-## Course Lectures
-
-These are the lecture slides used in the course.
 
 {% for lec in lectures -%}
 * {{ lec['name'] }} - [Slides]({{ get_link(lec['file']) }})
