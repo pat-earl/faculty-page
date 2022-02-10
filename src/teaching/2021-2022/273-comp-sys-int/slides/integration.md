@@ -88,7 +88,7 @@ Challenges?
 ---
 
 ## Patterns
-- *3rd Party Applications**
+- **3rd Party Applications**
 - [Apache Camel](https://camel.apache.org/)
 - Provides frameworks to mirror [Enterprise Integration Patterns](https://camel.apache.org/components/3.15.x/eips/enterprise-integration-patterns.html)
 

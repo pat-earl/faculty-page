@@ -1,15 +1,13 @@
 title: Homework #2
-
-<br>
+breadcrumb: ../index.md
 
 ## Store Statistics in Python
 
 **Due**
-: Friday Feb 19, 2021
+: Friday Feb 18, 2021
 
 Assignment Purpose:
 
-* Writing Basic Python Script
 * Python File Input/Output
 * Using Python Data Structures
 
@@ -26,8 +24,8 @@ sales amounts for that department.
 Write a program to calculate statistics for each department in the store. Your program should do the 
 following:
 
-1. Prompt the user for the input file.
-2. Read the file data into a list and a list of lists - 2D List.
+1. Prompt the user for the input file name.
+2. Read the file data into a list and a list of lists.
 3. Compute the average monthly sales for each department.
 4. Compare each monthly sales amount with the standard.
 5. Write the statistics for the department, including the department number, average sales amount,
@@ -45,21 +43,21 @@ The average value must be output with *one* decimal point of precision.
 Your program must be composed of the following functions with the exact names, formal parameters,
 and return values:
 
-* `get_data`: takes a string representing a filename and returns two items. A list containing
+* `get_data`: Takes a string representing a filename and returns two items. A list containing
 the standard sales and a list of lists of floats read from the file.
 The outer list has the same length as the number of rows in the files and each inner list
 has a length of 12. That is, each inner list represents a single line of the file.
-* `process_data`: takes a list of lists of floats, the list of standard sales, and returns a list of dictionaries. 
+* `process_data`: Takes a list of lists of floats, the list of standard sales, and returns a list of dictionaries. 
 Each dictionary must have the following key names and values where the values correspond to the respective inner list:
     * **"Department"**: (int) the department number (the inner list number where the first inner list is 1)
     * **"Average"**: (float) the average of the list
     * **"Above"**: (int) the number of entries greater than or equal to the standard. 
     * **"Below"**: (int) the number of entries less than the standard
     * **"Performance"**: (string) The department's performance based number of months above or below the standard. Only two values should be "unsatisfied" or "satisfied".
-* `write_to_file`: takes a list of dictionaries of the form returned from `process_data` function and writes 
+* `write_to_file`: Takes a list of dictionaries of the form returned from `process_data` function and writes 
 the values to a file. The file format is described above. This function must use at least one Python format string as part of the
-implementation. The output file must be `out.dat`
-* `main`: prompts the user for a filename and calls the other functions with the appropriate arguments. 
+implementation. The name of your output file must be `out.dat`.
+* `main`: Prompts the user for a filename and calls the other functions with the appropriate arguments. 
 
 Note that you may create your own helper functions if you wish. *The last line in the script should
 call the `main` function.*
