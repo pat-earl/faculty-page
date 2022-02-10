@@ -9,13 +9,10 @@ stylesheet: ../../course.css
 ## Course Resources
 
 * [**Lectures**]({{get_link('lectures.html')}})
+* [Resources]({{get_link('resources.md')}})
 * [First Day Handout]({{get_link('firstday.html')}})
-* [Linux Fundamentals](https://linux-training.be/linuxfun.pdf) by Paul Cobbaut
-    * Supplemental textbook
 * [CS&IT Documentation Standard](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/DocumentationStandard.pdf)
 * [CS&IT Academic Integrity Policy](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/AcademicIntegrityPolicy.pdf)
-* [GNU BASH Manual](https://www.gnu.org/software/bash/manual/bash.html)
-* [Regular Expression Cheatsheet](https://remram44.github.io/regex-cheatsheet/regex.html)
 
 ## Topics
 

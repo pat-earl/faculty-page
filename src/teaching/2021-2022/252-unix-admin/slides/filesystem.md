@@ -127,3 +127,94 @@ Spring 2022
 - `chgrp`
 - `touch`
 
+---
+
+## Links
+
+- Refer to the same data by using two filenames
+- Two Types:
+  - Hard
+  - Symbolic (File Type: `l`)
+- `ln`
+
+---
+
+## Storage & Devices
+
+- **Drivers** - Communicating with hardware
+  - Part of the Kernel (In most cases)
+- `ls -l` on devices
+  - Major & Minor Numbers
+  - The driver being used by the Kernel
+- Most common types of storage protocols:
+  - SCSI/SATA/SAS
+
+---
+
+## Device Types
+
+- Character Devices
+  - Accessed as a stream of sequential data
+  - Keyboard Devices, Serial Ports
+- Block Device
+  - Hardware device that contains *blocks* of data
+  - Buffering is required
+  - Hard Disks, SSDs, USB Flash Drives, etc.
+
+---
+
+## Hard Disks
+
+- Platters
+- Read/Write Head
+- Tracks
+  - Cylinder
+- Sectors & Blocks
+- Source: [Hard Disk Drive Basics](https://www.ntfs.com/hard-disk-basics.htm)
+
+---
+
+## Storage Partitions
+
+- Linux File Structure can be split into three layers
+  - Filesystem, Partition, Physical
+- Partitioning - Logically splitting a physical drive into smaller parts
+  - MBR vs GPT
+- `fdisk`
+- `lsblk`
+- **ext4** - Fourth Extended Filesystem
+
+---
+
+## Index Nodes (inode)
+
+- Unique Identifier for metadata 
+  - Contains metadata for a given filename
+    - The Mode/Permissions
+    - Owner ID, Group ID
+    - Size of the File
+    - Number of Hard Links
+    - Time Accessed, Modified 
+    - Time inode modified
+    - Location of data blocks
+
+---
+
+## Data Blocks
+
+- Where the actual contents of the file are stored
+- Files are just a collection of these blocks
+
+--- 
+
+## File Table
+
+![height:400px](./images/file_table.png)
+
+*Image Source:* Dr. Lisa Frye
+
+---
+
+## More info on ext4
+
+- <https://www.kernel.org/doc/html/latest/filesystems/ext4/index.html>

@@ -21,8 +21,6 @@ Spring 2022
 
 - Purpose
 - Patterns
-- Architectures
-- Technologies
 
 ---
 
@@ -47,7 +45,7 @@ IBM Definition:
 
 Most applications are developed to one specific thing. They can also be developed at different times, by different developers, vendors, etc. Inherently this means that as designed they are not able to communicate with one another. Leading to "islands" of software.
 
---
+---
 
 ## Purpose
 
@@ -104,6 +102,17 @@ Challenges?
 - Can be a web-based system, operating system, database, etc.
 - Each layer provides a standard form of communicating and data. 
 - Most software provides a [developer site](https://docs.gitlab.com/ee/api/) to document how a developer can use their API.
+
+---
+
+## Patterns
+
+- **API**
+- Within a single application, logic can be split into three layers
+  - Presentation for User Interface
+  - Domain for business logic
+  - Data for controlling data access
+- Each layer uses it's own API to communicate between the layers.
 
 ---
 
