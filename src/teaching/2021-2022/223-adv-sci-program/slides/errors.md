@@ -24,20 +24,28 @@ Spring 2022
 - **Runtime Errors** - Syntactically valid code that fails for some reason
 - **Semantic Errors** - Errors in logic
 
+---
+
 ## Runtime Errors
 
 - Python will provide an *Exception* type
 - `try` & `except`
 - *FileNotFoundError*
 
+---
+
 ## Raising Exceptions
 
 - `raise`
+
+---
 
 ## Exception Message
 
 - Capture the Exception message
 - `except Error as message:`
+
+---
 
 ## try...except
 
