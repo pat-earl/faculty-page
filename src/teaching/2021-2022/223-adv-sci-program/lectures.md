@@ -9,6 +9,7 @@ breadcrumb: ./index.md
     {"name": "Python Functions", "file": "slides/functions.md"},
     {"name": "Python Input/Output", "file": "slides/io.md"},
     {"name": "Data Science File Formats", "file": "slides/file_formats.md"},
+    {"name": "Python Errors & Exceptions", "file": "slides/errors.md"},
 ) %}
 
 
