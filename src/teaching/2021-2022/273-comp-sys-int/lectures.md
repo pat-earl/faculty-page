@@ -6,6 +6,7 @@ breadcrumb: index.md
     {"name": "Chapter 1 - SDLC", "file": "slides/chapter1.pdf"},
     {"name": "Chapter 2 - Origins of Software", "file": "slides/chapter2.pdf"},
     {"name": "Application Integration", "file": "slides/integration.md"},
+    {"name": "Application Programming Interfaces", "file": "slides/api.md"},
 ) %}
 
 {% for lec in lectures -%}

@@ -5,6 +5,7 @@ breadcrumb: ./index.md
     {"name": "Introduction", "file": "slides/intro.md"},
     {"name": "General Information", "file": "slides/basic_commands.md"},
     {"name": "Filesystem", "file": "slides/filesystem.md"},
+    {"name": "UNIX Shell", "file": "slides/shell.md"}
 ) %}
 
 {% for lec in lectures -%}

@@ -69,7 +69,17 @@ stylesheet: ../../course.css
                 Application Programming Interfaces
             </td>
             <td>
-                TBD
+                <ul>
+                    <li><a href="https://restfulapi.net/">
+                        RESTFUL APIs
+                    </a></li>
+                    <li><a href="https://www.gend.co/blog/what-is-api-integration-a-guide-for-non-technical-people">
+                        What is API Integration?
+                    </a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages">
+                        HTTP Messages
+                    </a></li>
+                </ul>
             </td>
         </tr>
         <tr>
