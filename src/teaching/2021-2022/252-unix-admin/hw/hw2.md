@@ -1,40 +1,41 @@
 title: Homework #2
+breadcrumb: ../index.md
 
-## File Commands
+## Basic Linux Commands
 
 **Due:**
-: Saturday, Feb 27, 2021
+: Friday, Feb 25, 2022
 
-Using the file commands discussed & presented in class, write a command that 
-fulfills the requirements below.
-You can also choose to use several commands with a "pipe." Display an echo above each command. 
-For question 1 do an echo (i.e. "echo 1a" or "echo 1-1") for each sub question.
+Create a bash script that will run commands based on the requirements below.
+Each bullet **must be** a separate command.
 
-For questions 3 & 4, please put your responses to the last part of those questions as a comment in your script.
+Please include an echo statement on the line before the command. For example:
 
-1. Copy the *students2.dat* file from my public csc252 directory. Use this file for the following commands. (*NOTE:* You don't have to include the command to copy this file in your script, but make sure it is in your directory when submitting):
-     * Display the contents of the file sorted by last name. Ignore any leading whitespace. Column 1 is the first name and column 2 is last name.
-     * Display lines, *with line numbers*, of records of Computer Science majors.
-     * Display lines, *with line numbers*, for students whose first or last name is John.
-     * Display all ECE majors sorted in descending order by GPA. 
-     * Display all lines but show only the last name and GPA, sorted by an ascending GPA.
-2. Search your home directory and display pathnames of all C++ program files. Terminate your command with `2>/dev/null` to ignore any error messages.
-2. Remove the file *newFile.hard* if it exists. Create a hard link to students2.dat named *newFile.hard*. Display a long listing of that new link file and compare it's attributes with that of student2.dat. How would you confirm that students2.dat and *newFile.hard* are two names of the same file. 
-3. Remove the file *newFile.soft* if it exists. Create a soft link to students2.dat and name the link file *newFile.soft*. Display a long listing of the new link file and compare it's attributes with that of students2.dat. How would you confirm that student2.dat and *newFile.soft* are different files? 
-4. Display the inode/filename pairs for *ALL* the files in ~earl/public/csc135, sorted by inode number.
+```bash
+echo 1a.
+command # You'd replace command with the proper one to complete the assignment
+```
 
-*You should only use the utility commands we've talked about so far in the semester. awk & sed are advanced commands and using them will result in a major grade penalty. 
+1. Information about your current login using the `id` command.
+    * username
+    * user ID
+    * group ID
+    * Name of each group your user is part of
+2. Display information about the current system.  
+    * The current operating system
+    * Hostname
+    * Kernel name, release, and version
+3. Use the `date` to do the following:  
+    * The date September 5, 2019 in MM/DD/YYYY format
+    * Current weekday name, month day, year (For Example: Sunday, January 10, 2020)
+    * The current date and time in RFC 3339 format
 
-## Submission
 
-These commands should be placed within a bash script. Remember to use the sha-bang line and make your bash script executable. 
+### Submission:
 
-The directory for this assignment should be named *hw2_FirstLast* (i.e. hw2_PatrickEarl)
+**Place your script in a directory named hw2_FirstLast**. For Example: hw2_PatrickEarl.
+The name of the script doesn't matter, but put `.bash` as the file extension. `main.bash` would be fine.
+Make sure you include the proper sha-bang line at the top of the script (`#!/bin/bash`) and make
+your file executable. 
 
-Use *~earl/bin/submit.bash* to submit your assignment.
-
-## Grading 
-
-* Assignment is worth 15 Points
-  * 10 Points - Correct Commands (& Arguments)
-  * 5 Points - Correct Answer to 3&4
+Submit by running `~earl/bin/submit csc252 hw2`. 

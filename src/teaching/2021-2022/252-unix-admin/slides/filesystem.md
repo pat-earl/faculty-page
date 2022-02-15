@@ -215,6 +215,27 @@ Spring 2022
 
 ---
 
-## More info on ext4
+# **Logical Volume Manager (LVM)**
 
-- <https://www.kernel.org/doc/html/latest/filesystems/ext4/index.html>
+- Tool for logical volume management which includes allocation of disks, striping, mirroring, and resizing of logical volumes
+- A logical volume can exist across different physical volumes
+
+---
+
+# **RAID**
+
+- **R**edundant **A**rray of **I**ndependent **D**isks
+  - Some people will say the **I** stands for Inexpensive.
+- An alternative to LVM, combine physical drives to get a larger disk capacity.
+- RAID Levels
+
+--- 
+
+# **Resources**
+
+- [UEFI & GPT](https://wiki.restarters.net/UEFI_and_GPT)
+- [EXT2 Superblock](http://www.science.unitn.it/~fiorella/guidelinux/tlk/node97.html)
+- [Red Hat Documentation on LVM](https://web.mit.edu/rhel-doc/5/RHEL-5-manual/Deployment_Guide-en-US/ch-lvm.html#)
+- [ext4 information](<https://www.kernel.org/doc/html/latest/filesystems/ext4/index.html>)
+- [SAS (Serial Attached SCSI)](https://en.wikipedia.org/wiki/Serial_Attached_SCSI)
+- [What is RAID?](https://raid.wiki.kernel.org/index.php/What_is_RAID_and_why_should_you_want_it%3F)
