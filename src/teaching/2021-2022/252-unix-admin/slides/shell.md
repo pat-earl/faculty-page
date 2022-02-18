@@ -175,10 +175,6 @@ Spring 2022
 
 ---
 
-## Common UNIX Filters
-
----
-
 ## Environment
 
 - Environment Variables

@@ -59,9 +59,14 @@ stylesheet: ../../course.css
                 Application Architectures
             </td>
             <td>
-                <a href="https://martinfowler.com/architecture/">
-                    Various Blog Posts on Software Architecture
-                </a>
+                <ul>
+                    <li><a href="https://martinfowler.com/architecture/">
+                        Various Blog Posts on Software Architecture
+                    </a></li>
+                    <li><a href="https://www.redhat.com/en/topics/cloud-native-apps/what-is-an-application-architecture#overview">
+                        RedHat - Application Architectures
+                    </a></li>
+                </ul>
             </td>
         </tr>
         <tr>
