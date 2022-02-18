@@ -9,7 +9,7 @@ import staticjinja
 from jinja2_markdown import MarkdownExtension
 import re, optparse, shutil, configparser, glob, subprocess
 from stat import *
-from jinja2 import contextfunction, contextfilter
+from jinja2 import pass_context
 
 import mdconverter
 import pypandoc
@@ -342,15 +342,15 @@ if __name__ == "__main__":
     # Jinja2 globals
     env_globals = {
         'dev_env': dev_env,
-        'markdown': contextfunction( lambda c, s: \
+        'markdown': pass_context( lambda c, s: \
                         site.md.mdconvert(c, s).html ),
-        'glob': contextfunction( lambda c, p: jinja_glob( site, c, p) ),
-        'get_meta': contextfunction( lambda c, f, k=None: \
+        'glob': pass_context( lambda c, p: jinja_glob( site, c, p) ),
+        'get_meta': pass_context( lambda c, f, k=None: \
                         site.md.jinja_get_meta( c, f, k ) ),
-        'path_exists': contextfunction( lambda c, p: \
+        'path_exists': pass_context( lambda c, p: \
                         site.md.path_exists(c, p) ),
-        'get_file': contextfunction( lambda c, f: site.md.get_file(c, f) ),
-        'get_link': contextfunction(
+        'get_file': pass_context( lambda c, f: site.md.get_file(c, f) ),
+        'get_link': pass_context(
             lambda c, f, rel=False: site.md.get_link(c, f, rel) ),
         'search': jinja_search,
         'sub': jinja_sub,
@@ -380,7 +380,7 @@ if __name__ == "__main__":
                 ('.*\.md', mdconverter.render),
             ],
             filters={
-                'markdown': contextfilter( lambda c, s: \
+                'markdown': pass_context( lambda c, s: \
                                 site.md.mdconvert(c, s).html ),
                 'search': jinja_search,
                 'sub': jinja_sub,

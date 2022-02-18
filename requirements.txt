@@ -7,7 +7,7 @@ docopt==0.6.2
 easywatch==0.0.5
 humanfriendly==9.1
 idna==2.10
-Jinja2==2.11.2
+Jinja2
 jinja2-markdown==0.0.3
 Markdown==3.3.3
 markdown-strikethrough==0.1.2
