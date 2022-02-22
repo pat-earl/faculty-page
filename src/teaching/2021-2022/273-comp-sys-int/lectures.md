@@ -12,3 +12,8 @@ breadcrumb: index.md
 {% for lec in lectures -%}
 * {{ lec['name'] }} - [Slides]({{ get_link(lec['file']) }})
 {% endfor -%}
+
+
+# Resources
+
+- [Hoppscotch API Tools](https://hoppscotch.io/)

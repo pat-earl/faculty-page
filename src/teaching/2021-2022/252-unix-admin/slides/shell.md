@@ -43,11 +43,8 @@ Spring 2022
 
 ## Command Syntax
 
-- Some commands work with just the command name 
-  - *meaning no arguments are required*
-- Others will require arguments:
-  - `mkdir`
-  - *Usage Message*
+- Command Arguments
+  - Default Values vs. Required
   - Optional Arguments - `[ ]`
 - Arguments are *tokens* a command acts on
   - *token* or *word* - A sequence of nonblank characters
@@ -95,6 +92,7 @@ Spring 2022
   - `CONTROL-H` - Character erase
   - `CONTROL-U` - Kill a line
   - `CONTROL-W` - Erase a word
+  - `CONTROL-L` - Clear Screen
   - Immediate Actions
 - Non immediate actions are placed in a buffer for tty until RETURN is pressed and then handled by the shell.
 
@@ -177,10 +175,13 @@ Spring 2022
 
 ## Environment
 
+<style scoped>
+  li { font-size: 90% }
+</style>
+
 - Environment Variables
   - `export`
   - `printenv` or `env`
-- *NAME=VALUE* pairs
 - `HOME`
 - `PATH`
 - `PS1`

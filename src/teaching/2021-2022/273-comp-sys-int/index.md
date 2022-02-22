@@ -89,6 +89,15 @@ stylesheet: ../../course.css
         </tr>
         <tr>
             <td>
+                OAuth
+            </td>
+            <td>
+                <a href="https://www.youtube.com/watch?v=CPbvxxslDTU">
+                02/17 Make-Up Video
+                </a>
+            </td>
+        <tr>
+            <td>
                 Events and Actions
             </td>
             <td>
