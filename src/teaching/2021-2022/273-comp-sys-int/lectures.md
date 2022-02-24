@@ -17,3 +17,5 @@ breadcrumb: index.md
 # Resources
 
 - [Hoppscotch API Tools](https://hoppscotch.io/)
+- [GO Rest API](https://gorest.co.in/)
+- [JSONPlaceHolder](https://jsonplaceholder.typicode.com/guide/)
