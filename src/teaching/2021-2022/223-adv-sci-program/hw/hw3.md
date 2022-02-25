@@ -3,20 +3,20 @@ title: Homework #3
 ## Data Formats
 
 **Due:**
-: Sunday Feb 28, 2021
+: Friday, March 4th
 
-The purpose of this assignment is to extract a small subset of information from one file format 
-and write it out as another.
+**Purpose:**
+: Usage of Python Standard Library Modules
+: Understanding of the CSV and JSON file formats
 
 ## Description
 
 You are to use the file named `netflix_titles.csv` which is from the [Netflix Movies and TV Shows](https://www.kaggle.com/shivamb/netflix-shows)
-dataset hosted on Kaggle. You'll be converting this file to the *JSON* data format, extracting a small
-subset of the information found within it.
+dataset hosted on Kaggle. This file will be converted from the CSV file format into JSON.
 
 The file can be downloaded here: [[materials/netflix_titles.csv]]
 
-These are the data processing steps:
+Your program will complete the following data processing steps:
 
 1. Read the data using the Python *CSV* library.
 2. Retrieve the subset of content that have "TV Show" in the type field.
