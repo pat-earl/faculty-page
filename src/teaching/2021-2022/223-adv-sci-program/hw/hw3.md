@@ -46,9 +46,10 @@ all the data is on separate lines as seen in the example output below.
 You may hard-code the filename in your program. Meaning, the program is only intended to work
 with the supplied dataset. Your json file can be named anything, but must have a `.json` file extension.
 
-*NOTES:*
+*Other Information/Requirements:*
 : The order of the keys in *each* dictionary isn't important. The order of the objects in the overall output needs to be as specified.
-: You *should only use* the csv and json python libraries. 
+: You **can only use** the `csv` and `json` python libraries. 
+: Your program must use functions.
 : The format of the "date_added" date doesn't matter. 
 
 ## Submission

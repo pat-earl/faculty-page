@@ -6,6 +6,7 @@ Dr. Dylan Schwesinger and [his version can be found by following this link](http
 
 # Learning Resources
 
+* [Class Examples GitHub Page](https://github.com/pat-earl/csc223-examples)
 * [Python Tutorial](https://docs.python.org/3/tutorial/index.html)
 * [A Whirlwind Tour of Python](https://jakevdp.github.io/WhirlwindTourOfPython/)
 * [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
