@@ -44,10 +44,14 @@ transition: fade
     * .bashrc
     * /etc/bashrc
 
+---
+
 ## source
 * `.`(dot) or `source`
 * If changes are made to your startup files, these commands can allow for "reloading"
     * Typically to see the changes you'd have to logout and in again.
+
+---
 
 ## Standard Error Redirection
 * 0 - stdin, 1 - stdout, 2 - stderr
