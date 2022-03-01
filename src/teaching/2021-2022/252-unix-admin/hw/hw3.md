@@ -30,9 +30,10 @@ Using various command line utilities that have been discussed in class and video
 5. Write a command that will display the inode/filename pair for **ALL** files in `~earl/public` sorted by inode number.
 
 Use of the following will result in a zero for the assignment:
-    - Environment Variables
-    - `awk`
-    - `sed`
+
+- Environment Variables
+- `awk`
+- `sed`
 
 
 ## Setup & Submission
