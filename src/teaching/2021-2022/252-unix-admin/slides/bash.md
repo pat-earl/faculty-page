@@ -148,6 +148,7 @@ Spring 2022
     - Preserves the literal value of each character except: *$, \`, \\, and !*
     - [GNU BASH Manual 3.1.2.3](https://www.gnu.org/software/bash/manual/html_node/Double-Quotes.html)
 
+---
 
 # User Prompts
 - `read` - Read from stdin (or FD) and split into words
@@ -184,6 +185,7 @@ Spring 2022
 - If non-correct or non-arguments are passed show a *usage* message
 - `Usage: ./command [arguments]`
 
+---
 
 # Array Variables
 - bash supports *1D arrays* and uses zero-based indexing
