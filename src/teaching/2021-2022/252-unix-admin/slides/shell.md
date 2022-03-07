@@ -21,7 +21,7 @@ Spring 2022
 
 - sh - Bourne Shell
 - ksh - Korn Shell
-- -*bash** - *Bourne Again Shell*
+- **bash** - *Bourne Again Shell*
 - dash - Debian Almquist Shell
 - tcsh - TC Shell
 - zsh - Z Shell
