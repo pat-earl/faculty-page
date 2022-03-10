@@ -7,6 +7,7 @@ Below are various links to extra information for UNIX/Documentation/etc.
 - [*Linux Fundamentals*](https://linux-training.be/linuxfun.pdf) by Paul Cobbaut
     - Supplemental textbook
 - [GNU BASH Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [BASH Reference Card](https://person.dibris.unige.it/moggi-eugenio/PG1-13/bash.quickref.pdf)
 
 ## Regular Expressions
 * [Regular Expression Cheatsheet](https://remram44.github.io/regex-cheatsheet/regex.html)
