@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>NumPy</title>
+
+<meta name="description" content="NumPy">    
+
+  <meta name="author" content="Patrick Earl" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- <link rel="stylesheet" href="https://faculty.kutztown.edu/earl/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://faculty.kutztown.edu/earl/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://faculty.kutztown.edu/earl/share/revealjs/dist/theme/simple.css" id="theme">
+ -->
+
+<link rel="stylesheet" href="https://faculty.kutztown.edu/earl/share/revealjs/dist/reset.css">
+<link rel="stylesheet" href="https://faculty.kutztown.edu/earl/share/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="https://faculty.kutztown.edu/earl/share/revealjs/dist/theme/simple.css" id="theme">
+
+
+<!-- For syntax highlighting -->
+<!--   <link rel="stylesheet" href="/earl/share/revealjs/plugin/highlight/zenburn.css">
+ -->
+
+<!-- For syntax highlighting -->
+  <link rel="stylesheet" href="https://faculty.kutztown.edu/earl/share/revealjs/plugin/highlight/default.css">
+
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<!-- <script>
+  document.write( '<link rel="stylesheet" href="css/print/' +
+    ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + 
+    '.css" type="text/css" media="print">' );
+</script> -->
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+<h1>NumPy</h1>
+<h3>Patrick Earl</h3>
+<p>
+<h4>03/03/2021</h4>
+</p>
+</section>  
+
+
+<section id="using-numpy" class="slide level2">
+<h2>Using NumPy</h2>
+<ul>
+<li><code>import numpy</code></li>
+<li><code>import numpy as np</code></li>
+</ul>
+</section>
+<section id="python-integer" class="slide level2">
+<h2>Python Integer</h2>
+<pre><code>struct _longobject {
+    long ob_refcnt;
+    PyTypeObject *ob_type;
+    size_t ob_size;
+    long ob_digit[1];
+};</code></pre>
+<ul>
+<li>Flexibility comes at a cost.</li>
+<li>Since lists can contain any object, there is more overhead</li>
+</ul>
+</section>
+<section id="fixed-type-arrays" class="slide level2">
+<h2>Fixed-Type Arrays</h2>
+<ul>
+<li>Python provides the built-in <code>array</code> module</li>
+<li>Provides effective storage of array-based data, but not the <em>operations</em></li>
+<li>`import array; L = list(range(0)); A = array.array(‘i’, L)</li>
+</ul>
+</section>
+<section id="numpy-arrays" class="slide level2">
+<h2>NumPy Arrays</h2>
+<ul>
+<li><code>np.array</code> can be used to create arrays from Python lists</li>
+<li>NumPy arrays must be of the same type.
+<ul>
+<li><code>dtype</code> argument</li>
+</ul></li>
+</ul>
+</section>
+<section id="creating-arrays" class="slide level2">
+<h2>Creating arrays</h2>
+<ul>
+<li><code>np.zeros</code></li>
+<li><code>np.ones</code></li>
+<li><code>np.fill</code></li>
+<li><code>np.arange</code></li>
+<li><code>np.linspace</code></li>
+</ul>
+</section>
+<section id="numpy-data-types" class="slide level2">
+<h2>NumPy Data Types</h2>
+<ul>
+<li>Contains data types similar to C
+<ul>
+<li><em>NumPy is written in C</em></li>
+</ul></li>
+<li><em>int_</em></li>
+<li><em>int32</em> - 32 Bits</li>
+<li><em>int64</em> - 64 Bits</li>
+<li><em>uint16</em> - Unsigned 16 bit int</li>
+<li><em>float_</em> - short hand for <em>float64</em></li>
+</ul>
+</section>
+<section id="numpy-array-basics" class="slide level2">
+<h2>NumPy Array Basics</h2>
+<ul>
+<li>Attributes of Arrays</li>
+<li>Indexing of Arrays</li>
+<li>Slicing of Arrays</li>
+<li>Reshaping of Arrays</li>
+<li>Joining and Splitting</li>
+</ul>
+</section>
+<section id="attributes" class="slide level2">
+<h2>Attributes</h2>
+<ul>
+<li><code>np.random.randint(10, size=6)</code></li>
+<li><code>ndim</code> - Number of dimensions</li>
+<li><code>shape</code> - The size of each dimensions</li>
+<li><code>size</code> - The total size</li>
+<li><code>dtype</code> - The data type of the array</li>
+<li><code>itemsize</code> - Size in bytes of each element</li>
+<li><code>nbytes</code> - Total size of the array</li>
+</ul>
+</section>
+<section id="array-indexing" class="slide level2">
+<h2>Array Indexing:</h2>
+<ul>
+<li>Access element <em>i</em>th value starting at zero
+<ul>
+<li>Supports negative indexing as well</li>
+</ul></li>
+<li>For multidimensional arrays, comma separated tuple
+<ul>
+<li><code>array[0, 0]</code></li>
+<li>Negative indices work here</li>
+<li>Can be used for modification</li>
+</ul></li>
+</ul>
+</section>
+<section id="array-slicing" class="slide level2">
+<h2>Array Slicing</h2>
+<ul>
+<li>Access a subarray</li>
+<li>Follows the Python Syntax
+<ul>
+<li><code>x[start:stop:step]</code></li>
+<li>Negative Steps
+<ul>
+<li>Start and Stop get swapped</li>
+<li><code>x[::-1]</code></li>
+</ul></li>
+</ul></li>
+<li>Multi-Indexing
+<ul>
+<li>Works the same, just separated with commas</li>
+<li><code>x[:2, :3] # Two Rows, Three Columns</code></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Accessing rows &amp; columns
+<ul>
+<li>Combine indexing &amp; slicing</li>
+<li><code>x[:, 0] # First column of x</code></li>
+<li><code>x[0, :] # First row of x</code></li>
+</ul></li>
+<li>Subarrays are <em>views</em> instead of copies</li>
+<li>Use <code>.copy()</code> method</li>
+</ul>
+</section>
+<section id="array-reshape" class="slide level2">
+<h2>Array Reshape</h2>
+<ul>
+<li><code>.reshape</code></li>
+<li><code>np.arange(1, 10).reshape((3,3))</code>
+<ul>
+<li>Usually a no-copy view</li>
+</ul></li>
+<li>Conversion of 1D in too 2D row or Column Matrix
+<ul>
+<li><code>x.reshape((1, 3))</code></li>
+<li><code>x[np.newaxis, :]</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="array-concat-split" class="slide level2">
+<h2>Array concat &amp; split</h2>
+<ul>
+<li>Concatenation
+<ul>
+<li><code>np.concatenate</code></li>
+<li><code>np.vstack</code></li>
+<li><code>np.hstack</code></li>
+</ul></li>
+<li>Splitting
+<ul>
+<li><code>np.split</code></li>
+<li><code>np.hsplit</code></li>
+<li><code>np.vsplit</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="universal-functions" class="slide level2">
+<h2>Universal Functions</h2>
+<ul>
+<li>Default Python Implementation is <em>slow</em>
+<ul>
+<li>Looping over arrays for operations on each element</li>
+</ul></li>
+<li><code>%timeit</code></li>
+<li><em>Vectorized Operations</em> - UFuncs
+<ul>
+<li>Functions performed on the entire array</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Array Arithmetic
+<ul>
+<li>Pythons <em>native</em> arithmetic operators can be used</li>
+<li><code>add</code></li>
+<li><code>subtract</code></li>
+<li><code>negative</code></li>
+<li><code>multiply</code></li>
+<li><code>divide</code></li>
+<li><code>floor_divide</code></li>
+<li><code>power</code></li>
+<li><code>mod</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="aggregations" class="slide level2">
+<h2>Aggregations</h2>
+<ul>
+<li><em>Numpy Built-ins</em></li>
+<li>Sum</li>
+<li>Min &amp; Max</li>
+<li>Any - Any elements are True</li>
+<li>All - All elements are True</li>
+<li>Std - Standard Deviation</li>
+<li>Mean - Mean of elements</li>
+<li>argmin, argmax - Find index of min &amp; max values</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>Multi-Dimensional Aggregation
+<ul>
+<li><em>axis</em> - Dimension of the array that will be collapsed.</li>
+<li>Aggregations can be performed along a row, column, or the whole array</li>
+</ul></li>
+<li>Example: <code>M = np.array([[1,2,3], [4,5,6]]) M.sum(axis=0) M.sum(axis=1)</code> —</li>
+</ul>
+</section>
+<section id="broadcasting" class="slide level2">
+<h2>Broadcasting</h2>
+<ul>
+<li>Rules for applying ufuncs on arrays of different sizes</li>
+<li>The Rules:
+<ol type="1">
+<li>If two arrays differ in their number of dimensions, the shape of the one with fewer dimensions is padded with ones on its leading (left) side</li>
+<li>If the shape of the two arrays does not match in any dimension, the array with shape equal to 1 in that dimension is stretched to match the other shape</li>
+<li>If in any dimension the sizes disagree and neither is equal to 1, an error is raised</li>
+</ol></li>
+</ul>
+</section>
+<section id="boolean-arrays" class="slide level2">
+<h2>Boolean Arrays</h2>
+<ul>
+<li>Comparison
+<ul>
+<li><code>less or &lt;</code></li>
+<li><code>less_equal or &lt;=</code></li>
+<li><code>greater or &gt;</code></li>
+<li><code>greater_equal or &gt;=</code></li>
+<li><code>equal or ==</code></li>
+<li><code>not_equal or !=</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="working-with-boolean-arrays" class="slide level2">
+<h2>Working with Boolean Arrays</h2>
+<ul>
+<li><code>count_nonzero</code></li>
+<li><code>np.sum</code></li>
+</ul>
+</section>
+<section id="boolean-masks" class="slide level2">
+<h2>Boolean Masks</h2>
+<ul>
+<li>Masking operations</li>
+<li><code>x[x &lt; 5]</code></li>
+<li>Return a 1D array filled with the values that meet the condition.</li>
+</ul>
+</section>
+<section id="fancy-indexing" class="slide level2">
+<h2>Fancy Indexing</h2>
+<ul>
+<li>Allows for passing of an array of indices, in place of single scalars</li>
+<li><code>idx = [3, 7, 4]</code></li>
+<li><code>x[idx]</code></li>
+</ul>
+</section>
+<section id="sorting" class="slide level2">
+<h2>Sorting</h2>
+<ul>
+<li><code>np.sort</code> - Returns a new array with the values sorted
+<ul>
+<li>Use <code>x.sort()</code> to sort in-place</li>
+</ul></li>
+<li><code>np.argsort</code> - Return the indices of the sorted elements.</li>
+</ul>
+</section>
+</div>
+
+<script src="https://faculty.kutztown.edu/earl/share/revealjs/dist/reveal.js"></script>
+<script src="https://faculty.kutztown.edu/earl/share/revealjs/plugin/markdown/markdown.js"></script>
+<script src="https://faculty.kutztown.edu/earl/share/revealjs/plugin/highlight/highlight.js"></script>
+<script src="https://faculty.kutztown.edu/earl/share/revealjs/plugin/pdfexport/pdfexport.js"></script>
+
+<script>
+// More info about initialization & config:
+// - https://revealjs.com/initialization/
+// - https://revealjs.com/config/
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: false,
+
+    hash: true,
+
+    //plugins: [ RevealMarkdown, RevealHighlight, PdfExport ]
+    plugins: [ RevealMarkdown, PdfExport ]
+  });
+
+</script>
+
+</body>
+</html>
