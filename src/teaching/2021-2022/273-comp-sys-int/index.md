@@ -11,6 +11,7 @@ stylesheet: ../../course.css
 * [**Lectures**]({{get_link('lectures.md')}})
 * [First Day Handout]({{get_link('firstday.html')}})
 * [CS&IT Academic Integrity Policy](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/AcademicIntegrityPolicy.pdf)
+* [AWS Academy Student Login](https://awsacademy.instructure.com/login/canvas)
 
 
 ## Topics
@@ -96,22 +97,6 @@ stylesheet: ../../course.css
                 02/17 Make-Up Video
                 </a>
             </td>
-        <tr>
-            <td>
-                Events and Actions
-            </td>
-            <td>
-                TBD
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Data Mapping
-            </td>
-            <td>
-                TBD
-            </td>
-        </tr>
         <tr>
             <td colspan="2">
                 <b>Section 3</b>: Data Management
