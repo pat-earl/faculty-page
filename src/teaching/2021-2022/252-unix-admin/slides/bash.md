@@ -175,9 +175,11 @@ Spring 2022
 ---
 
 # Arguments
-- `$1, $2, $3`
-- `$#` - Number of Args  
-- `shift` - Shift *n* arguments
+- Values given when the script was launched. 
+- `$1, $2, $3` - Positional (`$0` is the name of the script)
+- `$#` - Number of Args passed
+- `shift` - Shift arguments to the left
+    - `$2` becomes `$1`.
 
 ---
 
@@ -234,8 +236,43 @@ esac
 ---
 
 # Functions
-- `fname () { commands; }`
-- `function fname() { commands; }`
+- Two ways to declare BASH functions
+```bash
+fname () {
+    # One or more statements
+    # Body of the function
+    commands
+}
+
+function fname {
+    # One or more statements
+    commands
+}
+```
+---
+
+- Variables can have global or local scope
+- By default variables will be global
+    - `local` keyword can be used to make them local only to a function.
+- Functions cannot return values like other languages.
+- Using `return` will return a functions "exit status".
+- Use variables to return values from a function.
+
+---
+
+## Passing Arguments to Functions
+
+- Values are passed by putting them after the function's name, using whitespace to separate.
+- Works similarly to how command line arguments are handled!
+```bash
+#!/bin/bash
+
+hello () {
+    echo "Hello $1!"
+}
+
+hello "Fry"
+```
 
 ---
 

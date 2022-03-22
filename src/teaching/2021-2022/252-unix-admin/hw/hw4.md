@@ -1,9 +1,9 @@
-title: Homework #3
+title: Homework #4
 
 ## File Commands
 
 **Due:**
-: Friday, March 26, 2021
+: Friday, April 1, 2022
 
 **Purpose:**
 : Writing bash scripts
@@ -12,8 +12,8 @@ title: Homework #3
 ## Description
 
 Write a bash script to find and print a long listing for all files that are over a specified size
-and files that were modified more than a specified number of days ago. Each section of files
-should be preceded by a heading indicating what follows (i.e. *These are the files of X size). 
+**AND** files that were modified more than a specified number of days ago. Each section of files
+should be preceded by a heading indicating what follows (i.e. *These are the files of X size*). 
 This should be the usage message for this script:
 
 `name_of_script.bash [starting directory] [minimum filesize in KB] [age for files in days]`
@@ -22,26 +22,32 @@ Note that *all* command-line arguments are optional. If no arguments are include
 should be the defaults used in the script:
 
 * Directory - Current Directory
-* Minimum Filesize - 1KB
-* Age for Files - 60 Days
+* Minimum Filesize - 10KB
+* Age for Files - 180 Days
 
 Other requirements for your script:
 
-* Must have a usage cause
-    * Show this when the user uses too many arguments or *(for EC)* types *-h* as a single argument
-* Must accept up to three arguments, but can accept zero
+* Must have a usage cause.
+    * Show this when the user uses too many arguments or *(for EC)* types *-h* with no other CLAs.
+* Must be able to accept 0-3 command line arguments.
+    * 0 - Use Defaults
+    * 1 - Set the directory
+    * 2 - Set the directory & Minimum Filesize
+    * 3 - Set the directory, min. filesize, & age for files
 * Must use a case statement for assignment CLAs/default values to variables
-* Must use the *find* command without the *-exec* or *-ls* options
+* Must use the `find` command without the *-exec* or *-ls* options
 * Must use a for loop to process files returned by find
 
 ## Submission
-Turn the file in using `submit.bash`. Your script **must** be in a directory called *hw3_FirstLast*,
+Your script **must** be in a directory called *hw4_FirstLast*,
 replacing First & Last with your first and last name. 
 
 Submissions with any other directory name *will be ignored*. Similarly make sure to make your bash
 script executable by *all*. 
 
 Name your bash script appropriately. Scripts that don't follow the requirements above will result in zero for the assignment.
+
+Submit using: `~earl/bin/submit csc252 hw4`.
 
 ## Grading
 
