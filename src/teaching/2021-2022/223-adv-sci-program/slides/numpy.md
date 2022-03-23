@@ -232,11 +232,31 @@ M.sum(axis=1)
 - `x[x < 5]`
 - Return a 1D array filled with the values that meet the condition. 
 
+---
+
 ## Fancy Indexing
 
-- Allows for passing of an array of indices, in place of single scalars
-- `idx = [3, 7, 4]`
-- `x[idx]`
+- Allows for passing of an array of indices, in place of single indices.
+
+```python
+x = rand.randint(100, size=10)
+
+ind = [3, 7, 4]
+x[ind]
+```
+
+---
+
+- Can also work with multi-dimensional arrays
+
+```python
+X = np.arange(12).reshape((3, 4))
+row = np.array([0, 1, 2])
+col = np.array([2, 1, 3])
+X[row, col]
+```
+
+---
 
 ## Sorting
 - `np.sort` - Returns a new array with the values sorted
