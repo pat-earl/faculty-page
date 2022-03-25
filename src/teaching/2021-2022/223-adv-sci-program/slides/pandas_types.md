@@ -21,9 +21,11 @@ Prof. Patrick Earl
 - Package built on top of NumPy
 - Provides implementation of DataFrames
   - Multidimensional arrays with row & column labels
-- `import pandas`
-- Same convention as NumPy
-- `import pandas as pd`
+- Import Convention similar to NumPy
+```python
+import pandas
+import pandas as pd
+```
 
 
 ---
@@ -64,7 +66,6 @@ print(data['a'])
 ---
 
 ## Series Attributes
-- index: an index object
 ```
 In [5]: s1 = pd.Series([4, 5, 6 )
 In [6]: s1.index
@@ -72,9 +73,6 @@ Out[6]: RangeIndex(start=0, stop=3, step=1)
 In [7]: s2 = pd.Series({100: 1, 200:3, 400:5}
 In [8]: s2.index
 Out[8]: Int64Index([100, 200, 400], dtype='int64')
-```
-- values: The NumPy Array
-```
 In [9]: s1.values
 Out[9]: array([4, 5, 6], dtype=int64)
 In [10]: s2.values
