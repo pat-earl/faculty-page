@@ -3,8 +3,6 @@ title: Final Project
 **Due:**
 : 2:00pm Wed. May 5, 2021
 
-*NOTE: No grace days may be used on this assignment*
-
 ## Description
 
 This assignment requires you to find a topic that interests you and can

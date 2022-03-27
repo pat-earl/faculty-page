@@ -3,7 +3,7 @@ title: Homework #4
 ## Pandas DataFrames
 
 **Due:**
-: Friday, March 26
+: Friday, April 8
 
 Purpose of this assignment to work with selecting data from a Pandas DataFrame.
 
@@ -17,7 +17,7 @@ into a Pandas DataFrame. More information about the file can be found here:
 
 Create a new DataFrame that satisfies the following criteria:
 
-* Distance measurements must be in centimeters.
+* Distance measurements must be in millimeters.
 * The angle values are the index.
 * The DataFrame row are sorted in ascending order based on the index.
 * There is a column for each car
