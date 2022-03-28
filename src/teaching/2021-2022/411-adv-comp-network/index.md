@@ -19,8 +19,9 @@ Protocol (IP), will be studied in detail. Network addressing and related protoco
 
 ## Assignments
 
-* Week 1 - [Get Mininet Running]({{get_link('./hw/mininet_setup.md')}})
-* Week 2 - [Subnetting Assignment]({{get_link('./hw/subnetting.md')}})
+* Assign 1 - [Get Mininet Running]({{get_link('./hw/mininet_setup.md')}})
+* Assign 2 - [Subnetting Assignment]({{get_link('./hw/subnetting.md')}})
+* Assign 3 - [Network Simulation]({{get_link('./hw/assignment3.md')}})
 
 ## Topics
 
