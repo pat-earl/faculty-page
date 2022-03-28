@@ -1,4 +1,4 @@
-title: Basic Network
+title: Basic Network Simulation
 breadcrumb: ../index.md
 
 **Due:**
