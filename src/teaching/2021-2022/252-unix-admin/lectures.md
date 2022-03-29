@@ -7,6 +7,7 @@ breadcrumb: ./index.md
     {"name": "Filesystem", "file": "slides/filesystem.md"},
     {"name": "UNIX Shell", "file": "slides/shell.md"},
     {"name": "BASH", "file": "slides/bash.md"},
+    {"name": "UNIX Processes", "file": "slides/processes.md"},
 ) %}
 
 {% for lec in lectures -%}
