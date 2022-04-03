@@ -11,12 +11,13 @@ Dr. Dylan Schwesinger and [his version can be found by following this link](http
 * [A Whirlwind Tour of Python](https://jakevdp.github.io/WhirlwindTourOfPython/)
 * [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 * [The Missing Semester of Your CS Education (MIT)](https://missing.csail.mit.edu/)
+* [The Online Statistics Book](https://onlinestatbook.com/2/index.html)
 
 # General Stuff
 
 * [Python 3 Documentation](https://docs.python.org/3/)
 * [Anaconda](https://www.anaconda.com/products/individual)
-* [GitHub Markdown Cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+* [GitHub Markdown Cheatsheet](https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf) (The first page is useful for jupyter notebooks)
 * [Markdown Tutorial](https://www.markdowntutorial.com/)
 
 # Dataset Sources

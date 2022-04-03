@@ -4,7 +4,7 @@
     {"name": "Homework #3", "file": "hw3.md", "duedate": "03/04", "show": true},
     {"name": "Homework #4", "file": "hw4.md", "duedate": "04/08", "show": true},
     {"name": "Homework #5", "file": "hw5.md", "duedate": "04/05", "show": false},
-    {"name": "Final Project", "file": "final.md", "duedate": "05/05", "show": false},
+    {"name": "Final Project", "file": "final.md", "duedate": "05/11", "show": true},
 ] %}
 
 {% for hw in assignments %}

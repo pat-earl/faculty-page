@@ -14,6 +14,8 @@ breadcrumb: ./index.md
     {"name": "Python Iterators & List Comprehension", "file": "slides/list_and_iterators.md"},
     {"name": "NumPy Introduction", "file": "slides/numpy.md"},
     {"name": "Pandas - Types", "file": "slides/pandas_types.md"},
+    {"name": "Matplotlib - Intro", "file": "slides/matplotlib.md"},
+    {"name": "Statistics Review", "file": "slides/stats.md"}
 ) %}
 
 
