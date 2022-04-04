@@ -7,6 +7,7 @@ breadcrumb: index.md
     {"name": "Chapter 2 - Origins of Software", "file": "slides/chapter2.pdf"},
     {"name": "Application Integration", "file": "slides/integration.md"},
     {"name": "Application Programming Interfaces", "file": "slides/api.md"},
+    {"name": "Introduction to Microservices", "file": "slides/microservices.md"},
 ) %}
 
 {% for lec in lectures -%}
@@ -16,6 +17,7 @@ breadcrumb: index.md
 
 # Resources
 
+- AWS PowerPoints are available in the *Student Guide* files for each module. Located on the AWS Academy website. 
 - [Hoppscotch API Tools](https://hoppscotch.io/)
 - [GO Rest API](https://gorest.co.in/)
 - [JSONPlaceHolder](https://jsonplaceholder.typicode.com/guide/)

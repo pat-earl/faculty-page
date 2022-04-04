@@ -8,6 +8,8 @@ breadcrumb: ./index.md
     {"name": "UNIX Shell", "file": "slides/shell.md"},
     {"name": "BASH", "file": "slides/bash.md"},
     {"name": "UNIX Processes", "file": "slides/processes.md"},
+    {"name": "System Administration", "file": "slides/sysadmin.md"},
+    {"name": "System Administration - Tasks", "file": "slides/SA-Tasks_User_Disks.pptx"},
 ) %}
 
 {% for lec in lectures -%}

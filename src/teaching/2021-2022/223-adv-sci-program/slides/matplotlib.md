@@ -124,7 +124,7 @@ plt.subplot(2, 1, 1) # (rows, columns, panel #)
 plt.plot(x, np.sin(x))
 
 # Create a second panel and set the axis
-plt.subplot(2, 2, 2)
+plt.subplot(2, 1, 2)
 plt.plot(x, np.cos(x))
 ```
 
@@ -195,7 +195,7 @@ plt.xlim(xmin, xmax)
 plt.ylim(ymin, ymax)
 
 # At Once
-plt.axis([xmin, ymax, ymin, ymax])
+plt.axis([xmin, xmax, ymin, ymax])
 
 # Automatically compute the limits
 plt.axis('tight')
@@ -219,6 +219,8 @@ plt.ylabel("y")
 
 # Legend
 plt.legend()
+
+# You must add labels to your plots using the "label" keyword argument. 
 ```
 
 ---

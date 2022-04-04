@@ -1,20 +1,19 @@
 title: VM Assignment
 
 **Due:**
-: Friday, April 23.
+: Friday, April 22
 
 **Purpose:**
 : Perform basic system administration tasks on a virtual machine
 
 ## Description
 
-You and your team are to work together and complete the following tasks outlined below. Each
+You and your team are to work together and complete the tasks outlined below. Each
 task is split into smaller parts, so be sure to read each step carefully. 
 
 *If you are currently not assigned to a group, reach out to me ASAP.*
 
 Team assignments can be under the "VM Groups" section of the D2L Course Content. 
-
 The main tasks are as followed:
 
 1. Add a new user
@@ -28,11 +27,10 @@ You should change the account's password to something only your team knows.
 
 **For Off-Campus access:**
 
-* You can first ssh into ACAD and then into your team's VM. -or-
-* Login into the VPN client and directly ssh into the machine. 
+* You must connect to the KU VPN and then directly ssh into the virtual machines. 
 
-Be sure to document which *successful* commands you used. Each section explains what supporting 
-documentation you should include to prove you completed the task. 
+Be sure to document the *successful* commands you used to complete a task.
+Each section explains what supporting documentation you should include to prove you completed the task. 
 Be sure to read the submission section below as well.
 
 ### Task 1 - New Account
