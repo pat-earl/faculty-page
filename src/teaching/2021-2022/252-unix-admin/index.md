@@ -103,6 +103,11 @@ stylesheet: ../../course.css
                 <ul>
                     <li>Appendix C</li>
                     <li>Linux Fundamentals (Pages: 274-302)</li>
+                    <li>
+                        <a href="{{ get_link('./hw/11_documenting.pdf') }}">
+                            Documentation Writing for System Administrations
+                        </a>
+                    </li>
                 </ul>
             </td>
         </tr>

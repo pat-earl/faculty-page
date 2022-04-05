@@ -6,11 +6,11 @@
   -moz-hyphens: auto;
   hyphens: auto;
 }
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .justify {
     text-align: justify;
   }
-}
+} */
 
 /* Don't justify headings, table heads */
 .justify h1, .justify h2, .justify h3,
