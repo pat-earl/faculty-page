@@ -9,7 +9,7 @@ breadcrumb: ./index.md
     {"name": "BASH", "file": "slides/bash.md"},
     {"name": "UNIX Processes", "file": "slides/processes.md"},
     {"name": "System Administration", "file": "slides/sysadmin.md"},
-    {"name": "System Administration - Tasks", "file": "slides/SA-Tasks_User_Disks.pptx"},
+    {"name": "System Administration - Tasks", "file": "slides/SA-Tasks_User_Disks.pdf"},
 ) %}
 
 {% for lec in lectures -%}
