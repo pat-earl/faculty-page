@@ -3,6 +3,9 @@ breadcrumb: ./index.md
 
 Below are various links to extra information for UNIX/Documentation/etc.
 
+## Exam Outlines
+- [**Exam 2 Outline**]({{ get_link('./exam2.md') }})
+
 ## General
 - [*Linux Fundamentals*](https://linux-training.be/linuxfun.pdf) by Paul Cobbaut
     - Supplemental textbook
@@ -14,7 +17,9 @@ Below are various links to extra information for UNIX/Documentation/etc.
 
 ## Extra Information
 
-- [The TTY Demystified](http://www.linusakesson.net/programming/tty/index.php)
+- [The TTY Demystified](http://www.linusakesson.net/programming/tty/index.php)\
+- [Pid Ein's Blog](https://0pointer.net/blog/archives.html)
+    - Has various blog posts on systemd named *systemd for Administrators* 
 
 ## Other Good Books 
 

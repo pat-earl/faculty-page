@@ -1,4 +1,4 @@
-title: CSC273 - Lectures
+title: CSC273 - Lectures/Handouts
 breadcrumb: index.md
 
 {% set lectures = (
@@ -13,6 +13,9 @@ breadcrumb: index.md
 {% for lec in lectures -%}
 * {{ lec['name'] }} - [Slides]({{ get_link(lec['file']) }})
 {% endfor -%}
+
+# Exam Outlines
+- [**Exam 2 Outline**]({{ get_link('./exam2.md') }})
 
 
 # Resources
