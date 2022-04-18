@@ -22,7 +22,7 @@ Protocol (IP), will be studied in detail. Network addressing and related protoco
 * Assignment 1 - [Get Mininet Running]({{get_link('./hw/mininet_setup.md')}})
 * Assignment 2 - [Subnetting Assignment]({{get_link('./hw/subnetting.md')}})
 * Assignment 3 - [Network Simulation]({{get_link('./hw/assignment3.md')}})
-* Assignment 4 - [ICMP Lab]({{get_link('./hw/icmp_lab.md')}})
+* Assignment 4 - [ICMP Lab]({{get_link('./hw/Wireshark_ICMP_v8.0.pdf')}})
 
 ## Topics
 
