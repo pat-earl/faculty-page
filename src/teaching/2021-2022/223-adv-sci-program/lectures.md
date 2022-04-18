@@ -15,7 +15,9 @@ breadcrumb: ./index.md
     {"name": "NumPy Introduction", "file": "slides/numpy.md"},
     {"name": "Pandas - Types", "file": "slides/pandas_types.md"},
     {"name": "Matplotlib - Intro", "file": "slides/matplotlib.md"},
-    {"name": "Statistics Review", "file": "slides/stats.md"}
+    {"name": "Statistics Review", "file": "slides/stats.md"},
+    {"name": "Pandas - Multi-Index", "file": "slides/multi_index.md"},
+    {"name": "Pandas - Combining Data", "file": "slides/combine.md"},
 ) %}
 
 
