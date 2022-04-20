@@ -45,3 +45,13 @@ project to the appropriate folder on D2L. Failure to add any required
 files will result in a failing grade for the final project.
 
 ---
+
+### Previous Final Project Examples
+
+* [Pokemon Example]({{ get_link('./materials/pokemon_example.zip' ) }})
+* [Heart Data Example]({{ get_link('./materials/heart_data_example.zip') }})
+
+Submissions from Dr. Schwesinger's students:
+
+* [Anime Example]({{ get_link('./materials/anime_example.zip') }})
+* [Population Example]( {{ get_link('./materials/population_example.zip') }})

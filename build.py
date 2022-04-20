@@ -212,7 +212,7 @@ class Site( staticjinja.Site ):
 
     static_re  = re.compile(
             '(?:^|/)share\/revealjs\/*|(?:^|/)static/|\.(:?pdf|jpg|png|svg|eps|ps|txt|sty|'
-                + 'mp4|webm|bst|csv|pptx|docx|ipynb|xlsx)$',
+                + 'mp4|webm|bst|csv|pptx|docx|ipynb|xlsx|zip)$',
             flags=re.I )
     def is_static( self, f ):
         if not self.is_ignored(f) and self.static_re.search( f ):
