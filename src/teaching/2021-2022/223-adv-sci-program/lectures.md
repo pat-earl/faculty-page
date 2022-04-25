@@ -18,6 +18,7 @@ breadcrumb: ./index.md
     {"name": "Statistics Review", "file": "slides/stats.md"},
     {"name": "Pandas - Multi-Index", "file": "slides/multi_index.md"},
     {"name": "Pandas - Combining Data", "file": "slides/combine.md"},
+    {"name": "Pandas - Aggregation & Grouping", "file": "slides/agg.md"},
 ) %}
 
 
