@@ -203,9 +203,6 @@ sed [-n] program [file-list]
 - *awk* takes this general form (*gawk*):
     - `gawk [options] [program] [file-list]`
     - `gawk [options] -f program-file [file-list]`
-- Be aware there are different versions of awk: 
-    - GNU AWK (gawk), original awk, or mawk. 
-    - Most of our examples will work with *gawk*.
 
 ---
 
@@ -214,15 +211,14 @@ sed [-n] program [file-list]
 - The program is made up of one more *patterns* followed by an *action*.
     - `[pattern] {action}`
     - If a pattern isn't given, the action is applied to all lines of input.
+
+---
 - **Patterns**
     - BEGIN & END:
         - Execute a command before *awk* starts processing a file and afterwards.
     - ~ and !~:
         - Use a regular expression as a *pattern*
             - !~ tests for not matching the pattern
-
----
-
     - comma (,):
         - Range operator. Select a range based on matched patterns
     - Patterns can be combined using BOOLEAN operators (&& (AND), || (OR))
@@ -248,6 +244,10 @@ sed [-n] program [file-list]
     - Associative Arrays
     - printf
         - *print* but with the ability to control the output format
+
+---
+
+- **Actions**
     - Control Structures
         - if..else
         - while
@@ -258,7 +258,11 @@ sed [-n] program [file-list]
 ---
 
 ## System Variables
-
+<style scoped>
+table, p {
+    font-size: 75%
+}
+</style>
 | Variable | Meaning |
 | -- | -- |
 | $0 | The current record (as a single variable) |
@@ -296,9 +300,9 @@ sed [-n] program [file-list]
 
 | conv | Type of conversion |
 | -- | -- | 
-| -d* | Decimal |
-| -e* | Exponential Notation |
-| -f* | Floating-point number | 
-| -o* | Unsigned Octal | 
-| -s* | String of characters |
-| -x* | Unsigned hexadecimal |
+| *d* | Decimal |
+| *e* | Exponential Notation |
+| *f* | Floating-point number | 
+| *o* | Unsigned Octal | 
+| *s* | String of characters |
+| *x* | Unsigned hexadecimal |
