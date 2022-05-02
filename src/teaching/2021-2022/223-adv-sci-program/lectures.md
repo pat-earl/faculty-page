@@ -19,6 +19,7 @@ breadcrumb: ./index.md
     {"name": "Pandas - Multi-Index", "file": "slides/multi_index.md"},
     {"name": "Pandas - Combining Data", "file": "slides/combine.md"},
     {"name": "Pandas - Aggregation & Grouping", "file": "slides/agg.md"},
+    {"name": "Pandas - Time-Series", "file": "slides/time.md"}
 ) %}
 
 
