@@ -32,17 +32,24 @@
 {% endblock %}{# }}} #}
 {% block heading1 %}{# {{{ #}
   {% markdown %}
-  <div class='alert alert-info'>
+  <!-- <div class='alert alert-info'>
    
     <h3>Office Hours - Week of 5/2</h3>
     <p>Thursday's (05/05) office hours are cancelled and will be held Friday 9:30am - 10:30am</p>
     
-  </div>
+  </div> -->
   {% endmarkdown %}
   <h2>Current Courses</h2>
   {% markdown %}
-  <div class='media mb-4' markdown='1'>
-    {{ md_current_courses() -}}
+  <div class='media mb-4'>
+    <!-- {{ md_current_courses() -}} -->
+    UNIX Summer Course Page is available on D2L.<br><br>
+    
+    Bye 👋 KU<br>
+    Moving to work with the Software Engineering Institute @ Carnegie Mellon University. 
+    If you need a reference, you can find my contact information from using CMU's people search :-)<br> 
+
+     
   </div>{# /media #}
   {% endmarkdown %}
 
@@ -73,6 +80,9 @@
       </tr>
     </tbody>
   </table>
+
+  <p><a href="https://kutztown.zoom.us/j/96663053507">Zoom Office Hours Link</a></p>
+
   {# #}
 
   <br>
@@ -126,8 +136,8 @@
   </div>
   }}} #}
 {% endblock %}{# }}} #}
-{% block heading2 %}{% markdown %}{# {{{ #}
-## Office Hours 
+{% block heading2 %}{# {{{ #}
+<!-- ## Office Hours 
 
 <table class="table table-responsive">
   <thead>
@@ -144,19 +154,10 @@
     </tr>
     {% endfor %}
   </tbody>
-</table>
-
-*Appointments are not required, but will be given priority over walk-ins*
-
-Please use my Calendly to schedule office hours appointments<br>
-<https://calendly.com/prof_earl/office-hours-appointment>
-
-Office Hours are available via Zoom and In-Person. Masks are now optional while in my office. 
-
-Zoom Office Hours Link: <https://kutztown.zoom.us/j/96663053507>
+</table> -->
 
 
-{% endmarkdown %}{% endblock %}{# }}} #}
+{% endblock %}{# }}} #}
 
 {% block heading3 %} {% markdown %}{# {{{ #}
 
