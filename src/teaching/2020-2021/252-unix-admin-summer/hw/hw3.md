@@ -3,7 +3,7 @@ title: Homework #3
 ## File Commands
 
 **Due:**
-: Monday, June 14 by 11:59PM
+: Monday, June 20th by 11:59PM
 
 **Purpose:**
 : Writing BASH scripts
@@ -35,13 +35,15 @@ Other requirements for your script:
 * Must use a for loop to process files returned by find
 
 ## Submission
-Turn the file in using `submit.bash`. Your script **must** be in a directory called *hw3_FirstLast*,
+Your script **must** be in a directory called *hw3_FirstLast*,
 replacing First & Last with your first and last name. 
 
 Submissions with any other directory name *will be ignored*. Similarly make sure to make your bash
 script executable by *all*. 
 
 Name your bash script appropriately. Scripts that don't follow the requirements will receive a grade of zero.
+
+Submit using this command: `~earl/bin/submit csc252 hw3`.
 
 ## Grading
 

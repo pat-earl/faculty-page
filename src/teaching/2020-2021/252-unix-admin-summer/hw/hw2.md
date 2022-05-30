@@ -3,7 +3,7 @@ title: Homework #2
 ## File Commands
 
 **Due:**
-: Monday June 7th by 11:59PM
+: Monday June 13th by 11:59PM
 
 Write a command to satisfy the requirements below.
 You can also choose to use several commands with a "pipe." As with the previous assignment
@@ -29,7 +29,7 @@ These commands should be placed within a bash script. Remember to include the sh
 
 The directory for this assignment should be named *hw2_FirstLast* (i.e. hw2_PatrickEarl)
 
-Use `~earl/bin/submit.bash` to submit your assignment.
+Submit using this command: `~earl/bin/submit csc252 hw2`.
 
 ## Grading 
 
