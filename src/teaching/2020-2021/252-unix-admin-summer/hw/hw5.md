@@ -3,7 +3,8 @@ title: Homework #5
 ## Text Processing
 
 **Due:**
-: June 25, 2021
+: July 1st, 2021 by 11:59PM
+: **Due on a Friday**
 
 **Purpose:**
 : Write small awk and sed programs to process text data
@@ -20,9 +21,10 @@ to standard output. The cars file can be found here: `~earl/public/csc252/text/c
 4. Write a **sed** command that copies a file to standard output, removing any blank lines (i.e. Lines with **no** characters on them).
 
 
-The first argument passed to the bash script should be the file used in 1, 3, & 4.
+Use command line argument 1 (`$1`) as the file name for numbers 1, 2, and 4.
 
 ## Submission
 
-Submit using the bash script `~earl/bin/submit.bash`. 
+Submit using the bash script `~earl/bin/submit csc252 hw5`.
+
 Make sure you bash script is in a directory named hw5_FirstLast.

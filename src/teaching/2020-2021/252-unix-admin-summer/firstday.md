@@ -12,7 +12,7 @@ stylesheet: ../../firstday.css
 : CSC252 - UNIX Administration/Scripting
 
 **Semester:**
-: Session I - Summer 2021
+: Session I - Summer 2022
 
 **Instructor:**
 : Mr. {{site_author}}
@@ -30,21 +30,18 @@ stylesheet: ../../firstday.css
 : <https://csit.kutztown.edu/~earl/s>
 
 **Office Hours:**
-: Office hours are appointment only for summer sessions
-
-**Meetings:** 
-: Recitation Sessions - Wednesday 11:00AM - 12:00PM - [Via Zoom](https://kutztown.zoom.us/j/92116392026)
+: Please contact me to setup an appointment
 
 **Format:** 
 : 100% Online - Asynchronous
-: Pre-recorded lectures and the slides will be made available on the course webpage for each given week. 
+: Pre-recorded lectures and powerpoint materials can be found on D2L.
 
 ## Materials
 
-**Required Textbook:**
+**Recommended Textbook:**
 : *A Practical Guide to Linux: Commands, Editors, and Shell Programming*, 4<sup>th</sup> Edition.
 Mark G. Sobell. **ISBN:** 978-0134774602. (3<sup>rd</sup> edition is fine as well).  
-
+: Textbook is part of the inclusive access program, you can find it by going to the *Inclusive Access* section on D2L.
 
 ## Description
 
@@ -65,16 +62,9 @@ Your final course grade will be made up of the following:
 
 * Assignments: 60%
 * Weekly Quizzes: 20%
-* Final Exam: 15%
-* Discussion Board: 5%
+* Final Exam: 20%
 
 The standard [University Grading Policy](http://app.kutztown.edu/policyregister/Policy/ACA-048) will be used to calculate your final letter grade. 
-
-*NOTE: Even though the university uses the 4.0 GPA scale in it's policy, 
-grades will be displayed and reported on a typical 100 point scale.*
-
-**Discussion Board:**
-: You will be expected to participate in weekly discussions relevant to the week's materials. To receive full credit for this, you will need to contribute at least one thing per week (Meaning a minimum of 5) Your contribution can be asking a question, answering a peer questions, sharing an related article, etc. 
 
 **Weekly Quizzes:**
 
@@ -88,15 +78,15 @@ semester, year, and assignment number/name. Programming assignments must follow 
 [Documentation Standards](https://www.kutztown.edu/Departments-Offices/A-F/ComputerScienceInformationTechnology/Documents/Student%20Resources/DocumentationStandard.pdf) set by the CS&IT Department. Failure to meet these 
 requirements will result in a minimum 10% penalty for that assignment.
 
-: Homework will be due the Monday of the following week. For example, the first assignment will be posted Monday May 24th and will be due May 31st. Refer to the assignment handouts on the course webpage for assignment specifics. 
+: Homework will be due the Monday of the following week. For example, the first assignment will be posted Tuesday May 31th and will be due June 6th. Refer to the assignment handouts on the course webpage for assignment specifics. 
 
 **Final Exam:**
-: The final exam will be available Friday June 25th on D2L. The exam will be available for 2 hours and may be started at any time that day.
+: The final exam will be available Friday July 1st on D2L. The exam will be available for 2 hours and may be started at any time that day.
 
 ## Course Policies
 
 **Attendance:**
-: Regular class attendance and participation is expected and highly encouraged. Students will be responsible for materials covered during class time. 
+: Since the course is fully online and asynchronous, students are expected to keep up with work on their own schedules.
 
 **Academic Dishonesty:**  
 

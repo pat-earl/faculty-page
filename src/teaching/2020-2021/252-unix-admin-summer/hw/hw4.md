@@ -3,7 +3,7 @@ title: Homework #4
 ## Acceptable Use Policy
 
 **Due:**
-: Monday, June 21 by 11:59PM
+: Monday, June 27 by 11:59PM
 
 **Purpose:**
 : Defining what is acceptable use of university owned IT equipment. 
@@ -25,6 +25,6 @@ for any you use, *including* Kutztown's.
 
 ## Submission
 
-Submit either a word document or PDF file on D2L under the assignment titled 
+Submit as a Word document or PDF file on D2L under the assignment titled 
 *Acceptable Use Policy*. No other formats will be accepted.
 Your name, date, and assignment number should be included in some form at the top. 

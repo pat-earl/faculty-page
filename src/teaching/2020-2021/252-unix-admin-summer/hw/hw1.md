@@ -3,7 +3,7 @@ title: Homework #1
 ## Basic Linux Commands
 
 **Due:**
-: Monday May 31st by 11:59PM
+: Monday June 6th by 11:59PM
 
 **Purpose:**
 : Use basic UNIX utilities, create a BASH script. 
@@ -43,8 +43,11 @@ followed by the command to show your username.
 **Place your script in a directory named hw1_FirstLast**. For Example: hw1_PatrickEarl.
 The name of the script doesn't matter, but put `.bash` as the file extension. `main.bash` for example would be acceptable. 
 
-Submit using my submit.bash script. Make sure your current directory is the one created earlier
-with just the script. Run this command, `~earl/bin/submit.bash csc252`, to submit your script.
+Make sure you are in the directory you created and then run this command,
+
+`~/earl/bin/submit csc252 hw1`
+
+to submit your assignment.
 
 ## Grading 
 
