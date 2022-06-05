@@ -45,7 +45,7 @@ The name of the script doesn't matter, but put `.bash` as the file extension. `m
 
 Make sure you are in the directory you created and then run this command,
 
-`~/earl/bin/submit csc252 hw1`
+`~earl/bin/submit csc252 hw1`
 
 to submit your assignment.
 
