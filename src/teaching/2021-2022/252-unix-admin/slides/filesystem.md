@@ -5,6 +5,7 @@ _class:
   - lead
 paginate: true
 backgroundColor: #fff
+title: The File System
 ---
 
 # **The Filesystem**
@@ -19,7 +20,7 @@ Spring 2022
 
 # A Hierarchical System
 
-![](./images/unix_tree.png)
+![](./images/tree.png)
 
 ---
 
